@@ -25,6 +25,9 @@ Getrennt nach Herkunft, damit klar ist, was feststeht und was nur vorgeschlagen 
 | 10.10.2026 | Stilrichtung C „Vorsatzpapier und Buchrücken“ gewählt: marmoriertes Vorsatzpapier, Listen als Buchrücken in Leinen mit Goldprägung, „Neues Buch erfassen“ als Lücke im Regal. |
 | 10.10.2026 | Es ist eine App: nutzerfreundlich beim Tippen, wenig Animation, damit nichts ruckelt. Ausformuliert in [ARCHITEKTUR.md](ARCHITEKTUR.md), Abschnitt „App-Grundsätze“. |
 | 10.10.2026 | Design der Demos reicht vorerst. Vorrang hat, die richtigen Parameter zu finden. Genre muss enthalten sein. Statistiken gewünscht (z. B. gelesene Bücher, Anzahl Autoren, Lieblingsautor). Entwurf in [PARAMETER.md](PARAMETER.md). |
+| 10.10.2026 | Genre-Liste mit 16 Einträgen bestätigt (siehe [PARAMETER.md](PARAMETER.md)). |
+| 10.10.2026 | Lieblingsautor wird manuell festgelegt. Berechnet wird stattdessen der meistgelesene Autor. |
+| 10.10.2026 | Statistiken: einige Zeilen kurze Zusammenfassung unter dem Regal, tiefere Statistiken in einem eigenen Band. Inhalt der Kurzfassung noch offen. Ersetzt den Grundsatz „keine Zähler auf der Startseite“. |
 
 ## Vorschläge von Claude – noch nicht bestätigt
 

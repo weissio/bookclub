@@ -20,16 +20,15 @@ _Zuletzt aktualisiert: 10.10.2026_
 
 ## Nächster Schritt
 
-Parameter-Katalog ([PARAMETER.md](PARAMETER.md)) mit Arjen abstimmen: Genre-Liste, Lieblingsautor-Regel, Ort der Statistiken.
+Restliche Punkte im Parameter-Katalog ([PARAMETER.md](PARAMETER.md)) klären, vor allem Inhalt der Statistik-Kurzfassung unter dem Regal.
 
 ## Offene Fragen
 
 1. Soll die Wirkung eigener Texte („hat jemanden zum Buch gebracht“) öffentlich sichtbar sein oder nur für den Schreibenden?
 2. Soll ein Nutzer mehrere Schaufenster betreiben können?
-3. Welche feste Genre-Liste nutzen wir? (Vorschlag in PARAMETER.md)
-4. Coverbilder: Wie dürfen Standardcover rechtlich genutzt werden (VLB-Lizenz klären)?
-5. Autor bewerten: direkt oder nur indirekt („Mehr von dieser Autorin?“)?
-6. Begriff „SuB“ (Stapel ungelesener Bücher) statt „Ungelesen im Regal“ verwenden?
-7. Endgültige Namen der Hauptbereiche.
-8. Gilt Stil C für die ganze App oder nur für die Bibliothek? (vorerst nur Bibliothek)
-9. Verleih und Verkauf: rechtliche Pflichten als Plattform (u. a. DAC7) – **noch nicht recherchiert, nur als Hinweis genannt.**
+3. Coverbilder: Wie dürfen Standardcover rechtlich genutzt werden (VLB-Lizenz klären)?
+4. Autor bewerten: direkt oder nur indirekt („Mehr von dieser Autorin?“)?
+5. Begriff „SuB“ (Stapel ungelesener Bücher) statt „Ungelesen im Regal“ verwenden?
+6. Endgültige Namen der Hauptbereiche.
+7. Gilt Stil C für die ganze App oder nur für die Bibliothek? (vorerst nur Bibliothek)
+8. Verleih und Verkauf: rechtliche Pflichten als Plattform (u. a. DAC7) – **noch nicht recherchiert, nur als Hinweis genannt.**

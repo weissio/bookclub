@@ -1,6 +1,6 @@
 # Parameter-Katalog
 
-_Entwurf vom 10.10.2026 – **noch nicht bestätigt**. Grundlage: Arjens Vorgaben (Genre fehlt, Statistiken gewünscht) und [RECHERCHE.md](RECHERCHE.md)._
+_Entwurf vom 10.10.2026 – **teilweise bestätigt** (Genre-Liste, Lieblingsautor, Ort der Statistiken; siehe [ENTSCHEIDUNGEN.md](ENTSCHEIDUNGEN.md)), Rest noch offen. Grundlage: Arjens Vorgaben (Genre fehlt, Statistiken gewünscht) und [RECHERCHE.md](RECHERCHE.md)._
 
 **Quelle:** `ISBN` = automatisch aus Buchdatenbank (DNB, ergänzend Google Books/Open Library), korrigierbar · `Nutzer` = gibt der Nutzer ein · `berechnet` = ergibt sich aus anderen Angaben
 
@@ -31,8 +31,9 @@ _Entwurf vom 10.10.2026 – **noch nicht bestätigt**. Grundlage: Arjens Vorgabe
 | Zielgruppe | Nutzer | – | Erwachsene, Jugend, Kinder |
 | Themen | Nutzer | – | frei, z. B. „Romantasy“, „Cozy Crime“, „Küste“ |
 | Eigene Regale | Nutzer | – | freie Sammlungen |
+| Lieblingsautor | Nutzer | – | wird manuell festgelegt, nicht berechnet |
 
-**Vorschlag feste Genre-Liste (16):** Roman / Gegenwart · Krimi & Thriller · Fantasy · Science-Fiction · Liebesroman · Historischer Roman · Horror · Jugendbuch · Kinderbuch · Klassiker · Lyrik & Drama · Comic & Graphic Novel · Biografie & Erinnerungen · Sachbuch · Ratgeber · Reise & Natur
+**Feste Genre-Liste (16, von Arjen bestätigt):** Roman / Gegenwart · Krimi & Thriller · Fantasy · Science-Fiction · Liebesroman · Historischer Roman · Horror · Jugendbuch · Kinderbuch · Klassiker · Lyrik & Drama · Comic & Graphic Novel · Biografie & Erinnerungen · Sachbuch · Ratgeber · Reise & Natur
 
 ## 3. Mein Exemplar
 
@@ -83,12 +84,14 @@ _Entwurf vom 10.10.2026 – **noch nicht bestätigt**. Grundlage: Arjens Vorgabe
 
 ## 7. Statistiken (alle berechnet, privat)
 
+**Wo sie stehen (von Arjen festgelegt):** ein paar Zeilen kurze Zusammenfassung unter dem Regal; ausführlichere Statistiken in einem eigenen Band im Regal. Welche Zeilen in die Kurzfassung kommen, ist noch offen.
+
 | Statistik | braucht |
 |---|---|
 | Gelesene Bücher gesamt, pro Jahr, pro Monat | Lesestand, beendet am |
 | Gelesene Seiten | Seitenzahl, Lesestand |
 | Anzahl verschiedener Autoren | Autor |
-| **Lieblingsautor** | Autor, Sterne (Regel offen, siehe Fragen) |
+| **Meistgelesener Autor** | Autor, Lesestand (der Lieblingsautor wird stattdessen manuell gesetzt) |
 | **Lieblingsgenre**, Verteilung nach Genre | Genre |
 | Durchschnittliche Bewertung, Verteilung der Sterne | Sterne |
 | Durchschnittliche Lesedauer, schnellstes und längstes Buch | Beginn, Ende |
@@ -103,7 +106,6 @@ _Entwurf vom 10.10.2026 – **noch nicht bestätigt**. Grundlage: Arjens Vorgabe
 
 ## Offene Fragen
 
-1. Ist die Genre-Liste so passend? Was fehlt, was ist zu viel?
-2. Lieblingsautor: der mit den meisten gelesenen Büchern oder der mit der besten Durchschnittsbewertung (ab mindestens zwei Büchern)?
-3. Wo leben die Statistiken? Die Startseite soll keine Zähler zeigen. Vorschlag: ein eigener Band „Mein Lesejahr“ im Regal.
-4. Dürfen ausgewählte Statistiken (z. B. Lieblingsgenre) später freiwillig ins Schaufenster?
+1. Welche zwei bis vier Angaben gehören in die Kurzfassung unter dem Regal?
+2. Name des Statistik-Bandes.
+3. Dürfen ausgewählte Statistiken (z. B. Lieblingsgenre) später freiwillig ins Schaufenster?

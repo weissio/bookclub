@@ -14,6 +14,7 @@ Bookclub
 │   ├── Wunschliste                 noch nicht besessen
 │   ├── Abgebrochen                 mit Seite und Grund
 │   ├── Eigene Regale               frei angelegte Sammlungen
+│   ├── Statistik-Band              tiefere Statistiken (Name offen)
 │   ├── Verliehen                   an wen, seit wann        (später)
 │   └── + Neues Buch erfassen       Scan · ISBN · von Hand
 │
@@ -48,7 +49,7 @@ Kein eigenes Modul, aber das zentrale Element: Jedes Buch hat genau eine Buchsei
 
 - **Startseite ist die Bibliothek.** Erfassen ist eine Aktion darin, kein Einstieg.
 - **Ungelesen im Regal und Wunschliste sind getrennt:** das eine besitzt man, das andere nicht.
-- **Kein Feed, keine Benachrichtigungen, keine Follower, keine Zähler auf der Startseite.** Die App drängt nicht.
+- **Kein Feed, keine Benachrichtigungen, keine Follower.** Die App drängt nicht. Unter dem Regal steht eine kurze, ruhige Zusammenfassung weniger Statistiken (geändert am 10.10.2026, vorher: keine Zähler auf der Startseite).
 - **Vier Hauptbereiche** in der Navigation. Begegnungen kommen später als fünfter dazu.
 
 ## App-Grundsätze für Bedienung und Leistung
