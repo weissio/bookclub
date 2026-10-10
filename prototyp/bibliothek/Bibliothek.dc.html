@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Meine Bibliothek</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#2F4A3E}
+a{color:#E9DFC6}a:hover{color:#FFFFFF}
+button{font-family:"Libre Caslon Text",serif}
+button:focus-visible,a:focus-visible{outline:3px solid #E2C46A;outline-offset:3px}
+.cover{transform-origin:left center;animation:coverOpen .75s cubic-bezier(.55,.05,.4,1) forwards}
+@keyframes coverOpen{0%{transform:perspective(1100px) rotateY(0deg);opacity:1}85%{opacity:1}100%{transform:perspective(1100px) rotateY(-108deg);opacity:0}}
+.page{animation:pageIn .5s ease-out .2s both}
+@keyframes pageIn{from{opacity:.4}to{opacity:1}}
+@media (prefers-reduced-motion: reduce){.cover{display:none}.page{animation:none}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #2F4A3E; color: #E9DFC6; font-family: 'Libre Caslon Text', serif; position: relative; overflow: hidden">
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+<defs>
+<filter id="marble" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency="0.008 0.03" numOctaves="2" seed="9" result="t"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="t" scale="70" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap></filter>
+<filter id="cloth"><feTurbulence type="fractalNoise" baseFrequency="1.2 0.25" numOctaves="1" seed="4"></feTurbulence><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.16 0"></feColorMatrix></filter>
+<filter id="paper"><feTurbulence type="fractalNoise" baseFrequency="0.7" numOctaves="2" seed="12"></feTurbulence><feColorMatrix values="0 0 0 0 0.45  0 0 0 0 0.4  0 0 0 0 0.3  0 0 0 0.06 0"></feColorMatrix></filter>
+<linearGradient id="halfStar"><stop offset="50%" stop-color="currentColor"></stop><stop offset="50%" stop-color="currentColor" stop-opacity="0"></stop></linearGradient>
+</defs>
+</svg>
+
+<sc-if value="{{isShelf}}" hint-placeholder-val="{{ true }}">
+<div style="position: absolute; inset: 0; display: flex; flex-direction: column">
+<svg width="390" height="150" viewBox="0 0 390 150" aria-hidden="true" style="display: block; flex-shrink: 0">
+<rect width="390" height="150" fill="#EDE6D8"></rect>
+<g filter="url(#marble)">
+<rect x="-40" y="-30" width="470" height="14" fill="#7A2E2E"></rect>
+<rect x="-40" y="-10" width="470" height="8" fill="#C9A24A"></rect>
+<rect x="-40" y="4" width="470" height="16" fill="#3E5C7A"></rect>
+<rect x="-40" y="26" width="470" height="6" fill="#EDE6D8"></rect>
+<rect x="-40" y="36" width="470" height="12" fill="#7A2E2E"></rect>
+<rect x="-40" y="54" width="470" height="18" fill="#2F4A3E"></rect>
+<rect x="-40" y="78" width="470" height="7" fill="#C9A24A"></rect>
+<rect x="-40" y="90" width="470" height="14" fill="#3E5C7A"></rect>
+<rect x="-40" y="110" width="470" height="10" fill="#7A2E2E"></rect>
+<rect x="-40" y="126" width="470" height="6" fill="#EDE6D8"></rect>
+<rect x="-40" y="136" width="470" height="20" fill="#C9A24A"></rect>
+<rect x="-40" y="160" width="470" height="20" fill="#3E5C7A"></rect>
+</g>
+</svg>
+<div style="flex-grow: 1; overflow-y: auto; padding: 22px 16px 12px 16px; display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; flex-direction: column; gap: 4px; padding: 0 6px">
+<h1 style="margin: 0; font-size: 28px; font-weight: 400; font-variant: small-caps; letter-spacing: 0.04em; color: #E2C46A">Meine Bibliothek</h1>
+<div style="font-size: 15px; font-style: italic">Am Lesen: Der stille Garten, bei Seite 142</div>
+</div>
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; align-items: flex-end; gap: 4px; padding: 0 4px; height: 330px">
+<sc-for list="{{spines}}" as="s" hint-placeholder-count="6">
+<button type="button" aria-label="{{s.aria}}" onClick="{{s.open}}" style="{{s.style}}">
+<svg width="100%" height="100%" aria-hidden="true" style="position: absolute; inset: 0"><rect width="100%" height="100%" filter="url(#cloth)"></rect></svg>
+<span aria-hidden="true" style="position: absolute; left: 6px; right: 6px; top: 14px; height: 0; border-top: 1px solid #E2C46A; border-bottom: 1px solid #E2C46A; padding-bottom: 3px"></span>
+<span aria-hidden="true" style="position: absolute; left: 6px; right: 6px; bottom: 14px; height: 0; border-top: 1px solid #E2C46A; border-bottom: 1px solid #E2C46A; padding-top: 3px"></span>
+<span style="position: relative; writing-mode: vertical-rl; transform: rotate(180deg); font-size: 16px; color: #E2C46A; letter-spacing: 0.02em; white-space: nowrap">{{s.name}}</span>
+<sc-if value="{{s.ribbon}}" hint-placeholder-val="{{ false }}">
+<svg width="12" height="58" viewBox="0 0 12 58" aria-hidden="true" style="position: absolute; bottom: -50px; left: 50%; margin-left: -6px"><path d="M0 0h12v58l-6-6-6 6z" fill="#B23A35"></path></svg>
+</sc-if>
+</button>
+</sc-for>
+<button type="button" style="flex: 1; height: 268px; border: 1.5px dashed #E2C46A; border-radius: 3px; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0">
+<span style="writing-mode: vertical-rl; transform: rotate(180deg); font-size: 15px; font-style: italic; color: #E2C46A; white-space: nowrap">Neues Buch erfassen</span>
+</button>
+</div>
+<div aria-hidden="true" style="height: 14px; background: #5B3E27; border-radius: 2px; box-shadow: 0 6px 0 #233830"></div>
+</div>
+<div style="font-size: 14px; font-style: italic; line-height: 1.5; padding: 10px 6px 0 6px">Tippe einen Band an, um ihn aufzuschlagen.</div>
+</div>
+<nav aria-label="Hauptbereiche" style="display: flex; justify-content: space-around; padding: 6px 12px 14px 12px; border-top: 1px solid #4E6B5D">
+<a href="#" aria-current="page" style="min-height: 44px; display: flex; align-items: center; text-decoration: none; font-size: 15px; color: #E2C46A; border-bottom: 2px solid #E2C46A">Bibliothek</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; text-decoration: none; font-size: 15px; color: #E9DFC6">Schaufenster</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; text-decoration: none; font-size: 15px; color: #E9DFC6">Entdecken</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; text-decoration: none; font-size: 15px; color: #E9DFC6">Ich</a>
+</nav>
+</div>
+</sc-if>
+
+<sc-if value="{{isOpen}}" hint-placeholder-val="{{ false }}">
+<div class="page" style="position: absolute; inset: 0; background: #F5F2EA; color: #24221F; display: flex; flex-direction: column">
+<svg width="390" height="14" viewBox="0 0 390 14" aria-hidden="true" style="display: block; flex-shrink: 0">
+<rect width="390" height="14" fill="#EDE6D8"></rect>
+<g filter="url(#marble)"><rect x="-40" y="-20" width="470" height="12" fill="#7A2E2E"></rect><rect x="-40" y="-6" width="470" height="8" fill="#3E5C7A"></rect><rect x="-40" y="4" width="470" height="10" fill="#C9A24A"></rect><rect x="-40" y="16" width="470" height="10" fill="#2F4A3E"></rect></g>
+</svg>
+<svg width="14" height="96" viewBox="0 0 14 96" aria-hidden="true" style="position: absolute; top: 14px; right: 34px"><path d="M0 0h14v96l-7-8-7 8z" fill="{{vol.color}}"></path></svg>
+
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 6px 12px 0 8px">
+<button type="button" onClick="{{close}}" style="min-height: 44px; display: flex; align-items: center; gap: 6px; border: none; background: none; padding: 0 8px; cursor: pointer; font-size: 14px; font-style: italic; color: #24221F">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#24221F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+Band zurückstellen
+</button>
+<div style="font-size: 13px; font-variant: small-caps; letter-spacing: 0.06em; color: #5E5850; padding-right: 40px">Meine Bibliothek</div>
+</div>
+
+<div style="flex-grow: 1; overflow-y: auto; padding: 26px 30px 20px 30px; display: flex; flex-direction: column">
+<h2 style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.1">{{vol.name}}</h2>
+<div style="font-size: 15px; font-style: italic; color: #5E5850; margin-top: 6px; line-height: 1.5">{{vol.sub}}</div>
+<div aria-hidden="true" style="width: 34px; height: 2px; margin: 20px 0 6px 0; background: {{vol.color}}"></div>
+
+<sc-if value="{{vol.hasEntries}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column">
+<sc-for list="{{vol.entries}}" as="e" hint-placeholder-count="4">
+<button type="button" style="display: flex; gap: 14px; align-items: flex-start; border: none; border-bottom: 1px solid #DDD6C8; background: none; padding: 16px 0; cursor: pointer; text-align: left; color: #24221F">
+<span aria-hidden="true" style="{{e.thumb}}"></span>
+<span style="display: flex; flex-direction: column; gap: 3px; min-width: 0; flex-grow: 1">
+<span style="font-size: 18px; line-height: 1.25">{{e.title}}</span>
+<span style="font-size: 14px; font-style: italic; color: #5E5850">{{e.author}}</span>
+<sc-if value="{{e.hasStars}}" hint-placeholder-val="{{ false }}">
+<span style="{{e.starColor}}" aria-label="{{e.starLabel}}">
+<sc-for list="{{e.stars}}" as="st" hint-placeholder-count="5"><svg width="13" height="13" viewBox="0 0 24 24" aria-hidden="true" style="margin-right: 1px"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z" fill="{{st.fill}}" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path></svg></sc-for>
+</span>
+</sc-if>
+<sc-if value="{{e.hasProgress}}" hint-placeholder-val="{{ false }}">
+<span aria-hidden="true" style="display: block; height: 3px; background: #DDD6C8; margin-top: 4px"><span style="{{e.progress}}"></span></span>
+</sc-if>
+<sc-if value="{{e.hasQuote}}" hint-placeholder-val="{{ false }}">
+<span style="font-size: 14px; font-style: italic; line-height: 1.5; margin-top: 2px">„{{e.quote}}“</span>
+</sc-if>
+<span style="font-size: 12px; color: #5E5850; margin-top: 2px">{{e.meta}}</span>
+</span>
+</button>
+</sc-for>
+</div>
+</sc-if>
+
+<sc-if value="{{vol.isEmpty}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 16px; padding-top: 18px">
+<div style="font-size: 16px; line-height: 1.6">{{vol.empty}}</div>
+<button type="button" style="align-self: flex-start; min-height: 44px; padding: 0 16px; border: 1.5px solid #24221F; border-radius: 2px; background: none; cursor: pointer; font-size: 15px; color: #24221F">{{vol.emptyAction}}</button>
+</div>
+</sc-if>
+
+<svg width="60" height="18" viewBox="0 0 60 18" aria-hidden="true" style="align-self: center; margin-top: 28px"><path d="M2 9 C14 9 18 3 24 3 C28 3 30 6 30 9 C30 6 32 3 36 3 C42 3 46 9 58 9 M24 3 C26 9 28 13 30 15 C32 13 34 9 36 3" fill="none" stroke="#8C8476" stroke-width="1.1" stroke-linecap="round"></path></svg>
+<div style="font-size: 12px; color: #5E5850; text-align: center; margin-top: 18px">Beispieldaten</div>
+</div>
+<svg width="390" height="844" aria-hidden="true" style="position: absolute; inset: 0; pointer-events: none"><rect width="390" height="844" filter="url(#paper)"></rect></svg>
+</div>
+
+<div class="cover" aria-hidden="true" style="{{coverStyle}}">
+<svg width="100%" height="100%" aria-hidden="true" style="position: absolute; inset: 0"><rect width="100%" height="100%" filter="url(#cloth)"></rect></svg>
+<div style="position: absolute; inset: 22px; border: 1px solid #E2C46A"></div>
+<div style="position: relative; font-size: 30px; color: #E2C46A; font-variant: small-caps; letter-spacing: 0.05em; text-align: center; padding: 0 30px">{{vol.name}}</div>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+var VOLUMES = [
+  { name: 'Am Lesen', color: '#6E2B2B', h: 300, w: 50, ribbon: true,
+    sub: 'Was gerade aufgeschlagen auf dem Nachttisch liegt.',
+    entries: [{ title: 'Der stille Garten', author: 'Mara Lind', c: '#B8873A', progress: 45, meta: 'Seite 142 von 312, zuletzt gestern Abend' }] },
+  { name: 'Gelesen', color: '#263A5A', h: 318, w: 54,
+    sub: 'Bücher, die du zu Ende gelesen hast, mit deinen Karten.',
+    entries: [
+      { title: 'Salz und Asche', author: 'Jonas Brehm', c: '#7A2E2E', stars: 4, quote: 'Ich habe die Küste noch Tage danach gerochen.', meta: 'gelesen im September 2026' },
+      { title: 'Die Uhrmacherin', author: 'Lea Sander', c: '#3E5C7A', stars: 5, quote: 'Jede Seite wie ein leises Ticken.', meta: 'gelesen im August 2026' },
+      { title: 'Was der Winter weiß', author: 'Henrik Aal', c: '#4E6B3A', stars: 3.5, meta: 'gelesen im Juli 2026' },
+      { title: 'Kleine Geschichte der Stille', author: 'Ina Roth', c: '#8A6F2B', stars: 4, quote: 'Sachlich und trotzdem tröstlich.', meta: 'gelesen im Juni 2026' }
+    ] },
+  { name: 'Ungelesen im Regal', color: '#4E6B3A', h: 326, w: 50,
+    sub: 'Besitzt du schon. Wartet geduldig.',
+    entries: [
+      { title: 'Das Haus am Moor', author: 'Clara Feld', c: '#4E3550', meta: 'steht seit März 2025 im Regal' },
+      { title: 'Ein Jahr auf See', author: 'Tomas Lund', c: '#3E5C7A', meta: 'geschenkt bekommen, Mai 2026' }
+    ] },
+  { name: 'Wunschliste', color: '#8A6F2B', h: 286, w: 46,
+    sub: 'Noch nicht bei dir.',
+    entries: [
+      { title: 'Die Farbe des Nebels', author: 'Anouk Vries', c: '#5C5C58', quote: 'In einem Schaufenster in Speyer entdeckt.', meta: 'vorgemerkt im Oktober 2026' }
+    ] },
+  { name: 'Abgebrochen', color: '#4E3550', h: 272, w: 44,
+    sub: 'Nicht jedes Buch ist für jetzt.',
+    entries: [
+      { title: 'Der lange Fluss', author: 'Paul Neumann', c: '#263A5A', meta: 'bis Seite 87, falscher Zeitpunkt' }
+    ] },
+  { name: 'Eigene Regale', color: '#4A4A46', h: 304, w: 48,
+    sub: 'Sammlungen, die nur du so ordnest.',
+    entries: [],
+    empty: 'Hier stehen noch keine eigenen Regale. Lege eines an, zum Beispiel für Bücher, die du verschenken möchtest, oder für alles, was du im Urlaub gelesen hast.',
+    emptyAction: 'Regal anlegen' }
+];
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { open: null };
+  }
+  renderVals() {
+    var self = this;
+    var s = this.state;
+    var spines = VOLUMES.map(function (v) {
+      return {
+        name: v.name, ribbon: !!v.ribbon, aria: v.name + ' aufschlagen',
+        open: function () { self.setState({ open: v.name }); },
+        style: 'position: relative; flex: 0 0 ' + v.w + 'px; height: ' + v.h + 'px; background: ' + v.color + '; border: none; border-radius: 3px 3px 1px 1px; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; overflow: visible; box-shadow: inset -4px 0 0 rgba(0,0,0,.18), inset 3px 0 0 rgba(255,255,255,.08)'
+      };
+    });
+    var v = VOLUMES.filter(function (x) { return x.name === s.open; })[0] || VOLUMES[1];
+    var entries = v.entries.map(function (e) {
+      var stars = [];
+      if (e.stars) {
+        for (var n = 1; n <= 5; n++) stars.push({ fill: e.stars >= n ? 'currentColor' : (e.stars === n - 0.5 ? 'url(#halfStar)' : 'none') });
+      }
+      return {
+        title: e.title, author: e.author, meta: e.meta,
+        thumb: 'flex-shrink: 0; width: 34px; height: 50px; border-radius: 1px 3px 3px 1px; background: ' + e.c + '; box-shadow: inset 4px 0 0 rgba(0,0,0,.2), 2px 2px 0 #DDD6C8',
+        hasStars: !!e.stars, stars: stars, starLabel: e.stars ? String(e.stars).replace('.', ',') + ' von 5 Sternen' : '',
+        starColor: 'display: flex; align-items: center; margin-top: 2px; color: ' + v.color,
+        hasProgress: typeof e.progress === 'number',
+        progress: 'display: block; height: 3px; width: ' + (e.progress || 0) + '%; background: ' + v.color,
+        hasQuote: !!e.quote, quote: e.quote || ''
+      };
+    });
+    return {
+      isShelf: !s.open, isOpen: !!s.open, spines: spines,
+      vol: { name: v.name, sub: v.sub, color: v.color, entries: entries, hasEntries: entries.length > 0, isEmpty: entries.length === 0, empty: v.empty || '', emptyAction: v.emptyAction || '' },
+      coverStyle: 'position: absolute; inset: 0; background: ' + v.color + '; display: flex; align-items: center; justify-content: center; pointer-events: none; box-shadow: inset 10px 0 0 rgba(0,0,0,.25)',
+      close: function () { self.setState({ open: null }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

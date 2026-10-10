@@ -12,6 +12,7 @@ _Zuletzt aktualisiert: 10.10.2026_
 - Klick-Prototyp „Buch erfassen“, Version 3 („Karteikarte“) – siehe [prototyp/](prototyp/)
 - Architektur der App bestätigt – siehe [ARCHITEKTUR.md](ARCHITEKTUR.md)
 - Vier Stilrichtungen für die Startseite entworfen, Richtung C „Vorsatzpapier und Buchrücken“ gewählt – siehe [prototyp/stilrichtungen/](prototyp/stilrichtungen/)
+- Klick-Prototyp „Meine Bibliothek“ in Stil C: Regal, Band aufschlagen, Listen als Buchseite – siehe [prototyp/bibliothek/](prototyp/bibliothek/)
 
 **Noch nicht bestätigt**
 - Der Prototyp beginnt noch direkt mit dem Scan und passt damit nicht zur bestätigten Architektur. Er muss neu aufgebaut werden.
@@ -19,7 +20,7 @@ _Zuletzt aktualisiert: 10.10.2026_
 
 ## Nächster Schritt
 
-Mit Arjen abstimmen, welcher Screen als Nächstes im Stil C entsteht.
+Feedback zum aufgeschlagenen Band. Danach: Buchseite eines einzelnen Buches im Stil C.
 
 ## Offene Fragen
 
@@ -30,4 +31,5 @@ Mit Arjen abstimmen, welcher Screen als Nächstes im Stil C entsteht.
 5. Autor bewerten: direkt oder nur indirekt („Mehr von dieser Autorin?“)?
 6. Begriff „SuB“ (Stapel ungelesener Bücher) statt „Ungelesen im Regal“ verwenden?
 7. Endgültige Namen der Hauptbereiche.
-8. Verleih und Verkauf: rechtliche Pflichten als Plattform (u. a. DAC7) – **noch nicht recherchiert, nur als Hinweis genannt.**
+8. Gilt Stil C für die ganze App oder nur für die Bibliothek? (vorerst nur Bibliothek)
+9. Verleih und Verkauf: rechtliche Pflichten als Plattform (u. a. DAC7) – **noch nicht recherchiert, nur als Hinweis genannt.**
