@@ -11,6 +11,7 @@ _Zuletzt aktualisiert: 10.10.2026_
 - Recherche zu Wettbewerbern, Leserwünschen, Bewertungsgewohnheiten, ISBN und Buchdaten-Schnittstellen (siehe [RECHERCHE.md](RECHERCHE.md))
 - Klick-Prototyp „Buch erfassen“, Version 3 („Karteikarte“) – siehe [prototyp/](prototyp/)
 - Architektur der App bestätigt – siehe [ARCHITEKTUR.md](ARCHITEKTUR.md)
+- Vier Stilrichtungen für die Startseite entworfen – siehe [prototyp/stilrichtungen/](prototyp/stilrichtungen/)
 
 **Noch nicht bestätigt**
 - Der Prototyp beginnt noch direkt mit dem Scan und passt damit nicht zur bestätigten Architektur. Er muss neu aufgebaut werden.
@@ -18,7 +19,7 @@ _Zuletzt aktualisiert: 10.10.2026_
 
 ## Nächster Schritt
 
-Designrichtung klären: Bedeutet „malerisch“ gemalte Elemente (z. B. Aquarell-Illustrationen) oder eine ruhige, warme Stimmung ohne Illustrationen? Danach die Startseite „Meine Bibliothek“ entwerfen.
+Arjen wählt aus den vier Stilrichtungen (oder eine Mischung). „Malerisch“ ist geklärt: natürliche Stimmung, malerisch in beiden Bedeutungen – gemalte Buchwelten oder malerische Stimmung.
 
 ## Offene Fragen
 

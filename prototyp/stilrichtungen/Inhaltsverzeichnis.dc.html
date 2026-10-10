@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Meine Bibliothek – Inhaltsverzeichnis</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;1,300;1,400&amp;family=Nanum+Pen+Script&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#FFFFFF}
+a{color:#1C1C1C}a:hover{color:#5D7A52}
+button{font-family:Spectral,serif;color:#1C1C1C}
+button:focus-visible,a:focus-visible{outline:3px solid #9DB58F;outline-offset:2px}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #FFFFFF; color: #1C1C1C; font-family: Spectral, serif; display: flex; flex-direction: column; overflow: hidden; position: relative">
+
+<div style="flex-grow: 1; overflow-y: auto; padding: 56px 30px 12px 30px; display: flex; flex-direction: column">
+<div style="font-size: 14px; font-style: italic; color: #5A5A5A">Die Bücher von zwischen_den_zeilen</div>
+<h1 style="margin: 10px 0 0 0; font-size: 44px; font-weight: 300; line-height: 1.05">Meine<br>Bibliothek</h1>
+<div style="width: 40px; height: 1px; background: #1C1C1C; margin: 26px 0 22px 0"></div>
+<div style="font-size: 17px; font-style: italic; margin-bottom: 8px">Inhalt</div>
+
+<sc-for list="{{rows}}" as="r" hint-placeholder-count="6">
+<div style="position: relative">
+<button type="button" style="width: 100%; display: flex; align-items: baseline; gap: 6px; min-height: 52px; border: none; background: none; padding: 12px 0 0 0; cursor: pointer; text-align: left">
+<span style="font-size: 20px; font-weight: 400; white-space: nowrap">{{r.name}}</span>
+<span aria-hidden="true" style="flex-grow: 1; border-bottom: 1.5px dotted #9A9A9A; transform: translateY(-5px)"></span>
+<span style="font-size: 14px; font-style: italic; color: #5A5A5A; white-space: nowrap">{{r.hint}}</span>
+</button>
+<sc-if value="{{r.hasNote}}" hint-placeholder-val="{{ false }}">
+<div aria-hidden="true" style="position: absolute; right: -6px; top: 46px; font-family: 'Nanum Pen Script', cursive; font-size: 24px; color: #5D7A52; transform: rotate(-4deg)">{{r.note}}</div>
+</sc-if>
+</div>
+</sc-for>
+
+<button type="button" style="align-self: flex-start; margin-top: 40px; min-height: 48px; border: none; background: none; padding: 0; cursor: pointer; font-family: 'Nanum Pen Script', cursive; font-size: 28px; color: #3D3D3D; display: flex; align-items: center; gap: 8px">
+<svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M11 3 C10.6 8 11.3 14 10.8 19 M3 11.4 C8 10.9 14 11.5 19 10.8" stroke="#3D3D3D" stroke-width="1.8" fill="none" stroke-linecap="round"></path></svg>
+Neues Buch erfassen
+</button>
+</div>
+
+<svg width="150" height="230" viewBox="0 0 150 230" aria-hidden="true" style="position: absolute; right: -18px; bottom: 58px; opacity: 0.9">
+<g fill="none" stroke="#7E9A70" stroke-width="1.2" stroke-linecap="round">
+<path d="M84 228 C80 180 74 120 92 20"></path>
+<path d="M83 200 C64 196 50 186 40 176 M83 200 C100 194 114 186 124 176"></path>
+<path d="M81 176 C62 170 50 160 42 148 M81 176 C98 168 110 160 118 148"></path>
+<path d="M80 152 C64 146 54 136 48 124 M80 152 C96 144 106 134 112 122"></path>
+<path d="M81 128 C68 122 60 112 56 102 M81 128 C94 120 102 110 106 98"></path>
+<path d="M84 104 C74 98 68 90 66 80 M84 104 C94 96 100 88 102 78"></path>
+<path d="M87 80 C80 74 76 68 76 60 M87 80 C94 74 98 66 98 58"></path>
+<path d="M90 56 C86 50 84 46 85 40 M90 56 C94 50 96 46 96 40"></path>
+</g>
+<g fill="#C7D5BD" opacity="0.5"><ellipse cx="62" cy="186" rx="22" ry="6" transform="rotate(20 62 186)"></ellipse><ellipse cx="104" cy="186" rx="22" ry="6" transform="rotate(-20 104 186)"></ellipse><ellipse cx="62" cy="162" rx="20" ry="5" transform="rotate(24 62 162)"></ellipse><ellipse cx="100" cy="160" rx="20" ry="5" transform="rotate(-24 100 160)"></ellipse></g>
+</svg>
+
+<nav aria-label="Hauptbereiche" style="display: flex; justify-content: space-between; padding: 8px 30px 16px 30px; border-top: 1px solid #1C1C1C; margin: 0 0 0 0; background: #FFFFFF; position: relative">
+<a href="#" aria-current="page" style="min-height: 44px; display: flex; align-items: center; text-decoration: none; font-size: 15px; font-style: italic; color: #1C1C1C">Bibliothek</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; text-decoration: none; font-size: 15px; color: #5A5A5A">Schaufenster</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; text-decoration: none; font-size: 15px; color: #5A5A5A">Entdecken</a>
+<a href="#" style="min-height: 44px; display: flex; align-items: center; text-decoration: none; font-size: 15px; color: #5A5A5A">Ich</a>
+</nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    function r(name, hint, note) { return { name: name, hint: hint || '', note: note || '', hasNote: !!note }; }
+    return {
+      rows: [
+        r('Am Lesen', 'Der stille Garten, S. 142', 'heute Abend weiter'),
+        r('Gelesen', ''),
+        r('Ungelesen im Regal', ''),
+        r('Wunschliste', ''),
+        r('Abgebrochen', ''),
+        r('Eigene Regale', '')
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>
