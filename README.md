@@ -26,6 +26,7 @@ Leserinnen und Leser, die ihre Bücher gern ordnen und darüber schreiben – au
 | [ENTSCHEIDUNGEN.md](ENTSCHEIDUNGEN.md) | Entscheidungen mit Datum – getrennt nach „von Arjen entschieden“ und „Vorschlag, noch nicht bestätigt“ |
 | [RECHERCHE.md](RECHERCHE.md) | Rechercheergebnisse mit Quellen |
 | [ARCHITEKTUR.md](ARCHITEKTUR.md) | Aufbau der App: Bereiche, Buchseite, Grundsätze |
+| [PARAMETER.md](PARAMETER.md) | Alle Angaben zu einem Buch und die Statistiken daraus (Entwurf) |
 | [prototyp/](prototyp/) | Aktueller Klick-Prototyp „Buch erfassen“ |
 
 ## Arbeitsweise

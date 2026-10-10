@@ -4,7 +4,7 @@ _Zuletzt aktualisiert: 10.10.2026_
 
 ## Wo wir stehen
 
-**Phase:** Schritt 1 – Bibliothek. Architektur und Stilrichtung stehen.
+**Phase:** Schritt 1 – Bibliothek. Architektur und Stilrichtung stehen, Parameter werden festgelegt.
 
 **Erledigt**
 - Grundkonzept geklärt: private Bibliothek → freiwilliges Schaufenster → Entdecken (siehe [ENTSCHEIDUNGEN.md](ENTSCHEIDUNGEN.md))
@@ -20,13 +20,13 @@ _Zuletzt aktualisiert: 10.10.2026_
 
 ## Nächster Schritt
 
-Feedback zur Buchseite. Dabei auch: Passt die vorgeschlagene Bewertungsstruktur, wenn man sie an einem echten Buch sieht?
+Parameter-Katalog ([PARAMETER.md](PARAMETER.md)) mit Arjen abstimmen: Genre-Liste, Lieblingsautor-Regel, Ort der Statistiken.
 
 ## Offene Fragen
 
 1. Soll die Wirkung eigener Texte („hat jemanden zum Buch gebracht“) öffentlich sichtbar sein oder nur für den Schreibenden?
 2. Soll ein Nutzer mehrere Schaufenster betreiben können?
-3. Welche feste Genre-Liste nutzen wir für die Kategoriesuche?
+3. Welche feste Genre-Liste nutzen wir? (Vorschlag in PARAMETER.md)
 4. Coverbilder: Wie dürfen Standardcover rechtlich genutzt werden (VLB-Lizenz klären)?
 5. Autor bewerten: direkt oder nur indirekt („Mehr von dieser Autorin?“)?
 6. Begriff „SuB“ (Stapel ungelesener Bücher) statt „Ungelesen im Regal“ verwenden?
