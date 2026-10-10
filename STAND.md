@@ -12,7 +12,7 @@ _Zuletzt aktualisiert: 10.10.2026_
 - Klick-Prototyp „Buch erfassen“, Version 3 („Karteikarte“) – siehe [prototyp/](prototyp/)
 - Architektur der App bestätigt – siehe [ARCHITEKTUR.md](ARCHITEKTUR.md)
 - Vier Stilrichtungen für die Startseite entworfen, Richtung C „Vorsatzpapier und Buchrücken“ gewählt – siehe [prototyp/stilrichtungen/](prototyp/stilrichtungen/)
-- Klick-Prototyp „Meine Bibliothek“ in Stil C: Regal, Band aufschlagen, Listen als Buchseite – siehe [prototyp/bibliothek/](prototyp/bibliothek/)
+- Klick-Prototyp „Meine Bibliothek“ in Stil C: Regal, Band aufschlagen, Listen als Buchseite, Buchseite eines Buches – siehe [prototyp/bibliothek/](prototyp/bibliothek/)
 
 **Noch nicht bestätigt**
 - Der Prototyp beginnt noch direkt mit dem Scan und passt damit nicht zur bestätigten Architektur. Er muss neu aufgebaut werden.
@@ -20,7 +20,7 @@ _Zuletzt aktualisiert: 10.10.2026_
 
 ## Nächster Schritt
 
-Feedback zum aufgeschlagenen Band. Danach: Buchseite eines einzelnen Buches im Stil C.
+Feedback zur Buchseite. Dabei auch: Passt die vorgeschlagene Bewertungsstruktur, wenn man sie an einem echten Buch sieht?
 
 ## Offene Fragen
 

@@ -83,31 +83,28 @@ button:focus-visible,a:focus-visible{outline:3px solid #E2C46A;outline-offset:3p
 </div>
 </sc-if>
 
-<sc-if value="{{isOpen}}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{isVolume}}" hint-placeholder-val="{{ false }}">
 <div class="page" style="position: absolute; inset: 0; background: #F5F2EA; color: #24221F; display: flex; flex-direction: column">
 <svg width="390" height="14" viewBox="0 0 390 14" aria-hidden="true" style="display: block; flex-shrink: 0">
 <rect width="390" height="14" fill="#EDE6D8"></rect>
 <g filter="url(#marble)"><rect x="-40" y="-20" width="470" height="12" fill="#7A2E2E"></rect><rect x="-40" y="-6" width="470" height="8" fill="#3E5C7A"></rect><rect x="-40" y="4" width="470" height="10" fill="#C9A24A"></rect><rect x="-40" y="16" width="470" height="10" fill="#2F4A3E"></rect></g>
 </svg>
 <svg width="14" height="96" viewBox="0 0 14 96" aria-hidden="true" style="position: absolute; top: 14px; right: 34px"><path d="M0 0h14v96l-7-8-7 8z" fill="{{vol.color}}"></path></svg>
-
 <div style="display: flex; align-items: center; justify-content: space-between; padding: 6px 12px 0 8px">
-<button type="button" onClick="{{close}}" style="min-height: 44px; display: flex; align-items: center; gap: 6px; border: none; background: none; padding: 0 8px; cursor: pointer; font-size: 14px; font-style: italic; color: #24221F">
+<button type="button" onClick="{{closeVolume}}" style="min-height: 44px; display: flex; align-items: center; gap: 6px; border: none; background: none; padding: 0 8px; cursor: pointer; font-size: 14px; font-style: italic; color: #24221F">
 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#24221F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
 Band zurückstellen
 </button>
 <div style="font-size: 13px; font-variant: small-caps; letter-spacing: 0.06em; color: #5E5850; padding-right: 40px">Meine Bibliothek</div>
 </div>
-
 <div style="flex-grow: 1; overflow-y: auto; padding: 26px 30px 20px 30px; display: flex; flex-direction: column">
 <h2 style="margin: 0; font-size: 34px; font-weight: 400; line-height: 1.1">{{vol.name}}</h2>
 <div style="font-size: 15px; font-style: italic; color: #5E5850; margin-top: 6px; line-height: 1.5">{{vol.sub}}</div>
 <div aria-hidden="true" style="width: 34px; height: 2px; margin: 20px 0 6px 0; background: {{vol.color}}"></div>
-
 <sc-if value="{{vol.hasEntries}}" hint-placeholder-val="{{ true }}">
 <div style="display: flex; flex-direction: column">
 <sc-for list="{{vol.entries}}" as="e" hint-placeholder-count="4">
-<button type="button" style="display: flex; gap: 14px; align-items: flex-start; border: none; border-bottom: 1px solid #DDD6C8; background: none; padding: 16px 0; cursor: pointer; text-align: left; color: #24221F">
+<button type="button" onClick="{{e.open}}" style="display: flex; gap: 14px; align-items: flex-start; border: none; border-bottom: 1px solid #DDD6C8; background: none; padding: 16px 0; cursor: pointer; text-align: left; color: #24221F">
 <span aria-hidden="true" style="{{e.thumb}}"></span>
 <span style="display: flex; flex-direction: column; gap: 3px; min-width: 0; flex-grow: 1">
 <span style="font-size: 18px; line-height: 1.25">{{e.title}}</span>
@@ -129,16 +126,130 @@ Band zurückstellen
 </sc-for>
 </div>
 </sc-if>
-
 <sc-if value="{{vol.isEmpty}}" hint-placeholder-val="{{ false }}">
 <div style="display: flex; flex-direction: column; gap: 16px; padding-top: 18px">
 <div style="font-size: 16px; line-height: 1.6">{{vol.empty}}</div>
 <button type="button" style="align-self: flex-start; min-height: 44px; padding: 0 16px; border: 1.5px solid #24221F; border-radius: 2px; background: none; cursor: pointer; font-size: 15px; color: #24221F">{{vol.emptyAction}}</button>
 </div>
 </sc-if>
-
 <svg width="60" height="18" viewBox="0 0 60 18" aria-hidden="true" style="align-self: center; margin-top: 28px"><path d="M2 9 C14 9 18 3 24 3 C28 3 30 6 30 9 C30 6 32 3 36 3 C42 3 46 9 58 9 M24 3 C26 9 28 13 30 15 C32 13 34 9 36 3" fill="none" stroke="#8C8476" stroke-width="1.1" stroke-linecap="round"></path></svg>
 <div style="font-size: 12px; color: #5E5850; text-align: center; margin-top: 18px">Beispieldaten</div>
+</div>
+</div>
+</sc-if>
+
+<sc-if value="{{isBook}}" hint-placeholder-val="{{ false }}">
+<div class="page" style="position: absolute; inset: 0; background: #F5F2EA; color: #24221F; display: flex; flex-direction: column">
+<div style="display: flex; align-items: center; justify-content: space-between; padding: 8px 12px 0 8px; border-bottom: 1px solid #DDD6C8">
+<button type="button" onClick="{{closeBook}}" style="min-height: 44px; display: flex; align-items: center; gap: 6px; border: none; background: none; padding: 0 8px; cursor: pointer; font-size: 14px; font-style: italic; color: #24221F">
+<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#24221F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"></path></svg>
+{{backLabel}}
+</button>
+<div style="font-size: 13px; font-variant: small-caps; letter-spacing: 0.06em; color: #5E5850; padding-right: 8px">{{vol.name}}</div>
+</div>
+
+<div style="flex-grow: 1; overflow-y: auto; padding: 24px 26px 28px 26px; display: flex; flex-direction: column; gap: 26px">
+
+<div style="display: flex; gap: 18px; align-items: flex-end">
+<div aria-hidden="true" style="{{book.cover}}">
+<svg width="100%" height="100%" aria-hidden="true" style="position: absolute; inset: 0"><rect width="100%" height="100%" filter="url(#cloth)"></rect></svg>
+<div style="position: relative; font-size: 13px; line-height: 1.2; color: #E2C46A; padding: 0 8px 0 14px">{{book.title}}</div>
+</div>
+<div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
+<h2 style="margin: 0; font-size: 26px; font-weight: 400; line-height: 1.15">{{book.title}}</h2>
+<div style="font-size: 16px; font-style: italic">{{book.author}}</div>
+<div style="font-size: 13px; color: #5E5850; line-height: 1.5">{{book.facts}}</div>
+<div style="{{book.statusStyle}}">{{book.status}}</div>
+</div>
+</div>
+
+<button type="button" role="switch" aria-checked="{{showcaseChecked}}" onClick="{{toggleShowcase}}" style="display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 60px; border: 1px solid #DDD6C8; border-radius: 3px; background: #FFFFFF; padding: 10px 14px; cursor: pointer; text-align: left; color: #24221F">
+<span style="display: flex; flex-direction: column; gap: 2px">
+<span style="font-size: 15px">Im Schaufenster zeigen</span>
+<span style="font-size: 12px; font-style: italic; color: #5E5850; line-height: 1.4">{{showcaseHint}}</span>
+</span>
+<span aria-hidden="true" style="{{switchTrack}}"><span style="{{switchKnob}}"></span></span>
+</button>
+
+<section style="display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; align-items: baseline; justify-content: space-between">
+<h3 style="margin: 0; font-size: 19px; font-weight: 400; font-variant: small-caps; letter-spacing: 0.04em">Meine Karte</h3>
+<sc-if value="{{hasCardAction}}" hint-placeholder-val="{{ true }}"><button type="button" style="min-height: 44px; border: none; background: none; padding: 0; cursor: pointer; font-size: 14px; font-style: italic; color: #24221F; text-decoration: underline; text-underline-offset: 4px">{{cardAction}}</button></sc-if>
+</div>
+<sc-if value="{{book.hasCard}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column">
+<div style="display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 10px 0; border-bottom: 1px solid #E6E0D3">
+<div style="font-size: 14px; color: #5E5850">Hat mich erreicht</div>
+<div style="{{book.starColor}}" aria-label="{{book.starLabel}}">
+<sc-for list="{{book.stars}}" as="st" hint-placeholder-count="5"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" style="margin-left: 2px"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z" fill="{{st.fill}}" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"></path></svg></sc-for>
+</div>
+</div>
+<sc-for list="{{book.rows}}" as="r" hint-placeholder-count="6">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 10px 0; border-bottom: 1px solid #E6E0D3">
+<div style="font-size: 14px; color: #5E5850; flex-shrink: 0">{{r.k}}</div>
+<div style="font-size: 15px; text-align: right; line-height: 1.4">{{r.v}}</div>
+</div>
+</sc-for>
+<sc-if value="{{book.hasMarks}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 10px 0; border-bottom: 1px solid #E6E0D3">
+<div style="font-size: 14px; color: #5E5850; flex-shrink: 0">Stark und gehakt</div>
+<div style="display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 10px; font-size: 15px">
+<sc-for list="{{book.marks}}" as="m" hint-placeholder-count="3"><span style="{{m.style}}">{{m.label}}</span></sc-for>
+</div>
+</div>
+</sc-if>
+</div>
+</sc-if>
+<sc-if value="{{book.noCard}}" hint-placeholder-val="{{ false }}">
+<div style="font-size: 15px; line-height: 1.6; font-style: italic; color: #5E5850; padding-top: 4px">{{book.noCardText}}</div>
+</sc-if>
+</section>
+
+<sc-if value="{{book.hasReading}}" hint-placeholder-val="{{ false }}">
+<section style="display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 400; font-variant: small-caps; letter-spacing: 0.04em">Meine Lesart</h3>
+<p style="margin: 0; font-size: 17px; line-height: 1.65; font-style: italic">{{book.reading}}</p>
+<sc-if value="{{book.hasForWhom}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; font-size: 14px; color: #5E5850">Für {{book.forWhom}}</p>
+</sc-if>
+</section>
+</sc-if>
+
+<sc-if value="{{book.hasQuotes}}" hint-placeholder-val="{{ false }}">
+<section style="display: flex; flex-direction: column; gap: 10px">
+<h3 style="margin: 0; font-size: 19px; font-weight: 400; font-variant: small-caps; letter-spacing: 0.04em">Zitate</h3>
+<sc-for list="{{book.quotes}}" as="q" hint-placeholder-count="1">
+<blockquote style="{{q.style}}">
+<div style="font-size: 16px; line-height: 1.6">„{{q.text}}“</div>
+<div style="font-size: 12px; color: #5E5850; margin-top: 6px">Seite {{q.page}}</div>
+</blockquote>
+</sc-for>
+</section>
+</sc-if>
+
+<section style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0 0 4px 0; font-size: 19px; font-weight: 400; font-variant: small-caps; letter-spacing: 0.04em">Mein Exemplar</h3>
+<sc-for list="{{book.copy}}" as="r" hint-placeholder-count="3">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 14px; padding: 9px 0; border-bottom: 1px solid #E6E0D3">
+<div style="font-size: 14px; color: #5E5850">{{r.k}}</div>
+<div style="font-size: 15px; text-align: right">{{r.v}}</div>
+</div>
+</sc-for>
+</section>
+
+<section style="display: flex; flex-direction: column; gap: 4px">
+<h3 style="margin: 0 0 4px 0; font-size: 19px; font-weight: 400; font-variant: small-caps; letter-spacing: 0.04em">Leseverlauf</h3>
+<sc-for list="{{book.history}}" as="h" hint-placeholder-count="2">
+<div style="display: flex; gap: 12px; align-items: baseline; padding: 6px 0">
+<span aria-hidden="true" style="{{h.dot}}"></span>
+<span style="font-size: 15px; flex-grow: 1">{{h.label}}</span>
+<span style="font-size: 13px; color: #5E5850">{{h.date}}</span>
+</div>
+</sc-for>
+</section>
+
+<svg width="60" height="18" viewBox="0 0 60 18" aria-hidden="true" style="align-self: center; margin-top: 6px"><path d="M2 9 C14 9 18 3 24 3 C28 3 30 6 30 9 C30 6 32 3 36 3 C42 3 46 9 58 9 M24 3 C26 9 28 13 30 15 C32 13 34 9 36 3" fill="none" stroke="#8C8476" stroke-width="1.1" stroke-linecap="round"></path></svg>
+<div style="font-size: 12px; color: #5E5850; text-align: center">Beispieldaten</div>
 </div>
 </div>
 </sc-if>
@@ -146,33 +257,54 @@ Band zurückstellen
 </div>
 </x-dc>
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+var HL = 'text-decoration: underline; text-decoration-thickness: 3px; text-underline-offset: 5px; text-decoration-color: ';
+var WAVY = 'text-decoration: underline wavy #A0453B; text-decoration-thickness: 1.5px; text-underline-offset: 5px';
 var VOLUMES = [
   { name: 'Am Lesen', color: '#6E2B2B', h: 300, w: 50, ribbon: true,
     sub: 'Was gerade aufgeschlagen auf dem Nachttisch liegt.',
-    entries: [{ title: 'Der stille Garten', author: 'Mara Lind', c: '#B8873A', progress: 45, meta: 'Seite 142 von 312, zuletzt gestern Abend' }] },
+    entries: [{ title: 'Der stille Garten', author: 'Mara Lind', c: '#B8873A', progress: 45, meta: 'Seite 142 von 312, zuletzt gestern Abend',
+      facts: 'Beispielverlag, 2024, 312 Seiten', status: 'Am Lesen, bei Seite 142',
+      copy: [['Format', 'Hardcover'], ['Steht', 'Nachttisch']],
+      history: [['begonnen', '2. Okt. 2026', true]] }] },
   { name: 'Gelesen', color: '#263A5A', h: 318, w: 54,
     sub: 'Bücher, die du zu Ende gelesen hast, mit deinen Karten.',
     entries: [
-      { title: 'Salz und Asche', author: 'Jonas Brehm', c: '#7A2E2E', stars: 4, quote: 'Ich habe die Küste noch Tage danach gerochen.', meta: 'gelesen im September 2026' },
-      { title: 'Die Uhrmacherin', author: 'Lea Sander', c: '#3E5C7A', stars: 5, quote: 'Jede Seite wie ein leises Ticken.', meta: 'gelesen im August 2026' },
-      { title: 'Was der Winter weiß', author: 'Henrik Aal', c: '#4E6B3A', stars: 3.5, meta: 'gelesen im Juli 2026' },
-      { title: 'Kleine Geschichte der Stille', author: 'Ina Roth', c: '#8A6F2B', stars: 4, quote: 'Sachlich und trotzdem tröstlich.', meta: 'gelesen im Juni 2026' }
+      { title: 'Salz und Asche', author: 'Jonas Brehm', c: '#7A2E2E', stars: 4, quote: 'Ich habe die Küste noch Tage danach gerochen.', meta: 'gelesen im September 2026',
+        facts: 'Beispielverlag, 2023, 384 Seiten, Roman', status: 'Gelesen im September 2026',
+        card: { moods: 'mitgerissen, nachdenklich', flow: 'flüssig', lang: 'schön', tempo: 'ruhig', echo: 'lässt mich nicht los', reread: 'vielleicht', more: 'unbedingt' },
+        strong: ['Atmosphäre', 'Sprache'], weak: ['Ende'],
+        reading: 'Für mich ist es kein Buch über eine Familie, sondern über das Bleiben. Alle wollen weg von der Küste, und am Ende ist sie das Einzige, das jedem von ihnen gehört.',
+        forWhom: 'alle, die Meer und langsame Geschichten mögen',
+        quotes: [{ text: 'Das Salz bleibt, wenn das Wasser längst gegangen ist.', page: 211 }],
+        copy: [['Format', 'Hardcover, Erstausgabe'], ['Besonderheiten', 'signiert'], ['Steht', 'Wohnzimmer, Regal 2']],
+        history: [['begonnen', '2. Sept. 2026', false], ['beendet', '21. Sept. 2026', true]] },
+      { title: 'Die Uhrmacherin', author: 'Lea Sander', c: '#3E5C7A', stars: 5, quote: 'Jede Seite wie ein leises Ticken.', meta: 'gelesen im August 2026',
+        facts: 'Beispielverlag, 2022, 296 Seiten, Roman', status: 'Gelesen im August 2026',
+        card: { moods: 'berührt', flow: 'nicht weglegbar', lang: 'jeder Satz sitzt', tempo: 'ausgewogen', echo: 'denke noch daran', reread: 'ja, sicher', more: 'unbedingt' },
+        strong: ['Figuren', 'Sprache', 'Ende'], weak: [],
+        copy: [['Format', 'Taschenbuch']], history: [['beendet', 'Aug. 2026', true]] },
+      { title: 'Was der Winter weiß', author: 'Henrik Aal', c: '#4E6B3A', stars: 3.5, meta: 'gelesen im Juli 2026',
+        facts: 'Beispielverlag, 2021, 240 Seiten', status: 'Gelesen im Juli 2026',
+        copy: [['Format', 'E-Book']], history: [['beendet', 'Juli 2026', true]] },
+      { title: 'Kleine Geschichte der Stille', author: 'Ina Roth', c: '#8A6F2B', stars: 4, quote: 'Sachlich und trotzdem tröstlich.', meta: 'gelesen im Juni 2026',
+        facts: 'Beispielverlag, 2020, 208 Seiten, Sachbuch', status: 'Gelesen im Juni 2026',
+        copy: [['Format', 'Hardcover']], history: [['beendet', 'Juni 2026', true]] }
     ] },
   { name: 'Ungelesen im Regal', color: '#4E6B3A', h: 326, w: 50,
     sub: 'Besitzt du schon. Wartet geduldig.',
     entries: [
-      { title: 'Das Haus am Moor', author: 'Clara Feld', c: '#4E3550', meta: 'steht seit März 2025 im Regal' },
-      { title: 'Ein Jahr auf See', author: 'Tomas Lund', c: '#3E5C7A', meta: 'geschenkt bekommen, Mai 2026' }
+      { title: 'Das Haus am Moor', author: 'Clara Feld', c: '#4E3550', meta: 'steht seit März 2025 im Regal', facts: 'Beispielverlag, 2019, 420 Seiten', status: 'Ungelesen, seit März 2025', copy: [['Format', 'Taschenbuch'], ['Steht', 'Flur, oberstes Fach']], history: [['gekauft', 'März 2025', true]] },
+      { title: 'Ein Jahr auf See', author: 'Tomas Lund', c: '#3E5C7A', meta: 'geschenkt bekommen, Mai 2026', facts: 'Beispielverlag, 2025, 350 Seiten', status: 'Ungelesen, geschenkt', copy: [['Herkunft', 'Geschenk']], history: [['geschenkt bekommen', 'Mai 2026', true]] }
     ] },
   { name: 'Wunschliste', color: '#8A6F2B', h: 286, w: 46,
     sub: 'Noch nicht bei dir.',
     entries: [
-      { title: 'Die Farbe des Nebels', author: 'Anouk Vries', c: '#5C5C58', quote: 'In einem Schaufenster in Speyer entdeckt.', meta: 'vorgemerkt im Oktober 2026' }
+      { title: 'Die Farbe des Nebels', author: 'Anouk Vries', c: '#5C5C58', quote: 'In einem Schaufenster in Speyer entdeckt.', meta: 'vorgemerkt im Oktober 2026', facts: 'Beispielverlag, 2026, 280 Seiten', status: 'Auf der Wunschliste', copy: [], history: [['vorgemerkt', 'Okt. 2026', true]] }
     ] },
   { name: 'Abgebrochen', color: '#4E3550', h: 272, w: 44,
     sub: 'Nicht jedes Buch ist für jetzt.',
     entries: [
-      { title: 'Der lange Fluss', author: 'Paul Neumann', c: '#263A5A', meta: 'bis Seite 87, falscher Zeitpunkt' }
+      { title: 'Der lange Fluss', author: 'Paul Neumann', c: '#263A5A', meta: 'bis Seite 87, falscher Zeitpunkt', facts: 'Beispielverlag, 2018, 512 Seiten', status: 'Abgebrochen bei Seite 87', copy: [['Format', 'Hardcover']], history: [['begonnen', 'Apr. 2026', false], ['abgebrochen bei Seite 87', 'Mai 2026', true]] }
     ] },
   { name: 'Eigene Regale', color: '#4A4A46', h: 304, w: 48,
     sub: 'Sammlungen, die nur du so ordnest.',
@@ -180,10 +312,15 @@ var VOLUMES = [
     empty: 'Hier stehen noch keine eigenen Regale. Lege eines an, zum Beispiel für Bücher, die du verschenken möchtest, oder für alles, was du im Urlaub gelesen hast.',
     emptyAction: 'Regal anlegen' }
 ];
+function starList(n) {
+  var out = [];
+  for (var i = 1; i <= 5; i++) out.push({ fill: n >= i ? 'currentColor' : (n === i - 0.5 ? 'url(#halfStar)' : 'none') });
+  return out;
+}
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { open: null };
+    this.state = { open: null, book: null, showcase: {} };
   }
   renderVals() {
     var self = this;
@@ -191,30 +328,59 @@ class Component extends DCLogic {
     var spines = VOLUMES.map(function (v) {
       return {
         name: v.name, ribbon: !!v.ribbon, aria: v.name + ' aufschlagen',
-        open: function () { self.setState({ open: v.name }); },
+        open: function () { self.setState({ open: v.name, book: null }); },
         style: 'position: relative; flex: 0 0 ' + v.w + 'px; height: ' + v.h + 'px; background: ' + v.color + '; border: none; border-radius: 3px 3px 1px 1px; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0; overflow: visible; box-shadow: inset -4px 0 0 rgba(0,0,0,.18), inset 3px 0 0 rgba(255,255,255,.08)'
       };
     });
     var v = VOLUMES.filter(function (x) { return x.name === s.open; })[0] || VOLUMES[1];
     var entries = v.entries.map(function (e) {
-      var stars = [];
-      if (e.stars) {
-        for (var n = 1; n <= 5; n++) stars.push({ fill: e.stars >= n ? 'currentColor' : (e.stars === n - 0.5 ? 'url(#halfStar)' : 'none') });
-      }
       return {
         title: e.title, author: e.author, meta: e.meta,
+        open: function () { self.setState({ book: e.title }); },
         thumb: 'flex-shrink: 0; width: 34px; height: 50px; border-radius: 1px 3px 3px 1px; background: ' + e.c + '; box-shadow: inset 4px 0 0 rgba(0,0,0,.2), 2px 2px 0 #DDD6C8',
-        hasStars: !!e.stars, stars: stars, starLabel: e.stars ? String(e.stars).replace('.', ',') + ' von 5 Sternen' : '',
+        hasStars: !!e.stars, stars: e.stars ? starList(e.stars) : [], starLabel: e.stars ? String(e.stars).replace('.', ',') + ' von 5 Sternen' : '',
         starColor: 'display: flex; align-items: center; margin-top: 2px; color: ' + v.color,
         hasProgress: typeof e.progress === 'number',
         progress: 'display: block; height: 3px; width: ' + (e.progress || 0) + '%; background: ' + v.color,
         hasQuote: !!e.quote, quote: e.quote || ''
       };
     });
+    var b = v.entries.filter(function (x) { return x.title === s.book; })[0] || v.entries[0] || {};
+    var isRead = v.name === 'Gelesen';
+    var card = b.card;
+    var rows = card ? [['Gefühl', card.moods], ['Lesefluss', card.flow], ['Sprache', card.lang], ['Tempo', card.tempo], ['Wirkt nach', card.echo], ['Wieder lesen', card.reread], ['Mehr von ' + b.author, card.more]].map(function (r) { return { k: r[0], v: r[1] }; }) : [];
+    var marks = (b.strong || []).map(function (m) { return { label: m, style: HL + v.color }; }).concat((b.weak || []).map(function (m) { return { label: m, style: WAVY }; }));
+    var shown = !!s.showcase[b.title];
+    var noCardText = isRead ? 'Für dieses Buch gibt es noch keine Karte. Schreib auf, wie es dich erreicht hat, solange du dich gut erinnerst.' : (v.name === 'Abgebrochen' ? 'Abgebrochene Bücher bekommen keine Sterne. Du kannst dir notieren, warum es gerade nicht gepasst hat.' : 'Die Karte entsteht, wenn du das Buch gelesen hast.');
+    var book = {
+      title: b.title || '', author: b.author || '', facts: b.facts || '', status: b.status || '',
+      statusStyle: 'align-self: flex-start; margin-top: 6px; font-size: 13px; font-style: italic; color: #FFFFFF; background: ' + v.color + '; padding: 3px 10px; border-radius: 2px',
+      cover: 'position: relative; flex-shrink: 0; width: 96px; height: 142px; background: ' + (b.c || '#5C5C58') + '; border-radius: 2px 5px 5px 2px; box-shadow: inset 8px 0 0 rgba(0,0,0,.22), 5px 6px 0 #DDD6C8; display: flex; align-items: flex-end; padding-bottom: 14px; box-sizing: border-box; overflow: hidden',
+      hasCard: !!b.stars, noCard: !b.stars, noCardText: noCardText,
+      stars: b.stars ? starList(b.stars) : [], starLabel: b.stars ? String(b.stars).replace('.', ',') + ' von 5 Sternen' : '',
+      starColor: 'display: flex; align-items: center; color: ' + v.color,
+      rows: rows, marks: marks, hasMarks: marks.length > 0,
+      hasReading: !!b.reading, reading: b.reading || '', hasForWhom: !!b.forWhom, forWhom: b.forWhom || '',
+      hasQuotes: !!(b.quotes && b.quotes.length),
+      quotes: (b.quotes || []).map(function (q) { return { text: q.text, page: q.page, style: 'margin: 0; padding: 4px 0 4px 16px; border-left: 2px solid ' + v.color }; }),
+      copy: (b.copy && b.copy.length ? b.copy : [['Format', 'noch nicht angegeben']]).map(function (r) { return { k: r[0], v: r[1] }; }),
+      history: (b.history || []).map(function (h) { return { label: h[0], date: h[1], dot: 'flex-shrink: 0; width: 9px; height: 9px; border-radius: 5px; border: 1.5px solid ' + v.color + '; background: ' + (h[2] ? v.color : 'transparent') }; })
+    };
     return {
-      isShelf: !s.open, isOpen: !!s.open, spines: spines,
+      isShelf: !s.open, isVolume: !!s.open && !s.book, isBook: !!s.open && !!s.book,
+      spines: spines,
       vol: { name: v.name, sub: v.sub, color: v.color, entries: entries, hasEntries: entries.length > 0, isEmpty: entries.length === 0, empty: v.empty || '', emptyAction: v.emptyAction || '' },
-      close: function () { self.setState({ open: null }); }
+      book: book,
+      backLabel: 'Zurück zu ' + v.name,
+      cardAction: b.stars ? 'Karte bearbeiten' : (isRead ? 'Karte schreiben' : ''),
+      hasCardAction: !!(b.stars || isRead),
+      showcaseChecked: shown ? 'true' : 'false',
+      showcaseHint: shown ? 'Sichtbar: Sterne, Lesart und Zitate. Exemplar und Verlauf bleiben privat.' : 'Aus. Nichts von diesem Buch ist öffentlich.',
+      switchTrack: 'flex-shrink: 0; width: 46px; height: 28px; border-radius: 14px; position: relative; background: ' + (shown ? v.color : '#CFC8B9'),
+      switchKnob: 'position: absolute; top: 3px; left: ' + (shown ? '21px' : '3px') + '; width: 22px; height: 22px; border-radius: 11px; background: #FFFFFF',
+      toggleShowcase: function () { var m = Object.assign({}, s.showcase); m[b.title] = !shown; self.setState({ showcase: m }); },
+      closeVolume: function () { self.setState({ open: null, book: null }); },
+      closeBook: function () { self.setState({ book: null }); }
     };
   }
 }
