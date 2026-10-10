@@ -22,6 +22,7 @@ Getrennt nach Herkunft, damit klar ist, was feststeht und was nur vorgeschlagen 
 | 10.10.2026 | Arbeitsweise: Karpathy-Guidelines, Stand im Repo dokumentieren, regelmäßig zu GitHub pushen. Keine eigenständigen Entscheidungen ohne Abstimmung. |
 | 10.10.2026 | Die App braucht eine klare Struktur statt direktem Einstieg in den Scan. Architektur gemäß [ARCHITEKTUR.md](ARCHITEKTUR.md) bestätigt: Startseite ist die Bibliothek, vier Hauptbereiche, „Ungelesen im Regal“ und „Wunschliste“ getrennt. Bereichsnamen bleiben vorerst Platzhalter. |
 | 10.10.2026 | Designrichtung: malerisch, natürlich, introvertiert – keine 08/15-KI-Struktur. „Malerisch“ in zweifacher Bedeutung: gemalte Designs aus Buchwelten oder eine malerische Stimmung. |
+| 10.10.2026 | Stilrichtung C „Vorsatzpapier und Buchrücken“ gewählt: marmoriertes Vorsatzpapier, Listen als Buchrücken in Leinen mit Goldprägung, „Neues Buch erfassen“ als Lücke im Regal. |
 
 ## Vorschläge von Claude – noch nicht bestätigt
 

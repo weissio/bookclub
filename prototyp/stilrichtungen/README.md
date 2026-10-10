@@ -1,6 +1,6 @@
 # Stilrichtungen für „Meine Bibliothek“
 
-Vier Vorschläge für die Startseite, alle mit demselben Inhalt nach [ARCHITEKTUR.md](../../ARCHITEKTUR.md). Statische Ansichten zum Vergleichen, noch nicht ausgewählt.
+Vier Vorschläge für die Startseite, alle mit demselben Inhalt nach [ARCHITEKTUR.md](../../ARCHITEKTUR.md). Statische Ansichten zum Vergleichen. **Gewählt: C** (10.10.2026).
 
 | Datei | Richtung | Malerisch durch |
 |---|---|---|
