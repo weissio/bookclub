@@ -51,6 +51,15 @@ Kein eigenes Modul, aber das zentrale Element: Jedes Buch hat genau eine Buchsei
 - **Kein Feed, keine Benachrichtigungen, keine Follower, keine Zähler auf der Startseite.** Die App drängt nicht.
 - **Vier Hauptbereiche** in der Navigation. Begegnungen kommen später als fünfter dazu.
 
+## App-Grundsätze für Bedienung und Leistung
+
+_Von Arjen vorgegeben am 10.10.2026._
+
+- **Tippflächen** mindestens 44 × 44 Punkt; Listeneinträge über die ganze Zeile antippbar.
+- **Animationen nur als Antwort auf ein Tippen**, kurz (höchstens etwa 200 ms) und einfach (Einblenden statt 3D-Bewegung). Keine dauerhaft laufenden Animationen.
+- **Texturen** (Leinen, Marmorpapier, Papier) in der echten App als fertige Bilder, nicht als live berechnete Grafikfilter. Keine Ebenen über dem ganzen Bildschirm, die beim Scrollen neu berechnet werden.
+- Bei „Bewegung reduzieren“ im System entfallen Animationen ganz.
+
 ## Umfang je Schritt
 
 | Schritt | Umfang |

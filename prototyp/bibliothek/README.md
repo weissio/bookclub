@@ -5,8 +5,8 @@
 ## Ablauf
 
 1. Regal mit sechs Bänden (Am Lesen, Gelesen, Ungelesen im Regal, Wunschliste, Abgebrochen, Eigene Regale) und einer Lücke für „Neues Buch erfassen“.
-2. Antippen eines Bandes: Der Leinendeckel schwingt auf (einzige Animation, entfällt bei reduzierter Bewegung).
-3. Darunter eine gesetzte Buchseite mit Vorsatzpapier-Kante, Lesebändchen in der Farbe des Bandes und dem Inhalt der Liste.
+2. Antippen eines Bandes blendet in 150 ms eine gesetzte Buchseite ein (entfällt bei reduzierter Bewegung). Der aufschwingende 3D-Deckel aus der ersten Fassung wurde entfernt.
+3. Die Buchseite hat eine Vorsatzpapier-Kante, ein Lesebändchen in der Farbe des Bandes und zeigt den Inhalt der Liste.
 4. „Band zurückstellen“ führt zurück ins Regal.
 
 Leere Bände zeigen einen Hinweis mit Aktion (z. B. „Regal anlegen“). Alle Bücher sind erfundene Beispieldaten.
