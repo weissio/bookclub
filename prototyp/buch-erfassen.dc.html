@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Buch einstellen</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&amp;family=Kalam:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#22324F}
+a{color:#FFFFFF}a:hover{color:#C9D3E3}
+button{font-family:"Courier Prime",monospace;color:#000000}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #F7E46A;outline-offset:2px}
+textarea::placeholder,input::placeholder{color:#6F7C99;opacity:1}
+.stamp{animation:press .38s cubic-bezier(.2,.9,.3,1.2) both}
+@keyframes press{0%{transform:rotate(-9deg) scale(1.7);opacity:0}65%{transform:rotate(-9deg) scale(.95);opacity:.92}100%{transform:rotate(-9deg) scale(1);opacity:.88}}
+@media (prefers-reduced-motion: reduce){.stamp{animation:none}}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: #22324F; color: #000000; font-family: 'Courier Prime', monospace; display: flex; flex-direction: column; overflow: hidden; position: relative">
+<svg width="0" height="0" style="position: absolute" aria-hidden="true">
+<defs>
+<linearGradient id="halfInk"><stop offset="50%" stop-color="#1D2C6E"></stop><stop offset="50%" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient>
+<filter id="grain"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="n"></feTurbulence><feDisplacementMap in="SourceGraphic" in2="n" scale="2.2"></feDisplacementMap></filter>
+</defs>
+</svg>
+
+<div style="padding: 18px 16px 10px 16px; display: flex; align-items: baseline; justify-content: space-between">
+<div style="font-family: Kalam, cursive; font-size: 24px; font-weight: 700; color: #FFFFFF">Meine Bibliothek</div>
+<div style="font-size: 13px; color: #C9D3E3">nur für dich</div>
+</div>
+
+<div style="flex-grow: 1; overflow-y: auto; padding: 8px 16px 24px 16px; display: flex; flex-direction: column; gap: 22px">
+
+<sc-if value="{{isScan}}" hint-placeholder-val="{{ true }}">
+<div style="display: flex; flex-direction: column; gap: 22px">
+<div style="font-size: 22px; line-height: 1.35; color: #FFFFFF">Welches Buch kommt ins Regal?</div>
+<div style="height: 300px; border-radius: 10px; background: #172238; position: relative; display: flex; align-items: center; justify-content: center">
+<div style="width: 250px; height: 130px; position: relative">
+<div style="position: absolute; left: 0; top: 0; width: 26px; height: 26px; border-left: 3px solid #FFFFFF; border-top: 3px solid #FFFFFF"></div>
+<div style="position: absolute; right: 0; top: 0; width: 26px; height: 26px; border-right: 3px solid #FFFFFF; border-top: 3px solid #FFFFFF"></div>
+<div style="position: absolute; left: 0; bottom: 0; width: 26px; height: 26px; border-left: 3px solid #FFFFFF; border-bottom: 3px solid #FFFFFF"></div>
+<div style="position: absolute; right: 0; bottom: 0; width: 26px; height: 26px; border-right: 3px solid #FFFFFF; border-bottom: 3px solid #FFFFFF"></div>
+<div style="position: absolute; left: 14px; right: 14px; top: 64px; height: 2px; background: #C8372D"></div>
+</div>
+<div style="position: absolute; bottom: 18px; left: 0; right: 0; text-align: center; font-size: 14px; color: #C9D3E3">Strichcode hinten auf dem Buch</div>
+</div>
+<button type="button" onClick="{{scan}}" style="min-height: 54px; border-radius: 6px; border: none; background: #FFFFFF; font-size: 17px; font-weight: 700; cursor: pointer">Scannen (Demo)</button>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="isbn" style="font-size: 14px; color: #FFFFFF">Oder die ISBN abtippen</label>
+<div style="display: flex; gap: 8px">
+<input id="isbn" inputmode="numeric" placeholder="978-3-…" style="flex-grow: 1; min-height: 48px; border-radius: 4px; border: none; padding: 0 14px; font-size: 17px; font-family: 'Courier Prime', monospace; background: #FCFCFA; color: #000000">
+<button type="button" onClick="{{scan}}" style="min-height: 48px; padding: 0 16px; border-radius: 4px; border: 2px solid #FFFFFF; background: none; color: #FFFFFF; font-size: 15px; font-weight: 700; cursor: pointer">Suchen</button>
+</div>
+</div>
+<button type="button" onClick="{{scan}}" style="min-height: 44px; background: none; border: none; color: #FFFFFF; font-size: 15px; text-decoration: underline; text-underline-offset: 4px; cursor: pointer; align-self: flex-start; padding: 0">Buch ohne ISBN von Hand anlegen</button>
+</div>
+</sc-if>
+
+<sc-if value="{{isFound}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 22px">
+
+<div style="display: flex; gap: 18px; align-items: flex-end">
+<sc-if value="{{coverStandard}}" hint-placeholder-val="{{ true }}">
+<div style="width: 104px; height: 156px; flex-shrink: 0; transform: rotate(-3deg); background: #B8873A; border-radius: 2px 5px 5px 2px; box-shadow: inset 9px 0 0 #8F6626, inset 10px 0 0 #C99A4C, 6px 8px 0 #172238; display: flex; flex-direction: column; justify-content: space-between; padding: 14px 10px 12px 18px; box-sizing: border-box; color: #FFFFFF">
+<div style="font-family: Kalam, cursive; font-size: 19px; line-height: 1.05; font-weight: 700">Der stille Garten</div>
+<div style="font-size: 11px">Mara Lind</div>
+</div>
+</sc-if>
+<sc-if value="{{coverOwn}}" hint-placeholder-val="{{ false }}">
+<div style="width: 112px; flex-shrink: 0; transform: rotate(-3deg); background: #FCFCFA; padding: 7px 7px 22px 7px; box-shadow: 6px 8px 0 #172238">
+<div style="height: 134px; background: #DCE3EE; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; color: #22324F; font-size: 12px; text-align: center">
+<svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#22324F" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h3l2-3h6l2 3h3v11H4z"></path><circle cx="12" cy="13" r="3.5"></circle></svg>
+Dein Exemplar fotografieren
+</div>
+</div>
+</sc-if>
+<div style="display: flex; flex-direction: column; gap: 6px; color: #FFFFFF; padding-bottom: 4px; min-width: 0">
+<div style="font-size: 19px; font-weight: 700; line-height: 1.2">Der stille Garten</div>
+<div style="font-size: 15px">Mara Lind</div>
+<div style="font-size: 13px; color: #C9D3E3; line-height: 1.5">Beispielverlag, 2024<br>312 Seiten, Roman</div>
+<div style="display: flex; gap: 14px; margin-top: 4px">
+<sc-for list="{{coverLinks}}" as="c" hint-placeholder-count="2">
+<button type="button" aria-pressed="{{c.pressed}}" onClick="{{c.pick}}" style="{{c.style}}">{{c.label}}</button>
+</sc-for>
+</div>
+</div>
+</div>
+
+<div style="position: relative; background: #FCFCFA; border-radius: 3px; box-shadow: 0 3px 0 #172238; display: flex; flex-direction: column">
+<div style="padding: 16px 18px 10px 18px; border-bottom: 2px solid #C8372D; display: flex; flex-direction: column; gap: 2px; min-height: 52px; justify-content: flex-end">
+<div style="font-size: 13px">Lind, Mara</div>
+<div style="font-size: 17px; font-weight: 700">Der stille Garten</div>
+</div>
+
+<sc-for list="{{stampList}}" as="sp" hint-placeholder-count="0">
+<sc-if value="{{sp.active}}" hint-placeholder-val="{{ false }}">
+<div class="stamp" aria-hidden="true" style="position: absolute; right: 14px; top: 10px; border: 3px double #C8372D; border-radius: 4px; padding: 4px 10px; color: #C8372D; text-align: center; transform: rotate(-9deg); filter: url(#grain); background: rgba(252,252,250,.6)">
+<div style="font-size: 17px; font-weight: 700; letter-spacing: 0.04em">{{sp.big}}</div>
+<div style="font-size: 11px; font-weight: 700">{{today}}</div>
+</div>
+</sc-if>
+</sc-for>
+
+<div style="padding: 16px 18px 20px 18px; display: flex; flex-direction: column; gap: 26px">
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 15px; font-weight: 700">Lesestand stempeln</div>
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+<sc-for list="{{stampButtons}}" as="b" hint-placeholder-count="4">
+<button type="button" aria-pressed="{{b.pressed}}" onClick="{{b.pick}}" style="{{b.style}}">{{b.label}}</button>
+</sc-for>
+</div>
+</div>
+
+<sc-if value="{{isRead}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 26px">
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 15px; font-weight: 700">Wie sehr hat es dich erreicht?</div>
+<div style="display: flex; align-items: center">
+<sc-for list="{{stars}}" as="st" hint-placeholder-count="5">
+<button type="button" aria-label="{{st.label}}" onClick="{{st.pick}}" style="width: 48px; height: 48px; border: none; background: none; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: center">
+<svg width="36" height="36" viewBox="0 0 24 24" fill="{{st.fill}}" stroke="#1D2C6E" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12.1 2.6l2.5 6.2 6.6.5-5.1 4.3 1.7 6.6-5.8-3.7-5.7 3.9 1.5-6.7-5.2-4.2 6.7-.7z"></path></svg>
+</button>
+</sc-for>
+<div style="margin-left: 6px; font-family: Kalam, cursive; font-size: 21px; color: #1D2C6E">{{ratingText}}</div>
+</div>
+<div style="font-size: 13px; color: #4A4F5C">Nochmal tippen: halber Stern.</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 15px; font-weight: 700">Kreis ein, was es mit dir gemacht hat</div>
+<div style="display: flex; flex-wrap: wrap; column-gap: 4px">
+<sc-for list="{{moodWords}}" as="w" hint-placeholder-count="8">
+<button type="button" aria-pressed="{{w.pressed}}" onClick="{{w.pick}}" style="min-height: 44px; border: none; background: none; padding: 0 4px; cursor: pointer; display: inline-flex; align-items: center"><span style="{{w.style}}">{{w.label}}</span></button>
+</sc-for>
+</div>
+</div>
+
+<sc-for list="{{scales}}" as="sc" hint-placeholder-count="2">
+<div style="display: flex; flex-direction: column; gap: 4px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; gap: 10px">
+<div style="font-size: 15px; font-weight: 700">{{sc.title}}</div>
+<div style="font-family: Kalam, cursive; font-size: 19px; color: #1D2C6E; text-align: right">{{sc.current}}</div>
+</div>
+<div style="font-size: 13px; color: #4A4F5C">{{sc.hint}}</div>
+<div style="display: flex; position: relative; margin-top: 4px" role="group" aria-label="{{sc.title}}">
+<div aria-hidden="true" style="position: absolute; left: 0; right: 0; top: 10px; height: 9px; background: repeating-linear-gradient(to right, #B5AFA3 0, #B5AFA3 1px, #F1EDE4 1px, #F1EDE4 3px); border-radius: 2px"></div>
+<sc-for list="{{sc.steps}}" as="s" hint-placeholder-count="5">
+<button type="button" aria-label="{{s.label}}" aria-pressed="{{s.pressed}}" onClick="{{s.pick}}" style="flex: 1; height: 60px; border: none; background: none; padding: 0; cursor: pointer; position: relative; display: flex; justify-content: center">
+<sc-if value="{{s.on}}" hint-placeholder-val="{{ false }}">
+<svg width="16" height="46" viewBox="0 0 16 46" aria-hidden="true" style="position: absolute; top: 4px"><path d="M1 0h14v46l-7-7-7 7z" fill="#C8372D"></path></svg>
+</sc-if>
+</button>
+</sc-for>
+</div>
+<div style="display: flex; justify-content: space-between; font-size: 12px; color: #4A4F5C">
+<div>{{sc.left}}</div>
+<div>{{sc.right}}</div>
+</div>
+</div>
+</sc-for>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 15px; font-weight: 700">Tempo</div>
+<div style="display: flex; flex-wrap: wrap; column-gap: 4px">
+<sc-for list="{{tempoWords}}" as="w" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{w.pressed}}" onClick="{{w.pick}}" style="min-height: 44px; border: none; background: none; padding: 0 4px; cursor: pointer; display: inline-flex; align-items: center"><span style="{{w.style}}">{{w.label}}</span></button>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 15px; font-weight: 700">Was war stark, wo hat es gehakt?</div>
+<div style="font-size: 13px; color: #4A4F5C; line-height: 1.45">Einmal tippen markiert, zweimal unterstreicht gewellt.</div>
+<div style="display: flex; flex-wrap: wrap; column-gap: 2px">
+<sc-for list="{{aspects}}" as="w" hint-placeholder-count="10">
+<button type="button" aria-label="{{w.aria}}" onClick="{{w.pick}}" style="min-height: 44px; border: none; background: none; padding: 0 5px; cursor: pointer; display: inline-flex; align-items: center"><span style="{{w.style}}">{{w.label}}</span></button>
+</sc-for>
+</div>
+<div style="display: flex; gap: 18px; font-size: 13px; color: #4A4F5C; margin-top: 2px">
+<span><span style="background: linear-gradient(transparent 45%, #F7E46A 45%, #F7E46A 90%, transparent 90%); padding: 0 3px">so</span> = stark</span>
+<span><span style="text-decoration: underline wavy #C8372D; text-decoration-thickness: 2px; text-underline-offset: 5px">so</span> = hat gehakt</span>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 14px">
+<sc-for list="{{checkGroups}}" as="g" hint-placeholder-count="3">
+<div style="display: flex; flex-direction: column; gap: 0px" role="group" aria-label="{{g.title}}">
+<div style="font-size: 15px; font-weight: 700; margin-bottom: 2px">{{g.title}}</div>
+<sc-for list="{{g.options}}" as="o" hint-placeholder-count="3">
+<button type="button" role="radio" aria-checked="{{o.pressed}}" onClick="{{o.pick}}" style="min-height: 40px; border: none; background: none; padding: 0; cursor: pointer; display: flex; align-items: center; gap: 10px; font-size: 15px; text-align: left">
+<svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><rect x="2" y="2" width="18" height="18" fill="none" stroke="#000000" stroke-width="1.4"></rect><sc-if value="{{o.on}}" hint-placeholder-val="{{ false }}"><path d="M4 11.5l4.5 5.5L20 1.5" fill="none" stroke="#1D2C6E" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"></path></sc-if></svg>
+{{o.label}}
+</button>
+</sc-for>
+</div>
+</sc-for>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 8px">
+<label for="reading" style="font-size: 15px; font-weight: 700">Meine Lesart</label>
+<div style="font-size: 13px; color: #4A4F5C; line-height: 1.45">Was hast du in dem Buch gesehen? Schreib es so, wie du es einer Freundin erzählen würdest.</div>
+<textarea id="reading" rows="5" value="{{reading}}" onChange="{{setReading}}" placeholder="…" style="border: none; padding: 0 2px; margin: 0; font-family: Kalam, cursive; font-size: 20px; line-height: 34px; color: #1D2C6E; resize: none; background-color: transparent; background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 33px, #A9C1DE 33px, #A9C1DE 34px)"></textarea>
+<label for="forwhom" style="font-size: 15px; font-weight: 700; margin-top: 10px">Für wen?</label>
+<input id="forwhom" value="{{forWhom}}" onChange="{{setForWhom}}" placeholder="…" style="border: none; border-bottom: 1px solid #A9C1DE; padding: 0 2px; min-height: 44px; font-family: Kalam, cursive; font-size: 20px; color: #1D2C6E; background: none">
+<label for="quote" style="font-size: 15px; font-weight: 700; margin-top: 10px">Ein Satz, der hängen blieb</label>
+<input id="quote" value="{{quote}}" onChange="{{setQuote}}" placeholder="…" style="border: none; border-bottom: 1px solid #A9C1DE; padding: 0 2px; min-height: 44px; font-family: Kalam, cursive; font-size: 20px; color: #1D2C6E; background: none">
+</div>
+
+</div>
+</sc-if>
+
+<sc-if value="{{isDnf}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 10px">
+<div style="font-size: 14px; line-height: 1.5; color: #4A4F5C">Abgebrochene Bücher bekommen keine Sterne. Nur eine Notiz für später.</div>
+<div style="display: flex; align-items: flex-end; gap: 10px">
+<label for="dnfpage" style="font-size: 15px; font-weight: 700; padding-bottom: 10px">bis Seite</label>
+<input id="dnfpage" inputmode="numeric" value="{{dnfPage}}" onChange="{{setDnfPage}}" style="width: 90px; border: none; border-bottom: 1px solid #A9C1DE; min-height: 44px; font-family: Kalam, cursive; font-size: 22px; color: #1D2C6E; background: none">
+</div>
+<div style="display: flex; flex-wrap: wrap; column-gap: 4px">
+<sc-for list="{{dnfWords}}" as="w" hint-placeholder-count="4">
+<button type="button" aria-pressed="{{w.pressed}}" onClick="{{w.pick}}" style="min-height: 44px; border: none; background: none; padding: 0 4px; cursor: pointer; display: inline-flex; align-items: center"><span style="{{w.style}}">{{w.label}}</span></button>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+</div>
+
+<button type="button" aria-expanded="{{backExpanded}}" onClick="{{toggleBack}}" style="min-height: 52px; border: none; border-top: 1px dashed #B5AFA3; background: none; padding: 0 18px; cursor: pointer; text-align: left; font-size: 14px; display: flex; align-items: center; justify-content: space-between">
+<span>Rückseite: mein Exemplar</span>
+<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="1.8" stroke-linecap="round" aria-hidden="true" style="{{backChevron}}"><path d="M6 9l6 6 6-6"></path></svg>
+</button>
+<sc-if value="{{showBack}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 4px 18px 20px 18px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: flex; flex-wrap: wrap; column-gap: 4px">
+<sc-for list="{{formatWords}}" as="w" hint-placeholder-count="4">
+<button type="button" aria-pressed="{{w.pressed}}" onClick="{{w.pick}}" style="min-height: 44px; border: none; background: none; padding: 0 4px; cursor: pointer; display: inline-flex; align-items: center"><span style="{{w.style}}">{{w.label}}</span></button>
+</sc-for>
+</div>
+<div style="display: flex; flex-wrap: wrap; column-gap: 4px">
+<sc-for list="{{extraWords}}" as="w" hint-placeholder-count="3">
+<button type="button" aria-pressed="{{w.pressed}}" onClick="{{w.pick}}" style="min-height: 44px; border: none; background: none; padding: 0 4px; cursor: pointer; display: inline-flex; align-items: center"><span style="{{w.style}}">{{w.label}}</span></button>
+</sc-for>
+</div>
+<label for="place" style="font-size: 15px; font-weight: 700">Steht wo?</label>
+<input id="place" value="{{place}}" onChange="{{setPlace}}" placeholder="…" style="border: none; border-bottom: 1px solid #A9C1DE; padding: 0 2px; min-height: 44px; font-family: Kalam, cursive; font-size: 20px; color: #1D2C6E; background: none">
+</div>
+</sc-if>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 10px">
+<button type="button" onClick="{{save}}" disabled="{{noStatus}}" style="{{saveStyle}}">Ins Regal stellen</button>
+<sc-if value="{{noStatus}}" hint-placeholder-val="{{ true }}">
+<div style="font-size: 13px; color: #C9D3E3; text-align: center">Erst stempeln, dann einstellen. Alles andere darf warten.</div>
+</sc-if>
+<button type="button" onClick="{{reset}}" style="min-height: 44px; background: none; border: none; color: #FFFFFF; font-size: 14px; text-decoration: underline; text-underline-offset: 4px; cursor: pointer">Verwerfen</button>
+</div>
+
+</div>
+</sc-if>
+
+<sc-if value="{{isSaved}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-direction: column; gap: 24px; padding-top: 10px">
+<div style="font-size: 20px; color: #FFFFFF; line-height: 1.35">Steht jetzt in deinem Regal.</div>
+<div style="position: relative; background: #FCFCFA; border-radius: 3px; box-shadow: 0 3px 0 #172238; transform: rotate(-1.5deg); display: flex; flex-direction: column">
+<div style="padding: 16px 18px 10px 18px; border-bottom: 2px solid #C8372D; display: flex; flex-direction: column; gap: 2px">
+<div style="font-size: 13px">Lind, Mara</div>
+<div style="font-size: 17px; font-weight: 700">Der stille Garten</div>
+</div>
+<div aria-hidden="true" style="position: absolute; right: 14px; top: 10px; border: 3px double #C8372D; border-radius: 4px; padding: 4px 10px; color: #C8372D; text-align: center; transform: rotate(-9deg); filter: url(#grain); opacity: .88">
+<div style="font-size: 17px; font-weight: 700; letter-spacing: 0.04em">{{stampBig}}</div>
+<div style="font-size: 11px; font-weight: 700">{{today}}</div>
+</div>
+<div style="padding: 14px 18px 18px 18px; display: flex; flex-direction: column; gap: 10px">
+<sc-if value="{{hasStars}}" hint-placeholder-val="{{ false }}">
+<div style="font-family: Kalam, cursive; font-size: 21px; color: #1D2C6E">{{ratingText}}</div>
+</sc-if>
+<sc-if value="{{hasReading}}" hint-placeholder-val="{{ false }}">
+<div style="font-family: Kalam, cursive; font-size: 20px; line-height: 1.35; color: #1D2C6E; white-space: pre-line">{{reading}}</div>
+</sc-if>
+<sc-if value="{{hasMarks}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; flex-wrap: wrap; gap: 4px 10px; font-size: 15px">
+<sc-for list="{{markedAspects}}" as="w" hint-placeholder-count="3">
+<span style="{{w.style}}">{{w.label}}</span>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{hasForWhom}}" hint-placeholder-val="{{ false }}">
+<div style="font-family: Kalam, cursive; font-size: 18px; color: #4A4F5C">für {{forWhomShort}}</div>
+</sc-if>
+</div>
+</div>
+<div style="font-size: 14px; line-height: 1.5; color: #C9D3E3">Die Karte bleibt privat. Ins Schaufenster kommt sie nur, wenn du sie dorthin legst.</div>
+<button type="button" onClick="{{reset}}" style="min-height: 54px; border-radius: 6px; border: none; background: #FFFFFF; font-size: 17px; font-weight: 700; cursor: pointer">Nächstes Buch</button>
+</div>
+</sc-if>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+var INIT = { step: 'scan', status: null, cover: 'Verlagscover', stars: 0, moods: [], flow: 0, lang: 0, tempo: null, strong: [], weak: [], echo: null, reread: null, author: null, reading: '', forWhom: '', quote: '', dnfPage: '', dnfReason: null, back: false, format: null, extras: [], place: '' };
+var ASPECTS = ['Sprache', 'Figuren', 'Spannung', 'Atmosphäre', 'Idee', 'Humor', 'Tiefgang', 'Dialoge', 'Weltenbau', 'Ende'];
+var FLOW = ['zäh, oft abgesetzt', 'stockend', 'gleichmäßig', 'flüssig', 'nicht weglegbar'];
+var LANG = ['holprig', 'unauffällig', 'angenehm', 'schön', 'jeder Satz sitzt'];
+var STATUS = [['Will ich lesen', 'VORGEMERKT'], ['Lese gerade', 'IN ARBEIT'], ['Gelesen', 'GELESEN'], ['Abgebrochen', 'ABGEBROCHEN']];
+var HL = 'background: linear-gradient(transparent 45%, #F7E46A 45%, #F7E46A 90%, transparent 90%); padding: 0 3px; font-size: 16px';
+var WAVY = 'text-decoration: underline wavy #C8372D; text-decoration-thickness: 2px; text-underline-offset: 6px; font-size: 16px';
+var PLAIN = 'font-size: 16px; padding: 0 3px';
+var CIRCLE = 'font-size: 16px; padding: 3px 9px; border: 2px solid #1D2C6E; border-radius: 52% 48% 55% 45% / 58% 46% 54% 42%; transform: rotate(-2deg); display: inline-block';
+var UNCIRCLED = 'font-size: 16px; padding: 3px 9px; border: 2px solid transparent; display: inline-block';
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = JSON.parse(JSON.stringify(INIT));
+  }
+  renderVals() {
+    var s = this.state;
+    var self = this;
+    function circleOne(list, key) {
+      return list.map(function (v) {
+        var sel = s[key] === v;
+        return { label: v, style: sel ? CIRCLE : UNCIRCLED, pressed: sel ? 'true' : 'false', pick: function () { var o = {}; o[key] = sel ? null : v; self.setState(o); } };
+      });
+    }
+    function circleMany(list, key) {
+      return list.map(function (v) {
+        var sel = s[key].indexOf(v) >= 0;
+        return { label: v, style: sel ? CIRCLE : UNCIRCLED, pressed: sel ? 'true' : 'false', pick: function () { var o = {}; o[key] = sel ? s[key].filter(function (x) { return x !== v; }) : s[key].concat([v]); self.setState(o); } };
+      });
+    }
+    function checks(title, key, list) {
+      return {
+        title: title,
+        options: list.map(function (v) {
+          var sel = s[key] === v;
+          return { label: v, on: sel, pressed: sel ? 'true' : 'false', pick: function () { var o = {}; o[key] = sel ? null : v; self.setState(o); } };
+        })
+      };
+    }
+    function scale(title, key, labels, hint, left, right) {
+      var val = s[key];
+      return {
+        title: title, hint: hint, left: left, right: right, current: val ? labels[val - 1] : '',
+        steps: labels.map(function (l, i) {
+          var n = i + 1;
+          return { label: title + ': ' + l, on: val === n, pressed: val === n ? 'true' : 'false', pick: function () { var o = {}; o[key] = val === n ? 0 : n; self.setState(o); } };
+        })
+      };
+    }
+    var today = new Date().toLocaleDateString('de-DE', { day: 'numeric', month: 'short', year: 'numeric' }).toUpperCase();
+    var stampBig = '';
+    var stampList = STATUS.map(function (st) {
+      if (s.status === st[0]) stampBig = st[1];
+      return { active: s.status === st[0], big: st[1] };
+    });
+    var stampButtons = STATUS.map(function (st) {
+      var sel = s.status === st[0];
+      return {
+        label: st[0], pressed: sel ? 'true' : 'false',
+        style: 'min-height: 46px; border-radius: 4px; cursor: pointer; font-size: 15px; font-weight: 700; ' + (sel ? 'background: #C8372D; color: #FFFFFF; border: 2px solid #C8372D' : 'background: none; color: #C8372D; border: 2px dashed #C8372D'),
+        pick: function () { self.setState({ status: sel ? null : st[0] }); }
+      };
+    });
+    var stars = [1, 2, 3, 4, 5].map(function (n) {
+      var full = s.stars >= n;
+      var half = s.stars === n - 0.5;
+      return { label: n + ' Sterne', fill: full ? '#1D2C6E' : (half ? 'url(#halfInk)' : 'none'), pick: function () { self.setState({ stars: s.stars === n ? n - 0.5 : n }); } };
+    });
+    var aspects = ASPECTS.map(function (v) {
+      var isS = s.strong.indexOf(v) >= 0;
+      var isW = s.weak.indexOf(v) >= 0;
+      return {
+        label: v, aria: v + (isS ? ', stark' : (isW ? ', hat gehakt' : ', nicht markiert')),
+        style: isS ? HL : (isW ? WAVY : PLAIN),
+        pick: function () {
+          if (isS) self.setState({ strong: s.strong.filter(function (x) { return x !== v; }), weak: s.weak.concat([v]) });
+          else if (isW) self.setState({ weak: s.weak.filter(function (x) { return x !== v; }) });
+          else self.setState({ strong: s.strong.concat([v]) });
+        }
+      };
+    });
+    var markedAspects = s.strong.map(function (v) { return { label: v, style: HL }; }).concat(s.weak.map(function (v) { return { label: v, style: WAVY }; }));
+    var coverLinks = ['Verlagscover', 'Eigenes Foto'].map(function (v) {
+      var sel = s.cover === v;
+      return { label: v, pressed: sel ? 'true' : 'false', style: 'min-height: 44px; border: none; background: none; padding: 0; cursor: pointer; font-size: 13px; color: #FFFFFF; ' + (sel ? 'text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 5px; font-weight: 700' : 'opacity: .75'), pick: function () { self.setState({ cover: v }); } };
+    });
+    var ratingText = s.stars ? String(s.stars).replace('.', ',') + ' von 5' : '';
+    var reading = s.reading.trim();
+    var forWhom = s.forWhom.trim();
+    var noStatus = !s.status;
+    return {
+      isScan: s.step === 'scan', isFound: s.step === 'found', isSaved: s.step === 'saved',
+      isRead: s.status === 'Gelesen', isDnf: s.status === 'Abgebrochen',
+      coverStandard: s.cover !== 'Eigenes Foto', coverOwn: s.cover === 'Eigenes Foto', coverLinks: coverLinks,
+      today: today, stampList: stampList, stampButtons: stampButtons, stampBig: stampBig,
+      stars: stars, ratingText: ratingText, hasStars: !!s.stars,
+      moodWords: circleMany(['berührt', 'mitgerissen', 'nachdenklich', 'getröstet', 'amüsiert', 'aufgewühlt', 'gelangweilt', 'enttäuscht'], 'moods'),
+      scales: [
+        scale('Lesefluss', 'flow', FLOW, 'Leg das Bändchen dahin, wo es passt.', 'zäh', 'nicht weglegbar'),
+        scale('Sprache', 'lang', LANG, 'Wie hat sich der Text angefühlt?', 'holprig', 'jeder Satz sitzt')
+      ],
+      tempoWords: circleOne(['ruhig', 'ausgewogen', 'rasant'], 'tempo'),
+      aspects: aspects, markedAspects: markedAspects, hasMarks: markedAspects.length > 0,
+      checkGroups: [
+        checks('Wirkt es nach?', 'echo', ['schon verblasst', 'denke noch daran', 'lässt mich nicht los']),
+        checks('Wieder lesen?', 'reread', ['ja, sicher', 'vielleicht', 'einmal reicht']),
+        checks('Mehr von Mara Lind?', 'author', ['unbedingt', 'mal sehen', 'eher nicht'])
+      ],
+      dnfWords: circleOne(['zu langsam', 'nicht meins', 'falscher Zeitpunkt', 'später weiter'], 'dnfReason'),
+      formatWords: circleOne(['Hardcover', 'Taschenbuch', 'E-Book', 'Hörbuch'], 'format'),
+      extraWords: circleMany(['Sonderausgabe', 'Farbschnitt', 'signiert'], 'extras'),
+      reading: s.reading, forWhom: s.forWhom, quote: s.quote, dnfPage: s.dnfPage, place: s.place,
+      hasReading: !!reading, hasForWhom: !!forWhom, forWhomShort: forWhom.replace(/^für\s+/i, ''),
+      showBack: s.back, backExpanded: s.back ? 'true' : 'false',
+      backChevron: s.back ? 'transform: rotate(180deg)' : '',
+      noStatus: noStatus,
+      saveStyle: 'min-height: 54px; border-radius: 6px; border: none; font-size: 17px; font-weight: 700; ' + (noStatus ? 'background: #3A4B6B; color: #C9D3E3; cursor: not-allowed' : 'background: #FFFFFF; color: #000000; cursor: pointer'),
+      scan: function () { self.setState({ step: 'found' }); },
+      save: function () { if (s.status) self.setState({ step: 'saved' }); },
+      reset: function () { self.setState(JSON.parse(JSON.stringify(INIT))); },
+      toggleBack: function () { self.setState({ back: !s.back }); },
+      setReading: function (e) { self.setState({ reading: e.target.value }); },
+      setForWhom: function (e) { self.setState({ forWhom: e.target.value }); },
+      setQuote: function (e) { self.setState({ quote: e.target.value }); },
+      setDnfPage: function (e) { self.setState({ dnfPage: e.target.value.replace(/[^0-9]/g, '') }); },
+      setPlace: function (e) { self.setState({ place: e.target.value }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
