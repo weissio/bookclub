@@ -20,6 +20,8 @@ Getrennt nach Herkunft, damit klar ist, was feststeht und was nur vorgeschlagen 
 | 10.10.2026 | Bewertung ist das Kernelement der Bibliothek. Mehr als „gut / mittel / schlecht“: was war gut, Schreibstil, wie gut ließ es sich lesen (ohne Pausen usw.). Buch und Autor. |
 | 10.10.2026 | Eigene Interpretationen und Worte zum Buch, wie in einer Buchhandlung. |
 | 10.10.2026 | Arbeitsweise: Karpathy-Guidelines, Stand im Repo dokumentieren, regelmäßig zu GitHub pushen. Keine eigenständigen Entscheidungen ohne Abstimmung. |
+| 10.10.2026 | Die App braucht eine klare Struktur statt direktem Einstieg in den Scan. Architektur gemäß [ARCHITEKTUR.md](ARCHITEKTUR.md) bestätigt: Startseite ist die Bibliothek, vier Hauptbereiche, „Ungelesen im Regal“ und „Wunschliste“ getrennt. Bereichsnamen bleiben vorerst Platzhalter. |
+| 10.10.2026 | Designrichtung: malerisch, natürlich, introvertiert – keine 08/15-KI-Struktur. Genaue Bedeutung von „malerisch“ noch offen. |
 
 ## Vorschläge von Claude – noch nicht bestätigt
 
