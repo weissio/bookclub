@@ -61,8 +61,10 @@ def damped(evidence):
 class Profile:
     """Aus den aktuellen Urteilen einer Person abgeleitet; ein Urteil je Werk."""
 
-    def __init__(self, catalog, judgments, rec_feedback=()):
+    def __init__(self, catalog, judgments, rec_feedback=(), use_aspects=True):
+        """use_aspects=False: Vergleichsarm „nur F1“ – nur Gesamtgefallen, ohne F3/F4/F5."""
         self.catalog = catalog
+        self.use_aspects = use_aspects
         self.judgments = {}                       # work_id -> letztes Urteil
         for j in judgments:                       # spätere Bearbeitung ersetzt frühere
             self.judgments[j['work_id']] = j
@@ -96,18 +98,18 @@ class Profile:
                             continue
                         for v in feats(work, dim):
                             self.pref[(context, dim, v)].append((STAR_TRANSFER, y))
-            for aspect, val in (j.get('aspects') or {}).items():
+            for aspect, val in ((j.get('aspects') or {}) if self.use_aspects else {}).items():
                 dim = ASPECT_DIM.get(aspect)
                 if dim is None or val not in (1, -1):  # 'gemischt' und leer: keine Richtung
                     continue
                 for v in feats(work, dim):             # ohne Buchmerkmal: keine erfundene Vorliebe
                     self.pref[(context, dim, v)].append((1.0, float(val)))
-            if j.get('tempo') in ('zu_langsam', 'zu_schnell'):
+            if self.use_aspects and j.get('tempo') in ('zu_langsam', 'zu_schnell'):
                 for v in feats(work, 'tempo'):
                     self.pref[(context, 'tempo', v)].append((1.0, -1.0))
             if status == 'drop':
                 self.blocked_titles.add(wid)
-                for reason in j.get('reasons', []):
+                for reason in (j.get('reasons', []) if self.use_aspects else []):
                     dim = DROP_REASON_DIM.get(reason)
                     if dim:
                         for v in feats(work, dim):
@@ -203,7 +205,7 @@ def recommend(catalog, profile, variant='cluster', k=5):
             continue
         best, best_info = 0.0, None
         for g in groups:
-            sims = [(similarity(cand, catalog[a], profile.judgments.get(a)), a) for a in g]
+            sims = [(similarity(cand, catalog[a], profile.judgments.get(a) if profile.use_aspects else None), a) for a in g]
             if not sims:
                 continue
             score = sum(s[0] * weights[a] for s, a in sims) / len(sims)   # innerhalb der Gruppe
@@ -345,6 +347,15 @@ class Abnahmefaelle(unittest.TestCase):
         self.assertLess(p.pref_for(self.cat['fam4'], 'tempo', 'ruhig'), q.pref_for(self.cat['fam4'], 'tempo', 'ruhig'))
         self.assertEqual(p.pref_for(self.cat['fam4'], 'thema', 'Familie'), q.pref_for(self.cat['fam4'], 'thema', 'Familie'))
         self.assertEqual(dict(p.author), dict(q.author))
+
+    def test_14_nur_f1_ignoriert_aspekte_und_gruende(self):
+        js = [J('fam1', 5, aspects={'Sprache': 1}), J('thr5', 2, status='drop', reasons=['Tempo'], tempo='zu_langsam')]
+        f1 = Profile(self.cat, js, use_aspects=False)
+        full = Profile(self.cat, js)
+        self.assertFalse([k for k, ev in f1.pref.items() if any(w == 1.0 for w, _ in ev)])
+        self.assertTrue([k for k, ev in full.pref.items() if any(w == 1.0 for w, _ in ev)])
+        self.assertEqual(f1.anchors, full.anchors)
+        self.assertEqual(f1.blocked_titles, full.blocked_titles)
 
     def test_13_damped_bleibt_im_wertebereich(self):
         self.assertLessEqual(abs(damped([(2.0, 1.0)] * 50)), 1.0)
