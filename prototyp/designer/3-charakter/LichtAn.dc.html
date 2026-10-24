@@ -666,7 +666,8 @@ class Component extends DCLogic {
       var ex = Object.assign({}, s.extraLib); ex[bk.id] = { title: bk.title, author: bk.author, page: 0, pages: bk.pages || 280, cover: bk.cover, ribbon: '#FFD98A' };
       var pg = Object.assign({}, s.pages); pg[bk.id] = 0;
       var st = Object.assign({}, s.started); st[bk.id] = true;
-      return { extraLib: ex, pages: pg, started: st, active: [bk.id].concat(a), sheet: null, screen: 'home', pendingStart: null };
+      var na = a.concat([bk.id]);
+      return { extraLib: ex, pages: pg, started: st, active: na, sheet: null, screen: 'home', pendingStart: null, saved: na.length === 1 ? 'Liegt jetzt im Licht. Viel Freude.' : 'Liegt jetzt an Platz ' + na.length + '.' };
     };
     var pend = BOOKS.filter(function (x) { return x.id === s.pendingStart; })[0];
     // Seite eintragen
@@ -730,13 +731,13 @@ class Component extends DCLogic {
       book: book, bookBackLabel: s.from === 'vol' ? VOLS[b.vol].name : 'Bibliothek',
       startReading: function () {
         if (act.length >= 5) self.setState({ sheet: 'full', pendingStart: b.id });
-        else { var p = doStart(b, act); p.saved = 'Liegt jetzt im Licht. Viel Freude.'; self.setState(p); }
+        else self.setState(doStart(b, act));
       },
-      fullText: pend ? 'Damit „' + pend.title + '“ ins Licht kann, darf eines davon zurück ins Regal. Sein Lesebändchen bleibt, wo es ist.' : '',
+      fullText: pend ? 'Damit „' + pend.title + '“ dazukommen kann, darf eines davon zurück ins Regal. Sein Lesebändchen bleibt, wo es ist. Das neue kommt ans Ende, nach vorn holst du es selbst.' : '',
       fullRows: act.map(function (id) {
         var bk = lib[id];
         return { title: bk.title, sub: 'Lesebändchen auf Seite ' + s.pages[id], strip: strip(bk.cover, 32), aria: bk.title + ' zurück ins Regal legen, Lesebändchen bleibt auf Seite ' + s.pages[id],
-          pick: function () { if (!pend) return; var p = doStart(pend, act.filter(function (x) { return x !== id; })); p.saved = 'Zurückgelegt, Bändchen bleibt.'; p.paused = (s.paused || 0) + 1; self.setState(p); } };
+          pick: function () { if (!pend) return; var p = doStart(pend, act.filter(function (x) { return x !== id; })); p.saved = 'Neues Buch an Platz ' + p.active.length + '.'; p.paused = (s.paused || 0) + 1; self.setState(p); } };
       }),
       showcaseChecked: on ? 'true' : 'false',
       showcaseHint: on ? 'Steht im Fenster. Sichtbar: Lesart, Lichter, Zitat.' : 'Aus. Nichts davon ist öffentlich.',

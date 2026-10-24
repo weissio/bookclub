@@ -128,7 +128,7 @@ Arjens Vorgaben: höchstens 5 Bücher am Lesen, die Reihenfolge lässt sich prio
 
 Ziehen per Drag habe ich bewusst weggelassen: Es ist einhändig unzuverlässig und für ältere Leser schwer.
 
-**Grenze 5.** Will man ein sechstes Buch anfangen („Jetzt anfangen zu lesen“ auf der Buchseite eines ungelesenen Buchs), kommt keine Fehlermeldung. Stattdessen erscheint ein ruhiges Sheet: „Fünf Bücher liegen schon offen. Damit ‚Ein Jahr auf See‘ ins Licht kann, darf eines davon zurück ins Regal. Sein Lesebändchen bleibt, wo es ist.“ Darunter stehen die fünf Bücher mit „zurücklegen“ und unten „Doch noch warten lassen“. Das zurückgelegte Buch steht wieder bei Ungelesen, die Seite bleibt gemerkt. Das neue Buch liegt danach im Licht.
+**Grenze 5.** Will man ein sechstes Buch anfangen („Jetzt anfangen zu lesen“ auf der Buchseite eines ungelesenen Buchs), kommt keine Fehlermeldung. Stattdessen erscheint ein ruhiges Sheet: „Fünf Bücher liegen schon offen. Damit ‚Ein Jahr auf See‘ ins Licht kann, darf eines davon zurück ins Regal. Sein Lesebändchen bleibt, wo es ist.“ Darunter stehen die fünf Bücher mit „zurücklegen“ und unten „Doch noch warten lassen“. Das zurückgelegte Buch steht wieder bei Ungelesen, die Seite bleibt gemerkt. Das neue Buch kommt ans Ende („Neues Buch an Platz 5.“). Arjens Regel: Ein neu angefangenes Buch kommt immer ans Ende; nur wenn keins offen ist, liegt es im Licht. Hochstufen macht man selbst („Liegt jetzt an Platz 4.“, Screen 14b).
 
 **Rückmeldungen** stehen in einer Zeile unter der Überschrift: „Eingetragen: Seite 71.“, „Liegt jetzt im Licht.“, „Zurückgelegt, Bändchen bleibt.“, „3 Neue bei Ungelesen.“
 
@@ -137,4 +137,4 @@ Ziehen per Drag habe ich bewusst weggelassen: Es ist einhändig unzuverlässig u
 **Offene Fragen an Arjen**
 1. Soll ein Tipp auf den Titel im Balken das Buch ins Licht holen, oder soll er die Buchseite öffnen? Im zweiten Fall bliebe das Priorisieren nur über „Reihenfolge“.
 2. Ist der Ton beim sechsten Buch richtig, und soll „zurücklegen“ das Buch zu Ungelesen schicken oder in einen eigenen Zustand „pausiert“?
-3. Soll ein frisch angefangenes Buch automatisch ins Licht kommen oder hinten anstehen?
+3. (Entschieden: Neue Bücher kommen ans Ende.)
