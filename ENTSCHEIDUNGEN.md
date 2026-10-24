@@ -34,6 +34,7 @@ Getrennt nach Herkunft, damit klar ist, was feststeht und was nur vorgeschlagen 
 | 24.10.2026 | Designer-Team (in eigener Hoheit): Bände als liegende Regenbogen-Reihe in voller Breite; die Länge zeigt nicht mehr die Anzahl. „Buch erfassen“ liegt oben auf dem Stapel. Keine zeitgesteuerten Einblendungen, Rückmeldung direkt an Ort und Stelle. Dark Mode folgt später. |
 | 24.10.2026 | Startseite noch zu 0815, doppeltes „+“, Hintergrund nicht harmonisch; Regal als Basis gut. Psychologische Beratung zur Zielgruppe hinzuziehen, die dem Designer Stilmittel gibt. Kein KI-Slop. Dark Mode ist kein Thema. |
 | 24.10.2026 | Von acht Entwürfen vier unabhängiger Designer gewählt: **3A „Licht an“** (Designer 3, Charakter und Sympathie). Begründung Arjen: erweckt zum ersten Mal Kreativität mit Kompaktheit. Die anderen wirken zu kühl, wie Kennzahlen und statistische Systeme. |
+| 24.10.2026 | Präzisierung: Nicht genau „Licht an“, sondern dessen Kreativität als Richtung. Psychologische Faktoren und Nutzerfreundlichkeit stehen im Vordergrund. Kritik an „Licht an“: „Am Lesen“ nimmt fast die Hälfte der Ansicht ein, und es gibt zu viele kleine Regal-Bausteine. Gewünscht sind mehrere Ideen in dieser Art. |
 
 ## Vorschläge von Claude – noch nicht bestätigt
 
