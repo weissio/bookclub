@@ -38,3 +38,17 @@ Alle abgelehnt, weil sie nicht zur Zielgruppe passen. Jeder hat aber eine Diszip
 | Orientierungslaufkarte | Farben bedeuten Bände, eine reservierte Farbe für „aktiv“ |
 | Flughafenbeschilderung | Startseite zeigt nur die nächsten Entscheidungen |
 | Zentralspalten-Satz | Zustände als gesetzte Zeichen |
+
+## Neu gewürfelt (Arjens Wunsch)
+
+Die drei bereits gezeigten Aufbauten sind ausgeschieden. Neue Liste des Designers, nach Passung geordnet:
+
+1. Lesepult und Regal
+2. Regalfassade (Bände stehen nebeneinander)
+3. Ein-Buch-Fokus mit Wechsler
+4. Karteikasten
+5. Umschalter
+6. Lesetagebuch
+7. Suche zuerst
+
+Gezogen wurden 7, 2 und 4. Von den Herausforderern hält das **Daumenregister** (aus dem Referenzhandbuch mit Griffregister) bei der Leser-Identifikation mit: Leser kennen das Griffregister vom Wörterbuch, und am rechten Rand ist es ein bekanntes iOS-Muster (Index-Leiste). Es ist deshalb als vierte, volle Karte dabei. Abgelehnt wurden U-Bahn-Plan, Streaming-Wand (entspricht den schon gezeigten Regalreihen), Flugplan, Ticketmappe und Schriftmuster.
