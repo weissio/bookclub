@@ -563,18 +563,6 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <sc-for list="{{rv.again}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
 </div>
 
-<sc-if value="{{rv.isRead}}" hint-placeholder-val="{{ true }}">
-<h3 style="margin: 14px 4px 4px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">WAS HAT DIR GEFALLEN, WAS NICHT?</h3>
-<div role="list">
-<sc-for list="{{rv.aspects}}" as="a" hint-placeholder-count="5">
-<div role="listitem" style="display: flex; align-items: center; gap: 6px; min-height: 50px; border-top: 1px solid var(--line)">
-<span style="flex: 1; font-size: 15.5px; font-weight: 800; padding-left: 4px">{{a.label}}</span>
-<button type="button" aria-pressed="{{a.likePressed}}" aria-label="{{a.likeAria}}" onClick="{{a.like}}" style="{{a.likeStyle}}">gefiel mir</button>
-<button type="button" aria-pressed="{{a.dislikePressed}}" aria-label="{{a.dislikeAria}}" onClick="{{a.dislike}}" style="{{a.dislikeStyle}}">gefiel mir nicht</button>
-</div>
-</sc-for>
-</div>
-</sc-if>
 <sc-if value="{{rv.isDrop}}" hint-placeholder-val="{{ false }}">
 <h3 style="margin: 14px 4px 6px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">WORAN LAG ES?</h3>
 <div role="group" aria-label="Gründe" style="display: flex; flex-wrap: wrap; gap: 6px">
@@ -587,6 +575,19 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </div>
 </sc-if>
 </sc-if>
+
+
+<h3 style="margin: 14px 4px 4px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">WAS DAVON HAT DIR GEFALLEN, WAS NICHT?</h3>
+<div role="list">
+<sc-for list="{{rv.aspects}}" as="a" hint-placeholder-count="5">
+<div role="listitem" style="padding: 8px 0 10px 0; border-top: 1px solid var(--line)">
+<div style="display: flex; align-items: baseline; gap: 8px; padding: 0 4px 6px 4px"><span style="font-size: 15.5px; font-weight: 800">{{a.label}}</span><sc-if value="{{a.fromReason}}" hint-placeholder-val="{{ false }}"><span style="font-size: 12px; font-weight: 700; color: var(--acc)">aus deinem Abbruchgrund</span></sc-if></div>
+<div role="radiogroup" aria-label="{{a.label}}" style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px">
+<sc-for list="{{a.opts}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.checked}}" aria-label="{{o.aria}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
+</div>
+</div>
+</sc-for>
+</div>
 
 <sc-if value="{{rv.avoidHighlight}}" hint-placeholder-val="{{ false }}">
 <button type="button" aria-expanded="{{rv.avoidExpanded}}" onClick="{{rv.toggleAvoid}}" style="margin-top: 14px; width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 10px; border: none; border-radius: 16px; background: var(--accBg); box-shadow: inset 0 0 0 1px var(--accLine); padding: 0 14px; cursor: pointer; text-align: left; color: var(--ink)">
@@ -704,8 +705,11 @@ var AGAIN = [['ja', 'Ja'], ['vielleicht', 'Vielleicht'], ['nein', 'Eher nicht']]
 var STAR_WORDS = ['noch offen', 'gar nicht', 'eher nicht', 'okay', 'gut', 'sehr gut'];
 var ASPECTS_ROMAN = ['Sprache', 'Figuren', 'Handlung', 'Atmosphäre', 'Thema'];
 var ASPECTS_SACH = ['Verständlichkeit', 'Tiefe', 'Thema'];
+var REASON_TO_ASPECT = { 'Stil, Sprache': 'Sprache', 'Figuren': 'Figuren', 'Thema': 'Thema' };
+var TEMPO_LABEL = { zu_langsam: 'zu langsam', passend: 'passend', zu_schnell: 'zu schnell' };
+var AGAIN_LABEL = { ja: 'Ja', nein: 'Nein', unsicher: 'weiß nicht' };
 var MORE_GROUPS = [
-  ['tempoMe', 'Tempo für mich', ['zu langsam', 'passend', 'zu schnell'], false]
+  ['tempoMe', 'Tempo für mich', ['zu_langsam', 'passend', 'zu_schnell'], false]
 ];
 var FEATURES = {
   salz: { genre: 'Roman der Gegenwart', themes: ['Familie', 'Meer', 'Heimat'], tone: 'melancholisch', pages: 384 },
@@ -730,7 +734,7 @@ function featureValues(id) {
   if (f.content) out.push({ dimension: 'content', value_id: slug(f.content), label: f.content });
   return out;
 }
-function blankRating() { return { stars: 0, asp: {}, reasons: [], text: '', tempoMe: '', again: '', avoid: [] }; }
+function blankRating() { return { stars: 0, asp: {}, aspFrom: {}, reasons: [], text: '', tempoMe: '', again: '', avoid: [] }; }
 var COUNTS = { gelesen: 148, ungelesen: 61, wunsch: 23, abgebrochen: 6, regale: 5, verliehen: 2 };
 var VOLS = {
   gelesen: { name: 'Gelesen', sub: 'Zu Ende gelesen, mit deinen eigenen Worten.', search: 'In 148 gelesenen Büchern suchen' },
@@ -804,8 +808,8 @@ class Component extends DCLogic {
       dropped: [{ id: 'fluss', when: 'Mai 2026' }],
       finished: [], rate: null, rd: blankRating(), moreOpen: false, avoidOpen: false,
       ratings: {
-        uhr: { stars: 5, asp: { Sprache: 'like', Figuren: 'like', Handlung: 'like', Atmosphäre: 'like' }, reasons: [], text: '', tempoMe: 'passend', again: 'Ja', avoid: [] },
-        fluss: { stars: 2, asp: {}, reasons: ['Tempo', 'Zu lang'], text: 'Schöne Sätze, aber nach 80 Seiten ist noch nichts passiert.', tempoMe: 'zu langsam', again: 'weiß nicht', avoid: [] }
+        uhr: { stars: 5, asp: { Sprache: 'like', Figuren: 'like', Handlung: 'like', Atmosphäre: 'like' }, reasons: [], text: '', tempoMe: 'passend', again: 'ja', avoid: [] },
+        fluss: { stars: 2, asp: {}, reasons: ['Tempo', 'Zu lang'], text: 'Schöne Sätze, aber nach 80 Seiten ist noch nichts passiert.', tempoMe: 'zu_langsam', again: 'unsicher', avoid: [] }
       },
       reasons: [], note: '', volNotice: '' };
   }
@@ -934,12 +938,14 @@ class Component extends DCLogic {
       rateLines: (function () {
         if (!rt) return [];
         var out = [], likes = [], dis = [];
-        Object.keys(rt.asp).forEach(function (k) { if (rt.asp[k] === 'like') likes.push(k); else if (rt.asp[k] === 'dislike') dis.push(k); });
+        var mixed = [];
+        Object.keys(rt.asp).forEach(function (k) { if (rt.asp[k] === 'like') likes.push(k); else if (rt.asp[k] === 'dislike') dis.push(k); else if (rt.asp[k] === 'mixed') mixed.push(k); });
         if (likes.length) out.push({ k: 'Gefiel mir', v: likes.join(', ') });
+        if (mixed.length) out.push({ k: 'Gemischt', v: mixed.join(', ') });
         if (dis.length) out.push({ k: 'Gefiel mir nicht', v: dis.join(', ') });
         if (rt.reasons.length) out.push({ k: 'Woran es lag', v: rt.reasons.join(', ') });
-        if (rt.tempoMe) out.push({ k: 'Tempo für mich', v: rt.tempoMe });
-        if (rt.again) out.push({ k: 'Mehr davon?', v: rt.again });
+        if (rt.tempoMe) out.push({ k: 'Tempo für mich', v: TEMPO_LABEL[rt.tempoMe] || rt.tempoMe });
+        if (rt.again) out.push({ k: 'Mehr davon?', v: AGAIN_LABEL[rt.again] || rt.again });
         if (b.vol === 'abgebrochen' && rt.text) out.push({ k: 'Eigene Worte', v: '„' + rt.text + '“' });
         return out;
       })(),
@@ -1007,6 +1013,7 @@ class Component extends DCLogic {
       var R0 = s.rate, rd = s.rd, isDrop = R0.kind === 'drop' || R0.kind === 'editDrop';
       var bk = lib[R0.id] || BOOKS.filter(function (x) { return x.id === R0.id; })[0] || {};
       var upd = function (patch) { self.setState({ rd: Object.assign({}, rd, patch) }); };
+      var aspectList = bk.sach ? ASPECTS_SACH : ASPECTS_ROMAN;
       var pill = function (on) { return 'min-height: 44px; padding: 0 13px; border-radius: 22px; cursor: pointer; font-size: 14px; font-weight: 800; border: 1.5px solid ' + (on ? 'var(--acc)' : 'var(--line)') + '; background: ' + (on ? 'var(--accBg)' : 'transparent') + '; color: ' + (on ? 'var(--acc)' : 'var(--ink)'); };
       var aspectBtn = function (on, bad) { return 'flex-shrink: 0; min-height: 44px; padding: 0 10px; border-radius: 22px; cursor: pointer; font-size: 12.5px; font-weight: 800; border: 1.5px solid ' + (on ? (bad ? 'var(--mute)' : 'var(--acc)') : 'var(--line)') + '; background: ' + (on ? (bad ? 'var(--field)' : 'var(--accBg)') : 'transparent') + '; color: ' + (on ? (bad ? 'var(--ink)' : 'var(--acc)') : 'var(--mute)'); };
       var tempoReason = isDrop && rd.reasons.indexOf('Tempo') >= 0;
@@ -1023,9 +1030,9 @@ class Component extends DCLogic {
         intro: isDrop ? '„' + bk.title + '“ bei Seite ' + (s.pages[R0.id] || 0) + '. Was du hier angibst, hilft später bei passenden Empfehlungen.' : '„' + bk.title + '“' + (R0.kind === 'read' ? ' ist ausgelesen.' : ':') + ' Tippe nur an, was dir einfällt.',
         word: STAR_WORDS[rd.stars],
         againLabel: 'Mehr von ' + (bk.author || 'dieser Person') + '?',
-        again: ['Ja', 'Nein', 'weiß nicht'].map(function (o) { var on = rd.again === o; return { label: o, checked: on ? 'true' : 'false', style: seg(on), pick: function () { upd({ again: on ? '' : o }); } }; }),
+        again: ['ja', 'nein', 'unsicher'].map(function (o) { var on = rd.again === o; return { label: AGAIN_LABEL[o], checked: on ? 'true' : 'false', style: seg(on), pick: function () { upd({ again: on ? '' : o }); } }; }),
         showTempoDetail: tempoReason,
-        tempoDetail: ['zu langsam', 'zu schnell'].map(function (o) { var on = rd.tempoMe === o; return { label: o, checked: on ? 'true' : 'false', style: pill(on), pick: function () { upd({ tempoMe: on ? '' : o }); } }; }),
+        tempoDetail: ['zu_langsam', 'zu_schnell'].map(function (o) { var on = rd.tempoMe === o; return { label: TEMPO_LABEL[o], checked: on ? 'true' : 'false', style: pill(on), pick: function () { upd({ tempoMe: on ? '' : o }); } }; }),
         moreVisible: s.moreOpen && groupsVis.length > 0,
         stars: [1, 2, 3, 4, 5].map(function (i) { return { aria: i + ' von 5, ' + STAR_WORDS[i], label: STAR_WORDS[i], checked: rd.stars === i ? 'true' : 'false', bulb: i <= rd.stars ? 'fill: var(--bulb)' : 'fill: none; stroke: var(--mute); stroke-width: 2',
           style: 'min-height: 62px; border: none; border-radius: 14px; background: ' + (rd.stars === i ? 'var(--accBg)' : 'none') + '; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 4px 0',
@@ -1048,13 +1055,21 @@ class Component extends DCLogic {
             lessAria: name + ': seltener', neverAria: name + ': nicht empfehlen', lessStyle: avoidBtn(v === 'seltener', false), neverStyle: avoidBtn(v === 'never', true),
             less: function () { set('seltener'); }, never: function () { set('never'); } };
         }),
-        aspects: (bk.sach ? ASPECTS_SACH : ASPECTS_ROMAN).map(function (a) {
+        aspects: aspectList.map(function (a) {
           var v = rd.asp[a] || '';
-          var set = function (val) { var m = Object.assign({}, rd.asp); if (m[a] === val) delete m[a]; else m[a] = val; upd({ asp: m }); };
-          return { label: a, likePressed: v === 'like' ? 'true' : 'false', dislikePressed: v === 'dislike' ? 'true' : 'false', likeAria: a + ': gefiel mir', dislikeAria: a + ': gefiel mir nicht',
-            likeStyle: aspectBtn(v === 'like', false), dislikeStyle: aspectBtn(v === 'dislike', true), like: function () { set('like'); }, dislike: function () { set('dislike'); } };
+          var set = function (val) { var m = Object.assign({}, rd.asp); var f = Object.assign({}, rd.aspFrom || {}); if (m[a] === val) delete m[a]; else m[a] = val; delete f[a]; upd({ asp: m, aspFrom: f }); };
+          return { label: a, fromReason: !!(rd.aspFrom && rd.aspFrom[a]) && v === 'dislike',
+            opts: [['like', 'gefiel mir'], ['mixed', 'gemischt'], ['dislike', 'gefiel mir nicht']].map(function (o) {
+              var on = v === o[0];
+              return { label: o[1], checked: on ? 'true' : 'false', aria: a + ': ' + o[1], pick: function () { set(o[0]); },
+                style: 'min-height: 44px; padding: 0 4px; border-radius: 22px; cursor: pointer; font-size: 13px; font-weight: 800; white-space: nowrap; border: 1.5px solid ' + (on ? (o[0] === 'like' ? 'var(--acc)' : 'var(--mute)') : 'var(--line)') + '; background: ' + (on ? (o[0] === 'like' ? 'var(--accBg)' : 'var(--field)') : 'transparent') + '; color: ' + (on ? (o[0] === 'like' ? 'var(--acc)' : 'var(--ink)') : 'var(--mute)') };
+            }) };
         }),
-        reasons: DROP_REASONS.map(function (r) { var on = rd.reasons.indexOf(r) >= 0; return { label: r, pressed: on ? 'true' : 'false', style: pill(on), toggle: function () { var x = rd.reasons.slice(); var k = x.indexOf(r); var p = {}; if (k >= 0) { x.splice(k, 1); if (r === 'Tempo') p.tempoMe = ''; } else x.push(r); p.reasons = x; upd(p); } }; }),
+        reasons: DROP_REASONS.map(function (r) { var on = rd.reasons.indexOf(r) >= 0; return { label: r, pressed: on ? 'true' : 'false', style: pill(on), toggle: function () {
+          var x = rd.reasons.slice(); var k = x.indexOf(r); var p = {}; var asp = Object.assign({}, rd.asp); var from = Object.assign({}, rd.aspFrom || {}); var target = REASON_TO_ASPECT[r];
+          if (k >= 0) { x.splice(k, 1); if (r === 'Tempo') p.tempoMe = ''; if (target && from[target] && asp[target] === 'dislike') { delete asp[target]; delete from[target]; } }
+          else { x.push(r); if (target && aspectList.indexOf(target) >= 0 && !asp[target]) { asp[target] = 'dislike'; from[target] = r; } }
+          p.reasons = x; p.asp = asp; p.aspFrom = from; upd(p); } }; }),
         textLabel: isDrop ? 'EIGENE WORTE' : 'MEINE LESART', textHint: isDrop ? 'Was du dir merken möchtest (freiwillig)' : 'Was ist dir geblieben? Ein Satz reicht.', text: rd.text,
         setText: function (e) { upd({ text: e.target.value }); },
         moreOpen: s.moreOpen, moreExpanded: s.moreOpen ? 'true' : 'false', toggleMore: function () { self.setState({ moreOpen: !s.moreOpen }); },
@@ -1063,12 +1078,12 @@ class Component extends DCLogic {
         groups: groupsVis.map(function (g) {
           return { label: g[1], opts: g[2].map(function (o) {
             var on = g[3] ? rd[g[0]].indexOf(o) >= 0 : rd[g[0]] === o;
-            return { label: o, pressed: on ? 'true' : 'false', style: pill(on), pick: function () { var p = {}; if (g[3]) { var x = rd[g[0]].slice(); var k = x.indexOf(o); if (k >= 0) x.splice(k, 1); else x.push(o); p[g[0]] = x; } else p[g[0]] = on ? '' : o; upd(p); } };
+            return { label: TEMPO_LABEL[o] || o, pressed: on ? 'true' : 'false', style: pill(on), pick: function () { var p = {}; if (g[3]) { var x = rd[g[0]].slice(); var k = x.indexOf(o); if (k >= 0) x.splice(k, 1); else x.push(o); p[g[0]] = x; } else p[g[0]] = on ? '' : o; upd(p); } };
           }) };
         }),
         saveLabel: R0.kind === 'drop' ? 'Bei Seite ' + (s.pages[R0.id] || 0) + ' abbrechen' : 'Speichern',
         save: function () {
-          var clean = Object.assign({}, rd, { asp: isDrop ? {} : rd.asp, reasons: isDrop ? rd.reasons : [] });
+          var clean = Object.assign({}, rd, { reasons: isDrop ? rd.reasons : [] });
           var r = Object.assign({}, s.ratings); r[R0.id] = clean;
           var patch = { ratings: r, sheet: null, rate: null };
           if (R0.kind === 'drop') { patch.active = act.filter(function (x) { return x !== R0.id; }); patch.paused = s.paused.filter(function (x) { return x.id !== R0.id; }); patch.dropped = s.dropped.concat([{ id: R0.id, when: 'Oktober 2026' }]); patch.saved = 'Abgebrochen bei Seite ' + (s.pages[R0.id] || 0) + '.'; }

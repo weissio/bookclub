@@ -267,3 +267,9 @@ Grundlage: ENTSCHEIDUNGSVORLAGE-USP3.md, Abschnitte 2 und 8. Screens in `screens
   - Auf der Buchseite stehen die Einträge unter „Künftig weniger, für alle Empfehlungen“, z. B. „Seltener: Thema Meer“, jeweils mit „entfernen“.
   - Geprüft in screens5/10b–10f (wählen, speichern, sehen, entfernen) und 13–14 (Abbruch mit „Thema Verlust: seltener“ und „Ton ruhig: nicht empfehlen“).
 - **Wording und Platz (24.10.2026):** Die Aspekt-Knöpfe heißen „gefiel mir“ / „gefiel mir nicht“, auf der Buchseite „Gefiel mir“ / „Gefiel mir nicht“. Nichts gewählt heißt keine Aussage. „Künftig weniger davon?“ ist auch bei 1–2 Lichtern und beim Abbruch zugeklappt: eine dezent hervorgehobene Zeile mit „Merkmal wählen“ bzw. der Zahl der Angaben (screens5/10a, 13b).
+- **BEWERTUNGSBOGEN.md, Abschnitte 1 und 2.6, umgesetzt:**
+  - F3 „Was davon hat dir gefallen, was nicht?“: Je Zeile steht der Aspektname oben, darunter drei gleich breite Knöpfe (gefiel mir · gemischt · gefiel mir nicht, je mindestens 44 pt). Kodiert als like / mixed / dislike, leer heißt keine Aussage.
+  - F2 speichert `ja` / `nein` / `unsicher`; „weiß nicht“ ist ein eigener Zustand, nicht leer.
+  - Beim Abbruch steht F4 vor F3. „Stil, Sprache“, „Figuren“ und „Thema“ setzen die passende F3-Zeile sichtbar auf „gefiel mir nicht“, mit dem Hinweis „aus deinem Abbruchgrund“. Ändert man die Zeile, verschwindet der Hinweis; wählt man den Grund ab, wird die mitgesetzte Zeile wieder leer. Je Werk und Aspekt gibt es nur einen Eintrag (`asp`, Herkunft in `aspFrom`).
+  - F5 speichert die Richtung `zu_langsam` / `passend` / `zu_schnell`.
+  - Screens: screens5/03 (gemischt), 12d (Figuren mitgesetzt), 12e (geändert auf gemischt).
