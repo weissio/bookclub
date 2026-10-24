@@ -1,6 +1,6 @@
 # Entscheidungsvorlage USP III: Empfehlungen aus eigenen Urteilen
 
-_Stand 24.10.2026, 2. Fassung nach Zweitprüfung ([pruefungen/USP-III-Codex-Zweitpruefung.md](pruefungen/USP-III-Codex-Zweitpruefung.md)). Entwurf zur Abstimmung mit Arjen. Nichts davon ist beschlossen._
+_Stand 24.10.2026, 2. Fassung nach Zweitprüfung ([pruefungen/USP-III-Codex-Zweitpruefung.md](pruefungen/USP-III-Codex-Zweitpruefung.md)). Entwurf zur Abstimmung mit Arjen. Die Punkte in Abschnitt 7 sind in Abschnitt 8 entschieden._
 
 Grundlagen:
 - [USP.md](USP.md)
@@ -192,3 +192,27 @@ Testfälle:
 - [Open Library: Work-Schema](https://openlibrary.org/type/work) · [Books API (Legacy)](https://openlibrary.org/dev/docs/api/books) · [Search API](https://openlibrary.org/dev/docs/api/search)
 - [DNB: Inhaltserschließung](https://blog.dnb.de/literatur-unter-der-lupe-3/)
 - [Schnabel et al.: Recommendations as Treatments](https://arxiv.org/html/1602.05352)
+
+## 8. Entscheidungen (Claude, im Auftrag von Arjen, 24.10.2026)
+
+Arjen hat diese fachlichen Grundlagen an Claude delegiert. Alle Gewichte bleiben Testwerte.
+
+1. **Bewertungsansicht:** Zwei freiwillige Bereiche:
+   - „Wie hat es dir gefallen?“ (Sterne)
+   - „Was hat funktioniert, was hat gestört?“
+
+   Die eigene Lesart bleibt daneben. Alles Weitere steht unter „Genauer beschreiben“. Beim Abbruch ersetzen die Abbruchgründe die Frage nach dem Gestörten.
+2. **Rückkopplung:** Start mit Variante C, also Korrektur der betroffenen Annahme in der Auswahl. A dient als Vergleich, B bleibt eine Testvariante. Kein Multiplikator ist festgelegt.
+3. **Merkmalsquellen:** Katalogdaten (DNB, Google Books, Open Library) plus ein kleiner redaktionell gepflegter Startkatalog für Tempo, Stimmung und Anspruch. Leserangaben kommen später dazu, mit Anzahl und Übereinstimmung. Hardcover und StoryGraph sind nicht eingeplant.
+4. **Schaufenster:** Öffentliche, strukturierte Buchbeschreibungen dürfen den Katalog ergänzen. Private Urteile bleiben getrennt. Die Nutzer bekommen das verständlich erklärt.
+5. **Herkunft:** Wird ein Buch direkt aus einer Empfehlung begonnen, hält die App den Weg fest. Das ist korrigierbar. Nachgefragt wird nur im Zusammenhang und freiwillig.
+6. **Erklärung:** Jede Empfehlung zeigt die tatsächlichen Gründe kurz, Datenlücken auf Antippen und „stimmt nicht“.
+7. **Bedeutung der Sterne:** Die Sterne beantworten „**Wie hat dir das Buch gefallen?**“.
+   - *Begründung:* Empfehlungen sollen vorhersagen, was gefällt. Ein Buch kann stark aufwühlen und trotzdem nicht gefallen, deshalb ist „Hat mich erreicht“ als Maßstab mehrdeutig.
+   - Wirkung und Deutung haben ihren Platz in der eigenen Lesart.
+   - „Mehr von dieser Person?“ bleibt eine eigene Frage.
+   - Neutraler Punkt ist vorerst 3 Sterne („okay“). Das ist ein Testwert.
+   - *Folge:* Die Bezeichnung „Hat mich erreicht“ im Prototyp wird ersetzt.
+8. **„Seltener“ und „Nicht empfehlen“** werden getrennt angeboten. „Seltener“ senkt die Priorität, „Nicht empfehlen“ schließt aus.
+
+**Nächster Schritt:** Eine konkrete Bewertungsansicht im Prototyp, durchgespielt an einem gelesenen und einem abgebrochenen Beispielbuch. Dabei zeigt sich, welche Angaben leichtfallen und welche unnötig sind.

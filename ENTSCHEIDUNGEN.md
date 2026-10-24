@@ -45,6 +45,7 @@ Getrennt nach Herkunft, damit klar ist, was feststeht und was nur vorgeschlagen 
 | 24.10.2026 | Pausegründe bestätigt (gerade nicht die Stimmung, zu schwer für jetzt, ein anderes Buch drängt, keine Zeit, will es in Ruhe lesen, anderes). |
 | 24.10.2026 | Die Formulierung „Groll“ kommt nirgends vor. Sie ist schwach und unnötig. |
 | 24.10.2026 | Ein Tipp auf einen Balken holt kein Buch ins Licht. Die Reihenfolge ändert man nur über die eigene Priorisierung („Reihenfolge“). |
+| 24.10.2026 | Arjen delegiert die fachlichen Grundlagen des Empfehlungsalgorithmus an Claude („Du bist dafür zuständig, dass der Algorithmus die richtigen Bücher empfiehlt“). Claude entscheidet die acht Punkte der Vorlage USP III, siehe [ENTSCHEIDUNGSVORLAGE-USP3.md](ENTSCHEIDUNGSVORLAGE-USP3.md), Abschnitt 8. Gewichte bleiben Testwerte. |
 
 ## Vorschläge von Claude – noch nicht bestätigt
 
