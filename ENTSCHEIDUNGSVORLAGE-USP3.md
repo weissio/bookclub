@@ -1,6 +1,6 @@
 # Entscheidungsvorlage USP III: Empfehlungen aus eigenen Urteilen
 
-_Stand 24.10.2026. Entwurf zur Abstimmung mit Arjen. Nichts davon ist beschlossen._
+_Stand 24.10.2026, 2. Fassung nach Zweitprüfung ([pruefungen/USP-III-Codex-Zweitpruefung.md](pruefungen/USP-III-Codex-Zweitpruefung.md)). Entwurf zur Abstimmung mit Arjen. Nichts davon ist beschlossen._
 
 Grundlagen:
 - [USP.md](USP.md)
@@ -29,7 +29,8 @@ Die Prüfung hat recht, in diesen Punkten war mein erster Vorschlag falsch oder 
 | **4. Empfehlungsfeedback** | ob die Annahme der App stimmte | Hat die Empfehlung gepasst: Ja, Teilweise, Nein, plus vorhandene Gründe | nur bei App-Empfehlungen, optional |
 
 Regeln:
-- **Eine fehlende Angabe ist keine Bewertung.** Eine unbeantwortete Frage zählt nicht als „neutral“ und nicht als „negativ“.
+- **Eine fehlende Angabe ist keine Bewertung.** Eine unbeantwortete Frage zählt nicht als „neutral“ und nicht als „negativ“. „Keine Belege“ wird getrennt von einer ausdrücklich neutralen Antwort gespeichert, die Zahl der Belege je Merkmal steht immer dabei.
+- **Ein Buch ist eine Beobachtung.** Gesamturteil, „Mehr von dieser Person“ und Abbruchgrund zum selben Werk werden je Merkmal zu einer begrenzten Evidenz zusammengeführt. Wer eine Antwort ändert, ersetzt sie und erzeugt keine zusätzliche Beobachtung.
 - **„Das Buch ist ruhig“ (Ebene 2) heißt nicht „ich mag ruhige Bücher“ (Ebene 3).** Eine Vorliebe entsteht stark nur aus einer ausdrücklichen Angabe („Tempo: mochte ich“ oder „zu langsam“). Aus der Gesamtbewertung allein entsteht höchstens ein schwacher Hinweis auf die vorhandenen Merkmale.
 - **Gelesener Anteil:** Ein früher Abbruch sagt etwas über Einstieg, Stil und Sprache, aber nichts über Ende oder Figurenentwicklung. Merkmale, die man erst später im Buch beurteilen kann, bekommen aus frühen Abbrüchen kein Signal. Welche Merkmale das sind, wird festgelegt, eine Prozentschwelle gibt es nicht.
 - **Pause ist geschmacksneutral.** Ein angegebener Grund wie „Gerade nicht die Stimmung“ wirkt höchstens kurzfristig.
@@ -63,8 +64,8 @@ Die eigene Lesart (Freitext) bleibt daneben. Die bisherige ausführliche Karte b
 | Zu lang | Länge |
 | Zu schwer | Anspruch |
 | Nicht mein Genre | Genre (bei Mischgenres unsicher) |
-| Inhaltlich unangenehm | nur „seltener“-Wunsch, falls angegeben, sonst nur dieser Titel |
-| Erwartung nicht erfüllt | Empfehlungsfeedback (Ebene 4), falls das Buch empfohlen wurde |
+| Inhaltlich unangenehm | ohne Angabe nur dieser Titel (wird nicht wieder empfohlen). Nur mit konkreter Angabe, etwa „detaillierte Gewaltdarstellung“, wirkt es auf dieses Merkmal, soweit es bei Kandidaten bekannt ist |
+| Erwartung nicht erfüllt | möglicher Hinweis auf eine unpassende Empfehlung, aber kein Beweis, denn Erwartungen entstehen auch durch Cover, Klappentext oder fremde Tipps. Zuordnung nur über das Passungsfeedback (Ebene 4) |
 | Anderes | kein Merkmal |
 
 **Bei einem Buch, das über eine App-Empfehlung kam:** freiwillig ein Tipp „Hat die Empfehlung gepasst?“ mit Ja, Teilweise oder Nein. Bei „Nein“ werden die vorhandenen Gründe genutzt, es gibt keinen zweiten Fragebogen. Ob dieser Zusatz bleibt, entscheidet ein Test.
@@ -84,13 +85,19 @@ Vorliebe(f) = Σ (wᵢ · yᵢ) / (λ + Σ wᵢ)
   - nur die Gesamtbewertung, auf die vorhandenen Merkmale des Buchs übertragen: schwach, z. B. (Sterne − 2,5) / 2,5 × 0,3
 - **wᵢ** ist das begrenzte Gewicht: Zuverlässigkeit der Angabe × Herkunftsfaktor, gedeckelt.
 - **λ** ist die Dämpfung, ein neutraler Startwert, z. B. 3.
+- Bedingungen: wᵢ ≥ 0, λ > 0, |yᵢ| ≤ 1. Bei keinerlei Belegen ergibt die Formel 0. Diese 0 bedeutet „keine Belege“ und wird in der Oberfläche nie als neutrale Meinung gezeigt.
+- **Sternskala:** Der Nullpunkt 2,5 ist gesetzt, die Mitte der Skala 0,5–5 läge bei 2,75. Vorher muss feststehen, was die Sterne bedeuten (siehe Abschnitt 7, Frage 7).
 
 Eigenschaften:
 - Weil alle |yᵢ| ≤ 1 sind, bleibt die Vorliebe immer zwischen −1 und +1, auch bei vielen stark gewichteten Beobachtungen.
 - Wenige Beobachtungen bleiben nah bei 0. Ein einzelner Abbruch kippt keinen Autor.
-- Rechenbeispiel zu deinem Fall: 5 Abbrüche von Autor XY, jeweils y = −1 und w = 1, kein positives Buch. Das ergibt −5 / (3 + 5) = **−0,63**, also klar „passt eher nicht“. Kommt ein Buch von XY mit 5 Sternen und „Mehr von dieser Person: Ja“ hinzu (y = +1, w = 1,5), ergibt sich −3,5 / 9,5 = **−0,37**, also weiter negativ, aber deutlich abgeschwächt.
+- Die Werte sind **keine Wahrscheinlichkeiten**. Eine Grenze für „passt eher nicht“ ist noch nicht kalibriert.
 
-Autor: Eine Verallgemeinerung auf die Person wächst nur über mehrere Werke. Die direkte Antwort „Mehr von dieser Person: Nein/Ja“ zählt stärker als ein abgeleiteter Rückschluss aus „Stil/Sprache“.
+**Dein Autorenbeispiel, präzisiert.** Welche Evidenz das Merkmal „Autor XY“ verändert:
+- **Ausdrücklich:** 5 Werke mit „Mehr von XY: Nein“ (je y = −1, w = 1) ergeben −5 / (3 + 5) = **−0,63**, ein deutliches Autorensignal.
+- **Nur Abbrüche, ohne Gründe und ohne Autorenantwort:** Jeder Abbruch zählt als schwacher, ausdrücklich als Modellannahme markierter Übertrag auf den Autor (Entwurf: w = 0,3). Das ergibt −1,5 / (3 + 1,5) = **−0,33**. Wiederholte Fehlpassungen werden also ernst genommen, aber nicht als fünf starke Ablehnungen gezählt.
+- **Abbrüche mit Gründen:** Sie wirken zuerst auf das genannte Merkmal (Tempo, Thema …). Nur „Stil/Sprache“ über mehrere Werke darf vorsichtig auf den Autor übertragen werden, denn eine Übersetzung kann die Ursache sein.
+- **Positive Urteile zählen mit:** Ein Werk von XY mit 5 Sternen und „Mehr von XY: Ja“ (y = +1, w = 1,5) zieht den ersten Fall auf −3,5 / 9,5 = **−0,37**.
 
 ## 4. Empfehlungsfehler getrennt lernen (deine stärkere Rückkopplung)
 
@@ -98,7 +105,8 @@ Für jede Empfehlung wird gespeichert: wann angezeigt, mit welchen Begründungen
 
 **Was korrigiert wird:** die Annahme, mit der die App das Buch begründet hat.
 - Beispiel: Die App empfiehlt „wegen der ruhigen, atmosphärischen Erzählweise“, und der Leser bricht mit „Tempo: zu langsam“ ab. Dann bekommt die Tempo-Annahme eine **stärkere, gedeckelte** Korrektur.
-- Bricht er dagegen mit „inhaltlich unangenehm“ ab, wird das Tempo nicht belastet. Der Titel und ähnliche Inhalte fallen aus den nächsten Empfehlungen.
+- Bricht er dagegen mit „inhaltlich unangenehm“ ab, wird das Tempo nicht belastet. Der **Titel** wird nicht wieder empfohlen, außer man nimmt ihn bewusst wieder auf. Ohne Angabe, was gestört hat, wird nichts auf andere Bücher übertragen.
+- **„Seltener“ und „Nicht empfehlen“ sind zwei verschiedene Handlungen.** „Seltener“ senkt die Priorität eines Merkmals. „Nicht empfehlen“ ist ein ausdrücklich gesetzter Ausschluss.
 
 **Testvarianten für die Stärke** (nichts davon beschlossen):
 
@@ -106,7 +114,9 @@ Für jede Empfehlung wird gespeichert: wann angezeigt, mit welchen Begründungen
 |---|---|
 | A | Gewicht 1 wie jede andere Rückmeldung |
 | B | ×1,5 bei gelesen, ×2 bei Abbruch, aber nur auf die Merkmale, mit denen die Empfehlung begründet war |
-| C | Getrennter Fehlerspeicher je Begründung, der künftige Begründungen dieser Art abschwächt |
+| C | Ein getrennter Fehlerspeicher korrigiert die betroffene Annahme direkt in der Bewertung der Kandidaten, also in der Auswahl selbst und nicht nur in den Erklärungstexten. Das gilt auch für Merkmale, die nicht als Grund angezeigt wurden. Die sichtbare Erklärung wird danach aus den tatsächlich verwendeten Auswahlfaktoren abgeleitet. |
+
+A, B und C sind Modellvarianten, nicht drei Regeln, die pro Nutzer gleichzeitig wechseln. Vor einer Auswertung werden gemeinsame Ausgangsdaten, Zielgrößen und Zeitraum festgelegt. Solange es keine Nutzer gibt, wird mit erfundenen Widerspruchsfällen und kleinen Bedienversuchen geprüft. Ein statistischer Sieger wird daraus nicht behauptet.
 
 **Ausprobieren (Exploration):**
 - Ein Teil der Empfehlungen bietet bewusst Abwechslung und ist als „zum Ausprobieren“ markiert. Der Anteil ist ein Testwert, die 20 % aus der ersten Recherche sind nicht belegt.
@@ -120,21 +130,22 @@ Damit die App ein Buch empfehlen kann, das der Leser noch nicht kennt, braucht d
 | Merkmal | tatsächlich verfügbare Quelle | Belastbarkeit |
 |---|---|---|
 | Autor, Titel, Sprache, Übersetzung, Erscheinungsjahr | DNB (SRU, frei), Google Books | hoch |
-| Länge | Seitenzahl aus DNB oder Google Books (`pageCount`) | hoch, je Ausgabe |
-| Genre (eigene 16) | Zuordnung aus DNB-Sachgruppe und Google `categories`, mit Prüfung | mittel; Google-Kategorien sind grob |
-| Thema, Ort, Zeit | DNB-Inhaltserschließung (GND-Schlagwörter, Sachgruppen); Open Library hat ebenfalls Themenangaben, welche Felder genau, ist **noch zu prüfen** | mittel; beschreibt Inhalte, nicht Leseerlebnis |
+| Länge | Seitenzahl aus DNB oder Google Books (`pageCount`) | gut, hängt aber von der Ausgabe ab und kann fehlen |
+| Genre (eigene 16) | Zuordnung aus DNB-Sachgruppe und Google `categories`, mit Prüfung | mittel. Die Zuordnung zu unseren 16 Genres ist eine eigene Verarbeitung, die geprüft werden muss |
+| Thema, Ort, Zeit, Personen | DNB-Inhaltserschließung (GND-Schlagwörter, Sachgruppen); Open Library Work-Felder `subjects`, `subject_places`, `subject_times`, `subject_people` | mittel. Die Felder können fehlen. Ein Ortsbezug ist ein Thema, nicht unbedingt der Schauplatz. Sie beschreiben Inhalte, nicht das Leseerlebnis. Abdeckung deutscher Titel zuerst an echten Zielgruppentiteln prüfen |
 | Klappentext | Google Books `description` | nur als Quelle für eine markierte Schätzung |
 | **Tempo, Stimmung, Anspruch** | **keine freie, verlässliche Quelle gefunden** | siehe unten |
 
 Zu Tempo, Stimmung und Anspruch:
 - **StoryGraph** hat diese Daten, aber keine öffentliche Schnittstelle. Eine Anfrage steht dort seit März 2021 auf „Long-term“.
-- **Hardcover** hat eine Schnittstelle, die aber im Beta-Status ist. Für kommerzielle Produkte verbietet sie die Nutzung von Daten, die Nutzern gehören, ausdrücklich einschließlich „Vibes“. Für uns ist sie damit nicht nutzbar.
+- **Hardcover** hat eine Schnittstelle im Beta-Status mit Einschränkungen für die Nutzung von Daten anderer Nutzer. Meine Abfrage vom 24.10. gab eine Zusammenfassung der Seite zurück, kein wörtliches Zitat, und darin ausdrücklich auch „Vibes“. Die Zweitprüfung konnte diese Formulierung auf der Seite nicht bestätigen. Stand: **für unsere geplante Nutzung derzeit nicht gesichert.** Vor jeder Nutzung muss die konkrete Passage mit Datum belegt werden.
 - **DNB-Schlagwörter** beschreiben Themen, aber nicht Tempo oder Stimmung.
 
 **Folge für den Start:**
 1. Empfehlungen beruhen zuerst auf dem, was belastbar vorliegt: Autor, Genre, Thema, Länge, Sprache sowie die eigenen Urteile mit ihren ausdrücklichen Vorlieben.
-2. Tempo, Stimmung und Anspruch gibt es für fremde Bücher nur dort, wo sie vorliegen: aus einem kleinen redaktionell gepflegten Startkatalog oder später aus strukturierten Angaben anderer Leser in Bookclub. Dafür gilt eine Mindestzahl, z. B. 5 Angaben (Testwert), und Herkunft und Anzahl werden gezeigt.
-3. Jede Empfehlung nennt ihre Gründe und ihre Grenzen, z. B. „Tempo unbekannt“.
+2. Tempo, Stimmung und Anspruch gibt es für fremde Bücher nur dort, wo sie vorliegen: aus einem kleinen redaktionell gepflegten Startkatalog oder später aus strukturierten Angaben anderer Leser in Bookclub. Eine Mindestzahl (Entwurf: 5) ist nur eine vorläufige Freigaberegel. Zusätzlich zählen die Anzahl unabhängiger Personen und die Übereinstimmung: Fünf gleiche Tempoangaben sagen mehr als fünf verschiedene. Subjektive Merkmale werden weder durch eine Mehrheit noch durch Redaktion objektiv.
+   Open Library: für neue Anbindungen die Search- sowie Work- und Edition-Endpunkte nutzen (die allgemeine Books API gilt als Legacy). Werk und Ausgabe getrennt behandeln, denn die ISBN bezeichnet die Ausgabe.
+3. Jede Empfehlung nennt kurz ihre tatsächlichen Gründe. Datenlücken sind kompakt markiert und auf Antippen einsehbar, statt als lange Warnliste unter jeder Empfehlung zu stehen. Die App behauptet nichts über ein unbekanntes Merkmal.
 
 Datenschutz: Die eigenen Urteile bleiben persönlich. Ob öffentliche Schaufenster-Angaben Buchmerkmale ergänzen dürfen, ist eine eigene Entscheidung (siehe Abschnitt 7, Frage 4). Ob lokal oder auf einem Server gerechnet wird, ist wieder eine andere.
 
@@ -168,14 +179,16 @@ Testfälle:
 2. **Rückkopplung:** Testen wir A, B und C gegeneinander, statt jetzt 1,5/2 festzulegen?
 3. **Merkmalsquellen:** Start mit belastbaren Katalogdaten und einem kleinen redaktionell gepflegten Startkatalog für Tempo, Stimmung und Anspruch, dazu später Angaben anderer Leser?
 4. **Schaufenster-Daten:** Dürfen öffentliche, strukturierte Angaben aus Schaufenstern Buchmerkmale ergänzen (nicht persönliche Urteile)?
-5. **Empfehlungs-Bestätigung:** Soll beim Beginnen eines Buchs gefragt werden: „Wegen der Empfehlung angefangen?“
-6. **Erklärung:** Soll jede Empfehlung ihre Gründe und Grenzen zeigen, mit „stimmt nicht“?
+5. **Herkunft beim Lesebeginn:** Wird ein Buch direkt aus einer Empfehlung heraus begonnen, wird nur dieser Weg festgehalten. Das zeigt den Weg, nicht den Beweggrund, und lässt sich korrigieren. Nachgefragt wird nur, wenn eine Empfehlung tatsächlich infrage kommt, freiwillig und nicht bei jedem Lesestart.
+6. **Erklärung:** Soll jede Empfehlung ihre tatsächlichen Gründe kurz zeigen, Datenlücken auf Antippen und „stimmt nicht“ zur Korrektur?
+7. **Bedeutung der Sterne:** Stehen die Sterne („Hat mich erreicht“) für die persönliche Wirkung oder für Gefallen? Und wie hängen sie mit „Mehr davon“ zusammen? Daraus folgt, welcher Sternwert als Nullpunkt gilt.
+8. **„Seltener“ vs. „Nicht empfehlen“:** Bieten wir beide getrennt an?
 
 ## Quellen (zusätzlich zu den in der Recherche genannten)
 
 - [StoryGraph Roadmap: „An API“ (Status Long-term, seit 2021)](https://roadmap.thestorygraph.com/features/posts/an-api)
 - [Hardcover: Getting Started with the API (Beta, Nutzungsbedingungen)](https://docs.hardcover.app/api/getting-started)
-- [Google Books API: VolumeInfo (categories, description, pageCount)](https://googleapis.dev/ruby/google-api-client/v0.27.1/Google/Apis/BooksV1/Volume/VolumeInfo.html)
-- [Open Library Developer Center](https://openlibrary.org/developers/api?v=67)
+- [Google Books API: Volume-Referenz](https://developers.google.com/books/docs/v1/reference/volumes)
+- [Open Library: Work-Schema](https://openlibrary.org/type/work) · [Books API (Legacy)](https://openlibrary.org/dev/docs/api/books) · [Search API](https://openlibrary.org/dev/docs/api/search)
 - [DNB: Inhaltserschließung](https://blog.dnb.de/literatur-unter-der-lupe-3/)
 - [Schnabel et al.: Recommendations as Treatments](https://arxiv.org/html/1602.05352)
