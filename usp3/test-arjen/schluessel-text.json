@@ -1,0 +1,66 @@
+{
+ "1": {
+  "work_id": "d24",
+  "titel": "Firmin",
+  "arme_rang": {
+   "cluster": 4,
+   "nur_f1": 3
+  },
+  "score": 0.471
+ },
+ "2": {
+  "work_id": "d37",
+  "titel": "Ein Regenschirm für diesen Tag",
+  "arme_rang": {
+   "cluster": 5
+  },
+  "score": 0.329
+ },
+ "3": {
+  "work_id": "d35",
+  "titel": "Veronika beschließt zu sterben",
+  "arme_rang": {
+   "nachbar": 4,
+   "nur_f1": 5
+  },
+  "score": 0.52
+ },
+ "4": {
+  "work_id": "d09",
+  "titel": "Apollokalypse",
+  "arme_rang": {
+   "nachbar": 3,
+   "cluster": 1,
+   "nur_f1": 4
+  },
+  "score": 0.532
+ },
+ "5": {
+  "work_id": "d22",
+  "titel": "Die erste Metro",
+  "arme_rang": {
+   "nachbar": 1,
+   "cluster": 3,
+   "nur_f1": 1
+  },
+  "score": 0.799
+ },
+ "6": {
+  "work_id": "d10",
+  "titel": "Meeresleuchten",
+  "arme_rang": {
+   "nachbar": 2,
+   "cluster": 2,
+   "nur_f1": 2
+  },
+  "score": 0.692
+ },
+ "7": {
+  "work_id": "d14",
+  "titel": "Frühstück mit Proust",
+  "arme_rang": {
+   "nachbar": 5
+  },
+  "score": 0.483
+ }
+}

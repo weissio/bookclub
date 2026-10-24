@@ -9,7 +9,8 @@ Schreibt:
 import csv, json, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
-from empfehlung import Profile, recommend  # noqa: E402
+from empfehlung import Profile, recommend, text_similarity_fn  # noqa: E402
+MODUS = os.environ.get('MODUS', 'katalog')   # katalog | text | text+schaetzung
 
 KAT = os.path.join(os.path.dirname(HERE), 'katalog')
 ASPEKTE = {'sprache': 'Sprache', 'figuren': 'Figuren', 'handlung': 'Handlung',
@@ -27,6 +28,25 @@ def to_work(e):
         checked['inhalt'] = True
     return {'title': e['titel'], 'autor_anzeige': e.get('autor'), 'features': f, 'checked': checked,
             'welt': e.get('welt')}
+
+
+def merge_estimates(cat):
+    p = os.path.join(KAT, 'merkmale-geschaetzt.json')
+    if not os.path.exists(p):
+        return 0
+    est = json.load(open(p, encoding='utf-8'))
+    n = 0
+    for wid, fields in est.items():
+        if wid not in cat:
+            continue
+        for k, v in fields.items():
+            if not isinstance(v, dict) or v.get('wert') in (None, [], '') or v.get('sicherheit') not in ('hoch', 'mittel'):
+                continue
+            if k not in cat[wid]['features']:          # Katalogwert hat Vorrang; Schätzung nur für Lücken
+                cat[wid]['features'][k] = v['wert']
+                cat[wid].setdefault('geschaetzt', []).append(k)
+                n += 1
+    return n
 
 
 def load():
@@ -56,10 +76,16 @@ def load():
 
 def main():
     cat, judg = load()
+    text_sim = None
+    if MODUS in ('text', 'text+schaetzung'):
+        texts = {k: v.get('text') for k, v in json.load(open(os.path.join(KAT, 'klappentexte.json'), encoding='utf-8')).items()}
+        text_sim = text_similarity_fn(texts)
+    if MODUS == 'text+schaetzung':
+        print('geschätzte Merkmale ergänzt:', merge_estimates(cat))
     arms = {
-        'nachbar': recommend(cat, Profile(cat, judg), 'nachbar', k=5),
-        'cluster': recommend(cat, Profile(cat, judg), 'cluster', k=5),
-        'nur_f1': recommend(cat, Profile(cat, judg, use_aspects=False), 'nachbar', k=5),
+        'nachbar': recommend(cat, Profile(cat, judg), 'nachbar', k=5, text_sim=text_sim),
+        'cluster': recommend(cat, Profile(cat, judg), 'cluster', k=5, text_sim=text_sim),
+        'nur_f1': recommend(cat, Profile(cat, judg, use_aspects=False), 'nachbar', k=5, text_sim=text_sim),
     }
     pool = {}
     for arm, res in arms.items():
@@ -78,8 +104,8 @@ def main():
         lines += [f"**{i}. {w['title']}** – {w['autor_anzeige']}",
                   f"Ähnlich zu: {r['anchor']} · Gemeinsam: {why} · Datenabdeckung {r['coverage']:.0%}", '']
         key[i] = {'work_id': r['work_id'], 'titel': w['title'], 'arme_rang': p['arme'], 'score': r['score']}
-    open(os.path.join(HERE, 'vorlage-verblindet.md'), 'w', encoding='utf-8').write('\n'.join(lines))
-    json.dump(key, open(os.path.join(HERE, 'schluessel.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
+    open(os.path.join(HERE, f'vorlage-verblindet-{MODUS}.md'), 'w', encoding='utf-8').write('\n'.join(lines))
+    json.dump(key, open(os.path.join(HERE, f'schluessel-{MODUS}.json'), 'w', encoding='utf-8'), ensure_ascii=False, indent=1)
     print('\n'.join(lines))
     print(f"\n{len(items)} verschiedene Empfehlungen aus 3 Varianten.")
 

@@ -1,0 +1,1945 @@
+{
+  "_hinweis": "Schätzung aus Klappentexten (DNB), keine Tatsachenquelle. art: redaktionell/geschätzt. Bei sicherheit 'niedrig' ist wert null.",
+  "a01": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "warm"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "eine zeitlose und geradezu zärtliche Geschichte"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Kraft menschlicher Beziehungen"
+    },
+    "thema": {
+      "wert": [
+        "Meer & Küste",
+        "Erwachsenwerden",
+        "Freundschaft"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "sehnt sich nach der Weite des Meeres"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "a02": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "Hinreißend komisch und zuweilen bitterböse"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "die beiden sehr sympathischen Figuren"
+    },
+    "thema": {
+      "wert": [
+        "Gesellschaft & Politik",
+        "Kunst & Musik",
+        "Philosophie & Sinn"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "Gesellschaftssatire … Führer durch Kunst und Philosophie"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "a03": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "nachdenklich"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Was zählt wirklich im Leben?"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "lebenslange Suche zweier Freunde nach dem Glück"
+    },
+    "thema": {
+      "wert": [
+        "Freundschaft",
+        "Heimat & Herkunft",
+        "Berge"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Eine unerschütterliche Freundschaft … Sehnsucht nach Heimat"
+    },
+    "sprache": {
+      "wert": "poetisch",
+      "sicherheit": "hoch",
+      "beleg": "mit poetischer Kraft"
+    }
+  },
+  "a04": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "warm"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "Warmherzig, klug und anrührend erzählt"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "was Menschen verbindet"
+    },
+    "thema": {
+      "wert": [
+        "Freundschaft",
+        "Bücher & Lesen"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "Wert der Freundschaft, der Magie des Lesens"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "a05": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "nachdenklich"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "ein philosophischer Roman gelungen"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Seit seiner Kindheit ist Simon Leyland"
+    },
+    "thema": {
+      "wert": [
+        "Philosophie & Sinn",
+        "Arbeit & Beruf"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "philosophischer Roman … wird er Übersetzer"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "a06": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "melancholisch"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "von zwei Gestrandeten, von den Stürmen"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Benjamin Myers erzählt von zwei Gestrandeten"
+    },
+    "thema": {
+      "wert": [
+        "Meer & Küste",
+        "Erinnerung",
+        "Verlust & Trauer"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Sog der Erinnerung … vom Meer"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "a07": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "warm",
+        "melancholisch"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "unendlichen Zärtlichkeit und der Bitterkeit der Dinge"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Ein Café und seine Menschen"
+    },
+    "thema": {
+      "wert": [
+        "Liebe"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "um Liebe, Kraft und Tod"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "a09": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "Blick für die tragische Komik des Lebens"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "stolpert Herr Lehmann durchs Leben"
+    },
+    "thema": {
+      "wert": [
+        "Großstadt",
+        "Geschichte"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "wir schreiben das Jahr 1989 … Kreuzberg"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "a10": {
+    "tempo": {
+      "wert": "ruhig",
+      "sicherheit": "mittel",
+      "beleg": "Philosophie der Gelassenheit und des stillen Glücks"
+    },
+    "ton": {
+      "wert": [
+        "heiter",
+        "nachdenklich"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "voll Charme und Leichtigkeit"
+    },
+    "fokus": {
+      "wert": "ideen",
+      "sicherheit": "mittel",
+      "beleg": "Wie findet man Zufriedenheit im Leben?"
+    },
+    "thema": {
+      "wert": [
+        "Philosophie & Sinn",
+        "Bücher & Lesen"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "Philosophie der Gelassenheit … Liebe zur Literatur"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d01": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll",
+        "heiter"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "viel Herz und Humor … luftig-leichten"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Viele liebevoll gestaltete Charaktere"
+    },
+    "thema": {
+      "wert": [
+        "Erwachsenwerden",
+        "Verlust & Trauer",
+        "Familie"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "so erwachsen zu werden wie nötig"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d04": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "von so umwerfender Komik"
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Bücher & Lesen"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "deckt sie sich jede Woche mit Lesestoff"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d05": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "über die ganz großen Gefühle"
+    },
+    "thema": {
+      "wert": [
+        "Liebe",
+        "Kunst & Musik"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "plötzlich liegt Liebe in der Luft"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d06": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Kunst & Musik",
+        "Geschichte"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "1664 … des angesehenen Malers Johannes Vermeer"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d07": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Gesellschaft & Politik",
+        "Geschichte"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "inmitten des Widerstands gegen den Faschismus"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d08": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Verlust & Trauer",
+        "Geschichte"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Die junge Witwe eines Geographen"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d09": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Magie & Mythos",
+        "Geschichte",
+        "Großstadt"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Epochenroman … Hauptrolle spielt die Stadt Berlin"
+    },
+    "sprache": {
+      "wert": "anspruchsvoll",
+      "sicherheit": "mittel",
+      "beleg": "von unvergleichlicher Sprachmächtigkeit"
+    }
+  },
+  "d11": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "nachdenklich"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Wofür lebe ich – und lebe ich"
+    },
+    "fokus": {
+      "wert": "ideen",
+      "sicherheit": "mittel",
+      "beleg": "Existenz in Einfachheit und Bewusstheit zu erproben"
+    },
+    "thema": {
+      "wert": [
+        "Natur & Landschaft",
+        "Philosophie & Sinn"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Anregung zur Selbstfindung in der Natur"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d12": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "melancholisch"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "tiefe Einsamkeit in der andern weckt"
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Liebe"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "Roman der Liebe einer Frau"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d13": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "voller Hoffnung, Tiefe und Humor"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "einer Familie auf dem Weg zu sich"
+    },
+    "thema": {
+      "wert": [
+        "Liebe",
+        "Familie",
+        "Magie & Mythos"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "magischen Liebe – und einer Familie"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d14": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "warm"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "feinfühlig und herzenswarm"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "die Geschichte zweier Frauen"
+    },
+    "thema": {
+      "wert": [
+        "Bücher & Lesen",
+        "Familie",
+        "Alter"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "gemeinsame Leidenschaft fürs Lesen"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d15": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Und fühlt sich zunehmend fremd"
+    },
+    "thema": {
+      "wert": [
+        "Philosophie & Sinn",
+        "Liebe"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "sein Lebensglück endgültig herzustellen"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d17": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "wildes Panoptikum unterschiedlichster Biographien"
+    },
+    "thema": {
+      "wert": [
+        "Gesellschaft & Politik",
+        "Geschichte",
+        "Dorf & Provinz"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Entwicklung des Sozialismus in der Ostslowakei"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d18": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "melancholisch"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "tiefer Eindruck von Vergänglichkeit"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "das ganze Leben eines langsam Verschwindenden"
+    },
+    "thema": {
+      "wert": [
+        "Freundschaft",
+        "Verlust & Trauer"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Annäherung an einen verstorbenen Freund"
+    },
+    "sprache": {
+      "wert": "poetisch",
+      "sicherheit": "mittel",
+      "beleg": "präzisem, knappem und dennoch lyrischem Stil"
+    }
+  },
+  "d19": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Großstadt",
+        "Liebe"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Kreuzberg … Wahre Multikulti-Liebe"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d20": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "auf witzige Weise aufs Korn genommen"
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Bücher & Lesen",
+        "Geschichte"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Satire auf den Buchmarkt der Spätaufklärung"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d21": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "heiter"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Naturverbundenheit und Frohsinn geprägt"
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Erinnerung",
+        "Familie",
+        "Kunst & Musik"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Kindheit … verarbeitete sie … durch Ölbilder"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d23": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "düster"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Alles Schöne birgt Brutales"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Geschichte der 26-jährigen Jazzpianistin Izy Lewin"
+    },
+    "thema": {
+      "wert": [
+        "Gesellschaft & Politik",
+        "Kunst & Musik",
+        "Heimat & Herkunft"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "seziert die Grundlagen einer Gesellschaft"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d24": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "melancholisch"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "die traurig-charmante Geschichte"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "eines verkannten Außenseiters"
+    },
+    "thema": {
+      "wert": [
+        "Bücher & Lesen",
+        "Freundschaft"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "liest sich Buch für Buch durch"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d25": {
+    "tempo": {
+      "wert": "rasant",
+      "sicherheit": "hoch",
+      "beleg": "Temporeich und witzig"
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "Temporeich und witzig"
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Kunst & Musik",
+        "Liebe"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Revival seiner Gruppe … nach der großen Liebe"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d26": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Liebe"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "seiner über Jahre konservierten Sehnsuchtsliebe"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d28": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Verwirrt und zutiefst verunsichert flieht Faber"
+    },
+    "thema": {
+      "wert": [
+        "Familie",
+        "Erinnerung",
+        "Natur & Landschaft"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "vor den aufbrechenden Erinnerungen"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d29": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "die wahre Geschichte einer jungen Frau"
+    },
+    "thema": {
+      "wert": [
+        "Großstadt",
+        "Freundschaft"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Kreuzberg … die Freundschaft zum Autor"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d30": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "düster"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Städte verwandeln sich in Katastrophengebiete"
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Technik & Zukunft",
+        "Gesellschaft & Politik"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "2040: Weltweit bricht ein neues Virus aus"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d31": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "zum Weihevollen kommt der Humor hinzu"
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Natur & Landschaft"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "Bewusstsein für die Natur"
+    },
+    "sprache": {
+      "wert": "poetisch",
+      "sicherheit": "hoch",
+      "beleg": "erzählt spannend und poetisch"
+    }
+  },
+  "d32": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "zwischen dem Alten und dem Jungen"
+    },
+    "thema": {
+      "wert": [
+        "Freundschaft",
+        "Alter",
+        "Verbrechen & Ermittlung"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "eine unwahrscheinliche Freundschaft"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d33": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Liebe",
+        "Geschichte"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Neuseeland 1869 … verlieben sie sich"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d34": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Bücher & Lesen",
+        "Geschichte",
+        "Philosophie & Sinn"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "dass sie Figuren der Literatur sind"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d35": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Geschichte einer unglücklichen jungen Frau"
+    },
+    "thema": {
+      "wert": [
+        "Philosophie & Sinn"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "wie schön das Leben sein kann"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d36": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "westfälische Holzschuhe erweisen sich als unpraktisch"
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Kunst & Musik"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "für den Gig ihres Lebens"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d37": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "mit feinem Humor und leichter Ironie"
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Großstadt",
+        "Arbeit & Beruf"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Ein moderner Großstadtflaneur"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d38": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Liebe",
+        "Erinnerung",
+        "Krieg"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Lieben heißt: sich erinnern"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d39": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Generationenporträt"
+    },
+    "thema": {
+      "wert": [
+        "Migration",
+        "Großstadt",
+        "Liebe"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "Liebesgeschichte, Einwandererschicksal, Berlinroman"
+    },
+    "sprache": {
+      "wert": "poetisch",
+      "sicherheit": "hoch",
+      "beleg": "pointiert und poetisch"
+    }
+  },
+  "d41": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Erich ist über achtzig"
+    },
+    "thema": {
+      "wert": [
+        "Alter",
+        "Verlust & Trauer",
+        "Natur & Landschaft"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "verliert Stück für Stück seine Unabhängigkeit"
+    },
+    "sprache": {
+      "wert": "poetisch",
+      "sicherheit": "mittel",
+      "beleg": "Berührend und poeti"
+    }
+  },
+  "d42": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "hoch",
+      "beleg": "vor allem deren Bewohner kennenzulernen"
+    },
+    "thema": {
+      "wert": [
+        "Kunst & Musik",
+        "Großstadt"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "die Musik … als Reservat der Sehnsucht"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d43": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "voller Komik und doch ganz ernst"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Freundschaft zwischen den Generationen"
+    },
+    "thema": {
+      "wert": [
+        "Freundschaft",
+        "Familie"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "Freundschaft … Familie, die aus den Fugen gerät"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d44": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "mit geistreichen Kommentaren versehen"
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Bücher & Lesen"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "die Encyclopaedia Britannica von A bis Z"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d45": {
+    "tempo": {
+      "wert": "rasant",
+      "sicherheit": "hoch",
+      "beleg": "ein rasanter, hochkomischer, berührender Roman"
+    },
+    "ton": {
+      "wert": [
+        "humorvoll",
+        "melancholisch"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "hochkomischer … zerfließt vor Melancholie"
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Philosophie & Sinn",
+        "Liebe"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "was im Leben wirklich zählt"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d46": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Geschichte",
+        "Liebe"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "nach Hitlers Machtergreifung … um ihre Liebe"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d47": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Verlust & Trauer"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Als Mikage ihre Großmutter verliert"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d48": {
+    "tempo": {
+      "wert": "rasant",
+      "sicherheit": "mittel",
+      "beleg": "Eine fieberhafte Suche"
+    },
+    "ton": {
+      "wert": [
+        "spannungsgeladen"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Wer mordet im Dienste der Musik?"
+    },
+    "fokus": {
+      "wert": "handlung",
+      "sicherheit": "mittel",
+      "beleg": "fieberhafte Suche in codierten Notenschriften"
+    },
+    "thema": {
+      "wert": [
+        "Verbrechen & Ermittlung",
+        "Kunst & Musik"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Wer mordet im Dienste der Musik?"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d49": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "dreiundzwanzig Komma sieben Jahre alt"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Sie hat einen Zahlenfimmel"
+    },
+    "thema": {
+      "wert": [
+        "Liebe",
+        "Großstadt"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Neuberlinerin Lisbeth … Kreuzberg"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d50": {
+    "tempo": {
+      "wert": "rasant",
+      "sicherheit": "hoch",
+      "beleg": "Ein atemloser, atmosphärischer Thriller"
+    },
+    "ton": {
+      "wert": [
+        "spannungsgeladen",
+        "düster"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Schaurig, rasante Spannung"
+    },
+    "fokus": {
+      "wert": "handlung",
+      "sicherheit": "mittel",
+      "beleg": "sucht … nach Hinweisen auf ihren leiblichen Vater"
+    },
+    "thema": {
+      "wert": [
+        "Verbrechen & Ermittlung",
+        "Familie"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Schauplatz einer schrecklichen Mordnacht"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d51": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "nachdenklich"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Mischung aus Erinnerung, Recherche und Reflexion"
+    },
+    "fokus": {
+      "wert": "ideen",
+      "sicherheit": "mittel",
+      "beleg": "Traktat über den Seelensegen der Naturerfahrung"
+    },
+    "thema": {
+      "wert": [
+        "Natur & Landschaft",
+        "Philosophie & Sinn"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Seelensegen der Naturerfahrung … Anleitung zum Glücklichsein"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d52": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "fünfzehn Lebensläufe, Geschichten, Schicksale"
+    },
+    "thema": {
+      "wert": [
+        "Geschichte",
+        "Krieg"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Ein Panorama des letzten Jahrhunderts"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d53": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Freundschaft",
+        "Erinnerung"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "vier Jahrzehnte mit seinen besten Freunden"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d54": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Wünsche und Sehnsüchte der Teilnehmer selbst"
+    },
+    "thema": {
+      "wert": [
+        "Bücher & Lesen",
+        "Liebe"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "über die Romane von Jane Austen"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d55": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Liebe"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "Wie weit darf Liebe gehen?"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d56": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "hoch",
+      "beleg": "Mal lustig, mal sexy, mal tragisch"
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "die Geschichte einer jungen Frau"
+    },
+    "thema": {
+      "wert": [
+        "Liebe",
+        "Erwachsenwerden"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Vom ersten Kuss, den ersten großen Gefühlen"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d57": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "figuren",
+      "sicherheit": "mittel",
+      "beleg": "Allen gemeinsam ist, dass sie rastlos"
+    },
+    "thema": {
+      "wert": [
+        "Liebe"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Ein Trennungsbuch"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d58": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "fokus": {
+      "wert": "handlung",
+      "sicherheit": "mittel",
+      "beleg": "um herauszufinden, was damals geschah"
+    },
+    "thema": {
+      "wert": [
+        "Natur & Landschaft",
+        "Geschichte"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Im Jahre 1946 … in die sibirische Eiswüste"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d59": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "humorvoll"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "zwischen Scharfsinn und Narkolepsie"
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Großstadt",
+        "Erwachsenwerden"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Sebastian wird Ende zwanzig … Kreuzberg"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  },
+  "d60": {
+    "tempo": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "ton": {
+      "wert": [
+        "düster"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "eine Horrorversion des digitalen Zeitalters"
+    },
+    "fokus": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    },
+    "thema": {
+      "wert": [
+        "Bücher & Lesen",
+        "Gesellschaft & Politik",
+        "Technik & Zukunft"
+      ],
+      "sicherheit": "mittel",
+      "beleg": "Lesen ist geächtet, Wissen nicht erwünscht"
+    },
+    "sprache": {
+      "wert": null,
+      "sicherheit": "niedrig",
+      "beleg": null
+    }
+  }
+}
