@@ -1,0 +1,80 @@
+{
+ "1": {
+  "work_id": "d52",
+  "titel": "Heimsuchung",
+  "arme_rang": {
+   "nachbar": 4,
+   "cluster": 2
+  },
+  "score": 0.894
+ },
+ "2": {
+  "work_id": "d24",
+  "titel": "Firmin",
+  "arme_rang": {
+   "nachbar": 5,
+   "cluster": 1,
+   "nur_f1": 3
+  },
+  "score": 0.886
+ },
+ "3": {
+  "work_id": "d50",
+  "titel": "Two sides to every murder",
+  "arme_rang": {
+   "cluster": 4
+  },
+  "score": 0.694
+ },
+ "4": {
+  "work_id": "d42",
+  "titel": "Ja, mach nur einen Plan",
+  "arme_rang": {
+   "cluster": 5
+  },
+  "score": 0.69
+ },
+ "5": {
+  "work_id": "d13",
+  "titel": "Zwischen Himmel und Liebe",
+  "arme_rang": {
+   "nachbar": 1,
+   "nur_f1": 1
+  },
+  "score": 0.989
+ },
+ "6": {
+  "work_id": "d18",
+  "titel": "Los",
+  "arme_rang": {
+   "cluster": 3
+  },
+  "score": 0.722
+ },
+ "7": {
+  "work_id": "d23",
+  "titel": "Superposition",
+  "arme_rang": {
+   "nur_f1": 4
+  },
+  "score": 0.863
+ },
+ "8": {
+  "work_id": "d35",
+  "titel": "Veronika beschließt zu sterben",
+  "arme_rang": {
+   "nachbar": 2,
+   "nur_f1": 2
+  },
+  "score": 0.93
+ },
+ "9": {
+  "work_id": "d28",
+  "titel": "Drei Tage im Paradies",
+  "arme_rang": {
+   "nachbar": 3,
+   "nur_f1": 5
+  },
+  "score": 0.899
+ }
+}

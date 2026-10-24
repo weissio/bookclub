@@ -9,8 +9,9 @@ Schreibt:
 import csv, json, os, random, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
-from empfehlung import Profile, recommend, text_similarity_fn  # noqa: E402
+from empfehlung import Profile, recommend, text_similarity_fn, embedding_similarity_fn  # noqa: E402
 MODUS = os.environ.get('MODUS', 'katalog')   # katalog | text | text+schaetzung
+TEXT = os.environ.get('TEXT', 'embedding')   # embedding | tfidf
 
 KAT = os.path.join(os.path.dirname(HERE), 'katalog')
 ASPEKTE = {'sprache': 'Sprache', 'figuren': 'Figuren', 'handlung': 'Handlung',
@@ -79,7 +80,7 @@ def main():
     text_sim = None
     if MODUS in ('text', 'text+schaetzung'):
         texts = {k: v.get('text') for k, v in json.load(open(os.path.join(KAT, 'klappentexte.json'), encoding='utf-8')).items()}
-        text_sim = text_similarity_fn(texts)
+        text_sim = (embedding_similarity_fn if TEXT == 'embedding' else text_similarity_fn)(texts)
     if MODUS == 'text+schaetzung':
         print('geschätzte Merkmale ergänzt:', merge_estimates(cat))
     arms = {

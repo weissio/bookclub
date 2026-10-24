@@ -201,9 +201,35 @@ def text_similarity_fn(texts):
             'hat haben hatte ich du wir uns ihm ihn diese dieser dieses jede jeder alle alles roman buch autor autorin').split()
     vec = TfidfVectorizer(stop_words=stop, sublinear_tf=True, min_df=1, max_df=0.6)
     m = vec.fit_transform([texts[i] for i in ids])
+    return _rank_normalized(ids, cosine_similarity(m))
+
+
+EMBED_MODEL = 'sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2'
+
+
+def embedding_similarity_fn(texts, model_name=EMBED_MODEL):
+    """Bedeutungsvergleich der Klappentexte über ein mehrsprachiges Satz-Embedding-Modell."""
+    from sentence_transformers import SentenceTransformer
+    ids = [w for w, t in texts.items() if t]
+    if len(ids) < 2:
+        return lambda a, b: None
+    emb = SentenceTransformer(model_name).encode([texts[i] for i in ids], normalize_embeddings=True)
+    return _rank_normalized(ids, emb @ emb.T)
+
+
+def _rank_normalized(ids, sim):
+    """Rohe Kosinuswerte sind je Verfahren unterschiedlich skaliert. Deshalb zählt der Rang:
+    Anteil der anderen Bücher, die dem Anker weniger ähnlich sind (0..1)."""
     idx = {w: n for n, w in enumerate(ids)}
-    sim = cosine_similarity(m)
-    return lambda a, b: float(sim[idx[a], idx[b]]) if a in idx and b in idx else None
+    n = len(ids)
+
+    def f(a, b):
+        if a not in idx or b not in idx or a == b:
+            return None
+        col = sim[:, idx[b]]
+        v = col[idx[a]]
+        return float(sum(1 for j in range(n) if j not in (idx[a], idx[b]) and col[j] < v) / max(1, n - 2))
+    return f
 
 
 def recommend(catalog, profile, variant='cluster', k=5, text_sim=None):
@@ -231,8 +257,8 @@ def recommend(catalog, profile, variant='cluster', k=5, text_sim=None):
                 s_, cov_, hits_ = similarity(cand, catalog[a], profile.judgments.get(a) if profile.use_aspects else None)
                 ts = text_sim(wid, a) if text_sim else None
                 if ts is not None:
-                    s_ = (1 - TEXT_WEIGHT) * s_ + TEXT_WEIGHT * min(1.0, ts * 3)   # Kosinuswerte sind klein; Skalierung ist Entwurf
-                    hits_ = hits_ + [('klappentext', [f'{ts:.2f}'])]
+                    s_ = (1 - TEXT_WEIGHT) * s_ + TEXT_WEIGHT * ts   # ts ist ein Rang 0..1
+                    hits_ = hits_ + [('Klappentext ähnlicher als', [f'{ts:.0%} der Bücher'])]
                 sims.append(((s_, cov_, hits_), a))
             if not sims:
                 continue
