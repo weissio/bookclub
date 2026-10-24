@@ -82,11 +82,11 @@ Vorliebe(f) = Σ (wᵢ · yᵢ) / (λ + Σ wᵢ)
 - **yᵢ** ist die Richtung und Stärke, zwischen −1 und +1.
   - ausdrücklich „mochte ich“: +1
   - „störte mich“ oder ein passender Abbruchgrund: −1
-  - nur die Gesamtbewertung, auf die vorhandenen Merkmale des Buchs übertragen: schwach, z. B. (Sterne − 2,5) / 2,5 × 0,3
+  - nur die Gesamtbewertung, auf die vorhandenen Merkmale des Buchs übertragen: schwach, z. B. (Lichter − 3) / 2 × 0,3 (aktualisiert, siehe Nachtrag 3)
 - **wᵢ** ist das begrenzte Gewicht: Zuverlässigkeit der Angabe × Herkunftsfaktor, gedeckelt.
 - **λ** ist die Dämpfung, ein neutraler Startwert, z. B. 3.
 - Bedingungen: wᵢ ≥ 0, λ > 0, |yᵢ| ≤ 1. Bei keinerlei Belegen ergibt die Formel 0. Diese 0 bedeutet „keine Belege“ und wird in der Oberfläche nie als neutrale Meinung gezeigt.
-- **Sternskala:** Der Nullpunkt 2,5 ist gesetzt, die Mitte der Skala 0,5–5 läge bei 2,75. Vorher muss feststehen, was die Sterne bedeuten (siehe Abschnitt 7, Frage 7).
+- **Lichter-Skala (aktualisiert):** Es gibt 1 bis 5 Lichter mit der Mitte 3 („okay“). Kodiert wird mit (Lichter − 3) / 2, das ergibt −1, −0,5, 0, +0,5 und +1. Das ist eine Modellentscheidung; die Wortstufen beweisen keine gleich großen Abstände. „Keine Bewertung“ ist `null`, nicht 0 und nicht drei Lichter.
 
 Eigenschaften:
 - Weil alle |yᵢ| ≤ 1 sind, bleibt die Vorliebe immer zwischen −1 und +1, auch bei vielen stark gewichteten Beobachtungen.
@@ -232,3 +232,16 @@ Der Designer hat die Bewertungsansicht im Prototyp an drei Büchern durchgespiel
 3. **„Seltener“ und „Nicht empfehlen“ sind immer erreichbar.** Bei 1–2 Lichtern und beim Abbruch sind sie hervorgehoben. In allen anderen Fällen stehen sie unter „Genauer beschreiben“. Ein Buch kann gefallen, und trotzdem möchte man zum Beispiel Gewalt künftig seltener.
 4. **Keine versteckt gespeicherten Angaben.** Eine Angabe wird nur gespeichert, wenn sie beim Speichern sichtbar ist. Abhängige Angaben werden mit ihrer Bedingung gelöscht: Wer den Abbruchgrund „Tempo“ abwählt, löscht auch „zu langsam/zu schnell“. Angaben bleiben sichtbar, wo sie liegen; „Genauer beschreiben“ zeigt beim Zuklappen die Zahl der Angaben.
 5. **Grenzen:** Die 10 Sekunden stammen aus einem internen Durchspielen. Ob echte Leser die Fragen schnell und einheitlich verstehen, muss ein Test zeigen. Dass der Empfehlungsalgorithmus funktioniert, ist damit nicht nachgewiesen.
+
+### Nachtrag 3 (Claude, 24.10.2026): Clusterung als Arbeitsgrundlage
+
+[usp3/CLUSTERUNG.md](usp3/CLUSTERUNG.md) (ausgearbeitet von Codex) wird Arbeitsgrundlage für die Umsetzung:
+- **Mehrere Geschmacksgruppen innerhalb einer Person.** Wer ruhige Familienromane und schnelle Thriller mag, bekommt kein verwischtes Durchschnittsprofil. Ein Kandidat wird nach seiner besten passenden Gruppe bewertet.
+- **Vergleich zweier Verfahren:** einfache Nachbarschaft zu einzelnen gut bewerteten Büchern gegen Clusterung. Die Clusterung wird nur übernommen, wenn danach besser bewertete Bücher folgen, ohne Ausschlüsse zu verletzen und ohne dass weniger bewertet wird.
+- **Zielgröße:** Anteil mit 4–5 Lichtern unter bewerteten, aus einer Empfehlung begonnenen Büchern. Daneben wird immer angegeben, wie viele Bücher überhaupt bewertet wurden, wie viele Urteile negativ waren, wie viele Abbrüche es gab und wie oft ein Ausschluss verletzt wurde.
+- **„Düster“ und „traurig“ sind Beschreibungen, keine Minuspunkte** (Koopman 2015).
+- **Nur belegte Verbindungen:** „Figuren mochte ich“ ohne beschriebene Figurenmerkmale erzeugt keine Vorliebe für einen Figurentyp.
+- **Die 12 Abnahmefälle** aus Abschnitt 7 der Clusterung gelten für die Umsetzung.
+- **Ausschlüsse an eindeutige Merkmale binden.** Gespeichert wird `{action, dimension, value_id, source_work_id, scope, explicit}` statt eines Textes wie „dieses Thema“. Die Person wählt sichtbar, welches Thema gemeint ist; „solche Länge“ bekommt einen sichtbaren Bereich. Fehlt bei einem Kandidaten der Wert zu einem harten Ausschluss, wird er nicht als passend empfohlen, denn „unbekannt“ heißt nicht „enthält das nicht“.
+
+Die ausführbare Qualitätsauswertung (`auswertung.py`) liegt noch nicht im Repository, weil sie nicht mitgeschickt wurde.
