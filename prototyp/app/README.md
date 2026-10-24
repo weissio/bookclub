@@ -33,7 +33,19 @@ Zweite Prüfrunde (unabhängige Abschlussprüfung): Urteil „nachbessern“, al
 
 Hinweis der Prüfung, noch nicht entschieden: Sterne erscheinen überall; wenn sie „wie sehr hat es mich erreicht“ bedeuten, sollte das einmal erklärt werden.
 
-Offen: Dark Mode, Android-Variante, endgültige Bereichsnamen.
+## Runde 3: nach psychologischer Beratung (24.10.2026)
+
+- Ganze Startseite als Rückwand eines Regals (warmes Rohpapier als Bild), Leinenfarben leicht entsättigt, Buch- und Bandseiten auf warmem Buchpapier statt Weiß
+- Ex-Libris statt „Bibliothek“: „Aus der Bücherei von Mara“ und „Bücherei am Fenster“ (Beispielnamen)
+- Begrüßung als Satz: „Guten Abend. Das Lesebändchen liegt noch auf Seite 142.“ Rückmeldung nach dem Eintragen ersetzt diesen Satz
+- Aktuelles Buch liegt obenauf mit Lesebändchen und „S. 142“; Tippen aufs Bändchen trägt die Seite ein. Kein Balken, keine Prozente
+- „Ein Buch dazustellen“ als einziger Erfassen-Einstieg (Rohleinenband oben); Plus oben rechts entfernt
+- Rücken werden mit der Anzahl dicker, Zahl eingeprägt, keine Pfeile
+- Zettel mit einem Satz aus der eigenen Lesart am Regalbrett; Druckvermerk statt Statistikblock
+- Knöpfe aus Leinen statt schwarzer Pillen
+- Neue Bilder: `assets/make_raum.py` (Rückwand, Buchpapier, Regalbrett, Lesebändchen)
+
+Offen: Band- und Buchseiten noch in Listenoptik, Patina der Bände, Android-Variante, endgültige Bereichsnamen.
 
 ## Dateien
 

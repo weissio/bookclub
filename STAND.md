@@ -4,7 +4,7 @@ _Zuletzt aktualisiert: 24.10.2026_
 
 ## Wo wir stehen
 
-**Phase:** Schritt 1 – Bibliothek. Das Designer-Team (Impeccable mit iOS-Prüfung) hat die Bibliothek neu gestaltet; Prüfung und Feinschliff laufen.
+**Phase:** Schritt 1 – Bibliothek. Startseite nach psychologischer Beratung neu gestaltet; Band- und Buchseiten folgen.
 
 **Erledigt**
 - Grundkonzept geklärt: private Bibliothek → freiwilliges Schaufenster → Entdecken (siehe [ENTSCHEIDUNGEN.md](ENTSCHEIDUNGEN.md))
@@ -16,6 +16,8 @@ _Zuletzt aktualisiert: 24.10.2026_
 - Design-Experte gefunden: Impeccable (Open Source) als Designer, iOS-Plugin als Zweitprüfer; erste Kritik 19/40
 - Neue Bibliothek vom Designer-Team: Regenbogen-Reihe aus liegenden Bänden, Weiterlesen-Karte mit „Seite eintragen“, Buchseite mit den eigenen Worten zuoberst – siehe [prototyp/app/](prototyp/app/)
 - Korrekturrunde nach Abschlussprüfung und iOS-Prüfung eingebaut (Details in [prototyp/app/README.md](prototyp/app/README.md))
+- Psychologische Beratung zur Zielgruppe (Leser, Sammler, Introvertierte) mit belegter Recherche – siehe [.impeccable/psychologie/](.impeccable/psychologie/)
+- Startseite danach neu: Regal-Rückwand statt Weiß, Ex-Libris, Buch mit Lesebändchen obenauf, ein einziges „Ein Buch dazustellen“, Lesart-Zettel am Brett, Druckvermerk
 
 **Noch nicht bestätigt**
 - Der Prototyp beginnt noch direkt mit dem Scan und passt damit nicht zur bestätigten Architektur. Er muss neu aufgebaut werden.
@@ -23,7 +25,7 @@ _Zuletzt aktualisiert: 24.10.2026_
 
 ## Nächster Schritt
 
-Arjen schaut sich die überarbeitete Bibliothek im Canvas an (Seite „App (Designer-Team)“). Danach: DESIGN.md (Gestaltungsregeln) schreiben und „Buch erfassen“ im neuen Stil aufbauen.
+Arjen prüft die neue Startseite. Danach Band- und Buchseiten in dieselbe Welt holen (noch Listenoptik) und Patina der Bände (neu, gelesen, vielgelesen) gestalten.
 
 **Hinweis:** Der Push zu GitHub schlägt seit 24.10. mit 403 fehl. Die Commits liegen lokal; der GitHub-Zugang muss in den Einstellungen unter Konnektoren erneuert werden.
 
@@ -37,4 +39,3 @@ Arjen schaut sich die überarbeitete Bibliothek im Canvas an (Seite „App (Desi
 6. Endgültige Namen der Hauptbereiche.
 7. Gilt Stil C für die ganze App oder nur für die Bibliothek? (vorerst nur Bibliothek)
 8. Verleih und Verkauf: rechtliche Pflichten als Plattform (u. a. DAC7) – **noch nicht recherchiert, nur als Hinweis genannt.**
-9. Dark Mode ist noch nicht gestaltet; folgt, sobald das helle Design freigegeben ist.

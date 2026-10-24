@@ -57,3 +57,7 @@ Gesucht: ein „Experte“, der Design und Usability mitdenkt. Gefunden wurden k
 | UI UX Pro Max | Sammlung von Stilen, Paletten, Schriftpaaren, 99 UX-Richtlinien | eher Stilkatalog als Usability-Methode – [Doku](https://docsearch.algolia.com/mcp/docs/repo/nextlevelbuilder/ui-ux-pro-max-skill) |
 
 Übersicht weiterer Skills: [Composio: Top 10 Design Skills](https://composio.dev/blog/top-design-skills)
+
+## H. Leserpsychologie (24.10.2026)
+
+Belegte Recherche zu Besitz als Selbstausdruck, SuB, Ritualen, Introversion und Emotional Design: [.impeccable/psychologie/leserpsychologie.md](.impeccable/psychologie/leserpsychologie.md). Ein fertiges Werkzeug für Zielgruppen-Psychologie gibt es nicht; gefundene Skills wie „Laws of UX“ ([rolemodel-skills](https://github.com/rolemodel/rolemodel-skills)) prüfen nur Bedienbarkeit. Daraus abgeleitete Beratung: [beratung-stilmittel.md](.impeccable/psychologie/beratung-stilmittel.md).

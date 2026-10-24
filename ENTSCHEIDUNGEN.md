@@ -32,6 +32,7 @@ Getrennt nach Herkunft, damit klar ist, was feststeht und was nur vorgeschlagen 
 | 24.10.2026 | Aufbau (Am Lesen, Gelesen, Ungelesen …) und Hauptbereiche (Bibliothek, Schaufenster, Entdecken, Ich) passen. Das GUI ist zu kleinteilig und überfüllt, man kann sich leicht verklicken. Ein Design- und Usability-Experte soll hinzugezogen werden: optisch einfach, maximal benutzerfreundlich, Wärme eines Buchclubs, sympathische Elemente, einzigartig. |
 | 24.10.2026 | Design-Experte: Impeccable (Open Source) als Designer, iOS-Plugin „Mobile App Design“ als Zweitprüfer. Erste Kritik: 19/40. **Volle Entscheidungshoheit über Gestaltung und Umfang der Überarbeitung liegt beim Designer-Team.** Wärme soll aus Material und Stimme kommen. Produktentscheidungen (Struktur, Parameter, Statistik-Inhalte) bleiben bestehen. |
 | 24.10.2026 | Designer-Team (in eigener Hoheit): Bände als liegende Regenbogen-Reihe in voller Breite; die Länge zeigt nicht mehr die Anzahl. „Buch erfassen“ liegt oben auf dem Stapel. Keine zeitgesteuerten Einblendungen, Rückmeldung direkt an Ort und Stelle. Dark Mode folgt später. |
+| 24.10.2026 | Startseite noch zu 0815, doppeltes „+“, Hintergrund nicht harmonisch; Regal als Basis gut. Psychologische Beratung zur Zielgruppe hinzuziehen, die dem Designer Stilmittel gibt. Kein KI-Slop. Dark Mode ist kein Thema. |
 
 ## Vorschläge von Claude – noch nicht bestätigt
 
