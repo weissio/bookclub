@@ -1,0 +1,732 @@
+[
+  {
+    "id": "a01",
+    "titel": "Offene See",
+    "autor": "Benjamin Myers",
+    "autor_eingabe": "Benjamin Myer",
+    "isbn": "978-3-8321-8119-2",
+    "jahr": 2020,
+    "verlag": "DuMont",
+    "seiten": 267,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Meer & Küste",
+      "Natur & Landschaft",
+      "Erwachsenwerden"
+    ],
+    "tempo": "ruhig",
+    "ton": [
+      "nachdenklich"
+    ],
+    "fokus": "figuren",
+    "sprache": "poetisch",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1200364155",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1200364155",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1200364155",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1200364155",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1200364155",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1200364155",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1200364155",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1200364155",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/benjamin-myers/offene-see.html",
+        "art": "redaktionell"
+      },
+      "tempo": {
+        "url": "https://www.perlentaucher.de/buch/benjamin-myers/offene-see.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/benjamin-myers/offene-see.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/benjamin-myers/offene-see.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/benjamin-myers/offene-see.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "a02",
+    "titel": "Die Eleganz des Igels",
+    "autor": "Muriel Barbery",
+    "autor_eingabe": "Muriel Barbary",
+    "isbn": "978-3-423-24658-3",
+    "jahr": 2008,
+    "verlag": "Deutscher Taschenbuch Verlag (dtv)",
+    "seiten": 363,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Identität"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/986852554",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/986852554",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/986852554",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/986852554",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/986852554",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/986852554",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/986852554",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/986852554",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/986852554",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "a03",
+    "titel": "Acht Berge",
+    "autor": "Paolo Cognetti",
+    "autor_eingabe": "Paolo Cognetti",
+    "isbn": "978-3-421-04778-6",
+    "jahr": 2017,
+    "verlag": "Deutsche Verlags-Anstalt (DVA)",
+    "seiten": 244,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Freundschaft",
+      "Berge",
+      "Familie"
+    ],
+    "tempo": null,
+    "ton": [
+      "nachdenklich"
+    ],
+    "fokus": "figuren",
+    "sprache": "schlicht",
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1130167798",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1130167798",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1130167798",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1130167798",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1130167798",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1130167798",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1130167798",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1130167798",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/paolo-cognetti/acht-berge.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/paolo-cognetti/acht-berge.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/paolo-cognetti/acht-berge.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/paolo-cognetti/acht-berge.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "a04",
+    "titel": "Der Buchspazierer",
+    "autor": "Carsten Henn",
+    "autor_eingabe": "Carsten Henn",
+    "isbn": "978-3-86612-477-6",
+    "jahr": 2020,
+    "verlag": "Pendo",
+    "seiten": 223,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Bücher & Lesen",
+      "Freundschaft"
+    ],
+    "tempo": null,
+    "ton": [
+      "warm"
+    ],
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1207330817",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1207330817",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1207330817",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1207330817",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1207330817",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1207330817",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1207330817",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1207330817",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.piper.de/buecher/der-buchspazierer-isbn-978-3-492-07400-1",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.piper.de/buecher/der-buchspazierer-isbn-978-3-492-07400-1",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "a05",
+    "titel": "Das Gewicht der Worte",
+    "autor": "Pascal Mercier",
+    "autor_eingabe": "Pascal Mercier",
+    "isbn": "978-3-446-26569-1",
+    "jahr": 2020,
+    "verlag": "Carl Hanser Verlag",
+    "seiten": 572,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Philosophie & Sinn",
+      "Bücher & Lesen"
+    ],
+    "tempo": "ruhig",
+    "ton": [
+      "nachdenklich"
+    ],
+    "fokus": "ideen",
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/119689227X",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/119689227X",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/119689227X",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/119689227X",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/119689227X",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/119689227X",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/119689227X",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/119689227X",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/pascal-mercier/das-gewicht-der-worte.html",
+        "art": "redaktionell"
+      },
+      "tempo": {
+        "url": "https://www.perlentaucher.de/buch/pascal-mercier/das-gewicht-der-worte.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/pascal-mercier/das-gewicht-der-worte.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/pascal-mercier/das-gewicht-der-worte.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "a06",
+    "titel": "Strandgut",
+    "autor": "Benjamin Myers",
+    "autor_eingabe": "Benjamin Myer",
+    "isbn": "978-3-7558-0037-8",
+    "jahr": 2025,
+    "verlag": "DuMont",
+    "seiten": 287,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Meer & Küste",
+      "Kunst & Musik",
+      "Alter"
+    ],
+    "tempo": null,
+    "ton": [
+      "melancholisch"
+    ],
+    "fokus": "figuren",
+    "sprache": "schlicht",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1347122842",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1347122842",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1347122842",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1347122842",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1347122842",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1347122842",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1347122842",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1347122842",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/benjamin-myers/strandgut.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/benjamin-myers/strandgut.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/benjamin-myers/strandgut.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/benjamin-myers/strandgut.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "a07",
+    "titel": "Das Café ohne Namen",
+    "autor": "Robert Seethaler",
+    "autor_eingabe": "Robert Seethaler",
+    "isbn": "978-3-546-10032-8",
+    "jahr": 2023,
+    "verlag": "Claassen",
+    "seiten": 283,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Gesellschaft & Politik"
+    ],
+    "tempo": "ruhig",
+    "ton": [
+      "melancholisch",
+      "warm"
+    ],
+    "fokus": "figuren",
+    "sprache": "nüchtern",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1270835084",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1270835084",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1270835084",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1270835084",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1270835084",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1270835084",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1270835084",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1270835084",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/robert-seethaler/das-cafe-ohne-namen.html",
+        "art": "redaktionell"
+      },
+      "tempo": {
+        "url": "https://www.perlentaucher.de/buch/robert-seethaler/das-cafe-ohne-namen.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/robert-seethaler/das-cafe-ohne-namen.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/robert-seethaler/das-cafe-ohne-namen.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/robert-seethaler/das-cafe-ohne-namen.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "a08",
+    "titel": "Der Schatten des Windes",
+    "autor": "Carlos Ruiz Zafón",
+    "autor_eingabe": "Carlos Ruiz Zapfen",
+    "isbn": "978-3-458-17170-6",
+    "jahr": 2003,
+    "verlag": "Insel Verlag",
+    "seiten": 526,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Bücher & Lesen",
+      "Geschichte",
+      "Großstadt"
+    ],
+    "tempo": "rasant",
+    "ton": [
+      "spannungsgeladen",
+      "düster"
+    ],
+    "fokus": "handlung",
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/967934273",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/967934273",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/967934273",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/967934273",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/967934273",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/967934273",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/967934273",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/967934273",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/carlos-ruiz-zafon/der-schatten-des-windes.html",
+        "art": "redaktionell"
+      },
+      "tempo": {
+        "url": "https://www.perlentaucher.de/buch/carlos-ruiz-zafon/der-schatten-des-windes.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/carlos-ruiz-zafon/der-schatten-des-windes.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/carlos-ruiz-zafon/der-schatten-des-windes.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "a09",
+    "titel": "Herr Lehmann",
+    "autor": "Sven Regener",
+    "autor_eingabe": "Sven Regener",
+    "isbn": "978-3-8218-0705-8",
+    "jahr": 2001,
+    "verlag": "Eichborn",
+    "seiten": 297,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Identität",
+      "Geschichte"
+    ],
+    "tempo": "ruhig",
+    "ton": [
+      "heiter",
+      "warm"
+    ],
+    "fokus": "figuren",
+    "sprache": "schlicht",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/961410949",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/961410949",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/961410949",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/961410949",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/961410949",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/961410949",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/961410949",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/961410949",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/sven-regener/herr-lehmann.html",
+        "art": "redaktionell"
+      },
+      "tempo": {
+        "url": "https://www.perlentaucher.de/buch/sven-regener/herr-lehmann.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/sven-regener/herr-lehmann.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/sven-regener/herr-lehmann.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/sven-regener/herr-lehmann.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "a10",
+    "titel": "Das kleine Haus am Sonnenhang",
+    "autor": "Alex Capus",
+    "autor_eingabe": "Alex Cap8s",
+    "isbn": "978-3-446-27941-4",
+    "jahr": 2024,
+    "verlag": "Carl Hanser Verlag",
+    "seiten": 158,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Philosophie & Sinn",
+      "Bücher & Lesen",
+      "Dorf & Provinz"
+    ],
+    "tempo": "ruhig",
+    "ton": [
+      "heiter",
+      "nachdenklich"
+    ],
+    "fokus": "ideen",
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1306104424",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1306104424",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1306104424",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1306104424",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1306104424",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1306104424",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1306104424",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1306104424",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/alex-capus/das-kleine-haus-am-sonnenhang.html",
+        "art": "redaktionell"
+      },
+      "tempo": {
+        "url": "https://www.perlentaucher.de/buch/alex-capus/das-kleine-haus-am-sonnenhang.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/alex-capus/das-kleine-haus-am-sonnenhang.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/alex-capus/das-kleine-haus-am-sonnenhang.html",
+        "art": "redaktionell"
+      }
+    }
+  }
+]
