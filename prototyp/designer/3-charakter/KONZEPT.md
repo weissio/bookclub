@@ -111,3 +111,30 @@ Datei: `LichtAn.dc.html` (Format des claude.ai-Design-Canvas, 390 × 844). Klick
 2. Soll die Tageszeit der Uhr folgen, dem Systemmodus (hell/dunkel) oder nur der Zugkette?
 3. Gehört „Verliehen“ schon jetzt ins Raster, oder soll der Platz frei bleiben, bis die Funktion kommt?
 4. Ist ab 5 aktuellen Büchern Schluss, oder soll der Stapel ab dem sechsten Buch zu „+2“ zusammenfallen?
+
+---
+
+## Prototyp, Runde 2: Startseite nach Variante 3 (24.10.2026)
+
+Arjens Vorgaben: höchstens 5 Bücher am Lesen, die Reihenfolge lässt sich priorisieren, Priorität 1 liegt aufgeschlagen im Licht, die übrigen stehen als kleine Balken daneben. Der Rest folgt V3. Datei: `LichtAn.dc.html`, Screens in `screens2/` (01 bis 22). Der Playwright-Durchlauf auf Port 8810 lief ohne Konsolenfehler.
+
+**Aufteilung.** „Am Lesen“ nimmt mit 1 bis 5 Büchern immer 26,9 % der Fläche ein (y 140–367). Links liegt das offene Buch mit Seitenzahl, darunter Titel und „Seite eintragen“. Rechts stehen bis zu vier Balken, je 44 pt hoch. Darunter folgt „Im Regal“ als Liste mit Cover-Fächern (Gelesen, Ungelesen im Regal, Wunschliste, Weitere Bände), danach einmal „Neue Bücher auspacken“.
+
+**Balken.** Jeder Balken hat zwei Tippflächen von mindestens 44 pt. Der Titel (bis zu zwei Zeilen, danach „…“) legt das Buch ins Licht. Die Zahl mit dem Lesebändchen rechts öffnet „Seite eintragen“ für genau dieses Buch, ohne die Reihenfolge zu ändern. Die Zahl steht damit an derselben Stelle wie die Seitenzahl im offenen Buch: Zahl heißt Seite.
+
+**Priorisieren.** Es gibt zwei Wege:
+- Schnell: ein Tipp auf einen Titel holt das Buch nach vorn, das bisherige rückt an die erste Balkenstelle. So wechselt man abends das Buch, wie man es auf dem Nachttisch tut.
+- Genau: „Reihenfolge“ öffnet ein Sheet mit Rang 1 bis 5 und je einem Pfeil „eine Stelle nach vorn“ (44 pt).
+
+Ziehen per Drag habe ich bewusst weggelassen: Es ist einhändig unzuverlässig und für ältere Leser schwer.
+
+**Grenze 5.** Will man ein sechstes Buch anfangen („Jetzt anfangen zu lesen“ auf der Buchseite eines ungelesenen Buchs), kommt keine Fehlermeldung. Stattdessen erscheint ein ruhiges Sheet: „Fünf Bücher liegen schon offen. Damit ‚Ein Jahr auf See‘ ins Licht kann, darf eines davon zurück ins Regal. Sein Lesebändchen bleibt, wo es ist.“ Darunter stehen die fünf Bücher mit „zurücklegen“ und unten „Doch noch warten lassen“. Das zurückgelegte Buch steht wieder bei Ungelesen, die Seite bleibt gemerkt. Das neue Buch liegt danach im Licht.
+
+**Rückmeldungen** stehen in einer Zeile unter der Überschrift: „Eingetragen: Seite 71.“, „Liegt jetzt im Licht.“, „Zurückgelegt, Bändchen bleibt.“, „3 Neue bei Ungelesen.“
+
+**Prototyp-Schalter** („P“ unten rechts): Abend oder Tag, 1, 2, 3 oder 5 Bücher. In der App schaltet die Zugkette der Lampe zwischen Abend und Tag um.
+
+**Offene Fragen an Arjen**
+1. Soll ein Tipp auf den Titel im Balken das Buch ins Licht holen, oder soll er die Buchseite öffnen? Im zweiten Fall bliebe das Priorisieren nur über „Reihenfolge“.
+2. Ist der Ton beim sechsten Buch richtig, und soll „zurücklegen“ das Buch zu Ungelesen schicken oder in einen eigenen Zustand „pausiert“?
+3. Soll ein frisch angefangenes Buch automatisch ins Licht kommen oder hinten anstehen?
