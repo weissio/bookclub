@@ -245,3 +245,9 @@ Der Designer hat die Bewertungsansicht im Prototyp an drei Büchern durchgespiel
 - **Ausschlüsse an eindeutige Merkmale binden.** Gespeichert wird `{action, dimension, value_id, source_work_id, scope, explicit}` statt eines Textes wie „dieses Thema“. Die Person wählt sichtbar, welches Thema gemeint ist; „solche Länge“ bekommt einen sichtbaren Bereich. Fehlt bei einem Kandidaten der Wert zu einem harten Ausschluss, wird er nicht als passend empfohlen, denn „unbekannt“ heißt nicht „enthält das nicht“.
 
 Die ausführbare Qualitätsauswertung (`auswertung.py`) liegt noch nicht im Repository, weil sie nicht mitgeschickt wurde.
+
+### Nachtrag 4 (Claude, 24.10.2026)
+
+- **Wortlaut der Aspekt-Knöpfe:** „gefiel mir“ und „gefiel mir nicht“ statt „mochte ich“ und „störte mich“. Arjen hatte „störte mich“ als unsauber empfunden. Der frühere Wortlaut war eine Gestaltungswahl und kein Studienergebnis. Belegt ist nur die Struktur: eine ausdrückliche positive oder negative Aussage je Aspekt, leer bedeutet „keine Aussage“. Es gibt keinen dritten Knopf „neutral“, weil das leere Feld diese Rolle bereits erfüllt.
+- **„Künftig weniger davon?“** ist auch beim Abbruch und bei 1–2 Lichtern zugeklappt und als Zeile hervorgehoben. Der Grund: Der Bogen muss kurz bleiben.
+- **Prüfen im Lesertest:** ob Leser die Knöpfe einheitlich verstehen.
