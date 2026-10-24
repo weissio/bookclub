@@ -185,7 +185,28 @@ def clusters(profile):
     return out
 
 
-def recommend(catalog, profile, variant='cluster', k=5):
+TEXT_WEIGHT = 0.5      # Anteil der Klappentext-Ähnlichkeit, wenn Texte vorliegen (Entwurfswert)
+
+
+def text_similarity_fn(texts):
+    """TF-IDF-Kosinus über Klappentexte. texts: work_id -> Text oder None."""
+    from sklearn.feature_extraction.text import TfidfVectorizer
+    from sklearn.metrics.pairwise import cosine_similarity
+    ids = [w for w, t in texts.items() if t]
+    if len(ids) < 2:
+        return lambda a, b: None
+    stop = ('der die das und oder ein eine einer eines einem einen den dem des ist sind war waren wird werden '
+            'mit von zu im in am an auf aus bei für nach über unter vor als auch es er sie ihr ihre sein seine '
+            'nicht noch nur so wie was wer wo dass doch dann denn sich man mehr sehr schon um durch bis zum zur '
+            'hat haben hatte ich du wir uns ihm ihn diese dieser dieses jede jeder alle alles roman buch autor autorin').split()
+    vec = TfidfVectorizer(stop_words=stop, sublinear_tf=True, min_df=1, max_df=0.6)
+    m = vec.fit_transform([texts[i] for i in ids])
+    idx = {w: n for n, w in enumerate(ids)}
+    sim = cosine_similarity(m)
+    return lambda a, b: float(sim[idx[a], idx[b]]) if a in idx and b in idx else None
+
+
+def recommend(catalog, profile, variant='cluster', k=5, text_sim=None):
     weights = dict(profile.anchors)
     groups = clusters(profile) if variant == 'cluster' else [{w} for w in weights]
     seen_titles, results = set(), []
@@ -205,7 +226,14 @@ def recommend(catalog, profile, variant='cluster', k=5):
             continue
         best, best_info = 0.0, None
         for g in groups:
-            sims = [(similarity(cand, catalog[a], profile.judgments.get(a) if profile.use_aspects else None), a) for a in g]
+            sims = []
+            for a in g:
+                s_, cov_, hits_ = similarity(cand, catalog[a], profile.judgments.get(a) if profile.use_aspects else None)
+                ts = text_sim(wid, a) if text_sim else None
+                if ts is not None:
+                    s_ = (1 - TEXT_WEIGHT) * s_ + TEXT_WEIGHT * min(1.0, ts * 3)   # Kosinuswerte sind klein; Skalierung ist Entwurf
+                    hits_ = hits_ + [('klappentext', [f'{ts:.2f}'])]
+                sims.append(((s_, cov_, hits_), a))
             if not sims:
                 continue
             score = sum(s[0] * weights[a] for s, a in sims) / len(sims)   # innerhalb der Gruppe
@@ -230,7 +258,8 @@ def recommend(catalog, profile, variant='cluster', k=5):
                         'group': [catalog[w]['title'] for w in best_info[0]],
                         'reasons': hits if cov >= MIN_COVERAGE else [],
                         'low_coverage': cov < MIN_COVERAGE})
-    results.sort(key=lambda r: -r['score'])
+    # Kandidaten mit geringer Merkmalsabdeckung kommen erst nach allen gut beschriebenen
+    results.sort(key=lambda r: (r['low_coverage'], -r['score']))
     return results[:k]
 
 
