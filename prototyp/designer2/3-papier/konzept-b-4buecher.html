@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>Jazz-Regal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:wght@400;700&family=Unbounded:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --zitrone:#f5df73;     /* Grundpapier */
+    --ultra:#1f3a9e;       /* Regalkorpus */
+    --koralle:#d8402f;
+    --rosa:#f4c3cb;
+    --nacht:#1b1a1f;
+    --papier:#fdf5ea;
+    --tinte:#1b1a1f;
+    --schicht:drop-shadow(0 1px 1.2px rgba(30,20,0,.30)) drop-shadow(0 4px 6px rgba(30,20,0,.12));
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:390px;height:844px;overflow:hidden;background:var(--zitrone)}
+  body{font-family:"Atkinson Hyperlegible Next","Atkinson Hyperlegible",system-ui,sans-serif;color:var(--tinte);position:relative}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+  .disp{font-family:"Unbounded",system-ui,sans-serif}
+
+  .status{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 30px 0 40px;font-weight:700;font-size:17px}
+
+  main{position:absolute;top:54px;left:0;right:0;bottom:84px;display:flex;flex-direction:column;padding:4px 14px 10px}
+
+  /* Ex-Libris */
+  .kopf{display:flex;align-items:center;gap:10px;height:58px;flex:none;padding:0 4px}
+  .kopf svg{width:40px;height:46px;flex:none;filter:var(--schicht)}
+  .kopf small{display:block;font-size:13px}
+  .kopf h1{font-size:22px;font-weight:800;line-height:1.1;letter-spacing:-.01em}
+  .bsp{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;border:1.5px solid var(--tinte);padding:3px 7px;border-radius:3px}
+
+  /* Am Lesen: Lesebänder */
+  .lesen{flex:none;margin-top:4px}
+  .lesen h2{font-size:15px;font-weight:700;display:flex;justify-content:space-between;padding:0 4px 6px}
+  .lesen h2 span{font-weight:400}
+  .band{position:relative;height:64px;margin-bottom:6px;display:flex;align-items:center;gap:12px;padding:0 0 0 10px;background:var(--papier);filter:var(--schicht);
+        clip-path:polygon(0 3%,1.5% 0,99% 4%,100% 0,100% 100%,98.5% 96%,1% 100%,0 96%)}
+  .band:nth-child(odd){transform:rotate(-.5deg)}
+  .band:nth-child(even){transform:rotate(.4deg)}
+  .marke{width:36px;height:50px;flex:none}
+  .bt{min-width:0;flex:1}
+  .bt b{display:block;font-size:16px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bt span{font-size:13.5px;color:#4a4540}
+  .eintr{flex:none;align-self:stretch;width:104px;background:var(--ultra);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.1;
+         clip-path:polygon(10% 0,100% 0,100% 100%,10% 100%,0 50%)}
+  .eintr .s{font-family:"Unbounded";font-weight:800;font-size:19px}
+  .eintr .t{font-size:13px;font-weight:700;margin-top:2px}
+  .b2 .band:nth-of-type(n+3){display:none}
+  .b4 .band{height:54px;margin-bottom:5px}
+  .b4 .marke{width:30px;height:42px}
+  .b4 .eintr .s{font-size:17px}
+
+  /* Regal */
+  .regal{flex:1;min-height:0;margin-top:8px;position:relative;filter:var(--schicht)}
+  .korpus{position:absolute;inset:0;background:var(--ultra);clip-path:polygon(0 1%,4% 0,50% .6%,96% 0,100% 1.2%,99.4% 50%,100% 99%,95% 100%,50% 99.4%,3% 100%,0 98.8%,.6% 50%)}
+  .regal-inhalt{position:absolute;inset:0;padding:12px 10px 10px;display:flex;flex-direction:column;gap:8px}
+  .regal-kopf{display:flex;justify-content:space-between;align-items:baseline;color:#fff;padding:0 4px}
+  .regal-kopf h2{font-family:"Unbounded";font-size:16px;font-weight:600}
+  .regal-kopf span{font-size:14px}
+  .faecher{flex:1;min-height:0;display:grid;grid-template-columns:1.12fr 1fr;grid-template-rows:1fr 1fr;gap:8px}
+  .fach{position:relative;overflow:hidden;padding:12px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:inset 0 6px 6px -4px rgba(0,0,20,.45)}
+  .fach .n{font-family:"Unbounded";font-weight:800;font-size:34px;line-height:1}
+  .fach .l{font-size:17px;font-weight:700;margin-top:4px;line-height:1.15}
+  .fach .z{font-size:13.5px;margin-top:2px}
+  .fach svg.form{position:absolute;pointer-events:none}
+  .gelesen{grid-row:1 / span 2;background:var(--koralle);color:#fff}
+  .wartet{background:var(--rosa)}
+  .wunsch{background:var(--nacht);color:#fff}
+  .b4 .fach .n{font-size:28px}
+  .b4 .wartet .z,.b4 .wunsch .z{display:none}
+  .b4 .wartet svg.form{width:50px!important;height:37px!important;top:8px!important;right:8px!important}
+  .b4 .wunsch svg.form{width:36px!important;height:36px!important;top:8px!important;right:8px!important}
+
+  .luecke{flex:none;height:54px;background:var(--zitrone);display:flex;align-items:center;gap:12px;padding:0 14px;box-shadow:inset 0 6px 6px -4px rgba(0,0,20,.45)}
+  .luecke svg{width:30px;height:30px;flex:none}
+  .luecke b{font-size:17px}
+  .luecke span{margin-left:auto;font-size:13px;color:#3d3828}
+
+  .laden{flex:none;display:flex;gap:8px}
+  .lade{flex:1;height:50px;background:var(--papier);display:flex;flex-direction:column;align-items:center;justify-content:center;font-size:14px;font-weight:700;line-height:1.15;position:relative}
+  .lade::after{content:"";position:absolute;bottom:8px;width:22px;height:4px;border-radius:2px;background:var(--ultra);opacity:.55}
+  .lade span{font-weight:400;font-size:13px}
+  .lade{justify-content:flex-start;padding-top:7px}
+
+  /* Tab-Leiste */
+  .tabs{position:absolute;left:0;right:0;bottom:0;height:84px;background:var(--nacht)}
+  .tabzeile{position:absolute;top:6px;left:0;right:0;display:flex;justify-content:space-around;color:#d9d4cc}
+  .tab{width:84px;height:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11.5px;font-weight:700}
+  .tab.an{color:var(--zitrone)}
+  .tab svg{width:24px;height:24px}
+  .home{position:absolute;bottom:8px;left:50%;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:#fff}
+</style>
+</head>
+<body class="b4">
+<div class="status"><span>9:41</span>
+  <svg width="68" height="13" viewBox="0 0 68 13" fill="#1b1a1f"><rect x="0" y="8" width="3" height="5" rx="1"/><rect x="5" y="5.5" width="3" height="7.5" rx="1"/><rect x="10" y="3" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="13" rx="1"/><rect x="40" y=".5" width="24" height="12" rx="3.5" fill="none" stroke="#1b1a1f"/><rect x="42" y="2.5" width="18" height="8" rx="2"/><rect x="65.5" y="4.5" width="1.5" height="4" rx=".7"/></svg>
+</div>
+
+<main>
+  <header class="kopf">
+    <svg viewBox="0 0 40 46"><path d="M20 2 C26 10 34 8 36 16 C30 18 32 24 38 28 C32 34 26 30 22 36 C21 40 20 44 20 44 C20 44 19 40 18 36 C14 30 8 34 2 28 C8 24 10 18 4 16 C6 8 14 10 20 2Z" fill="#1f3a9e"/></svg>
+    <div><small>Aus der Bücherei von Arjen</small><h1 class="disp">Kirschweg 7</h1></div>
+    <span class="bsp">Beispiel</span>
+  </header>
+
+  <!-- AM LESEN: Papierbänder, eines je Buch -->
+  <section class="lesen" aria-label="Am Lesen">
+    <h2>Am Lesen <span class="z2">4 Bücher</span></h2>
+    <div class="baender">
+      <div class="band">
+        <svg class="marke" viewBox="0 0 36 50"><rect width="36" height="50" fill="#d8402f"/><path d="M0 30 C8 24 14 34 22 28 S32 26 36 30 V50 H0Z" fill="#fdf5ea"/><path d="M0 38 C10 33 16 42 26 37 L36 36 V50 H0Z" fill="#1b1a1f"/><circle cx="25" cy="12" r="5" fill="#f5df73"/></svg>
+        <div class="bt"><b>Salz und Asche</b><span>Jonas Brehm · bei S. 142</span></div>
+        <button class="eintr"><span class="t">Seite</span><span class="t">eintragen</span></button>
+      </div>
+      <div class="band">
+        <svg class="marke" viewBox="0 0 36 50"><rect width="36" height="50" fill="#1f3a9e"/><path d="M0 22 L36 15 V50 H0Z" fill="#7cc4c0"/><path d="M4 40 C12 33 18 44 26 37 L36 35 V50 H0Z" fill="#fdf5ea"/><path d="M9 6 l4 -5 l4 5 l-4 5z" fill="#f5df73"/></svg>
+        <div class="bt"><b>Die Gezeitenkarte</b><span>Mira Olsen · bei S. 38</span></div>
+        <button class="eintr"><span class="t">Seite</span><span class="t">eintragen</span></button>
+      </div>
+      <div class="band">
+        <svg class="marke" viewBox="0 0 36 50"><rect width="36" height="50" fill="#f5df73"/><path d="M18 6 C28 14 29 30 18 44 C7 30 8 14 18 6Z" fill="#2c6b3c"/></svg>
+        <div class="bt"><b>Unter Birken</b><span>Paul Ahrens · bei S. 211</span></div>
+        <button class="eintr"><span class="t">Seite</span><span class="t">eintragen</span></button>
+      </div>
+      <div class="band">
+        <svg class="marke" viewBox="0 0 36 50"><rect width="36" height="50" fill="#f4c3cb"/><path d="M4 36 C10 24 16 24 18 16 C22 24 30 26 32 36Z" fill="#1b1a1f"/><circle cx="10" cy="10" r="2.5" fill="#fdf5ea"/></svg>
+        <div class="bt"><b>Das Haus der Stare</b><span>Lene Vogt · bei S. 9</span></div>
+        <button class="eintr"><span class="t">Seite</span><span class="t">eintragen</span></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- BIBLIOTHEK: ein ausgeschnittenes Regal -->
+  <section class="regal" aria-label="Bibliothek">
+    <div class="korpus"></div>
+    <div class="regal-inhalt">
+      <div class="regal-kopf"><h2>Dein Regal</h2><span>240 Bücher</span></div>
+      <div class="faecher">
+        <a class="fach gelesen" href="#gelesen">
+          <svg class="form" viewBox="0 0 120 200" style="right:-14px;top:-6px;width:118px;height:196px"><path d="M60 196 C58 160 62 130 56 110 C40 100 20 108 8 96 C26 92 40 88 50 80 C40 66 24 60 22 44 C36 50 48 58 58 64 C60 46 54 26 62 6 C70 26 66 46 68 64 C78 54 92 48 106 46 C100 62 86 70 74 80 C86 88 100 90 116 96 C102 108 82 100 66 110 C62 130 66 160 64 196Z" fill="#fdf5ea" opacity=".95"/></svg>
+          <span class="n">148</span><span class="l">Gelesen</span><span class="z">zuletzt: Nachtzug</span>
+        </a>
+        <a class="fach wartet" href="#wartet">
+          <svg class="form" viewBox="0 0 80 60" style="right:10px;top:10px;width:76px;height:56px"><rect x="6" y="14" width="10" height="44" fill="#1f3a9e"/><rect x="18" y="8" width="11" height="50" fill="#d8402f"/><rect x="31" y="18" width="9" height="40" fill="#1b1a1f"/><rect x="44" y="12" width="10" height="46" fill="#fdf5ea" transform="rotate(14 49 58)"/></svg>
+          <span class="n">61</span><span class="l">Wartet im Regal</span><span class="z">ganz ohne Eile</span>
+        </a>
+        <a class="fach wunsch" href="#wunsch">
+          <svg class="form" viewBox="0 0 60 60" style="right:10px;top:10px;width:50px;height:50px"><path d="M30 2 L36 22 L58 20 L40 34 L50 56 L30 42 L10 56 L20 34 L2 20 L24 22Z" fill="#f5df73"/></svg>
+          <span class="n">23</span><span class="l">Wunschliste</span>
+        </a>
+      </div>
+      <button class="luecke">
+        <svg viewBox="0 0 30 30"><path d="M12 2 H18 V12 H28 V18 H18 V28 H12 V18 H2 V12 H12Z" fill="#1f3a9e"/></svg>
+        <b>Buch erfassen</b><span>Scan · ISBN · von Hand</span>
+      </button>
+      <div class="laden">
+        <a class="lade" href="#regale">Eigene Regale<span>5</span></a>
+        <a class="lade" href="#beiseite">Beiseitegelegt<span>6</span></a>
+        <a class="lade" href="#rueckblick">Rückblick<span>seit 2025</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<nav class="tabs">
+  <div class="tabzeile">
+    <a class="tab an"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="4" width="4" height="17"/><rect x="8.5" y="7" width="4" height="14"/><rect x="14" y="5" width="4" height="16" transform="rotate(-12 16 21)"/></svg>Bibliothek</a>
+    <a class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="15" rx="1"/><path d="M3 10 H21 M12 10 V20"/></svg>Schaufenster</a>
+    <a class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 L13.5 13.5 L8.5 15.5 L10.5 10.5Z" fill="currentColor"/></svg>Entdecken</a>
+    <a class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21 C5 15 19 15 20 21"/></svg>Ich</a>
+  </div>
+  <div class="home"></div>
+</nav>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Sammlung und Tasche</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --grund:#dbe7d6; --tinte:#1d3a34; --tinte2:#43615a; --vitrine:#eef4ea; --punkt:#b3c9ae;
+  --tasche:#26473f; --fach:#325a50; --fachrand:#4f7b6d; --senf:#f2c14e; --koralle:#ee9a84;
+  --hell:#f3f7ef;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+button{font-family:inherit;cursor:pointer;border:0;color:inherit}
+html,body{width:390px;height:844px;background:var(--grund);font-family:"Nunito",system-ui,sans-serif;color:var(--tinte);overflow:hidden}
+.frame{position:relative;width:390px;height:844px;display:flex;flex-direction:column}
+.status{height:54px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:6px 30px 0 34px;font-weight:800;font-size:16px}
+.status .ic{display:flex;gap:6px;align-items:center}
+.kopf{flex:none;display:flex;align-items:flex-end;justify-content:space-between;padding:2px 16px 0 18px}
+.kopf small{display:block;font-size:13.5px;font-weight:700;color:var(--tinte2)}
+.kopf h1{font-family:"Baloo 2";font-size:27px;font-weight:800;line-height:1.05;margin-top:2px}
+.einraeumen{display:flex;align-items:center;gap:7px;height:46px;padding:0 15px 0 10px;border-radius:23px 23px 23px 8px;background:var(--koralle);font:800 15px/1 "Nunito";box-shadow:inset 0 -3px 0 rgba(29,58,52,.18)}
+.zeile{flex:none;padding:8px 18px 10px;font-size:13.5px;font-weight:700;color:var(--tinte2)}
+.zeile b{color:var(--tinte)}
+.zeile span{margin-left:6px;padding:2px 7px;border-radius:7px;background:rgba(29,58,52,.09);font-size:11.5px}
+/* Ausstellung */
+.ausstellung{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr auto;gap:10px;padding:0 14px}
+.vitrine{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:8px 8px 12px;border-radius:26px;background:var(--vitrine);box-shadow:0 2px 0 rgba(29,58,52,.10)}
+.vitrine:before{content:"";position:absolute;inset:6px;border-radius:21px;border:2px dashed var(--punkt);pointer-events:none}
+.vitrine svg{flex:1;width:100%;max-height:108px}
+.vitrine b{font-family:"Baloo 2";font-size:19px;font-weight:700;line-height:1.1;margin-top:4px}
+.vitrine i{font-style:normal;font-size:13.5px;font-weight:700;color:var(--tinte2)}
+.klein{grid-column:span 1;flex-direction:row;justify-content:flex-start;gap:10px;min-height:64px;padding:8px 14px}
+.klein svg{flex:none;width:40px;height:40px}
+.klein div{text-align:left}
+.klein b{font-size:16.5px;margin:0;display:block;white-space:nowrap}
+.klein{gap:8px;padding:8px 10px 8px 12px}
+.klein svg{width:34px;height:34px}
+/* Tasche */
+.tasche{flex:none;margin:12px 10px 8px;padding:9px 10px 10px;border-radius:24px;background:var(--tasche);color:var(--hell);box-shadow:0 8px 18px -12px rgba(29,58,52,.9)}
+.tasche h2{display:flex;justify-content:space-between;align-items:baseline;font-family:"Baloo 2";font-size:17px;font-weight:700;padding:0 6px 6px}
+.tasche h2 span{font-family:"Nunito";font-size:12.5px;font-weight:700;color:#cfe3d6}
+.faecher{display:flex;gap:8px}
+.fach{flex:1;min-width:0;display:flex;align-items:center;gap:10px;height:92px;padding:8px;border-radius:16px;background:var(--fach);box-shadow:inset 0 0 0 2px var(--fachrand);text-align:left}
+.fach .t{min-width:0;flex:1;display:flex;flex-direction:column;gap:6px}
+.fach .t b{font-size:14.5px;font-weight:800;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.seite{align-self:flex-start;height:28px;padding:0 10px;border-radius:14px;background:var(--senf);color:var(--tinte);font-weight:800;font-size:14px;display:flex;align-items:center;gap:4px}
+.seite svg{width:12px;height:12px}
+.fach svg.cover{flex:none}
+body.vier .zweier{display:none}
+.vierer{display:none}
+body.vier .vierer{display:flex}
+body.vier .fach{flex-direction:column;justify-content:center;gap:6px;padding:6px 4px}
+body.vier .fach .t{display:none}
+.vierer .fach .seite{align-self:center}
+.tabs{flex:none;height:56px;display:flex;justify-content:space-around;align-items:flex-start;padding-top:4px;background:var(--grund);border-top:1px solid #c6d6c1}
+.tab{width:84px;display:flex;flex-direction:column;align-items:center;gap:2px;font-size:11.5px;font-weight:800;color:#55706a}
+.tab.an{color:var(--tinte)}
+.home{flex:none;height:34px;display:flex;justify-content:center;align-items:flex-end;padding-bottom:8px}
+.home i{width:134px;height:5px;border-radius:3px;background:var(--tinte)}
+</style>
+</head>
+<body class="zwei">
+<div class="frame">
+  <div class="status"><span>9:41</span><span class="ic">
+    <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#1d3a34"/><rect x="5" y="5" width="3" height="7" rx="1" fill="#1d3a34"/><rect x="10" y="2.5" width="3" height="9.5" rx="1" fill="#1d3a34"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#1d3a34"/></svg>
+    <svg width="26" height="13" viewBox="0 0 26 13"><rect x=".5" y=".5" width="22" height="12" rx="3.5" fill="none" stroke="#1d3a34" opacity=".45"/><rect x="2.5" y="2.5" width="16" height="8" rx="2" fill="#1d3a34"/><rect x="24" y="4.5" width="1.6" height="4" rx=".8" fill="#1d3a34" opacity=".45"/></svg>
+  </span></div>
+
+  <div class="kopf">
+    <div><small>Bibliothek</small><h1>Miras Sammlung</h1></div>
+    <button class="einraeumen" aria-label="Neue Bücher einräumen">
+      <svg width="26" height="24" viewBox="0 0 26 24"><path d="M3 9h20v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" fill="#fbe3c0"/><path d="M3 9l3-6h14l3 6z" fill="#fff1db"/><path d="M10 9h6v5l-3-1.6L10 14z" fill="#ee9a84"/></svg>
+      Einräumen
+    </button>
+  </div>
+  <p class="zeile"><b>240 Bücher</b>, gesammelt seit März 2025 <span>Beispieldaten</span></p>
+
+  <section class="ausstellung" aria-label="Bände deiner Bibliothek">
+    <button class="vitrine" aria-label="Gelesen, 148 Bücher">
+      <svg viewBox="0 0 150 96" aria-hidden="true">
+        <ellipse cx="75" cy="86" rx="48" ry="8" fill="#cfdccb"/>
+        <rect x="35" y="68" width="80" height="16" rx="4" fill="#9cc4d6"/><rect x="35" y="68" width="80" height="5" rx="2.5" fill="#bcdbe7"/>
+        <rect x="42" y="56" width="68" height="13" rx="3" fill="#ee9a84"/><rect x="42" y="56" width="68" height="4" rx="2" fill="#f6b9a8"/>
+        <rect x="38" y="44" width="74" height="13" rx="3" fill="#f2c14e"/><rect x="38" y="44" width="74" height="4" rx="2" fill="#f7d888"/>
+        <rect x="46" y="32" width="60" height="13" rx="3" fill="#7fa98c"/><rect x="46" y="32" width="60" height="4" rx="2" fill="#a4c6ac"/>
+        <!-- gepresstes Blatt als Erinnerung -->
+        <path d="M68 31c2-12 14-18 24-16-2 11-12 17-24 16z" fill="#e48a5c"/><path d="M68 31c6-5 12-9 22-14" stroke="#b9653a" stroke-width="1.6" fill="none"/>
+      </svg>
+      <b>Gelesen</b><i>148 Bücher</i>
+    </button>
+    <button class="vitrine" aria-label="Wartet im Regal, 61 Bücher">
+      <svg viewBox="0 0 150 96" aria-hidden="true">
+        <ellipse cx="75" cy="86" rx="48" ry="8" fill="#cfdccb"/>
+        <rect x="36" y="30" width="15" height="54" rx="3" fill="#8fb1e0"/>
+        <rect x="52" y="24" width="13" height="60" rx="3" fill="#f2c14e"/>
+        <rect x="66" y="34" width="16" height="50" rx="3" fill="#c79bd3"/>
+        <rect x="83" y="30" width="13" height="54" rx="3" fill="#7fa98c" transform="rotate(14 96 84)"/>
+        <g fill="#fff8ef"><rect x="40" y="40" width="7" height="2.5" rx="1"/><rect x="55" y="36" width="7" height="2.5" rx="1"/><rect x="70" y="44" width="8" height="2.5" rx="1"/></g>
+        <!-- Teetasse: sie haben Zeit -->
+        <rect x="104" y="68" width="18" height="16" rx="4" fill="#ee9a84"/><path d="M122 72a5 5 0 0 1 0 8" stroke="#ee9a84" stroke-width="3" fill="none"/>
+        <path d="M109 63c-2-3 2-5 0-8M115 63c-2-3 2-5 0-8" stroke="#8fa79f" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+      </svg>
+      <b>Wartet</b><i>61 Bücher · haben Zeit</i>
+    </button>
+    <button class="vitrine" aria-label="Wunschliste, 23 Wünsche">
+      <svg viewBox="0 0 150 96" aria-hidden="true">
+        <ellipse cx="75" cy="86" rx="48" ry="8" fill="#cfdccb"/>
+        <!-- Wunschzettel an einer Wäscheleine -->
+        <path d="M22 22c30 10 76 10 106 0" stroke="#8fa79f" stroke-width="2" fill="none"/>
+        <g transform="rotate(-6 50 50)"><rect x="34" y="24" width="32" height="40" rx="3" fill="#fff8ef"/><rect x="40" y="34" width="20" height="3" rx="1.5" fill="#c79bd3"/><rect x="40" y="41" width="15" height="3" rx="1.5" fill="#c79bd3"/><rect x="40" y="48" width="18" height="3" rx="1.5" fill="#c79bd3"/><rect x="46" y="20" width="6" height="10" rx="1.5" fill="#ee9a84"/></g>
+        <g transform="rotate(5 98 50)"><rect x="80" y="26" width="34" height="44" rx="3" fill="#8fb1e0"/><rect x="80" y="26" width="7" height="44" rx="2" fill="#6f95cc"/><rect x="92" y="38" width="16" height="3" rx="1.5" fill="#fff8ef"/><rect x="94" y="22" width="6" height="10" rx="1.5" fill="#ee9a84"/></g>
+      </svg>
+      <b>Wunschliste</b><i>23 Wünsche</i>
+    </button>
+    <button class="vitrine" aria-label="Beiseitegelegt, 6 Bücher">
+      <svg viewBox="0 0 150 96" aria-hidden="true">
+        <ellipse cx="75" cy="86" rx="48" ry="8" fill="#cfdccb"/>
+        <!-- liegendes Buch mit Lesezeichen in der Mitte, daneben ein Kieselstein -->
+        <rect x="34" y="64" width="78" height="18" rx="4" fill="#c79bd3"/>
+        <rect x="34" y="64" width="78" height="5" rx="2.5" fill="#dcbde4"/>
+        <rect x="38" y="70" width="70" height="7" rx="2" fill="#fff8ef"/>
+        <path d="M70 70v-26l6 5 6-5v26z" fill="#f2c14e"/>
+        <ellipse cx="120" cy="80" rx="9" ry="6" fill="#a9bab4"/>
+      </svg>
+      <b>Beiseitegelegt</b><i>6 · ohne Groll</i>
+    </button>
+    <button class="vitrine klein" aria-label="Eigene Regale, 5">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="3" y="7" width="34" height="4" rx="2" fill="#7fa98c"/><rect x="3" y="21" width="34" height="4" rx="2" fill="#7fa98c"/><rect x="3" y="35" width="34" height="4" rx="2" fill="#7fa98c"/><rect x="7" y="27" width="5" height="8" rx="1" fill="#ee9a84"/><rect x="13" y="28" width="5" height="7" rx="1" fill="#f2c14e"/><rect x="22" y="13" width="5" height="8" rx="1" fill="#8fb1e0"/><rect x="28" y="12" width="5" height="9" rx="1" fill="#c79bd3"/></svg>
+      <div><b>Eigene Regale</b><i>5 Regale</i></div>
+    </button>
+    <button class="vitrine klein" aria-label="Rückblick">
+      <svg viewBox="0 0 40 40" aria-hidden="true"><rect x="5" y="5" width="30" height="31" rx="4" fill="#f2c14e"/><rect x="9" y="9" width="22" height="16" rx="2" fill="#fff8ef"/><path d="M9 25l6-7 5 5 4-3 7 5z" fill="#7fa98c"/><circle cx="25" cy="13" r="2.5" fill="#ee9a84"/><rect x="11" y="29" width="18" height="3" rx="1.5" fill="#c9962a"/></svg>
+      <div><b>Rückblick</b><i>dein Lesejahr</i></div>
+    </button>
+  </section>
+
+  <section class="tasche lesen" aria-label="Am Lesen">
+    <h2>Am Lesen <span>Tippen trägt die Seite ein</span></h2>
+    <div class="faecher zweier">
+      <button class="fach" aria-label="Das Haus am Kranichsee, Seite eintragen, zuletzt 142">
+        <svg class="cover" width="46" height="64" viewBox="0 0 46 64"><rect width="46" height="64" rx="4" fill="#5b86c4"/><rect width="7" height="64" rx="3" fill="#4870aa"/><path d="M12 46c8-5 18-5 28 0v18H12z" fill="#9cc4d6"/><path d="M26 34c2-6 6-8 9-8-1 5-4 8-9 8z" fill="#fff8ef"/><rect x="12" y="10" width="26" height="3" rx="1.5" fill="#fff8ef"/><rect x="12" y="16" width="18" height="2.5" rx="1.2" fill="#cfe0f3"/></svg>
+        <span class="t"><b>Das Haus am Kranichsee</b><span class="seite"><svg viewBox="0 0 12 12"><path d="M2 1h8v10L6 8 2 11z" fill="#1d3a34"/></svg>S. 142</span></span>
+      </button>
+      <button class="fach" aria-label="Kleine Theorie der Wolken, Seite eintragen, zuletzt 38">
+        <svg class="cover" width="46" height="64" viewBox="0 0 46 64"><rect width="46" height="64" rx="4" fill="#f2c14e"/><rect width="7" height="64" rx="3" fill="#d9a632"/><circle cx="24" cy="32" r="7" fill="#fff8ef"/><circle cx="31" cy="34" r="5.5" fill="#fff8ef"/><circle cx="18" cy="35" r="4.5" fill="#fff8ef"/><rect x="12" y="10" width="26" height="3" rx="1.5" fill="#6b4a12"/><rect x="12" y="50" width="16" height="2.5" rx="1.2" fill="#6b4a12"/></svg>
+        <span class="t"><b>Kleine Theorie der Wolken</b><span class="seite"><svg viewBox="0 0 12 12"><path d="M2 1h8v10L6 8 2 11z" fill="#1d3a34"/></svg>S. 38</span></span>
+      </button>
+    </div>
+    <div class="faecher vierer">
+      <button class="fach" aria-label="Das Haus am Kranichsee, Seite eintragen, zuletzt 142">
+        <svg class="cover" width="40" height="54" viewBox="0 0 46 64"><rect width="46" height="64" rx="4" fill="#5b86c4"/><rect width="7" height="64" rx="3" fill="#4870aa"/><path d="M12 46c8-5 18-5 28 0v18H12z" fill="#9cc4d6"/><path d="M26 34c2-6 6-8 9-8-1 5-4 8-9 8z" fill="#fff8ef"/><rect x="12" y="10" width="26" height="3" rx="1.5" fill="#fff8ef"/></svg>
+        <span class="seite">142</span>
+      </button>
+      <button class="fach" aria-label="Kleine Theorie der Wolken, Seite eintragen, zuletzt 38">
+        <svg class="cover" width="40" height="54" viewBox="0 0 46 64"><rect width="46" height="64" rx="4" fill="#f2c14e"/><rect width="7" height="64" rx="3" fill="#d9a632"/><circle cx="24" cy="32" r="7" fill="#fff8ef"/><circle cx="31" cy="34" r="5.5" fill="#fff8ef"/><circle cx="18" cy="35" r="4.5" fill="#fff8ef"/><rect x="12" y="10" width="26" height="3" rx="1.5" fill="#6b4a12"/></svg>
+        <span class="seite">38</span>
+      </button>
+      <button class="fach" aria-label="Die Uhrmacherin von Brügge, Seite eintragen, zuletzt 211">
+        <svg class="cover" width="40" height="54" viewBox="0 0 46 64"><rect width="46" height="64" rx="4" fill="#7fa98c"/><rect width="7" height="64" rx="3" fill="#628d70"/><circle cx="26" cy="32" r="9" fill="none" stroke="#fff8ef" stroke-width="3"/><path d="M26 26v6l4 3" stroke="#fff8ef" stroke-width="2.4" fill="none" stroke-linecap="round"/><rect x="12" y="10" width="26" height="3" rx="1.5" fill="#fff8ef"/></svg>
+        <span class="seite">211</span>
+      </button>
+      <button class="fach" aria-label="Winterquartier, Seite eintragen, zuletzt 9">
+        <svg class="cover" width="40" height="54" viewBox="0 0 46 64"><rect width="46" height="64" rx="4" fill="#c79bd3"/><rect width="7" height="64" rx="3" fill="#a87cb6"/><path d="M12 44l9-14 6 8 5-6 8 12z" fill="#fff8ef"/><rect x="12" y="10" width="26" height="3" rx="1.5" fill="#fff8ef"/></svg>
+        <span class="seite">9</span>
+      </button>
+    </div>
+  </section>
+
+  <nav class="tabs">
+    <div class="tab an"><svg width="26" height="24" viewBox="0 0 26 24"><rect x="2" y="3" width="5" height="18" rx="1.5" fill="#1d3a34"/><rect x="9" y="6" width="5" height="15" rx="1.5" fill="#1d3a34"/><rect x="16" y="3" width="5" height="18" rx="1.5" fill="#1d3a34" transform="rotate(-12 18 21)"/></svg>Bibliothek</div>
+    <div class="tab"><svg width="26" height="24" viewBox="0 0 26 24" fill="none" stroke="#55706a" stroke-width="2.2"><rect x="3" y="4" width="20" height="16" rx="3"/><path d="M3 12h20M13 4v16"/></svg>Schaufenster</div>
+    <div class="tab"><svg width="26" height="24" viewBox="0 0 26 24" fill="none" stroke="#55706a" stroke-width="2.2"><circle cx="13" cy="12" r="9"/><path d="M16.5 8.5l-2 5.5-5.5 2 2-5.5z" fill="#55706a"/></svg>Entdecken</div>
+    <div class="tab"><svg width="26" height="24" viewBox="0 0 26 24" fill="none" stroke="#55706a" stroke-width="2.2"><circle cx="13" cy="8" r="4.5"/><path d="M4.5 21c1-5 4.5-7 8.5-7s7.5 2 8.5 7"/></svg>Ich</div>
+  </nav>
+  <div class="home"><i></i></div>
+</div>
+</body>
+</html>

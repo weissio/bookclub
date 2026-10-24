@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Das Bücherhaus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  /* Illustrationssystem „Bücherhaus“
+     Form: Rechteck mit 6-px-Ecken, Dreieck fürs Dach, Kreis für Fenster/Sonne – sonst nichts.
+     Strich: immer 2,5 px Tinte, runde Enden. Keine Schatten, keine Verläufe.
+     Farbe: jede Abteilung hat genau eine Wandfarbe; Tinte ist die einzige Textfarbe. */
+  :root{
+    --himmel:#CFE5F6;
+    --himmel-hell:#E6F2FB;
+    --tinte:#22213F;
+    --tinte-2:#3B3A5C;
+    --gelb:#FFD24D;
+    --minze:#A6E0C8;
+    --rosa:#F7BACB;
+    --lila:#CBC3F3;
+    --sand:#F1D3A3;
+    --dach:#4150C8;
+    --erde:#B98B62;
+    --gras:#6DC08A;
+    --weiss:#FFFFFF;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:390px;height:844px;background:var(--himmel);overflow:hidden}
+  body{font-family:'Atkinson Hyperlegible',system-ui,sans-serif;color:var(--tinte);-webkit-font-smoothing:antialiased}
+  .phone{position:relative;width:390px;height:844px;overflow:hidden;background:var(--himmel)}
+  .status{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 30px 0 34px;font:700 16px 'Atkinson Hyperlegible';z-index:5}
+  .status .r{display:flex;gap:6px;align-items:center}
+
+  /* Kopf */
+  .kopf{position:absolute;top:58px;left:16px;right:16px;height:48px;display:flex;align-items:center;justify-content:space-between}
+  .kopf .klein{font-size:13px;color:var(--tinte-2);display:flex;align-items:center;gap:6px}
+  .kopf h1{font:800 23px/1.1 'Bricolage Grotesque';letter-spacing:-.01em;margin-top:1px}
+  .beispiel{font:700 10.5px 'Atkinson Hyperlegible';letter-spacing:.04em;color:var(--tinte-2);border:1.5px solid #8FA7BD;border-radius:6px;padding:0 5px;line-height:15px}
+  .suche{width:44px;height:44px;border-radius:14px;border:2.5px solid var(--tinte);background:var(--weiss);display:flex;align-items:center;justify-content:center}
+
+  /* Am Lesen */
+  .lesen{position:absolute;top:114px;left:0;right:0}
+  .lesen .zeile{display:flex;justify-content:space-between;align-items:baseline;padding:0 18px 8px}
+  .lesen .zeile b{font:800 17px 'Bricolage Grotesque'}
+  .lesen .zeile span{font-size:14px;color:var(--tinte-2)}
+  .bahn{display:flex;gap:10px;padding:0 16px;overflow:hidden}
+  .karte{flex:0 0 171px;min-width:0;width:171px;height:178px;border:2.5px solid var(--tinte);border-radius:18px;background:var(--weiss);padding:10px 10px 10px;display:flex;flex-direction:column}
+  .vier .karte{flex-basis:150px;width:150px}
+  .vier .karte .t{font-size:14.5px}
+  .karte .oben{display:flex;gap:10px;align-items:flex-end}
+  .karte .seite{display:flex;flex-direction:column;line-height:1}
+  .karte .seite small{font-size:13px;color:var(--tinte-2);margin-bottom:3px}
+  .karte .seite b{font:800 28px 'Bricolage Grotesque';letter-spacing:-.01em}
+  .karte .t{font-weight:700;font-size:15px;line-height:1.2;margin-top:8px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .karte .a{font-size:13px;color:var(--tinte-2);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .knopf{margin-top:auto;height:44px;border-radius:13px;border:2.5px solid var(--tinte);background:var(--gelb);font:700 15px 'Atkinson Hyperlegible';color:var(--tinte);display:flex;align-items:center;justify-content:center;gap:6px}
+
+  /* Haus */
+  .haus{position:absolute;left:0;top:318px;width:390px;height:440px}
+  .haus > svg.huelle{position:absolute;left:0;top:0}
+  .raum{position:absolute;padding:10px 12px;display:flex;flex-direction:column}
+  .raum b{font:800 17px/1.1 'Bricolage Grotesque';letter-spacing:-.005em}
+  .raum span{font-size:14px;line-height:1.3;margin-top:2px}
+  .raum svg{position:absolute}
+  .r-rueck{left:128px;top:44px;width:134px;height:44px;border:2.5px solid var(--tinte);border-radius:13px;background:var(--weiss);flex-direction:row;align-items:center;justify-content:center;gap:6px;padding:0}
+  .r-rueck b{font-size:15px}
+  .r-rueck span{margin:0;font-size:13px}
+
+  /* Tabs */
+  .tabs{position:absolute;left:0;right:0;bottom:0;height:83px;background:var(--himmel-hell);border-top:2.5px solid var(--tinte);display:flex;padding:0 6px 34px;z-index:4}
+  .tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font-size:11px;font-weight:700;color:#4A5068}
+  .tab.on{color:var(--tinte)}
+  .tab .ic{width:46px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center}
+  .tab.on .ic{background:var(--gelb);border:2px solid var(--tinte)}
+  .home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:var(--tinte);z-index:6}
+
+  .nur4{display:none}
+  .vier .nur4{display:flex}
+  .vier .nur2{display:none}
+</style>
+</head>
+<body>
+<div class="phone zwei" id="phone">
+
+  <div class="status"><span>20:14</span>
+    <span class="r">
+      <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#22213F"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="#22213F"/><rect x="10" y="3" width="3" height="9" rx="1" fill="#22213F"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#22213F"/></svg>
+      <svg width="27" height="13" viewBox="0 0 27 13"><rect x="1" y="1" width="22" height="11" rx="3.5" fill="none" stroke="#22213F" stroke-width="1.5" opacity=".5"/><rect x="3" y="3" width="16" height="7" rx="2" fill="#22213F"/><rect x="24.5" y="4.5" width="1.6" height="4" rx=".8" fill="#22213F" opacity=".5"/></svg>
+    </span>
+  </div>
+
+  <header class="kopf">
+    <div>
+      <div class="klein">Aus der Bücherei von Mia <span class="beispiel">BEISPIEL</span></div>
+      <h1>Das Bücherhaus</h1>
+    </div>
+    <div class="suche" aria-label="In allen Büchern suchen">
+      <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="#22213F" stroke-width="2.5" stroke-linecap="round"><circle cx="8.5" cy="8.5" r="6"/><path d="M13 13l5 5"/></svg>
+    </div>
+  </header>
+
+  <!-- AM LESEN -->
+  <section class="lesen" data-mess>
+    <div class="zeile"><b>Am Lesen</b><span class="nur2">2 Bücher</span><span class="nur4">4 Bücher · wischen</span></div>
+    <div class="bahn">
+      <!-- Buch 1 -->
+      <div class="karte">
+        <div class="oben">
+          <svg width="46" height="66" viewBox="0 0 46 66"><rect x="2" y="4" width="42" height="60" rx="4" fill="#4150C8" stroke="#22213F" stroke-width="2.5"/><circle cx="23" cy="26" r="9" fill="#FFD24D" stroke="#22213F" stroke-width="2.5"/><path d="M8 50h30M8 56h20" stroke="#E6F2FB" stroke-width="2.5" stroke-linecap="round"/><path d="M34 1v14l3.5-3 3.5 3V1" fill="#F7BACB" stroke="#22213F" stroke-width="2" stroke-linejoin="round"/></svg>
+          <div class="seite"><small>Seite</small><b>142</b></div>
+        </div>
+        <div class="t">Das Jahr der Kraniche</div>
+        <div class="a">Ilka Sommer</div>
+        <div class="knopf"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22213F" stroke-width="2.5" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg>Seite eintragen</div>
+      </div>
+      <!-- Buch 2 -->
+      <div class="karte">
+        <div class="oben">
+          <svg width="46" height="66" viewBox="0 0 46 66"><rect x="2" y="4" width="42" height="60" rx="4" fill="#A6E0C8" stroke="#22213F" stroke-width="2.5"/><path d="M2 40c8-6 14 6 21 0s13-6 21 0v20a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4z" fill="#6DC08A" stroke="#22213F" stroke-width="2.5" stroke-linejoin="round"/><path d="M10 14h26M10 20h18" stroke="#22213F" stroke-width="2.5" stroke-linecap="round"/><path d="M34 1v14l3.5-3 3.5 3V1" fill="#FFD24D" stroke="#22213F" stroke-width="2" stroke-linejoin="round"/></svg>
+          <div class="seite"><small>Seite</small><b>38</b></div>
+        </div>
+        <div class="t">Kleine Statik des Glücks</div>
+        <div class="a">Tomas Wendt</div>
+        <div class="knopf"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22213F" stroke-width="2.5" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg>Seite eintragen</div>
+      </div>
+      <!-- Buch 3 (nur bei 4) -->
+      <div class="karte nur4">
+        <div class="oben">
+          <svg width="46" height="66" viewBox="0 0 46 66"><rect x="2" y="4" width="42" height="60" rx="4" fill="#F7BACB" stroke="#22213F" stroke-width="2.5"/><circle cx="15" cy="30" r="6" fill="#4150C8" stroke="#22213F" stroke-width="2.5"/><circle cx="30" cy="38" r="6" fill="#4150C8" stroke="#22213F" stroke-width="2.5"/><path d="M8 54h30" stroke="#22213F" stroke-width="2.5" stroke-linecap="round"/><path d="M34 1v14l3.5-3 3.5 3V1" fill="#A6E0C8" stroke="#22213F" stroke-width="2" stroke-linejoin="round"/></svg>
+          <div class="seite"><small>Seite</small><b>211</b></div>
+        </div>
+        <div class="t">Unter Pflaumenbäumen</div>
+        <div class="a">Rosa Kettler</div>
+        <div class="knopf"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22213F" stroke-width="2.5" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg>Seite eintragen</div>
+      </div>
+      <div class="karte nur4">
+        <div class="oben">
+          <svg width="46" height="66" viewBox="0 0 46 66"><rect x="2" y="4" width="42" height="60" rx="4" fill="#CBC3F3" stroke="#22213F" stroke-width="2.5"/></svg>
+          <div class="seite"><small>Seite</small><b>12</b></div>
+        </div>
+        <div class="t">Wie man Nebel misst</div>
+        <div class="a">Jan Ostrowski</div>
+        <div class="knopf"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="#22213F" stroke-width="2.5" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg>Seite eintragen</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HAUS -->
+  <section class="haus">
+    <svg class="huelle" width="390" height="440" viewBox="0 0 390 440" fill="none" stroke="#22213F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+      <!-- Wolke -->
+      <path d="M30 70a12 12 0 0 1 22-6a10 10 0 0 1 17 7h0a7 7 0 0 1 0 14H34a8 8 0 0 1-4-15z" fill="#FFFFFF" stroke-width="2"/>
+      <!-- Schornstein + Rauch -->
+      <rect x="282" y="18" width="22" height="42" fill="#B98B62"/>
+      <path d="M293 12c-6-4 2-9-3-14" stroke-width="2"/>
+      <!-- Dach -->
+      <path d="M14 108 195 10 376 108z" fill="#4150C8"/>
+      <!-- Hauswände: Rahmen -->
+      <rect x="28" y="108" width="334" height="238" fill="#FFFFFF"/>
+      <!-- Obergeschoss -->
+      <rect x="28" y="108" width="167" height="104" fill="#A6E0C8"/>
+      <rect x="195" y="108" width="167" height="104" fill="#F7BACB"/>
+      <!-- Erdgeschoss -->
+      <rect x="28" y="212" width="228" height="134" fill="#FFD24D"/>
+      <rect x="256" y="212" width="106" height="134" fill="#E6F2FB"/>
+      <!-- Boden / Gras -->
+      <path d="M0 346h390" />
+      <rect x="0" y="346" width="390" height="8" fill="#6DC08A" stroke="none"/>
+      <path d="M0 354h390" />
+      <!-- Keller -->
+      <rect x="0" y="355" width="390" height="85" fill="#B98B62" stroke="none"/>
+      <rect x="28" y="354" width="167" height="80" fill="#CBC3F3"/>
+      <rect x="195" y="354" width="167" height="80" fill="#F1D3A3"/>
+    </svg>
+
+    <!-- Dach: Rückblick -->
+    <div class="raum r-rueck"><svg style="position:static" width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="#22213F" stroke-width="2.5" stroke-linecap="round"><path d="M3 15V9M9 15V3M15 15v-4"/></svg><b>Rückblick</b></div>
+
+    <!-- Ungelesen -->
+    <div class="raum" style="left:28px;top:108px;width:167px;height:104px">
+      <b>Ungelesen</b><span>84 · haben Zeit</span>
+      <svg style="right:10px;bottom:6px" width="92" height="50" viewBox="0 0 92 50" fill="none" stroke="#22213F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="6" y="38" width="58" height="10" rx="2" fill="#4150C8"/>
+        <rect x="10" y="28" width="50" height="10" rx="2" fill="#FFD24D"/>
+        <rect x="4" y="18" width="54" height="10" rx="2" fill="#F7BACB"/>
+        <path d="M68 48V30a6 6 0 0 1 6-6h0a6 6 0 0 1 6 6v18" fill="#FFFFFF"/>
+        <path d="M80 34h4a3 3 0 0 1 0 6h-4"/>
+        <path d="M70 18c-2-4 3-6 1-10M76 18c-2-4 3-6 1-10" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <!-- Wunschliste -->
+    <div class="raum" style="left:195px;top:108px;width:167px;height:104px">
+      <b>Wunschliste</b><span>23 · irgendwann</span>
+      <svg style="right:12px;bottom:8px" width="70" height="48" viewBox="0 0 70 48" fill="none" stroke="#22213F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+        <rect x="2" y="2" width="66" height="44" rx="4" fill="#E6F2FB"/>
+        <path d="M35 2v44M2 24h66" stroke-width="2"/>
+        <path d="M50 6l8 7-8 9-8-9z" fill="#FFD24D"/>
+        <path d="M50 22c-3 6-10 4-14 12" stroke-width="2"/>
+      </svg>
+    </div>
+
+    <!-- Gelesen -->
+    <div class="raum" style="left:28px;top:212px;width:228px;height:134px">
+      <b>Gelesen</b><span>148 Bücher</span>
+      <svg style="left:12px;bottom:8px" width="204" height="62" viewBox="0 0 204 62" fill="none" stroke="#22213F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M2 60h200"/>
+        <rect x="6" y="18" width="12" height="42" rx="2" fill="#4150C8"/>
+        <rect x="18" y="10" width="14" height="50" rx="2" fill="#F7BACB"/>
+        <rect x="32" y="22" width="10" height="38" rx="2" fill="#FFFFFF"/>
+        <rect x="42" y="14" width="13" height="46" rx="2" fill="#A6E0C8"/>
+        <rect x="55" y="26" width="11" height="34" rx="2" fill="#CBC3F3"/>
+        <rect x="66" y="8" width="15" height="52" rx="2" fill="#4150C8"/>
+        <path d="M84 60 96 16l12 4-12 40z" fill="#FFFFFF"/>
+        <rect x="112" y="20" width="12" height="40" rx="2" fill="#F1D3A3"/>
+        <rect x="124" y="12" width="14" height="48" rx="2" fill="#A6E0C8"/>
+        <rect x="138" y="24" width="10" height="36" rx="2" fill="#F7BACB"/>
+        <!-- Sessel -->
+        <path d="M156 60V38a8 8 0 0 1 8-8h22a8 8 0 0 1 8 8v22" fill="#4150C8"/>
+        <path d="M152 46h48v14h-48z" fill="#4150C8"/>
+        <path d="M162 46h28" stroke="#E6F2FB"/>
+      </svg>
+    </div>
+
+    <!-- Tür: Bücher erfassen -->
+    <div class="raum" style="left:256px;top:212px;width:106px;height:134px;padding:10px 10px">
+      <b style="font-size:16px">Bücher<br>erfassen</b>
+      <svg style="left:22px;bottom:0" width="64" height="80" viewBox="0 0 64 80" fill="none" stroke="#22213F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M8 80V18A16 16 0 0 1 24 2h16a16 16 0 0 1 16 16v62" fill="#4150C8"/>
+        <circle cx="32" cy="22" r="8" fill="#FFD24D"/>
+        <path d="M27 22h10M32 17v10" stroke-width="2"/>
+        <circle cx="46" cy="50" r="2.5" fill="#FFD24D"/>
+      </svg>
+    </div>
+
+    <!-- Keller: Eigene Regale -->
+    <div class="raum" style="left:28px;top:354px;width:167px;height:80px">
+      <b>Eigene Regale</b><span>5 Regale</span>
+      <svg style="right:10px;bottom:8px" width="56" height="34" viewBox="0 0 56 34" fill="none" stroke="#22213F" stroke-width="2.5" stroke-linejoin="round">
+        <rect x="2" y="12" width="24" height="20" rx="2" fill="#FFD24D"/>
+        <rect x="28" y="4" width="26" height="28" rx="2" fill="#A6E0C8"/>
+        <path d="M9 20h10M35 14h12" stroke-linecap="round"/>
+      </svg>
+    </div>
+
+    <!-- Keller: Beiseitegelegt -->
+    <div class="raum" style="left:195px;top:354px;width:167px;height:80px">
+      <b>Beiseitegelegt</b><span>6 · ohne Groll</span>
+      <svg style="right:10px;bottom:8px" width="50" height="30" viewBox="0 0 50 30" fill="none" stroke="#22213F" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round">
+        <path d="M2 28c0-8 4-10 23-10s23 2 23 10z" fill="#F7BACB"/>
+        <rect x="10" y="8" width="30" height="10" rx="2" fill="#4150C8"/>
+        <path d="M32 8v10l3-3 3 3" fill="#FFD24D" stroke-width="2"/>
+      </svg>
+    </div>
+  </section>
+
+  <nav class="tabs">
+    <div class="tab on"><div class="ic"><svg width="22" height="20" viewBox="0 0 22 20" fill="none" stroke="#22213F" stroke-width="2.3" stroke-linejoin="round"><path d="M2 9 11 2l9 7v9H2z" fill="#FFFFFF"/><path d="M8 18v-6h6v6"/></svg></div>Bibliothek</div>
+    <div class="tab"><div class="ic"><svg width="22" height="20" viewBox="0 0 22 20" fill="none" stroke="#4A5068" stroke-width="2.3" stroke-linejoin="round"><rect x="2" y="3" width="18" height="15" rx="2"/><path d="M2 8h18M11 8v10"/></svg></div>Schaufenster</div>
+    <div class="tab"><div class="ic"><svg width="22" height="22" viewBox="0 0 22 22" fill="none" stroke="#4A5068" stroke-width="2.3" stroke-linejoin="round"><circle cx="11" cy="11" r="9"/><path d="m14.5 7.5-2 5-5 2 2-5z"/></svg></div>Entdecken</div>
+    <div class="tab"><div class="ic"><svg width="20" height="22" viewBox="0 0 20 22" fill="none" stroke="#4A5068" stroke-width="2.3"><circle cx="10" cy="7" r="4.5"/><path d="M2 20c1-5 4-7 8-7s7 2 8 7" stroke-linecap="round"/></svg></div>Ich</div>
+  </nav>
+  <div class="home"></div>
+</div>
+</body>
+</html>

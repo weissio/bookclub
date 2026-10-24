@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Das Bücherhaus</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --himmel:#E4E0F1;      /* blasses Flieder, Tageslicht */
+    --tinte:#26232F;
+    --tinte2:#4A4558;      /* 7.9:1 auf Himmel */
+    --senf:#F2C14A;
+    --ziegel:#C9543F;
+    --dachbg:#F4D9CF;
+    --rosa:#F2C9C2;
+    --salbei:#BFD8AE;
+    --flieder:#C9C2EA;
+    --blau:#B9D6E6;
+    --gras:#8DBB6E;
+    --strich:#26232F;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:390px;height:844px;overflow:hidden;background:var(--himmel)}
+  body{font-family:'Atkinson Hyperlegible',system-ui,sans-serif;color:var(--tinte);-webkit-font-smoothing:antialiased}
+  .phone{position:relative;width:390px;height:844px;overflow:hidden;background:var(--himmel);display:flex;flex-direction:column}
+  .status{height:54px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font:700 16px 'Atkinson Hyperlegible';}
+  .status .r{display:flex;gap:6px;align-items:center}
+
+  /* Kopf: Ex-Libris statt Large Title */
+  .kopf{flex:none;padding:2px 20px 0;display:flex;align-items:flex-end;justify-content:space-between;height:48px}
+  .kopf .von{font-size:13px;color:var(--tinte2);line-height:1.1}
+  .kopf h1{font:800 22px/1.1 'Bricolage Grotesque';letter-spacing:-.01em;margin-top:2px}
+  .bsp{font:700 10.5px 'Atkinson Hyperlegible';letter-spacing:.05em;color:var(--tinte2);border:1.5px solid #8D88A0;border-radius:6px;padding:1px 6px;margin-bottom:4px}
+
+  /* Am Lesen */
+  .lesen{flex:none;padding:10px 16px 0}
+  .lesen .zeile{display:flex;justify-content:space-between;align-items:baseline;padding:0 4px 6px}
+  .lesen .zeile b{font:800 16px 'Bricolage Grotesque'}
+  .lesen .zeile span{font-size:13px;color:var(--tinte2)}
+  .buch{display:flex;align-items:center;gap:12px;height:84px;padding:0 6px 0 10px;border-radius:16px;background:#F5F3FB;border:2px solid var(--strich);margin-bottom:8px}
+  .buch svg.cov{flex:none}
+  .buch .txt{flex:1;min-width:0}
+  .buch .t{font:800 17px/1.15 'Bricolage Grotesque';white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .buch .a{font-size:14px;color:var(--tinte2);margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  a{color:inherit;text-decoration:none}
+  .seite{flex:none;width:94px;height:60px;border-radius:12px;background:var(--senf);border:2px solid var(--strich);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1.05;position:relative}
+  .seite b{font:800 19px 'Bricolage Grotesque'}
+  .seite small{font:700 12.5px 'Atkinson Hyperlegible';margin-top:2px}
+  .seite svg{position:absolute;top:-2px;right:8px}
+  .extra{display:none}
+  body.vier .extra{display:flex}
+  body.vier .buch{height:54px;margin-bottom:5px;gap:10px}
+  body.vier .buch svg.cov{width:30px;height:42px}
+  body.vier .buch .t{font-size:16px}
+  body.vier .buch .a{font-size:13px;margin-top:0}
+  body.vier .seite{height:46px;width:94px}
+  body.vier .seite b{font-size:17px}
+  body.vier .seite small{margin-top:0;font-size:11.5px}
+  body.vier .buch svg.cov{width:28px;height:39px}
+
+  /* Das Haus */
+  .bauplatz{flex:1;position:relative;min-height:0}
+  .wolke{position:absolute;left:28px;top:12px}
+  body.vier .wolke{display:none}
+  .haus{position:absolute;left:16px;right:16px;bottom:44px;display:flex;flex-direction:column}
+  .dach{position:relative;height:86px;margin:0 -6px}
+  .dach svg{position:absolute;inset:0}
+  .dach a{position:absolute;left:50%;transform:translateX(-50%);bottom:4px;width:200px;height:62px;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;text-decoration:none;color:var(--tinte)}
+  body.vier .dach{height:70px}
+  body.vier .dach a{height:50px}
+  .stock{display:grid;height:150px;border:2.5px solid var(--strich);border-top:none;background:var(--strich);gap:2.5px}
+  .stock.o{grid-template-columns:1.6fr 1fr;border-top:2.5px solid var(--strich)}
+  .stock.u{grid-template-columns:1fr 88px 1fr}
+  body.vier .stock{height:116px}
+  .raum{position:relative;overflow:hidden;text-decoration:none;color:var(--tinte);display:block}
+  .raum svg.bild{position:absolute;left:0;right:0;top:6px;width:100%;height:calc(100% - 50px)}
+  body.vier .raum svg.bild{height:calc(100% - 46px);top:4px}
+  body.vier .schild{bottom:5px;padding:3px 8px 4px}
+  .schild{position:absolute;left:8px;bottom:8px;background:#FBFAFE;border:2px solid var(--strich);border-radius:10px;padding:4px 9px 5px;line-height:1.1}
+  .schild b{display:block;font:800 15.5px 'Bricolage Grotesque'}
+  .schild span{font-size:12.5px;color:var(--tinte2)}
+  .tuer{background:var(--senf)}
+  .tuer .schild{left:4px;right:4px;bottom:6px;text-align:center;padding:4px 2px 5px;background:#FFF6D8}
+  .garten{position:absolute;left:0;right:0;bottom:0;height:44px;background:var(--gras);border-top:2.5px solid var(--strich)}
+  .rueck{position:absolute;left:16px;bottom:0;height:44px;display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--tinte);font:800 15px 'Bricolage Grotesque'}
+  .rueck span{font:400 13px 'Atkinson Hyperlegible';color:#1F3317}
+  .rueck .tafel{background:#FBFAFE;border:2px solid var(--strich);border-radius:9px;padding:4px 10px}
+  .nr{position:absolute;right:16px;bottom:11px;font:700 13px 'Atkinson Hyperlegible';color:#1F3317}
+
+  .tabs{flex:none;height:83px;background:#F5F3FB;border-top:2px solid var(--strich);display:flex;padding:6px 6px 34px}
+  .tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font:700 11px 'Atkinson Hyperlegible';color:#5A5568}
+  .tab.on{color:var(--tinte)}
+  .tab.on svg{background:var(--senf);border-radius:8px}
+  .home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:var(--tinte)}
+</style>
+</head>
+<body>
+<script>if(location.hash==='#4')document.body.classList.add('vier')</script>
+<div class="phone">
+  <div class="status"><span>9:41</span>
+    <span class="r">
+      <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#26232F"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="#26232F"/><rect x="10" y="3" width="3" height="9" rx="1" fill="#26232F"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#26232F"/></svg>
+      <svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="#26232F"/><rect x="2" y="2" width="18" height="9" rx="2" fill="#26232F"/><rect x="24.5" y="4" width="2" height="5" rx="1" fill="#26232F"/></svg>
+    </span>
+  </div>
+
+  <header class="kopf">
+    <div><div class="von">Aus der Bücherei von</div><h1>Mira Kessler</h1></div>
+    <span class="bsp">BEISPIEL</span>
+  </header>
+
+  <section class="lesen" aria-label="Am Lesen">
+    <div class="zeile"><b>Gerade offen</b><span class="anz">2 Bücher</span></div>
+
+    <div class="buch">
+      <svg class="cov" width="44" height="62" viewBox="0 0 44 62"><rect x="1.5" y="1.5" width="41" height="59" rx="3" fill="#3E7C8C" stroke="#26232F" stroke-width="2.5"/><rect x="5" y="1.5" width="3" height="59" fill="#2E6170"/><path d="M14 36c5-6 13-6 20 0-7 6-15 6-20 0z" fill="#F4D9CF" stroke="#26232F" stroke-width="2"/><path d="M34 36l5-4v8z" fill="#F4D9CF" stroke="#26232F" stroke-width="2" stroke-linejoin="round"/><circle cx="19" cy="35" r="1.4" fill="#26232F"/><path d="M28 55v6l3-2 3 2v-6" fill="#C9543F"/></svg>
+      <div class="txt"><div class="t">Salz und Asche</div><div class="a">Jonas Brehm</div></div>
+      <a class="seite" href="#seite"><b>S. 142</b><small>eintragen</small></a>
+    </div>
+
+    <div class="buch">
+      <svg class="cov" width="44" height="62" viewBox="0 0 44 62"><rect x="1.5" y="1.5" width="41" height="59" rx="3" fill="#7A69B8" stroke="#26232F" stroke-width="2.5"/><rect x="5" y="1.5" width="3" height="59" fill="#5F4F9C"/><path d="M12 30q5-5 10 0t10 0M12 38q5-5 10 0t10 0" fill="none" stroke="#F2C14A" stroke-width="2.4" stroke-linecap="round"/><path d="M28 55v6l3-2 3 2v-6" fill="#F2C14A"/></svg>
+      <div class="txt"><div class="t">Die Gezeitenkarte</div><div class="a">Mira Olsen</div></div>
+      <a class="seite" href="#seite"><b>S. 38</b><small>eintragen</small></a>
+    </div>
+
+    <div class="buch extra">
+      <svg class="cov" width="44" height="62" viewBox="0 0 44 62"><rect x="1.5" y="1.5" width="41" height="59" rx="3" fill="#B9643F" stroke="#26232F" stroke-width="2.5"/><rect x="5" y="1.5" width="3" height="59" fill="#984E2F"/><path d="M15 34a8 7 0 0 1 16 0z" fill="#F4D9CF" stroke="#26232F" stroke-width="2"/><rect x="21" y="34" width="4" height="9" fill="#F4D9CF" stroke="#26232F" stroke-width="2"/></svg>
+      <div class="txt"><div class="t">Ein Jahr mit Pilzen</div><div class="a">Hanne Ruprecht</div></div>
+      <a class="seite" href="#seite"><b>S. 211</b><small>eintragen</small></a>
+    </div>
+
+    <div class="buch extra">
+      <svg class="cov" width="44" height="62" viewBox="0 0 44 62"><rect x="1.5" y="1.5" width="41" height="59" rx="3" fill="#4C6B3E" stroke="#26232F" stroke-width="2.5"/><rect x="5" y="1.5" width="3" height="59" fill="#3A5530"/><rect x="13" y="30" width="20" height="10" rx="2" fill="#F2C14A" stroke="#26232F" stroke-width="2"/><circle cx="17" cy="42" r="2" fill="#26232F"/><circle cx="29" cy="42" r="2" fill="#26232F"/></svg>
+      <div class="txt"><div class="t">Nachtzug nach Triest</div><div class="a">Paul Ederer</div></div>
+      <a class="seite" href="#seite"><b>S. 9</b><small>eintragen</small></a>
+    </div>
+  </section>
+
+  <section class="bauplatz" aria-label="Bibliothek">
+    <!-- kleine Wolke, nur wenn Platz ist -->
+    <svg class="wolke" width="92" height="34" viewBox="0 0 92 34"><path d="M14 30h62a12 12 0 0 0 0-24 16 16 0 0 0-29-2A13 13 0 0 0 26 14 9 9 0 0 0 14 30z" fill="#FBFAFE" stroke="#26232F" stroke-width="2"/></svg>
+
+    <div class="haus">
+      <!-- Dachboden: Wunschliste -->
+      <div class="dach">
+        <svg viewBox="0 0 370 86" preserveAspectRatio="none"><path d="M6 84 L185 4 L364 84 Z" fill="var(--dachbg)" stroke="#26232F" stroke-width="2.5" stroke-linejoin="round"/><path d="M6 84 L185 4 L364 84" fill="none" stroke="#C9543F" stroke-width="7" stroke-linejoin="round"/></svg>
+        <!-- Bücher mit Papierflügeln, die noch unterwegs sind -->
+        <svg style="position:absolute;left:66px;top:42px" width="44" height="30" viewBox="0 0 44 30"><path d="M8 14 L0 4 L12 10z M30 14 L44 2 L34 12z" fill="#FBFAFE" stroke="#26232F" stroke-width="1.6" stroke-linejoin="round"/><rect x="12" y="8" width="20" height="16" rx="2" fill="#7FA6C9" stroke="#26232F" stroke-width="2"/></svg>
+        <svg style="position:absolute;right:62px;top:38px" width="40" height="30" viewBox="0 0 40 30"><path d="M8 16 L0 6 L11 12z M28 14 L40 4 L31 13z" fill="#FBFAFE" stroke="#26232F" stroke-width="1.6" stroke-linejoin="round"/><rect x="11" y="10" width="18" height="15" rx="2" fill="#E59B8B" stroke="#26232F" stroke-width="2"/></svg>
+        <a href="#wunsch"><b style="font:800 15.5px 'Bricolage Grotesque'">Wunschliste</b><span style="font-size:12.5px;color:var(--tinte2)">23 · noch unterwegs</span></a>
+      </div>
+
+      <!-- Obergeschoss -->
+      <div class="stock o">
+        <a class="raum" href="#gelesen" style="background:var(--salbei)">
+          <svg class="bild" viewBox="0 4 210 116" preserveAspectRatio="xMidYMax meet">
+            <!-- Regal mit fester Zahl Rücken: wächst nicht mit -->
+            <g stroke="#26232F" stroke-width="2">
+              <rect x="96" y="10" width="104" height="96" fill="#E8D3B0"/>
+              <line x1="96" y1="42" x2="200" y2="42"/><line x1="96" y1="74" x2="200" y2="74"/>
+              <rect x="100" y="16" width="9" height="26" fill="#C9543F"/><rect x="109" y="20" width="8" height="22" fill="#3E7C8C"/><rect x="117" y="14" width="10" height="28" fill="#F2C14A"/><rect x="127" y="18" width="7" height="24" fill="#7A69B8"/><rect x="134" y="16" width="9" height="26" fill="#4C6B3E"/><rect x="146" y="22" width="22" height="7" fill="#E59B8B"/><rect x="148" y="29" width="18" height="7" fill="#3E7C8C"/><rect x="146" y="36" width="20" height="6" fill="#F2C14A"/><rect x="172" y="17" width="8" height="25" fill="#7FA6C9"/><rect x="180" y="15" width="10" height="27" fill="#C9543F"/>
+              <rect x="100" y="48" width="10" height="26" fill="#7A69B8"/><rect x="110" y="52" width="8" height="22" fill="#F2C14A"/><rect x="118" y="50" width="9" height="24" fill="#C9543F"/><rect x="127" y="46" width="11" height="28" fill="#3E7C8C"/><rect x="141" y="54" width="8" height="20" fill="#E59B8B" transform="rotate(-14 145 74)"/><rect x="160" y="48" width="9" height="26" fill="#4C6B3E"/><rect x="169" y="51" width="8" height="23" fill="#7FA6C9"/><rect x="177" y="47" width="10" height="27" fill="#F2C14A"/><rect x="187" y="50" width="8" height="24" fill="#B9643F"/>
+              <rect x="100" y="80" width="9" height="26" fill="#4C6B3E"/><rect x="109" y="82" width="10" height="24" fill="#E59B8B"/><rect x="119" y="79" width="8" height="27" fill="#7A69B8"/><rect x="127" y="83" width="9" height="23" fill="#C9543F"/><rect x="136" y="80" width="10" height="26" fill="#F2C14A"/><rect x="146" y="82" width="8" height="24" fill="#3E7C8C"/><rect x="154" y="79" width="11" height="27" fill="#B9643F"/><rect x="165" y="83" width="8" height="23" fill="#7FA6C9"/><rect x="173" y="80" width="9" height="26" fill="#4C6B3E"/><rect x="182" y="82" width="12" height="24" fill="#C9543F"/>
+            </g>
+            <!-- Sessel mit Decke und Tasse -->
+            <g stroke="#26232F" stroke-width="2" stroke-linejoin="round">
+              <path d="M18 62q0-14 14-14h28q14 0 14 14v40H18z" fill="#C9543F"/>
+              <rect x="12" y="78" width="16" height="30" rx="7" fill="#B0442F"/><rect x="64" y="78" width="16" height="30" rx="7" fill="#B0442F"/>
+              <path d="M30 70h34v22l-6-5-6 5-6-5-6 5-6-5-4 3z" fill="#F2C14A"/>
+              <line x1="22" y1="108" x2="20" y2="116"/><line x1="72" y1="108" x2="74" y2="116"/>
+              <rect x="82" y="96" width="12" height="12" rx="2" fill="#FBFAFE"/>
+            </g>
+            <path d="M86 92q-3-5 0-8M90 92q-3-5 0-8" fill="none" stroke="#26232F" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+          <span class="schild"><b>Gelesen</b><span>148 Bücher</span></span>
+        </a>
+        <a class="raum" href="#ungelesen" style="background:var(--blau)">
+          <svg class="bild" viewBox="0 10 132 88" preserveAspectRatio="xMidYMax meet">
+            <!-- Wartebank: Bücher sitzen und warten freundlich -->
+            <g stroke="#26232F" stroke-width="2" stroke-linejoin="round">
+              <rect x="14" y="30" width="20" height="40" rx="2" fill="#F2C14A"/>
+              <rect x="36" y="26" width="22" height="44" rx="2" fill="#7A69B8"/>
+              <rect x="62" y="34" width="18" height="36" rx="2" fill="#E59B8B" transform="rotate(-12 80 70)"/>
+              <rect x="86" y="28" width="22" height="42" rx="2" fill="#3E7C8C"/>
+              <!-- kleiner Hut -->
+              <path d="M85 26h24M90 26v-8h14v8" fill="#26232F"/>
+              <rect x="6" y="70" width="114" height="8" rx="2" fill="#B9643F"/>
+              <line x1="16" y1="78" x2="16" y2="94"/><line x1="110" y1="78" x2="110" y2="94"/>
+            </g>
+            <g fill="#26232F"><circle cx="21" cy="44" r="1.5"/><circle cx="27" cy="44" r="1.5"/><circle cx="44" cy="40" r="1.5"/><circle cx="51" cy="40" r="1.5"/><circle cx="94" cy="42" r="1.5"/><circle cx="101" cy="42" r="1.5"/></g>
+            <path d="M20 50q4 3 8 0M44 46q4 3 7 0M94 48q4 3 7 0" fill="none" stroke="#26232F" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M64 44q2 1 5 0M70 46q2 1 5 0" fill="none" stroke="#26232F" stroke-width="1.6" stroke-linecap="round"/>
+            <text x="70" y="28" font-family="Atkinson Hyperlegible" font-weight="700" font-size="10" fill="#26232F">z</text>
+          </svg>
+          <span class="schild"><b>Ungelesen</b><span>61 haben Zeit</span></span>
+        </a>
+      </div>
+
+      <!-- Erdgeschoss -->
+      <div class="stock u">
+        <a class="raum" href="#regale" style="background:var(--flieder)">
+          <svg class="bild" viewBox="0 2 128 94" preserveAspectRatio="xMidYMax meet">
+            <!-- fünf beschriftete Kisten = eigene Regale -->
+            <g stroke="#26232F" stroke-width="2" stroke-linejoin="round">
+              <rect x="10" y="62" width="50" height="30" rx="2" fill="#F2C14A"/><rect x="62" y="62" width="50" height="30" rx="2" fill="#E59B8B"/>
+              <rect x="20" y="30" width="44" height="32" rx="2" fill="#BFD8AE"/><rect x="64" y="34" width="40" height="28" rx="2" fill="#7FA6C9"/>
+              <rect x="40" y="6" width="40" height="24" rx="2" fill="#FBFAFE"/>
+              <rect x="25" y="70" width="20" height="9" rx="1" fill="#FBFAFE"/><rect x="77" y="70" width="20" height="9" rx="1" fill="#FBFAFE"/><rect x="32" y="40" width="20" height="9" rx="1" fill="#FBFAFE"/><rect x="74" y="42" width="20" height="9" rx="1" fill="#FBFAFE"/>
+            </g>
+            <g fill="#26232F"><rect x="47" y="12" width="5" height="16"/><rect x="53" y="14" width="4" height="14"/><rect x="59" y="11" width="5" height="17"/><rect x="66" y="15" width="6" height="13"/></g>
+          </svg>
+          <span class="schild"><b>Eigene Regale</b><span>5 Sammlungen</span></span>
+        </a>
+        <a class="raum tuer" href="#erfassen" aria-label="Bücher erfassen">
+          <svg class="bild" viewBox="0 6 84 94" preserveAspectRatio="xMidYMax meet">
+            <g stroke="#26232F" stroke-width="2" stroke-linejoin="round">
+              <path d="M16 96V24q0-14 26-14t26 14v72z" fill="#3E7C8C"/>
+              <circle cx="58" cy="60" r="3" fill="#F2C14A"/>
+              <rect x="30" y="22" width="24" height="10" rx="2" fill="#FBFAFE"/>
+              <!-- Paket mit Büchern, die neugierig rausschauen -->
+              <rect x="22" y="72" width="30" height="5" fill="#7A69B8"/>
+              <rect x="27" y="66" width="7" height="12" fill="#C9543F"/><rect x="36" y="64" width="6" height="14" fill="#F2C14A"/>
+              <rect x="20" y="76" width="44" height="22" rx="2" fill="#D9A766"/>
+              <path d="M20 76l-6-7M64 76l6-7" fill="none"/>
+            </g>
+            <text x="42" y="30" text-anchor="middle" font-family="Atkinson Hyperlegible" font-weight="700" font-size="8" fill="#26232F">240</text>
+          </svg>
+          <span class="schild"><b style="font-size:14.5px">Neue<br>Bücher</b><span>erfassen</span></span>
+        </a>
+        <a class="raum" href="#abgebrochen" style="background:var(--rosa)">
+          <svg class="bild" viewBox="0 14 128 86" preserveAspectRatio="xMidYMax meet">
+            <!-- Bett: abgebrochene Bücher schlafen sich aus -->
+            <g stroke="#26232F" stroke-width="2" stroke-linejoin="round">
+              <rect x="12" y="38" width="8" height="58" rx="2" fill="#B9643F"/>
+              <rect x="108" y="56" width="8" height="40" rx="2" fill="#B9643F"/>
+              <rect x="22" y="50" width="16" height="22" rx="2" fill="#7FA6C9"/>
+              <rect x="38" y="48" width="14" height="24" rx="2" fill="#4C6B3E"/>
+              <rect x="20" y="70" width="90" height="16" rx="3" fill="#FBFAFE"/>
+              <path d="M44 56h66v18q-33 8-66 0z" fill="#F2C14A"/>
+            </g>
+            <path d="M52 60h50M52 66h50" stroke="#26232F" stroke-width="1.2" stroke-dasharray="3 4"/>
+            <text x="56" y="34" font-family="Atkinson Hyperlegible" font-weight="700" font-size="13" fill="#26232F">z</text><text x="66" y="24" font-family="Atkinson Hyperlegible" font-weight="700" font-size="10" fill="#26232F">z</text>
+          </svg>
+          <span class="schild"><b>Abgebrochen</b><span>6 ruhen sich aus</span></span>
+        </a>
+      </div>
+    </div>
+
+    <div class="garten">
+      <a class="rueck" href="#rueckblick"><span class="tafel">Rückblick</span><span>Am meisten: Jonas Brehm</span></a>
+    </div>
+  </section>
+
+  <nav class="tabs">
+    <div class="tab on"><svg width="30" height="26" viewBox="0 0 30 26"><path d="M5 22V11l10-7 10 7v11z" fill="none" stroke="#26232F" stroke-width="2.2" stroke-linejoin="round"/><rect x="11" y="14" width="3" height="8" fill="#26232F"/><rect x="15" y="13" width="3" height="9" fill="#26232F"/></svg>Bibliothek</div>
+    <div class="tab"><svg width="30" height="26" viewBox="0 0 30 26"><rect x="5" y="5" width="20" height="16" rx="2" fill="none" stroke="#5A5568" stroke-width="2.2"/><path d="M5 10h20M15 10v11" stroke="#5A5568" stroke-width="2.2"/></svg>Schaufenster</div>
+    <div class="tab"><svg width="30" height="26" viewBox="0 0 30 26"><circle cx="15" cy="13" r="9" fill="none" stroke="#5A5568" stroke-width="2.2"/><path d="M18.5 9.5l-2 5-5 2 2-5z" fill="#5A5568"/></svg>Entdecken</div>
+    <div class="tab"><svg width="30" height="26" viewBox="0 0 30 26"><circle cx="15" cy="9" r="4.5" fill="none" stroke="#5A5568" stroke-width="2.2"/><path d="M6 23q1-8 9-8t9 8" fill="none" stroke="#5A5568" stroke-width="2.2"/></svg>Ich</div>
+  </nav>
+  <div class="home"></div>
+</div>
+<script>if(document.body.classList.contains('vier'))document.querySelector('.anz').textContent='4 Bücher'</script>
+</body>
+</html>

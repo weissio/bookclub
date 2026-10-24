@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Der Lesegarten</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Grandstander:wght@700;800&family=Lexend:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --himmel:#CFE6EC;
+    --tinte:#22302A;
+    --tinte2:#3F5048;     /* 8:1 auf Himmel */
+    --wiese:#A8CF8B;
+    --wiese2:#8DBD70;
+    --erde:#8A5A3C;
+    --gelb:#F4C84E;
+    --tomate:#E0634A;
+    --pflaume:#6E5A9E;
+    --see:#3D7F92;
+    --papier:#FAFBF4;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:390px;height:844px;overflow:hidden;background:var(--himmel)}
+  body{font-family:'Lexend',system-ui,sans-serif;color:var(--tinte);-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .phone{position:relative;width:390px;height:844px;overflow:hidden;background:var(--himmel);display:flex;flex-direction:column}
+  .status{height:54px;flex:none;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 36px;font:600 16px 'Lexend'}
+  .status .r{display:flex;gap:6px;align-items:center}
+
+  .kopf{flex:none;height:44px;padding:0 20px;display:flex;align-items:center;justify-content:space-between}
+  .kopf h1{font:800 21px/1 'Grandstander';letter-spacing:.005em}
+  .kopf h1 small{display:block;font:400 13px 'Lexend';color:var(--tinte2);margin-bottom:3px;letter-spacing:0}
+  .bsp{font:600 10.5px 'Lexend';letter-spacing:.05em;color:var(--tinte2);border:1.5px solid #7E918A;border-radius:6px;padding:1px 6px}
+
+  /* Am Lesen: Bücher liegen auf der Gartenbank */
+  .lesen{flex:none;padding:8px 14px 0;position:relative}
+  .lesen .zeile{display:flex;justify-content:space-between;align-items:baseline;padding:0 6px 6px}
+  .lesen .zeile b{font:800 16px 'Grandstander'}
+  .lesen .zeile span{font-size:13px;color:var(--tinte2)}
+  .gitter{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative;z-index:2}
+  .buch{background:var(--papier);border:2px solid var(--tinte);border-radius:14px;padding:10px 10px 10px;display:flex;flex-direction:column;gap:8px}
+  .buch .oben{display:flex;gap:9px;align-items:flex-start;min-height:62px}
+  .buch svg{flex:none}
+  .buch .t{font:600 15px/1.18 'Lexend';display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .buch .a{font-size:12.5px;color:var(--tinte2);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .seite{height:46px;border-radius:12px;background:var(--gelb);border:2px solid var(--tinte);display:flex;align-items:center;justify-content:center;gap:6px;font:600 14px 'Lexend'}
+  .seite b{font:800 17px 'Grandstander'}
+  .bank{height:10px;margin:0 2px;background:var(--erde);border:2px solid var(--tinte);border-radius:3px;position:relative;margin-top:-4px;z-index:1}
+  .bank::before,.bank::after{content:"";position:absolute;top:8px;width:6px;height:9px;background:var(--erde);border:2px solid var(--tinte);border-top:none}
+  .bank::before{left:22px}.bank::after{right:22px}
+  .extra{display:none}
+  body.vier .extra{display:flex}
+  body.vier .buch{padding:7px 8px 8px;gap:5px}
+  body.vier .buch .oben{min-height:44px;gap:7px}
+  body.vier .buch svg{width:26px;height:38px}
+  body.vier .buch .t{font-size:14px}
+  body.vier .buch .a{font-size:12px;margin-top:1px}
+  body.vier .seite{height:44px}
+  body.vier .gitter{gap:6px}
+
+  /* Garten */
+  .garten{flex:1;position:relative;min-height:0}
+  .szene{position:absolute;left:0;right:0;bottom:0;height:360px}
+  .szene svg.bg{position:absolute;inset:0}
+  .tag{position:absolute;min-height:44px;background:var(--papier);border:2px solid var(--tinte);border-radius:10px;padding:4px 9px 5px;line-height:1.12;display:flex;flex-direction:column;justify-content:center}
+  .tag b{font:600 15px 'Lexend'}
+  .tag span{font-size:12.5px;color:var(--tinte2)}
+  .tag.gelb{background:#FFF1C4}
+
+  .tabs{flex:none;height:83px;background:var(--papier);border-top:2px solid var(--tinte);display:flex;padding:6px 6px 34px}
+  .tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font:600 11px 'Lexend';color:#56645D}
+  .tab.on{color:var(--tinte)}
+  .tab.on svg{background:var(--gelb);border-radius:8px}
+  .home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:var(--tinte)}
+</style>
+</head>
+<body>
+<script>if(location.hash==='#4')document.body.classList.add('vier')</script>
+<div class="phone">
+  <div class="status"><span>9:41</span>
+    <span class="r">
+      <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#22302A"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="#22302A"/><rect x="10" y="3" width="3" height="9" rx="1" fill="#22302A"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#22302A"/></svg>
+      <svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="23" height="12" rx="3.5" fill="none" stroke="#22302A"/><rect x="2" y="2" width="18" height="9" rx="2" fill="#22302A"/><rect x="24.5" y="4" width="2" height="5" rx="1" fill="#22302A"/></svg>
+    </span>
+  </div>
+
+  <header class="kopf">
+    <h1><small>Der Lesegarten von</small>Mira Kessler</h1>
+    <span class="bsp">BEISPIEL</span>
+  </header>
+
+  <section class="lesen" aria-label="Am Lesen">
+    <div class="zeile"><b>Auf der Bank</b><span class="anz">2 Bücher offen</span></div>
+    <div class="gitter">
+      <div class="buch">
+        <div class="oben">
+          <svg width="40" height="58" viewBox="0 0 40 58"><rect x="1.5" y="1.5" width="37" height="55" rx="3" fill="#3D7F92" stroke="#22302A" stroke-width="2.5"/><path d="M10 32c5-6 12-6 18 0-6 6-13 6-18 0z" fill="#FAFBF4" stroke="#22302A" stroke-width="2"/><path d="M28 32l5-4v8z" fill="#FAFBF4" stroke="#22302A" stroke-width="2" stroke-linejoin="round"/><circle cx="15" cy="31" r="1.4" fill="#22302A"/><path d="M27 52v6l3-2 3 2v-6" fill="#E0634A"/></svg>
+          <div><div class="t">Salz und Asche</div><div class="a">Jonas Brehm</div></div>
+        </div>
+        <a class="seite" href="#seite"><b>S. 142</b>eintragen</a>
+      </div>
+      <div class="buch">
+        <div class="oben">
+          <svg width="40" height="58" viewBox="0 0 40 58"><rect x="1.5" y="1.5" width="37" height="55" rx="3" fill="#6E5A9E" stroke="#22302A" stroke-width="2.5"/><path d="M9 26q5-5 11 0t11 0M9 34q5-5 11 0t11 0" fill="none" stroke="#F4C84E" stroke-width="2.4" stroke-linecap="round"/><path d="M27 52v6l3-2 3 2v-6" fill="#F4C84E"/></svg>
+          <div><div class="t">Die Gezeiten&shy;karte</div><div class="a">Mira Olsen</div></div>
+        </div>
+        <a class="seite" href="#seite"><b>S. 38</b>eintragen</a>
+      </div>
+      <div class="buch extra">
+        <div class="oben">
+          <svg width="40" height="58" viewBox="0 0 40 58"><rect x="1.5" y="1.5" width="37" height="55" rx="3" fill="#B9643F" stroke="#22302A" stroke-width="2.5"/><path d="M12 30a8 7 0 0 1 16 0z" fill="#FAFBF4" stroke="#22302A" stroke-width="2"/><rect x="18" y="30" width="4" height="9" fill="#FAFBF4" stroke="#22302A" stroke-width="2"/></svg>
+          <div><div class="t">Ein Jahr mit Pilzen</div><div class="a">Hanne Ruprecht</div></div>
+        </div>
+        <a class="seite" href="#seite"><b>S. 211</b>eintragen</a>
+      </div>
+      <div class="buch extra">
+        <div class="oben">
+          <svg width="40" height="58" viewBox="0 0 40 58"><rect x="1.5" y="1.5" width="37" height="55" rx="3" fill="#4C6B3E" stroke="#22302A" stroke-width="2.5"/><rect x="10" y="26" width="20" height="10" rx="2" fill="#F4C84E" stroke="#22302A" stroke-width="2"/><circle cx="14" cy="38" r="2" fill="#22302A"/><circle cx="26" cy="38" r="2" fill="#22302A"/></svg>
+          <div><div class="t">Nachtzug nach Triest</div><div class="a">Paul Ederer</div></div>
+        </div>
+        <a class="seite" href="#seite"><b>S. 9</b>eintragen</a>
+      </div>
+    </div>
+    <div class="bank"></div>
+  </section>
+
+  <section class="garten" aria-label="Bibliothek">
+    <div class="szene">
+      <svg class="bg" viewBox="0 0 390 360" preserveAspectRatio="xMidYMax slice">
+        <!-- Drachen = Wunschliste, Schwanz aus kleinen Büchern -->
+        <g stroke="#22302A" stroke-width="2" stroke-linejoin="round">
+          <path d="M346 6 L374 34 L346 70 L318 34 Z" fill="#E0634A"/>
+          <path d="M346 6V70M318 34h56" stroke-width="1.4"/>
+          <path d="M346 70 q-10 16 -2 28 q8 14 -4 26 q-10 10 -2 22" fill="none" stroke-width="1.6"/>
+          <rect x="336" y="82" width="12" height="9" rx="1.5" fill="#F4C84E" transform="rotate(-12 342 86)"/>
+          <rect x="336" y="106" width="12" height="9" rx="1.5" fill="#6E5A9E" transform="rotate(10 342 110)"/>
+          <rect x="333" y="128" width="12" height="9" rx="1.5" fill="#3D7F92" transform="rotate(-8 339 132)"/>
+          <!-- Schnur zum Garten -->
+          <path d="M346 38 Q300 120 296 170" fill="none" stroke-width="1.2" stroke-dasharray="1 0"/>
+        </g>
+        <!-- Hügel und Wiese -->
+        <path d="M0 196 Q90 168 200 184 T390 178 V360 H0 Z" fill="#A8CF8B" stroke="#22302A" stroke-width="2"/>
+        <path d="M0 252 Q120 238 240 248 T390 244 V360 H0 Z" fill="#8DBD70" stroke="#22302A" stroke-width="2"/>
+        <!-- Baum = Gelesen; feste Zahl Bücher-Früchte, wächst nicht mit -->
+        <g stroke="#22302A" stroke-width="2" stroke-linejoin="round">
+          <path d="M66 236 L72 140 L84 140 L90 236 Z" fill="#8A5A3C"/>
+          <path d="M78 150 L104 122 M76 158 L54 132" fill="none" stroke-width="5" stroke="#8A5A3C"/>
+          <path d="M78 150 L104 122 M76 158 L54 132" fill="none" stroke-width="1.6"/>
+          <path d="M20 96 q-14 -36 24 -50 q14 -32 50 -22 q40 -6 52 26 q30 16 14 50 q4 30 -30 34 q-24 18 -50 4 q-34 10 -50 -14 q-24 -6 -10 -28z" fill="#5E9A55"/>
+          <path d="M44 58 q10 -8 20 -2 M100 46 q12 -6 22 4 M128 92 q10 2 12 12 M36 108 q-6 6 -2 14" fill="none" stroke-width="1.5"/>
+        </g>
+        <g stroke="#22302A" stroke-width="1.8">
+          <line x1="52" y1="78" x2="52" y2="86"/><rect x="45" y="86" width="14" height="18" rx="1.5" fill="#F4C84E"/>
+          <line x1="86" y1="60" x2="86" y2="68"/><rect x="79" y="68" width="14" height="18" rx="1.5" fill="#E0634A"/>
+          <line x1="118" y1="76" x2="118" y2="84"/><rect x="111" y="84" width="14" height="18" rx="1.5" fill="#6E5A9E"/>
+          <line x1="76" y1="100" x2="76" y2="108"/><rect x="69" y="108" width="14" height="18" rx="1.5" fill="#FAFBF4"/>
+          <line x1="138" y1="112" x2="138" y2="118"/><rect x="131" y="118" width="13" height="17" rx="1.5" fill="#3D7F92"/>
+          <line x1="34" y1="114" x2="34" y2="120"/><rect x="27" y="120" width="13" height="17" rx="1.5" fill="#E0634A"/>
+        </g>
+        <!-- Schuppen = Eigene Regale -->
+        <g stroke="#22302A" stroke-width="2" stroke-linejoin="round">
+          <path d="M262 112 L318 78 L374 112 Z" fill="#6E5A9E"/>
+          <rect x="268" y="112" width="100" height="120" fill="#F4C84E"/>
+          <rect x="282" y="122" width="44" height="54" fill="#22302A"/>
+          <g fill="#FAFBF4"><rect x="286" y="134" width="36" height="3"/><rect x="286" y="154" width="36" height="3"/></g>
+          <rect x="288" y="124" width="8" height="10" fill="#E0634A"/><rect x="298" y="126" width="9" height="8" fill="#A8CF8B"/><rect x="310" y="123" width="8" height="11" fill="#3D7F92"/>
+          <rect x="290" y="144" width="10" height="10" fill="#FAFBF4"/><rect x="304" y="145" width="12" height="9" fill="#F4C84E"/>
+          <path d="M326 122 l20 6 v52 l-20 -4z" fill="#E7B83C"/>
+        </g>
+        <!-- Hängematte = Abgebrochen: Bücher machen Pause -->
+        <g stroke="#22302A" stroke-width="2" stroke-linejoin="round">
+          <path d="M86 160 Q176 214 268 160" fill="none" stroke-width="1.6"/>
+          <path d="M108 168 Q176 214 246 168 Q176 196 108 168 Z" fill="#E0634A"/>
+          <rect x="140" y="170" width="18" height="13" rx="2" fill="#3D7F92" transform="rotate(14 149 176)"/>
+          <rect x="160" y="174" width="18" height="12" rx="2" fill="#F4C84E" transform="rotate(6 169 180)"/>
+          <path d="M172 178 Q200 172 226 172 Q206 192 172 190 Z" fill="#FAFBF4"/>
+        </g>
+        <text x="190" y="160" font-family="Grandstander" font-weight="800" font-size="14" fill="#22302A">z</text>
+        <text x="202" y="148" font-family="Grandstander" font-weight="800" font-size="10" fill="#22302A">z</text>
+        <!-- Baumstumpf = Rückblick (Jahresringe) -->
+        <g stroke="#22302A" stroke-width="2">
+          <path d="M22 290 V272 H92 V290 Q57 304 22 290 Z" fill="#8A5A3C"/>
+          <ellipse cx="57" cy="272" rx="35" ry="9" fill="#E8C49A"/>
+          <ellipse cx="57" cy="272" rx="23" ry="6" fill="none" stroke-width="1.3"/>
+          <ellipse cx="57" cy="272" rx="11" ry="3" fill="none" stroke-width="1.3"/>
+        </g>
+        <!-- Schubkarre = Neue Bücher (kommen in Schüben) -->
+        <g stroke="#22302A" stroke-width="2" stroke-linejoin="round">
+          <rect x="150" y="252" width="9" height="20" fill="#E0634A"/><rect x="160" y="248" width="10" height="24" fill="#3D7F92"/><rect x="171" y="254" width="9" height="18" fill="#F4C84E"/><rect x="181" y="250" width="10" height="22" fill="#6E5A9E" transform="rotate(10 186 272)"/><rect x="194" y="256" width="9" height="16" fill="#FAFBF4"/>
+          <path d="M136 268 H222 L210 296 H150 Z" fill="#5E9A55"/>
+          <circle cx="160" cy="302" r="9" fill="#FAFBF4"/>
+          <path d="M222 268 L246 260" stroke-width="3"/>
+          <line x1="204" y1="296" x2="208" y2="306"/>
+        </g>
+        <!-- Beet = Ungelesen: Bücher stecken in der Erde, Keimlinge oben -->
+        <g stroke="#22302A" stroke-width="2" stroke-linejoin="round">
+          <rect x="278" y="250" width="12" height="22" rx="1.5" fill="#F4C84E"/>
+          <rect x="296" y="246" width="12" height="26" rx="1.5" fill="#E0634A"/>
+          <rect x="314" y="252" width="12" height="20" rx="1.5" fill="#6E5A9E"/>
+          <rect x="332" y="248" width="12" height="24" rx="1.5" fill="#3D7F92"/>
+          <rect x="350" y="252" width="12" height="20" rx="1.5" fill="#FAFBF4"/>
+          <path d="M266 272 Q320 262 376 272 L372 290 Q320 298 270 290 Z" fill="#8A5A3C"/>
+        </g>
+        <g fill="#5E9A55" stroke="#22302A" stroke-width="1.4">
+          <path d="M284 250 q-6 -8 -1 -10 q4 3 1 10z"/><path d="M302 246 q6 -9 10 -6 q-3 5 -10 6z"/><path d="M338 248 q-6 -8 -1 -10 q4 3 1 10z"/>
+        </g>
+      </svg>
+
+      <!-- Beschriftete Einstiege (jeweils ≥ 44 pt) -->
+      <a class="tag" href="#wunsch" style="right:66px;top:14px"><b>Wunschliste</b><span>23 · fliegen noch</span></a>
+      <a class="tag" href="#gelesen" style="left:14px;top:150px"><b>Gelesen</b><span>148 Bücher</span></a>
+      <a class="tag" href="#abgebrochen" style="left:128px;top:196px"><b>Abgebrochen</b><span>6 machen Pause</span></a>
+      <a class="tag" href="#regale" style="right:12px;top:182px"><b>Eigene Regale</b><span>5 Sammlungen</span></a>
+      <a class="tag" href="#rueckblick" style="left:14px;top:304px"><b>Rückblick</b><span>meist: J. Brehm</span></a>
+      <a class="tag gelb" href="#erfassen" style="left:138px;top:304px;width:114px"><b>Neue Bücher</b><span>erfassen</span></a>
+      <a class="tag" href="#ungelesen" style="right:12px;top:298px"><b>Ungelesen</b><span>61 haben Zeit</span></a>
+    </div>
+  </section>
+
+  <nav class="tabs">
+    <div class="tab on"><svg width="30" height="26" viewBox="0 0 30 26"><rect x="7" y="6" width="4" height="15" rx="1" fill="#22302A"/><rect x="12.5" y="4" width="4" height="17" rx="1" fill="#22302A"/><rect x="18" y="7" width="4" height="14" rx="1" fill="#22302A" transform="rotate(10 20 21)"/></svg>Bibliothek</div>
+    <div class="tab"><svg width="30" height="26" viewBox="0 0 30 26"><rect x="5" y="5" width="20" height="16" rx="2" fill="none" stroke="#56645D" stroke-width="2.2"/><path d="M5 10h20M15 10v11" stroke="#56645D" stroke-width="2.2"/></svg>Schaufenster</div>
+    <div class="tab"><svg width="30" height="26" viewBox="0 0 30 26"><circle cx="15" cy="13" r="9" fill="none" stroke="#56645D" stroke-width="2.2"/><path d="M18.5 9.5l-2 5-5 2 2-5z" fill="#56645D"/></svg>Entdecken</div>
+    <div class="tab"><svg width="30" height="26" viewBox="0 0 30 26"><circle cx="15" cy="9" r="4.5" fill="none" stroke="#56645D" stroke-width="2.2"/><path d="M6 23q1-8 9-8t9 8" fill="none" stroke="#56645D" stroke-width="2.2"/></svg>Ich</div>
+  </nav>
+  <div class="home"></div>
+</div>
+<script>if(document.body.classList.contains('vier'))document.querySelector('.anz').textContent='4 Bücher offen'</script>
+</body>
+</html>

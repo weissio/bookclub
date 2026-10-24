@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>Papierviertel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --himmel:#f3b27c;      /* Aprikosenpapier */
+    --huegel:#e68f5b;
+    --tinte:#24180f;
+    --petrol:#17504d;      /* Fensterbrett-Papier */
+    --senf:#f4c84a;
+    --kobalt:#2a4ea0;
+    --rosa:#ec7f95;
+    --gruen:#2c6b3c;
+    --wiese:#6c9a3a;
+    --papier:#fff8ee;
+    --schicht:drop-shadow(0 1.5px 1.5px rgba(60,25,0,.28)) drop-shadow(0 4px 6px rgba(60,25,0,.12));
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:390px;height:844px;overflow:hidden;background:var(--himmel)}
+  body{font-family:"Bricolage Grotesque",system-ui,sans-serif;color:var(--tinte);position:relative;font-optical-sizing:auto}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+
+  /* Statusleiste */
+  .status{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:6px 30px 0 40px;font-weight:650;font-size:17px}
+
+  /* Ex-Libris-Kopf */
+  .kopf{position:absolute;top:58px;left:20px;right:20px;height:64px}
+  .kopf small{display:block;font-size:14px;font-weight:500;letter-spacing:.01em}
+  .kopf h1{font-size:30px;line-height:1.05;font-weight:800;letter-spacing:-.01em;margin-top:2px}
+  .bsp{position:absolute;right:0;top:4px;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--papier);padding:4px 8px;border-radius:3px;transform:rotate(1.5deg);filter:var(--schicht)}
+
+  /* Am Lesen: Fensterbrett */
+  .brett{position:absolute;top:126px;left:12px;right:12px;height:228px;filter:var(--schicht)}
+  .brett>svg.grund{position:absolute;inset:0;width:100%;height:100%}
+  .brett-inhalt{position:absolute;inset:0;padding:14px 14px 12px;color:#fff}
+  .brett h2{font-size:16px;font-weight:700;display:flex;justify-content:space-between;align-items:baseline}
+  .brett h2 span{font-weight:500;font-size:14px;opacity:.92}
+  .reihe{display:flex;gap:12px;margin-top:12px}
+  .buch{flex:1;display:flex;gap:10px;min-width:0}
+  .umschlag{flex:none;width:62px;height:90px;filter:var(--schicht)}
+  .text{flex:1 1 0;min-width:0;display:flex;flex-direction:column}
+  .titel{font-size:16px;font-weight:700;line-height:1.15}
+  .autor{font-size:13px;opacity:.92;margin-top:2px}
+  .seite{font-size:13px;margin-top:6px}
+  .seite b{font-size:20px;font-weight:800}
+  .eintragen{margin-top:12px;height:48px;width:100%;background:var(--senf);color:var(--tinte);font-weight:700;font-size:15px;display:flex;align-items:center;justify-content:center;gap:6px;filter:var(--schicht);clip-path:polygon(0 4%,3% 0,97% 2%,100% 0,99% 96%,96% 100%,4% 98%,0 100%)}
+  .b2 .buch:nth-child(n+3){display:none}
+  .b2 .buch{flex-direction:row;flex-wrap:wrap}
+  .b2 .eintragen{flex-basis:100%}
+  .b2 .text{height:102px}
+
+  /* 4 Bücher: schmale Stehbücher */
+  .b4 .reihe{gap:8px;margin-top:10px}
+  .b4 .buch{flex-direction:column;align-items:flex-start;gap:6px}
+  .b4 .umschlag{width:44px;height:64px}
+  .b4 .titel{font-size:13.5px;height:32px;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;text-overflow:ellipsis}
+  .b4 .text{flex:none;width:100%}
+  .b4 .autor{display:none}
+  .b4 .seite{display:none}
+  .b4 .eintragen{margin-top:4px;height:52px;flex-direction:column;gap:0;line-height:1.1;font-size:12.5px;font-weight:600}
+  .b4 .eintragen b{font-size:17px;font-weight:800}
+  .kurz{display:none}.b4 .kurz{display:inline}.b4 .lang{display:none}
+
+  /* Viertel */
+  .viertel-kopf{position:absolute;top:368px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:baseline}
+  .viertel-kopf h2{font-size:18px;font-weight:800}
+  .viertel-kopf span{font-size:14px;font-weight:500}
+  .landschaft{position:absolute;top:398px;left:0;width:390px;height:272px}
+  .haus{position:absolute;bottom:52px;width:86px;filter:var(--schicht);display:block;text-align:center}
+  .haus svg{position:absolute;left:0;bottom:0;width:100%;height:100%}
+  .schild{position:absolute;left:6px;right:6px;bottom:12px;padding:6px 2px 6px;border-radius:2px}
+  .schild .n{display:block;font-size:24px;font-weight:800;line-height:1}
+  .schild .l{display:block;font-size:13px;font-weight:650;line-height:1.1;margin-top:3px}
+  .h1{left:12px;height:212px}
+  .h2{left:106px;height:184px}
+  .h3{left:200px;height:198px}
+  .h4{left:294px;height:172px}
+  .hell{color:#fff}
+
+  .wiese{position:absolute;left:0;bottom:0;width:390px;height:70px;filter:var(--schicht)}
+  .wege{position:absolute;left:16px;right:16px;bottom:8px;height:48px;display:flex;gap:10px}
+  .weg{flex:1;height:48px;background:var(--papier);display:flex;align-items:center;justify-content:center;gap:8px;font-size:15px;font-weight:650;filter:var(--schicht);clip-path:polygon(0 0,92% 0,100% 50%,92% 100%,0 100%,2% 50%)}
+  .weg span{font-weight:500;opacity:.85}
+
+  .erfassen{position:absolute;top:682px;left:16px;right:16px;height:52px;background:var(--papier);display:flex;align-items:center;gap:12px;padding:0 16px;filter:var(--schicht);border-radius:3px}
+  .erfassen .plus{width:28px;height:28px;flex:none}
+  .erfassen b{font-size:17px;font-weight:750}
+  .erfassen span{font-size:13px;font-weight:500;margin-left:auto;color:#5a4334}
+
+  /* Tab-Leiste */
+  .tabs{position:absolute;left:0;right:0;bottom:0;height:86px}
+  .tabs svg.kante{position:absolute;top:-6px;left:0;width:390px;height:20px}
+  .tabs .feld{position:absolute;inset:6px 0 0;background:var(--petrol)}
+  .tabzeile{position:absolute;top:8px;left:0;right:0;display:flex;justify-content:space-around;color:#cfe1dd}
+  .tab{width:84px;height:48px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11.5px;font-weight:600}
+  .tab.an{color:var(--senf)}
+  .tab svg{width:24px;height:24px}
+  .home{position:absolute;bottom:8px;left:50%;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:#fff}
+</style>
+</head>
+<body class="b4">
+
+<div class="status"><span>9:41</span>
+  <svg width="68" height="13" viewBox="0 0 68 13" fill="#24180f"><rect x="0" y="8" width="3" height="5" rx="1"/><rect x="5" y="5.5" width="3" height="7.5" rx="1"/><rect x="10" y="3" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="13" rx="1"/><rect x="40" y=".5" width="24" height="12" rx="3.5" fill="none" stroke="#24180f"/><rect x="42" y="2.5" width="18" height="8" rx="2"/><rect x="65.5" y="4.5" width="1.5" height="4" rx=".7"/></svg>
+</div>
+
+<header class="kopf">
+  <small>Aus der Bücherei von Arjen</small>
+  <h1>Kirschweg 7</h1>
+  <div class="bsp">Beispiel</div>
+</header>
+
+<!-- AM LESEN: Fensterbrett aus Petrolpapier -->
+<section class="brett" aria-label="Am Lesen">
+  <svg class="grund" viewBox="0 0 366 228" preserveAspectRatio="none"><path d="M4 6 L120 2 L250 5 L362 1 L365 120 L363 224 L200 227 L60 224 L2 226 L0 110 Z" fill="#17504d"/></svg>
+  <div class="brett-inhalt">
+    <h2>Aufgeschlagen <span class="lang">2 Bücher</span><span class="kurz">4 Bücher</span></h2>
+    <div class="reihe">
+      <div class="buch">
+        <svg class="umschlag" viewBox="0 0 62 90"><rect width="62" height="90" fill="#c8372d"/><path d="M0 52 C12 42 22 60 34 50 S54 44 62 52 V90 H0Z" fill="#fff4e4"/><path d="M0 64 C14 56 24 72 38 63 S56 60 62 66 V90 H0Z" fill="#24180f"/><circle cx="44" cy="22" r="9" fill="#f4c84a"/></svg>
+        <div class="text">
+          <div class="titel">Salz und Asche</div>
+          <div class="autor">Jonas Brehm</div>
+          <div class="seite">bei Seite <b>142</b></div>
+        </div>
+        <button class="eintragen"><span class="lang">Seite eintragen</span><span class="kurz"><b>142</b><br>eintragen</span></button>
+      </div>
+      <div class="buch">
+        <svg class="umschlag" viewBox="0 0 62 90"><rect width="62" height="90" fill="#2a4ea0"/><path d="M0 40 L62 28 V90 H0Z" fill="#7cc4c0"/><path d="M8 70 C20 60 30 78 44 66 L62 62 V90 H0Z" fill="#fff4e4"/><path d="M14 18 l6 -8 l6 8 l-6 8z" fill="#f4c84a"/></svg>
+        <div class="text">
+          <div class="titel">Die Gezeiten&shy;karte</div>
+          <div class="autor">Mira Olsen</div>
+          <div class="seite">bei Seite <b>38</b></div>
+        </div>
+        <button class="eintragen"><span class="lang">Seite eintragen</span><span class="kurz"><b>38</b><br>eintragen</span></button>
+      </div>
+      <div class="buch">
+        <svg class="umschlag" viewBox="0 0 62 90"><rect width="62" height="90" fill="#f4c84a"/><path d="M31 12 C48 26 50 52 31 78 C12 52 14 26 31 12Z" fill="#2c6b3c"/><path d="M31 20 V74" stroke="#f4c84a" stroke-width="2"/></svg>
+        <div class="text"><div class="titel">Unter Birken</div><div class="autor">Paul Ahrens</div><div class="seite">bei Seite <b>211</b></div></div>
+        <button class="eintragen"><span class="lang">Seite eintragen</span><span class="kurz"><b>211</b><br>eintragen</span></button>
+      </div>
+      <div class="buch">
+        <svg class="umschlag" viewBox="0 0 62 90"><rect width="62" height="90" fill="#ec7f95"/><path d="M8 60 C18 40 30 40 34 30 C40 42 52 44 56 60Z" fill="#24180f"/><circle cx="20" cy="22" r="4" fill="#fff4e4"/><circle cx="40" cy="16" r="3" fill="#fff4e4"/></svg>
+        <div class="text"><div class="titel">Das Haus der Stare</div><div class="autor">Lene Vogt</div><div class="seite">bei Seite <b>9</b></div></div>
+        <button class="eintragen"><span class="lang">Seite eintragen</span><span class="kurz"><b>9</b><br>eintragen</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIBLIOTHEK: ein Viertel aus geschnittenen Häusern -->
+<div class="viertel-kopf"><h2>Dein Viertel</h2><span>240 Bücher</span></div>
+
+<div class="landschaft">
+  <svg viewBox="0 0 390 272" style="position:absolute;inset:0" aria-hidden="true">
+    <path d="M0 130 C60 100 110 122 170 106 C240 88 300 114 390 96 V272 H0Z" fill="#e68f5b"/>
+    <circle cx="198" cy="22" r="15" fill="#fbe3a6"/>
+  </svg>
+
+  <a class="haus h1 hell" href="#gelesen">
+    <svg viewBox="0 0 86 196" preserveAspectRatio="none"><path d="M2 54 L43 4 L84 54 V196 H2Z" fill="#2a4ea0"/>
+      <g fill="#f4c84a"><rect x="14" y="62" width="5" height="22"/><rect x="21" y="66" width="5" height="18" fill="#ec7f95"/><rect x="28" y="62" width="5" height="22" fill="#fff4e4"/><rect x="50" y="64" width="5" height="20" fill="#7cc4c0"/><rect x="57" y="62" width="5" height="22"/><rect x="64" y="67" width="5" height="17" fill="#ec7f95"/></g>
+      <circle cx="43" cy="34" r="8" fill="#fff4e4"/></svg>
+    <div class="schild"><span class="n">148</span><span class="l">Gelesen</span></div>
+  </a>
+
+  <a class="haus h2" href="#wartet">
+    <svg viewBox="0 0 86 166" preserveAspectRatio="none"><path d="M2 166 V44 C2 18 20 4 43 4 C66 4 84 18 84 44 V166Z" fill="#f4c84a"/>
+      <circle cx="43" cy="62" r="20" fill="#24180f"/><g><rect x="30" y="52" width="6" height="22" fill="#ec7f95"/><rect x="37" y="49" width="6" height="25" fill="#fff4e4"/><rect x="44" y="54" width="6" height="20" fill="#7cc4c0"/><rect x="51" y="51" width="5" height="23" fill="#f4c84a" transform="rotate(12 53 74)"/></g></svg>
+    <div class="schild"><span class="n">61</span><span class="l">Wartet im Regal</span></div>
+  </a>
+
+  <a class="haus h3" href="#wunsch">
+    <svg viewBox="0 0 86 182" preserveAspectRatio="none"><path d="M2 40 L20 22 L43 34 L66 14 L84 34 V182 H2Z" fill="#ec7f95"/>
+      <path d="M43 58 l5 11 12 1 -9 8 3 12 -11 -6 -11 6 3 -12 -9 -8 12 -1z" fill="#fff4e4"/></svg>
+    <div class="schild"><span class="n">23</span><span class="l">Wunsch&shy;liste</span></div>
+  </a>
+
+  <a class="haus h4 hell" href="#regale">
+    <svg viewBox="0 0 86 156" preserveAspectRatio="none"><path d="M2 156 V40 H14 V26 H28 V12 H58 V26 H72 V40 H84 V156Z" fill="#2c6b3c"/>
+      <g fill="#f4c84a"><rect x="18" y="52" width="14" height="5"/><rect x="36" y="52" width="14" height="5" fill="#fff4e4"/><rect x="54" y="52" width="14" height="5" fill="#ec7f95"/></g></svg>
+    <div class="schild"><span class="n">5</span><span class="l">Eigene Regale</span></div>
+  </a>
+
+  <svg class="wiese" viewBox="0 0 390 70" preserveAspectRatio="none" aria-hidden="true"><path d="M0 14 C80 2 150 18 230 8 C300 0 350 12 390 6 V70 H0Z" fill="#6c9a3a"/></svg>
+  <div class="wege">
+    <a class="weg" href="#beiseite">Beiseitegelegt <span>6</span></a>
+    <a class="weg" href="#rueckblick">Rückblick</a>
+  </div>
+</div>
+
+<!-- EINZIGE ERFASSEN-STELLE -->
+<button class="erfassen">
+  <svg class="plus" viewBox="0 0 28 28"><path d="M14 1 C22 1 27 6 27 14 C27 21 22 27 14 27 C6 27 1 22 1 14 C1 7 6 1 14 1Z" fill="#2a4ea0"/><path d="M12.5 7 H15.5 V12.5 H21 V15.5 H15.5 V21 H12.5 V15.5 H7 V12.5 H12.5Z" fill="#fff8ee"/></svg>
+  <b>Buch erfassen</b><span>Scan · ISBN · von Hand</span>
+</button>
+
+<nav class="tabs">
+  <svg class="kante" viewBox="0 0 390 20" preserveAspectRatio="none"><path d="M0 8 C50 2 90 10 150 5 C220 0 280 9 330 4 C360 2 380 6 390 5 V20 H0Z" fill="#17504d"/></svg>
+  <div class="feld"></div>
+  <div class="tabzeile">
+    <a class="tab an"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 21 V8 L8 4 L13 8 V21Z M14 21 V11 L18 7 L22 11 V21Z"/></svg>Bibliothek</a>
+    <a class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="15" rx="1"/><path d="M3 10 H21 M12 10 V20"/></svg>Schaufenster</a>
+    <a class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M15.5 8.5 L13.5 13.5 L8.5 15.5 L10.5 10.5Z" fill="currentColor"/></svg>Entdecken</a>
+    <a class="tab"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21 C5 15 19 15 20 21"/></svg>Ich</a>
+  </div>
+  <div class="home"></div>
+</nav>
+</body>
+</html>
