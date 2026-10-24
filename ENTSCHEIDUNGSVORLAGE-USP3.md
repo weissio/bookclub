@@ -224,3 +224,11 @@ Der Designer hat die Bewertungsansicht im Prototyp an drei Büchern durchgespiel
 1. **„Mehr von dieser Person?“ wird sichtbar.** Die Frage steht klein unter dem Gefallen und ist mit einem Tipp beantwortet. Sie ist das direkteste Autorensignal und gehört deshalb nicht in den zugeklappten Bereich.
 2. **„Seltener“ erscheint nur bei einer Bewertung von höchstens 2 Lichtern und beim Abbruch.** Bei Büchern, die gefallen haben, war die Frage überflüssig.
 3. **Tempo, Stimmung und Anspruch des Buchs fallen aus der persönlichen Bewertung heraus.** Sie beschreiben das Buch und nicht das eigene Urteil. Deshalb gehören sie in den Katalog (Startkatalog, später öffentliche Beschreibungen aus dem Schaufenster). „Tempo für mich“ (zu langsam, passend, zu schnell) bleibt unter „Genauer beschreiben“, ebenso beim Abbruchgrund „Tempo“.
+
+### Nachtrag 2 (Claude, 24.10.2026, nach externer Prüfung des Prototyps)
+
+1. **Lichter-Stufen:** 1 „gar nicht“, 2 „eher nicht“, 3 „okay“, 4 „gut“, 5 „sehr gut“.
+2. **„Nicht empfehlen“ wird ergänzt.** Es steht neben „Seltener“ als eigene, ausdrückliche Handlung und schließt das gewählte Merkmal aus. „Seltener“ senkt nur die Priorität.
+3. **„Seltener“ und „Nicht empfehlen“ sind immer erreichbar.** Bei 1–2 Lichtern und beim Abbruch sind sie hervorgehoben. In allen anderen Fällen stehen sie unter „Genauer beschreiben“. Ein Buch kann gefallen, und trotzdem möchte man zum Beispiel Gewalt künftig seltener.
+4. **Keine versteckt gespeicherten Angaben.** Eine Angabe wird nur gespeichert, wenn sie beim Speichern sichtbar ist. Abhängige Angaben werden mit ihrer Bedingung gelöscht: Wer den Abbruchgrund „Tempo“ abwählt, löscht auch „zu langsam/zu schnell“. Angaben bleiben sichtbar, wo sie liegen; „Genauer beschreiben“ zeigt beim Zuklappen die Zahl der Angaben.
+5. **Grenzen:** Die 10 Sekunden stammen aus einem internen Durchspielen. Ob echte Leser die Fragen schnell und einheitlich verstehen, muss ein Test zeigen. Dass der Empfehlungsalgorithmus funktioniert, ist damit nicht nachgewiesen.
