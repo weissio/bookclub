@@ -23,6 +23,16 @@ Nach Abschlussprüfung (Impeccable) und iOS-Prüfung:
 - eine Textfarbe (Tinte) für Textknöpfe, heller Schalter im Aus-Zustand
 - Suchfeld 44 pt hoch mit Löschknopf; noch nicht gebaute Schritte öffnen einen Hinweis „Kommt bald“
 
+Zweite Prüfrunde (unabhängige Abschlussprüfung): Urteil „nachbessern“, alle acht früheren Punkte erledigt. Eingearbeitet:
+
+- Cover als Leinen mit Prägelinie, Farben nur noch aus dunklen Tönen der sieben Bandfarben
+- „Neues Buch erfassen“ als ungefärbter Leinenrücken oben auf dem Stapel statt gestrichelter Box
+- Anzahl und Pfeil der Rücken bündig rechts; Versatz nur noch links
+- Rückmeldung nach dem Eintragen ersetzt die Zeile „… Seiten bis zum Ende“, nichts verschiebt sich mehr
+- Griff oben an den Sheets; dunkle Prägelinie für Ocker als eigenes Bild statt Filter
+
+Hinweis der Prüfung, noch nicht entschieden: Sterne erscheinen überall; wenn sie „wie sehr hat es mich erreicht“ bedeuten, sollte das einmal erklärt werden.
+
 Offen: Dark Mode, Android-Variante, endgültige Bereichsnamen.
 
 ## Dateien

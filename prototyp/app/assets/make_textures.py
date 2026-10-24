@@ -1,6 +1,7 @@
 """Erzeugt die Material-Raster der Bibliothek (Provenienz: dieses Skript, prozedural, keine Fremdbilder).
 linen.png      – nahtlose Buchleinen-Kachel, neutral grau, fuer multiply-Ueberlagerung (256x256, Anzeige 128 pt @2x)
 praegung.png   – eine goldene Praegelinie, senkrecht (8x224, Anzeige 4x112 pt)
+praegung-dunkel.png – dieselbe Linie als dunkle Blindpraegung fuer Ocker
 vorsatz.png    – marmoriertes Vorsatzpapier (Sepia, wenig Gold), nahtlos horizontal (780x48, Anzeige 390x24 pt)
 """
 import numpy as np
@@ -32,6 +33,16 @@ for i in range(W):
     col[:, i, :3] = np.clip(c, 0, 255)
     col[:, i, 3] = int(255 * min(1, edge * 1.8))
 Image.fromarray(col, 'RGBA').save(out + 'praegung.png')
+
+# Praegelinie dunkel (Blindpraegung) fuer helle Leinenfarben wie Ocker
+base_d = np.array([92, 66, 18]); hi_d = np.array([140, 104, 36])
+cold = np.zeros((H, W, 4), 'uint8')
+for i in range(W):
+    edge = 1 - abs((i - (W - 1) / 2) / ((W - 1) / 2))
+    c = base_d + (hi_d - base_d) * (shine * edge)
+    cold[:, i, :3] = np.clip(c, 0, 255)
+    cold[:, i, 3] = int(255 * min(1, edge * 1.8))
+Image.fromarray(cold, 'RGBA').save(out + 'praegung-dunkel.png')
 
 # Vorsatzpapier: ruhiger Papiergrund mit feinen, verwirbelten Marmoradern in Sepia und wenig Gold, horizontal kachelbar
 W, H = 780, 48

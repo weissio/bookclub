@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const root = process.argv[2], out = process.argv[3];
-const srv = http.createServer((q, r) => { const BL={'fc177fec48818780d685607b9eea21d5':'linen.png','eb2b88bd243bf1a65692bd8e9d605dc4':'praegung.png','2a5bd52f874870d5bef9f086f6809ef7':'vorsatz.png'}; let u=decodeURIComponent(q.url.split('?')[0]); if(u.startsWith('/_blob/')) u='/../../../../../home/claude/bookclub/prototyp/app/assets/'+BL[u.slice(7)]; const f = u.includes('/home/claude/')?u.slice(u.indexOf('/home/claude/')):path.join(root, u); fs.readFile(f, (e, d) => { if (e) { r.writeHead(404); r.end(); return; } r.writeHead(200, { 'content-type': f.endsWith('.js') ? 'text/javascript' : (f.endsWith('.png')?'image/png':'text/html') }); r.end(d); }); });
+const srv = http.createServer((q, r) => { const BL={'fc177fec48818780d685607b9eea21d5':'linen.png','eb2b88bd243bf1a65692bd8e9d605dc4':'praegung.png','2a5bd52f874870d5bef9f086f6809ef7':'vorsatz.png','b368959550b051244e1369ca50312065':'praegung-dunkel.png'}; let u=decodeURIComponent(q.url.split('?')[0]); if(u.startsWith('/_blob/')) u='/../../../../../home/claude/bookclub/prototyp/app/assets/'+BL[u.slice(7)]; const f = u.includes('/home/claude/')?u.slice(u.indexOf('/home/claude/')):path.join(root, u); fs.readFile(f, (e, d) => { if (e) { r.writeHead(404); r.end(); return; } r.writeHead(200, { 'content-type': f.endsWith('.js') ? 'text/javascript' : (f.endsWith('.png')?'image/png':'text/html') }); r.end(d); }); });
 srv.listen(8765, async () => {
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, reducedMotion: 'reduce' });
