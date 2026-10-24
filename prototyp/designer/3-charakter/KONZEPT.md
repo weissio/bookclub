@@ -251,3 +251,12 @@ Grundlage: ENTSCHEIDUNGSVORLAGE-USP3.md, Abschnitte 2 und 8. Screens in `screens
 2. Soll „Seltener“ nur bei niedrigem Gefallen oder Abbruch erscheinen?
 3. Gehören Tempo des Buchs und Stimmung in den Katalog statt in die Bewertung?
 - **Entschieden (24.10.2026), umgesetzt:** „Mehr von [Person]?“ steht direkt unter dem Gefallen und wird mit einem Tipp beantwortet: Ja / Nein / weiß nicht. „Genauer beschreiben“ enthält nur noch „Tempo für mich“. „Seltener“ erscheint dort nur bei 1–2 Lichtern oder beim Abbruch. Tempo des Buchs, Stimmung und Anspruch sind entfallen und gehören in den Katalog. Beim Abbruchgrund „Tempo“ erscheint direkt darunter „Tempo war … zu langsam / zu schnell“. „Tempo für mich“ unter „Genauer“ ist dann ausgeblendet, damit nichts doppelt gefragt wird. Screens in screens5/ neu erzeugt.
+- **Nachtrag 2 (externe Prüfung), umgesetzt:**
+  - Unter jedem Licht steht die Stufe: gar nicht, eher nicht, okay, gut, sehr gut.
+  - Neu ist „Künftig weniger davon?“: Genre, Thema, Länge, Ton, je mit zwei getrennten Knöpfen „seltener“ und „nicht empfehlen“, dazu eine kurze Erklärung, dass „seltener“ nur senkt und „nicht empfehlen“ ausschließt. Das ist bei 1–2 Lichtern und beim Abbruch hervorgehoben, sonst steht es unter „Genauer beschreiben“; die zugeklappte Zeile zeigt die Zahl der Angaben.
+  - Gespeichert wird nur Sichtbares: Wer „Tempo“ abwählt, löscht auch „zu langsam/zu schnell“. Gründe werden nur beim Abbruch gespeichert, Aspekte nur beim gelesenen Buch.
+  - Geprüfte Fälle (screens5/):
+    - 10b–10e: 2 Lichter, „seltener“, dann 5 Lichter. Die Angabe bleibt unter „Genauer“ sichtbar und wird gespeichert.
+    - 12–12c: „Tempo“ an, „zu langsam“, „Tempo“ ab. Die Angabe ist weg und taucht beim erneuten Anwählen nicht wieder auf.
+    - 13–14: „nicht empfehlen“ gespeichert und auf der Buchseite gezeigt.
+  - Die 10 Sekunden stammen aus internem Durchspielen; ob es für echte Leser schnell und verständlich ist, muss ein Test zeigen.

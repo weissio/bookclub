@@ -535,9 +535,8 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <div style="position: absolute; top: 61px; left: 0; right: 0; bottom: 118px; overflow-y: auto; padding: 0 16px 16px 16px">
 <p style="margin: 0 4px 6px 4px; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--mute)">{{rv.intro}}</p>
 <h3 style="margin: 10px 4px 2px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">WIE HAT ES DIR GEFALLEN?</h3>
-<div role="radiogroup" aria-label="Wie hat es dir gefallen?" style="display: flex; align-items: center">
-<sc-for list="{{rv.stars}}" as="l" hint-placeholder-count="5"><button type="button" role="radio" aria-label="{{l.aria}}" aria-checked="{{l.checked}}" onClick="{{l.pick}}" style="width: 46px; height: 48px; border: none; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="26" height="30" viewBox="0 0 26 30" aria-hidden="true"><path d="M13 2 C7 2 3 6.5 3 12 C3 16 5.5 18.5 8 20.5 L8 24 L18 24 L18 20.5 C20.5 18.5 23 16 23 12 C23 6.5 19 2 13 2 Z" style="{{l.bulb}}"></path><rect x="9" y="25" width="8" height="3.5" rx="1.5" style="fill: var(--mute)"></rect></svg></button></sc-for>
-<span style="margin-left: 8px; font-size: 16px; font-weight: 800">{{rv.word}}</span>
+<div role="radiogroup" aria-label="Wie hat es dir gefallen?" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px">
+<sc-for list="{{rv.stars}}" as="l" hint-placeholder-count="5"><button type="button" role="radio" aria-label="{{l.aria}}" aria-checked="{{l.checked}}" onClick="{{l.pick}}" style="{{l.style}}"><svg width="26" height="30" viewBox="0 0 26 30" aria-hidden="true"><path d="M13 2 C7 2 3 6.5 3 12 C3 16 5.5 18.5 8 20.5 L8 24 L18 24 L18 20.5 C20.5 18.5 23 16 23 12 C23 6.5 19 2 13 2 Z" style="{{l.bulb}}"></path><rect x="9" y="25" width="8" height="3.5" rx="1.5" style="fill: var(--mute)"></rect></svg><span style="{{l.labelStyle}}">{{l.label}}</span></button></sc-for>
 </div>
 <p style="margin: 6px 4px 6px 4px; font-size: 13.5px; font-weight: 700; color: var(--mute)">{{rv.againLabel}}</p>
 <div role="radiogroup" aria-label="{{rv.againLabel}}" style="display: flex; gap: 6px">
@@ -569,6 +568,19 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </sc-if>
 </sc-if>
 
+<sc-if value="{{rv.avoidHighlight}}" hint-placeholder-val="{{ false }}">
+<h3 style="margin: 16px 4px 4px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">KÜNFTIG WENIGER DAVON?</h3>
+<p style="margin: 0 4px 8px 4px; font-size: 12.5px; line-height: 17px; font-weight: 600; color: var(--mute)"><b style="color: var(--ink)">Seltener</b> kommt weniger oft vor. <b style="color: var(--ink)">Nicht empfehlen</b> kommt gar nicht mehr vor.</p>
+<div role="list">
+<sc-for list="{{rv.avoid}}" as="a" hint-placeholder-count="4">
+<div role="listitem" style="display: flex; align-items: center; gap: 6px; min-height: 50px; border-top: 1px solid var(--line)">
+<span style="flex: 1; font-size: 15px; font-weight: 800; padding-left: 4px">{{a.label}}</span>
+<button type="button" aria-pressed="{{a.lessPressed}}" aria-label="{{a.lessAria}}" onClick="{{a.less}}" style="{{a.lessStyle}}">seltener</button>
+<button type="button" aria-pressed="{{a.neverPressed}}" aria-label="{{a.neverAria}}" onClick="{{a.never}}" style="{{a.neverStyle}}">nicht empfehlen</button>
+</div>
+</sc-for>
+</div>
+</sc-if>
 <h3 style="margin: 16px 4px 6px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">{{rv.textLabel}}</h3>
 <textarea aria-label="{{rv.textLabel}}" onChange="{{rv.setText}}" placeholder="{{rv.textHint}}" style="width: 100%; box-sizing: border-box; height: 84px; border: none; border-radius: 14px; background: #FFF3DA; color: #2A2440; padding: 12px 14px; font-family: 'Nunito', sans-serif; font-size: 16px; line-height: 22px; font-weight: 700; resize: none" value="{{rv.text}}"></textarea>
 
@@ -576,13 +588,26 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <span style="display: flex; flex-direction: column; text-align: left"><span style="font-size: 15.5px; font-weight: 800">Genauer beschreiben</span><span style="font-size: 12.5px; font-weight: 600; color: var(--mute)">{{rv.moreHint}}</span></span>
 <svg width="16" height="10" viewBox="0 0 16 10" aria-hidden="true" style="{{rv.chevron}}"><path d="M2 2l6 6 6-6" fill="none" style="stroke: var(--acc)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </button>
-<sc-if value="{{rv.moreVisible}}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{rv.moreOpen}}" hint-placeholder-val="{{ false }}">
 <sc-for list="{{rv.groups}}" as="g" hint-placeholder-count="6">
 <h4 style="margin: 12px 4px 6px 4px; font-size: 13px; font-weight: 800; color: var(--mute)">{{g.label}}</h4>
 <div role="group" aria-label="{{g.label}}" style="display: flex; flex-wrap: wrap; gap: 6px">
 <sc-for list="{{g.opts}}" as="o" hint-placeholder-count="3"><button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
 </div>
 </sc-for>
+<sc-if value="{{rv.avoidInMore}}" hint-placeholder-val="{{ false }}">
+<h4 style="margin: 14px 4px 6px 4px; font-size: 13px; font-weight: 800; color: var(--mute)">Künftig weniger davon?</h4>
+<p style="margin: 0 4px 8px 4px; font-size: 12.5px; line-height: 17px; font-weight: 600; color: var(--mute)"><b style="color: var(--ink)">Seltener</b> kommt weniger oft vor. <b style="color: var(--ink)">Nicht empfehlen</b> kommt gar nicht mehr vor.</p>
+<div role="list">
+<sc-for list="{{rv.avoid}}" as="a" hint-placeholder-count="4">
+<div role="listitem" style="display: flex; align-items: center; gap: 6px; min-height: 50px; border-top: 1px solid var(--line)">
+<span style="flex: 1; font-size: 15px; font-weight: 800; padding-left: 4px">{{a.label}}</span>
+<button type="button" aria-pressed="{{a.lessPressed}}" aria-label="{{a.lessAria}}" onClick="{{a.less}}" style="{{a.lessStyle}}">seltener</button>
+<button type="button" aria-pressed="{{a.neverPressed}}" aria-label="{{a.neverAria}}" onClick="{{a.never}}" style="{{a.neverStyle}}">nicht empfehlen</button>
+</div>
+</sc-for>
+</div>
+</sc-if>
 </sc-if>
 </div>
 <div style="position: absolute; left: 16px; right: 16px; bottom: 34px; height: 84px; display: flex; flex-direction: column; justify-content: flex-end">
@@ -654,10 +679,10 @@ var STAR_WORDS = ['noch offen', 'gar nicht', 'eher nicht', 'okay', 'gut', 'sehr 
 var ASPECTS_ROMAN = ['Sprache', 'Figuren', 'Handlung', 'Atmosphäre', 'Thema'];
 var ASPECTS_SACH = ['Verständlichkeit', 'Tiefe', 'Thema'];
 var MORE_GROUPS = [
-  ['tempoMe', 'Tempo für mich', ['zu langsam', 'passend', 'zu schnell'], false],
-  ['less', 'Was möchtest du künftig seltener?', ['dieses Genre', 'dieses Thema', 'solche Länge', 'diesen Ton'], true]
+  ['tempoMe', 'Tempo für mich', ['zu langsam', 'passend', 'zu schnell'], false]
 ];
-function blankRating() { return { stars: 0, asp: {}, reasons: [], text: '', tempoBook: '', tempoMe: '', moods: [], level: '', again: '', less: [] }; }
+var AVOID_FEATURES = ['dieses Genre', 'dieses Thema', 'solche Länge', 'diesen Ton'];
+function blankRating() { return { stars: 0, asp: {}, reasons: [], text: '', tempoMe: '', again: '', avoid: {} }; }
 var COUNTS = { gelesen: 148, ungelesen: 61, wunsch: 23, abgebrochen: 6, regale: 5, verliehen: 2 };
 var VOLS = {
   gelesen: { name: 'Gelesen', sub: 'Zu Ende gelesen, mit deinen eigenen Worten.', search: 'In 148 gelesenen Büchern suchen' },
@@ -731,8 +756,8 @@ class Component extends DCLogic {
       dropped: [{ id: 'fluss', when: 'Mai 2026' }],
       finished: [], rate: null, rd: blankRating(), moreOpen: false,
       ratings: {
-        uhr: { stars: 5, asp: { Sprache: 'like', Figuren: 'like', Handlung: 'like', Atmosphäre: 'like' }, reasons: [], text: '', tempoBook: '', tempoMe: 'passend', moods: [], level: '', again: 'Ja', less: [] },
-        fluss: { stars: 2, asp: {}, reasons: ['Tempo', 'Zu lang'], text: 'Schöne Sätze, aber nach 80 Seiten ist noch nichts passiert.', tempoBook: '', tempoMe: 'zu langsam', moods: [], level: '', again: 'weiß nicht', less: [] }
+        uhr: { stars: 5, asp: { Sprache: 'like', Figuren: 'like', Handlung: 'like', Atmosphäre: 'like' }, reasons: [], text: '', tempoMe: 'passend', again: 'Ja', avoid: {} },
+        fluss: { stars: 2, asp: {}, reasons: ['Tempo', 'Zu lang'], text: 'Schöne Sätze, aber nach 80 Seiten ist noch nichts passiert.', tempoMe: 'zu langsam', again: 'weiß nicht', avoid: {} }
       },
       reasons: [], note: '', volNotice: '' };
   }
@@ -858,7 +883,10 @@ class Component extends DCLogic {
         if (rt.reasons.length) out.push({ k: 'Woran es lag', v: rt.reasons.join(', ') });
         if (rt.tempoMe) out.push({ k: 'Tempo für mich', v: rt.tempoMe });
         if (rt.again) out.push({ k: 'Mehr davon?', v: rt.again });
-        if (rt.less.length) out.push({ k: 'Seltener', v: rt.less.join(', ') });
+        var av = rt.avoid || {}, ls = [], nv = [];
+        Object.keys(av).forEach(function (f) { if (av[f] === 'less') ls.push(f); else if (av[f] === 'never') nv.push(f); });
+        if (ls.length) out.push({ k: 'Seltener', v: ls.join(', ') });
+        if (nv.length) out.push({ k: 'Nicht empfehlen', v: nv.join(', ') });
         if (b.vol === 'abgebrochen' && rt.text) out.push({ k: 'Eigene Worte', v: '„' + rt.text + '“' });
         return out;
       })(),
@@ -929,9 +957,13 @@ class Component extends DCLogic {
       var pill = function (on) { return 'min-height: 44px; padding: 0 13px; border-radius: 22px; cursor: pointer; font-size: 14px; font-weight: 800; border: 1.5px solid ' + (on ? 'var(--acc)' : 'var(--line)') + '; background: ' + (on ? 'var(--accBg)' : 'transparent') + '; color: ' + (on ? 'var(--acc)' : 'var(--ink)'); };
       var aspectBtn = function (on, bad) { return 'flex-shrink: 0; min-height: 44px; padding: 0 11px; border-radius: 22px; cursor: pointer; font-size: 13px; font-weight: 800; border: 1.5px solid ' + (on ? (bad ? 'var(--mute)' : 'var(--acc)') : 'var(--line)') + '; background: ' + (on ? (bad ? 'var(--field)' : 'var(--accBg)') : 'transparent') + '; color: ' + (on ? (bad ? 'var(--ink)' : 'var(--acc)') : 'var(--mute)'); };
       var tempoReason = isDrop && rd.reasons.indexOf('Tempo') >= 0;
-      var showLess = isDrop || (rd.stars > 0 && rd.stars <= 2);
-      var groupsVis = MORE_GROUPS.filter(function (g) { return (g[0] !== 'less' || showLess) && !(g[0] === 'tempoMe' && tempoReason); });
+      var highlight = isDrop || (rd.stars > 0 && rd.stars <= 2);
+      var groupsVis = MORE_GROUPS.filter(function (g) { return !(g[0] === 'tempoMe' && tempoReason); });
+      var avoidCount = Object.keys(rd.avoid).length;
       var filled = 0; groupsVis.forEach(function (g) { var v = rd[g[0]]; if (g[3] ? v.length : v) filled++; });
+      if (!highlight) filled += avoidCount;
+      var moreTotal = groupsVis.length + (highlight ? 0 : 1);
+      var avoidBtn = function (on, never) { return 'flex-shrink: 0; min-height: 44px; padding: 0 10px; border-radius: 22px; cursor: pointer; font-size: 12.5px; font-weight: 800; border: 1.5px solid ' + (on ? (never ? 'var(--ink)' : 'var(--acc)') : 'var(--line)') + '; background: ' + (on ? (never ? 'var(--field)' : 'var(--accBg)') : 'transparent') + '; color: ' + (on ? (never ? 'var(--ink)' : 'var(--acc)') : 'var(--mute)'); };
       var who = (bk.author || '').split(' ').slice(-1)[0];
       return {
         isRead: !isDrop, isDrop: isDrop,
@@ -942,18 +974,29 @@ class Component extends DCLogic {
         showTempoDetail: tempoReason,
         tempoDetail: ['zu langsam', 'zu schnell'].map(function (o) { var on = rd.tempoMe === o; return { label: o, checked: on ? 'true' : 'false', style: pill(on), pick: function () { upd({ tempoMe: on ? '' : o }); } }; }),
         moreVisible: s.moreOpen && groupsVis.length > 0,
-        stars: [1, 2, 3, 4, 5].map(function (i) { return { aria: i + ' von 5, ' + STAR_WORDS[i], checked: rd.stars === i ? 'true' : 'false', bulb: i <= rd.stars ? 'fill: var(--bulb)' : 'fill: none; stroke: var(--mute); stroke-width: 2', pick: function () { upd({ stars: rd.stars === i ? 0 : i }); } }; }),
+        stars: [1, 2, 3, 4, 5].map(function (i) { return { aria: i + ' von 5, ' + STAR_WORDS[i], label: STAR_WORDS[i], checked: rd.stars === i ? 'true' : 'false', bulb: i <= rd.stars ? 'fill: var(--bulb)' : 'fill: none; stroke: var(--mute); stroke-width: 2',
+          style: 'min-height: 62px; border: none; border-radius: 14px; background: ' + (rd.stars === i ? 'var(--accBg)' : 'none') + '; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 4px 0',
+          labelStyle: 'font-size: 11.5px; font-weight: 800; white-space: nowrap; color: ' + (rd.stars === i ? 'var(--acc)' : 'var(--mute)'),
+          pick: function () { upd({ stars: rd.stars === i ? 0 : i }); } }; }),
+        avoidHighlight: highlight, avoidInMore: !highlight,
+        avoid: AVOID_FEATURES.map(function (f) {
+          var v = rd.avoid[f] || '';
+          var set = function (val) { var m = Object.assign({}, rd.avoid); if (m[f] === val) delete m[f]; else m[f] = val; upd({ avoid: m }); };
+          return { label: f.charAt(0).toUpperCase() + f.slice(1), lessPressed: v === 'less' ? 'true' : 'false', neverPressed: v === 'never' ? 'true' : 'false',
+            lessAria: f + ': seltener', neverAria: f + ': nicht empfehlen', lessStyle: avoidBtn(v === 'less', false), neverStyle: avoidBtn(v === 'never', true),
+            less: function () { set('less'); }, never: function () { set('never'); } };
+        }),
         aspects: (bk.sach ? ASPECTS_SACH : ASPECTS_ROMAN).map(function (a) {
           var v = rd.asp[a] || '';
           var set = function (val) { var m = Object.assign({}, rd.asp); if (m[a] === val) delete m[a]; else m[a] = val; upd({ asp: m }); };
           return { label: a, likePressed: v === 'like' ? 'true' : 'false', dislikePressed: v === 'dislike' ? 'true' : 'false', likeAria: a + ': mochte ich', dislikeAria: a + ': störte mich',
             likeStyle: aspectBtn(v === 'like', false), dislikeStyle: aspectBtn(v === 'dislike', true), like: function () { set('like'); }, dislike: function () { set('dislike'); } };
         }),
-        reasons: DROP_REASONS.map(function (r) { var on = rd.reasons.indexOf(r) >= 0; return { label: r, pressed: on ? 'true' : 'false', style: pill(on), toggle: function () { var x = rd.reasons.slice(); var k = x.indexOf(r); if (k >= 0) x.splice(k, 1); else x.push(r); upd({ reasons: x }); } }; }),
+        reasons: DROP_REASONS.map(function (r) { var on = rd.reasons.indexOf(r) >= 0; return { label: r, pressed: on ? 'true' : 'false', style: pill(on), toggle: function () { var x = rd.reasons.slice(); var k = x.indexOf(r); var p = {}; if (k >= 0) { x.splice(k, 1); if (r === 'Tempo') p.tempoMe = ''; } else x.push(r); p.reasons = x; upd(p); } }; }),
         textLabel: isDrop ? 'EIGENE WORTE' : 'MEINE LESART', textHint: isDrop ? 'Was du dir merken möchtest (freiwillig)' : 'Was ist dir geblieben? Ein Satz reicht.', text: rd.text,
         setText: function (e) { upd({ text: e.target.value }); },
         moreOpen: s.moreOpen, moreExpanded: s.moreOpen ? 'true' : 'false', toggleMore: function () { self.setState({ moreOpen: !s.moreOpen }); },
-        moreHint: filled ? filled + ' von ' + groupsVis.length + ' angegeben' : groupsVis.map(function (g) { return g[1]; }).join(', ').replace('Was möchtest du künftig seltener?', 'was seltener'),
+        moreHint: filled ? (filled === 1 ? '1 Angabe' : filled + ' Angaben') : (highlight ? (groupsVis.length ? 'Tempo für mich' : 'nichts weiter') : 'Tempo für mich, künftig weniger davon'),
         chevron: 'transition: transform .15s; transform: rotate(' + (s.moreOpen ? 180 : 0) + 'deg)',
         groups: groupsVis.map(function (g) {
           return { label: g[1], opts: g[2].map(function (o) {
@@ -963,7 +1006,8 @@ class Component extends DCLogic {
         }),
         saveLabel: R0.kind === 'drop' ? 'Bei Seite ' + (s.pages[R0.id] || 0) + ' abbrechen' : 'Speichern',
         save: function () {
-          var r = Object.assign({}, s.ratings); r[R0.id] = rd;
+          var clean = Object.assign({}, rd, { asp: isDrop ? {} : rd.asp, reasons: isDrop ? rd.reasons : [] });
+          var r = Object.assign({}, s.ratings); r[R0.id] = clean;
           var patch = { ratings: r, sheet: null, rate: null };
           if (R0.kind === 'drop') { patch.active = act.filter(function (x) { return x !== R0.id; }); patch.paused = s.paused.filter(function (x) { return x.id !== R0.id; }); patch.dropped = s.dropped.concat([{ id: R0.id, when: 'Oktober 2026' }]); patch.saved = 'Abgebrochen bei Seite ' + (s.pages[R0.id] || 0) + '.'; }
           else if (R0.kind === 'read') patch.saved = 'Ausgelesen und bewertet.';
