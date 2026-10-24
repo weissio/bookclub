@@ -166,6 +166,41 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <p style="margin: 2px 0 0 0; font-size: 14px; line-height: 19px; font-weight: 600; color: var(--mute)">{{vol.sub}}</p>
 </div>
 </div>
+<p role="status" aria-live="polite" style="margin: 10px 4px 0 4px; min-height: 20px; font-size: 14.5px; line-height: 20px; font-weight: 800; color: var(--acc)">{{volNotice}}</p>
+
+<sc-if value="{{vol.isAktiv}}" hint-placeholder-val="{{ false }}">
+<ol style="margin: 6px 0 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px">
+<sc-for list="{{aktivRows}}" as="o" hint-placeholder-count="5">
+<sc-if value="{{o.onHead}}" hint-placeholder-val="{{ false }}"><li style="margin: 0 4px 2px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">AUF DER STARTSEITE</li></sc-if>
+<sc-if value="{{o.offHead}}" hint-placeholder-val="{{ false }}"><li style="margin: 14px 4px 2px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">NUR IN AKTIV</li></sc-if>
+<li style="display: flex; align-items: center; gap: 8px; min-height: 60px; border-radius: 16px; background: var(--barBg); padding: 0 6px 0 10px">
+<span style="width: 20px; font-size: 15px; font-weight: 900; color: var(--mute); text-align: center">{{o.rank}}</span>
+<button type="button" aria-label="{{o.aria}}" onClick="{{o.open}}" style="flex: 1; min-width: 0; min-height: 56px; display: flex; align-items: center; gap: 10px; border: none; background: none; padding: 0; cursor: pointer; text-align: left; color: var(--ink)">
+<span aria-hidden="true" style="{{o.strip}}"></span>
+<span style="min-width: 0; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{o.title}}</span><span style="font-size: 12.5px; font-weight: 600; color: var(--mute)">{{o.sub}}</span></span>
+</button>
+<sc-if value="{{o.canUp}}" hint-placeholder-val="{{ true }}"><button type="button" aria-label="{{o.upAria}}" onClick="{{o.up}}" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 22px; border: 1.5px solid var(--accLine); background: var(--accBg); cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M7 14V3M2.5 7.5L7 3l4.5 4.5" fill="none" style="stroke: var(--acc)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></sc-if>
+</li>
+</sc-for>
+</ol>
+<p style="margin: 16px 4px 0 4px; font-size: 13px; line-height: 18px; font-weight: 600; color: var(--mute)">Auf der Startseite ist Platz für fünf. Mit dem Pfeil holst du ein Buch nach vorn. Ein neues Buch kommt immer ans Ende. Beispieldaten.</p>
+</sc-if>
+
+<sc-if value="{{vol.isPausiert}}" hint-placeholder-val="{{ false }}">
+<div role="list" style="margin-top: 6px; display: flex; flex-direction: column; gap: 6px">
+<sc-for list="{{pausedRows}}" as="o" hint-placeholder-count="2">
+<div role="listitem" style="display: flex; align-items: center; gap: 8px; min-height: 64px; border-radius: 16px; background: var(--barBg); padding: 0 8px 0 12px">
+<button type="button" aria-label="{{o.aria}}" onClick="{{o.open}}" style="flex: 1; min-width: 0; min-height: 56px; display: flex; align-items: center; gap: 10px; border: none; background: none; padding: 0; cursor: pointer; text-align: left; color: var(--ink)">
+<span aria-hidden="true" style="{{o.strip}}"></span>
+<span style="min-width: 0; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{o.title}}</span><span style="font-size: 12.5px; line-height: 16px; font-weight: 600; color: var(--mute)">{{o.sub}}</span></span>
+</button>
+<button type="button" aria-label="{{o.resumeAria}}" onClick="{{o.resume}}" style="flex-shrink: 0; height: 44px; padding: 0 12px; border-radius: 22px; border: 1.5px solid var(--accLine); background: var(--accBg); cursor: pointer; font-size: 13px; font-weight: 800; color: var(--acc)">Wieder aufnehmen</button>
+</div>
+</sc-for>
+</div>
+<sc-if value="{{noPaused}}" hint-placeholder-val="{{ false }}"><p style="margin: 20px 4px; font-size: 16px; line-height: 23px; font-weight: 600; color: var(--mute)">Gerade ist nichts pausiert.</p></sc-if>
+<p style="margin: 16px 4px 0 4px; font-size: 13px; line-height: 18px; font-weight: 600; color: var(--mute)">Ein Buch, das du wieder aufnimmst, kommt in Aktiv ans Ende. Beispieldaten.</p>
+</sc-if>
 
 <sc-if value="{{vol.isList}}" hint-placeholder-val="{{ true }}">
 <sc-if value="{{vol.hasSearch}}" hint-placeholder-val="{{ true }}">
@@ -218,7 +253,7 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </div>
 </div>
 <div style="position: absolute; top: 54px; left: 0; right: 0; height: 44px; display: flex; align-items: center; background: var(--bg)">
-<button type="button" onClick="{{goHome}}" style="min-height: 44px; display: flex; align-items: center; gap: 4px; border: none; background: none; padding: 0 16px 0 10px; cursor: pointer; font-size: 17px; font-weight: 700; color: var(--acc)"><svg width="12" height="20" viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2L2 10l8 8" fill="none" style="stroke: var(--acc)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Bibliothek</button>
+<button type="button" onClick="{{volBack}}" style="min-height: 44px; display: flex; align-items: center; gap: 4px; border: none; background: none; padding: 0 16px 0 10px; cursor: pointer; font-size: 17px; font-weight: 700; color: var(--acc)"><svg width="12" height="20" viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2L2 10l8 8" fill="none" style="stroke: var(--acc)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>{{volBackLabel}}</button>
 </div>
 </div>
 </sc-if>
@@ -248,6 +283,32 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 
 <sc-if value="{{book.canStart}}" hint-placeholder-val="{{ false }}">
 <button type="button" onClick="{{startReading}}" style="margin-top: 16px; width: 100%; height: 52px; border-radius: 26px; border: none; background: var(--acc); color: var(--accInk); cursor: pointer; font-size: 16px; font-weight: 900; display: flex; align-items: center; justify-content: center; gap: 8px"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M2 1h10v14l-5-4-5 4z" fill="none" style="stroke: var(--accInk)" stroke-width="2.2" stroke-linejoin="round"></path></svg>Jetzt anfangen zu lesen</button>
+</sc-if>
+
+<sc-if value="{{book.isActive}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; gap: 8px; margin-top: 16px">
+<button type="button" onClick="{{openPause}}" style="flex: 1; height: 48px; border-radius: 24px; border: 1.5px solid var(--accLine); background: var(--accBg); cursor: pointer; font-size: 15px; font-weight: 800; color: var(--acc)">Pausieren</button>
+<button type="button" onClick="{{openDrop}}" style="flex: 1; height: 48px; border-radius: 24px; border: 1.5px solid var(--line); background: none; cursor: pointer; font-size: 15px; font-weight: 800; color: var(--ink)">Abbrechen …</button>
+</div>
+</sc-if>
+<sc-if value="{{book.isPaused}}" hint-placeholder-val="{{ false }}">
+<section style="margin-top: 16px; border-radius: 20px; background: var(--barBg); padding: 14px 16px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">WARUM PAUSIERT</h2>
+<p style="margin: 6px 0 0 0; font-size: 16px; line-height: 23px; font-weight: 700">{{book.pausedWhy}}</p>
+<button type="button" onClick="{{resumeBook}}" style="margin-top: 12px; width: 100%; height: 50px; border-radius: 25px; border: none; background: var(--acc); color: var(--accInk); cursor: pointer; font-size: 16px; font-weight: 900">Wieder aufnehmen</button>
+</section>
+</sc-if>
+<sc-if value="{{book.isDropped}}" hint-placeholder-val="{{ false }}">
+<section style="margin-top: 16px; border-radius: 20px; background: var(--barBg); padding: 14px 16px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">WORAN ES LAG</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px"><sc-for list="{{book.dropReasons}}" as="r" hint-placeholder-count="2"><span style="border-radius: 14px; background: var(--accBg); padding: 6px 12px; font-size: 14px; font-weight: 800">{{r.label}}</span></sc-for></div>
+<div style="display: flex; align-items: center; gap: 10px; margin-top: 14px">
+<span role="img" aria-label="{{book.dropLightsWord}}" style="display: flex; gap: 4px"><sc-for list="{{book.dropLightsList}}" as="l" hint-placeholder-count="5"><svg width="18" height="22" viewBox="0 0 26 30" aria-hidden="true"><path d="M13 2 C7 2 3 6.5 3 12 C3 16 5.5 18.5 8 20.5 L8 24 L18 24 L18 20.5 C20.5 18.5 23 16 23 12 C23 6.5 19 2 13 2 Z" style="{{l.bulb}}"></path></svg></sc-for></span>
+<span style="font-size: 14px; font-weight: 700; color: var(--mute)">{{book.dropLightsWord}}</span>
+</div>
+<p style="margin: 10px 0 0 0; font-size: 14px; font-weight: 700">{{book.dropAgain}}</p>
+<sc-if value="{{book.dropHasNote}}" hint-placeholder-val="{{ false }}"><p style="margin: 8px 0 0 0; font-size: 15px; line-height: 21px; font-weight: 600; font-style: italic">{{book.dropNote}}</p></sc-if>
+</section>
 </sc-if>
 
 <sc-if value="{{book.hasReading}}" hint-placeholder-val="{{ true }}">
@@ -454,7 +515,7 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <div role="radiogroup" aria-label="Tageszeit" style="display: flex; gap: 6px">
 <sc-for list="{{protoModes}}" as="o" hint-placeholder-count="2"><button type="button" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
 </div>
-<h3 style="margin: 16px 0 6px 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">BÜCHER AM LESEN (HÖCHSTENS 5)</h3>
+<h3 style="margin: 16px 0 6px 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">BÜCHER AKTIV (5 AUF DER STARTSEITE)</h3>
 <div role="radiogroup" aria-label="Bücher am Lesen" style="display: flex; gap: 6px">
 <sc-for list="{{protoCounts}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
 </div>
@@ -479,21 +540,36 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </div>
 </sc-if>
 
-<!-- Sechstes Buch -->
-<sc-if value="{{isFullSheet}}" hint-placeholder-val="{{ false }}">
+<!-- Pausieren -->
+<sc-if value="{{isPauseSheet}}" hint-placeholder-val="{{ false }}">
 <div style="padding: 0 16px">
-<p style="margin: 0 4px; font-size: 18px; line-height: 24px; font-weight: 900">Fünf Bücher liegen schon offen.</p>
-<p style="margin: 6px 4px 12px 4px; font-size: 14.5px; line-height: 21px; font-weight: 600; color: var(--mute)">{{fullText}}</p>
-<div style="display: flex; flex-direction: column; gap: 6px">
-<sc-for list="{{fullRows}}" as="o" hint-placeholder-count="5">
-<button type="button" aria-label="{{o.aria}}" onClick="{{o.pick}}" style="width: 100%; min-height: 52px; display: flex; align-items: center; gap: 10px; border: none; border-radius: 16px; background: var(--key); padding: 0 12px; cursor: pointer; text-align: left; color: var(--ink)">
-<span aria-hidden="true" style="{{o.strip}}"></span>
-<span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{o.title}}</span><span style="font-size: 12.5px; font-weight: 600; color: var(--mute)">{{o.sub}}</span></span>
-<span style="flex-shrink: 0; font-size: 13px; font-weight: 800; color: var(--acc)">zurücklegen</span>
-</button>
-</sc-for>
+<p style="margin: 0 4px 12px 4px; font-size: 14.5px; line-height: 21px; font-weight: 600; color: var(--mute)">{{sheetIntro}}</p>
+<div role="group" aria-label="Gründe" style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{pauseChips}}" as="c" hint-placeholder-count="6"><button type="button" aria-pressed="{{c.pressed}}" onClick="{{c.toggle}}" style="{{c.style}}">{{c.label}}</button></sc-for>
 </div>
-<button type="button" onClick="{{closeSheet}}" style="margin-top: 8px; width: 100%; height: 48px; border: none; background: none; cursor: pointer; font-size: 15px; font-weight: 800; color: var(--mute)">Doch noch warten lassen</button>
+<input type="text" aria-label="Eigene Worte, freiwillig" value="{{draftNote}}" onChange="{{setNote}}" placeholder="Eigene Worte (freiwillig)" style="margin-top: 12px; width: 100%; box-sizing: border-box; height: 48px; border: none; border-radius: 14px; background: var(--field); padding: 0 14px; font-size: 16px; font-weight: 600; color: var(--ink)">
+<button type="button" onClick="{{confirmPause}}" style="margin-top: 14px; width: 100%; height: 54px; border-radius: 27px; border: none; background: var(--acc); color: var(--accInk); cursor: pointer; font-size: 17px; font-weight: 900">Pausieren</button>
+</div>
+</sc-if>
+
+<!-- Abbrechen -->
+<sc-if value="{{isDropSheet}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 0 16px">
+<p style="margin: 0 4px 10px 4px; font-size: 14.5px; line-height: 21px; font-weight: 600; color: var(--mute)">{{dropIntro}}</p>
+<div role="group" aria-label="Gründe" style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{dropChips}}" as="c" hint-placeholder-count="10"><button type="button" aria-pressed="{{c.pressed}}" onClick="{{c.toggle}}" style="{{c.style}}">{{c.label}}</button></sc-for>
+</div>
+<h3 style="margin: 16px 4px 4px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">BIS HIERHIN: HAT ES DICH ERREICHT?</h3>
+<div style="display: flex; align-items: center; gap: 2px">
+<sc-for list="{{dropBulbs}}" as="l" hint-placeholder-count="5"><button type="button" aria-label="{{l.aria}}" aria-pressed="{{l.pressed}}" onClick="{{l.pick}}" style="width: 44px; height: 44px; border: none; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="24" height="28" viewBox="0 0 26 30" aria-hidden="true"><path d="M13 2 C7 2 3 6.5 3 12 C3 16 5.5 18.5 8 20.5 L8 24 L18 24 L18 20.5 C20.5 18.5 23 16 23 12 C23 6.5 19 2 13 2 Z" style="{{l.bulb}}"></path><rect x="9" y="25" width="8" height="3.5" rx="1.5" style="fill: var(--mute)"></rect></svg></button></sc-for>
+<span style="margin-left: 8px; font-size: 15px; font-weight: 800">{{dropLightWord}}</span>
+</div>
+<h3 style="margin: 12px 4px 6px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">{{againLabel}}</h3>
+<div role="radiogroup" aria-label="{{againLabel}}" style="display: flex; gap: 6px">
+<sc-for list="{{againOpts}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
+</div>
+<input type="text" aria-label="Eigene Worte, freiwillig" value="{{draftNote}}" onChange="{{setNote}}" placeholder="Eigene Worte (freiwillig)" style="margin-top: 12px; width: 100%; box-sizing: border-box; height: 48px; border: none; border-radius: 14px; background: var(--field); padding: 0 14px; font-size: 16px; font-weight: 600; color: var(--ink)">
+<button type="button" onClick="{{confirmDrop}}" style="margin-top: 12px; width: 100%; height: 54px; border-radius: 27px; border: none; background: var(--acc); color: var(--accInk); cursor: pointer; font-size: 17px; font-weight: 900">{{dropSaveLabel}}</button>
 </div>
 </sc-if>
 
@@ -514,9 +590,17 @@ var LIB = {
   gezeiten: { title: 'Die Gezeitenkarte', author: 'Mira Olsen', page: 38, pages: 296, cover: '#7C6BB0', ribbon: '#F2B33D' },
   stille: { title: 'Kleine Geschichte der Stille', author: 'Ina Roth', page: 61, pages: 220, cover: '#4F8A6A', ribbon: '#FFD98A' },
   moor: { title: 'Das Haus am Moor', author: 'Clara Feld', page: 12, pages: 340, cover: '#B85A6E', ribbon: '#7FA1E2' },
-  tromso: { title: 'Ein Winter in Tromsø und anderswo', author: 'Lene Fahr', page: 88, pages: 412, cover: '#D7A13A', ribbon: '#4C69B8' }
+  tromso: { title: 'Ein Winter in Tromsø und anderswo', author: 'Lene Fahr', page: 88, pages: 412, cover: '#D7A13A', ribbon: '#4C69B8' },
+  kompass: { title: 'Der Kompass der Mutter', author: 'Ana Weiss', page: 23, pages: 300, cover: '#6C73B0', ribbon: '#F2B33D' },
+  garten: { title: 'Gärten im Regen', author: 'Pia Holm', page: 150, pages: 260, cover: '#C8607A', ribbon: '#FFD98A' },
+  nacht: { title: 'Nachtzug nach Triest', author: 'Edda Lorenz', page: 112, pages: 340, cover: '#2F7F8C', ribbon: '#F2B33D' },
+  fluss: { title: 'Der lange Fluss', author: 'Paul Neumann', page: 87, pages: 520, cover: '#3F6F8F', ribbon: '#E0637A' }
 };
-var DEFAULT_ORDER = ['salz', 'gezeiten', 'stille', 'moor', 'tromso'];
+var DEFAULT_ORDER = ['salz', 'gezeiten', 'stille', 'moor', 'tromso', 'kompass', 'garten'];
+var PAUSE_REASONS = ['Gerade nicht die Stimmung', 'Zu schwer für jetzt', 'Ein anderes Buch drängt', 'Keine Zeit', 'Will es in Ruhe lesen', 'Anderes'];
+var DROP_REASONS = ['Stil, Sprache', 'Tempo', 'Thema', 'Figuren', 'Zu lang', 'Zu schwer', 'Erwartung nicht erfüllt', 'Nicht mein Genre', 'Inhaltlich unangenehm', 'Anderes'];
+var AGAIN = [['ja', 'Ja'], ['vielleicht', 'Vielleicht'], ['nein', 'Eher nicht']];
+var LIGHT_WORDS = ['noch offen', 'gar nicht', 'kaum', 'ein wenig', 'spürbar', 'sehr'];
 var COUNTS = { gelesen: 148, ungelesen: 61, wunsch: 23, abgebrochen: 6, regale: 5, verliehen: 2 };
 var VOLS = {
   gelesen: { name: 'Gelesen', sub: 'Zu Ende gelesen, mit deinen eigenen Worten.', search: 'In 148 gelesenen Büchern suchen' },
@@ -525,7 +609,9 @@ var VOLS = {
   abgebrochen: { name: 'Abgebrochen', sub: 'Beiseitegelegt, ohne Groll.', search: 'Im Abgebrochenen suchen' },
   regale: { name: 'Eigene Regale', sub: 'Sammlungen, die nur du so ordnest.', search: 'In deinen Regalen suchen' },
   verliehen: { name: 'Verliehen', sub: 'Unterwegs bei Menschen, denen du traust.', search: 'Im Verliehenen suchen' },
-  mehr: { name: 'Weitere Bände', sub: 'Abgebrochen, eigene Regale, Verliehenes und dein Rückblick.' },
+  mehr: { name: 'Weitere Bände', sub: 'Alles, was nicht jeden Tag gebraucht wird.' },
+  aktiv: { name: 'Aktiv', sub: 'Alle Bücher, die du gerade liest. Die ersten fünf liegen auf der Startseite.' },
+  pausiert: { name: 'Pausiert', sub: 'Beiseitegelegt, das Lesebändchen bleibt drin.' },
   stats: { name: 'Rückblick', sub: 'Was dein Lesen über dich erzählt.' }
 };
 var BOOKS = [
@@ -550,7 +636,6 @@ var BOOKS = [
   { id: 'atlas', vol: 'ungelesen', year: 'Seit 2026', title: 'Atlas der leisen Orte', author: 'Wen Li', when: 'gekauft im Oktober 2026', cover: '#D7A13A', pages: 190 },
   { id: 'fuchs', vol: 'wunsch', year: 'Vorgemerkt', title: 'Der Fuchs im Archiv', author: 'Greta Moll', when: 'vorgemerkt im September 2026', cover: '#C8607A' },
   { id: 'licht', vol: 'wunsch', year: 'Vorgemerkt', title: 'Licht über Lauenburg', author: 'Erik Sand', when: 'vorgemerkt im Juli 2026', cover: '#7C6BB0' },
-  { id: 'fluss', vol: 'abgebrochen', year: '2026', title: 'Der lange Fluss', author: 'Paul Neumann', when: 'beiseitegelegt bei Seite 87', cover: '#3F6F8F' },
   { id: 'reg1', vol: 'regale', year: 'Regale', title: 'Bücher vom Meer', author: '14 Bücher', when: '14 Bücher', cover: '#3F6F8F' },
   { id: 'reg2', vol: 'regale', year: 'Regale', title: 'Von Oma geerbt', author: '9 Bücher', when: '9 Bücher', cover: '#B85A6E' },
   { id: 'v1', vol: 'verliehen', year: 'Unterwegs', title: 'Die Möwenuhr', author: 'Jonas Brehm', when: 'bei Paula seit August', cover: '#3F6F8F' },
@@ -584,7 +669,10 @@ class Component extends DCLogic {
     super(props);
     var pages = {}; Object.keys(LIB).forEach(function (k) { pages[k] = LIB[k].page; });
     this.state = { mode: 'abend', active: DEFAULT_ORDER.slice(0, 2), pages: pages, extraLib: {}, started: {}, screen: 'home', tab: 'bib', vol: null, book: null, from: 'home',
-      sheet: null, pageFor: 'salz', draft: 0, fresh: true, saved: '', query: '', sort: 'jahr', showcase: {}, addStep: 'pick', target: 'ungelesen', extra: 0, pendingStart: null };
+      sheet: null, pageFor: 'salz', draft: 0, fresh: true, saved: '', query: '', sort: 'jahr', showcase: {}, addStep: 'pick', target: 'ungelesen', extra: 0,
+      paused: [{ id: 'nacht', reasons: ['Gerade nicht die Stimmung'], note: '', when: 'September 2026' }],
+      dropped: [{ id: 'fluss', reasons: ['Tempo', 'Zu lang'], lights: 1, again: 'vielleicht', note: 'Schöne Sätze, aber nach 80 Seiten ist noch nichts passiert.', when: 'Mai 2026' }],
+      reasons: [], note: '', dropLights: 0, again: '', volNotice: '' };
   }
   go(patch) { this.setState(Object.assign({ sheet: null }, patch)); }
   renderVals() {
@@ -597,7 +685,7 @@ class Component extends DCLogic {
     var L = lib[act[0]] || LIB.salz;
     var lead = { title: L.title, page: String(s.pages[act[0]]), cover: L.cover, ribbon: L.ribbon,
       aria: L.title + ', im Licht, Seite ' + s.pages[act[0]] + '. Seite eintragen', openPage: openPageFor(act[0]) };
-    var bars = act.slice(1).map(function (id) {
+    var bars = act.slice(1, 5).map(function (id) {
       var b = lib[id];
       return { short: b.title, page: String(s.pages[id]), strip: strip(b.cover, 28) + '; margin-left: 8px',
         lightAria: b.title + ', Seite ' + s.pages[id] + '. Ins Licht legen', pageAria: b.title + ': Seite ' + s.pages[id] + ', neue Seite eintragen',
@@ -605,10 +693,15 @@ class Component extends DCLogic {
     });
     var n = Object.assign({}, COUNTS);
     if (s.extra) n[s.target] += s.extra;
-    n.ungelesen -= Object.keys(s.started).length; n.ungelesen += s.paused || 0;
-    var total = n.gelesen + n.ungelesen + n.abgebrochen + n.wunsch + act.length;
+    n.ungelesen -= Object.keys(s.started).length;
+    n.abgebrochen = 5 + s.dropped.length;
+    var pausedIds = s.paused.map(function (x) { return x.id; });
+    var droppedIds = s.dropped.map(function (x) { return x.id; });
+    var total = n.gelesen + n.ungelesen + n.abgebrochen + n.wunsch + act.length + s.paused.length;
+    var stateOf = function (id) { return act.indexOf(id) >= 0 ? 'aktiv' : (pausedIds.indexOf(id) >= 0 ? 'pausiert' : (droppedIds.indexOf(id) >= 0 ? 'abgebrochen' : '')); };
+    var openBook = function (id, from) { return function () { self.go({ screen: 'book', book: id, from: 'vol', backVol: from, volNotice: '' }); }; };
     var free = 5 - act.length;
-    var shelfDef = [['gelesen', 'Gelesen', 'zuletzt: Die Uhrmacherin', n.gelesen], ['ungelesen', 'Ungelesen im Regal', 'haben Zeit', n.ungelesen], ['wunsch', 'Wunschliste', 'irgendwann', n.wunsch], ['mehr', 'Weitere Bände', 'Abgebrochen, Regale, Rückblick', n.abgebrochen + n.regale + n.verliehen]];
+    var shelfDef = [['gelesen', 'Gelesen', 'zuletzt: Die Uhrmacherin', n.gelesen], ['ungelesen', 'Ungelesen im Regal', 'haben Zeit', n.ungelesen], ['wunsch', 'Wunschliste', 'irgendwann', n.wunsch], ['mehr', 'Weitere Bände', 'Abgebrochen, Regale, Rückblick', n.abgebrochen + n.regale + n.verliehen + s.paused.length]];
     var shelf = shelfDef.map(function (d, i) {
       return { name: d[1], sub: d[2], count: String(d[3]), aria: d[1] + ', ' + d[3] + (d[0] === 'mehr' ? ' Einträge' : ' Bücher') + ', öffnen',
         wrap: i ? 'border-top: 1px solid var(--line)' : '',
@@ -619,10 +712,18 @@ class Component extends DCLogic {
     var vk = s.vol || 'gelesen', V = VOLS[vk];
     var q = s.query.trim().toLowerCase();
     var groups = [], inVol = [], shown = [];
+    var volRow = function (r) { return { title: r[1], meta: r[2], cover: r[3], hasLights: false, lights: [], aria: r[1] + ', ' + r[2] + ', öffnen', open: function () { self.go({ screen: 'vol', vol: r[0], query: '', volNotice: '' }); } }; };
     if (vk === 'mehr') {
-      groups = [{ label: 'Bände', rows: [['abgebrochen', 'Abgebrochen', n.abgebrochen + ' Bücher · ohne Groll', '#B85A6E'], ['regale', 'Eigene Regale', n.regale + ' Regale', '#6C73B0'], ['verliehen', 'Verliehen', n.verliehen + ' unterwegs', '#3F6F8F'], ['stats', 'Rückblick', 'Statistik ohne Ziele', '#D7A13A']].map(function (r) {
-        return { title: r[1], meta: r[2], cover: r[3], hasLights: false, lights: [], aria: r[1] + ', öffnen', open: function () { self.go({ screen: 'vol', vol: r[0], query: '' }); } };
+      groups = [{ label: 'Lesen', rows: [['aktiv', 'Aktiv', act.length + (act.length === 1 ? ' Buch' : ' Bücher') + ', ' + Math.min(5, act.length) + ' davon auf der Startseite', '#E0A93A'], ['pausiert', 'Pausiert', s.paused.length + (s.paused.length === 1 ? ' Buch' : ' Bücher') + ' · Bändchen bleibt drin', '#2F7F8C'], ['abgebrochen', 'Abgebrochen', n.abgebrochen + ' Bücher · mit Grund', '#B85A6E']].map(volRow) },
+        { label: 'Ordnen', rows: [['regale', 'Eigene Regale', n.regale + ' Regale', '#6C73B0'], ['verliehen', 'Verliehen', n.verliehen + ' unterwegs', '#3F6F8F'], ['stats', 'Rückblick', 'Statistik ohne Ziele', '#D7A13A']].map(volRow) }];
+    } else if (vk === 'abgebrochen') {
+      groups = [{ label: 'Mit deinem Grund', rows: s.dropped.slice().reverse().map(function (d) {
+        var bk = lib[d.id];
+        return { title: bk.title, meta: bk.author + ' · bei S. ' + s.pages[d.id] + (d.reasons.length ? ' · ' + d.reasons.join(', ') : ''), cover: bk.cover,
+          hasLights: d.lights > 0, lights: lightsOf(d.lights, 9), aria: bk.title + ', abgebrochen' + (d.reasons.length ? ', Grund: ' + d.reasons.join(', ') : ''), open: openBook(d.id, 'abgebrochen') };
       }) }];
+    } else if (vk === 'aktiv' || vk === 'pausiert') {
+      groups = [];
     } else {
       inVol = BOOKS.filter(function (b) { return b.vol === vk && !s.started[b.id]; });
       shown = inVol.filter(function (b) { return !q || (b.title + ' ' + b.author).toLowerCase().indexOf(q) >= 0; });
@@ -635,26 +736,57 @@ class Component extends DCLogic {
         g.rows.push({ title: b.title, meta: b.vol === 'regale' ? b.when : b.author + ' · ' + b.when, cover: b.cover,
           hasLights: !!b.lights, lights: b.lights ? lightsOf(b.lights, 9) : [],
           aria: b.title + ', ' + b.author + (b.lights ? ', ' + b.lights + ' von 5 Lichtern' : ''),
-          open: function () { self.go({ screen: 'book', book: b.id, from: 'vol' }); } });
+          open: function () { self.go({ screen: 'book', book: b.id, from: 'vol', backVol: vk }); } });
       });
     }
-    var count = vk === 'stats' || vk === 'mehr' ? 0 : n[vk];
-    var isList = vk !== 'stats';
-    var vol = { name: V.name, sub: (vk === 'stats' || vk === 'mehr') ? V.sub : count + (vk === 'regale' ? ' Regale. ' : ' Bücher. ') + V.sub, searchLabel: V.search || '',
-      isList: isList, hasSearch: isList && vk !== 'mehr', isStats: vk === 'stats', groups: groups, noResults: vk !== 'mehr' && shown.length === 0,
-      footer: vk === 'mehr' || q ? '' : (count > inVol.length ? '… und ' + (count - inVol.length) + ' weitere. Gezeigt werden Beispieldaten.' : 'Beispieldaten.') };
+    var special = vk === 'mehr' || vk === 'abgebrochen' || vk === 'aktiv' || vk === 'pausiert';
+    var count = vk === 'stats' || vk === 'mehr' ? 0 : (vk === 'aktiv' ? act.length : (vk === 'pausiert' ? s.paused.length : n[vk]));
+    var isList = vk !== 'stats' && vk !== 'aktiv' && vk !== 'pausiert';
+    var vol = { name: V.name, sub: (vk === 'stats' || vk === 'mehr' || vk === 'aktiv') ? V.sub : count + (vk === 'regale' ? ' Regale. ' : (count === 1 ? ' Buch. ' : ' Bücher. ')) + V.sub, searchLabel: V.search || '',
+      isList: isList, hasSearch: isList && !special, isStats: vk === 'stats', isAktiv: vk === 'aktiv', isPausiert: vk === 'pausiert', groups: groups, noResults: !special && shown.length === 0,
+      footer: vk === 'mehr' || q ? '' : (vk === 'abgebrochen' ? '… und ' + (n.abgebrochen - s.dropped.length) + ' ältere. Gründe und Lichter helfen später, passende Bücher zu finden. Beispieldaten.' : (count > inVol.length ? '… und ' + (count - inVol.length) + ' weitere. Gezeigt werden Beispieldaten.' : 'Beispieldaten.')) };
+    var aktivRows = act.map(function (id, i) {
+      var bk = lib[id];
+      return { rank: String(i + 1), title: bk.title, sub: 'Seite ' + s.pages[id] + ' von ' + bk.pages, strip: strip(bk.cover, 34), onHead: i === 0, offHead: i === 5, canUp: i > 0,
+        aria: bk.title + ', Platz ' + (i + 1) + (i < 5 ? ', auf der Startseite' : '') + ', Buchseite öffnen', open: openBook(id, 'aktiv'),
+        upAria: bk.title + ' eine Stelle nach vorn',
+        up: function () { var a = act.slice(); a.splice(i, 1); a.splice(i - 1, 0, id); self.setState({ active: a, volNotice: i === 5 ? '„' + shortTitle(bk.title, 20) + '“ liegt jetzt auf der Startseite.' : 'Jetzt an Platz ' + i + '.' }); } };
+    });
+    var pausedRows = s.paused.map(function (pz) {
+      var bk = lib[pz.id];
+      return { title: bk.title, sub: 'bei S. ' + s.pages[pz.id] + (pz.reasons.length ? ' · ' + pz.reasons.join(', ') : ' · ohne Grund'), strip: strip(bk.cover, 34),
+        aria: bk.title + ', pausiert bei Seite ' + s.pages[pz.id] + ', Buchseite öffnen', open: openBook(pz.id, 'pausiert'),
+        resumeAria: bk.title + ' wieder aufnehmen', resume: function () { self.setState(resumeState(pz.id, true)); } };
+    });
     var sorts = [['jahr', 'Nach Jahr'], ['licht', 'Nach Lichtern'], ['abc', 'A bis Z']].map(function (o) {
       return { label: o[1], checked: s.sort === o[0] ? 'true' : 'false', style: seg(s.sort === o[0]), pick: function () { self.setState({ sort: o[0] }); } };
     });
+    var resumeState = function (id, inVol) {
+      var na = act.concat([id]);
+      var msg = na.length <= 5 ? 'Wieder aktiv, an Platz ' + na.length + '.' : 'Wieder aktiv, in Aktiv an Platz ' + na.length + '.';
+      return { active: na, paused: s.paused.filter(function (x) { return x.id !== id; }), volNotice: msg, sheet: null };
+    };
     // Buch
-    var b = BOOKS.filter(function (x) { return x.id === s.book; })[0] || BOOKS[0];
+    var st0 = lib[s.book] ? stateOf(s.book) : '';
+    var b = st0 ? { id: s.book, vol: st0, title: lib[s.book].title, author: lib[s.book].author, cover: lib[s.book].cover, ribbon: lib[s.book].ribbon,
+      copy: [['Format', 'Taschenbuch'], ['Steht', 'Nachttisch']], history: [['Begonnen', 'Herbst 2026'], ['Bändchen', 'Seite ' + s.pages[s.book] + ' von ' + lib[s.book].pages]] }
+      : (BOOKS.filter(function (x) { return x.id === s.book; })[0] || BOOKS[0]);
+    var pz = s.paused.filter(function (x) { return x.id === b.id; })[0];
+    var dz = s.dropped.filter(function (x) { return x.id === b.id; })[0];
+    var rank = act.indexOf(b.id);
     var on = !!s.showcase[b.id];
     var dark = function (hex) { var v = parseInt(hex.slice(1), 16); return 'rgb(' + Math.round((v >> 16) * .72) + ',' + Math.round(((v >> 8) & 255) * .72) + ',' + Math.round((v & 255) * .72) + ')'; };
     var book = { title: b.title, author: b.author, cover: b.cover, coverDark: dark(b.cover), ribbon: b.ribbon || '#F2B33D',
-      status: b.vol === 'gelesen' ? 'Gelesen im ' + b.when : b.when,
+      status: b.vol === 'gelesen' ? 'Gelesen im ' + b.when : (b.vol === 'aktiv' ? 'Am Lesen · Platz ' + (rank + 1) + (rank < 5 ? ' · auf der Startseite' : ' · nur in Aktiv') : (b.vol === 'pausiert' ? 'Pausiert bei Seite ' + s.pages[b.id] : (b.vol === 'abgebrochen' ? 'Abgebrochen bei Seite ' + s.pages[b.id] : b.when))),
       canStart: b.vol === 'ungelesen' && !s.started[b.id],
+      isActive: b.vol === 'aktiv', isPaused: b.vol === 'pausiert', isDropped: b.vol === 'abgebrochen',
+      pausedWhy: pz ? (pz.reasons.length ? pz.reasons.join(', ') : 'Ohne Grund pausiert.') + (pz.note ? ' „' + pz.note + '“' : '') : '',
+      dropReasons: dz ? dz.reasons.map(function (r) { return { label: r }; }) : [], dropHasReasons: !!(dz && dz.reasons.length),
+      dropLightsList: dz ? [1, 2, 3, 4, 5].map(function (i) { return { bulb: i <= dz.lights ? 'fill: var(--bulb)' : 'fill: none; stroke: var(--line); stroke-width: 2' }; }) : [],
+      dropLightsWord: dz ? 'Hat dich erreicht: ' + LIGHT_WORDS[dz.lights] : '', dropAgain: dz && dz.again ? 'Noch einmal etwas von ' + b.author + '? ' + AGAIN.filter(function (a) { return a[0] === dz.again; })[0][1] : '',
+      dropNote: dz && dz.note ? '„' + dz.note + '“' : '', dropHasNote: !!(dz && dz.note),
       hasReading: !!b.reading, reading: b.reading || '', forWhom: b.forWhom || '',
-      inviteCard: !b.reading, inviteText: b.vol === 'gelesen' ? 'Was ist dir von diesem Buch geblieben? Ein Satz reicht.' : 'Deine eigenen Worte kommen dazu, wenn du es gelesen hast. Eine Notiz für dich geht schon jetzt.',
+      inviteCard: !b.reading && b.vol !== 'abgebrochen', inviteText: b.vol === 'gelesen' ? 'Was ist dir von diesem Buch geblieben? Ein Satz reicht.' : 'Deine eigenen Worte kommen dazu, wenn du es gelesen hast. Eine Notiz für dich geht schon jetzt.',
       hasRating: !!b.lights, lightsLabel: (b.lights || 0) + ' von 5 Lichtern',
       lights: [1, 2, 3, 4, 5].map(function (i) { return { bulb: i <= (b.lights || 0) ? 'fill: var(--bulb)' : 'fill: none; stroke: var(--line); stroke-width: 2' }; }),
       lightsWord: ['', 'kaum', 'ein wenig', 'spürbar', 'sehr', 'mitten ins Herz'][b.lights || 0],
@@ -669,7 +801,6 @@ class Component extends DCLogic {
       var na = a.concat([bk.id]);
       return { extraLib: ex, pages: pg, started: st, active: na, sheet: null, screen: 'home', pendingStart: null, saved: na.length === 1 ? 'Liegt jetzt im Licht. Viel Freude.' : 'Liegt jetzt an Platz ' + na.length + '.' };
     };
-    var pend = BOOKS.filter(function (x) { return x.id === s.pendingStart; })[0];
     // Seite eintragen
     var pc = lib[s.pageFor] || LIB.salz;
     var clamp = function (x) { return Math.max(0, Math.min(pc.pages, x)); };
@@ -706,8 +837,15 @@ class Component extends DCLogic {
     });
     var tabTexts = { shop: ['Schaufenster', 'Hier entsteht deine kleine öffentliche Bücherei. Es erscheint nur, was du einzeln ins Fenster stellst.'], find: ['Entdecken', 'Später findest du hier Schaufenster in der Nähe und Leserstimmen zu einzelnen Büchern.'], me: ['Ich', 'Pseudonym, Privatsphäre und der Export deiner Bibliothek.'] };
     var tt = tabTexts[s.tab] || ['', ''];
-    var sheetH = { page: 640, add: s.addStep === 'scan' ? 560 : 400, showcase: 470, proto: 330, soon: 200, order: 140 + act.length * 62, full: 250 + act.length * 58 }[s.sheet] || 300;
-    var titles = { page: 'Seite eintragen', add: 'Auspacken', showcase: 'Schaufenster', proto: 'Prototyp', soon: 'Kommt bald', order: 'Reihenfolge', full: 'Anfangen' };
+    var sheetH = { page: 640, add: s.addStep === 'scan' ? 560 : 400, showcase: 470, proto: 330, soon: 200, order: 140 + Math.min(act.length, 7) * 62, pause: 500, drop: 730 }[s.sheet] || 300;
+    var titles = { page: 'Seite eintragen', add: 'Auspacken', showcase: 'Schaufenster', proto: 'Prototyp', soon: 'Kommt bald', order: 'Reihenfolge', pause: 'Pausieren', drop: 'Abbrechen' };
+    var chip = function (label) {
+      var on = s.reasons.indexOf(label) >= 0;
+      return { label: label, pressed: on ? 'true' : 'false',
+        style: 'min-height: 44px; padding: 0 14px; border-radius: 22px; cursor: pointer; font-size: 14px; font-weight: 800; border: 1.5px solid ' + (on ? 'var(--acc)' : 'var(--line)') + '; background: ' + (on ? 'var(--accBg)' : 'transparent') + '; color: ' + (on ? 'var(--acc)' : 'var(--ink)'),
+        toggle: function () { var r = s.reasons.slice(); var k = r.indexOf(label); if (k >= 0) r.splice(k, 1); else r.push(label); self.setState({ reasons: r }); } };
+    };
+    var sheetBook = lib[s.book] || LIB.salz;
     return {
       themeClass: abend ? 'abend' : 'tag', isAbend: abend, isTag: !abend, clock: abend ? '21:47' : '10:12',
       bulbStyle: abend ? 'fill: #FFF6D8' : 'fill: #E9D3A6',
@@ -715,11 +853,11 @@ class Component extends DCLogic {
       toggleMode: function () { self.setState({ mode: abend ? 'tag' : 'abend' }); },
       isHome: s.screen === 'home', isVol: s.screen === 'vol', isBook: s.screen === 'book', isTab: s.screen === 'tab',
       headLine: abend ? 'Das Licht ist noch an.' : 'Tageslicht im Zimmer.', subLine: s.saved || ' ',
-      readCount: '· ' + act.length + ' von 5', lead: lead, bars: bars,
+      readCount: act.length <= 5 ? '· ' + act.length + ' von 5' : '· 5 von ' + act.length + ' aktiv', lead: lead, bars: bars,
       hasRoomNote: act.length < 3, roomNote: act.length === 1 ? 'Daneben ist Platz für bis zu vier weitere Bücher. Ein Tipp auf einen Titel holt ihn später ins Licht.' : 'Tipp auf den Titel: ins Licht legen. Tipp auf die Zahl: Seite eintragen.',
       orderBtnStyle: 'min-height: 44px; border: none; background: none; padding: 0 6px; cursor: pointer; font-size: 14px; font-weight: 800; color: var(--acc)' + (act.length < 2 ? '; visibility: hidden' : ''),
       openOrder: function () { self.setState({ sheet: 'order' }); },
-      orderRows: act.map(function (id, i) {
+      orderRows: act.slice(0, 7).map(function (id, i) {
         var bk = lib[id];
         return { rank: String(i + 1), title: bk.title, sub: 'Seite ' + s.pages[id] + ' von ' + bk.pages, strip: strip(bk.cover, 34), isFirst: i === 0, canUp: i > 0,
           upAria: bk.title + ' eine Stelle nach vorn',
@@ -728,25 +866,33 @@ class Component extends DCLogic {
       shelf: shelf, totalLabel: total + ' Bücher',
       vol: vol, sorts: sorts, query: s.query, hasQuery: !!s.query,
       statRows: [{ k: 'Am häufigsten gelesen', v: 'Jonas Brehm, 3 Bücher' }, { k: 'Liebstes Genre', v: 'Roman der Gegenwart' }, { k: 'Am stärksten erreicht', v: 'Die Uhrmacherin, Unter Linden, später' }, { k: 'Dieses Jahr zu Ende gelesen', v: '19 Bücher, ohne Ziel und ohne Eile' }],
-      book: book, bookBackLabel: s.from === 'vol' ? VOLS[b.vol].name : 'Bibliothek',
-      startReading: function () {
-        if (act.length >= 5) self.setState({ sheet: 'full', pendingStart: b.id });
-        else self.setState(doStart(b, act));
-      },
-      fullText: pend ? 'Damit „' + pend.title + '“ dazukommen kann, darf eines davon zurück ins Regal. Sein Lesebändchen bleibt, wo es ist. Das neue kommt ans Ende, nach vorn holst du es selbst.' : '',
-      fullRows: act.map(function (id) {
-        var bk = lib[id];
-        return { title: bk.title, sub: 'Lesebändchen auf Seite ' + s.pages[id], strip: strip(bk.cover, 32), aria: bk.title + ' zurück ins Regal legen, Lesebändchen bleibt auf Seite ' + s.pages[id],
-          pick: function () { if (!pend) return; var p = doStart(pend, act.filter(function (x) { return x !== id; })); p.saved = 'Neues Buch an Platz ' + p.active.length + '.'; p.paused = (s.paused || 0) + 1; self.setState(p); } };
-      }),
+      book: book, bookBackLabel: s.from === 'vol' ? VOLS[s.backVol || b.vol].name : 'Bibliothek',
+      startReading: function () { self.setState(Object.assign(doStart(b, act), { saved: act.length + 1 === 1 ? 'Liegt jetzt im Licht. Viel Freude.' : (act.length + 1 <= 5 ? 'Liegt jetzt an Platz ' + (act.length + 1) + '.' : 'Liegt in Aktiv an Platz ' + (act.length + 1) + '.') })); },
+      aktivRows: aktivRows, pausedRows: pausedRows, hasPaused: pausedRows.length > 0, noPaused: pausedRows.length === 0, volNotice: s.volNotice,
+      volBackLabel: (vk === 'aktiv' || vk === 'pausiert' || vk === 'abgebrochen' || vk === 'regale' || vk === 'verliehen' || vk === 'stats') ? 'Weitere Bände' : 'Bibliothek',
+      volBack: function () { var sub = (vk === 'aktiv' || vk === 'pausiert' || vk === 'abgebrochen' || vk === 'regale' || vk === 'verliehen' || vk === 'stats'); self.go(sub ? { screen: 'vol', vol: 'mehr', volNotice: '' } : { screen: 'home' }); },
+      openPause: function () { self.setState({ sheet: 'pause', reasons: [], note: '' }); },
+      openDrop: function () { self.setState({ sheet: 'drop', reasons: [], note: '', dropLights: 0, again: '' }); },
+      resumeBook: function () { self.setState(resumeState(b.id, false)); },
+      pauseChips: PAUSE_REASONS.map(chip), dropChips: DROP_REASONS.map(chip),
+      sheetIntro: 'Das Lesebändchen bleibt auf Seite ' + (s.pages[s.book] || 0) + '. Ein Grund ist freiwillig.',
+      dropIntro: 'Woran lag es? Mehrere Gründe gehen. Daraus lernt die App später, was zu dir passt.',
+      draftNote: s.note, setNote: function (e) { self.setState({ note: e.target.value }); },
+      dropBulbs: [1, 2, 3, 4, 5].map(function (i) { return { aria: i + ' von 5 Lichtern', pressed: s.dropLights === i ? 'true' : 'false', bulb: i <= s.dropLights ? 'fill: var(--bulb)' : 'fill: none; stroke: var(--mute); stroke-width: 2', pick: function () { self.setState({ dropLights: s.dropLights === i ? 0 : i }); } }; }),
+      dropLightWord: LIGHT_WORDS[s.dropLights],
+      againLabel: 'Noch einmal etwas von ' + sheetBook.author + '?',
+      againOpts: AGAIN.map(function (o) { return { label: o[1], checked: s.again === o[0] ? 'true' : 'false', style: seg(s.again === o[0]), pick: function () { self.setState({ again: s.again === o[0] ? '' : o[0] }); } }; }),
+      confirmPause: function () { var id = s.book; self.setState({ active: act.filter(function (x) { return x !== id; }), paused: s.paused.concat([{ id: id, reasons: s.reasons.slice(), note: s.note, when: 'Oktober 2026' }]), sheet: null, saved: 'Pausiert, Bändchen bleibt drin.' }); },
+      confirmDrop: function () { var id = s.book; self.setState({ active: act.filter(function (x) { return x !== id; }), paused: s.paused.filter(function (x) { return x.id !== id; }), dropped: s.dropped.concat([{ id: id, reasons: s.reasons.slice(), lights: s.dropLights, again: s.again, note: s.note, when: 'Oktober 2026' }]), sheet: null, saved: 'Abgebrochen. Ohne Groll.' }); },
+      dropSaveLabel: 'Bei Seite ' + (s.pages[s.book] || 0) + ' abbrechen',
       showcaseChecked: on ? 'true' : 'false',
       showcaseHint: on ? 'Steht im Fenster. Sichtbar: Lesart, Lichter, Zitat.' : 'Aus. Nichts davon ist öffentlich.',
       switchTrack: 'flex-shrink: 0; position: relative; width: 51px; height: 31px; border-radius: 16px; box-sizing: border-box; background: ' + (on ? 'var(--acc)' : 'var(--field)') + '; border: 1.5px solid ' + (on ? 'var(--acc)' : 'var(--line)'),
       switchKnob: 'position: absolute; top: 1.5px; left: ' + (on ? '21.5px' : '1.5px') + '; width: 25px; height: 25px; border-radius: 13px; background: ' + (on ? 'var(--accInk)' : 'var(--mute)'),
       tabs: tabs, tabTitle: tt[0], tabText: tt[1],
-      hasSheet: !!s.sheet, sheetTitle: titles[s.sheet] || '', closeLabel: (s.sheet === 'proto' || s.sheet === 'order') ? 'Fertig' : 'Abbrechen',
+      hasSheet: !!s.sheet, sheetTitle: titles[s.sheet] || '', closeLabel: (s.sheet === 'proto' || s.sheet === 'order') ? 'Fertig' : ((s.sheet === 'drop' || s.sheet === 'pause') ? 'Zurück' : 'Abbrechen'),
       sheetStyle: 'position: absolute; left: 0; right: 0; bottom: 0; height: ' + sheetH + 'px; box-sizing: border-box; padding-bottom: 34px; border-radius: 28px 28px 0 0; background: var(--sheet); color: var(--ink); box-shadow: 0 -8px 30px rgba(10,12,30,.25)',
-      isPageSheet: s.sheet === 'page', isAddSheet: s.sheet === 'add', isShowcaseSheet: s.sheet === 'showcase', isProtoSheet: s.sheet === 'proto', isSoonSheet: s.sheet === 'soon', isOrderSheet: s.sheet === 'order', isFullSheet: s.sheet === 'full',
+      isPageSheet: s.sheet === 'page', isAddSheet: s.sheet === 'add', isShowcaseSheet: s.sheet === 'showcase', isProtoSheet: s.sheet === 'proto', isSoonSheet: s.sheet === 'soon', isOrderSheet: s.sheet === 'order', isPauseSheet: s.sheet === 'pause', isDropSheet: s.sheet === 'drop',
       pg: pg,
       dec: function () { self.setState({ draft: clamp(s.draft - 1), fresh: false }); },
       inc: function () { self.setState({ draft: clamp(s.draft + 1), fresh: false }); },
@@ -765,9 +911,9 @@ class Component extends DCLogic {
       openProto: function () { self.setState({ sheet: 'proto' }); },
       openSoon: function () { self.setState({ sheet: 'soon' }); },
       protoModes: [['abend', 'Abend'], ['tag', 'Tag']].map(function (o) { return { label: o[1], checked: s.mode === o[0] ? 'true' : 'false', style: seg(s.mode === o[0]), pick: function () { self.setState({ mode: o[0] }); } }; }),
-      protoCounts: [1, 2, 3, 5].map(function (c) { return { label: String(c), checked: act.length === c ? 'true' : 'false', style: seg(act.length === c), pick: function () { self.setState({ active: DEFAULT_ORDER.slice(0, c), started: {}, extraLib: {}, paused: 0, saved: '' }); } }; }),
+      protoCounts: [1, 2, 3, 5, 7].map(function (c) { return { label: String(c), checked: act.length === c ? 'true' : 'false', style: seg(act.length === c), pick: function () { self.setState({ active: DEFAULT_ORDER.slice(0, c), started: {}, extraLib: {}, saved: '' }); } }; }),
       goHome: function () { self.go({ screen: 'home' }); },
-      bookBack: function () { self.go(s.from === 'vol' ? { screen: 'vol', vol: b.vol } : { screen: 'home' }); },
+      bookBack: function () { self.go(s.from === 'vol' ? { screen: 'vol', vol: s.backVol || b.vol, volNotice: '' } : { screen: 'home' }); },
       setQuery: function (e) { self.setState({ query: e.target.value }); },
       clearQuery: function () { self.setState({ query: '' }); },
       toggleShowcase: function () {
@@ -775,7 +921,7 @@ class Component extends DCLogic {
         else self.setState({ sheet: 'showcase' });
       },
       confirmShowcase: function () { var m = Object.assign({}, s.showcase); m[b.id] = true; self.setState({ showcase: m, sheet: null }); },
-      closeSheet: function () { self.setState({ sheet: null, pendingStart: null }); }
+      closeSheet: function () { self.setState({ sheet: null }); }
     };
   }
 }

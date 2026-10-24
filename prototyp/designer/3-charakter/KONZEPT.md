@@ -138,3 +138,56 @@ Ziehen per Drag habe ich bewusst weggelassen: Es ist einhändig unzuverlässig u
 1. Soll ein Tipp auf den Titel im Balken das Buch ins Licht holen, oder soll er die Buchseite öffnen? Im zweiten Fall bliebe das Priorisieren nur über „Reihenfolge“.
 2. Ist der Ton beim sechsten Buch richtig, und soll „zurücklegen“ das Buch zu Ungelesen schicken oder in einen eigenen Zustand „pausiert“?
 3. (Entschieden: Neue Bücher kommen ans Ende.)
+
+---
+
+## Prototyp, Runde 3: Weitere Bände (24.10.2026)
+
+Arjens Festlegungen: Abgebrochen bekommt Begründung und Bewertung, Pausiert bekommt eine Begründung, Aktiv nimmt mehr als 5 Bücher auf. Die Startseite ist unverändert; nur die Zählung lautet bei mehr als fünf Büchern „5 von 7 aktiv“. Screens in `screens3/` (01 bis 15), Playwright auf Port 8810, keine Konsolenfehler. Im Prototyp-Schalter gibt es zusätzlich „7“.
+
+**Weitere Bände** ist in zwei Gruppen geteilt:
+- Lesen: Aktiv, Pausiert, Abgebrochen
+- Ordnen: Eigene Regale, Verliehen, Rückblick
+
+**Aktiv:** Alle laufenden Bücher, gruppiert in „Auf der Startseite“ (Platz 1 bis 5) und „Nur in Aktiv“ (ab Platz 6). Ein Pfeil rückt ein Buch eine Stelle nach vorn; rutscht es auf Platz 5, liegt es auf der Startseite. Ein neues Buch wird nicht mehr blockiert, sondern kommt ans Ende: „Liegt in Aktiv an Platz 8.“ Das Sheet „Fünf Bücher liegen schon offen“ ist entfallen.
+
+**Buchseite eines aktiven Buchs:** zwei Knöpfe, „Pausieren“ und „Abbrechen …“.
+
+**Pausieren** (Sheet, alles freiwillig): Gründe als Mehrfachauswahl, ein optionales Freitextfeld und der Knopf „Pausieren“. Das Lesebändchen bleibt. Im Band „Pausiert“ hat jede Zeile den Knopf „Wieder aufnehmen“; das Buch kommt dann in Aktiv ans Ende („Wieder aktiv, in Aktiv an Platz 7.“).
+
+**Abbrechen** (Sheet):
+- Gründe als Mehrfachauswahl
+- „Bis hierhin: Hat es dich erreicht?“ mit 0 bis 5 Lichtern, dieselbe Skala wie beim gelesenen Buch, ohne Eigenschaften
+- „Noch einmal etwas von [Autor]?“ mit Ja / Vielleicht / Eher nicht
+- optionaler Freitext
+- Knopf „Bei Seite 12 abbrechen“
+
+Der Band „Abgebrochen“ zeigt je Buch Seite, Gründe und Lichter, die Buchseite den ganzen Eintrag.
+
+**Für den Empfehlungs-Algorithmus** entsteht je Abbruch ein strukturierter Datensatz: Gründe (feste Schlüssel), Lichter (0 bis 5), „noch einmal vom Autor“ (ja / vielleicht / nein), Seite und Anteil gelesen, dazu Autor und Genre aus den Buchdaten. Die Frage nach dem Autor macht das Beispiel „5 Abbrüche von XY“ direkt messbar, auch schon bei einem einzigen Abbruch.
+
+### Vorgeschlagene Grundliste (Arjen bitte bestätigen)
+
+**Abbrechen** (Mehrfachauswahl):
+1. Stil, Sprache
+2. Tempo
+3. Thema
+4. Figuren
+5. Zu lang
+6. Zu schwer
+7. Erwartung nicht erfüllt
+8. Nicht mein Genre
+9. Inhaltlich unangenehm
+10. Anderes
+
+„Nicht jetzt“ steht bewusst nicht in dieser Liste. Wer „nicht jetzt“ meint, sollte pausieren, sonst verfälscht es die Empfehlungen.
+
+**Pausieren** (Mehrfachauswahl, freiwillig):
+1. Gerade nicht die Stimmung
+2. Zu schwer für jetzt
+3. Ein anderes Buch drängt
+4. Keine Zeit
+5. Will es in Ruhe lesen
+6. Anderes
+
+**Offen:** Ist der Ton „Abgebrochen. Ohne Groll.“ richtig? Soll ein abgebrochenes Buch im Schaufenster zeigbar sein? (Der Schalter ist derzeit vorhanden.)
