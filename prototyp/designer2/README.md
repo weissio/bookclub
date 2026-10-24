@@ -1,4 +1,6 @@
-# Runde 2: acht Ideen in der Richtung von „Licht an“ (24.10.2026)
+# Runde 2: acht Ideen in der Richtung von „Licht an“ (24.10.2026) – ABGELEHNT
+
+Arjen: „katastrophal, 0/10, kindisch, KI-Stil, unübersichtlich, komplett weg von dem, was wir besprechen“. Ursache: Das Briefing hat die Designer zu „illustrierten Welten“ geschickt, statt „Licht an“ selbst weiterzuentwickeln.
 
 Vier unabhängige Designer haben je zwei Konzepte entworfen, jedes einmal mit 2 und einmal mit 4 Büchern am Lesen. Briefing: [BRIEF2.md](BRIEF2.md).
 
