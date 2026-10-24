@@ -4,7 +4,7 @@ _Zuletzt aktualisiert: 24.10.2026_
 
 ## Wo wir stehen
 
-**Phase:** Schritt 1 – Bibliothek. Startseite nach psychologischer Beratung neu gestaltet; Band- und Buchseiten folgen.
+**Phase:** Schritt 1 – Bibliothek. Gestaltungsrichtung gewählt: 3A „Licht an“.
 
 **Erledigt**
 - Grundkonzept geklärt: private Bibliothek → freiwilliges Schaufenster → Entdecken (siehe [ENTSCHEIDUNGEN.md](ENTSCHEIDUNGEN.md))
@@ -25,7 +25,7 @@ _Zuletzt aktualisiert: 24.10.2026_
 
 ## Nächster Schritt
 
-Arjen prüft die neue Startseite. Danach Band- und Buchseiten in dieselbe Welt holen (noch Listenoptik) und Patina der Bände (neu, gelesen, vielgelesen) gestalten.
+Arjen hat Entwurf 3A „Licht an“ gewählt ([prototyp/designer/](prototyp/designer/)). Designer 3 baut daraus den klickbaren Prototyp: Startseite mit 1 und mehreren Büchern, Tag und Abend, Band, Buchseite, Seite eintragen, Erfassen. Danach folgt eine unabhängige Prüfung.
 
 **Hinweis:** Der Push zu GitHub schlägt seit 24.10. mit 403 fehl. Die Commits liegen lokal; der GitHub-Zugang muss in den Einstellungen unter Konnektoren erneuert werden.
 
