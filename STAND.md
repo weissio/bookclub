@@ -1,6 +1,6 @@
 # Stand
 
-_Zuletzt aktualisiert: 10.10.2026_
+_Zuletzt aktualisiert: 24.10.2026_
 
 ## Wo wir stehen
 
@@ -20,7 +20,7 @@ _Zuletzt aktualisiert: 10.10.2026_
 
 ## Nächster Schritt
 
-Restliche Punkte im Parameter-Katalog ([PARAMETER.md](PARAMETER.md)) klären, vor allem Inhalt der Statistik-Kurzfassung unter dem Regal.
+Arjen empfindet den Prototyp als zu kleinteilig und überfüllt (Gefahr des Verklickens). Ein Design- und Usability-Experte soll hinzugezogen werden; Optionen in [RECHERCHE.md](RECHERCHE.md), Abschnitt G. Auswahl durch Arjen steht aus.
 
 ## Offene Fragen
 

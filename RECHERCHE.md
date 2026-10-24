@@ -44,3 +44,16 @@ Stand 10.10.2026. Abschnitt A stammt aus einem früheren Chat und wurde hier **n
 ## F. Design-Grundlage
 
 - Anthropic-Skill „frontend-design“: Gestaltung aus der Welt des Themas ableiten, typische KI-Muster vermeiden. – [anthropics/skills](https://raw.githubusercontent.com/anthropics/skills/main/skills/frontend-design/SKILL.md)
+
+## G. Design- und Usability-Experte (24.10.2026)
+
+Gesucht: ein „Experte“, der Design und Usability mitdenkt. Gefunden wurden keine Personen, sondern Pakete, die Expertenmethoden für Claude festschreiben.
+
+| Option | Was es ist | Für uns relevant |
+|---|---|---|
+| **Impeccable** (Paul Bakaus, Apache 2.0) | Open-Source-Design-Skill, baut auf Anthropics „frontend-design“ auf; 24 Befehle | `critique` mit Nielsens 10 Usability-Heuristiken, Cognitive-Load-Check und Personas; `distill`/`quieter` gegen Überfüllung; `shape` plant UX vor dem Bauen; eigene Regeln für iOS und Android (44-pt-Tippflächen, System-Navigation, Dynamic Type) – [README](https://github.com/pbakaus/impeccable) |
+| **Design-Plugin von Anthropic** (bereits aktiv) | design-critique, ux-copy, accessibility-review, user-research | Kritik, Texte, Barrierefreiheit |
+| **Mobile App Design (iOS)** von UXKIN (Community, nicht aktiviert) | Abgleich mit Apples Konventionen und 300+ echten iOS-Apps | Vergleich mit realen App-Abläufen; nur iOS |
+| UI UX Pro Max | Sammlung von Stilen, Paletten, Schriftpaaren, 99 UX-Richtlinien | eher Stilkatalog als Usability-Methode – [Doku](https://docsearch.algolia.com/mcp/docs/repo/nextlevelbuilder/ui-ux-pro-max-skill) |
+
+Übersicht weiterer Skills: [Composio: Top 10 Design Skills](https://composio.dev/blog/top-design-skills)

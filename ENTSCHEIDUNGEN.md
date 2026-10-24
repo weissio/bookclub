@@ -28,6 +28,8 @@ Getrennt nach Herkunft, damit klar ist, was feststeht und was nur vorgeschlagen 
 | 10.10.2026 | Genre-Liste mit 16 Einträgen bestätigt (siehe [PARAMETER.md](PARAMETER.md)). |
 | 10.10.2026 | Lieblingsautor wird manuell festgelegt. Berechnet wird stattdessen der meistgelesene Autor. |
 | 10.10.2026 | Statistiken: einige Zeilen kurze Zusammenfassung unter dem Regal, tiefere Statistiken in einem eigenen Band. Inhalt der Kurzfassung noch offen. Ersetzt den Grundsatz „keine Zähler auf der Startseite“. |
+| 24.10.2026 | Statistik-Band heißt „Statistiken“. Inhalte: meistgelesene Autoren, meistgelesene Genres, bestbewertete Autoren, bestbewertete Genres, bestbewertete Bücher (Top 3). Ob Kurzfassung oder Band: noch offen. |
+| 24.10.2026 | Aufbau (Am Lesen, Gelesen, Ungelesen …) und Hauptbereiche (Bibliothek, Schaufenster, Entdecken, Ich) passen. Das GUI ist zu kleinteilig und überfüllt, man kann sich leicht verklicken. Ein Design- und Usability-Experte soll hinzugezogen werden: optisch einfach, maximal benutzerfreundlich, Wärme eines Buchclubs, sympathische Elemente, einzigartig. |
 
 ## Vorschläge von Claude – noch nicht bestätigt
 
