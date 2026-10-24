@@ -116,3 +116,17 @@ _Entwurf vom 10.10.2026 – **teilweise bestätigt** (Genre-Liste, Lieblingsauto
 - Priorität 1 erscheint auf der Startseite als aufgeschlagenes Buch mit Seitenzahl.
 - Priorität 2 bis 5 erscheinen als kleine Balken mit Seitenzahl neben dem offenen Buch.
 - Ein neu angefangenes Buch kommt ans Ende der Reihenfolge, wenn bereits ein Buch offen ist. Nach vorn holt man es selbst (bestätigt 24.10.2026).
+
+## Lesezustände unter „Weitere Bände“ (24.10.2026, bestätigt)
+- **Aktiv:** alle Bücher, die gerade gelesen werden. Auf der Startseite haben nur 5 Platz (Priorität 1 bis 5). Weitere aktive Bücher stehen im Band „Aktiv“.
+  - Annahme von Claude, noch zu bestätigen: Der Band zeigt alle aktiven Bücher, die ersten 5 als „auf der Startseite“ markiert. Ein 6. Buch wird nicht blockiert, sondern kommt in „Aktiv“.
+- **Pausiert:** mit Begründung (optional), jederzeit wieder auf aktiv setzbar.
+- **Abgebrochen:** mit Begründung und mit Bewertung (ersetzt den früheren Vorschlag „abgebrochene Bücher bekommen keine Sterne“).
+
+## Passende Bücher finden (Algorithmus, später)
+Einfluss haben Begründung und Bewertung abgebrochener Bücher zusammen mit den Buchdaten (Autor, Genre usw.) und den gelesenen, bewerteten Büchern.
+
+Beispiel (Arjen): Wurden 5 Bücher von Autor XY abgebrochen und gibt es kein positiv bewertetes, gelesenes Buch von XY, passt der Leser eher nicht zu XY.
+
+Daraus folgt: Abbrüche und Pausen müssen mit Grund, Datum und Seite gespeichert werden, nicht nur als Status.
+

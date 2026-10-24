@@ -38,6 +38,7 @@ Getrennt nach Herkunft, damit klar ist, was feststeht und was nur vorgeschlagen 
 | 24.10.2026 | Runde 2 komplett abgelehnt (0/10): kindisch, KI-Stil, unübersichtlich. „Licht an“ war gut: sortiert und professionell dargestellt. Weiter auf Basis von „Licht an“ selbst. |
 | 24.10.2026 | Varianten von „Licht an“: wieder deutlich besser. Festgelegt für „Am Lesen“: höchstens 5 Titel, Reihenfolge priorisierbar. Priorität 1 erscheint als aufgeschlagenes Buch mit Seitenzahl. Die übrigen höchstens 4 stehen als kleinere Balken mit Seitenzahl neben dem offenen Buch, wie „Daneben“ in Variante 3, nur kleiner. |
 | 24.10.2026 | Ein neu angefangenes Buch kommt ans Ende von „Am Lesen“, wenn schon eins offen ist. Hochstufen macht man selbst. |
+| 24.10.2026 | Unter „Weitere Bände“: **Abgebrochen** mit Begründung und Bewertung, fließt mit Autor, Genre usw. in den Algorithmus für passende Bücher ein (5 abgebrochene Bücher von XY ohne positives gelesenes = passt eher nicht). **Pausiert** mit Begründung, wieder aktivierbar. **Aktiv** für mehr als 5 gleichzeitig gelesene Bücher, weil nur 5 auf die Startseite passen. |
 
 ## Vorschläge von Claude – noch nicht bestätigt
 
@@ -47,7 +48,7 @@ Getrennt nach Herkunft, damit klar ist, was feststeht und was nur vorgeschlagen 
 | 10.10.2026 | Exemplar statt Titel erfassen (Ausgabe, Farbschnitt, signiert, Zustand, Standort zu Hause) | offen |
 | 10.10.2026 | Bewertung trennt „Wie sehr hat es mich erreicht“ (Sterne, halbe Schritte) von beschreibenden Dimensionen: Lesefluss, Sprache, Tempo, Stärken/Schwächen, Nachhall, Wiederlesen | offen |
 | 10.10.2026 | Autor nicht direkt bewerten, sondern „Mehr von dieser Autorin lesen?“ plus automatische Zusammenfassung auf einer Autorenseite | offen |
-| 10.10.2026 | Abgebrochene Bücher bekommen keine Sterne, nur Seite und Grund | offen |
+| 10.10.2026 | Abgebrochene Bücher bekommen keine Sterne, nur Seite und Grund | verworfen 24.10.: Abgebrochen bekommt Begründung und Bewertung |
 | 10.10.2026 | Gemeinsame feste Genre-Liste zusätzlich zu freien eigenen Regalen (nötig für die Kategoriesuche) | offen |
 | 10.10.2026 | Umkreissuche über Ortsmittelpunkt oder PLZ mit gerundeten Entfernungen, damit sich kein Wohnort eingrenzen lässt | offen |
 | 10.10.2026 | Beliebtheitssignal „hat mich zum Buch gebracht“ statt Likes und Followerzahlen | offen |
