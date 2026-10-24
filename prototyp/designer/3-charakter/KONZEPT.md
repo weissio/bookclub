@@ -207,3 +207,4 @@ Arjens Entscheidung: Aktiv sind genau die bis zu 5 Bücher der Startseite. Einen
 - Mit weniger als 5 aktiven Büchern gibt es keine Frage: „Wieder am Lesen, an Platz 4.“
 - Die Kopfzeile des Sheets heißt „Doch nicht“, damit sie nicht mit „Abbrechen“ (Buch abbrechen) verwechselt wird.
 - **Prototyp-Schalter:** 1, 2, 3 oder 5 Bücher.
+- **Schaufenster (Arjen, 24.10.2026):** Das Schaufenster zeigt eigene Empfehlungen mit eigenen Worten. Bei gelesenen Büchern bleibt der Schalter, wie er ist; die Rückfrage beginnt mit „Hier steht deine Empfehlung mit deinen Worten.“ Bei abgebrochenen Büchern steht nur noch ein kleiner Schalter ganz unten mit dem Satz „Das Schaufenster ist für Empfehlungen gedacht. Zeigen ist trotzdem möglich.“ Er ist standardmäßig aus und fragt ebenfalls nach. Screens 17 bis 20.

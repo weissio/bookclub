@@ -358,6 +358,7 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </dl>
 </section>
 
+<sc-if value="{{book.showBigSwitch}}" hint-placeholder-val="{{ true }}">
 <section style="margin-top: 24px">
 <button type="button" role="switch" aria-checked="{{showcaseChecked}}" aria-label="Im Schaufenster zeigen" onClick="{{toggleShowcase}}" style="width: 100%; min-height: 60px; display: flex; align-items: center; gap: 12px; border: none; border-radius: 18px; background: var(--accBg); padding: 8px 14px; cursor: pointer; text-align: left; color: var(--ink)">
 <svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true" style="flex-shrink: 0"><path d="M3 9 L31 9 L31 27 L3 27 Z" style="fill: var(--field)"></path><path d="M1 3 L33 3 L31 9 L3 9 Z" fill="#F2B33D"></path><path d="M7 3 L5 9 M13 3 L12 9 M20 3 L21 9 M27 3 L29 9" stroke="#FFF3DA" stroke-width="2"></path><rect x="8" y="14" width="6" height="13" rx="1" fill="#C8607A"></rect><rect x="15" y="12" width="6" height="15" rx="1" fill="#4C69B8"></rect><rect x="22" y="15" width="5" height="12" rx="1" fill="#4F8A6A"></rect></svg>
@@ -365,6 +366,13 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <span style="{{switchTrack}}"><span style="{{switchKnob}}"></span></span>
 </button>
 </section>
+</sc-if>
+<sc-if value="{{book.isDropped}}" hint-placeholder-val="{{ false }}">
+<div style="margin-top: 28px; padding-top: 12px; border-top: 1px solid var(--line); display: flex; align-items: center; gap: 12px">
+<p style="flex: 1; margin: 0; font-size: 13px; line-height: 18px; font-weight: 600; color: var(--mute)">Das Schaufenster ist für Empfehlungen gedacht. Zeigen ist trotzdem möglich.</p>
+<button type="button" role="switch" aria-checked="{{showcaseChecked}}" aria-label="Im Schaufenster zeigen" onClick="{{toggleShowcase}}" style="flex-shrink: 0; width: 60px; height: 44px; border: none; background: none; padding: 0; cursor: pointer; display: flex; align-items: center; justify-content: flex-end"><span style="{{switchTrack}}"><span style="{{switchKnob}}"></span></span></button>
+</div>
+</sc-if>
 <p style="margin: 18px 0 0 0; font-size: 12px; font-weight: 700; color: var(--mute)">Beispieldaten</p>
 </div>
 </div>
@@ -483,7 +491,7 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <div style="padding: 0 20px; display: flex; flex-direction: column; align-items: center; text-align: center">
 <svg width="120" height="82" viewBox="0 0 120 100" aria-hidden="true"><ellipse cx="60" cy="94" rx="48" ry="5" style="fill: var(--shadow)" opacity=".5"></ellipse><path d="M14 34 L106 34 L106 90 L14 90 Z" style="fill: var(--field)"></path><path d="M8 18 L112 18 L106 34 L14 34 Z" fill="#F2B33D"></path><path d="M24 18 L20 34 M42 18 L40 34 M60 18 L60 34 M78 18 L80 34 M96 18 L100 34" stroke="#FFF3DA" stroke-width="4"></path><rect x="50" y="46" width="20" height="44" rx="3" fill="{{book.cover}}"></rect></svg>
 <p style="margin: 10px 0 0 0; font-size: 19px; line-height: 25px; font-weight: 900">„{{book.title}}“ ins Schaufenster stellen?</p>
-<p style="margin: 8px 0 0 0; font-size: 15px; line-height: 21px; font-weight: 600; color: var(--mute)">Andere sehen unter deinem Pseudonym „Leselampe“ (Beispiel): deine Lesart, deine Lichter und das Zitat. Exemplar, Standort und Leseverlauf bleiben privat. Du kannst es jederzeit wieder herausnehmen.</p>
+<p style="margin: 8px 0 0 0; font-size: 15px; line-height: 21px; font-weight: 600; color: var(--mute)">{{showcaseConfirm}}</p>
 <button type="button" onClick="{{confirmShowcase}}" style="margin-top: 16px; width: 100%; height: 54px; border-radius: 27px; border: none; background: var(--acc); color: var(--accInk); cursor: pointer; font-size: 17px; font-weight: 900">Ja, ausstellen</button>
 <button type="button" onClick="{{closeSheet}}" style="margin-top: 6px; width: 100%; height: 48px; border: none; background: none; cursor: pointer; font-size: 16px; font-weight: 800; color: var(--mute)">Lieber privat lassen</button>
 </div>
@@ -786,6 +794,7 @@ class Component extends DCLogic {
     var book = { title: b.title, author: b.author, cover: b.cover, coverDark: dark(b.cover), ribbon: b.ribbon || '#F2B33D',
       status: b.vol === 'gelesen' ? 'Gelesen im ' + b.when : (b.vol === 'aktiv' ? 'Am Lesen · Platz ' + (rank + 1) + ' von ' + act.length : (b.vol === 'pausiert' ? 'Pausiert bei Seite ' + s.pages[b.id] : (b.vol === 'abgebrochen' ? 'Abgebrochen bei Seite ' + s.pages[b.id] : b.when))),
       canStart: b.vol === 'ungelesen' && !s.started[b.id],
+      showBigSwitch: b.vol !== 'abgebrochen',
       isActive: b.vol === 'aktiv', isPaused: b.vol === 'pausiert', isDropped: b.vol === 'abgebrochen',
       pausedWhy: pz ? (pz.reasons.length ? pz.reasons.join(', ') : 'Ohne Grund pausiert.') + (pz.note ? ' „' + pz.note + '“' : '') : '',
       dropReasons: dz ? dz.reasons.map(function (r) { return { label: r }; }) : [], dropHasReasons: !!(dz && dz.reasons.length),
@@ -911,6 +920,7 @@ class Component extends DCLogic {
       confirmDrop: function () { var id = s.book; self.setState({ active: act.filter(function (x) { return x !== id; }), paused: s.paused.filter(function (x) { return x.id !== id; }), dropped: s.dropped.concat([{ id: id, reasons: s.reasons.slice(), lights: s.dropLights, again: s.again, note: s.note, when: 'Oktober 2026' }]), sheet: null, saved: 'Abgebrochen. Ohne Groll.' }); },
       dropSaveLabel: 'Bei Seite ' + (s.pages[s.book] || 0) + ' abbrechen',
       showcaseChecked: on ? 'true' : 'false',
+      showcaseConfirm: b.vol === 'abgebrochen' ? 'Das Schaufenster ist für Empfehlungen gedacht. Andere sähen unter deinem Pseudonym „Leselampe“ (Beispiel), dass du es abgebrochen hast, mit Grund und Lichtern. Exemplar und Verlauf bleiben privat. Du kannst es jederzeit wieder herausnehmen.' : 'Hier steht deine Empfehlung mit deinen Worten. Andere sehen unter deinem Pseudonym „Leselampe“ (Beispiel): deine Lesart, deine Lichter und das Zitat. Exemplar, Standort und Leseverlauf bleiben privat. Du kannst es jederzeit wieder herausnehmen.',
       showcaseHint: on ? 'Steht im Fenster. Sichtbar: Lesart, Lichter, Zitat.' : 'Aus. Nichts davon ist öffentlich.',
       switchTrack: 'flex-shrink: 0; position: relative; width: 51px; height: 31px; border-radius: 16px; box-sizing: border-box; background: ' + (on ? 'var(--acc)' : 'var(--field)') + '; border: 1.5px solid ' + (on ? 'var(--acc)' : 'var(--line)'),
       switchKnob: 'position: absolute; top: 1.5px; left: ' + (on ? '21.5px' : '1.5px') + '; width: 25px; height: 25px; border-radius: 13px; background: ' + (on ? 'var(--accInk)' : 'var(--mute)'),
