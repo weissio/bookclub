@@ -9,12 +9,12 @@ Kennzeichnung: **[F]** Forschung, **[P]** Praxis. Die Ziffern verweisen auf die 
 | Nr | Frage | Wortlaut | Antworten (Form) | Kodierung | Signal für die Empfehlung | Beleg |
 |---|---|---|---|---|---|---|
 | F1 | Gefallen | „Wie hat dir das Buch gefallen?“ | 5 Lichter, alle beschriftet: gar nicht · eher nicht · okay · gut · sehr gut; leer möglich | (L − 3) / 2 ergibt −1, −0,5, 0, +0,5, +1; leer = `null` | Richtung und Stärke für das ganze Buch; Zielgröße 4–5 Lichter | vorgegeben; alle Stufen beschriftet [1][2] [F]; 5 Stufen [2] [F], [7] [P]; Mittelkategorie [1][2] [F] |
-| F2 | Autor | „Mehr von dieser Person?“ | 2 gleichrangige Knöpfe: Ja · Nein; leer | +1 / −1 / `null`, je Person und Werk | direktes Autorensignal, stärker als der Übertrag aus F1 | vorgegeben; Daumen statt Sterne [13] [P]; zwei Optionen gleich reliabel und schneller [5] [F] |
-| F3 | Aspekte | „Was davon hat dir gefallen, was nicht?“ Zeilen bei Romanen: Sprache · Figuren · Handlung · Atmosphäre · Thema. Bei Sachbüchern: Verständlichkeit · Tiefe · Thema | je Zeile 2 Knöpfe: gefiel mir · gefiel mir nicht; leer = keine Aussage | +1 / −1 / `null` je (Werk, Dimension) | Gewicht der Vergleichsdimension für diese Person; Ankerbuch für Ähnlichkeit; Negatives nur am Buch und an belegten Merkmalen | Dimensionen [23][24] [P], [25][27][28] [F]; zwei Optionen [5] [F]; Bindung an Merkmale: CLUSTERUNG, Abschnitt 3 |
-| F4 | Abbruch (nur bei Abbruch) | „Warum hast du aufgehört?“ | die 10 bestätigten Gründe als Mehrfachauswahl, dazu Freitext | Zuordnung wie in der Vorlage, Abschnitt 2. „Stil/Sprache“, „Figuren“ und „Thema“ sind dieselbe Beobachtung wie in F3 „gefiel mir nicht“ und erscheinen dort sichtbar mitgesetzt | negatives Signal je Merkmal | bestätigt; häufige Abbruchgründe [33] [P] |
-| F5 | Tempo für mich (Genauer beschreiben) | „Wie war das Tempo für dich?“ | 3 Stufen: zu langsam · passend · zu schnell; leer | −1 / 0 / +1, bezogen auf das Buchtempo aus dem Katalog. Fehlt das Buchtempo, wird die Antwort gespeichert und wirkt erst, wenn es vorliegt | Schätzung des bevorzugten Tempos | Just-about-right-Skala [29] [F]; „slow/boring“ als häufiger Abbruchgrund [33] [P] |
+| F2 | Autor | „Mehr von dieser Person?“ | 3 gleichrangige Knöpfe: Ja · Nein · weiß nicht; leer | +1 / −1 / `unsicher` / `null`, je Person und Werk (`unsicher` ≠ leer) | direktes Autorensignal, stärker als der Übertrag aus F1 | vorgegeben; Daumen statt Sterne [13] [P]; zwei Optionen gleich reliabel und schneller [5] [F] |
+| F3 | Aspekte | „Was davon hat dir gefallen, was nicht?“ Zeilen bei Romanen: Sprache · Figuren · Handlung · Atmosphäre · Thema. Bei Sachbüchern: Verständlichkeit · Tiefe · Thema | je Zeile 3 Knöpfe: gefiel mir · gemischt · gefiel mir nicht; leer = keine Aussage | +1 / `gemischt` / −1 / `null` je (Werk, Dimension); `gemischt` ist kein 0-Mittelwert, sondern ein eigener Zustand | Gewicht der Vergleichsdimension für diese Person; Ankerbuch für Ähnlichkeit; Negatives nur am Buch und an belegten Merkmalen | Dimensionen [23][24] [P], [25][27][28] [F]; zwei Optionen [5] [F]; Bindung an Merkmale: CLUSTERUNG, Abschnitt 3 |
+| F4 | Abbruch (nur bei Abbruch) | „Warum hast du aufgehört?“ | die 10 bestätigten Gründe als Mehrfachauswahl, dazu Freitext | Zuordnung wie in der Vorlage, Abschnitt 2. „Stil/Sprache“, „Figuren“ und „Thema“ sind dieselbe Beobachtung wie in F3 „gefiel mir nicht“ und erscheinen dort sichtbar mitgesetzt | Signal je Merkmal, aber nicht jeder Grund ist ein Geschmackssignal („keine Zeit“ gehört zur Pause, „Erwartung nicht erfüllt“ benennt kein Merkmal). In F3 mitgesetzte Antworten sind sichtbar, korrigierbar und werden je Werk und Merkmal nur einmal gezählt | bestätigt; häufige Abbruchgründe [33] [P] |
+| F5 | Tempo für mich (Genauer beschreiben) | „Wie war das Tempo für dich?“ | 3 Stufen: zu langsam · passend · zu schnell; leer | Richtungswert `zu_langsam` / `passend` / `zu_schnell` (keine Wertung; „zu schnell“ ist nicht positiv), bezogen auf das Buchtempo aus dem Katalog. Fehlt das Buchtempo, wird die Antwort gespeichert und wirkt erst, wenn es vorliegt | Schätzung des bevorzugten Tempos | Just-about-right-Skala [29] [F]; „slow/boring“ als häufiger Abbruchgrund [33] [P] |
 | F6 | Künftig weniger (Genauer beschreiben; bei ≤ 2 Lichtern und Abbruch hervorgehoben) | „Künftig weniger davon?“ mit Chips für die bekannten Merkmale dieses Buchs | je Chip: seltener · nicht empfehlen | `{action, dimension, value_id, source_work_id, scope, explicit}` | „seltener“ senkt die Priorität, „nicht empfehlen“ ist ein harter Filter. Fehlt der Wert beim Kandidaten, gilt dieser nicht als passend | vorgegeben; Daumen runter heißt „nicht mehr vorschlagen“ [13] [P] |
-| F7 | Passung (nur bei App-Empfehlung) | „Hat die Empfehlung gepasst?“ | 3: Ja · Teilweise · Nein | +1 / 0 / −1 auf die angezeigten Gründe (Variante C) | korrigiert die Annahme der App | Vorlage, Abschnitt 4; Korrigierbarkeit als Ziel von Erklärungen [34] [F] |
+| F7 | Passung (nur bei App-Empfehlung) | „Hat die Empfehlung gepasst?“ | 3: Ja · Teilweise · Nein | Rückmeldung zur Empfehlung als Ganzes. Eine gezielte Korrektur einer Annahme braucht eine konkrete Angabe (F3, F4, F5), auch bei verwendeten, nicht angezeigten Merkmalen | korrigiert die Annahme der App | Vorlage, Abschnitt 4; Korrigierbarkeit als Ziel von Erklärungen [34] [F] |
 
 Daneben steht der Freitext „Deine Lesart“. Er wird nicht kodiert.
 
@@ -68,9 +68,18 @@ Dass Teilbewertungen die Vorhersage verbessern, ist nur für andere Bereiche bel
 - F3 nutzt dasselbe Verb wie F1, misst also ein Konstrukt (Entscheidung). „Störte mich“ erfragte eher Ärger als Missfallen (Einschätzung, nicht belegt).
 - Ja/Nein-Fragen fördern Akquieszenz; Krosnick & Presser raten davon ab [1] [F]. F2 ist vorgegeben, daher zwei gleich große Knöpfe ohne Vorauswahl (Wirkung nicht belegt).
 
-### 2.6 Kein „weiß nicht“, kein „neutral“
+### 2.6 Antwortzustände sind nicht austauschbar (korrigiert nach Zweitprüfung)
 
-„Weiß nicht“-Filter verbessern die Messung nicht [1] [F]; bei sicher vorhandener Meinung kann die Option entfallen [2] [F]. Leer ist `null`, nicht neutral (Vorlage, Abschnitt 1).
+Die erste Fassung hat „weiß nicht“ und „neutral“ pauschal ausgeschlossen. Das war falsch begründet. Ein „Weiß-nicht“-Filter ist etwas anderes als eine Mittelkategorie. Krosnick & Presser berichten auch Vorteile angebotener Mittelkategorien, und Wang & Krosnick fanden bei bestimmten Fragetypen schlechtere Daten durch eine erzwungene Seitenwahl [F].
+
+| Zustand | Bedeutung | im Bogen |
+|---|---|---|
+| leer | keine Angabe, Ursache unbekannt | überall möglich, `null` |
+| gemischt | positive und negative Eindrücke zugleich | F3 als eigener Knopf |
+| weiß nicht | keine sichere Einschätzung | F2 als eigener Knopf |
+| neutral | ausdrücklich weder positiv noch negativ | bei F1 als „okay“ |
+
+Ob zwei oder drei Knöpfe je Aspekt bessere Empfehlungen ergeben, ist **nicht belegt**. Der Prototyp verwendet drei, die Variante mit zwei Knöpfen wird im Lesertest dagegen geprüft. Am Ende entscheidet die Frage, ob F1 plus Aspekte zu besser bewerteten Empfehlungen führt als F1 allein, und nicht die Zahl der ausgefüllten Felder.
 
 ### 2.7 Aufwand, Satisficing, Ermüdung
 
