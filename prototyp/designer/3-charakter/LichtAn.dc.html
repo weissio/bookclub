@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>Licht an</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800;900&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#222746}
+.abend{--bg:#222746;--bg2:#1A1E39;--line:#353B69;--ink:#EEF0FA;--mute:#A9AED0;--acc:#FFD98A;--accBg:rgba(255,217,138,.10);--accLine:rgba(255,217,138,.55);--accInk:#2A2440;--sheet:#2B3058;--field:#363C6B;--key:#3A4072;--shadow:#12152B;--tabMute:#9196BC;--dim:rgba(10,12,28,.55);--paket:rgba(255,217,138,.08);--bulb:#FFD98A}
+.tag{--bg:#E7ECF6;--bg2:#F4F6FB;--line:#CBD3E5;--ink:#232846;--mute:#565C84;--acc:#2F3C9E;--accBg:rgba(47,60,158,.07);--accLine:rgba(47,60,158,.45);--accInk:#FFFFFF;--sheet:#F7F9FD;--field:#E4E9F4;--key:#E4E9F4;--shadow:#A8B1CF;--tabMute:#5F6590;--dim:rgba(35,40,70,.35);--paket:rgba(242,179,61,.16);--bulb:#E8A92E}
+button{font-family:'Nunito',system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+input{font-family:'Nunito',system-ui,sans-serif}
+button:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+input::placeholder{color:var(--mute);opacity:1}
+input[type=search]::-webkit-search-cancel-button{display:none}
+.scr{animation:fadeIn .15s ease-out both}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.sheet{animation:sheetUp .2s cubic-bezier(.2,.8,.2,1) both}
+@keyframes sheetUp{from{transform:translateY(32px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion: reduce){.scr,.sheet{animation:none}}
+</style>
+</helmet>
+<div class="{{themeClass}}" style="width: 390px; height: 844px; position: relative; overflow: hidden; background: var(--bg); color: var(--ink); font-family: 'Nunito', system-ui, sans-serif; -webkit-font-smoothing: antialiased">
+
+<!-- Statusleiste -->
+<div aria-hidden="true" style="position: absolute; top: 0; left: 0; right: 0; height: 54px; display: flex; align-items: center; justify-content: space-between; padding: 0 30px 0 34px; box-sizing: border-box; font-weight: 700; font-size: 16px; z-index: 30; pointer-events: none">
+<span>{{clock}}</span>
+<span style="display: flex; gap: 6px; align-items: center"><svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" style="fill: var(--ink)"></rect><rect x="5" y="5" width="3" height="7" rx="1" style="fill: var(--ink)"></rect><rect x="10" y="2.5" width="3" height="9.5" rx="1" style="fill: var(--ink)"></rect><rect x="15" y="0" width="3" height="12" rx="1" style="fill: var(--ink)"></rect></svg><svg width="26" height="12" viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3.5" fill="none" style="stroke: var(--ink)" opacity=".5"></rect><rect x="2" y="2" width="15" height="8" rx="2" style="fill: var(--ink)"></rect></svg></span>
+</div>
+
+<!-- ================= STARTSEITE ================= -->
+<sc-if value="{{isHome}}" hint-placeholder-val="{{ true }}">
+<div class="scr" style="position: absolute; inset: 0 0 83px 0">
+
+<sc-if value="{{isAbend}}" hint-placeholder-val="{{ true }}">
+<svg width="390" height="761" viewBox="0 0 390 761" aria-hidden="true" style="position: absolute; top: 0; left: 0">
+<defs>
+<radialGradient id="kegel" cx="300" cy="118" r="440" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#FFD98A" stop-opacity=".30"></stop><stop offset=".55" stop-color="#FFD98A" stop-opacity=".10"></stop><stop offset="1" stop-color="#FFD98A" stop-opacity="0"></stop></radialGradient>
+<radialGradient id="pfuetze" cx="195" cy="290" r="200" gradientUnits="userSpaceOnUse" gradientTransform="translate(0 160) scale(1 .45)"><stop offset="0" stop-color="#FFE3A6" stop-opacity=".22"></stop><stop offset="1" stop-color="#FFE3A6" stop-opacity="0"></stop></radialGradient>
+</defs>
+<path d="M268 110 L328 110 L470 600 L-80 600 Z" fill="url(#kegel)"></path>
+<ellipse cx="195" cy="290" rx="210" ry="120" fill="url(#pfuetze)"></ellipse>
+</svg>
+</sc-if>
+<sc-if value="{{isTag}}" hint-placeholder-val="{{ false }}">
+<svg width="390" height="761" viewBox="0 0 390 761" aria-hidden="true" style="position: absolute; top: 0; left: 0">
+<defs><linearGradient id="sonne" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF" stop-opacity=".75"></stop><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"></stop></linearGradient></defs>
+<path d="M-20 70 L60 40 L300 420 L150 430 Z" fill="url(#sonne)"></path>
+<path d="M80 34 L130 16 L390 400 L330 420 Z" fill="url(#sonne)" opacity=".8"></path>
+</svg>
+</sc-if>
+
+<!-- Lampe -->
+<svg width="80" height="90" viewBox="260 54 80 90" aria-hidden="true" style="position: absolute; left: 260px; top: 54px">
+<defs><linearGradient id="schirm" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFCF62"></stop><stop offset="1" stop-color="#D9921E"></stop></linearGradient></defs>
+<path d="M300 54 L300 76" style="stroke: var(--mute)" stroke-width="2"></path>
+<g transform="rotate(-8 300 96)">
+<path d="M278 108 C278 84 288 76 300 76 C312 76 322 84 322 108 Z" fill="url(#schirm)"></path>
+<path d="M286 92 C288 84 293 80 299 79" stroke="#FFF0C4" stroke-width="3" stroke-linecap="round" fill="none" opacity=".8"></path>
+<ellipse cx="300" cy="108" rx="22" ry="5" fill="#B87412"></ellipse>
+<ellipse cx="300" cy="109" rx="10" ry="4" style="{{bulbStyle}}"></ellipse>
+<path d="M314 108 L314 126" style="stroke: var(--mute)" stroke-width="1.4" stroke-dasharray="2 2"></path>
+<circle cx="314" cy="130" r="4.5" style="fill: var(--mute)"></circle>
+</g>
+</svg>
+<button type="button" aria-label="{{chainLabel}}" onClick="{{toggleMode}}" style="position: absolute; left: 288px; top: 106px; width: 44px; height: 48px; border: none; background: none; cursor: pointer; z-index: 3"></button>
+
+<!-- Kopf -->
+<div style="position: absolute; top: 64px; left: 22px; width: 256px">
+<div style="font-size: 13px; font-weight: 700; color: var(--mute); letter-spacing: .02em">Bibliothek</div>
+<h1 style="margin: 6px 0 0 0; font-size: 22px; line-height: 26px; font-weight: 900; letter-spacing: -.01em">{{headLine}}</h1>
+<p role="status" aria-live="polite" style="{{subStyle}}">{{subLine}}</p>
+</div>
+
+<!-- Am Lesen: 1 Buch -->
+<sc-if value="{{layout1}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; top: 158px; left: 0; right: 0; display: flex; flex-direction: column; align-items: center">
+<sc-for list="{{openBooks}}" as="b" hint-placeholder-count="1">
+<button type="button" aria-label="{{b.aria}}" onClick="{{b.openPage}}" style="position: relative; border: none; background: none; padding: 0; cursor: pointer; display: block">
+<span aria-hidden="true" style="{{b.numStyle}}"><span style="font-size: 0.37em; font-weight: 700; color: #8A7E9E; line-height: 1">Seite</span>{{b.page}}</span>
+<svg width="212" height="165" viewBox="0 0 170 132" aria-hidden="true">
+<ellipse cx="85" cy="122" rx="78" ry="7" style="fill: var(--shadow)" opacity=".45"></ellipse>
+<path d="M4 18 Q44 8 85 16 Q126 8 166 18 L166 116 Q126 106 85 114 Q44 106 4 116 Z" fill="{{b.cover}}"></path>
+<path d="M9 14 Q46 4 85 13 L85 110 Q46 101 9 111 Z" fill="#FFF3DA"></path>
+<path d="M161 14 Q124 4 85 13 L85 110 Q124 101 161 111 Z" fill="#FFF8EA"></path>
+<path d="M70 12 Q78 12 85 13 L85 110 Q78 108 70 108 Z" fill="#E9D7B4" opacity=".7"></path>
+<path d="M85 13 Q92 12 100 12 L100 108 Q92 108 85 110 Z" fill="#F1E3C6" opacity=".6"></path>
+<g fill="#2A2440" opacity=".13"><rect x="18" y="26" width="50" height="3" rx="1.5"></rect><rect x="18" y="34" width="54" height="3" rx="1.5"></rect><rect x="18" y="42" width="46" height="3" rx="1.5"></rect><rect x="18" y="50" width="53" height="3" rx="1.5"></rect><rect x="18" y="58" width="40" height="3" rx="1.5"></rect><rect x="18" y="66" width="52" height="3" rx="1.5"></rect><rect x="18" y="74" width="49" height="3" rx="1.5"></rect><rect x="100" y="26" width="50" height="3" rx="1.5"></rect><rect x="100" y="34" width="44" height="3" rx="1.5"></rect><rect x="100" y="42" width="52" height="3" rx="1.5"></rect></g>
+<path d="M82 108 L82 130 L86 126 L90 130 L90 108 Z" fill="{{b.ribbon}}"></path>
+</svg>
+</button>
+<div style="margin-top: 6px; font-size: 17px; font-weight: 800; text-align: center">{{b.title}}</div>
+<div style="font-size: 14px; font-weight: 600; color: var(--mute)">{{b.author}}</div>
+<button type="button" onClick="{{b.openPage}}" style="{{b.btnStyle}}"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M2 1h10v14l-5-4-5 4z" fill="none" style="stroke: var(--acc)" stroke-width="2" stroke-linejoin="round"></path></svg>Seite eintragen</button>
+</sc-for>
+</div>
+</sc-if>
+
+<!-- Am Lesen: 2 Bücher -->
+<sc-if value="{{layout2}}" hint-placeholder-val="{{ true }}">
+<div style="position: absolute; top: 166px; left: 0; right: 0; display: flex; justify-content: center; gap: 14px">
+<sc-for list="{{openBooks}}" as="b" hint-placeholder-count="2">
+<div style="width: 170px; display: flex; flex-direction: column; align-items: center">
+<button type="button" aria-label="{{b.aria}}" onClick="{{b.openPage}}" style="position: relative; border: none; background: none; padding: 0; cursor: pointer; display: block">
+<span aria-hidden="true" style="{{b.numStyle}}"><span style="font-size: 0.37em; font-weight: 700; color: #8A7E9E; line-height: 1">Seite</span>{{b.page}}</span>
+<svg width="170" height="132" viewBox="0 0 170 132" aria-hidden="true">
+<ellipse cx="85" cy="122" rx="78" ry="7" style="fill: var(--shadow)" opacity=".45"></ellipse>
+<path d="M4 18 Q44 8 85 16 Q126 8 166 18 L166 116 Q126 106 85 114 Q44 106 4 116 Z" fill="{{b.cover}}"></path>
+<path d="M9 14 Q46 4 85 13 L85 110 Q46 101 9 111 Z" fill="#FFF3DA"></path>
+<path d="M161 14 Q124 4 85 13 L85 110 Q124 101 161 111 Z" fill="#FFF8EA"></path>
+<path d="M70 12 Q78 12 85 13 L85 110 Q78 108 70 108 Z" fill="#E9D7B4" opacity=".7"></path>
+<path d="M85 13 Q92 12 100 12 L100 108 Q92 108 85 110 Z" fill="#F1E3C6" opacity=".6"></path>
+<g fill="#2A2440" opacity=".13"><rect x="18" y="26" width="50" height="3" rx="1.5"></rect><rect x="18" y="34" width="54" height="3" rx="1.5"></rect><rect x="18" y="42" width="46" height="3" rx="1.5"></rect><rect x="18" y="50" width="53" height="3" rx="1.5"></rect><rect x="18" y="58" width="40" height="3" rx="1.5"></rect><rect x="18" y="66" width="52" height="3" rx="1.5"></rect><rect x="100" y="26" width="50" height="3" rx="1.5"></rect><rect x="100" y="34" width="44" height="3" rx="1.5"></rect><rect x="100" y="42" width="52" height="3" rx="1.5"></rect></g>
+<path d="M82 108 L82 130 L86 126 L90 130 L90 108 Z" fill="{{b.ribbon}}"></path>
+</svg>
+</button>
+<div style="margin-top: 6px; font-size: 15px; font-weight: 800; text-align: center; line-height: 19px">{{b.title}}</div>
+<div style="font-size: 13px; font-weight: 600; color: var(--mute)">{{b.author}}</div>
+<button type="button" onClick="{{b.openPage}}" style="{{b.btnStyle}}"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M2 1h10v14l-5-4-5 4z" fill="none" style="stroke: var(--acc)" stroke-width="2" stroke-linejoin="round"></path></svg>Seite eintragen</button>
+</div>
+</sc-for>
+</div>
+</sc-if>
+
+<!-- Am Lesen: 3 bis 5 Bücher -->
+<sc-if value="{{layoutStack}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; top: 166px; left: 14px; width: 172px; display: flex; flex-direction: column; align-items: center">
+<sc-for list="{{openBooks}}" as="b" hint-placeholder-count="1">
+<button type="button" aria-label="{{b.aria}}" onClick="{{b.openPage}}" style="position: relative; border: none; background: none; padding: 0; cursor: pointer; display: block">
+<span aria-hidden="true" style="{{b.numStyle}}"><span style="font-size: 0.37em; font-weight: 700; color: #8A7E9E; line-height: 1">Seite</span>{{b.page}}</span>
+<svg width="170" height="132" viewBox="0 0 170 132" aria-hidden="true">
+<ellipse cx="85" cy="122" rx="78" ry="7" style="fill: var(--shadow)" opacity=".45"></ellipse>
+<path d="M4 18 Q44 8 85 16 Q126 8 166 18 L166 116 Q126 106 85 114 Q44 106 4 116 Z" fill="{{b.cover}}"></path>
+<path d="M9 14 Q46 4 85 13 L85 110 Q46 101 9 111 Z" fill="#FFF3DA"></path>
+<path d="M161 14 Q124 4 85 13 L85 110 Q124 101 161 111 Z" fill="#FFF8EA"></path>
+<path d="M70 12 Q78 12 85 13 L85 110 Q78 108 70 108 Z" fill="#E9D7B4" opacity=".7"></path>
+<path d="M85 13 Q92 12 100 12 L100 108 Q92 108 85 110 Z" fill="#F1E3C6" opacity=".6"></path>
+<g fill="#2A2440" opacity=".13"><rect x="18" y="26" width="50" height="3" rx="1.5"></rect><rect x="18" y="34" width="54" height="3" rx="1.5"></rect><rect x="18" y="42" width="46" height="3" rx="1.5"></rect><rect x="18" y="50" width="53" height="3" rx="1.5"></rect><rect x="18" y="58" width="40" height="3" rx="1.5"></rect><rect x="100" y="26" width="50" height="3" rx="1.5"></rect><rect x="100" y="34" width="44" height="3" rx="1.5"></rect><rect x="100" y="42" width="52" height="3" rx="1.5"></rect></g>
+<path d="M82 108 L82 130 L86 126 L90 130 L90 108 Z" fill="{{b.ribbon}}"></path>
+</svg>
+</button>
+<div style="margin-top: 6px; font-size: 15px; font-weight: 800; text-align: center; line-height: 19px">{{b.title}}</div>
+<div style="font-size: 13px; font-weight: 600; color: var(--mute)">{{b.author}}</div>
+<button type="button" onClick="{{b.openPage}}" style="{{b.btnStyle}}"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M2 1h10v14l-5-4-5 4z" fill="none" style="stroke: var(--acc)" stroke-width="2" stroke-linejoin="round"></path></svg>Seite eintragen</button>
+</sc-for>
+</div>
+<div style="position: absolute; top: 172px; left: 198px; width: 178px">
+<div style="font-size: 12px; font-weight: 700; color: var(--mute); margin: 0 0 6px 4px">Daneben liegen</div>
+<div role="list" style="display: flex; flex-direction: column; gap: 6px">
+<sc-for list="{{stackBooks}}" as="k" hint-placeholder-count="3">
+<div role="listitem" style="{{k.wrap}}">
+<button type="button" aria-label="{{k.aria}}" onClick="{{k.pick}}" style="{{k.style}}">
+<span style="position: absolute; right: 0; top: 4px; bottom: 4px; width: 7px; border-radius: 0 3px 3px 0; background: repeating-linear-gradient(#FFF6E2 0 2px, #E9D9B8 2px 3px)"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; text-align: left">
+<span style="font-size: 13.5px; font-weight: 800; color: #FFFFFF; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{k.title}}</span>
+<span style="font-size: 12px; font-weight: 700; color: rgba(255,255,255,.82)">{{k.page}}</span>
+</span>
+</button>
+</div>
+</sc-for>
+</div>
+<div style="font-size: 12px; font-weight: 600; color: var(--mute); margin: 8px 0 0 4px; line-height: 16px">Antippen legt es ins Licht.</div>
+</div>
+</sc-if>
+
+<!-- Im Regal -->
+<div style="position: absolute; top: 446px; left: 16px; right: 16px">
+<div style="display: flex; justify-content: space-between; align-items: baseline; padding: 0 6px 4px 6px">
+<h2 style="margin: 0; font-size: 16px; font-weight: 900">Im Regal</h2>
+<span style="font-size: 13px; font-weight: 600; color: var(--mute)">{{totalLabel}}</span>
+</div>
+<div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px 2px">
+
+<button type="button" aria-label="{{vols.gelesen.aria}}" onClick="{{vols.gelesen.open}}" style="height: 108px; border: none; background: none; border-radius: 18px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 0 8px 0; color: var(--ink)">
+<svg width="60" height="54" viewBox="0 0 60 54" aria-hidden="true" style="margin-bottom: 4px"><ellipse cx="30" cy="50" rx="25" ry="3.5" style="fill: var(--shadow)" opacity=".5"></ellipse><rect x="8" y="36" width="44" height="12" rx="3.5" fill="#4F8A6A"></rect><rect x="8" y="36" width="44" height="4" rx="2" fill="#6FAE8A"></rect><rect x="48" y="38" width="3" height="9" rx="1" fill="#F4E9CF"></rect><rect x="11" y="24" width="38" height="12" rx="3.5" fill="#C8607A"></rect><rect x="11" y="24" width="38" height="4" rx="2" fill="#E3849C"></rect><rect x="45" y="26" width="3" height="9" rx="1" fill="#F4E9CF"></rect><rect x="6" y="12" width="42" height="12" rx="3.5" fill="#4C69B8"></rect><rect x="6" y="12" width="42" height="4" rx="2" fill="#7090DB"></rect><rect x="44" y="14" width="3" height="9" rx="1" fill="#F4E9CF"></rect><path d="M22 12 L22 4 L25 7 L28 4 L28 12" fill="#F2B33D"></path></svg>
+<span style="font-size: 13.5px; font-weight: 800; line-height: 16px">Gelesen</span><span style="font-size: 12px; font-weight: 600; color: var(--mute); line-height: 16px; white-space: nowrap">{{vols.gelesen.line}}</span>
+</button>
+
+<button type="button" aria-label="{{vols.ungelesen.aria}}" onClick="{{vols.ungelesen.open}}" style="height: 108px; border: none; background: none; border-radius: 18px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 0 8px 0; color: var(--ink)">
+<svg width="60" height="54" viewBox="0 0 60 54" aria-hidden="true" style="margin-bottom: 4px"><ellipse cx="30" cy="50" rx="24" ry="3.5" style="fill: var(--shadow)" opacity=".5"></ellipse><rect x="12" y="10" width="11" height="38" rx="3" fill="#D7A13A"></rect><rect x="12" y="10" width="4" height="38" rx="2" fill="#F0C060"></rect><rect x="24" y="16" width="10" height="32" rx="3" fill="#5A7FC4"></rect><rect x="24" y="16" width="3.5" height="32" rx="1.8" fill="#7FA1E2"></rect><rect x="35" y="7" width="12" height="41" rx="3" fill="#8A63A8"></rect><rect x="35" y="7" width="4" height="41" rx="2" fill="#AB86C8"></rect><path d="M44 14 Q50 18 51 24" stroke="#C9CCE6" stroke-width="1.2" fill="none"></path><rect x="45" y="23" width="13" height="9" rx="2" fill="#FFF3DA" transform="rotate(12 51 27)"></rect></svg>
+<span style="font-size: 13.5px; font-weight: 800; line-height: 16px">Ungelesen</span><span style="font-size: 12px; font-weight: 600; color: var(--mute); line-height: 16px; white-space: nowrap">{{vols.ungelesen.line}}</span>
+</button>
+
+<button type="button" aria-label="{{vols.wunsch.aria}}" onClick="{{vols.wunsch.open}}" style="height: 108px; border: none; background: none; border-radius: 18px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 0 8px 0; color: var(--ink)">
+<svg width="60" height="54" viewBox="0 0 60 54" aria-hidden="true" style="margin-bottom: 4px"><ellipse cx="30" cy="50" rx="20" ry="3.5" style="fill: var(--shadow)" opacity=".5"></ellipse><rect x="26" y="6" width="14" height="22" rx="2.5" fill="#4F8A6A" transform="rotate(10 33 17)"></rect><path d="M14 20 L46 20 L43 48 L17 48 Z" fill="#C79A6B"></path><path d="M14 20 L46 20 L45.6 24 L14.4 24 Z" fill="#E0B888"></path><path d="M23 20 Q23 12 30 12 Q37 12 37 20" stroke="#8C6440" stroke-width="2" fill="none"></path><path d="M30 31 C27 28 23 30 25 34 L30 39 L35 34 C37 30 33 28 30 31 Z" fill="#FFF3DA" opacity=".9"></path></svg>
+<span style="font-size: 13.5px; font-weight: 800; line-height: 16px">Wunschliste</span><span style="font-size: 12px; font-weight: 600; color: var(--mute); line-height: 16px; white-space: nowrap">{{vols.wunsch.line}}</span>
+</button>
+
+<button type="button" aria-label="{{vols.abgebrochen.aria}}" onClick="{{vols.abgebrochen.open}}" style="height: 108px; border: none; background: none; border-radius: 18px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 0 8px 0; color: var(--ink)">
+<svg width="60" height="54" viewBox="0 0 60 54" aria-hidden="true" style="margin-bottom: 4px"><ellipse cx="30" cy="50" rx="25" ry="3.5" style="fill: var(--shadow)" opacity=".5"></ellipse><path d="M30 18 L6 47 L12 48 L30 24 Z" fill="#E0E2F0"></path><path d="M30 18 L54 47 L48 48 L30 24 Z" fill="#E8EAF5"></path><path d="M30 16 L4 46 L9 48 L30 22 Z" fill="#B85A6E"></path><path d="M30 16 L56 46 L51 48 L30 22 Z" fill="#D7768C"></path><path d="M30 16 L30 22" stroke="#8E3F52" stroke-width="2"></path></svg>
+<span style="font-size: 13.5px; font-weight: 800; line-height: 16px">Abgebrochen</span><span style="font-size: 12px; font-weight: 600; color: var(--mute); line-height: 16px; white-space: nowrap">{{vols.abgebrochen.line}}</span>
+</button>
+
+<button type="button" aria-label="{{vols.regale.aria}}" onClick="{{vols.regale.open}}" style="height: 108px; border: none; background: none; border-radius: 18px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 0 8px 0; color: var(--ink)">
+<svg width="60" height="54" viewBox="0 0 60 54" aria-hidden="true" style="margin-bottom: 4px"><ellipse cx="30" cy="50" rx="25" ry="3.5" style="fill: var(--shadow)" opacity=".5"></ellipse><rect x="15" y="12" width="8" height="22" rx="2" fill="#5A7FC4"></rect><rect x="24" y="9" width="9" height="25" rx="2" fill="#F2B33D"></rect><rect x="34" y="14" width="8" height="20" rx="2" fill="#C8607A"></rect><rect x="42" y="11" width="6" height="23" rx="2" fill="#6FAE8A" transform="rotate(8 45 22)"></rect><path d="M8 26 L52 26 L50 48 L10 48 Z" fill="#6C73B0"></path><path d="M8 26 L52 26 L51.6 30 L8.4 30 Z" fill="#8F96D2"></path><rect x="23" y="34" width="14" height="6" rx="2" fill="#FFF3DA" opacity=".85"></rect></svg>
+<span style="font-size: 13.5px; font-weight: 800; line-height: 16px">Regale</span><span style="font-size: 12px; font-weight: 600; color: var(--mute); line-height: 16px; white-space: nowrap">{{vols.regale.line}}</span>
+</button>
+
+<button type="button" aria-label="{{vols.stats.aria}}" onClick="{{vols.stats.open}}" style="height: 108px; border: none; background: none; border-radius: 18px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 0 8px 0; color: var(--ink)">
+<svg width="60" height="54" viewBox="0 0 60 54" aria-hidden="true" style="margin-bottom: 4px"><ellipse cx="30" cy="50" rx="24" ry="3.5" style="fill: var(--shadow)" opacity=".5"></ellipse><rect x="10" y="32" width="11" height="16" rx="3" fill="#7FA1E2"></rect><rect x="10" y="38" width="11" height="2" fill="#4C69B8"></rect><rect x="24" y="20" width="11" height="28" rx="3" fill="#F0C060"></rect><rect x="24" y="27" width="11" height="2" fill="#D7A13A"></rect><rect x="24" y="38" width="11" height="2" fill="#D7A13A"></rect><rect x="38" y="9" width="11" height="39" rx="3" fill="#E3849C"></rect><rect x="38" y="17" width="11" height="2" fill="#C8607A"></rect><rect x="38" y="28" width="11" height="2" fill="#C8607A"></rect><rect x="38" y="39" width="11" height="2" fill="#C8607A"></rect></svg>
+<span style="font-size: 13.5px; font-weight: 800; line-height: 16px">Rückblick</span><span style="font-size: 12px; font-weight: 600; color: var(--mute); line-height: 16px; white-space: nowrap">Statistik</span>
+</button>
+
+<button type="button" aria-label="{{vols.verliehen.aria}}" onClick="{{vols.verliehen.open}}" style="height: 108px; border: none; background: none; border-radius: 18px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 0 8px 0; color: var(--ink)">
+<svg width="60" height="54" viewBox="0 0 60 54" aria-hidden="true" style="margin-bottom: 4px"><ellipse cx="30" cy="50" rx="22" ry="3.5" style="fill: var(--shadow)" opacity=".5"></ellipse><path d="M10 22 L50 22 L50 46 L10 46 Z" fill="#E8EAF5"></path><path d="M10 22 L30 36 L50 22" fill="#D2D5EA"></path><path d="M10 22 L30 36 L50 22" stroke="#B7BBDA" stroke-width="1.4" fill="none"></path><rect x="22" y="8" width="16" height="22" rx="2.5" fill="#4F8A6A" transform="rotate(-6 30 19)"></rect><path d="M10 46 L26 33 M50 46 L34 33" stroke="#C5C9E2" stroke-width="1.4"></path></svg>
+<span style="font-size: 13.5px; font-weight: 800; line-height: 16px">Verliehen</span><span style="font-size: 12px; font-weight: 600; color: var(--mute); line-height: 16px; white-space: nowrap">{{vols.verliehen.line}}</span>
+</button>
+
+<button type="button" aria-label="Neue Bücher auspacken: scannen, ISBN eintippen oder von Hand" onClick="{{openAdd}}" style="height: 108px; border: none; background: var(--paket); box-shadow: inset 0 0 0 1.5px var(--accLine); border-radius: 18px; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; padding: 0 0 8px 0; color: var(--ink)">
+<svg width="60" height="54" viewBox="0 0 60 54" aria-hidden="true" style="margin-bottom: 4px"><ellipse cx="30" cy="50" rx="25" ry="3.5" style="fill: var(--shadow)" opacity=".5"></ellipse><path d="M10 24 L50 24 L48 48 L12 48 Z" fill="#C9955A"></path><path d="M10 24 L2 15 L24 15 L30 24 Z" fill="#E2B57C"></path><path d="M50 24 L58 15 L36 15 L30 24 Z" fill="#D9A86C"></path><rect x="26" y="30" width="8" height="18" fill="#E9C996" opacity=".8"></rect><circle cx="44" cy="11" r="8" fill="#FFD98A"></circle><path d="M44 7 V15 M40 11 H48" stroke="#2A2440" stroke-width="2.2" stroke-linecap="round"></path></svg>
+<span style="font-size: 13.5px; font-weight: 800; line-height: 16px; color: var(--acc)">Neue Bücher</span><span style="font-size: 12px; font-weight: 600; color: var(--mute); line-height: 16px">auspacken</span>
+</button>
+
+</div>
+</div>
+
+<!-- Vermerk -->
+<div style="position: absolute; top: 702px; left: 22px; right: 16px; display: flex; align-items: center; gap: 8px">
+<p style="margin: 0; flex: 1; font-size: 13px; line-height: 17px; font-weight: 600; color: var(--mute)">{{colophon}} <span style="display: inline-block; font-size: 10px; font-weight: 800; letter-spacing: .05em; border: 1px solid var(--line); border-radius: 6px; padding: 0 5px">BEISPIELDATEN</span></p>
+<button type="button" aria-label="Prototyp-Einstellungen: Tageszeit und Anzahl der Bücher am Lesen" onClick="{{openProto}}" style="flex-shrink: 0; width: 44px; height: 44px; border: none; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0"><span style="width: 30px; height: 30px; border-radius: 15px; border: 1.5px dashed var(--line); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 900; color: var(--mute)">P</span></button>
+</div>
+
+</div>
+</sc-if>
+
+<!-- ================= BAND ================= -->
+<sc-if value="{{isVol}}" hint-placeholder-val="{{ false }}">
+<div class="scr" style="position: absolute; inset: 0 0 83px 0">
+<div style="position: absolute; top: 98px; left: 0; right: 0; bottom: 0; overflow-y: auto">
+<div style="padding: 6px 16px 32px 16px">
+<div style="display: flex; align-items: center; gap: 14px; padding: 0 4px">
+<div aria-hidden="true" style="width: 84px; height: 76px; flex-shrink: 0; border-radius: 22px; background: var(--accBg); display: flex; align-items: center; justify-content: center">
+<svg width="66" height="60" viewBox="0 0 60 54"><ellipse cx="30" cy="50" rx="25" ry="3.5" style="fill: var(--shadow)" opacity=".5"></ellipse><rect x="8" y="36" width="44" height="12" rx="3.5" fill="#4F8A6A"></rect><rect x="8" y="36" width="44" height="4" rx="2" fill="#6FAE8A"></rect><rect x="11" y="24" width="38" height="12" rx="3.5" fill="#C8607A"></rect><rect x="11" y="24" width="38" height="4" rx="2" fill="#E3849C"></rect><rect x="6" y="12" width="42" height="12" rx="3.5" fill="#4C69B8"></rect><rect x="6" y="12" width="42" height="4" rx="2" fill="#7090DB"></rect><path d="M22 12 L22 4 L25 7 L28 4 L28 12" fill="#F2B33D"></path></svg>
+</div>
+<div style="min-width: 0">
+<h1 style="margin: 0; font-size: 28px; line-height: 32px; font-weight: 900; letter-spacing: -.01em">{{vol.name}}</h1>
+<p style="margin: 2px 0 0 0; font-size: 14px; line-height: 19px; font-weight: 600; color: var(--mute)">{{vol.sub}}</p>
+</div>
+</div>
+
+<sc-if value="{{vol.isList}}" hint-placeholder-val="{{ true }}">
+<div style="position: relative; margin-top: 18px">
+<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" style="position: absolute; left: 14px; top: 13px"><circle cx="7.5" cy="7.5" r="5.5" fill="none" style="stroke: var(--mute)" stroke-width="2"></circle><path d="M12 12l4 4" style="stroke: var(--mute)" stroke-width="2" stroke-linecap="round"></path></svg>
+<input type="search" aria-label="{{vol.searchLabel}}" value="{{query}}" onChange="{{setQuery}}" placeholder="{{vol.searchLabel}}" style="width: 100%; box-sizing: border-box; height: 44px; border: none; border-radius: 22px; background: var(--field); padding: 0 44px 0 40px; font-size: 16px; font-weight: 600; color: var(--ink)">
+<sc-if value="{{hasQuery}}" hint-placeholder-val="{{ false }}"><button type="button" aria-label="Suche leeren" onClick="{{clearQuery}}" style="position: absolute; right: 0; top: 0; width: 44px; height: 44px; border: none; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8" style="fill: var(--mute)"></circle><path d="M6 6l6 6M12 6l-6 6" style="stroke: var(--bg)" stroke-width="1.8" stroke-linecap="round"></path></svg></button></sc-if>
+</div>
+<div role="radiogroup" aria-label="Sortierung" style="display: flex; gap: 6px; margin-top: 10px">
+<sc-for list="{{sorts}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
+</div>
+
+<sc-for list="{{vol.groups}}" as="g" hint-placeholder-count="2">
+<h2 style="margin: 20px 4px 4px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">{{g.label}}</h2>
+<div role="list">
+<sc-for list="{{g.rows}}" as="e" hint-placeholder-count="4">
+<div role="listitem">
+<button type="button" aria-label="{{e.aria}}" onClick="{{e.open}}" style="width: 100%; min-height: 68px; display: flex; align-items: center; gap: 14px; border: none; background: none; padding: 6px 4px; cursor: pointer; text-align: left; color: var(--ink); border-radius: 14px">
+<svg width="34" height="50" viewBox="0 0 34 50" aria-hidden="true" style="flex-shrink: 0"><ellipse cx="17" cy="47" rx="15" ry="2.5" style="fill: var(--shadow)" opacity=".5"></ellipse><rect x="3" y="2" width="28" height="44" rx="4" fill="{{e.cover}}"></rect><rect x="3" y="2" width="6" height="44" rx="3" fill="#FFFFFF" opacity=".18"></rect><rect x="12" y="12" width="14" height="10" rx="2" fill="#FFF3DA" opacity=".85"></rect></svg>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column">
+<span style="font-size: 16px; line-height: 20px; font-weight: 800">{{e.title}}</span>
+<span style="font-size: 13.5px; line-height: 18px; font-weight: 600; color: var(--mute)">{{e.meta}}</span>
+</span>
+<sc-if value="{{e.hasLights}}" hint-placeholder-val="{{ false }}">
+<span aria-hidden="true" style="flex-shrink: 0; display: flex; gap: 2px"><sc-for list="{{e.lights}}" as="l" hint-placeholder-count="5"><span style="{{l.style}}"></span></sc-for></span>
+</sc-if>
+</button>
+</div>
+</sc-for>
+</div>
+</sc-for>
+<sc-if value="{{vol.noResults}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 28px 4px; font-size: 16px; line-height: 23px; font-weight: 600; color: var(--mute)">Nichts gefunden. Vielleicht steht es unter einem anderen Namen im Regal?</p>
+</sc-if>
+<p style="margin: 22px 4px 0 4px; font-size: 13px; line-height: 18px; font-weight: 600; color: var(--mute)">{{vol.footer}}</p>
+</sc-if>
+
+<sc-if value="{{vol.isStats}}" hint-placeholder-val="{{ false }}">
+<div style="margin-top: 20px; display: flex; flex-direction: column; gap: 10px">
+<sc-for list="{{statRows}}" as="r" hint-placeholder-count="5">
+<div style="border-radius: 18px; background: var(--accBg); padding: 14px 16px">
+<div style="font-size: 13px; font-weight: 700; color: var(--mute)">{{r.k}}</div>
+<div style="font-size: 18px; line-height: 24px; font-weight: 800; margin-top: 2px">{{r.v}}</div>
+</div>
+</sc-for>
+<p style="margin: 6px 4px 0 4px; font-size: 13px; line-height: 18px; font-weight: 600; color: var(--mute)">Der ausführliche Rückblick wird im nächsten Schritt gestaltet. Beispieldaten.</p>
+</div>
+</sc-if>
+</div>
+</div>
+<div style="position: absolute; top: 54px; left: 0; right: 0; height: 44px; display: flex; align-items: center; background: var(--bg)">
+<button type="button" onClick="{{goHome}}" style="min-height: 44px; display: flex; align-items: center; gap: 4px; border: none; background: none; padding: 0 16px 0 10px; cursor: pointer; font-size: 17px; font-weight: 700; color: var(--acc)"><svg width="12" height="20" viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2L2 10l8 8" fill="none" style="stroke: var(--acc)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>Bibliothek</button>
+</div>
+</div>
+</sc-if>
+
+<!-- ================= BUCHSEITE ================= -->
+<sc-if value="{{isBook}}" hint-placeholder-val="{{ false }}">
+<div class="scr" style="position: absolute; inset: 0 0 83px 0">
+<div style="position: absolute; top: 98px; left: 0; right: 0; bottom: 0; overflow-y: auto">
+<div style="padding: 0 20px 36px 20px">
+
+<div style="position: relative; display: flex; gap: 16px; align-items: flex-end; padding-top: 6px">
+<svg width="110" height="150" viewBox="0 0 110 150" aria-hidden="true" style="flex-shrink: 0">
+<ellipse cx="56" cy="143" rx="48" ry="6" style="fill: var(--shadow)" opacity=".5"></ellipse>
+<path d="M22 10 L96 6 L102 10 L28 14 Z" fill="#FFF6E6"></path>
+<path d="M10 16 Q10 10 16 10 L28 14 L28 140 L16 136 Q10 136 10 130 Z" fill="{{book.coverDark}}"></path>
+<path d="M28 14 L96 8 Q104 8 104 16 L104 130 Q104 137 97 137 L28 140 Z" fill="{{book.cover}}"></path>
+<path d="M36 22 Q36 19 41 18 L48 17" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" fill="none" opacity=".35"></path>
+<rect x="42" y="44" width="48" height="34" rx="6" fill="#FFF3DA" opacity=".92"></rect>
+<path d="M50 56 H82 M50 66 H72" stroke="#2A2440" stroke-width="3" stroke-linecap="round" opacity=".5"></path>
+</svg>
+<div style="min-width: 0; padding-bottom: 8px">
+<h1 style="margin: 0; font-size: 25px; line-height: 29px; font-weight: 900; letter-spacing: -.01em">{{book.title}}</h1>
+<p style="margin: 3px 0 0 0; font-size: 16px; font-weight: 700; color: var(--mute)">{{book.author}}</p>
+<p style="margin: 8px 0 0 0; font-size: 13.5px; font-weight: 700; color: var(--acc)">{{book.status}}</p>
+</div>
+</div>
+
+<sc-if value="{{book.hasReading}}" hint-placeholder-val="{{ true }}">
+<section aria-labelledby="lesart" style="margin-top: 22px; position: relative; border-radius: 22px; background: #FFF3DA; color: #2A2440; padding: 18px 18px 16px 18px">
+<svg width="34" height="22" viewBox="0 0 34 22" aria-hidden="true" style="position: absolute; right: 16px; top: -9px"><path d="M4 0 L4 22 L9 17 L14 22 L14 0 Z" fill="{{book.ribbon}}"></path></svg>
+<h2 id="lesart" style="margin: 0; font-size: 13px; font-weight: 800; color: #7A6E8E; letter-spacing: .03em">MEINE LESART</h2>
+<p style="margin: 8px 0 0 0; font-size: 18px; line-height: 26px; font-weight: 700">{{book.reading}}</p>
+<p style="margin: 10px 0 0 0; font-size: 14px; line-height: 20px; font-weight: 600; color: #5E5470">{{book.forWhom}}</p>
+<button type="button" onClick="{{openSoon}}" style="margin-top: 8px; min-height: 44px; border: none; background: none; padding: 0; cursor: pointer; font-size: 15px; font-weight: 800; color: #3A3470">Weiterschreiben</button>
+</section>
+</sc-if>
+<sc-if value="{{book.inviteCard}}" hint-placeholder-val="{{ false }}">
+<section style="margin-top: 22px; border-radius: 22px; border: 1.5px dashed var(--line); padding: 16px 18px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">MEINE LESART</h2>
+<p style="margin: 8px 0 0 0; font-size: 16px; line-height: 23px; font-weight: 600">{{book.inviteText}}</p>
+<button type="button" onClick="{{openSoon}}" style="margin-top: 6px; min-height: 44px; border: none; background: none; padding: 0; cursor: pointer; font-size: 15px; font-weight: 800; color: var(--acc)">Eigene Worte aufschreiben</button>
+</section>
+</sc-if>
+
+<sc-if value="{{book.hasRating}}" hint-placeholder-val="{{ true }}">
+<section style="margin-top: 22px">
+<h2 style="margin: 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">HAT MICH ERREICHT</h2>
+<div style="display: flex; align-items: center; gap: 12px; margin-top: 10px">
+<span role="img" aria-label="{{book.lightsLabel}}" style="display: flex; gap: 6px">
+<sc-for list="{{book.lights}}" as="l" hint-placeholder-count="5">
+<svg width="26" height="30" viewBox="0 0 26 30" aria-hidden="true"><path d="M13 2 C7 2 3 6.5 3 12 C3 16 5.5 18.5 8 20.5 L8 24 L18 24 L18 20.5 C20.5 18.5 23 16 23 12 C23 6.5 19 2 13 2 Z" style="{{l.bulb}}"></path><rect x="9" y="25" width="8" height="3.5" rx="1.5" style="fill: var(--mute)"></rect></svg>
+</sc-for>
+</span>
+<span style="font-size: 16px; font-weight: 800">{{book.lightsWord}}</span>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px">
+<sc-for list="{{book.qualities}}" as="q" hint-placeholder-count="4">
+<span style="display: inline-flex; flex-direction: column; border-radius: 14px; background: var(--accBg); padding: 7px 12px"><span style="font-size: 11.5px; font-weight: 700; color: var(--mute)">{{q.k}}</span><span style="font-size: 14.5px; font-weight: 800">{{q.v}}</span></span>
+</sc-for>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{book.hasQuote}}" hint-placeholder-val="{{ true }}">
+<section style="margin-top: 24px; display: flex; gap: 12px">
+<svg width="26" height="22" viewBox="0 0 26 22" aria-hidden="true" style="flex-shrink: 0; margin-top: 2px"><path d="M2 20 C2 10 5 4 11 2 L12 5 C8 7 7 10 7 12 L11 12 L11 20 Z M15 20 C15 10 18 4 24 2 L25 5 C21 7 20 10 20 12 L24 12 L24 20 Z" style="fill: var(--acc)"></path></svg>
+<div>
+<h2 style="margin: 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">ZITAT</h2>
+<p style="margin: 6px 0 0 0; font-size: 17px; line-height: 25px; font-weight: 700; font-style: italic">{{book.quote}}</p>
+<p style="margin: 4px 0 0 0; font-size: 13.5px; font-weight: 600; color: var(--mute)">{{book.quotePage}}</p>
+</div>
+</section>
+</sc-if>
+
+<section style="margin-top: 26px">
+<h2 style="margin: 0 0 4px 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">MEIN EXEMPLAR</h2>
+<dl style="margin: 0">
+<sc-for list="{{book.copy}}" as="r" hint-placeholder-count="4">
+<div style="{{r.style}}"><dt style="font-size: 15px; font-weight: 600; color: var(--mute)">{{r.k}}</dt><dd style="margin: 0; font-size: 15px; font-weight: 700; text-align: right">{{r.v}}</dd></div>
+</sc-for>
+</dl>
+</section>
+
+<section style="margin-top: 22px">
+<h2 style="margin: 0 0 4px 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">LESEVERLAUF</h2>
+<dl style="margin: 0">
+<sc-for list="{{book.history}}" as="r" hint-placeholder-count="2">
+<div style="{{r.style}}"><dt style="font-size: 15px; font-weight: 600; color: var(--mute)">{{r.k}}</dt><dd style="margin: 0; font-size: 15px; font-weight: 700; text-align: right">{{r.v}}</dd></div>
+</sc-for>
+</dl>
+</section>
+
+<section style="margin-top: 24px">
+<button type="button" role="switch" aria-checked="{{showcaseChecked}}" aria-label="Im Schaufenster zeigen" onClick="{{toggleShowcase}}" style="width: 100%; min-height: 60px; display: flex; align-items: center; gap: 12px; border: none; border-radius: 18px; background: var(--accBg); padding: 8px 14px; cursor: pointer; text-align: left; color: var(--ink)">
+<svg width="34" height="30" viewBox="0 0 34 30" aria-hidden="true" style="flex-shrink: 0"><path d="M3 9 L31 9 L31 27 L3 27 Z" style="fill: var(--field)"></path><path d="M1 3 L33 3 L31 9 L3 9 Z" fill="#F2B33D"></path><path d="M7 3 L5 9 M13 3 L12 9 M20 3 L21 9 M27 3 L29 9" stroke="#FFF3DA" stroke-width="2"></path><rect x="8" y="14" width="6" height="13" rx="1" fill="#C8607A"></rect><rect x="15" y="12" width="6" height="15" rx="1" fill="#4C69B8"></rect><rect x="22" y="15" width="5" height="12" rx="1" fill="#4F8A6A"></rect></svg>
+<span style="flex: 1; display: flex; flex-direction: column"><span style="font-size: 16px; font-weight: 800">Im Schaufenster zeigen</span><span style="font-size: 13px; line-height: 17px; font-weight: 600; color: var(--mute)">{{showcaseHint}}</span></span>
+<span style="{{switchTrack}}"><span style="{{switchKnob}}"></span></span>
+</button>
+</section>
+<p style="margin: 18px 0 0 0; font-size: 12px; font-weight: 700; color: var(--mute)">Beispieldaten</p>
+</div>
+</div>
+<div style="position: absolute; top: 54px; left: 0; right: 0; height: 44px; display: flex; align-items: center; background: var(--bg)">
+<button type="button" onClick="{{bookBack}}" style="min-height: 44px; display: flex; align-items: center; gap: 4px; border: none; background: none; padding: 0 16px 0 10px; cursor: pointer; font-size: 17px; font-weight: 700; color: var(--acc)"><svg width="12" height="20" viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2L2 10l8 8" fill="none" style="stroke: var(--acc)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path></svg>{{bookBackLabel}}</button>
+</div>
+</div>
+</sc-if>
+
+<!-- ================= ANDERE TABS ================= -->
+<sc-if value="{{isTab}}" hint-placeholder-val="{{ false }}">
+<div class="scr" style="position: absolute; inset: 0 0 83px 0; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 40px; text-align: center">
+<svg width="120" height="100" viewBox="0 0 120 100" aria-hidden="true">
+<ellipse cx="60" cy="94" rx="48" ry="5" style="fill: var(--shadow)" opacity=".5"></ellipse>
+<path d="M14 34 L106 34 L106 90 L14 90 Z" style="fill: var(--field)"></path>
+<path d="M8 18 L112 18 L106 34 L14 34 Z" fill="#F2B33D"></path>
+<path d="M24 18 L20 34 M42 18 L40 34 M60 18 L60 34 M78 18 L80 34 M96 18 L100 34" stroke="#FFF3DA" stroke-width="4"></path>
+<rect x="30" y="50" width="12" height="40" rx="2" fill="#C8607A"></rect><rect x="44" y="44" width="12" height="46" rx="2" fill="#4C69B8"></rect><rect x="58" y="54" width="10" height="36" rx="2" fill="#4F8A6A"></rect><rect x="74" y="58" width="16" height="32" rx="2" fill="#FFF3DA" opacity=".8"></rect>
+</svg>
+<h1 style="margin: 20px 0 0 0; font-size: 24px; font-weight: 900">{{tabTitle}}</h1>
+<p style="margin: 8px 0 0 0; font-size: 16px; line-height: 23px; font-weight: 600; color: var(--mute)">{{tabText}}</p>
+</div>
+</sc-if>
+
+<!-- ================= TAB-LEISTE ================= -->
+<nav aria-label="Hauptbereiche" style="position: absolute; left: 0; right: 0; bottom: 0; height: 83px; box-sizing: border-box; background: var(--bg2); border-top: 1px solid var(--line); display: flex; padding: 0 6px 34px 6px; z-index: 10">
+<sc-for list="{{tabs}}" as="t" hint-placeholder-count="4">
+<button type="button" aria-current="{{t.current}}" onClick="{{t.go}}" style="{{t.style}}">
+<sc-if value="{{t.isBib}}" hint-placeholder-val="{{ true }}"><svg width="26" height="24" viewBox="0 0 26 24" aria-hidden="true"><rect x="3" y="4" width="5" height="17" rx="1.6" style="{{t.fill}}"></rect><rect x="10" y="2" width="5" height="19" rx="1.6" style="{{t.fill}}"></rect><rect x="17.5" y="5" width="5" height="16" rx="1.6" style="{{t.fill}}" transform="rotate(10 20 13)"></rect></svg></sc-if>
+<sc-if value="{{t.isShop}}" hint-placeholder-val="{{ false }}"><svg width="26" height="24" viewBox="0 0 26 24" aria-hidden="true"><rect x="3" y="4" width="20" height="16" rx="3" fill="none" style="{{t.stroke}}" stroke-width="2"></rect><path d="M13 4 V20 M3 12 H23" style="{{t.stroke}}" stroke-width="2"></path></svg></sc-if>
+<sc-if value="{{t.isFind}}" hint-placeholder-val="{{ false }}"><svg width="26" height="24" viewBox="0 0 26 24" aria-hidden="true"><circle cx="13" cy="12" r="9" fill="none" style="{{t.stroke}}" stroke-width="2"></circle><path d="M16.5 8.5 L14.5 14.5 L9.5 15.5 L11.5 9.5 Z" style="{{t.fill}}"></path></svg></sc-if>
+<sc-if value="{{t.isMe}}" hint-placeholder-val="{{ false }}"><svg width="26" height="24" viewBox="0 0 26 24" aria-hidden="true"><circle cx="13" cy="9" r="4.5" fill="none" style="{{t.stroke}}" stroke-width="2"></circle><path d="M5 21 C6 16 9.5 14.5 13 14.5 C16.5 14.5 20 16 21 21" fill="none" style="{{t.stroke}}" stroke-width="2" stroke-linecap="round"></path></svg></sc-if>
+<span>{{t.label}}</span>
+</button>
+</sc-for>
+</nav>
+<div aria-hidden="true" style="position: absolute; bottom: 8px; left: 128px; width: 134px; height: 5px; border-radius: 3px; background: var(--ink); z-index: 40"></div>
+
+<!-- ================= SHEETS ================= -->
+<sc-if value="{{hasSheet}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; inset: 0; z-index: 20">
+<button type="button" aria-label="Schließen" onClick="{{closeSheet}}" style="position: absolute; inset: 0; border: none; background: var(--dim); cursor: pointer; padding: 0"></button>
+<div role="dialog" aria-modal="true" aria-label="{{sheetTitle}}" class="sheet" style="{{sheetStyle}}">
+<div aria-hidden="true" style="width: 40px; height: 5px; border-radius: 3px; background: var(--line); margin: 8px auto 0 auto"></div>
+<div style="position: relative; height: 48px; display: flex; align-items: center; justify-content: center">
+<button type="button" onClick="{{closeSheet}}" style="position: absolute; left: 6px; top: 2px; min-height: 44px; min-width: 44px; border: none; background: none; padding: 0 10px; cursor: pointer; font-size: 16px; font-weight: 700; color: var(--mute)">{{closeLabel}}</button>
+<h2 style="margin: 0; padding: 0 100px; font-size: 17px; font-weight: 900; white-space: nowrap">{{sheetTitle}}</h2>
+</div>
+
+<!-- Seite eintragen -->
+<sc-if value="{{isPageSheet}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 0 16px">
+<p style="margin: 0; text-align: center; font-size: 14px; font-weight: 700; color: var(--mute)">{{pg.info}}</p>
+<div style="display: flex; align-items: center; justify-content: center; gap: 14px; margin-top: 10px">
+<button type="button" aria-label="Eine Seite zurück" onClick="{{dec}}" style="width: 56px; height: 56px; border-radius: 28px; border: none; background: var(--key); cursor: pointer; font-size: 26px; font-weight: 800; color: var(--ink)">−</button>
+<div aria-live="polite" style="position: relative; width: 156px; height: 92px; border-radius: 10px 22px 22px 10px; background: #FFF8EA; color: #2A2440; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: 0 2px 0 #E9D7B4">
+<span style="font-size: 12px; font-weight: 700; color: #8A7E9E">Seite</span>
+<span style="font-size: 46px; line-height: 50px; font-weight: 900; font-variant-numeric: tabular-nums">{{pg.draft}}</span>
+<svg width="14" height="20" viewBox="0 0 14 20" aria-hidden="true" style="position: absolute; right: 22px; bottom: -14px"><path d="M2 0 L2 20 L7 15 L12 20 L12 0 Z" fill="{{pg.ribbon}}"></path></svg>
+</div>
+<button type="button" aria-label="Eine Seite weiter" onClick="{{inc}}" style="width: 56px; height: 56px; border-radius: 28px; border: none; background: var(--key); cursor: pointer; font-size: 26px; font-weight: 800; color: var(--ink)">+</button>
+</div>
+<p style="margin: 16px 0 0 0; min-height: 20px; text-align: center; font-size: 14px; font-weight: 700; color: var(--acc)">{{pg.diff}}</p>
+<div style="display: flex; gap: 8px; margin-top: 10px">
+<sc-for list="{{pg.jumps}}" as="j" hint-placeholder-count="3"><button type="button" onClick="{{j.go}}" style="flex: 1; height: 44px; border-radius: 22px; border: 1.5px solid var(--accLine); background: var(--accBg); cursor: pointer; font-size: 15px; font-weight: 800; color: var(--acc)">{{j.label}}</button></sc-for>
+</div>
+<div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 12px">
+<sc-for list="{{pg.keys}}" as="k" hint-placeholder-count="12"><button type="button" aria-label="{{k.aria}}" onClick="{{k.go}}" style="height: 50px; border-radius: 14px; border: none; background: var(--key); cursor: pointer; font-size: 22px; font-weight: 800; color: var(--ink)">{{k.label}}</button></sc-for>
+</div>
+<button type="button" onClick="{{savePage}}" style="margin-top: 14px; width: 100%; height: 54px; border-radius: 27px; border: none; background: var(--acc); color: var(--accInk); cursor: pointer; font-size: 17px; font-weight: 900">{{pg.saveLabel}}</button>
+</div>
+</sc-if>
+
+<!-- Auspacken -->
+<sc-if value="{{isAddSheet}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 0 16px">
+<sc-if value="{{addPick}}" hint-placeholder-val="{{ true }}">
+<p style="margin: 0 4px 12px 4px; font-size: 15px; line-height: 21px; font-weight: 600; color: var(--mute)">Ein Buch oder ein ganzer Karton: Du kannst mehrere hintereinander erfassen und sie danach zusammen einräumen.</p>
+<div style="display: flex; flex-direction: column; gap: 8px">
+<sc-for list="{{addOptions}}" as="o" hint-placeholder-count="3">
+<button type="button" onClick="{{o.pick}}" style="width: 100%; min-height: 68px; display: flex; align-items: center; gap: 14px; border: none; border-radius: 18px; background: var(--key); padding: 8px 14px; cursor: pointer; text-align: left; color: var(--ink)">
+<span aria-hidden="true" style="width: 44px; height: 44px; flex-shrink: 0; border-radius: 14px; background: var(--accBg); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: 900; color: var(--acc)">{{o.icon}}</span>
+<span style="display: flex; flex-direction: column"><span style="font-size: 17px; font-weight: 800">{{o.title}}</span><span style="font-size: 13.5px; font-weight: 600; color: var(--mute)">{{o.sub}}</span></span>
+</button>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{addScan}}" hint-placeholder-val="{{ false }}">
+<div aria-label="Kamera, Platzhalter" style="position: relative; height: 150px; border-radius: 22px; background: #14172C; display: flex; align-items: center; justify-content: center; overflow: hidden">
+<svg width="220" height="110" viewBox="0 0 220 110" aria-hidden="true"><path d="M8 26 V8 H26 M194 8 H212 V26 M212 84 V102 H194 M26 102 H8 V84" fill="none" stroke="#FFD98A" stroke-width="3" stroke-linecap="round"></path><g fill="#EEF0FA" opacity=".8"><rect x="54" y="30" width="3" height="44"></rect><rect x="60" y="30" width="1.5" height="44"></rect><rect x="65" y="30" width="4" height="44"></rect><rect x="73" y="30" width="2" height="44"></rect><rect x="78" y="30" width="1.5" height="44"></rect><rect x="83" y="30" width="5" height="44"></rect><rect x="92" y="30" width="2" height="44"></rect><rect x="97" y="30" width="3" height="44"></rect><rect x="104" y="30" width="1.5" height="44"></rect><rect x="109" y="30" width="4" height="44"></rect><rect x="117" y="30" width="2" height="44"></rect><rect x="122" y="30" width="3" height="44"></rect><rect x="129" y="30" width="1.5" height="44"></rect><rect x="134" y="30" width="5" height="44"></rect><rect x="143" y="30" width="2" height="44"></rect><rect x="148" y="30" width="3" height="44"></rect><rect x="155" y="30" width="2" height="44"></rect><rect x="160" y="30" width="4" height="44"></rect></g><text x="110" y="92" text-anchor="middle" font-family="Nunito" font-weight="700" font-size="11" fill="#A9AED0">Kamera · Platzhalter</text></svg>
+</div>
+<h3 style="margin: 14px 4px 4px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">IM KARTON · 3</h3>
+<sc-for list="{{scanned}}" as="e" hint-placeholder-count="3">
+<div style="display: flex; align-items: center; gap: 12px; min-height: 48px; padding: 2px 4px">
+<span aria-hidden="true" style="{{e.dot}}"></span>
+<span style="flex: 1; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 800">{{e.title}}</span><span style="font-size: 13px; font-weight: 600; color: var(--mute)">{{e.author}}</span></span>
+</div>
+</sc-for>
+<div role="radiogroup" aria-label="Einräumen in" style="display: flex; gap: 6px; margin-top: 8px">
+<sc-for list="{{targets}}" as="o" hint-placeholder-count="2"><button type="button" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
+</div>
+<button type="button" onClick="{{unpack}}" style="margin-top: 12px; width: 100%; height: 54px; border-radius: 27px; border: none; background: var(--acc); color: var(--accInk); cursor: pointer; font-size: 17px; font-weight: 900">{{unpackLabel}}</button>
+</sc-if>
+<sc-if value="{{addOther}}" hint-placeholder-val="{{ false }}">
+<div style="border-radius: 22px; border: 1.5px dashed var(--line); padding: 22px 18px; text-align: center">
+<p style="margin: 0; font-size: 17px; font-weight: 800">{{addOtherTitle}}</p>
+<p style="margin: 8px 0 0 0; font-size: 15px; line-height: 21px; font-weight: 600; color: var(--mute)">Platzhalter. Dieser Schritt wird als Nächstes gestaltet. Auch hier landen mehrere Bücher erst im Karton und werden dann zusammen eingeräumt.</p>
+</div>
+<button type="button" onClick="{{addBack}}" style="margin-top: 12px; width: 100%; height: 50px; border-radius: 25px; border: 1.5px solid var(--accLine); background: var(--accBg); color: var(--acc); cursor: pointer; font-size: 16px; font-weight: 800">Andere Art wählen</button>
+</sc-if>
+</div>
+</sc-if>
+
+<!-- Schaufenster bestätigen -->
+<sc-if value="{{isShowcaseSheet}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 0 20px; display: flex; flex-direction: column; align-items: center; text-align: center">
+<svg width="120" height="82" viewBox="0 0 120 100" aria-hidden="true"><ellipse cx="60" cy="94" rx="48" ry="5" style="fill: var(--shadow)" opacity=".5"></ellipse><path d="M14 34 L106 34 L106 90 L14 90 Z" style="fill: var(--field)"></path><path d="M8 18 L112 18 L106 34 L14 34 Z" fill="#F2B33D"></path><path d="M24 18 L20 34 M42 18 L40 34 M60 18 L60 34 M78 18 L80 34 M96 18 L100 34" stroke="#FFF3DA" stroke-width="4"></path><rect x="50" y="46" width="20" height="44" rx="3" fill="{{book.cover}}"></rect></svg>
+<p style="margin: 10px 0 0 0; font-size: 19px; line-height: 25px; font-weight: 900">„{{book.title}}“ ins Schaufenster stellen?</p>
+<p style="margin: 8px 0 0 0; font-size: 15px; line-height: 21px; font-weight: 600; color: var(--mute)">Andere sehen unter deinem Pseudonym „Leselampe“ (Beispiel): deine Lesart, deine Lichter und das Zitat. Exemplar, Standort und Leseverlauf bleiben privat. Du kannst es jederzeit wieder herausnehmen.</p>
+<button type="button" onClick="{{confirmShowcase}}" style="margin-top: 16px; width: 100%; height: 54px; border-radius: 27px; border: none; background: var(--acc); color: var(--accInk); cursor: pointer; font-size: 17px; font-weight: 900">Ja, ausstellen</button>
+<button type="button" onClick="{{closeSheet}}" style="margin-top: 6px; width: 100%; height: 48px; border: none; background: none; cursor: pointer; font-size: 16px; font-weight: 800; color: var(--mute)">Lieber privat lassen</button>
+</div>
+</sc-if>
+
+<!-- Prototyp-Schalter -->
+<sc-if value="{{isProtoSheet}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 0 20px">
+<p style="margin: 0 0 14px 0; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--mute)">Nur im Prototyp. In der App folgt die Tageszeit dem Gerät oder der Zugkette an der Lampe.</p>
+<h3 style="margin: 0 0 6px 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">TAGESZEIT</h3>
+<div role="radiogroup" aria-label="Tageszeit" style="display: flex; gap: 6px">
+<sc-for list="{{protoModes}}" as="o" hint-placeholder-count="2"><button type="button" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
+</div>
+<h3 style="margin: 16px 0 6px 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">BÜCHER AM LESEN</h3>
+<div role="radiogroup" aria-label="Bücher am Lesen" style="display: flex; gap: 6px">
+<sc-for list="{{protoCounts}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
+</div>
+</div>
+</sc-if>
+
+<!-- Kommt bald -->
+<sc-if value="{{isSoonSheet}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0 20px; font-size: 16px; line-height: 23px; font-weight: 600; color: var(--mute)">Der Schreibplatz für eigene Worte wird im nächsten Schritt gestaltet.</p>
+</sc-if>
+
+</div>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+var CUR = [
+  { id: 'salz', title: 'Salz und Asche', author: 'Jonas Brehm', page: 142, pages: 384, cover: '#3F6F8F', ribbon: '#E0637A' },
+  { id: 'gezeiten', title: 'Die Gezeitenkarte', author: 'Mira Olsen', page: 38, pages: 296, cover: '#7C6BB0', ribbon: '#F2B33D' },
+  { id: 'stille', title: 'Kleine Geschichte der Stille', author: 'Ina Roth', page: 61, pages: 220, cover: '#4F8A6A', ribbon: '#FFD98A' },
+  { id: 'moor', title: 'Das Haus am Moor', author: 'Clara Feld', page: 12, pages: 340, cover: '#B85A6E', ribbon: '#7FA1E2' }
+];
+var COUNTS = { gelesen: 148, ungelesen: 61, wunsch: 23, abgebrochen: 6, regale: 5, verliehen: 2 };
+var VOLS = {
+  gelesen: { name: 'Gelesen', sub: 'Zu Ende gelesen, mit deinen eigenen Worten.', search: 'In 148 gelesenen Büchern suchen' },
+  ungelesen: { name: 'Ungelesen im Regal', sub: 'Gehören dir schon. Sie haben Zeit.', search: 'Im Ungelesenen suchen' },
+  wunsch: { name: 'Wunschliste', sub: 'Noch nicht bei dir. Irgendwann vielleicht.', search: 'In der Wunschliste suchen' },
+  abgebrochen: { name: 'Abgebrochen', sub: 'Beiseitegelegt, ohne Groll.', search: 'Im Abgebrochenen suchen' },
+  regale: { name: 'Eigene Regale', sub: 'Sammlungen, die nur du so ordnest.', search: 'In deinen Regalen suchen' },
+  verliehen: { name: 'Verliehen', sub: 'Unterwegs bei Menschen, denen du traust.', search: 'Im Verliehenen suchen' },
+  stats: { name: 'Rückblick', sub: 'Was dein Lesen über dich erzählt.' }
+};
+var BOOKS = [
+  { id: 'uhr', vol: 'gelesen', year: '2026', title: 'Die Uhrmacherin', author: 'Lea Sander', when: 'August 2026', cover: '#4C69B8', ribbon: '#F2B33D', lights: 5,
+    reading: 'Für mich ist es kein Buch über Uhren, sondern über Geduld. Sie repariert die Zeit anderer Leute und merkt spät, dass ihre eigene stehen geblieben ist.',
+    forWhom: 'Für alle, die stille Heldinnen mögen und Sätze, die man zweimal liest.',
+    quote: 'Jede Stunde, die sie reparierte, gehörte danach ein wenig ihr.', quotePage: 'Seite 88',
+    qualities: [['Lesefluss', 'nicht weglegbar'], ['Sprache', 'jeder Satz sitzt'], ['Tempo', 'ausgewogen'], ['Stark', 'Figuren, Ende']],
+    copy: [['Format', 'Taschenbuch'], ['Ausgabe', '3. Auflage 2024'], ['Zustand', 'gut gelesen'], ['Steht', 'Wohnzimmer, Regal 2'], ['Herkunft', 'Geschenk von Paula']],
+    history: [['Begonnen', '3. Aug. 2026'], ['Beendet', '19. Aug. 2026']] },
+  { id: 'moewe', vol: 'gelesen', year: '2026', title: 'Die Möwenuhr', author: 'Jonas Brehm', when: 'Juli 2026', cover: '#3F6F8F', lights: 4 },
+  { id: 'winter', vol: 'gelesen', year: '2026', title: 'Was der Winter weiß', author: 'Henrik Aal', when: 'Juni 2026', cover: '#8A63A8', lights: 3 },
+  { id: 'kraniche', vol: 'gelesen', year: '2026', title: 'Das Jahr der Kraniche', author: 'Ruth Abel', when: 'Mai 2026', cover: '#4F8A6A', lights: 4 },
+  { id: 'glas', vol: 'gelesen', year: '2026', title: 'Glas und Gras', author: 'Timo Wendt', when: 'März 2026', cover: '#C8607A', lights: 2 },
+  { id: 'linden', vol: 'gelesen', year: '2025', title: 'Unter Linden, später', author: 'Ada König', when: 'Dezember 2025', cover: '#D7A13A', lights: 5 },
+  { id: 'faehr', vol: 'gelesen', year: '2025', title: 'Der Fährmann von Ems', author: 'Jonas Brehm', when: 'November 2025', cover: '#5A7FC4', lights: 4 },
+  { id: 'bleibt', vol: 'gelesen', year: '2025', title: 'Alles, was bleibt', author: 'Nora Haas', when: 'September 2025', cover: '#B85A6E', lights: 3 },
+  { id: 'kant', vol: 'gelesen', year: '2025', title: 'Kaffee mit Kant', author: 'Ben Ott', when: 'Juni 2025', cover: '#6C73B0', lights: 4 },
+  { id: 'moorhaus', vol: 'ungelesen', year: 'Seit 2025', title: 'Die Farbe des Nebels', author: 'Anouk Vries', when: 'im Regal seit März 2025', cover: '#5A7FC4' },
+  { id: 'see', vol: 'ungelesen', year: 'Seit 2025', title: 'Ein Jahr auf See', author: 'Tomas Lund', when: 'geschenkt im Mai 2025', cover: '#4F8A6A' },
+  { id: 'atlas', vol: 'ungelesen', year: 'Seit 2026', title: 'Atlas der leisen Orte', author: 'Wen Li', when: 'gekauft im Oktober 2026', cover: '#D7A13A' },
+  { id: 'fuchs', vol: 'wunsch', year: 'Vorgemerkt', title: 'Der Fuchs im Archiv', author: 'Greta Moll', when: 'vorgemerkt im September 2026', cover: '#C8607A' },
+  { id: 'licht', vol: 'wunsch', year: 'Vorgemerkt', title: 'Licht über Lauenburg', author: 'Erik Sand', when: 'vorgemerkt im Juli 2026', cover: '#7C6BB0' },
+  { id: 'fluss', vol: 'abgebrochen', year: '2026', title: 'Der lange Fluss', author: 'Paul Neumann', when: 'beiseitegelegt bei Seite 87', cover: '#3F6F8F' },
+  { id: 'reg1', vol: 'regale', year: 'Regale', title: 'Bücher vom Meer', author: '14 Bücher', when: '14 Bücher', cover: '#3F6F8F' },
+  { id: 'reg2', vol: 'regale', year: 'Regale', title: 'Von Oma geerbt', author: '9 Bücher', when: '9 Bücher', cover: '#B85A6E' },
+  { id: 'v1', vol: 'verliehen', year: 'Unterwegs', title: 'Die Möwenuhr', author: 'Jonas Brehm', when: 'bei Paula seit August', cover: '#3F6F8F' },
+  { id: 'v2', vol: 'verliehen', year: 'Unterwegs', title: 'Glas und Gras', author: 'Timo Wendt', when: 'bei Jan seit Oktober', cover: '#C8607A' }
+];
+var SCANNED = [
+  { title: 'Die Insel der Ordnung', author: 'Lotte Brand', c: '#4C69B8' },
+  { title: 'Sommer in Gelb', author: 'Max Aurel', c: '#D7A13A' },
+  { title: 'Briefe an niemand', author: 'Ida Kern', c: '#8A63A8' }
+];
+var WORDS = ['', 'Ein', 'Zwei', 'Drei', 'Vier', 'Fünf'];
+function seg(active) {
+  return 'flex: 1; min-height: 44px; border-radius: 22px; cursor: pointer; font-size: 15px; font-weight: 800; border: 1.5px solid ' + (active ? 'var(--acc)' : 'var(--line)') + '; background: ' + (active ? 'var(--accBg)' : 'transparent') + '; color: ' + (active ? 'var(--acc)' : 'var(--ink)');
+}
+function row(i) { return 'display: flex; justify-content: space-between; gap: 12px; min-height: 44px; align-items: center' + (i ? '; border-top: 1px solid var(--line)' : ''); }
+function lightsOf(n, size) {
+  var out = [];
+  for (var i = 1; i <= 5; i++) out.push({ style: 'width: ' + size + 'px; height: ' + size + 'px; border-radius: 50%; background: ' + (i <= n ? 'var(--bulb)' : 'transparent') + '; box-shadow: inset 0 0 0 1.5px ' + (i <= n ? 'var(--bulb)' : 'var(--line)') });
+  return out;
+}
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { mode: 'abend', count: 2, focus: 0, pages: CUR.map(function (c) { return c.page; }), screen: 'home', tab: 'bib', vol: null, book: null, from: 'home',
+      sheet: null, pageFor: 0, draft: 0, fresh: true, saved: null, query: '', sort: 'jahr', showcase: {}, addStep: 'pick', target: 'ungelesen', extra: 0 };
+  }
+  go(patch) { this.setState(Object.assign({ sheet: null }, patch)); }
+  renderVals() {
+    var s = this.state, self = this;
+    var abend = s.mode === 'abend';
+    var cur = CUR.slice(0, s.count);
+    var focus = Math.min(s.focus, cur.length - 1);
+    var btn = function (w) { return 'margin-top: 10px; height: 44px; min-width: ' + w + 'px; padding: 0 16px; border-radius: 22px; border: 1.5px solid var(--accLine); background: var(--accBg); color: var(--acc); font-size: 14px; font-weight: 800; display: flex; align-items: center; justify-content: center; gap: 7px; cursor: pointer'; };
+    var mk = function (c, i) {
+      var idx = CUR.indexOf(c);
+      return { title: c.title, author: c.author, page: String(s.pages[idx]), cover: c.cover, ribbon: c.ribbon,
+        aria: c.title + ' von ' + c.author + ', aufgeschlagen auf Seite ' + s.pages[idx] + '. Seite eintragen',
+        btnStyle: btn(cur.length === 1 ? 190 : 150),
+        numStyle: 'position: absolute; right: ' + (cur.length === 1 ? 27 : 22) + 'px; top: ' + (cur.length === 1 ? 66 : 53) + 'px; display: flex; flex-direction: column; align-items: flex-end; font-size: ' + (cur.length === 1 ? 34 : 27) + 'px; line-height: 1.05; font-weight: 900; color: #2A2440; font-variant-numeric: tabular-nums',
+        openPage: function () { self.setState({ sheet: 'page', pageFor: idx, draft: s.pages[idx], fresh: true }); } };
+    };
+    var openBooks = s.count <= 2 ? cur.map(mk) : [mk(cur[focus], 0)];
+    var stackBooks = s.count <= 2 ? [] : cur.filter(function (c, i) { return i !== focus; }).map(function (c, i) {
+      var idx = CUR.indexOf(c);
+      return { title: c.title, page: 'Seite ' + s.pages[idx],
+        aria: c.title + ', Seite ' + s.pages[idx] + '. Ins Licht legen',
+        wrap: 'padding-left: ' + [6, 0, 10, 3][i] + 'px; padding-right: ' + [0, 8, 2, 6][i] + 'px',
+        style: 'position: relative; width: 100%; min-height: 48px; display: flex; align-items: center; border: none; border-radius: 6px 9px 9px 6px; background: ' + c.cover + '; padding: 4px 16px 4px 12px; cursor: pointer; box-shadow: 0 3px 6px -2px rgba(10,12,30,.45), inset 0 2px 0 rgba(255,255,255,.18)',
+        pick: function () { self.setState({ focus: CUR.indexOf(c), saved: null }); } };
+    });
+    var n = Object.assign({}, COUNTS);
+    if (s.extra) n[s.target] += s.extra;
+    var total = n.gelesen + n.ungelesen + n.abgebrochen + s.count + n.wunsch;
+    var head = abend ? 'Das Licht ist noch an.' : 'Tageslicht im Zimmer.';
+    var sub = WORDS[s.count] + (s.count === 1 ? ' Buch liegt offen.' : (s.count <= 2 ? ' Bücher offen.' : ' Bücher bereit.'));
+    var lines = { gelesen: String(n.gelesen), ungelesen: n.ungelesen + ' · haben Zeit', wunsch: n.wunsch + ' · irgendwann', abgebrochen: n.abgebrochen + ' · ohne Groll', regale: n.regale + ' eigene', verliehen: n.verliehen + ' unterwegs' };
+    var vols = {};
+    Object.keys(VOLS).forEach(function (k) {
+      vols[k] = { line: lines[k] || '', aria: VOLS[k].name + (k === 'stats' ? ', Statistik öffnen' : ', ' + n[k] + ' öffnen'),
+        open: function () { self.go({ screen: 'vol', vol: k, query: '', sort: 'jahr' }); } };
+    });
+    // Band
+    var vk = s.vol || 'gelesen', V = VOLS[vk];
+    var q = s.query.trim().toLowerCase();
+    var inVol = BOOKS.filter(function (b) { return b.vol === vk; });
+    var shown = inVol.filter(function (b) { return !q || (b.title + ' ' + b.author).toLowerCase().indexOf(q) >= 0; });
+    if (s.sort === 'licht') shown = shown.slice().sort(function (a, b) { return (b.lights || 0) - (a.lights || 0); });
+    if (s.sort === 'abc') shown = shown.slice().sort(function (a, b) { return a.title.localeCompare(b.title, 'de'); });
+    var groups = [];
+    shown.forEach(function (b) {
+      var label = s.sort === 'jahr' ? b.year : (s.sort === 'licht' ? 'Nach Lichtern' : 'Von A bis Z');
+      var g = groups.filter(function (x) { return x.label === label; })[0];
+      if (!g) { g = { label: label, rows: [] }; groups.push(g); }
+      g.rows.push({ title: b.title, meta: b.vol === 'gelesen' ? b.author + ' · ' + b.when : (b.vol === 'regale' ? b.when : b.author + ' · ' + b.when), cover: b.cover,
+        hasLights: !!b.lights, lights: b.lights ? lightsOf(b.lights, 9) : [],
+        aria: b.title + ', ' + b.author + (b.lights ? ', ' + b.lights + ' von 5 Lichtern' : ''),
+        open: function () { self.go({ screen: 'book', book: b.id, from: 'vol' }); } });
+    });
+    var count = vk === 'stats' ? 0 : n[vk];
+    var vol = { name: V.name, sub: vk === 'stats' ? V.sub : count + (vk === 'regale' ? ' Regale. ' : ' Bücher. ') + V.sub, searchLabel: V.search || '',
+      isList: vk !== 'stats', isStats: vk === 'stats', groups: groups, noResults: shown.length === 0,
+      footer: q ? '' : (count > inVol.length ? '… und ' + (count - inVol.length) + ' weitere. Gezeigt werden Beispieldaten.' : 'Beispieldaten.') };
+    var sorts = [['jahr', 'Nach Jahr'], ['licht', 'Nach Lichtern'], ['abc', 'A bis Z']].map(function (o) {
+      return { label: o[1], checked: s.sort === o[0] ? 'true' : 'false', style: seg(s.sort === o[0]), pick: function () { self.setState({ sort: o[0] }); } };
+    });
+    // Buch
+    var b = BOOKS.filter(function (x) { return x.id === s.book; })[0] || BOOKS[0];
+    var on = !!s.showcase[b.id];
+    var dark = function (hex) { var v = parseInt(hex.slice(1), 16), r = (v >> 16) * .72, g = ((v >> 8) & 255) * .72, bl = (v & 255) * .72; return 'rgb(' + Math.round(r) + ',' + Math.round(g) + ',' + Math.round(bl) + ')'; };
+    var book = { title: b.title, author: b.author, cover: b.cover, coverDark: dark(b.cover), ribbon: b.ribbon || '#F2B33D',
+      status: b.vol === 'gelesen' ? 'Gelesen im ' + b.when : b.when,
+      hasReading: !!b.reading, reading: b.reading || '', forWhom: b.forWhom || '',
+      inviteCard: !b.reading, inviteText: b.vol === 'gelesen' ? 'Was ist dir von diesem Buch geblieben? Ein Satz reicht.' : 'Deine eigenen Worte kommen dazu, wenn du es gelesen hast. Eine Notiz für dich geht schon jetzt.',
+      hasRating: !!b.lights, lightsLabel: (b.lights || 0) + ' von 5 Lichtern',
+      lights: [1, 2, 3, 4, 5].map(function (i) { return { bulb: i <= (b.lights || 0) ? 'fill: var(--bulb)' : 'fill: none; stroke: var(--line); stroke-width: 2' }; }),
+      lightsWord: ['', 'kaum', 'ein wenig', 'spürbar', 'sehr', 'mitten ins Herz'][b.lights || 0],
+      qualities: (b.qualities || []).map(function (r) { return { k: r[0], v: r[1] }; }),
+      hasQuote: !!b.quote, quote: b.quote || '', quotePage: b.quotePage || '',
+      copy: (b.copy || [['Format', 'noch nicht angegeben']]).map(function (r, i) { return { k: r[0], v: r[1], style: row(i) }; }),
+      history: (b.history || [['Erfasst', 'Beispiel']]).map(function (r, i) { return { k: r[0], v: r[1], style: row(i) }; }) };
+    // Seite eintragen
+    var pc = CUR[s.pageFor];
+    var clamp = function (x) { return Math.max(0, Math.min(pc.pages, x)); };
+    var diff = s.draft - s.pages[s.pageFor];
+    var keys = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'Ende', '0', '⌫'].map(function (k) {
+      return { label: k, aria: k === '⌫' ? 'Letzte Ziffer löschen' : (k === 'Ende' ? 'Letzte Seite, ' + pc.pages : k),
+        go: function () {
+          var d = String(s.draft);
+          if (k === '⌫') d = s.fresh ? '0' : (d.length > 1 ? d.slice(0, -1) : '0');
+          else if (k === 'Ende') d = String(pc.pages);
+          else d = s.fresh || d === '0' ? k : d + k;
+          self.setState({ draft: clamp(parseInt(d, 10) || 0), fresh: false });
+        } };
+    });
+    var pg = { info: pc.title + ' · bisher Seite ' + s.pages[s.pageFor] + ' von ' + pc.pages, draft: String(s.draft), ribbon: pc.ribbon,
+      diff: diff > 0 ? diff + (diff === 1 ? ' Seite weiter' : ' Seiten weiter') : (diff < 0 ? (-diff) + ' Seiten zurück' : ' '),
+      saveLabel: s.draft >= pc.pages ? 'Zu Ende gelesen' : 'Bändchen auf Seite ' + s.draft + ' legen',
+      keys: keys,
+      jumps: [5, 10, 20].map(function (j) { return { label: '+' + j, go: function () { self.setState({ draft: clamp(s.draft + j), fresh: false }); } }; }) };
+    // Auspacken
+    var addOptions = [
+      { icon: '▥', title: 'Scannen', sub: 'Strichcodes hintereinander, ganzer Karton', step: 'scan' },
+      { icon: '#', title: 'ISBN eintippen', sub: '13 oder 10 Ziffern, auch mehrere', step: 'isbn' },
+      { icon: '✎', title: 'Von Hand', sub: 'Für Bücher ohne ISBN', step: 'hand' }
+    ].map(function (o) { o.pick = function () { self.setState({ addStep: o.step }); }; return o; });
+    var targets = [['ungelesen', 'Ungelesen'], ['wunsch', 'Wunschliste']].map(function (o) {
+      return { label: o[1], checked: s.target === o[0] ? 'true' : 'false', style: seg(s.target === o[0]), pick: function () { self.setState({ target: o[0] }); } };
+    });
+    // Tabs
+    var tabsDef = [['bib', 'Bibliothek'], ['shop', 'Schaufenster'], ['find', 'Entdecken'], ['me', 'Ich']];
+    var tabs = tabsDef.map(function (t) {
+      var a = s.tab === t[0];
+      return { label: t[1], current: a ? 'page' : 'false', isBib: t[0] === 'bib', isShop: t[0] === 'shop', isFind: t[0] === 'find', isMe: t[0] === 'me',
+        fill: 'fill: ' + (a ? 'var(--acc)' : 'var(--tabMute)'), stroke: 'stroke: ' + (a ? 'var(--acc)' : 'var(--tabMute)'),
+        style: 'flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; border: none; background: none; padding: 0; cursor: pointer; font-size: 11px; font-weight: ' + (a ? 800 : 700) + '; color: ' + (a ? 'var(--acc)' : 'var(--tabMute)'),
+        go: function () {
+          if (t[0] === 'bib') self.go({ tab: 'bib', screen: 'home' });
+          else self.go({ tab: t[0], screen: 'tab' });
+        } };
+    });
+    var tabTexts = { shop: ['Schaufenster', 'Hier entsteht deine kleine öffentliche Bücherei. Es erscheint nur, was du einzeln ins Fenster stellst.'], find: ['Entdecken', 'Später findest du hier Schaufenster in der Nähe und Leserstimmen zu einzelnen Büchern.'], me: ['Ich', 'Pseudonym, Privatsphäre und der Export deiner Bibliothek.'] };
+    var tt = tabTexts[s.tab] || ['', ''];
+    var sheetH = { page: 640, add: s.addStep === 'scan' ? 560 : 400, showcase: 470, proto: 330, soon: 200 }[s.sheet] || 300;
+    var titles = { page: 'Seite eintragen', add: 'Auspacken', showcase: 'Schaufenster', proto: 'Prototyp', soon: 'Kommt bald' };
+    var savedText = s.saved ? s.saved : null;
+    return {
+      themeClass: abend ? 'abend' : 'tag', isAbend: abend, isTag: !abend, clock: abend ? '21:47' : '10:12',
+      bulbStyle: abend ? 'fill: #FFF6D8' : 'fill: #E9D3A6',
+      chainLabel: abend ? 'Zugkette: Licht aus, Tagesansicht' : 'Zugkette: Licht an, Abendansicht',
+      toggleMode: function () { self.setState({ mode: abend ? 'tag' : 'abend' }); },
+      isHome: s.screen === 'home', isVol: s.screen === 'vol', isBook: s.screen === 'book', isTab: s.screen === 'tab',
+      headLine: head, subLine: savedText || sub,
+      subStyle: 'margin: 0; font-size: 22px; line-height: 26px; font-weight: 900; letter-spacing: -.01em; color: ' + (savedText ? 'var(--acc)' : 'var(--ink)') + (savedText ? '; font-size: 17px; line-height: 24px; font-weight: 800' : ''),
+      layout1: s.count === 1, layout2: s.count === 2, layoutStack: s.count > 2,
+      openBooks: openBooks, stackBooks: stackBooks,
+      totalLabel: total + ' Bücher', vols: vols,
+      colophon: 'Gesammelt seit März 2025. Am häufigsten gelesen: Jonas Brehm.',
+      vol: vol, sorts: sorts, query: s.query, hasQuery: !!s.query,
+      statRows: [{ k: 'Am häufigsten gelesen', v: 'Jonas Brehm, 3 Bücher' }, { k: 'Liebstes Genre', v: 'Roman der Gegenwart' }, { k: 'Am stärksten erreicht', v: 'Die Uhrmacherin, Unter Linden, später' }, { k: 'Dieses Jahr zu Ende gelesen', v: '19 Bücher, ohne Ziel und ohne Eile' }],
+      book: book, bookBackLabel: s.from === 'vol' ? VOLS[b.vol].name : 'Bibliothek',
+      showcaseChecked: on ? 'true' : 'false',
+      showcaseHint: on ? 'Steht im Fenster. Sichtbar: Lesart, Lichter, Zitat.' : 'Aus. Nichts davon ist öffentlich.',
+      switchTrack: 'flex-shrink: 0; position: relative; width: 51px; height: 31px; border-radius: 16px; box-sizing: border-box; background: ' + (on ? 'var(--acc)' : 'var(--field)') + '; border: 1.5px solid ' + (on ? 'var(--acc)' : 'var(--line)'),
+      switchKnob: 'position: absolute; top: 1.5px; left: ' + (on ? '21.5px' : '1.5px') + '; width: 25px; height: 25px; border-radius: 13px; background: ' + (on ? 'var(--accInk)' : 'var(--mute)'),
+      tabs: tabs, tabTitle: tt[0], tabText: tt[1],
+      hasSheet: !!s.sheet, sheetTitle: titles[s.sheet] || '', closeLabel: s.sheet === 'proto' ? 'Fertig' : 'Abbrechen',
+      sheetStyle: 'position: absolute; left: 0; right: 0; bottom: 0; height: ' + sheetH + 'px; box-sizing: border-box; padding-bottom: 34px; border-radius: 28px 28px 0 0; background: var(--sheet); color: var(--ink); box-shadow: 0 -8px 30px rgba(10,12,30,.25)',
+      isPageSheet: s.sheet === 'page', isAddSheet: s.sheet === 'add', isShowcaseSheet: s.sheet === 'showcase', isProtoSheet: s.sheet === 'proto', isSoonSheet: s.sheet === 'soon',
+      pg: pg,
+      dec: function () { self.setState({ draft: clamp(s.draft - 1), fresh: false }); },
+      inc: function () { self.setState({ draft: clamp(s.draft + 1), fresh: false }); },
+      savePage: function () {
+        var p = s.pages.slice(); var d = s.draft - p[s.pageFor]; p[s.pageFor] = s.draft;
+        self.setState({ pages: p, sheet: null, saved: s.draft >= CUR[s.pageFor].pages ? 'Ausgelesen. Schön.' : 'Bändchen jetzt auf S. ' + s.draft + '.' });
+      },
+      addPick: s.addStep === 'pick', addScan: s.addStep === 'scan', addOther: s.addStep === 'isbn' || s.addStep === 'hand',
+      addOtherTitle: s.addStep === 'isbn' ? 'ISBN eintippen' : 'Von Hand anlegen',
+      addOptions: addOptions, targets: targets,
+      scanned: SCANNED.map(function (e) { return { title: e.title, author: e.author + ' · Beispiel', dot: 'width: 14px; height: 30px; border-radius: 3px; flex-shrink: 0; background: ' + e.c }; }),
+      unpackLabel: '3 Bücher ' + (s.target === 'wunsch' ? 'auf die Wunschliste' : 'ins Regal') + ' stellen',
+      unpack: function () { self.setState({ sheet: null, extra: 3, saved: '3 Neue bei ' + (s.target === 'wunsch' ? 'den Wünschen.' : 'Ungelesen.') }); },
+      addBack: function () { self.setState({ addStep: 'pick' }); },
+      openAdd: function () { self.setState({ sheet: 'add', addStep: 'pick' }); },
+      openProto: function () { self.setState({ sheet: 'proto' }); },
+      openSoon: function () { self.setState({ sheet: 'soon' }); },
+      protoModes: [['abend', 'Abend'], ['tag', 'Tag']].map(function (o) { return { label: o[1], checked: s.mode === o[0] ? 'true' : 'false', style: seg(s.mode === o[0]), pick: function () { self.setState({ mode: o[0] }); } }; }),
+      protoCounts: [1, 2, 4].map(function (c) { return { label: c + (c === 1 ? ' Buch' : ' Bücher'), checked: s.count === c ? 'true' : 'false', style: seg(s.count === c), pick: function () { self.setState({ count: c, focus: 0, saved: null }); } }; }),
+      goHome: function () { self.go({ screen: 'home' }); },
+      bookBack: function () { self.go(s.from === 'vol' ? { screen: 'vol', vol: b.vol } : { screen: 'home' }); },
+      setQuery: function (e) { self.setState({ query: e.target.value }); },
+      clearQuery: function () { self.setState({ query: '' }); },
+      toggleShowcase: function () {
+        if (on) { var m = Object.assign({}, s.showcase); m[b.id] = false; self.setState({ showcase: m }); }
+        else self.setState({ sheet: 'showcase' });
+      },
+      confirmShowcase: function () { var m = Object.assign({}, s.showcase); m[b.id] = true; self.setState({ showcase: m, sheet: null }); },
+      closeSheet: function () { self.setState({ sheet: null }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

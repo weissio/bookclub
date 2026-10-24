@@ -68,3 +68,46 @@ Einschränkung: Die Quellen beschreiben die Screens nur in Worten. Bilder der Ap
 | Erfassen | Paket „auspacken“ | Lücke „Noch Platz“ |
 | Statistik | Gegenstand „Rückblick“ und Vermerk | die Bücherstütze selbst |
 | Charakter | Lampe mit Zugkette | Stütze mit Brille |
+
+---
+
+## Prototyp „Licht an“ (gewählt am 24.10.2026)
+
+Datei: `LichtAn.dc.html` (Format des claude.ai-Design-Canvas, 390 × 844). Klickdurchlauf und Screenshots in `screens/` (01 bis 27). Der Durchlauf lief ohne Konsolenfehler. Alle Bücher, Personen und Zahlen sind Beispieldaten.
+
+**Startseite**
+- Abend: Lichtkegel der Pendelleuchte. Tag: Fensterlicht fällt schräg ins Zimmer, die Lampe ist aus, die Akzente sind tintenblau statt lampengelb.
+- Umschalten: in der App über die Zugkette an der Lampe. Im Prototyp gibt es zusätzlich den kleinen „P“-Knopf unten rechts für Tageszeit und Bücherzahl.
+- 1 Buch: Es liegt groß und mittig im Licht. 2 Bücher: Sie liegen nebeneinander. 3 bis 5 Bücher: Eines liegt aufgeschlagen im Licht, die anderen liegen daneben als kleiner Stapel geschlossener Bücher mit Seitenzahl. Antippen legt ein Buch ins Licht. Die Fläche wächst nicht mit.
+- Die Seitenzahl steht auf der aufgeschlagenen Seite. Kein Balken, keine Prozente.
+
+**Seite eintragen**
+- Ein Sheet mit großer Seitenzahl auf einem Papierblatt samt Lesebändchen. Dazu gibt es −/+, Sprünge um +5, +10 und +20, ein eigenes Ziffernfeld (Tasten 50 pt) und „Ende“ für die letzte Seite.
+- Der Hauptknopf liegt im Daumenbereich und sagt, was passiert: „Bändchen auf Seite 152 legen“.
+- Rückmeldung: Die zweite Kopfzeile wird für den Moment zu „Bändchen jetzt auf S. 152.“, und die Zahl im Buch ändert sich. Nichts springt, nichts blinkt.
+
+**Band „Gelesen“**
+- Kopf mit dem Band-Gegenstand. Darunter eine Suche (44 pt) und die Sortierung „Nach Jahr / Nach Lichtern / A bis Z“. Die Liste ist nach Jahren gruppiert und zeigt kleine Buchrücken.
+- Die Bewertung erscheint als fünf kleine Lichter. Am Ende steht „… und 139 weitere“.
+
+**Buchseite**
+- Ganz oben steht „Meine Lesart“ als Papierkarte mit Lesebändchen und „Weiterschreiben“.
+- Darunter „Hat mich erreicht“ mit fünf Glühbirnen und einem Wort („mitten ins Herz“), getrennt von den Eigenschaften (Lesefluss, Sprache, Tempo, Stark).
+- Danach folgen Zitat mit Seite, „Mein Exemplar“ und „Leseverlauf“.
+- Der Schalter „Im Schaufenster zeigen“ steht standardmäßig auf aus. Beim Einschalten fragt ein Sheet nach und sagt genau, was sichtbar wird und was privat bleibt.
+
+**Neue Bücher auspacken**
+- Drei Wege: Scannen, ISBN eintippen, von Hand.
+- Scannen ist als Platzhalter gestaltet: Kamera, dann „Im Karton · 3“, dann die Wahl „Ungelesen / Wunschliste“, dann „3 Bücher ins Regal stellen“. Danach zählt der Band hoch, und die Kopfzeile meldet „3 Neue bei Ungelesen.“
+- ISBN und „von Hand“ sind reine Platzhalter.
+
+**Tabs**
+- Bibliothek ist gebaut. Schaufenster, Entdecken und Ich sind illustrierte Platzhalter.
+
+**Bewusst weggelassen:** Streaks, Ziele, Prozentbalken, Push-Hinweise, Konfetti, ein zweites Plus. Animationen gibt es nur als Überblendung (150 ms) und als Sheet-Einschub (200 ms). Unter „Bewegung reduzieren“ entfallen beide.
+
+**Offene Fragen an den Auftraggeber**
+1. Soll die Bewertung „Lichter“ heißen (Glühbirnen) oder neutral bleiben (Punkte)?
+2. Soll die Tageszeit der Uhr folgen, dem Systemmodus (hell/dunkel) oder nur der Zugkette?
+3. Gehört „Verliehen“ schon jetzt ins Raster, oder soll der Platz frei bleiben, bis die Funktion kommt?
+4. Ist ab 5 aktuellen Büchern Schluss, oder soll der Stapel ab dem sechsten Buch zu „+2“ zusammenfallen?

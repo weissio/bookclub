@@ -25,7 +25,13 @@ _Zuletzt aktualisiert: 24.10.2026_
 
 ## Nächster Schritt
 
-Arjen hat Entwurf 3A „Licht an“ gewählt ([prototyp/designer/](prototyp/designer/)). Designer 3 baut daraus den klickbaren Prototyp: Startseite mit 1 und mehreren Büchern, Tag und Abend, Band, Buchseite, Seite eintragen, Erfassen. Danach folgt eine unabhängige Prüfung.
+Der klickbare Prototyp „Licht an“ von Designer 3 ist fertig: [prototyp/designer/3-charakter/LichtAn.dc.html](prototyp/designer/3-charakter/LichtAn.dc.html), 27 Screens unter `screens/`. Er liegt im Canvas auf der Seite „Licht an (Prototyp)“. Arjen prüft ihn.
+
+Offene Fragen des Designers:
+1. Soll die Bewertung „Lichter“ heißen oder neutrale Punkte zeigen?
+2. Wonach richtet sich die Tageszeit: nach der Uhr, nach dem Systemmodus oder nur nach der Zugkette?
+3. Gehört „Verliehen“ schon ins Raster?
+4. Was passiert ab dem 6. Buch am Lesen?
 
 **Hinweis:** Der Push zu GitHub schlägt seit 24.10. mit 403 fehl. Die Commits liegen lokal; der GitHub-Zugang muss in den Einstellungen unter Konnektoren erneuert werden.
 
