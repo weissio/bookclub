@@ -31,7 +31,7 @@ def to_work(e):
 
 def load():
     cat = {}
-    for e in json.load(open(os.path.join(KAT, 'kandidaten.json'), encoding='utf-8')):
+    for e in json.load(open(os.path.join(KAT, os.environ.get('KANDIDATEN', 'kandidaten-aus-arjen.json')), encoding='utf-8')):
         cat[e['id']] = to_work(e)
     mine = json.load(open(os.path.join(KAT, 'arjen-buecher.json'), encoding='utf-8'))
     for e in mine:
