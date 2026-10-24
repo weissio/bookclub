@@ -1,0 +1,3100 @@
+[
+  {
+    "id": "k1.01",
+    "welt": "Literarische Gegenwartsromane",
+    "titel": "Die Liebe im Ernstfall",
+    "autor": "Daniela Krien",
+    "isbn": "978-3-257-07053-8",
+    "jahr": 2019,
+    "verlag": "Diogenes",
+    "seiten": 287,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Liebe",
+      "Familie"
+    ],
+    "tempo": null,
+    "ton": [
+      "nachdenklich"
+    ],
+    "fokus": "figuren",
+    "sprache": "schlicht",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070538&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070538&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070538&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070538&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070538&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070538&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070538&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070538&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/daniela-krien/die-liebe-im-ernstfall.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/daniela-krien/die-liebe-im-ernstfall.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/daniela-krien/die-liebe-im-ernstfall.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/daniela-krien/die-liebe-im-ernstfall.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k1.02",
+    "welt": "Literarische Gegenwartsromane",
+    "titel": "Was man von hier aus sehen kann",
+    "autor": "Mariana Leky",
+    "isbn": "978-3-8321-9839-8",
+    "jahr": 2017,
+    "verlag": "DuMont",
+    "seiten": 314,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Dorf & Provinz",
+      "Liebe",
+      "Verlust & Trauer"
+    ],
+    "tempo": null,
+    "ton": [
+      "warm"
+    ],
+    "fokus": null,
+    "sprache": "poetisch",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783832198398&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783832198398&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783832198398&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783832198398&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783832198398&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783832198398&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783832198398&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783832198398&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/mariana-leky/was-man-von-hier-aus-sehen-kann.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/mariana-leky/was-man-von-hier-aus-sehen-kann.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/mariana-leky/was-man-von-hier-aus-sehen-kann.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k1.03",
+    "welt": "Literarische Gegenwartsromane",
+    "titel": "Altes Land",
+    "autor": "Dörte Hansen",
+    "isbn": "978-3-8135-0647-1",
+    "jahr": 2015,
+    "verlag": "Knaus",
+    "seiten": 286,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Heimat & Herkunft",
+      "Dorf & Provinz",
+      "Familie"
+    ],
+    "tempo": null,
+    "ton": [
+      "humorvoll"
+    ],
+    "fokus": null,
+    "sprache": "poetisch",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783813506471&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783813506471&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783813506471&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783813506471&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783813506471&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783813506471&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783813506471&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783813506471&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783813506471&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/doerte-hansen/altes-land.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/doerte-hansen/altes-land.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k1.04",
+    "welt": "Literarische Gegenwartsromane",
+    "titel": "Unterleuten",
+    "autor": "Juli Zeh",
+    "isbn": "978-3-630-87487-6",
+    "jahr": 2016,
+    "verlag": "Luchterhand",
+    "seiten": 639,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Dorf & Provinz",
+      "Gesellschaft & Politik"
+    ],
+    "tempo": null,
+    "ton": [
+      "spannungsgeladen"
+    ],
+    "fokus": "beides",
+    "sprache": "schlicht",
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/juli-zeh/unterleuten.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/juli-zeh/unterleuten.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/juli-zeh/unterleuten.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k1.05",
+    "welt": "Literarische Gegenwartsromane",
+    "titel": "Normale Menschen",
+    "autor": "Sally Rooney",
+    "isbn": "978-3-630-87542-2",
+    "jahr": 2020,
+    "verlag": "Luchterhand",
+    "seiten": 316,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Liebe",
+      "Erwachsenwerden",
+      "Gesellschaft & Politik"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": "figuren",
+    "sprache": "schlicht",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630875422&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630875422&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630875422&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630875422&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630875422&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630875422&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630875422&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630875422&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/sally-rooney/normale-menschen.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/sally-rooney/normale-menschen.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/sally-rooney/normale-menschen.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k1.06",
+    "welt": "Literarische Gegenwartsromane",
+    "titel": "Mit Blick aufs Meer",
+    "autor": "Elizabeth Strout",
+    "isbn": "978-3-630-87330-5",
+    "jahr": 2010,
+    "verlag": "Luchterhand",
+    "seiten": 351,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Alter",
+      "Familie",
+      "Dorf & Provinz"
+    ],
+    "tempo": "ruhig",
+    "ton": [
+      "nachdenklich"
+    ],
+    "fokus": "figuren",
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630873305&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630873305&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630873305&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630873305&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630873305&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630873305&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630873305&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630873305&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630873305&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "tempo": {
+        "url": "https://www.perlentaucher.de/buch/elizabeth-strout/mit-blick-aufs-meer.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/elizabeth-strout/mit-blick-aufs-meer.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/elizabeth-strout/mit-blick-aufs-meer.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k1.07",
+    "welt": "Literarische Gegenwartsromane",
+    "titel": "Auf Erden sind wir kurz grandios",
+    "autor": "Ocean Vuong",
+    "isbn": "978-3-446-26389-5",
+    "jahr": 2019,
+    "verlag": "Carl Hanser Verlag",
+    "seiten": 269,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Familie",
+      "Migration",
+      "Identität"
+    ],
+    "tempo": null,
+    "ton": [
+      "melancholisch"
+    ],
+    "fokus": null,
+    "sprache": "poetisch",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446263895&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446263895&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446263895&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446263895&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446263895&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446263895&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446263895&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446263895&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/ocean-vuong/auf-erden-sind-wir-kurz-grandios.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/ocean-vuong/auf-erden-sind-wir-kurz-grandios.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/ocean-vuong/auf-erden-sind-wir-kurz-grandios.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k1.08",
+    "welt": "Literarische Gegenwartsromane",
+    "titel": "Herkunft",
+    "autor": "Saša Stanišić",
+    "isbn": "978-3-630-87473-9",
+    "jahr": 2019,
+    "verlag": "Luchterhand",
+    "seiten": 355,
+    "genre": "Biografie & Erinnerungen",
+    "thema": [
+      "Heimat & Herkunft",
+      "Migration",
+      "Erinnerung"
+    ],
+    "tempo": null,
+    "ton": [
+      "humorvoll",
+      "melancholisch"
+    ],
+    "fokus": null,
+    "sprache": "poetisch",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874739&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874739&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874739&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874739&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874739&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874739&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874739&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630874739&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/sasa-stanisic/herkunft.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/sasa-stanisic/herkunft.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/sasa-stanisic/herkunft.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k1.09",
+    "welt": "Literarische Gegenwartsromane",
+    "titel": "Streulicht",
+    "autor": "Deniz Ohde",
+    "isbn": "978-3-518-42963-1",
+    "jahr": 2020,
+    "verlag": "Suhrkamp",
+    "seiten": 284,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Heimat & Herkunft",
+      "Erwachsenwerden",
+      "Gesellschaft & Politik"
+    ],
+    "tempo": null,
+    "ton": [
+      "düster"
+    ],
+    "fokus": "figuren",
+    "sprache": "nüchtern",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518429631&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518429631&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518429631&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518429631&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518429631&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518429631&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518429631&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518429631&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/deniz-ohde/streulicht.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/deniz-ohde/streulicht.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/deniz-ohde/streulicht.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/deniz-ohde/streulicht.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k1.10",
+    "welt": "Literarische Gegenwartsromane",
+    "titel": "Unsere Seelen bei Nacht",
+    "autor": "Kent Haruf",
+    "isbn": "978-3-257-06986-0",
+    "jahr": 2017,
+    "verlag": "Diogenes",
+    "seiten": 196,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Alter",
+      "Liebe",
+      "Dorf & Provinz"
+    ],
+    "tempo": null,
+    "ton": [
+      "nüchtern"
+    ],
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257069860&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257069860&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257069860&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257069860&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257069860&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257069860&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257069860&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257069860&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/kent-haruf/unsere-seelen-bei-nacht.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/kent-haruf/unsere-seelen-bei-nacht.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k1.11",
+    "welt": "Literarische Gegenwartsromane",
+    "titel": "Klara und die Sonne",
+    "autor": "Kazuo Ishiguro",
+    "isbn": "978-3-89667-693-1",
+    "jahr": 2021,
+    "verlag": "Blessing",
+    "seiten": 349,
+    "genre": "Science-Fiction",
+    "thema": [
+      "Technik & Zukunft",
+      "Erwachsenwerden",
+      "Freundschaft"
+    ],
+    "tempo": null,
+    "ton": [
+      "melancholisch",
+      "nachdenklich"
+    ],
+    "fokus": null,
+    "sprache": "schlicht",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676931&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676931&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676931&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676931&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676931&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676931&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676931&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://www.perlentaucher.de/buch/kazuo-ishiguro/klara-und-die-sonne.html",
+        "art": "redaktionell"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/kazuo-ishiguro/klara-und-die-sonne.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/kazuo-ishiguro/klara-und-die-sonne.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/kazuo-ishiguro/klara-und-die-sonne.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k1.12",
+    "welt": "Literarische Gegenwartsromane",
+    "titel": "Der Gesang der Flusskrebse",
+    "autor": "Delia Owens",
+    "isbn": "978-3-446-26419-9",
+    "jahr": 2019,
+    "verlag": "hanserblau",
+    "seiten": 459,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Natur & Landschaft",
+      "Erwachsenwerden",
+      "Verbrechen & Ermittlung"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446264199&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446264199&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446264199&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446264199&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446264199&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446264199&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446264199&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446264199&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/delia-owens/der-gesang-der-flusskrebse.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k2.01",
+    "welt": "Krimi und Thriller",
+    "titel": "Der Donnerstagsmordclub",
+    "autor": "Richard Osman",
+    "isbn": "978-3-471-36014-9",
+    "jahr": 2021,
+    "verlag": "List",
+    "seiten": 458,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Verbrechen & Ermittlung",
+      "Alter",
+      "Freundschaft"
+    ],
+    "tempo": null,
+    "ton": [
+      "humorvoll"
+    ],
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783471360149&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783471360149&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783471360149&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783471360149&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783471360149&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783471360149&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783471360149&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783471360149&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/richard-osman/der-donnerstagsmordclub.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/richard-osman/der-donnerstagsmordclub.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k2.02",
+    "welt": "Krimi und Thriller",
+    "titel": "Erbarmen",
+    "autor": "Jussi Adler-Olsen",
+    "isbn": "978-3-423-24751-1",
+    "jahr": 2009,
+    "verlag": "Dt. Taschenbuch-Verl.",
+    "seiten": 416,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Verbrechen & Ermittlung"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423247511&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423247511&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423247511&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423247511&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423247511&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423247511&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423247511&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423247511&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423247511&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "k2.03",
+    "welt": "Krimi und Thriller",
+    "titel": "Winterkartoffelknödel",
+    "autor": "Rita Falk",
+    "isbn": "978-3-423-24810-5",
+    "jahr": 2010,
+    "verlag": "Dt. Taschenbuch-Verl.",
+    "seiten": 233,
+    "genre": null,
+    "thema": null,
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423248105&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423248105&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423248105&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423248105&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423248105&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423248105&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423248105&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "k2.04",
+    "welt": "Krimi und Thriller",
+    "titel": "Grabesgrün",
+    "autor": "Tana French",
+    "isbn": "978-3-502-10191-8",
+    "jahr": 2008,
+    "verlag": "Scherz",
+    "seiten": 672,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Verbrechen & Ermittlung"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": "figuren",
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783502101918&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783502101918&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783502101918&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783502101918&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783502101918&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783502101918&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783502101918&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783502101918&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783502101918&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/tana-french/grabesgruen.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k2.05",
+    "welt": "Krimi und Thriller",
+    "titel": "Verbrechen",
+    "autor": "Ferdinand von Schirach",
+    "isbn": "978-3-492-05362-4",
+    "jahr": 2009,
+    "verlag": "Piper",
+    "seiten": 205,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Verbrechen & Ermittlung"
+    ],
+    "tempo": null,
+    "ton": [
+      "nüchtern"
+    ],
+    "fokus": null,
+    "sprache": "nüchtern",
+    "laenge": "kurz",
+    "inhalt": [
+      "gewalt_explizit"
+    ],
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492053624&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492053624&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492053624&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492053624&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492053624&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492053624&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492053624&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492053624&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492053624&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/ferdinand-von-schirach/verbrechen.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/ferdinand-von-schirach/verbrechen.html",
+        "art": "redaktionell"
+      },
+      "inhalt": {
+        "url": "https://www.perlentaucher.de/buch/ferdinand-von-schirach/verbrechen.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k2.06",
+    "welt": "Krimi und Thriller",
+    "titel": "Kaltblütig",
+    "autor": "Truman Capote",
+    "isbn": "978-3-0369-5161-4",
+    "jahr": 2007,
+    "verlag": "Kein & Aber",
+    "seiten": 534,
+    "genre": null,
+    "thema": [
+      "Verbrechen & Ermittlung"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": "figuren",
+    "sprache": "nüchtern",
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783036951614&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783036951614&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783036951614&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783036951614&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783036951614&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783036951614&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783036951614&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783036951614&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/truman-capote/kaltbluetig.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/truman-capote/kaltbluetig.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k2.07",
+    "welt": "Krimi und Thriller",
+    "titel": "Der nasse Fisch",
+    "autor": "Volker Kutscher",
+    "isbn": "978-3-462-03932-0",
+    "jahr": 2007,
+    "verlag": "Kiepenheuer & Witsch",
+    "seiten": 494,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Verbrechen & Ermittlung",
+      "Geschichte",
+      "Großstadt"
+    ],
+    "tempo": null,
+    "ton": [
+      "spannungsgeladen"
+    ],
+    "fokus": null,
+    "sprache": "nüchtern",
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783462039320&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783462039320&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783462039320&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783462039320&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783462039320&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783462039320&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783462039320&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://www.perlentaucher.de/buch/volker-kutscher/der-nasse-fisch.html",
+        "art": "redaktionell"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783462039320&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/volker-kutscher/der-nasse-fisch.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/volker-kutscher/der-nasse-fisch.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k2.08",
+    "welt": "Krimi und Thriller",
+    "titel": "Meine Schwester, die Serienmörderin",
+    "autor": "Oyinkan Braithwaite",
+    "isbn": "978-3-351-05074-0",
+    "jahr": 2020,
+    "verlag": "Blumenbar",
+    "seiten": 239,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Familie",
+      "Verbrechen & Ermittlung",
+      "Gesellschaft & Politik"
+    ],
+    "tempo": "rasant",
+    "ton": [
+      "humorvoll"
+    ],
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": [
+      "gewalt_explizit"
+    ],
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783351050740&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783351050740&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783351050740&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783351050740&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783351050740&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783351050740&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783351050740&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783351050740&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/oyinkan-braithwaite/meine-schwester-die-serienmoerderin.html",
+        "art": "redaktionell"
+      },
+      "tempo": {
+        "url": "https://www.perlentaucher.de/buch/oyinkan-braithwaite/meine-schwester-die-serienmoerderin.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/oyinkan-braithwaite/meine-schwester-die-serienmoerderin.html",
+        "art": "redaktionell"
+      },
+      "inhalt": {
+        "url": "https://www.perlentaucher.de/buch/oyinkan-braithwaite/meine-schwester-die-serienmoerderin.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k2.09",
+    "welt": "Krimi und Thriller",
+    "titel": "Blaue Nacht",
+    "autor": "Simone Buchholz",
+    "isbn": "978-3-518-46662-9",
+    "jahr": 2016,
+    "verlag": "Suhrkamp",
+    "seiten": 235,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Verbrechen & Ermittlung",
+      "Großstadt",
+      "Freundschaft"
+    ],
+    "tempo": null,
+    "ton": [
+      "melancholisch",
+      "humorvoll"
+    ],
+    "fokus": "figuren",
+    "sprache": "schlicht",
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518466629&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518466629&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518466629&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518466629&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518466629&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518466629&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518466629&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518466629&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/simone-buchholz/blaue-nacht.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/simone-buchholz/blaue-nacht.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/simone-buchholz/blaue-nacht.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/simone-buchholz/blaue-nacht.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k2.10",
+    "welt": "Krimi und Thriller",
+    "titel": "Slow Horses",
+    "autor": "Mick Herron",
+    "isbn": "978-3-257-07018-7",
+    "jahr": 2018,
+    "verlag": "Diogenes",
+    "seiten": 471,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Verbrechen & Ermittlung",
+      "Arbeit & Beruf"
+    ],
+    "tempo": null,
+    "ton": [
+      "humorvoll",
+      "spannungsgeladen"
+    ],
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070187&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070187&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070187&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070187&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070187&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070187&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070187&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783257070187&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/mick-herron/slow-horses.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/mick-herron/slow-horses.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k2.11",
+    "welt": "Krimi und Thriller",
+    "titel": "Die Therapie",
+    "autor": "Sebastian Fitzek",
+    "isbn": "978-3-426-63309-0",
+    "jahr": 2006,
+    "verlag": "Knaur-Taschenbuch-Verl.",
+    "seiten": 335,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Verbrechen & Ermittlung",
+      "Familie"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426633090&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426633090&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426633090&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426633090&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426633090&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426633090&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426633090&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426633090&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426633090&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "k2.12",
+    "welt": "Krimi und Thriller",
+    "titel": "Der namenlose Tag",
+    "autor": "Friedrich Ani",
+    "isbn": "978-3-518-42487-2",
+    "jahr": 2015,
+    "verlag": "Suhrkamp",
+    "seiten": 298,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Verbrechen & Ermittlung",
+      "Verlust & Trauer",
+      "Familie"
+    ],
+    "tempo": "ruhig",
+    "ton": [
+      "düster",
+      "melancholisch"
+    ],
+    "fokus": null,
+    "sprache": "poetisch",
+    "laenge": "mittel",
+    "inhalt": [
+      "suizid"
+    ],
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518424872&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518424872&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518424872&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518424872&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518424872&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518424872&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518424872&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518424872&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/friedrich-ani/der-namenlose-tag.html",
+        "art": "redaktionell"
+      },
+      "tempo": {
+        "url": "https://www.perlentaucher.de/buch/friedrich-ani/der-namenlose-tag.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/friedrich-ani/der-namenlose-tag.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/friedrich-ani/der-namenlose-tag.html",
+        "art": "redaktionell"
+      },
+      "inhalt": {
+        "url": "https://www.perlentaucher.de/buch/friedrich-ani/der-namenlose-tag.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k3.01",
+    "welt": "Fantasy und Science-Fiction",
+    "titel": "Das Jesus-Video",
+    "autor": "Andreas Eschbach",
+    "isbn": "978-3-404-14294-1",
+    "jahr": 2000,
+    "verlag": "Bastei-Verl. Lübbe",
+    "seiten": 651,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Technik & Zukunft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404142941&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404142941&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404142941&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404142941&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404142941&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404142941&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404142941&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1368888585",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404142941&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "k3.02",
+    "welt": "Fantasy und Science-Fiction",
+    "titel": "Die drei Sonnen",
+    "autor": "Cixin Liu",
+    "isbn": "978-3-453-31716-1",
+    "jahr": 2017,
+    "verlag": "Wilhelm Heyne Verlag",
+    "seiten": 591,
+    "genre": "Science-Fiction",
+    "thema": [
+      "Technik & Zukunft",
+      "Wissenschaft",
+      "Geschichte"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": "ideen",
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453317161&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453317161&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453317161&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453317161&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453317161&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453317161&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453317161&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453317161&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/cixin-liu/die-drei-sonnen.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/cixin-liu/die-drei-sonnen.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k3.03",
+    "welt": "Fantasy und Science-Fiction",
+    "titel": "Der Name des Windes",
+    "autor": "Patrick Rothfuss",
+    "isbn": "978-3-608-93815-9",
+    "jahr": 2008,
+    "verlag": "Klett-Cotta",
+    "seiten": 863,
+    "genre": "Fantasy",
+    "thema": null,
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783608938159&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783608938159&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783608938159&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783608938159&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783608938159&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783608938159&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783608938159&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1219681830",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "k3.04",
+    "welt": "Fantasy und Science-Fiction",
+    "titel": "Gevatter Tod",
+    "autor": "Terry Pratchett",
+    "isbn": "978-3-492-28064-8",
+    "jahr": 2015,
+    "verlag": "Piper",
+    "seiten": 327,
+    "genre": "Fantasy",
+    "thema": null,
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492280648&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492280648&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492280648&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492280648&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492280648&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492280648&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492280648&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492280648&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "k3.05",
+    "welt": "Fantasy und Science-Fiction",
+    "titel": "Der lange Weg zu einem kleinen zornigen Planeten",
+    "autor": "Becky Chambers",
+    "isbn": "978-3-596-03568-7",
+    "jahr": 2016,
+    "verlag": "FISCHER Tor",
+    "seiten": 542,
+    "genre": "Science-Fiction",
+    "thema": null,
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783596035687&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783596035687&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783596035687&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783596035687&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783596035687&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783596035687&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783596035687&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783596035687&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "k3.06",
+    "welt": "Fantasy und Science-Fiction",
+    "titel": "Der Marsianer",
+    "autor": "Andy Weir",
+    "isbn": "978-3-453-31583-9",
+    "jahr": 2014,
+    "verlag": "Heyne",
+    "seiten": 508,
+    "genre": "Science-Fiction",
+    "thema": null,
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453315839&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453315839&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453315839&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453315839&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453315839&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453315839&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453315839&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453315839&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "k3.07",
+    "welt": "Fantasy und Science-Fiction",
+    "titel": "Piranesi",
+    "autor": "Susanna Clarke",
+    "isbn": "978-3-89667-672-6",
+    "jahr": 2020,
+    "verlag": "Blessing",
+    "seiten": 269,
+    "genre": "Fantasy",
+    "thema": [
+      "Magie & Mythos",
+      "Identität"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676726&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676726&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676726&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676726&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676726&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676726&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783896676726&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://www.perlentaucher.de/buch/susanna-clarke/piranesi.html",
+        "art": "redaktionell"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/susanna-clarke/piranesi.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k3.08",
+    "welt": "Fantasy und Science-Fiction",
+    "titel": "Der Report der Magd",
+    "autor": "Margaret Atwood",
+    "isbn": "978-3-492-31116-8",
+    "jahr": 2017,
+    "verlag": "Piper",
+    "seiten": 411,
+    "genre": null,
+    "thema": null,
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492311168&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492311168&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492311168&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492311168&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492311168&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492311168&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492311168&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "k3.09",
+    "welt": "Fantasy und Science-Fiction",
+    "titel": "QualityLand",
+    "autor": "Marc-Uwe Kling",
+    "isbn": "978-3-550-05023-7",
+    "jahr": 2017,
+    "verlag": "Ullstein",
+    "seiten": 379,
+    "genre": "Science-Fiction",
+    "thema": [
+      "Technik & Zukunft",
+      "Gesellschaft & Politik"
+    ],
+    "tempo": "rasant",
+    "ton": [
+      "humorvoll"
+    ],
+    "fokus": "ideen",
+    "sprache": "verspielt",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783550050237&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783550050237&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783550050237&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783550050237&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783550050237&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783550050237&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783550050237&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://www.perlentaucher.de/buch/marc-uwe-kling/quality-land-roman-2017.html",
+        "art": "redaktionell"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/marc-uwe-kling/quality-land-roman-2017.html",
+        "art": "redaktionell"
+      },
+      "tempo": {
+        "url": "https://www.perlentaucher.de/buch/marc-uwe-kling/quality-land-roman-2017.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/marc-uwe-kling/quality-land-roman-2017.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/marc-uwe-kling/quality-land-roman-2017.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/marc-uwe-kling/quality-land-roman-2017.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k3.10",
+    "welt": "Fantasy und Science-Fiction",
+    "titel": "Die Seiten der Welt",
+    "autor": "Kai Meyer",
+    "isbn": "978-3-8414-2165-4",
+    "jahr": 2014,
+    "verlag": "Fischer FJB",
+    "seiten": 555,
+    "genre": "Fantasy",
+    "thema": null,
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783841421654&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783841421654&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783841421654&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783841421654&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783841421654&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783841421654&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783841421654&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783841421654&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "k3.11",
+    "welt": "Fantasy und Science-Fiction",
+    "titel": "Die Optimierer",
+    "autor": "Theresa Hannig",
+    "isbn": "978-3-404-20887-6",
+    "jahr": 2017,
+    "verlag": "Bastei Lübbe Taschenbuch",
+    "seiten": 303,
+    "genre": "Science-Fiction",
+    "thema": null,
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404208876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404208876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404208876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404208876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404208876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404208876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404208876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404208876&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "k3.12",
+    "welt": "Fantasy und Science-Fiction",
+    "titel": "Zerrissene Erde",
+    "autor": "N. K. Jemisin",
+    "isbn": "978-3-426-52178-6",
+    "jahr": 2018,
+    "verlag": "Knaur",
+    "seiten": 494,
+    "genre": "Fantasy",
+    "thema": [
+      "Magie & Mythos",
+      "Familie"
+    ],
+    "tempo": null,
+    "ton": [
+      "spannungsgeladen",
+      "düster"
+    ],
+    "fokus": "handlung",
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426521786&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426521786&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426521786&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426521786&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426521786&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426521786&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426521786&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://www.perlentaucher.de/buch/n-k-jemisin/zerrissene-erde.html",
+        "art": "redaktionell"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/n-k-jemisin/zerrissene-erde.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/n-k-jemisin/zerrissene-erde.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/n-k-jemisin/zerrissene-erde.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k4.01",
+    "welt": "Erzählendes Sachbuch",
+    "titel": "Das geheime Leben der Bäume",
+    "autor": "Peter Wohlleben",
+    "isbn": "978-3-453-28067-0",
+    "jahr": 2015,
+    "verlag": "Ludwig",
+    "seiten": 223,
+    "genre": "Sachbuch",
+    "thema": [
+      "Natur & Landschaft",
+      "Wissenschaft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453280670&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453280670&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453280670&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453280670&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453280670&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453280670&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453280670&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453280670&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453280670&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "k4.02",
+    "welt": "Erzählendes Sachbuch",
+    "titel": "Eine kurze Geschichte der Menschheit",
+    "autor": "Yuval Noaḥ Harari",
+    "isbn": "978-3-421-04595-9",
+    "jahr": 2013,
+    "verlag": "Dt. Verl.-Anst.",
+    "seiten": 525,
+    "genre": "Sachbuch",
+    "thema": [
+      "Geschichte"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": "ideen",
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783421045959&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783421045959&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783421045959&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783421045959&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783421045959&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783421045959&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783421045959&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783421045959&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783421045959&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/yuval-noah-harari/eine-kurze-geschichte-der-menschheit.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k4.03",
+    "welt": "Erzählendes Sachbuch",
+    "titel": "Im Grunde gut",
+    "autor": "Rutger Bregman",
+    "isbn": "978-3-498-00200-8",
+    "jahr": 2020,
+    "verlag": "Rowohlt",
+    "seiten": 478,
+    "genre": "Sachbuch",
+    "thema": [
+      "Philosophie & Sinn",
+      "Geschichte",
+      "Gesellschaft & Politik"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": "ideen",
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783498002008&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783498002008&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783498002008&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783498002008&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783498002008&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783498002008&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783498002008&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783498002008&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783498002008&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/rutger-bregman/im-grunde-gut.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k4.04",
+    "welt": "Erzählendes Sachbuch",
+    "titel": "Schnelles Denken, langsames Denken",
+    "autor": "Daniel Kahneman",
+    "isbn": "978-3-88680-886-1",
+    "jahr": 2012,
+    "verlag": "Siedler",
+    "seiten": 621,
+    "genre": "Sachbuch",
+    "thema": [
+      "Wissenschaft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": "ideen",
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783886808861&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783886808861&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783886808861&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783886808861&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783886808861&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783886808861&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783886808861&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783886808861&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783886808861&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/daniel-kahneman/schnelles-denken-langsames-denken.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k4.05",
+    "welt": "Erzählendes Sachbuch",
+    "titel": "1913. Der Sommer des Jahrhunderts",
+    "autor": "Florian Illies",
+    "isbn": "978-3-10-036801-0",
+    "jahr": 2012,
+    "verlag": "S. Fischer",
+    "seiten": 319,
+    "genre": "Sachbuch",
+    "thema": [
+      "Geschichte",
+      "Kunst & Musik"
+    ],
+    "tempo": null,
+    "ton": [
+      "humorvoll"
+    ],
+    "fokus": null,
+    "sprache": "verspielt",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783100368010&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783100368010&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783100368010&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783100368010&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783100368010&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783100368010&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783100368010&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783100368010&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783100368010&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/florian-illies/1913.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/florian-illies/1913.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k4.06",
+    "welt": "Erzählendes Sachbuch",
+    "titel": "Die Unsterblichkeit der Henrietta Lacks",
+    "autor": "Rebecca Skloot",
+    "isbn": "978-3-424-15075-9",
+    "jahr": 2010,
+    "verlag": "Irisiana",
+    "seiten": 507,
+    "genre": "Biografie & Erinnerungen",
+    "thema": [
+      "Wissenschaft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783424150759&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783424150759&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783424150759&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783424150759&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783424150759&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783424150759&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783424150759&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783424150759&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783424150759&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      }
+    }
+  },
+  {
+    "id": "k4.07",
+    "welt": "Erzählendes Sachbuch",
+    "titel": "Im Unterland",
+    "autor": "Robert Macfarlane",
+    "isbn": "978-3-328-60113-5",
+    "jahr": 2019,
+    "verlag": "Penguin Verlag",
+    "seiten": 555,
+    "genre": "Reise & Natur",
+    "thema": [
+      "Natur & Landschaft"
+    ],
+    "tempo": null,
+    "ton": [
+      "nachdenklich"
+    ],
+    "fokus": null,
+    "sprache": "poetisch",
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783328601135&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783328601135&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783328601135&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783328601135&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783328601135&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783328601135&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783328601135&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783328601135&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/robert-macfarlane/im-unterland.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/robert-macfarlane/im-unterland.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/robert-macfarlane/im-unterland.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k4.08",
+    "welt": "Erzählendes Sachbuch",
+    "titel": "Rückkehr nach Reims",
+    "autor": "Didier Eribon",
+    "isbn": "978-3-518-07252-3",
+    "jahr": 2016,
+    "verlag": "Suhrkamp",
+    "seiten": 237,
+    "genre": "Biografie & Erinnerungen",
+    "thema": [
+      "Heimat & Herkunft",
+      "Gesellschaft & Politik",
+      "Identität"
+    ],
+    "tempo": null,
+    "ton": [
+      "nachdenklich"
+    ],
+    "fokus": "ideen",
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518072523&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518072523&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518072523&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518072523&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518072523&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518072523&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518072523&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518072523&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/didier-eribon/rueckkehr-nach-reims.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/didier-eribon/rueckkehr-nach-reims.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/didier-eribon/rueckkehr-nach-reims.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k4.09",
+    "welt": "Erzählendes Sachbuch",
+    "titel": "Die erstaunlichen Sinne der Tiere",
+    "autor": "Ed Yong",
+    "isbn": "978-3-95614-514-8",
+    "jahr": 2022,
+    "verlag": "Verlag Antje Kunstmann",
+    "seiten": 526,
+    "genre": "Sachbuch",
+    "thema": [
+      "Wissenschaft",
+      "Natur & Landschaft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": "ideen",
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783956145148&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783956145148&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783956145148&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783956145148&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783956145148&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783956145148&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783956145148&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783956145148&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783956145148&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/ed-yong/die-erstaunlichen-sinne-der-tiere.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k4.10",
+    "welt": "Erzählendes Sachbuch",
+    "titel": "Verzeichnis einiger Verluste",
+    "autor": "Judith Schalansky",
+    "isbn": "978-3-518-42824-5",
+    "jahr": 2018,
+    "verlag": "Suhrkamp",
+    "seiten": 252,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Verlust & Trauer",
+      "Erinnerung",
+      "Geschichte"
+    ],
+    "tempo": null,
+    "ton": [
+      "melancholisch"
+    ],
+    "fokus": null,
+    "sprache": "poetisch",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518428245&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518428245&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518428245&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518428245&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518428245&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518428245&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518428245&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783518428245&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/judith-schalansky/verzeichnis-einiger-verluste.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/judith-schalansky/verzeichnis-einiger-verluste.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/judith-schalansky/verzeichnis-einiger-verluste.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k4.11",
+    "welt": "Erzählendes Sachbuch",
+    "titel": "Eine kurze Geschichte von fast allem",
+    "autor": "Bill Bryson",
+    "isbn": "978-3-442-31002-9",
+    "jahr": 2004,
+    "verlag": "Goldmann",
+    "seiten": 670,
+    "genre": "Sachbuch",
+    "thema": [
+      "Wissenschaft"
+    ],
+    "tempo": null,
+    "ton": [
+      "humorvoll"
+    ],
+    "fokus": "ideen",
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783442310029&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783442310029&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783442310029&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783442310029&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783442310029&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783442310029&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783442310029&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783442310029&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783442310029&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/bill-bryson/eine-kurze-geschichte-von-fast-allem.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/bill-bryson/eine-kurze-geschichte-von-fast-allem.html",
+        "art": "redaktionell"
+      }
+    }
+  },
+  {
+    "id": "k4.12",
+    "welt": "Erzählendes Sachbuch",
+    "titel": "Alexander von Humboldt und die Erfindung der Natur",
+    "autor": "Andrea Wulf",
+    "isbn": "978-3-570-10206-0",
+    "jahr": 2016,
+    "verlag": "C. Bertelsmann",
+    "seiten": 555,
+    "genre": "Biografie & Erinnerungen",
+    "thema": [
+      "Natur & Landschaft",
+      "Wissenschaft",
+      "Geschichte"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783570102060&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783570102060&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783570102060&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783570102060&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783570102060&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783570102060&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783570102060&recordSchema=MARC21-xml",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://www.perlentaucher.de/buch/andrea-wulf/alexander-von-humboldt-und-die-erfindung-der-natur.html",
+        "art": "redaktionell"
+      },
+      "thema": {
+        "url": "https://www.perlentaucher.de/buch/andrea-wulf/alexander-von-humboldt-und-die-erfindung-der-natur.html",
+        "art": "redaktionell"
+      }
+    }
+  }
+]
