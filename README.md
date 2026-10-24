@@ -34,3 +34,4 @@ Leserinnen und Leser, die ihre Bücher gern ordnen und darüber schreiben – au
 Nach den [Karpathy-Guidelines](https://x.com/karpathy/status/2015883857489522876): Annahmen offen nennen, vor jedem Schritt abstimmen, nur das Verlangte ändern, jeder Schritt mit Prüfkriterium. Nach jedem abgeschlossenen Schritt ein Commit.
 
 - [USP.md](USP.md) – die drei USPs (Bibliothek, Schaufenster, Empfehlungen)
+- [RECHERCHE-EMPFEHLUNG.md](RECHERCHE-EMPFEHLUNG.md) – Recherche und Vorschlag für die Kriterien und den Algorithmus zu USP III
