@@ -266,3 +266,4 @@ Grundlage: ENTSCHEIDUNGSVORLAGE-USP3.md, Abschnitte 2 und 8. Screens in `screens
   - Gespeichert wird `{action: 'seltener'|'never', dimension, value_id, label, source_work_id, scope: 'global', explicit: true}`. Der Abbruchgrund „Thema“ erzeugt keinen Ausschluss.
   - Auf der Buchseite stehen die Einträge unter „Künftig weniger, für alle Empfehlungen“, z. B. „Seltener: Thema Meer“, jeweils mit „entfernen“.
   - Geprüft in screens5/10b–10f (wählen, speichern, sehen, entfernen) und 13–14 (Abbruch mit „Thema Verlust: seltener“ und „Ton ruhig: nicht empfehlen“).
+- **Wording und Platz (24.10.2026):** Die Aspekt-Knöpfe heißen „gefiel mir“ / „gefiel mir nicht“, auf der Buchseite „Gefiel mir“ / „Gefiel mir nicht“. Nichts gewählt heißt keine Aussage. „Künftig weniger davon?“ ist auch bei 1–2 Lichtern und beim Abbruch zugeklappt: eine dezent hervorgehobene Zeile mit „Merkmal wählen“ bzw. der Zahl der Angaben (screens5/10a, 13b).

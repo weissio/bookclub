@@ -564,13 +564,13 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </div>
 
 <sc-if value="{{rv.isRead}}" hint-placeholder-val="{{ true }}">
-<h3 style="margin: 14px 4px 4px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">WAS HAT FUNKTIONIERT, WAS HAT GESTÖRT?</h3>
+<h3 style="margin: 14px 4px 4px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">WAS HAT DIR GEFALLEN, WAS NICHT?</h3>
 <div role="list">
 <sc-for list="{{rv.aspects}}" as="a" hint-placeholder-count="5">
 <div role="listitem" style="display: flex; align-items: center; gap: 6px; min-height: 50px; border-top: 1px solid var(--line)">
 <span style="flex: 1; font-size: 15.5px; font-weight: 800; padding-left: 4px">{{a.label}}</span>
-<button type="button" aria-pressed="{{a.likePressed}}" aria-label="{{a.likeAria}}" onClick="{{a.like}}" style="{{a.likeStyle}}">mochte ich</button>
-<button type="button" aria-pressed="{{a.dislikePressed}}" aria-label="{{a.dislikeAria}}" onClick="{{a.dislike}}" style="{{a.dislikeStyle}}">störte mich</button>
+<button type="button" aria-pressed="{{a.likePressed}}" aria-label="{{a.likeAria}}" onClick="{{a.like}}" style="{{a.likeStyle}}">gefiel mir</button>
+<button type="button" aria-pressed="{{a.dislikePressed}}" aria-label="{{a.dislikeAria}}" onClick="{{a.dislike}}" style="{{a.dislikeStyle}}">gefiel mir nicht</button>
 </div>
 </sc-for>
 </div>
@@ -589,7 +589,12 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </sc-if>
 
 <sc-if value="{{rv.avoidHighlight}}" hint-placeholder-val="{{ false }}">
-<h3 style="margin: 16px 4px 4px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">KÜNFTIG WENIGER DAVON?</h3>
+<button type="button" aria-expanded="{{rv.avoidExpanded}}" onClick="{{rv.toggleAvoid}}" style="margin-top: 14px; width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 10px; border: none; border-radius: 16px; background: var(--accBg); box-shadow: inset 0 0 0 1px var(--accLine); padding: 0 14px; cursor: pointer; text-align: left; color: var(--ink)">
+<span style="display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 800">Künftig weniger davon?</span><span style="font-size: 12.5px; font-weight: 700; color: var(--acc)">{{rv.avoidHint}}</span></span>
+<svg width="16" height="10" viewBox="0 0 16 10" aria-hidden="true" style="{{rv.avoidChevron}}"><path d="M2 2l6 6 6-6" fill="none" style="stroke: var(--acc)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+<sc-if value="{{rv.avoidOpen}}" hint-placeholder-val="{{ false }}">
+<div style="height: 10px"></div>
 <p style="margin: 0 4px 8px 4px; font-size: 12.5px; line-height: 17px; font-weight: 600; color: var(--mute)">Wähle das Merkmal, das du meinst. <b style="color: var(--ink)">Seltener</b> kommt weniger oft vor. <b style="color: var(--ink)">Nicht empfehlen</b> kommt gar nicht mehr vor.</p>
 <div role="list">
 <sc-for list="{{rv.avoid}}" as="a" hint-placeholder-count="4">
@@ -600,6 +605,7 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </div>
 </sc-for>
 </div>
+</sc-if>
 </sc-if>
 <h3 style="margin: 16px 4px 6px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">{{rv.textLabel}}</h3>
 <textarea aria-label="{{rv.textLabel}}" onChange="{{rv.setText}}" placeholder="{{rv.textHint}}" style="width: 100%; box-sizing: border-box; height: 84px; border: none; border-radius: 14px; background: #FFF3DA; color: #2A2440; padding: 12px 14px; font-family: 'Nunito', sans-serif; font-size: 16px; line-height: 22px; font-weight: 700; resize: none" value="{{rv.text}}"></textarea>
@@ -796,7 +802,7 @@ class Component extends DCLogic {
       paused: [{ id: 'nacht', reasons: ['Gerade nicht die Stimmung'], note: '', when: 'September 2026' }, { id: 'garten', reasons: [], note: '', when: 'August 2026' }],
       swap: null, swapPick: null,
       dropped: [{ id: 'fluss', when: 'Mai 2026' }],
-      finished: [], rate: null, rd: blankRating(), moreOpen: false,
+      finished: [], rate: null, rd: blankRating(), moreOpen: false, avoidOpen: false,
       ratings: {
         uhr: { stars: 5, asp: { Sprache: 'like', Figuren: 'like', Handlung: 'like', Atmosphäre: 'like' }, reasons: [], text: '', tempoMe: 'passend', again: 'Ja', avoid: [] },
         fluss: { stars: 2, asp: {}, reasons: ['Tempo', 'Zu lang'], text: 'Schöne Sätze, aber nach 80 Seiten ist noch nichts passiert.', tempoMe: 'zu langsam', again: 'weiß nicht', avoid: [] }
@@ -929,8 +935,8 @@ class Component extends DCLogic {
         if (!rt) return [];
         var out = [], likes = [], dis = [];
         Object.keys(rt.asp).forEach(function (k) { if (rt.asp[k] === 'like') likes.push(k); else if (rt.asp[k] === 'dislike') dis.push(k); });
-        if (likes.length) out.push({ k: 'Mochte ich', v: likes.join(', ') });
-        if (dis.length) out.push({ k: 'Störte mich', v: dis.join(', ') });
+        if (likes.length) out.push({ k: 'Gefiel mir', v: likes.join(', ') });
+        if (dis.length) out.push({ k: 'Gefiel mir nicht', v: dis.join(', ') });
         if (rt.reasons.length) out.push({ k: 'Woran es lag', v: rt.reasons.join(', ') });
         if (rt.tempoMe) out.push({ k: 'Tempo für mich', v: rt.tempoMe });
         if (rt.again) out.push({ k: 'Mehr davon?', v: rt.again });
@@ -994,7 +1000,7 @@ class Component extends DCLogic {
     var sheetBook = lib[s.book] || LIB.salz;
     var finish = function (id, pagesOverride) {
       var pg2 = Object.assign({}, pagesOverride || s.pages); pg2[id] = (lib[id] || {}).pages || pg2[id];
-      self.setState({ pages: pg2, active: act.filter(function (x) { return x !== id; }), finished: s.finished.concat([id]), sheet: 'rate', rate: { id: id, kind: 'read' }, rd: blankRating(), moreOpen: false, saved: 'Ausgelesen. Steht jetzt bei Gelesen.' });
+      self.setState({ pages: pg2, active: act.filter(function (x) { return x !== id; }), finished: s.finished.concat([id]), sheet: 'rate', rate: { id: id, kind: 'read' }, rd: blankRating(), moreOpen: false, avoidOpen: false, saved: 'Ausgelesen. Steht jetzt bei Gelesen.' });
     };
     var rv = (function () {
       if (!s.rate) return { stars: [], aspects: [], reasons: [], groups: [], isRead: false, isDrop: false };
@@ -1002,7 +1008,7 @@ class Component extends DCLogic {
       var bk = lib[R0.id] || BOOKS.filter(function (x) { return x.id === R0.id; })[0] || {};
       var upd = function (patch) { self.setState({ rd: Object.assign({}, rd, patch) }); };
       var pill = function (on) { return 'min-height: 44px; padding: 0 13px; border-radius: 22px; cursor: pointer; font-size: 14px; font-weight: 800; border: 1.5px solid ' + (on ? 'var(--acc)' : 'var(--line)') + '; background: ' + (on ? 'var(--accBg)' : 'transparent') + '; color: ' + (on ? 'var(--acc)' : 'var(--ink)'); };
-      var aspectBtn = function (on, bad) { return 'flex-shrink: 0; min-height: 44px; padding: 0 11px; border-radius: 22px; cursor: pointer; font-size: 13px; font-weight: 800; border: 1.5px solid ' + (on ? (bad ? 'var(--mute)' : 'var(--acc)') : 'var(--line)') + '; background: ' + (on ? (bad ? 'var(--field)' : 'var(--accBg)') : 'transparent') + '; color: ' + (on ? (bad ? 'var(--ink)' : 'var(--acc)') : 'var(--mute)'); };
+      var aspectBtn = function (on, bad) { return 'flex-shrink: 0; min-height: 44px; padding: 0 10px; border-radius: 22px; cursor: pointer; font-size: 12.5px; font-weight: 800; border: 1.5px solid ' + (on ? (bad ? 'var(--mute)' : 'var(--acc)') : 'var(--line)') + '; background: ' + (on ? (bad ? 'var(--field)' : 'var(--accBg)') : 'transparent') + '; color: ' + (on ? (bad ? 'var(--ink)' : 'var(--acc)') : 'var(--mute)'); };
       var tempoReason = isDrop && rd.reasons.indexOf('Tempo') >= 0;
       var highlight = isDrop || (rd.stars > 0 && rd.stars <= 2);
       var groupsVis = MORE_GROUPS.filter(function (g) { return !(g[0] === 'tempoMe' && tempoReason); });
@@ -1026,6 +1032,9 @@ class Component extends DCLogic {
           labelStyle: 'font-size: 11.5px; font-weight: 800; white-space: nowrap; color: ' + (rd.stars === i ? 'var(--acc)' : 'var(--mute)'),
           pick: function () { upd({ stars: rd.stars === i ? 0 : i }); } }; }),
         avoidHighlight: highlight, avoidInMore: !highlight,
+        avoidOpen: !!s.avoidOpen, avoidExpanded: s.avoidOpen ? 'true' : 'false', toggleAvoid: function () { self.setState({ avoidOpen: !s.avoidOpen }); },
+        avoidHint: avoidCount ? (avoidCount === 1 ? '1 Angabe' : avoidCount + ' Angaben') : 'Merkmal wählen',
+        avoidChevron: 'transition: transform .15s; transform: rotate(' + (s.avoidOpen ? 180 : 0) + 'deg)',
         avoid: featureValues(R0.id).map(function (fv) {
           var cur = rd.avoid.filter(function (x) { return x.dimension === fv.dimension && x.value_id === fv.value_id; })[0];
           var v = cur ? cur.action : '';
@@ -1042,7 +1051,7 @@ class Component extends DCLogic {
         aspects: (bk.sach ? ASPECTS_SACH : ASPECTS_ROMAN).map(function (a) {
           var v = rd.asp[a] || '';
           var set = function (val) { var m = Object.assign({}, rd.asp); if (m[a] === val) delete m[a]; else m[a] = val; upd({ asp: m }); };
-          return { label: a, likePressed: v === 'like' ? 'true' : 'false', dislikePressed: v === 'dislike' ? 'true' : 'false', likeAria: a + ': mochte ich', dislikeAria: a + ': störte mich',
+          return { label: a, likePressed: v === 'like' ? 'true' : 'false', dislikePressed: v === 'dislike' ? 'true' : 'false', likeAria: a + ': gefiel mir', dislikeAria: a + ': gefiel mir nicht',
             likeStyle: aspectBtn(v === 'like', false), dislikeStyle: aspectBtn(v === 'dislike', true), like: function () { set('like'); }, dislike: function () { set('dislike'); } };
         }),
         reasons: DROP_REASONS.map(function (r) { var on = rd.reasons.indexOf(r) >= 0; return { label: r, pressed: on ? 'true' : 'false', style: pill(on), toggle: function () { var x = rd.reasons.slice(); var k = x.indexOf(r); var p = {}; if (k >= 0) { x.splice(k, 1); if (r === 'Tempo') p.tempoMe = ''; } else x.push(r); p.reasons = x; upd(p); } }; }),
@@ -1112,9 +1121,9 @@ class Component extends DCLogic {
       volBackLabel: (vk === 'pausiert' || vk === 'abgebrochen' || vk === 'regale' || vk === 'verliehen' || vk === 'stats') ? 'Weitere Bände' : 'Bibliothek',
       volBack: function () { var sub = (vk === 'pausiert' || vk === 'abgebrochen' || vk === 'regale' || vk === 'verliehen' || vk === 'stats'); self.go(sub ? { screen: 'vol', vol: 'mehr', volNotice: '' } : { screen: 'home' }); },
       openPause: function () { self.setState({ sheet: 'pause', reasons: [], note: '' }); },
-      openDrop: function () { self.setState({ sheet: 'rate', rate: { id: b.id, kind: 'drop' }, rd: blankRating(), moreOpen: false }); },
+      openDrop: function () { self.setState({ sheet: 'rate', rate: { id: b.id, kind: 'drop' }, rd: blankRating(), moreOpen: false, avoidOpen: false }); },
       finishBook: function () { finish(b.id); },
-      editRating: function () { var cur = s.ratings[b.id] || (b.lights ? Object.assign(blankRating(), { stars: b.lights }) : blankRating()); var c = JSON.parse(JSON.stringify(cur)); if (!c.text && b.reading && b.vol === 'gelesen') c.text = b.reading; self.setState({ sheet: 'rate', rate: { id: b.id, kind: b.vol === 'abgebrochen' ? 'editDrop' : 'editRead' }, rd: c, moreOpen: false }); },
+      editRating: function () { var cur = s.ratings[b.id] || (b.lights ? Object.assign(blankRating(), { stars: b.lights }) : blankRating()); var c = JSON.parse(JSON.stringify(cur)); if (!c.text && b.reading && b.vol === 'gelesen') c.text = b.reading; self.setState({ sheet: 'rate', rate: { id: b.id, kind: b.vol === 'abgebrochen' ? 'editDrop' : 'editRead' }, rd: c, moreOpen: false, avoidOpen: false }); },
       resumeBook: function () { resumeOrAsk(b.id); },
       pauseChips: PAUSE_REASONS.map(chip), dropChips: DROP_REASONS.map(chip),
       sheetIntro: 'Das Lesebändchen bleibt auf Seite ' + (s.pages[s.book] || 0) + '. Ein Grund ist freiwillig.',
