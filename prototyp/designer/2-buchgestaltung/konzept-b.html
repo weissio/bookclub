@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Leitsystem</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* Konzept B "Leitsystem" – nach Otl Aicher / München 1972 und HfG Ulm.
+     Bewusst ohne Schwarz und ohne Rot. Text in Dunkelblau. Kleinschreibung für die Bedienelemente,
+     Buchtitel bleiben, wie sie sind. Piktogramme auf einem 24er-Raster, eine Strichstärke. */
+  :root{
+    --weiss:#ffffff;
+    --nacht:#123462;      /* Schriftfarbe statt Schwarz */
+    --nacht-2:#4c6487;
+    --hellblau:#6aaee3;
+    --hellblau-2:#d6e9f8;
+    --gruen:#2f9a5e;
+    --orange:#f08a24;
+    --silber:#b7bdc4;
+    --silber-2:#e9ecef;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#cfd6dd}
+  body{font-family:"Albert Sans",sans-serif;color:var(--nacht);-webkit-font-smoothing:antialiased}
+  .phone{width:390px;height:844px;background:var(--weiss);position:relative;overflow:hidden}
+  .status{height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 14px 34px;font-weight:600;font-size:16px}
+  .picto{fill:none;stroke:currentColor;stroke-width:2.6;stroke-linecap:round;stroke-linejoin:round}
+  .picto .f{fill:currentColor;stroke:none}
+
+  .kopf{height:50px;padding:0 16px;display:flex;align-items:center;gap:10px}
+  .kopf .sig{width:32px;height:32px;background:var(--hellblau);color:#fff;display:grid;place-items:center}
+  .kopf b{font-size:20px;font-weight:600;letter-spacing:-.2px}
+  .kopf .bsp{margin-left:auto;font-size:11px;color:var(--nacht-2)}
+
+  /* am lesen: die Anzeigetafel */
+  .tafel{margin:6px 16px 0;background:var(--hellblau-2)}
+  .tafel .kz{display:flex;align-items:center;gap:10px;height:46px;padding:0 12px;background:var(--hellblau);color:#fff}
+  .tafel .kz span{font-size:16px;font-weight:600}
+  .tafel .kz em{margin-left:auto;font-style:normal;font-size:13px;font-weight:500}
+  .buch{display:grid;grid-template-columns:1fr auto;gap:0 12px;padding:10px 12px 12px;align-items:end}
+  .buch + .buch{border-top:2px solid #fff}
+  .buch .t{font-size:16px;font-weight:600;line-height:1.2}
+  .buch .a{font-size:13px;color:var(--nacht-2);margin-top:2px}
+  .takt{display:flex;gap:3px;margin-top:10px}
+  .takt i{width:7px;height:10px;background:#fff;display:block}
+  .takt i.v{background:var(--hellblau)}
+  .rechts{display:flex;flex-direction:column;align-items:flex-end;gap:6px}
+  .rechts .s{white-space:nowrap;font-size:12px;color:var(--nacht-2);line-height:1}
+  .rechts .s b{display:inline;font-size:26px;font-weight:600;color:var(--nacht);font-feature-settings:"tnum";letter-spacing:-.5px;text-align:right;line-height:1;margin-bottom:2px}
+  .knopf{height:44px;min-width:112px;background:#fff;display:flex;align-items:center;justify-content:center;gap:7px;font-size:14px;font-weight:600;color:var(--nacht)}
+
+  /* der weg deiner bücher: Liniennetzplan */
+  .weg{margin:26px 16px 0}
+  .weg h2{font-size:14px;font-weight:600;margin-bottom:4px}
+  .weg h2 span{font-weight:400;color:var(--nacht-2)}
+  .plan{position:relative;height:200px}
+  .plan svg.linie{position:absolute;inset:0}
+  .st{position:absolute;width:76px;text-align:center;transform:translateX(-50%)}
+  .st .n{font-size:12.5px;line-height:1.15;color:var(--nacht-2);height:30px;display:flex;align-items:flex-end;justify-content:center}
+  .st .z{font-size:20px;font-weight:600;line-height:1.1;font-feature-settings:"tnum"}
+  .kreis{position:absolute;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;color:#fff;transform:translate(-50%,-50%)}
+  .kreis.leer{background:#fff;box-shadow:inset 0 0 0 2.6px var(--nacht);color:var(--nacht)}
+  .ab{position:absolute;text-align:right}
+  .ab .n{font-size:12.5px;color:var(--nacht-2)}
+  .ab .z{font-size:20px;font-weight:600;line-height:1.1}
+  .hier{position:absolute;font-size:11px;font-weight:600;color:var(--hellblau);transform:translateX(-50%);white-space:nowrap}
+
+  /* zwei Schilder */
+  .schilder{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:22px 16px 0}
+  .schild{height:84px;display:flex;align-items:center;gap:10px;padding:0 12px}
+  .schild .p{width:44px;height:44px;display:grid;place-items:center;color:#fff;flex:none}
+  .schild b{display:block;font-size:15px;font-weight:600}
+  .schild small{display:block;font-size:12px;color:var(--nacht-2);margin-top:1px}
+  .schild.regale{background:var(--silber-2)} .schild.regale .p{background:var(--silber)}
+  .schild.stat{background:#e3f2e8} .schild.stat .p{background:var(--gruen)}
+
+  .tabs{position:absolute;left:0;right:0;bottom:0;height:83px;background:#fff;box-shadow:0 -1px 0 var(--silber-2);display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:34px}
+  .tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11.5px;color:var(--nacht-2)}
+  .tab.an{color:var(--nacht);font-weight:600}
+  .tab.an .ti{background:var(--hellblau);color:#fff}
+  .ti{width:34px;height:26px;display:grid;place-items:center}
+  .home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:var(--nacht)}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <!-- Piktogramme, 24er-Raster, eine Strichstärke -->
+    <g id="p-lesen"><circle class="f" cx="8" cy="4.5" r="2.6"/><path d="M8 9v6.5h6.5V21"/><path d="M8 11l5 2.5"/><path d="M12.5 10.5l3.5 2 4-2.5"/></g>
+    <g id="p-wunsch"><circle class="f" cx="7" cy="5.5" r="2.6"/><path d="M7 9.5v6l-2 5.5M7 15.5l2 5.5"/><path d="M7 11l4.5-4"/><rect x="14" y="2.5" width="6" height="8"/></g>
+    <g id="p-regal"><path d="M4 21h16"/><path d="M6 7v14M10 5v16M14 8v13"/><path d="M17 21l2.5-11"/></g>
+    <g id="p-gelesen"><path d="M5 20h14M6 15.5h12M5 11h13"/><path d="M5 20v-4.5M19 20v-4.5M6 15.5V11M18 15.5V11"/><path d="M9 6.5h8"/></g>
+    <g id="p-ab"><path d="M3 19h18"/><path d="M5 19l7-9 7 9"/><path d="M12 10v-5"/></g>
+    <g id="p-plus"><path d="M12 5v14M5 12h14"/></g>
+    <g id="p-regale"><path d="M4 4h16v16H4zM4 12h16"/><path d="M8 4.5v7M11 4.5v7M14.5 12.5v7M17.5 12.5v7"/></g>
+    <g id="p-stat"><path d="M5 20V12M10 20V6M15 20v-9M20 20v-5"/></g>
+    <g id="p-buch"><path d="M4 6c3-1.5 5.5-1.5 8 0 2.5-1.5 5-1.5 8 0v13c-3-1.5-5.5-1.5-8 0-2.5-1.5-5-1.5-8 0z"/><path d="M12 6v13"/></g>
+    <g id="p-fenster"><path d="M4 4h16v16H4zM12 4v16M4 12h16"/></g>
+    <g id="p-entdecken"><circle cx="10.5" cy="10.5" r="6"/><path d="M15 15l5 5"/></g>
+    <g id="p-ich"><circle class="f" cx="12" cy="7" r="3.2"/><path d="M5 20c1-4 4-6 7-6s6 2 7 6"/></g>
+  </defs>
+</svg>
+
+<div class="phone">
+  <div class="status"><span>9:41</span>
+    <svg width="50" height="12" viewBox="0 0 50 12"><g fill="#123462"><rect x="0" y="7" width="3" height="4"/><rect x="5" y="5" width="3" height="6"/><rect x="10" y="2.5" width="3" height="8.5"/><rect x="15" y="0" width="3" height="11"/><rect x="26" y="2" width="17" height="8" rx="1.6"/></g><rect x="24.5" y=".5" width="22" height="11" rx="3" fill="none" stroke="#123462" opacity=".4"/></svg>
+  </div>
+
+  <div class="kopf">
+    <div class="sig"><svg class="picto" width="24" height="24" viewBox="0 0 24 24"><use href="#p-lesen"/></svg></div>
+    <b>bibliothek</b>
+    <span class="bsp">beispieldaten</span>
+  </div>
+
+  <section class="tafel">
+    <div class="kz">
+      <svg class="picto" width="26" height="26" viewBox="0 0 24 24"><use href="#p-lesen"/></svg>
+      <span>am lesen</span><em>2 bücher</em>
+    </div>
+    <div class="buch">
+      <div>
+        <div class="t">Die Uhrmacherin von Görlitz</div>
+        <div class="a">Henrike Albers</div>
+        <div class="takt" aria-label="Fortschritt 52 Prozent">
+          <i class="v"></i><i class="v"></i><i class="v"></i><i class="v"></i><i class="v"></i><i class="v"></i><i class="v"></i><i class="v"></i><i class="v"></i><i class="v"></i><i class="v"></i><i class="v"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+      <div class="rechts">
+        <div class="s"><b>214</b> von 412</div>
+        <div class="knopf"><svg class="picto" width="16" height="16" viewBox="0 0 24 24"><use href="#p-plus"/></svg>seite</div>
+      </div>
+    </div>
+    <div class="buch">
+      <div>
+        <div class="t">Salz und Schiefer</div>
+        <div class="a">Jonas Wendland</div>
+        <div class="takt" aria-label="Fortschritt 20 Prozent">
+          <i class="v"></i><i class="v"></i><i class="v"></i><i class="v"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+      </div>
+      <div class="rechts">
+        <div class="s"><b>58</b> von 296</div>
+        <div class="knopf"><svg class="picto" width="16" height="16" viewBox="0 0 24 24"><use href="#p-plus"/></svg>seite</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="weg">
+    <h2>der weg deiner bücher <span>· 240 insgesamt</span></h2>
+    <div class="plan">
+      <!-- Linie auf y=62, Stationen x: 22 / 100 / 179 / 258 / 336 (Plan-Koordinaten) -->
+      <svg class="linie" width="358" height="200" viewBox="0 0 358 200">
+        <path d="M26 82H334" stroke="#123462" stroke-width="6" stroke-linecap="round" fill="none"/>
+        <path d="M260 82l44 44v30" stroke="#b7bdc4" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+
+      <div class="st" style="left:26px;top:0;width:60px"><div class="n">neu</div><div class="z" style="font-size:14px;line-height:22px">erfassen</div></div>
+      <div class="kreis leer" style="left:26px;top:82px"><svg class="picto" width="24" height="24" viewBox="0 0 24 24"><use href="#p-plus"/></svg></div>
+
+      <div class="st" style="left:104px;top:0"><div class="n">wunschliste</div><div class="z">19</div></div>
+      <div class="kreis" style="left:104px;top:82px;background:var(--orange)"><svg class="picto" width="26" height="26" viewBox="0 0 24 24"><use href="#p-wunsch"/></svg></div>
+
+      <div class="st" style="left:182px;top:0"><div class="n">ungelesen<br>im regal</div><div class="z">61</div></div>
+      <div class="kreis" style="left:182px;top:82px;background:var(--gruen)"><svg class="picto" width="26" height="26" viewBox="0 0 24 24"><use href="#p-regal"/></svg></div>
+
+      <div class="st" style="left:260px;top:0"><div class="n">am lesen</div><div class="z">2</div></div>
+      <div class="kreis" style="left:260px;top:82px;background:var(--hellblau);box-shadow:0 0 0 5px #fff,0 0 0 8px var(--hellblau)"><svg class="picto" width="26" height="26" viewBox="0 0 24 24"><use href="#p-lesen"/></svg></div>
+
+      <div class="st" style="left:334px;top:0"><div class="n">gelesen</div><div class="z">148</div></div>
+      <div class="kreis" style="left:334px;top:82px;background:var(--nacht)"><svg class="picto" width="26" height="26" viewBox="0 0 24 24"><use href="#p-gelesen"/></svg></div>
+
+      <div class="kreis" style="left:304px;top:166px;background:var(--silber)"><svg class="picto" width="26" height="26" viewBox="0 0 24 24"><use href="#p-ab"/></svg></div>
+      <div class="ab" style="right:94px;top:146px"><div class="n">beiseitegelegt</div><div class="z">10</div></div>
+      <div class="ab" style="left:0;top:132px;text-align:left;width:170px"><div class="n">zuletzt gelesen</div><div style="font-size:14px;font-weight:600;line-height:1.25;margin-top:2px">Das Haus am Kanal</div><div class="n" style="font-size:12px">Mara Seidel · vor 9 Tagen</div></div>
+    </div>
+  </section>
+
+  <div class="schilder">
+    <div class="schild regale">
+      <div class="p"><svg class="picto" width="26" height="26" viewBox="0 0 24 24"><use href="#p-regale"/></svg></div>
+      <div><b>eigene regale</b><small>5 regale</small></div>
+    </div>
+    <div class="schild stat">
+      <div class="p"><svg class="picto" width="26" height="26" viewBox="0 0 24 24"><use href="#p-stat"/></svg></div>
+      <div><b>statistik</b><small>2026: 23 gelesen</small></div>
+    </div>
+  </div>
+
+  <nav class="tabs">
+    <div class="tab an"><span class="ti"><svg class="picto" width="22" height="22" viewBox="0 0 24 24"><use href="#p-buch"/></svg></span>bibliothek</div>
+    <div class="tab"><span class="ti"><svg class="picto" width="22" height="22" viewBox="0 0 24 24"><use href="#p-fenster"/></svg></span>schaufenster</div>
+    <div class="tab"><span class="ti"><svg class="picto" width="22" height="22" viewBox="0 0 24 24"><use href="#p-entdecken"/></svg></span>entdecken</div>
+    <div class="tab"><span class="ti"><svg class="picto" width="22" height="22" viewBox="0 0 24 24"><use href="#p-ich"/></svg></span>ich</div>
+  </nav>
+  <div class="home"></div>
+</div>
+</body>
+</html>

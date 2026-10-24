@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Die Bücherstütze</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --grund:#E2EDE3;
+    --grund-tief:#CFE0D1;
+    --tinte:#1D2B22;
+    --leise:#53675A;
+    --kobalt:#3B4FD8;
+    --senf:#F2B640;
+    --rosa:#F09DB5;
+    --flieder:#A98BE0;
+    --tanne:#2F6B52;
+    --poster:#D6E4FB;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:390px;height:844px;background:var(--grund);overflow:hidden}
+  body{font-family:'Bricolage Grotesque',system-ui,sans-serif;color:var(--tinte);-webkit-font-smoothing:antialiased}
+  .phone{position:relative;width:390px;height:844px;overflow:hidden;background:var(--grund)}
+  .status{position:absolute;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 30px 0 34px;font-weight:700;font-size:16px;z-index:5}
+  .status .r{display:flex;gap:6px;align-items:center}
+
+  .kopf{position:absolute;top:60px;left:24px;right:24px;height:34px;display:flex;align-items:center;justify-content:space-between}
+  .kopf b{font-size:17px;font-weight:800;letter-spacing:-.01em}
+  .kopf .punkte{display:flex;gap:6px;align-items:center;font-size:13px;font-weight:600;color:var(--leise)}
+  .kopf .punkte i{width:7px;height:7px;border-radius:50%;background:#A9BBAE;display:block}
+  .kopf .punkte i.on{width:20px;border-radius:4px;background:var(--tinte)}
+
+  .poster{position:absolute;top:100px;left:16px;width:340px;height:300px;border-radius:34px;background:var(--poster);overflow:hidden}
+  .poster.naechstes{left:364px;width:200px;background:#FBDCE5}
+  .poster .zahl{position:absolute;left:170px;top:22px}
+  .poster .zahl small{display:block;font-size:14px;font-weight:600;color:#4B5680}
+  .poster .zahl strong{display:block;font-size:92px;line-height:.92;font-weight:800;letter-spacing:-.045em;color:#1F2A66;margin-top:4px}
+  .poster .zahl span{display:block;font-size:14px;font-weight:600;color:#4B5680;margin-top:6px}
+  .poster .titel{position:absolute;left:170px;top:168px;right:16px}
+  .poster .titel b{display:block;font-size:19px;font-weight:800;line-height:1.1;letter-spacing:-.01em}
+  .poster .titel span{display:block;font-size:14px;font-weight:600;color:#4B5680;margin-top:3px}
+  .knopf{position:absolute;left:16px;right:16px;bottom:16px;height:52px;border-radius:26px;background:var(--kobalt);color:#fff;font-size:17px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:9px;box-shadow:0 6px 14px -6px rgba(36,50,160,.55), inset 0 2px 0 rgba(255,255,255,.22)}
+  .poster svg.held{position:absolute;left:18px;top:20px}
+
+  .regal-kopf{position:absolute;top:426px;left:24px;right:24px;display:flex;justify-content:space-between;align-items:baseline}
+  .regal-kopf b{font-size:17px;font-weight:800;letter-spacing:-.01em}
+  .regal-kopf span{font-size:13px;font-weight:600;color:var(--leise)}
+  svg.regal{position:absolute;top:452px;left:0}
+
+  .unterschrift{position:absolute;top:684px;left:24px;right:24px;font-size:14px;line-height:1.38;font-weight:600;color:var(--leise)}
+  .unterschrift b{color:var(--tinte);font-weight:700}
+  .beispiel{display:inline-block;margin-left:4px;font-size:10.5px;font-weight:700;letter-spacing:.05em;color:#6E8475;border:1px solid #A9BBAE;border-radius:6px;padding:0 5px;vertical-align:1px}
+
+  .tabs{position:absolute;left:0;right:0;bottom:0;height:83px;background:#EDF4EE;display:flex;padding:0 6px 34px;box-shadow:0 -1px 0 #C9D9CC}
+  .tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:600;color:#6E8475}
+  .tab.on{color:var(--tinte);font-weight:800}
+  .home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#1D2B22}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="status"><span>9:41</span><span class="r">
+    <svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#1D2B22"/><rect x="5" y="5" width="3" height="7" rx="1" fill="#1D2B22"/><rect x="10" y="2.5" width="3" height="9.5" rx="1" fill="#1D2B22"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#1D2B22"/></svg>
+    <svg width="26" height="12" viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3.5" stroke="#1D2B22" fill="none" opacity=".45"/><rect x="2" y="2" width="15" height="8" rx="2" fill="#1D2B22"/><rect x="24" y="4" width="1.6" height="4" rx=".8" fill="#1D2B22" opacity=".45"/></svg>
+  </span></div>
+
+  <div class="kopf">
+    <b>Am Lesen</b>
+    <div class="punkte"><i class="on"></i><i></i></div>
+  </div>
+
+  <!-- Poster des aktuellen Buchs -->
+  <div class="poster">
+    <svg class="held" width="140" height="196" viewBox="0 0 140 196">
+      <defs>
+        <linearGradient id="vorn" x1="0" x2="1"><stop offset="0" stop-color="#3FA79E"/><stop offset="1" stop-color="#25817A"/></linearGradient>
+        <linearGradient id="rueck" x1="0" x2="1"><stop offset="0" stop-color="#1D6A64"/><stop offset="1" stop-color="#25817A"/></linearGradient>
+      </defs>
+      <ellipse cx="74" cy="186" rx="62" ry="7" fill="#9FB3DD" opacity=".7"/>
+      <!-- Buchblock oben -->
+      <path d="M30 14 L118 6 L126 12 L38 20 Z" fill="#FFF6E6"/>
+      <!-- Rücken -->
+      <path d="M14 22 Q14 14 22 14 L38 20 L38 182 L22 176 Q14 176 14 168 Z" fill="url(#rueck)"/>
+      <path d="M20 40 L32 44 M20 150 L32 154" stroke="#7FD0C6" stroke-width="2.4" stroke-linecap="round" opacity=".7"/>
+      <!-- Deckel vorn -->
+      <path d="M38 20 L118 12 Q128 11 128 21 L128 168 Q128 176 120 177 L38 182 Z" fill="url(#vorn)"/>
+      <path d="M46 30 Q46 26 52 25 L60 24" stroke="#9FE3D9" stroke-width="5" stroke-linecap="round" fill="none" opacity=".75"/>
+      <!-- Titelschild -->
+      <rect x="54" y="56" width="58" height="44" rx="8" fill="#FFF6E6" transform="skewY(-5)"/>
+      <circle cx="83" cy="72" r="9" fill="#F2B640"/>
+      <path d="M66 88 L100 85" stroke="#2A6E68" stroke-width="3" stroke-linecap="round"/>
+      <!-- Lesebändchen -->
+      <path d="M102 176 L102 194 L106 190 L110 194 L110 175 Z" fill="#E0566F"/>
+    </svg>
+    <div class="zahl">
+      <small>Du bist auf Seite</small>
+      <strong>142</strong>
+      <span>von 384</span>
+    </div>
+    <div class="titel"><b>Salz und Asche</b><span>Jonas Brehm</span></div>
+    <div class="knopf">
+      <svg width="16" height="18" viewBox="0 0 16 18"><path d="M2.5 1.5h11v15l-5.5-4-5.5 4z" fill="none" stroke="#fff" stroke-width="2.2" stroke-linejoin="round"/></svg>
+      Seite eintragen
+    </div>
+  </div>
+  <div class="poster naechstes"></div>
+
+  <div class="regal-kopf"><b>Dein Regal</b><span>seit März 2025</span></div>
+
+  <!-- Das Regal mit Bücherstütze -->
+  <svg class="regal" width="390" height="226" viewBox="0 0 390 226">
+    <defs>
+      <linearGradient id="g-kob" x1="0" x2="1"><stop offset="0" stop-color="#5468E8"/><stop offset="1" stop-color="#3243C4"/></linearGradient>
+      <linearGradient id="g-senf" x1="0" x2="1"><stop offset="0" stop-color="#F7C65C"/><stop offset="1" stop-color="#E3A42D"/></linearGradient>
+      <linearGradient id="g-fl" x1="0" x2="1"><stop offset="0" stop-color="#BBA0EE"/><stop offset="1" stop-color="#9677D4"/></linearGradient>
+      <linearGradient id="g-rosa" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#F6B3C6"/><stop offset="1" stop-color="#E388A3"/></linearGradient>
+      <linearGradient id="g-tanne" x1="0" x2="1"><stop offset="0" stop-color="#3C8566"/><stop offset="1" stop-color="#275C46"/></linearGradient>
+      <pattern id="geschenk" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(30)">
+        <rect width="12" height="12" fill="#FFF3F6"/><circle cx="3" cy="3" r="2" fill="#F09DB5"/><circle cx="9" cy="9" r="2" fill="#A98BE0"/>
+      </pattern>
+    </defs>
+
+    <!-- Boden -->
+    <rect x="10" y="190" width="370" height="16" rx="8" fill="#C3D7C6"/>
+    <rect x="10" y="190" width="370" height="5" rx="2.5" fill="#B2CAB6"/>
+
+    <!-- Gelesen -->
+    <g>
+      <rect x="18" y="40" width="56" height="150" rx="11" fill="url(#g-kob)"/>
+      <rect x="24" y="46" width="7" height="138" rx="3.5" fill="#fff" opacity=".18"/>
+      <text transform="translate(52 150) rotate(-90)" font-family="Bricolage Grotesque" font-weight="800" font-size="17" fill="#fff">Gelesen</text>
+      <rect x="27" y="160" width="38" height="22" rx="11" fill="#fff" opacity=".95"/>
+      <text x="46" y="176" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="13" fill="#2B3AA8">148</text>
+    </g>
+    <!-- Ungelesen -->
+    <g>
+      <rect x="80" y="40" width="56" height="150" rx="11" fill="url(#g-senf)"/>
+      <rect x="86" y="46" width="7" height="138" rx="3.5" fill="#fff" opacity=".28"/>
+      <text transform="translate(114 150) rotate(-90)" font-family="Bricolage Grotesque" font-weight="800" font-size="17" fill="#3A2A05">Ungelesen</text>
+      <rect x="89" y="160" width="38" height="22" rx="11" fill="#FFF7E4"/>
+      <text x="108" y="176" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="13" fill="#7A5408">61</text>
+    </g>
+    <!-- Wunschliste: eingepackt -->
+    <g>
+      <rect x="142" y="40" width="56" height="150" rx="11" fill="url(#geschenk)"/>
+      <rect x="142" y="40" width="56" height="150" rx="11" fill="none" stroke="#E7A9BB" stroke-width="1.5"/>
+      <rect x="186" y="40" width="7" height="150" fill="#E0566F"/>
+      <path d="M189.5 42 C178 28 170 36 182 42 Z M189.5 42 C196 26 204 32 196 42 Z" fill="#E0566F"/>
+      <rect x="147" y="58" width="34" height="98" rx="9" fill="#fff"/>
+      <text transform="translate(169 150) rotate(-90)" font-family="Bricolage Grotesque" font-weight="800" font-size="14.5" fill="#7A2D44">Wunschliste</text>
+      <rect x="147" y="161" width="34" height="22" rx="11" fill="#fff"/>
+      <text x="164" y="176.5" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="13" fill="#7A2D44">23</text>
+    </g>
+    <!-- Eigene Regale -->
+    <g>
+      <rect x="204" y="40" width="56" height="150" rx="11" fill="url(#g-fl)"/>
+      <rect x="210" y="46" width="7" height="138" rx="3.5" fill="#fff" opacity=".22"/>
+      <text transform="translate(238 150) rotate(-90)" font-family="Bricolage Grotesque" font-weight="800" font-size="15" fill="#2C1858">Eigene Regale</text>
+      <rect x="213" y="160" width="38" height="22" rx="11" fill="#F4EEFF"/>
+      <text x="232" y="176" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="13" fill="#4B2C93">5</text>
+    </g>
+    <!-- Abgebrochen: obendrauf beiseitegelegt -->
+    <g transform="rotate(-3 140 22)">
+      <rect x="58" y="6" width="166" height="32" rx="9" fill="url(#g-rosa)"/>
+      <rect x="62" y="9" width="158" height="5" rx="2.5" fill="#fff" opacity=".3"/>
+      <text x="72" y="28" font-family="Bricolage Grotesque" font-weight="800" font-size="14" fill="#6E1E38">Abgebrochen</text>
+      <rect x="184" y="12" width="32" height="20" rx="10" fill="#FFF0F4"/>
+      <text x="200" y="26.5" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="13" fill="#9A2E52">6</text>
+    </g>
+
+    <!-- Platz für Neue -->
+    <g>
+      <rect x="267" y="41" width="50" height="148" rx="11" fill="#EEF5EF" stroke="#3B4FD8" stroke-width="2" stroke-dasharray="6 5"/>
+      <circle cx="292" cy="72" r="15" fill="#3B4FD8"/>
+      <path d="M292 65 V79 M285 72 H299" stroke="#fff" stroke-width="2.6" stroke-linecap="round"/>
+      <text transform="translate(298 176) rotate(-90)" font-family="Bricolage Grotesque" font-weight="700" font-size="14" fill="#2B3AA8">Noch Platz</text>
+    </g>
+
+    <!-- Bücherstütze mit Brille -->
+    <g>
+      <path d="M323 190 L323 92 Q323 64 350 64 Q380 64 380 96 L380 190 Z" fill="url(#g-tanne)"/>
+      <path d="M330 100 Q331 76 350 72" stroke="#7FC3A2" stroke-width="5" stroke-linecap="round" fill="none" opacity=".55"/>
+      <text x="351" y="140" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="800" font-size="22" fill="#DDF1E5" letter-spacing="-.5">240</text>
+      <text x="351" y="157" text-anchor="middle" font-family="Bricolage Grotesque" font-weight="600" font-size="11" fill="#A9D6BE">Bücher</text>
+      <!-- Brille -->
+      <g transform="rotate(-6 351 60)">
+        <circle cx="339" cy="60" r="9" fill="#E9F4FF" fill-opacity=".55" stroke="#1D2B22" stroke-width="2.6"/>
+        <circle cx="363" cy="60" r="9" fill="#E9F4FF" fill-opacity=".55" stroke="#1D2B22" stroke-width="2.6"/>
+        <path d="M348 59 Q351 55 354 59" stroke="#1D2B22" stroke-width="2.4" fill="none"/>
+        <path d="M330 59 L322 66 M372 59 L379 67" stroke="#1D2B22" stroke-width="2.2" stroke-linecap="round"/>
+      </g>
+    </g>
+  </svg>
+
+  <div class="unterschrift">Die Stütze hält alles zusammen und weiß, wer am häufigsten drinsteht: <b>Jonas Brehm</b>. Ein Tipp auf sie zeigt mehr. <span class="beispiel">BEISPIELDATEN</span></div>
+
+  <nav class="tabs">
+    <div class="tab on">
+      <svg width="26" height="24" viewBox="0 0 26 24"><rect x="3" y="4" width="5" height="17" rx="2" fill="#1D2B22"/><rect x="10" y="2" width="5" height="19" rx="2" fill="#1D2B22"/><path d="M19 3 Q24 3 24 9 L24 21 L17.5 21 L17.5 8 Q17.5 3 19 3Z" fill="#2F6B52"/></svg>
+      Bibliothek</div>
+    <div class="tab">
+      <svg width="26" height="24" viewBox="0 0 26 24"><rect x="3" y="4" width="20" height="16" rx="4" fill="none" stroke="#6E8475" stroke-width="2"/><path d="M13 4 V20 M3 12 H23" stroke="#6E8475" stroke-width="2"/></svg>
+      Schaufenster</div>
+    <div class="tab">
+      <svg width="26" height="24" viewBox="0 0 26 24"><circle cx="13" cy="12" r="9" fill="none" stroke="#6E8475" stroke-width="2"/><path d="M16.5 8.5 L14.5 14.5 L9.5 15.5 L11.5 9.5 Z" fill="#6E8475"/></svg>
+      Entdecken</div>
+    <div class="tab">
+      <svg width="26" height="24" viewBox="0 0 26 24"><circle cx="13" cy="9" r="4.5" fill="none" stroke="#6E8475" stroke-width="2"/><path d="M5 21 C6 16 9.5 14.5 13 14.5 C16.5 14.5 20 16 21 21" fill="none" stroke="#6E8475" stroke-width="2" stroke-linecap="round"/></svg>
+      Ich</div>
+  </nav>
+  <div class="home"></div>
+</div>
+</body>
+</html>
