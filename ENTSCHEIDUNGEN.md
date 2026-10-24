@@ -40,6 +40,7 @@ Getrennt nach Herkunft, damit klar ist, was feststeht und was nur vorgeschlagen 
 | 24.10.2026 | Ein neu angefangenes Buch kommt ans Ende von „Am Lesen“, wenn schon eins offen ist. Hochstufen macht man selbst. |
 | 24.10.2026 | Unter „Weitere Bände“: **Abgebrochen** mit Begründung und Bewertung, fließt mit Autor, Genre usw. in den Algorithmus für passende Bücher ein (5 abgebrochene Bücher von XY ohne positives gelesenes = passt eher nicht). **Pausiert** mit Begründung, wieder aktivierbar. **Aktiv** für mehr als 5 gleichzeitig gelesene Bücher, weil nur 5 auf die Startseite passen. |
 | 24.10.2026 | Aktiv geprüft: Parallel lesen ist bei engagierten Lesern die Mehrheit, ein Drittel liest nur ein Buch. Festgelegt: bis 5 Bücher aktiv (= Startseite), kein Band „Aktiv“. Beim 6. Buch fragt die App, welches pausiert werden soll. |
+| 24.10.2026 | Zweck des Schaufensters: Hier veröffentlicht eine Person ihre eigenen Buchempfehlungen mit eigenen Notizen. Ein abgebrochenes Buch darf hinein, das ist aber nicht sinnvoll. Deshalb wird es dort nicht angeboten, sondern ist nur bewusst möglich. |
 
 ## Vorschläge von Claude – noch nicht bestätigt
 

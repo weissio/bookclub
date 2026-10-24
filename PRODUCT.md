@@ -16,7 +16,7 @@ German-speaking readers who own physical books and want a calm, private place to
 
 ## Product Purpose
 
-A personal home library first: capture books (ISBN scan, typing, or by hand), keep them sorted by reading state, rate them in depth, and keep one's own interpretation and quotes. Later, a self-curated public "Schaufenster" (a small personal library with a name and optional place) lets others find books and like-minded readers through those words. Success for step 1: the library is useful on its own, without any community.
+A personal home library first: capture books (ISBN scan, typing, or by hand), keep them sorted by reading state, rate them in depth, and keep one's own interpretation and quotes. Later, a self-curated public "Schaufenster" (its purpose, confirmed 24.10.2026: the person publishes their own book recommendations with their own notes) (a small personal library with a name and optional place) lets others find books and like-minded readers through those words. Success for step 1: the library is useful on its own, without any community.
 
 ## Positioning
 
