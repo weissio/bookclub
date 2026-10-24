@@ -109,3 +109,9 @@ _Entwurf vom 10.10.2026 – **teilweise bestätigt** (Genre-Liste, Lieblingsauto
 1. Welche zwei bis vier Angaben gehören in die Kurzfassung unter dem Regal?
 2. Name des Statistik-Bandes.
 3. Dürfen ausgewählte Statistiken (z. B. Lieblingsgenre) später freiwillig ins Schaufenster?
+
+## Am Lesen (24.10.2026, bestätigt)
+- Höchstens 5 Bücher gleichzeitig am Lesen.
+- Reihenfolge priorisierbar (1 bis 5).
+- Priorität 1 erscheint auf der Startseite als aufgeschlagenes Buch mit Seitenzahl.
+- Priorität 2 bis 5 erscheinen als kleine Balken mit Seitenzahl neben dem offenen Buch.
