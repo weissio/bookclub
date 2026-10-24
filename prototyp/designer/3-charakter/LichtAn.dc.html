@@ -314,6 +314,17 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <dl style="margin: 6px 0 0 0">
 <sc-for list="{{book.rateLines}}" as="r" hint-placeholder-count="3"><div style="display: flex; gap: 10px; padding: 7px 0; border-top: 1px solid var(--line)"><dt style="flex-shrink: 0; width: 98px; font-size: 13.5px; font-weight: 700; color: var(--mute)">{{r.k}}</dt><dd style="margin: 0; font-size: 14.5px; line-height: 20px; font-weight: 700">{{r.v}}</dd></div></sc-for>
 </dl>
+<sc-if value="{{book.hasAvoid}}" hint-placeholder-val="{{ false }}">
+<h3 style="margin: 10px 0 2px 0; font-size: 12.5px; font-weight: 800; color: var(--mute); letter-spacing: .03em">KÜNFTIG WENIGER, FÜR ALLE EMPFEHLUNGEN</h3>
+<ul style="margin: 0; padding: 0; list-style: none">
+<sc-for list="{{book.avoidLines}}" as="a" hint-placeholder-count="2">
+<li style="display: flex; align-items: center; gap: 8px; min-height: 48px; border-top: 1px solid var(--line)">
+<span style="flex: 1; font-size: 14.5px; line-height: 20px; font-weight: 700">{{a.text}}</span>
+<button type="button" aria-label="{{a.aria}}" onClick="{{a.remove}}" style="flex-shrink: 0; min-height: 44px; padding: 0 4px; border: none; background: none; cursor: pointer; font-size: 13.5px; font-weight: 800; color: var(--acc)">entfernen</button>
+</li>
+</sc-for>
+</ul>
+</sc-if>
 </section>
 </sc-if>
 
@@ -324,6 +335,15 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <h2 style="margin: 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">ZITAT</h2>
 <p style="margin: 6px 0 0 0; font-size: 17px; line-height: 25px; font-weight: 700; font-style: italic">{{book.quote}}</p>
 <p style="margin: 4px 0 0 0; font-size: 13.5px; font-weight: 600; color: var(--mute)">{{book.quotePage}}</p>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{book.hasFeatures}}" hint-placeholder-val="{{ true }}">
+<section style="margin-top: 24px">
+<h2 style="margin: 0 0 8px 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">MERKMALE <span style="font-weight: 700; letter-spacing: 0">· aus dem Katalog, Beispiel</span></h2>
+<div style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{book.features}}" as="f" hint-placeholder-count="5"><span style="display: inline-flex; flex-direction: column; border-radius: 12px; background: var(--barBg); padding: 6px 11px"><span style="font-size: 11px; font-weight: 700; color: var(--mute)">{{f.dim}}</span><span style="font-size: 14px; font-weight: 800">{{f.label}}</span></span></sc-for>
 </div>
 </section>
 </sc-if>
@@ -570,11 +590,11 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 
 <sc-if value="{{rv.avoidHighlight}}" hint-placeholder-val="{{ false }}">
 <h3 style="margin: 16px 4px 4px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">KÜNFTIG WENIGER DAVON?</h3>
-<p style="margin: 0 4px 8px 4px; font-size: 12.5px; line-height: 17px; font-weight: 600; color: var(--mute)"><b style="color: var(--ink)">Seltener</b> kommt weniger oft vor. <b style="color: var(--ink)">Nicht empfehlen</b> kommt gar nicht mehr vor.</p>
+<p style="margin: 0 4px 8px 4px; font-size: 12.5px; line-height: 17px; font-weight: 600; color: var(--mute)">Wähle das Merkmal, das du meinst. <b style="color: var(--ink)">Seltener</b> kommt weniger oft vor. <b style="color: var(--ink)">Nicht empfehlen</b> kommt gar nicht mehr vor.</p>
 <div role="list">
 <sc-for list="{{rv.avoid}}" as="a" hint-placeholder-count="4">
-<div role="listitem" style="display: flex; align-items: center; gap: 6px; min-height: 50px; border-top: 1px solid var(--line)">
-<span style="flex: 1; font-size: 15px; font-weight: 800; padding-left: 4px">{{a.label}}</span>
+<div role="listitem" style="display: flex; align-items: center; gap: 6px; min-height: 52px; border-top: 1px solid var(--line)">
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; padding-left: 4px"><span style="font-size: 11.5px; font-weight: 800; color: var(--mute)">{{a.dim}}</span><span style="font-size: 15px; line-height: 19px; font-weight: 800">{{a.label}}</span></span>
 <button type="button" aria-pressed="{{a.lessPressed}}" aria-label="{{a.lessAria}}" onClick="{{a.less}}" style="{{a.lessStyle}}">seltener</button>
 <button type="button" aria-pressed="{{a.neverPressed}}" aria-label="{{a.neverAria}}" onClick="{{a.never}}" style="{{a.neverStyle}}">nicht empfehlen</button>
 </div>
@@ -597,11 +617,11 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </sc-for>
 <sc-if value="{{rv.avoidInMore}}" hint-placeholder-val="{{ false }}">
 <h4 style="margin: 14px 4px 6px 4px; font-size: 13px; font-weight: 800; color: var(--mute)">Künftig weniger davon?</h4>
-<p style="margin: 0 4px 8px 4px; font-size: 12.5px; line-height: 17px; font-weight: 600; color: var(--mute)"><b style="color: var(--ink)">Seltener</b> kommt weniger oft vor. <b style="color: var(--ink)">Nicht empfehlen</b> kommt gar nicht mehr vor.</p>
+<p style="margin: 0 4px 8px 4px; font-size: 12.5px; line-height: 17px; font-weight: 600; color: var(--mute)">Wähle das Merkmal, das du meinst. <b style="color: var(--ink)">Seltener</b> kommt weniger oft vor. <b style="color: var(--ink)">Nicht empfehlen</b> kommt gar nicht mehr vor.</p>
 <div role="list">
 <sc-for list="{{rv.avoid}}" as="a" hint-placeholder-count="4">
-<div role="listitem" style="display: flex; align-items: center; gap: 6px; min-height: 50px; border-top: 1px solid var(--line)">
-<span style="flex: 1; font-size: 15px; font-weight: 800; padding-left: 4px">{{a.label}}</span>
+<div role="listitem" style="display: flex; align-items: center; gap: 6px; min-height: 52px; border-top: 1px solid var(--line)">
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column; padding-left: 4px"><span style="font-size: 11.5px; font-weight: 800; color: var(--mute)">{{a.dim}}</span><span style="font-size: 15px; line-height: 19px; font-weight: 800">{{a.label}}</span></span>
 <button type="button" aria-pressed="{{a.lessPressed}}" aria-label="{{a.lessAria}}" onClick="{{a.less}}" style="{{a.lessStyle}}">seltener</button>
 <button type="button" aria-pressed="{{a.neverPressed}}" aria-label="{{a.neverAria}}" onClick="{{a.never}}" style="{{a.neverStyle}}">nicht empfehlen</button>
 </div>
@@ -681,8 +701,30 @@ var ASPECTS_SACH = ['Verständlichkeit', 'Tiefe', 'Thema'];
 var MORE_GROUPS = [
   ['tempoMe', 'Tempo für mich', ['zu langsam', 'passend', 'zu schnell'], false]
 ];
-var AVOID_FEATURES = ['dieses Genre', 'dieses Thema', 'solche Länge', 'diesen Ton'];
-function blankRating() { return { stars: 0, asp: {}, reasons: [], text: '', tempoMe: '', again: '', avoid: {} }; }
+var FEATURES = {
+  salz: { genre: 'Roman der Gegenwart', themes: ['Familie', 'Meer', 'Heimat'], tone: 'melancholisch', pages: 384 },
+  gezeiten: { genre: 'Roman der Gegenwart', themes: ['Meer', 'Verlust'], tone: 'ruhig', pages: 296 },
+  stille: { genre: 'Sachbuch', themes: ['Stille', 'Achtsamkeit'], tone: 'nachdenklich', pages: 220 },
+  moor: { genre: 'Krimi', themes: ['Schuld', 'Dorfleben'], tone: 'düster', pages: 340, content: 'detaillierte Gewaltdarstellung' },
+  tromso: { genre: 'Reiseerzählung', themes: ['Norden', 'Winter'], tone: 'heiter', pages: 412 },
+  nacht: { genre: 'Roman der Gegenwart', themes: ['Reise', 'Erinnerung'], tone: 'melancholisch', pages: 340 },
+  fluss: { genre: 'Historischer Roman', themes: ['Krieg', 'Familie', 'Flucht'], tone: 'schwer', pages: 520, content: 'detaillierte Gewaltdarstellung' },
+  uhr: { genre: 'Roman der Gegenwart', themes: ['Handwerk', 'Zeit'], tone: 'warm', pages: 288 },
+  see: { genre: 'Reiseerzählung', themes: ['Meer', 'Segeln'], tone: 'heiter', pages: 264 }
+};
+function slug(t) { return t.toLowerCase().replace(/ä/g, 'ae').replace(/ö/g, 'oe').replace(/ü/g, 'ue').replace(/ß/g, 'ss').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, ''); }
+function lengthRange(n) { return n > 500 ? ['over_500', 'über 500 Seiten'] : (n >= 350 ? ['350_500', '350 bis 500 Seiten'] : ['under_350', 'unter 350 Seiten']); }
+var DIM_LABEL = { genre: 'Genre', theme: 'Thema', tone: 'Ton', length: 'Länge', content: 'Inhalt' };
+function featureValues(id) {
+  var f = FEATURES[id]; if (!f) return [];
+  var out = [{ dimension: 'genre', value_id: slug(f.genre), label: f.genre }];
+  f.themes.forEach(function (t) { out.push({ dimension: 'theme', value_id: slug(t), label: t }); });
+  out.push({ dimension: 'tone', value_id: slug(f.tone), label: f.tone });
+  var lr = lengthRange(f.pages); out.push({ dimension: 'length', value_id: lr[0], label: lr[1] });
+  if (f.content) out.push({ dimension: 'content', value_id: slug(f.content), label: f.content });
+  return out;
+}
+function blankRating() { return { stars: 0, asp: {}, reasons: [], text: '', tempoMe: '', again: '', avoid: [] }; }
 var COUNTS = { gelesen: 148, ungelesen: 61, wunsch: 23, abgebrochen: 6, regale: 5, verliehen: 2 };
 var VOLS = {
   gelesen: { name: 'Gelesen', sub: 'Zu Ende gelesen, mit deinen eigenen Worten.', search: 'In 148 gelesenen Büchern suchen' },
@@ -756,8 +798,8 @@ class Component extends DCLogic {
       dropped: [{ id: 'fluss', when: 'Mai 2026' }],
       finished: [], rate: null, rd: blankRating(), moreOpen: false,
       ratings: {
-        uhr: { stars: 5, asp: { Sprache: 'like', Figuren: 'like', Handlung: 'like', Atmosphäre: 'like' }, reasons: [], text: '', tempoMe: 'passend', again: 'Ja', avoid: {} },
-        fluss: { stars: 2, asp: {}, reasons: ['Tempo', 'Zu lang'], text: 'Schöne Sätze, aber nach 80 Seiten ist noch nichts passiert.', tempoMe: 'zu langsam', again: 'weiß nicht', avoid: {} }
+        uhr: { stars: 5, asp: { Sprache: 'like', Figuren: 'like', Handlung: 'like', Atmosphäre: 'like' }, reasons: [], text: '', tempoMe: 'passend', again: 'Ja', avoid: [] },
+        fluss: { stars: 2, asp: {}, reasons: ['Tempo', 'Zu lang'], text: 'Schöne Sätze, aber nach 80 Seiten ist noch nichts passiert.', tempoMe: 'zu langsam', again: 'weiß nicht', avoid: [] }
       },
       reasons: [], note: '', volNotice: '' };
   }
@@ -870,6 +912,15 @@ class Component extends DCLogic {
       hasReading: !!(b.reading || (rt && rt.text && b.vol === 'gelesen')), reading: (rt && rt.text && b.vol === 'gelesen') ? rt.text : (b.reading || ''), forWhom: b.reading && !(rt && rt.text) ? (b.forWhom || '') : (b.forWhom && rt && rt.text === b.reading ? b.forWhom : ''),
       inviteCard: !(b.reading || (rt && rt.text && b.vol === 'gelesen')) && b.vol !== 'abgebrochen', inviteText: b.vol === 'gelesen' ? 'Was ist dir von diesem Buch geblieben? Ein Satz reicht.' : 'Deine eigenen Worte kommen dazu, wenn du es gelesen hast. Eine Notiz für dich geht schon jetzt.',
       showRating: b.vol === 'gelesen' || b.vol === 'abgebrochen',
+      hasAvoid: !!(rt && rt.avoid && rt.avoid.length),
+      avoidLines: rt && rt.avoid ? rt.avoid.map(function (a) {
+        var text = (a.action === 'never' ? 'Nicht empfehlen: ' : 'Seltener: ') + DIM_LABEL[a.dimension] + ' ' + a.label;
+        return { text: text, aria: text + ', entfernen', remove: function () {
+          var r = Object.assign({}, s.ratings); var cur = Object.assign({}, r[b.id]); cur.avoid = cur.avoid.filter(function (x) { return x !== a; }); r[b.id] = cur;
+          self.setState({ ratings: r }); } };
+      }) : [],
+      hasFeatures: featureValues(b.id).length > 0,
+      features: featureValues(b.id).map(function (f) { return { dim: DIM_LABEL[f.dimension], label: f.label }; }),
       editLabel: rt && (rt.stars || rt.reasons.length || Object.keys(rt.asp).length) ? 'Bearbeiten' : 'Bewerten',
       stars: [1, 2, 3, 4, 5].map(function (i) { return { bulb: rt && i <= rt.stars ? 'fill: var(--bulb)' : 'fill: none; stroke: var(--line); stroke-width: 2' }; }),
       starsLabel: rt && rt.stars ? rt.stars + ' von 5, ' + STAR_WORDS[rt.stars] : 'Noch nicht bewertet',
@@ -883,10 +934,6 @@ class Component extends DCLogic {
         if (rt.reasons.length) out.push({ k: 'Woran es lag', v: rt.reasons.join(', ') });
         if (rt.tempoMe) out.push({ k: 'Tempo für mich', v: rt.tempoMe });
         if (rt.again) out.push({ k: 'Mehr davon?', v: rt.again });
-        var av = rt.avoid || {}, ls = [], nv = [];
-        Object.keys(av).forEach(function (f) { if (av[f] === 'less') ls.push(f); else if (av[f] === 'never') nv.push(f); });
-        if (ls.length) out.push({ k: 'Seltener', v: ls.join(', ') });
-        if (nv.length) out.push({ k: 'Nicht empfehlen', v: nv.join(', ') });
         if (b.vol === 'abgebrochen' && rt.text) out.push({ k: 'Eigene Worte', v: '„' + rt.text + '“' });
         return out;
       })(),
@@ -959,7 +1006,7 @@ class Component extends DCLogic {
       var tempoReason = isDrop && rd.reasons.indexOf('Tempo') >= 0;
       var highlight = isDrop || (rd.stars > 0 && rd.stars <= 2);
       var groupsVis = MORE_GROUPS.filter(function (g) { return !(g[0] === 'tempoMe' && tempoReason); });
-      var avoidCount = Object.keys(rd.avoid).length;
+      var avoidCount = rd.avoid.length;
       var filled = 0; groupsVis.forEach(function (g) { var v = rd[g[0]]; if (g[3] ? v.length : v) filled++; });
       if (!highlight) filled += avoidCount;
       var moreTotal = groupsVis.length + (highlight ? 0 : 1);
@@ -979,12 +1026,18 @@ class Component extends DCLogic {
           labelStyle: 'font-size: 11.5px; font-weight: 800; white-space: nowrap; color: ' + (rd.stars === i ? 'var(--acc)' : 'var(--mute)'),
           pick: function () { upd({ stars: rd.stars === i ? 0 : i }); } }; }),
         avoidHighlight: highlight, avoidInMore: !highlight,
-        avoid: AVOID_FEATURES.map(function (f) {
-          var v = rd.avoid[f] || '';
-          var set = function (val) { var m = Object.assign({}, rd.avoid); if (m[f] === val) delete m[f]; else m[f] = val; upd({ avoid: m }); };
-          return { label: f.charAt(0).toUpperCase() + f.slice(1), lessPressed: v === 'less' ? 'true' : 'false', neverPressed: v === 'never' ? 'true' : 'false',
-            lessAria: f + ': seltener', neverAria: f + ': nicht empfehlen', lessStyle: avoidBtn(v === 'less', false), neverStyle: avoidBtn(v === 'never', true),
-            less: function () { set('less'); }, never: function () { set('never'); } };
+        avoid: featureValues(R0.id).map(function (fv) {
+          var cur = rd.avoid.filter(function (x) { return x.dimension === fv.dimension && x.value_id === fv.value_id; })[0];
+          var v = cur ? cur.action : '';
+          var set = function (val) {
+            var rest = rd.avoid.filter(function (x) { return !(x.dimension === fv.dimension && x.value_id === fv.value_id); });
+            if (v !== val) rest.push({ action: val, dimension: fv.dimension, value_id: fv.value_id, label: fv.label, source_work_id: R0.id, scope: 'global', explicit: true });
+            upd({ avoid: rest });
+          };
+          var name = DIM_LABEL[fv.dimension] + ' ' + fv.label;
+          return { dim: DIM_LABEL[fv.dimension], label: fv.label, lessPressed: v === 'seltener' ? 'true' : 'false', neverPressed: v === 'never' ? 'true' : 'false',
+            lessAria: name + ': seltener', neverAria: name + ': nicht empfehlen', lessStyle: avoidBtn(v === 'seltener', false), neverStyle: avoidBtn(v === 'never', true),
+            less: function () { set('seltener'); }, never: function () { set('never'); } };
         }),
         aspects: (bk.sach ? ASPECTS_SACH : ASPECTS_ROMAN).map(function (a) {
           var v = rd.asp[a] || '';

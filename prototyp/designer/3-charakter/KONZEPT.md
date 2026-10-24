@@ -260,3 +260,9 @@ Grundlage: ENTSCHEIDUNGSVORLAGE-USP3.md, Abschnitte 2 und 8. Screens in `screens
     - 12–12c: „Tempo“ an, „zu langsam“, „Tempo“ ab. Die Angabe ist weg und taucht beim erneuten Anwählen nicht wieder auf.
     - 13–14: „nicht empfehlen“ gespeichert und auf der Buchseite gezeigt.
   - Die 10 Sekunden stammen aus internem Durchspielen; ob es für echte Leser schnell und verständlich ist, muss ein Test zeigen.
+- **Datenbindung der Ausschlüsse (CLUSTERUNG.md, Abschnitt 6), umgesetzt:**
+  - Jedes Beispielbuch zeigt auf der Buchseite „Merkmale · aus dem Katalog“: Genre, 1–3 Themen, Ton, Längenbereich (unter 350 / 350 bis 500 / über 500 Seiten) und, wo passend, einen Inhalt wie „detaillierte Gewaltdarstellung“.
+  - „Künftig weniger davon?“ listet genau diese Werte einzeln, je mit „seltener“ und „nicht empfehlen“. Es gibt keinen Sammelausschluss aller Themen.
+  - Gespeichert wird `{action: 'seltener'|'never', dimension, value_id, label, source_work_id, scope: 'global', explicit: true}`. Der Abbruchgrund „Thema“ erzeugt keinen Ausschluss.
+  - Auf der Buchseite stehen die Einträge unter „Künftig weniger, für alle Empfehlungen“, z. B. „Seltener: Thema Meer“, jeweils mit „entfernen“.
+  - Geprüft in screens5/10b–10f (wählen, speichern, sehen, entfernen) und 13–14 (Abbruch mit „Thema Verlust: seltener“ und „Ton ruhig: nicht empfehlen“).
