@@ -1,0 +1,40 @@
+## Offene See | Merkmale: {'genre': 'Roman / Gegenwart', 'thema': ['Meer & Küste', 'Natur & Landschaft', 'Erwachsenwerden'], 'tempo': 'ruhig', 'ton': ['nachdenklich'], 'fokus': 'figuren', 'sprache': 'poetisch', 'laenge': 'mittel'}
+    0.85 Die Ungehaltenen – Deniz Utlu | genre: Roman / Gegenwart; fokus: figuren; sprache: poetisch; Klappentext ähnlicher als: 93% der Bücher
+    0.79 Heimsuchung – Jenny Erpenbeck | genre: Roman / Gegenwart; thema: Meer & Küste; fokus: figuren; sprache: poetisch; Klappentext ähnlicher als: 77% der Bücher
+    0.77 Los – Klaus Merz | genre: Roman / Gegenwart; fokus: figuren; sprache: poetisch; Klappentext ähnlicher als: 92% der Bücher
+## Die Eleganz des Igels | Merkmale: {'genre': 'Roman / Gegenwart', 'thema': ['Großstadt', 'Identität'], 'laenge': 'mittel', 'ton': ['humorvoll'], 'fokus': 'figuren'}
+    0.95 Zwischen Himmel und Liebe – Cecelia Ahern | genre: Roman / Gegenwart; ton: humorvoll; fokus: figuren; laenge: mittel; Klappentext ähnlicher als: 100% der Bücher
+    0.86 Drei Tage im Paradies – Werner Köhler | genre: Roman / Gegenwart; thema: Großstadt; ton: humorvoll; fokus: figuren; Klappentext ähnlicher als: 92% der Bücher
+    0.80 Frühstück mit Proust – Frédérique Deghelt | genre: Roman / Gegenwart; thema: Großstadt; fokus: figuren; laenge: mittel; Klappentext ähnlicher als: 97% der Bücher
+## Acht Berge | Merkmale: {'genre': 'Roman / Gegenwart', 'thema': ['Freundschaft', 'Berge', 'Familie'], 'ton': ['nachdenklich'], 'fokus': 'figuren', 'sprache': 'schlicht', 'laenge': 'kurz'}
+    0.82 Drei Tage im Paradies – Werner Köhler | genre: Roman / Gegenwart; thema: Familie; fokus: figuren; laenge: kurz; Klappentext ähnlicher als: 100% der Bücher
+    0.78 In Küstennähe – Joachim B. Schmidt | genre: Roman / Gegenwart; thema: Freundschaft; fokus: figuren; Klappentext ähnlicher als: 87% der Bücher
+    0.78 Die Ungehaltenen – Deniz Utlu | genre: Roman / Gegenwart; fokus: figuren; laenge: kurz; Klappentext ähnlicher als: 97% der Bücher
+## Der Buchspazierer | Merkmale: {'genre': 'Roman / Gegenwart', 'thema': ['Bücher & Lesen', 'Freundschaft'], 'ton': ['warm'], 'laenge': 'kurz', 'fokus': 'figuren'}
+    0.84 Heimsuchung – Jenny Erpenbeck | genre: Roman / Gegenwart; fokus: figuren; laenge: kurz; Klappentext ähnlicher als: 85% der Bücher
+    0.81 Firmin – Sam Savage | genre: Roman / Gegenwart; thema: Bücher & Lesen; fokus: figuren; laenge: kurz; Klappentext ähnlicher als: 98% der Bücher
+    0.73 Ja, mach nur einen Plan – Ralf Thenior | genre: Roman / Gegenwart; fokus: figuren; laenge: kurz; Klappentext ähnlicher als: 63% der Bücher
+## Das Gewicht der Worte | Merkmale: {'genre': 'Roman / Gegenwart', 'thema': ['Philosophie & Sinn', 'Bücher & Lesen'], 'tempo': 'ruhig', 'ton': ['nachdenklich'], 'fokus': 'ideen', 'laenge': 'lang'}
+    0.83 Bullau – Andreas Maier | thema: Bücher & Lesen; ton: nachdenklich; fokus: ideen; Klappentext ähnlicher als: 93% der Bücher
+    0.78 Der Kantakt – Giwi Margwelaschwili | thema: Bücher & Lesen; fokus: ideen; laenge: lang; Klappentext ähnlicher als: 98% der Bücher
+    0.69 Vom Glück, in der Natur zu sein – Henry David Thoreau | genre: Roman / Gegenwart; thema: Bücher & Lesen; ton: nachdenklich; fokus: ideen; Klappentext ähnlicher als: 55% der Bücher
+## Strandgut | Merkmale: {'genre': 'Roman / Gegenwart', 'thema': ['Meer & Küste', 'Kunst & Musik', 'Alter'], 'ton': ['melancholisch'], 'fokus': 'figuren', 'sprache': 'schlicht', 'laenge': 'mittel'}
+    0.83 Ja, mach nur einen Plan – Ralf Thenior | genre: Roman / Gegenwart; thema: Meer & Küste; fokus: figuren; Klappentext ähnlicher als: 97% der Bücher
+    0.82 In Küstennähe – Joachim B. Schmidt | genre: Roman / Gegenwart; thema: Alter; fokus: figuren; laenge: mittel; Klappentext ähnlicher als: 75% der Bücher
+    0.74 Los – Klaus Merz | genre: Roman / Gegenwart; ton: melancholisch; fokus: figuren; Klappentext ähnlicher als: 87% der Bücher
+## Das Café ohne Namen | Merkmale: {'genre': 'Roman / Gegenwart', 'thema': ['Großstadt', 'Gesellschaft & Politik'], 'tempo': 'ruhig', 'ton': ['melancholisch', 'warm'], 'fokus': 'figuren', 'sprache': 'nüchtern', 'laenge': 'mittel'}
+    0.82 Superposition – Kat Eryn Rubik | genre: Roman / Gegenwart; thema: Großstadt; fokus: figuren; laenge: mittel; Klappentext ähnlicher als: 100% der Bücher
+    0.76 Firmin – Sam Savage | genre: Roman / Gegenwart; thema: Großstadt; ton: melancholisch; fokus: figuren; Klappentext ähnlicher als: 92% der Bücher
+    0.71 Zwischen Himmel und Liebe – Cecelia Ahern | genre: Roman / Gegenwart; fokus: figuren; laenge: mittel; Klappentext ähnlicher als: 83% der Bücher
+## Der Schatten des Windes | Merkmale: {'genre': 'Roman / Gegenwart', 'thema': ['Bücher & Lesen', 'Geschichte', 'Großstadt'], 'tempo': 'rasant', 'ton': ['spannungsgeladen', 'düster'], 'fokus': 'handlung', 'laenge': 'lang'}
+    0.69 Two sides to every murder – Danielle Valentine | thema: Bücher & Lesen; tempo: rasant; ton: düster, spannungsgeladen; fokus: handlung
+    0.58 Die 10. Symphonie – Joseph Gelinek | thema: Großstadt; tempo: rasant; ton: spannungsgeladen; fokus: handlung
+    0.56 Endstation Taiga – Petra Hůlová | thema: Geschichte; fokus: handlung; laenge: lang
+## Herr Lehmann | Merkmale: {'genre': 'Roman / Gegenwart', 'thema': ['Großstadt', 'Identität', 'Geschichte'], 'tempo': 'ruhig', 'ton': ['heiter', 'warm'], 'fokus': 'figuren', 'sprache': 'schlicht', 'laenge': 'mittel'}
+    0.80 Firmin – Sam Savage | genre: Roman / Gegenwart; thema: Geschichte, Großstadt; ton: heiter; fokus: figuren; Klappentext ähnlicher als: 95% der Bücher
+    0.74 Betrunkene Bäume – Ada Dorian | genre: Roman / Gegenwart; fokus: figuren; laenge: mittel; Klappentext ähnlicher als: 88% der Bücher
+    0.73 Auch die Liebe hat drei Seiten – Susann Rehlein | genre: Roman / Gegenwart; thema: Großstadt; fokus: figuren; laenge: mittel; Klappentext ähnlicher als: 83% der Bücher
+## Das kleine Haus am Sonnenhang | Merkmale: {'genre': 'Roman / Gegenwart', 'thema': ['Philosophie & Sinn', 'Bücher & Lesen', 'Dorf & Provinz'], 'tempo': 'ruhig', 'ton': ['heiter', 'nachdenklich'], 'fokus': 'ideen', 'laenge': 'kurz'}
+    0.92 Veronika beschließt zu sterben – Paulo Coelho | genre: Roman / Gegenwart; thema: Philosophie & Sinn; fokus: ideen; laenge: kurz; Klappentext ähnlicher als: 92% der Bücher
+    0.77 Vom Glück, in der Natur zu sein – Henry David Thoreau | genre: Roman / Gegenwart; thema: Bücher & Lesen; ton: nachdenklich; fokus: ideen; laenge: kurz; Klappentext ähnlicher als: 72% der Bücher
+    0.76 Bullau – Andreas Maier | thema: Bücher & Lesen; ton: nachdenklich; fokus: ideen; laenge: kurz; Klappentext ähnlicher als: 82% der Bücher
