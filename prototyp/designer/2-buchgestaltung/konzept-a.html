@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390">
+<title>Farbfolge</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&display=swap" rel="stylesheet">
+<style>
+  /* Konzept A "Farbfolge" – Lebenslauf eines Buches als Spektrum.
+     Wunsch (violett) -> im Regal (blau) -> am Lesen (grün) -> gelesen (gelb). Abgebrochen = grau, außerhalb des Spektrums. */
+  :root{
+    --papier:#ffffff;
+    --ink:#141414;
+    --ink-2:#5a5a5a;
+    --violett:#5b3b9a;
+    --blau:#1d5bb0;
+    --gruen-1:#1f8a55;
+    --gruen-2:#14806f;
+    --gelb:#f6c800;
+    --gelb-2:#e9a800;
+    --grau:#9a9a94;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#d9d9d6}
+  body{font-family:"Archivo",sans-serif;color:var(--ink);font-variation-settings:"wdth" 100;-webkit-font-smoothing:antialiased}
+  .phone{width:390px;height:844px;background:var(--papier);position:relative;overflow:hidden}
+  .status{height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 14px 34px;font-weight:600;font-size:16px}
+  .status .ic{display:flex;gap:6px;align-items:center}
+
+  /* Kopf: Reihentitel + Signet */
+  .kopf{height:52px;padding:0 16px;display:flex;align-items:center;justify-content:space-between}
+  .reihe{display:flex;align-items:baseline;gap:10px}
+  .reihe b{font-size:21px;font-weight:700;font-variation-settings:"wdth" 112;letter-spacing:-.2px}
+  .reihe span{font-size:13px;color:var(--ink-2);font-variation-settings:"wdth" 90}
+  .signet{width:28px;height:28px;display:grid;grid-template-columns:repeat(4,1fr)}
+  .signet i:nth-child(1){background:var(--violett)}
+  .signet i:nth-child(2){background:var(--blau)}
+  .signet i:nth-child(3){background:var(--gruen-1)}
+  .signet i:nth-child(4){background:var(--gelb)}
+  .rechts{display:flex;align-items:center;gap:10px}.bsp{font-size:11px;color:var(--ink-2);font-variation-settings:"wdth" 85}
+
+  .zwischen{padding:6px 16px 8px;display:flex;justify-content:space-between;align-items:baseline}
+  .zwischen h2{font-size:13px;font-weight:700;font-variation-settings:"wdth" 100}
+  .zwischen small{font-size:12px;color:var(--ink-2)}
+
+  /* Am Lesen: zwei Umschläge im Stil der Reihe */
+  .lesen{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 16px}
+  .umschlag{height:208px;color:#fff;padding:14px 14px 10px;display:flex;flex-direction:column;position:relative}
+  .umschlag.g1{background:var(--gruen-1)}
+  .umschlag.g2{background:var(--gruen-2)}
+  .umschlag .autor{font-size:14px;font-weight:400;line-height:1.2}
+  .umschlag .titel{font-size:19px;font-weight:700;line-height:1.12;margin-top:2px;font-variation-settings:"wdth" 92;letter-spacing:-.1px}
+  .umschlag .nr{position:absolute;top:14px;right:12px;font-size:11px;opacity:.75;font-variation-settings:"wdth" 80}
+  .seite{margin-top:auto;display:flex;align-items:baseline;gap:4px}
+  .seite strong{font-size:40px;font-weight:600;line-height:1;font-variation-settings:"wdth" 80;font-feature-settings:"tnum"}
+  .seite em{font-style:normal;font-size:13px;opacity:.8}
+  .strich{height:3px;background:rgba(255,255,255,.3);margin:8px 0 10px}
+  .strich i{display:block;height:100%;background:#fff}
+  .eintragen{height:44px;background:#fff;color:var(--ink);display:flex;align-items:center;justify-content:space-between;padding:0 12px;font-size:14px;font-weight:600}
+  .eintragen svg{flex:none}
+
+  /* Das Regal von oben */
+  .spektrum{padding:16px 16px 0}
+  .spektrum .kopfzeile{display:flex;justify-content:space-between;font-size:12px;color:var(--ink-2);margin-bottom:6px}
+  .spektrum .kopfzeile b{color:var(--ink);font-weight:700;font-size:13px}
+  .band{height:22px;display:flex}
+  .band i{display:block;height:100%}
+  .spektrum p{font-size:12.5px;color:var(--ink-2);margin-top:7px}
+  .spektrum p b{color:var(--ink);font-weight:600}
+
+  /* Bände im Reclam-Prinzip: Farbe = Bedeutung, ausgespartes Schild */
+  .baende{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:14px 16px 0}
+  .bd{height:74px;position:relative;padding:8px}
+  .bd .schild{background:#fff;display:inline-block;padding:5px 8px 6px;font-size:14px;font-weight:700;line-height:1.15;font-variation-settings:"wdth" 96;max-width:120px}
+  .bd .zahl{position:absolute;right:10px;bottom:6px;font-size:30px;font-weight:600;line-height:1;font-variation-settings:"wdth" 78;font-feature-settings:"tnum"}
+  .bd.gelb{background:var(--gelb)} .bd.gelb .zahl{color:var(--ink)}
+  .bd.blau{background:var(--blau)} .bd.blau .zahl{color:#fff}
+  .bd.violett{background:var(--violett)} .bd.violett .zahl{color:#fff}
+  .bd.grau{background:var(--grau)} .bd.grau .zahl{color:#fff}
+  .bd.regale{background:var(--ink)}
+  .bd.regale .zahl{color:#fff}
+  .bd.statistik{background:#fff;box-shadow:inset 0 0 0 2px var(--ink)}
+  .bd.statistik .balken{position:absolute;right:12px;bottom:10px;display:flex;align-items:flex-end;gap:4px;height:40px}
+  .bd.statistik .balken i{width:9px;display:block}
+  .bd.statistik .schild{max-width:120px;padding-left:0}
+  .bd.statistik .zahl{display:none}
+  .bd .unter{display:block;font-size:11.5px;font-weight:400;color:var(--ink-2);margin-top:1px}
+
+  /* Erfassen: einzige Aktion, unten in Daumenreichweite */
+  .erfassen{margin:8px 16px 0;height:48px;box-shadow:inset 0 0 0 2px var(--ink);display:flex;align-items:center;gap:12px;padding:0 14px;font-size:15px;font-weight:700}
+  .erfassen span{font-weight:400;color:var(--ink-2);font-size:13px;margin-left:auto}
+
+  /* Tab-Leiste: Text, Farbmarke über dem aktiven Reiter */
+  .tabs{position:absolute;left:0;right:0;bottom:0;height:83px;background:#fff;border-top:1px solid #e3e3e0;display:grid;grid-template-columns:repeat(4,1fr);padding-bottom:34px}
+  .tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:12px;color:var(--ink-2);font-variation-settings:"wdth" 92}
+  .tab i{width:22px;height:4px;background:#e3e3e0}
+  .tab.an{color:var(--ink);font-weight:700}
+  .tab.an i{background:linear-gradient(90deg,var(--violett) 25%,var(--blau) 25% 50%,var(--gruen-1) 50% 75%,var(--gelb) 75%)}
+  .home{position:absolute;bottom:8px;left:50%;transform:translateX(-50%);width:134px;height:5px;border-radius:3px;background:#141414}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="status"><span>9:41</span>
+    <span class="ic">
+      <svg width="18" height="11" viewBox="0 0 18 11"><rect x="0" y="7" width="3" height="4" fill="#141414"/><rect x="5" y="5" width="3" height="6" fill="#141414"/><rect x="10" y="2.5" width="3" height="8.5" fill="#141414"/><rect x="15" y="0" width="3" height="11" fill="#141414"/></svg>
+      <svg width="26" height="12" viewBox="0 0 26 12"><rect x=".5" y=".5" width="22" height="11" rx="3" fill="none" stroke="#141414" opacity=".4"/><rect x="2" y="2" width="17" height="8" rx="1.6" fill="#141414"/><rect x="24" y="4" width="1.6" height="4" fill="#141414" opacity=".4"/></svg>
+    </span>
+  </div>
+
+  <div class="kopf">
+    <div class="reihe"><b>Bibliothek</b><span>240 Bände</span></div>
+    <div class="rechts"><span class="bsp">Beispieldaten</span><div class="signet" aria-hidden="true"><i></i><i></i><i></i><i></i></div></div>
+  </div>
+
+  <div class="zwischen"><h2>Am Lesen</h2><small>2 offen</small></div>
+  <div class="lesen">
+    <div class="umschlag g1">
+      <span class="nr">Nr. 239</span>
+      <div class="autor">Henrike Albers</div>
+      <div class="titel">Die Uhrmacherin von Görlitz</div>
+      <div class="seite"><strong>214</strong><em>von 412</em></div>
+      <div class="strich"><i style="width:52%"></i></div>
+      <div class="eintragen">Seite eintragen
+        <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 2v12M2 8h12" stroke="#141414" stroke-width="2.2"/></svg></div>
+    </div>
+    <div class="umschlag g2">
+      <span class="nr">Nr. 233</span>
+      <div class="autor">Jonas Wendland</div>
+      <div class="titel">Salz und Schiefer</div>
+      <div class="seite"><strong>58</strong><em>von 296</em></div>
+      <div class="strich"><i style="width:20%"></i></div>
+      <div class="eintragen">Seite eintragen
+        <svg width="16" height="16" viewBox="0 0 16 16"><path d="M8 2v12M2 8h12" stroke="#141414" stroke-width="2.2"/></svg></div>
+    </div>
+  </div>
+
+  <div class="spektrum">
+    <div class="kopfzeile"><b>Dein Regal, von oben</b><span>vom Wunsch zum Gelesenen</span></div>
+    <!-- feste Breite, Anteile nach Band: 19 Wunsch, 61 Regal, 2 Lesen, 148 Gelesen, 10 Abgebrochen -->
+    <div class="band" aria-label="Anteile der Bände">
+      <i style="width:7.9%;background:var(--violett)"></i>
+      <i style="width:25.4%;background:var(--blau)"></i>
+      <i style="width:1.6%;background:var(--gruen-1)"></i>
+      <i style="width:61.7%;background:linear-gradient(90deg,var(--gelb) 30%,#d48a00)"></i>
+      <i style="width:3.4%;background:var(--grau)"></i>
+    </div>
+    <p>Meistgelesen: <b>Kriminalroman</b> · Gelb dunkelt mit den Jahren</p>
+  </div>
+
+  <div class="baende">
+    <div class="bd gelb"><span class="schild">Gelesen</span><span class="zahl">148</span></div>
+    <div class="bd blau"><span class="schild">Ungelesen<br>im Regal</span><span class="zahl">61</span></div>
+    <div class="bd violett"><span class="schild">Wunschliste</span><span class="zahl">19</span></div>
+    <div class="bd grau"><span class="schild">Abgebrochen</span><span class="zahl">10</span></div>
+    <div class="bd regale"><span class="schild">Eigene Regale</span><span class="zahl">5</span></div>
+    <div class="bd statistik"><span class="schild">Statistiken<span class="unter">2026: 23 gelesen</span></span><span class="balken"><i style="height:14px;background:var(--violett)"></i><i style="height:26px;background:var(--blau)"></i><i style="height:6px;background:var(--gruen-1)"></i><i style="height:40px;background:var(--gelb)"></i></span></div>
+  </div>
+
+  <div class="erfassen">
+    <svg width="24" height="18" viewBox="0 0 24 18" aria-hidden="true"><g fill="#141414"><rect x="0" y="0" width="2" height="18"/><rect x="4" y="0" width="1" height="18"/><rect x="7" y="0" width="3" height="18"/><rect x="12" y="0" width="1" height="18"/><rect x="15" y="0" width="2" height="18"/><rect x="19" y="0" width="1" height="18"/><rect x="22" y="0" width="2" height="18"/></g></svg>
+    Bücher erfassen<span>Scan · ISBN · von Hand</span>
+  </div>
+
+  <nav class="tabs">
+    <div class="tab an"><i></i>Bibliothek</div>
+    <div class="tab"><i></i>Schaufenster</div>
+    <div class="tab"><i></i>Entdecken</div>
+    <div class="tab"><i></i>Ich</div>
+  </nav>
+  <div class="home"></div>
+</div>
+</body>
+</html>

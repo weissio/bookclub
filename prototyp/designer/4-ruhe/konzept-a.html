@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>Leihkarte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  /* Konzept A „Leihkarte“ – Startseite Bibliothek. Alle Bücher und Namen sind Beispieldaten. */
+  :root{
+    --grund:#E7E8E4;      /* Muji-Graukarton, kühl-neutral, kein Creme */
+    --karte:#FBFBF9;
+    --tinte:#24324A;      /* Stempeltinte Blauschwarz */
+    --tinte-2:#5E6779;
+    --tinte-3:#8C93A0;
+    --linie:#C3CEDD;      /* blaue Lineatur der Leihkarte */
+    --shu:#D4402B;        /* Zinnoberrot: einziges Farbsignal = Handlung */
+    --pp:#F1F2EF;         /* Schubladenfront, mattes PP */
+    --pp-kante:#CDCFCA;
+    --pp-schatten:#C2C4BE;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#C9CBC6}
+  body{font-family:"Zen Kaku Gothic New",system-ui,sans-serif;color:var(--tinte);-webkit-font-smoothing:antialiased}
+  .phone{width:390px;height:844px;position:relative;overflow:hidden;background:var(--grund)}
+
+  /* Statusleiste 54 px */
+  .status{height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 10px 34px;font-weight:700;font-size:16px;color:#1d2433}
+  .status .ico{display:flex;gap:6px;align-items:center}
+
+  /* Kopf */
+  .kopf{position:absolute;top:58px;left:24px;right:24px;height:44px;display:flex;align-items:center;justify-content:space-between}
+  .kopf h1{font-size:17px;font-weight:700;letter-spacing:.02em}
+  .kopf .bestand{font-size:13px;color:var(--tinte-2);font-weight:500}
+  .kopf .bestand b{font-weight:700;color:var(--tinte)}
+
+  /* Leihtasche mit zwei Karten */
+  .tasche{position:absolute;top:122px;left:16px;right:16px;height:308px}
+  .karte{position:absolute;left:0;right:0;background:var(--karte);border-radius:3px 3px 0 0;
+         box-shadow:0 1px 0 rgba(36,50,74,.06),0 6px 16px -8px rgba(36,50,74,.25)}
+  /* hintere Karte: nur der Reiter schaut heraus */
+  .karte.hinten{top:0;left:26px;right:4px;height:120px;background:#F4F5F2;transform:rotate(.6deg);transform-origin:left bottom}
+  .karte.hinten .reiter{height:44px;display:flex;align-items:center;justify-content:space-between;padding:0 18px 0 16px;font-size:14px}
+  .karte.hinten .reiter b{font-weight:700}
+  .karte.hinten .reiter span{color:var(--tinte-2)}
+  .karte.hinten .reiter .s{font-weight:700;color:var(--tinte);letter-spacing:.04em}
+
+  .karte.vorn{top:46px;height:262px;padding:16px 18px 0}
+  .feld{display:flex;justify-content:space-between;align-items:flex-start}
+  .feld .klein{font-size:10px;letter-spacing:.14em;color:var(--tinte-3);font-weight:500}
+  .titel{font-size:23px;font-weight:900;line-height:1.15;margin-top:3px;letter-spacing:.01em}
+  .autor{font-size:14px;color:var(--tinte-2);margin-top:3px}
+  .signatur{text-align:right;font-size:12px;color:var(--tinte-2);line-height:1.35}
+  .signatur b{display:block;font-size:15px;color:var(--tinte);font-weight:700;letter-spacing:.06em}
+
+  table{width:calc(100% - 96px);border-collapse:collapse;margin-top:14px}
+  th{font-size:10px;letter-spacing:.14em;color:var(--tinte-3);font-weight:500;text-align:left;padding:0 0 5px;border-bottom:1.5px solid var(--linie)}
+  th:last-child,td:last-child{text-align:right}
+  td{height:29px;border-bottom:1px solid var(--linie);font-weight:700;font-size:13px;letter-spacing:.12em;color:var(--tinte);opacity:.86}
+  td.d{width:58%;border-right:1px solid var(--linie)}
+  tr:nth-child(1) td{transform:none}
+  .st{display:inline-block}
+  .st.r1{transform:rotate(-1.2deg) translateY(1px);opacity:.78}
+  .st.r2{transform:rotate(.8deg);opacity:.9}
+  .st.r3{transform:rotate(-.4deg) translateX(2px);opacity:.82}
+  .st.r4{transform:rotate(1.1deg) translateY(-1px)}
+  tr.leer td{opacity:1}
+
+  /* Stempel-Knopf: die häufigste Handlung, 72 pt */
+  .stempel{position:absolute;right:14px;bottom:52px;width:80px;height:80px;border-radius:50%;
+           border:2.5px solid var(--shu);display:flex;flex-direction:column;align-items:center;justify-content:center;
+           color:var(--shu);background:var(--karte);box-shadow:inset 0 0 0 4px var(--karte),inset 0 0 0 5px var(--shu)}
+  .stempel .heute{font-size:10px;letter-spacing:.18em;font-weight:700}
+  .stempel .tag{font-size:17px;font-weight:900;letter-spacing:.04em;line-height:1.1}
+  .stempel .wort{font-size:8.5px;letter-spacing:.1em;font-weight:700}
+  .hinweis{position:absolute;left:18px;bottom:24px;font-size:12px;color:var(--tinte-3)}
+
+  /* Taschenlippe */
+  .lippe{position:absolute;left:-2px;right:-2px;bottom:-12px;height:30px;background:#DADCD6;border-radius:0 0 4px 4px;
+         box-shadow:0 -1px 0 rgba(255,255,255,.6) inset,0 2px 0 #CBCDC7;display:flex;align-items:center;justify-content:center;gap:8px;
+         font-size:11px;letter-spacing:.16em;color:var(--tinte-2);font-weight:700}
+  .lippe i{width:5px;height:5px;border-radius:50%;background:var(--tinte-2);display:inline-block}
+  .lippe i.o{background:none;border:1px solid var(--tinte-2)}
+
+  /* Karteischrank aus PP-Schubladen */
+  .schrank{position:absolute;top:468px;left:16px;right:16px}
+  .schrank .zeile{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px}
+  .lade{height:58px;background:var(--pp);border-radius:6px;position:relative;
+        box-shadow:0 0 0 1px var(--pp-kante),0 2px 0 var(--pp-schatten),inset 0 1px 0 #fff}
+  .lade .etikett{position:absolute;left:10px;right:10px;top:8px;height:28px;border-radius:2px;background:#fff;
+        box-shadow:0 0 0 1.5px #B9BCB5,0 0 0 3px #E4E6E1, 0 1px 0 3px #fff;display:flex;align-items:center;justify-content:space-between;padding:0 10px}
+  .lade .etikett b{font-size:14px;font-weight:700;letter-spacing:.02em}
+  .lade .etikett span{font-size:14px;font-weight:500;color:var(--tinte-2);font-variant-numeric:tabular-nums}
+  .lade .griff{position:absolute;left:50%;bottom:7px;width:40px;height:8px;margin-left:-20px;border-radius:9px;background:#E2E4DF;box-shadow:inset 0 2px 2px rgba(0,0,0,.10)}
+  .lade .unter{position:absolute;left:12px;bottom:6px;font-size:10px;color:var(--tinte-3);letter-spacing:.04em}
+  .lade.statistik .etikett span{font-size:12px}
+
+  /* Rückgabeschlitz = einziger Ort zum Erfassen */
+  .schlitz{margin-top:18px;height:60px;border-radius:6px;background:#D9DBD5;position:relative;display:flex;align-items:center;padding:0 16px;gap:14px;
+           box-shadow:0 0 0 1px #C8CAC4,0 2px 0 #BDBFB9,inset 0 1px 0 rgba(255,255,255,.7)}
+  .schlitz .spalt{width:64px;height:12px;border-radius:6px;background:#2E333B;box-shadow:inset 0 3px 3px rgba(0,0,0,.5),0 1px 0 rgba(255,255,255,.8)}
+  .schlitz .txt b{display:block;font-size:14px;font-weight:700}
+  .schlitz .txt span{font-size:12px;white-space:nowrap;color:var(--tinte-2);letter-spacing:.03em}
+  .schlitz .zahl{margin-left:auto;font-size:11px;color:var(--tinte-3);letter-spacing:.08em;text-align:right;line-height:1.3}
+
+  /* Tab-Leiste */
+  .tabs{position:absolute;left:0;right:0;bottom:34px;height:52px;display:grid;grid-template-columns:repeat(4,1fr);
+        border-top:1px solid #D3D5D0;background:var(--grund)}
+  .tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:10px;font-weight:500;color:var(--tinte-3);letter-spacing:.03em}
+  .tab.an{color:var(--tinte);font-weight:700}
+  .tab svg{width:24px;height:22px}
+  .home{position:absolute;left:0;right:0;bottom:0;height:34px;background:var(--grund)}
+  .home i{position:absolute;left:50%;bottom:9px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:#1d2433}
+  .bsp{position:absolute;top:66px;right:24px}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="status"><span>9:41</span>
+    <span class="ico">
+      <svg width="18" height="11" viewBox="0 0 18 11"><rect x="0" y="7" width="3" height="4" rx="1" fill="#1d2433"/><rect x="5" y="5" width="3" height="6" rx="1" fill="#1d2433"/><rect x="10" y="2.5" width="3" height="8.5" rx="1" fill="#1d2433"/><rect x="15" y="0" width="3" height="11" rx="1" fill="#1d2433"/></svg>
+      <svg width="25" height="12" viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3" fill="none" stroke="#1d2433" opacity=".4"/><rect x="2" y="2" width="16" height="8" rx="2" fill="#1d2433"/><rect x="23" y="4" width="1.5" height="4" rx=".7" fill="#1d2433" opacity=".4"/></svg>
+    </span>
+  </div>
+
+  <div class="kopf">
+    <h1>Bibliothek</h1>
+    <div class="bestand"><b>240</b> Bücher · Beispiel</div>
+  </div>
+
+  <!-- Am Lesen: Leihkarten in der Tasche -->
+  <div class="tasche">
+    <div class="karte hinten">
+      <div class="reiter"><span><b>Das Jahr der Kraniche</b> · Ilka Sommerfeld</span><span class="s">S. 57</span></div>
+    </div>
+
+    <div class="karte vorn">
+      <div class="feld">
+        <div>
+          <div class="klein">AM LESEN</div>
+          <div class="titel">Salz und Asche</div>
+          <div class="autor">Jonas Brehm · 384 Seiten</div>
+        </div>
+        <div class="signatur"><b>R 2 · 14</b>Wohnzimmer</div>
+      </div>
+      <table>
+        <tr><th>GELESEN AM</th><th>BIS SEITE</th></tr>
+                <tr><td class="d"><span class="st r2">15. OKT.</span></td><td><span class="st r3">88</span></td></tr>
+        <tr><td class="d"><span class="st r3">19. OKT.</span></td><td><span class="st r1">121</span></td></tr>
+        <tr><td class="d"><span class="st r4">21. OKT.</span></td><td><span class="st r2">142</span></td></tr>
+        <tr class="leer"><td class="d"></td><td></td></tr>
+      </table>
+      
+      <div class="stempel"><span class="heute">HEUTE</span><span class="tag">24.10.</span><span class="wort">STEMPELN</span></div>
+      <div class="lippe"><i></i><i class="o"></i>&nbsp;2 KARTEN IN DER TASCHE</div>
+    </div>
+  </div>
+
+  <!-- Bände als Schubladen -->
+  <div class="schrank">
+    <div class="zeile">
+      <div class="lade"><div class="etikett"><b>Gelesen</b><span>168</span></div><div class="griff"></div></div>
+      <div class="lade"><div class="etikett"><b>Ungelesen</b><span>41</span></div><div class="griff"></div></div>
+    </div>
+    <div class="zeile">
+      <div class="lade"><div class="etikett"><b>Wunschliste</b><span>23</span></div><div class="griff"></div></div>
+      <div class="lade"><div class="etikett"><b>Beiseitegelegt</b><span>6</span></div><div class="griff"></div></div>
+    </div>
+    <div class="zeile">
+      <div class="lade"><div class="etikett"><b>Eigene Regale</b><span>4</span></div><div class="griff"></div></div>
+      <div class="lade statistik"><div class="etikett"><b>Statistik</b><span>meist Brehm</span></div><div class="griff"></div></div>
+    </div>
+    <div class="schlitz">
+      <div class="spalt"></div>
+      <div class="txt"><b>Bücher einwerfen</b><span>Scannen, ISBN oder von Hand</span></div>
+      
+    </div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab an"><svg viewBox="0 0 24 22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="2" width="18" height="18" rx="2"/><path d="M3 11h18M10 6.5h4M10 15.5h4"/></svg>Bibliothek</div>
+    <div class="tab"><svg viewBox="0 0 24 22" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="16" rx="1.5"/><path d="M12 3v16M3 11h18"/></svg>Schaufenster</div>
+    <div class="tab"><svg viewBox="0 0 24 22" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="10" r="6.5"/><path d="M16 15l4.5 4.5"/></svg>Entdecken</div>
+    <div class="tab"><svg viewBox="0 0 24 22" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4.5 20c1.2-4 4-5.5 7.5-5.5s6.3 1.5 7.5 5.5"/></svg>Ich</div>
+  </div>
+  <div class="home"><i></i></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>Bändchen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Doto:wght@500;700;900&family=Murecho:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Konzept B „Bändchen“ – Startseite Bibliothek. Alle Bücher und Namen sind Beispieldaten. */
+  :root{
+    --grund:#F2F2EF;     /* Hara-Weiß: neutral, nicht Creme */
+    --tinte:#22221F;
+    --grau:#8A8A85;
+    --grau-2:#B9B9B4;
+    --kobalt:#2747D8;    /* einziges Farbsignal: das Bändchen = wo du gerade bist */
+    --umschlag:#FCFCFA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#D8D8D4}
+  body{font-family:"Murecho",system-ui,sans-serif;color:var(--tinte);-webkit-font-smoothing:antialiased}
+  .phone{width:390px;height:844px;position:relative;overflow:hidden;background:var(--grund)}
+  .status{height:54px;display:flex;align-items:flex-end;justify-content:space-between;padding:0 30px 10px 34px;font-weight:600;font-size:16px}
+  .status .ico{display:flex;gap:6px;align-items:center}
+
+  .kopf{position:absolute;top:60px;left:24px;right:24px;height:40px;display:flex;align-items:center;justify-content:space-between}
+  .kopf h1{font-size:15px;font-weight:500;letter-spacing:.04em}
+  .kopf .wahl{display:flex;gap:6px;align-items:center;font-size:12px;color:var(--grau)}
+  .kopf .wahl i{width:6px;height:6px;border-radius:50%;background:var(--tinte);display:inline-block}
+  .kopf .wahl i.o{background:none;border:1px solid var(--grau)}
+
+  /* Das Buch als Objekt: Bunko im schlichten Buchhandlungs-Umschlag */
+  .buch{position:absolute;top:124px;left:119px;width:152px;height:214px;background:var(--umschlag);border-radius:1px 3px 3px 1px;
+        box-shadow:0 1px 1px rgba(0,0,0,.06),0 18px 30px -18px rgba(0,0,0,.35),0 2px 6px rgba(0,0,0,.05)}
+  .buch:before{content:"";position:absolute;left:0;top:0;bottom:0;width:7px;background:linear-gradient(90deg,#E9E9E5,#F7F7F4);border-radius:1px 0 0 1px}
+  .buch:after{content:"";position:absolute;left:7px;right:0;top:9px;height:1px;background:#ECECE8}
+  .buch .falz{position:absolute;left:7px;right:0;bottom:9px;height:1px;background:#ECECE8}
+  .buch .marke{position:absolute;top:22px;left:22px;width:9px;height:9px;border:1px solid var(--grau-2)}
+  .buch .t{position:absolute;left:22px;right:14px;bottom:26px}
+  .buch .t b{display:block;font-size:13px;font-weight:600;line-height:1.3}
+  .buch .t span{font-size:11px;color:var(--grau)}
+  .naechstes{position:absolute;top:136px;left:362px;width:150px;height:200px;background:#E6E6E2;border-radius:2px;
+        box-shadow:0 14px 26px -18px rgba(0,0,0,.3)}
+  .ribbon{position:absolute;left:24px;top:330px;width:342px;height:84px;overflow:visible}
+
+  .skala{position:absolute;left:24px;top:410px;width:342px;height:22px}
+  .seite{position:absolute;left:24px;top:442px;display:flex;align-items:baseline;gap:8px}
+  .seite .s{font-size:13px;color:var(--grau)}
+  .seite .n{font-family:"Doto",monospace;font-weight:900;font-size:50px;line-height:1;letter-spacing:-.01em}
+  .seite .v{font-size:13px;color:var(--grau)}
+  .seite-sub{position:absolute;left:24px;top:500px;font-size:12px;color:var(--grau)}
+
+  /* Drehregler: Seite eintragen (Teenage-Engineering-Encoder) */
+  .regler{position:absolute;right:24px;top:436px;width:64px;height:64px;border-radius:50%;background:#FBFBF9;
+          box-shadow:0 0 0 1px #DADAD5,0 6px 14px -8px rgba(0,0,0,.35)}
+  .regler svg{position:absolute;inset:0}
+  .regler-l{position:absolute;right:24px;top:504px;width:64px;text-align:center;font-size:11px;color:var(--tinte);font-weight:500}
+
+  /* Regal als Punktraster */
+  .regal{position:absolute;left:24px;right:24px;top:556px}
+  .regal .z{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:10px}
+  .regal .z b{font-size:13px;font-weight:600;letter-spacing:.03em}
+  .regal .z span{font-size:11px;color:var(--grau)}
+  .regal .unter{display:flex;justify-content:space-between;align-items:center;margin-top:6px;height:44px}
+  .regal .unter .meist{font-size:12px;color:var(--grau)}
+  .regal .unter .meist em{font-style:normal;color:var(--tinte)}
+  .erfassen{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:500;height:44px}
+  .erfassen i{width:36px;height:36px;border-radius:50%;border:1.5px solid var(--tinte);display:flex;align-items:center;justify-content:center}
+
+  .index{position:absolute;left:16px;right:16px;top:682px;display:grid;grid-template-columns:repeat(3,1fr);row-gap:0}
+  .index div{height:36px;display:flex;align-items:center;gap:8px;padding-left:8px;font-size:13px}
+  .index div span{color:var(--grau);font-variant-numeric:tabular-nums}
+  .index svg{flex:none}
+
+  .tabs{position:absolute;left:0;right:0;bottom:34px;height:50px;display:grid;grid-template-columns:repeat(4,1fr)}
+  .tab{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:11px;color:var(--grau);letter-spacing:.02em}
+  .tab:before{content:"";width:4px;height:4px;border-radius:50%;background:transparent}
+  .tab.an{color:var(--tinte);font-weight:600}
+  .tab.an:before{background:var(--tinte)}
+  .home{position:absolute;left:0;right:0;bottom:0;height:34px}
+  .home i{position:absolute;left:50%;bottom:9px;width:134px;height:5px;margin-left:-67px;border-radius:3px;background:#1d1d1b}
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="status"><span>9:41</span>
+    <span class="ico">
+      <svg width="18" height="11" viewBox="0 0 18 11"><rect x="0" y="7" width="3" height="4" rx="1" fill="#22221f"/><rect x="5" y="5" width="3" height="6" rx="1" fill="#22221f"/><rect x="10" y="2.5" width="3" height="8.5" rx="1" fill="#22221f"/><rect x="15" y="0" width="3" height="11" rx="1" fill="#22221f"/></svg>
+      <svg width="25" height="12" viewBox="0 0 25 12"><rect x=".5" y=".5" width="21" height="11" rx="3" fill="none" stroke="#22221f" opacity=".4"/><rect x="2" y="2" width="16" height="8" rx="2" fill="#22221f"/><rect x="23" y="4" width="1.5" height="4" rx=".7" fill="#22221f" opacity=".4"/></svg>
+    </span>
+  </div>
+
+  <div class="kopf"><h1>Bibliothek</h1><div class="wahl">Am Lesen&nbsp;<i></i><i class="o"></i></div></div>
+
+  <div class="naechstes" aria-label="Zweites Buch: Das Jahr der Kraniche"></div>
+  <div class="buch">
+    <div class="marke"></div>
+    <div class="t"><b>Salz und Asche</b><span>Jonas Brehm</span></div>
+    <div class="falz"></div>
+  </div>
+
+  <!-- Lesebändchen fällt aus dem Buch auf die Seitenskala -->
+  <svg class="ribbon" viewBox="0 0 342 84">
+    <path d="M200 0 C 202 34, 132 40, 126.4 78" fill="none" stroke="#2747D8" stroke-width="4" stroke-linecap="butt"/>
+    <path d="M124.4 76 L128.4 76 L128.4 84 L126.4 81 L124.4 84 Z" fill="#2747D8"/>
+  </svg>
+  <div class="skala"><svg width="342" height="22" viewBox="0 0 342 22"><line x1="0.50" y1="2" x2="0.50" y2="20" stroke="#2A2A28" stroke-width="1.4"/><line x1="7.60" y1="8" x2="7.60" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="14.71" y1="8" x2="14.71" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="21.81" y1="8" x2="21.81" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="28.92" y1="8" x2="28.92" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="36.02" y1="8" x2="36.02" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="43.13" y1="8" x2="43.13" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="50.23" y1="8" x2="50.23" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="57.33" y1="8" x2="57.33" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="64.44" y1="8" x2="64.44" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="71.54" y1="8" x2="71.54" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="78.65" y1="8" x2="78.65" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="85.75" y1="2" x2="85.75" y2="20" stroke="#2A2A28" stroke-width="1.4"/><line x1="92.85" y1="8" x2="92.85" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="99.96" y1="8" x2="99.96" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="107.06" y1="8" x2="107.06" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="114.17" y1="8" x2="114.17" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="121.27" y1="8" x2="121.27" y2="20" stroke="#2A2A28" stroke-width="1"/><line x1="128.38" y1="8" x2="128.38" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="135.48" y1="8" x2="135.48" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="142.58" y1="8" x2="142.58" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="149.69" y1="8" x2="149.69" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="156.79" y1="8" x2="156.79" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="163.90" y1="8" x2="163.90" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="171.00" y1="2" x2="171.00" y2="20" stroke="#C4C4BF" stroke-width="1.4"/><line x1="178.10" y1="8" x2="178.10" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="185.21" y1="8" x2="185.21" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="192.31" y1="8" x2="192.31" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="199.42" y1="8" x2="199.42" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="206.52" y1="8" x2="206.52" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="213.63" y1="8" x2="213.63" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="220.73" y1="8" x2="220.73" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="227.83" y1="8" x2="227.83" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="234.94" y1="8" x2="234.94" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="242.04" y1="8" x2="242.04" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="249.15" y1="8" x2="249.15" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="256.25" y1="2" x2="256.25" y2="20" stroke="#C4C4BF" stroke-width="1.4"/><line x1="263.35" y1="8" x2="263.35" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="270.46" y1="8" x2="270.46" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="277.56" y1="8" x2="277.56" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="284.67" y1="8" x2="284.67" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="291.77" y1="8" x2="291.77" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="298.88" y1="8" x2="298.88" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="305.98" y1="8" x2="305.98" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="313.08" y1="8" x2="313.08" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="320.19" y1="8" x2="320.19" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="327.29" y1="8" x2="327.29" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="334.40" y1="8" x2="334.40" y2="20" stroke="#C4C4BF" stroke-width="1"/><line x1="341.50" y1="2" x2="341.50" y2="20" stroke="#C4C4BF" stroke-width="1.4"/></svg></div>
+  <div class="seite"><span class="s">Seite</span><span class="n">142</span><span class="v">von 384</span></div>
+  <div class="seite-sub">Salz und Asche · zuletzt am Montag</div>
+
+  <div class="regler" aria-label="Seite eintragen">
+    <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="29" fill="none" stroke="#CFCFCA" stroke-width="2" stroke-dasharray="1.2 2.4"/><circle cx="32" cy="32" r="22" fill="#F4F4F1" stroke="#E2E2DD"/><line x1="32" y1="14" x2="32" y2="24" stroke="#2747D8" stroke-width="2.5" stroke-linecap="round"/></svg>
+  </div>
+  <div class="regler-l">eintragen</div>
+
+  <div class="regal">
+    <div class="z"><b>Regal</b><span>240 Bücher · ein Punkt, ein Buch · Beispiel</span></div>
+    <svg width="342" height="51.3" viewBox="0 0 342 51.3" aria-label="Regal als Punktraster: 240 Bücher"><circle cx="4.28" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="12.83" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="21.38" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="29.93" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="38.48" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="47.03" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="55.58" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="64.13" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="72.68" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="81.23" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="89.78" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="98.33" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="106.88" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="115.43" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="123.98" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="132.53" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="141.08" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="149.63" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="158.18" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="166.73" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="175.28" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="183.83" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="192.38" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="200.93" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="209.48" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="218.03" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="226.58" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="235.13" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="243.68" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="252.23" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="260.78" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="269.33" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="277.88" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="286.43" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="294.98" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="303.53" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="312.08" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="320.63" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="329.18" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="337.73" cy="4.28" r="2.6" fill="#2A2A28"/><circle cx="4.28" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="12.83" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="21.38" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="29.93" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="38.48" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="47.03" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="55.58" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="64.13" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="72.68" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="81.23" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="89.78" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="98.33" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="106.88" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="115.43" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="123.98" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="132.53" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="141.08" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="149.63" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="158.18" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="166.73" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="175.28" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="183.83" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="192.38" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="200.93" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="209.48" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="218.03" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="226.58" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="235.13" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="243.68" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="252.23" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="260.78" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="269.33" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="277.88" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="286.43" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="294.98" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="303.53" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="312.08" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="320.63" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="329.18" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="337.73" cy="12.83" r="2.6" fill="#2A2A28"/><circle cx="4.28" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="12.83" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="21.38" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="29.93" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="38.48" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="47.03" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="55.58" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="64.13" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="72.68" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="81.23" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="89.78" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="98.33" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="106.88" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="115.43" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="123.98" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="132.53" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="141.08" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="149.63" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="158.18" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="166.73" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="175.28" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="183.83" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="192.38" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="200.93" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="209.48" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="218.03" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="226.58" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="235.13" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="243.68" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="252.23" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="260.78" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="269.33" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="277.88" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="286.43" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="294.98" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="303.53" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="312.08" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="320.63" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="329.18" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="337.73" cy="21.38" r="2.6" fill="#2A2A28"/><circle cx="4.28" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="12.83" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="21.38" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="29.93" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="38.48" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="47.03" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="55.58" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="64.13" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="72.68" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="81.23" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="89.78" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="98.33" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="106.88" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="115.43" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="123.98" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="132.53" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="141.08" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="149.63" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="158.18" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="166.73" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="175.28" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="183.83" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="192.38" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="200.93" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="209.48" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="218.03" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="226.58" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="235.13" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="243.68" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="252.23" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="260.78" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="269.33" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="277.88" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="286.43" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="294.98" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="303.53" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="312.08" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="320.63" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="329.18" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="337.73" cy="29.93" r="2.6" fill="#2A2A28"/><circle cx="4.28" cy="38.48" r="2.6" fill="#2A2A28"/><circle cx="12.83" cy="38.48" r="2.6" fill="#2A2A28"/><circle cx="21.38" cy="38.48" r="2.6" fill="#2A2A28"/><circle cx="29.93" cy="38.48" r="2.6" fill="#2A2A28"/><circle cx="38.48" cy="38.48" r="2.6" fill="#2A2A28"/><circle cx="47.03" cy="38.48" r="2.6" fill="#2A2A28"/><circle cx="55.58" cy="38.48" r="2.6" fill="#2A2A28"/><circle cx="64.13" cy="38.48" r="2.6" fill="#2A2A28"/><circle cx="72.68" cy="38.48" r="3" fill="#2747D8"/><circle cx="81.23" cy="38.48" r="3" fill="#2747D8"/><circle cx="89.78" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="98.33" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="106.88" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="115.43" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="123.98" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="132.53" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="141.08" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="149.63" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="158.18" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="166.73" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="175.28" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="183.83" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="192.38" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="200.93" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="209.48" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="218.03" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="226.58" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="235.13" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="243.68" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="252.23" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="260.78" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="269.33" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="277.88" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="286.43" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="294.98" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="303.53" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="312.08" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="320.63" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="329.18" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="337.73" cy="38.48" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="4.28" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="12.83" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="21.38" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="29.93" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="38.48" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="47.03" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="55.58" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="64.13" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="72.68" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="81.23" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="89.78" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><path d="M95.73 47.03 A2.6 2.6 0 0 1 100.92 47.03 Z" fill="#2A2A28"/><circle cx="98.33" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><path d="M104.28 47.03 A2.6 2.6 0 0 1 109.48 47.03 Z" fill="#2A2A28"/><circle cx="106.88" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><path d="M112.83 47.03 A2.6 2.6 0 0 1 118.03 47.03 Z" fill="#2A2A28"/><circle cx="115.43" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><path d="M121.38 47.03 A2.6 2.6 0 0 1 126.58 47.03 Z" fill="#2A2A28"/><circle cx="123.98" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><path d="M129.93 47.03 A2.6 2.6 0 0 1 135.13 47.03 Z" fill="#2A2A28"/><circle cx="132.53" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><path d="M138.48 47.03 A2.6 2.6 0 0 1 143.68 47.03 Z" fill="#2A2A28"/><circle cx="141.08" cy="47.03" r="2.1" fill="none" stroke="#2A2A28" stroke-width="1"/><circle cx="149.63" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="158.18" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="166.73" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="175.28" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="183.83" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="192.38" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="200.93" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="209.48" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="218.03" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="226.58" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="235.13" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="243.68" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="252.23" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="260.78" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="269.33" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="277.88" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="286.43" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="294.98" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="303.53" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="312.08" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="320.63" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="329.18" cy="47.03" r="1" fill="#A9A9A4"/><circle cx="337.73" cy="47.03" r="1" fill="#A9A9A4"/></svg>
+    <div class="unter">
+      <div class="meist">Am häufigsten: <em>Jonas Brehm</em></div>
+      <div class="erfassen">Erfassen<i><svg width="14" height="14" viewBox="0 0 14 14"><path d="M7 1v12M1 7h12" stroke="#22221f" stroke-width="1.6"/></svg></i></div>
+    </div>
+  </div>
+
+  <div class="index">
+    <div><svg width="8" height="8"><circle cx="4" cy="4" r="3" fill="#2A2A28"/></svg>Gelesen <span>168</span></div>
+    <div><svg width="8" height="8"><circle cx="4" cy="4" r="2.6" fill="none" stroke="#2A2A28"/></svg>Ungelesen <span>41</span></div>
+    <div><svg width="8" height="8"><circle cx="4" cy="4" r="1.2" fill="#A9A9A4"/></svg>Wunsch <span>23</span></div>
+    <div><svg width="8" height="8"><path d="M1 4 A3 3 0 0 1 7 4Z" fill="#2A2A28"/><circle cx="4" cy="4" r="2.6" fill="none" stroke="#2A2A28"/></svg>Beiseite <span>6</span></div>
+    <div><svg width="8" height="8"><rect x="1" y="1" width="6" height="6" fill="none" stroke="#2A2A28"/></svg>Regale <span>4</span></div>
+    <div><svg width="8" height="8"><path d="M1 7V4M4 7V1M7 7V5" stroke="#2A2A28" stroke-width="1.4"/></svg>Statistik</div>
+  </div>
+
+  <div class="tabs">
+    <div class="tab an">Bibliothek</div><div class="tab">Schaufenster</div><div class="tab">Entdecken</div><div class="tab">Ich</div>
+  </div>
+  <div class="home"><i></i></div>
+</div>
+</body>
+</html>
