@@ -37,6 +37,7 @@ Getrennt nach Herkunft, damit klar ist, was feststeht und was nur vorgeschlagen 
 | 24.10.2026 | Präzisierung: Nicht genau „Licht an“, sondern dessen Kreativität als Richtung. Psychologische Faktoren und Nutzerfreundlichkeit stehen im Vordergrund. Kritik an „Licht an“: „Am Lesen“ nimmt fast die Hälfte der Ansicht ein, und es gibt zu viele kleine Regal-Bausteine. Gewünscht sind mehrere Ideen in dieser Art. |
 | 24.10.2026 | Runde 2 komplett abgelehnt (0/10): kindisch, KI-Stil, unübersichtlich. „Licht an“ war gut: sortiert und professionell dargestellt. Weiter auf Basis von „Licht an“ selbst. |
 | 24.10.2026 | Varianten von „Licht an“: wieder deutlich besser. Festgelegt für „Am Lesen“: höchstens 5 Titel, Reihenfolge priorisierbar. Priorität 1 erscheint als aufgeschlagenes Buch mit Seitenzahl. Die übrigen höchstens 4 stehen als kleinere Balken mit Seitenzahl neben dem offenen Buch, wie „Daneben“ in Variante 3, nur kleiner. |
+| 24.10.2026 | Ein neu angefangenes Buch kommt ans Ende von „Am Lesen“, wenn schon eins offen ist. Hochstufen macht man selbst. |
 
 ## Vorschläge von Claude – noch nicht bestätigt
 

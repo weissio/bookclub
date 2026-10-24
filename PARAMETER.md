@@ -115,3 +115,4 @@ _Entwurf vom 10.10.2026 – **teilweise bestätigt** (Genre-Liste, Lieblingsauto
 - Reihenfolge priorisierbar (1 bis 5).
 - Priorität 1 erscheint auf der Startseite als aufgeschlagenes Buch mit Seitenzahl.
 - Priorität 2 bis 5 erscheinen als kleine Balken mit Seitenzahl neben dem offenen Buch.
+- Ein neu angefangenes Buch kommt ans Ende der Reihenfolge, wenn bereits ein Buch offen ist. Nach vorn holt man es selbst (bestätigt 24.10.2026).
