@@ -1,0 +1,87 @@
+{
+ "1": {
+  "work_id": "d22",
+  "titel": "Die erste Metro",
+  "arme_rang": {
+   "nachbar": 4,
+   "nur_f1": 4
+  },
+  "score": 0.799
+ },
+ "2": {
+  "work_id": "d43",
+  "titel": "Eine Tonne für Frau Scholz",
+  "arme_rang": {
+   "nachbar": 5,
+   "nur_f1": 5
+  },
+  "score": 0.797
+ },
+ "3": {
+  "work_id": "d33",
+  "titel": "Ein Haus am Kahu River",
+  "arme_rang": {
+   "cluster": 2
+  },
+  "score": 0.571
+ },
+ "4": {
+  "work_id": "d37",
+  "titel": "Ein Regenschirm für diesen Tag",
+  "arme_rang": {
+   "cluster": 3
+  },
+  "score": 0.539
+ },
+ "5": {
+  "work_id": "d35",
+  "titel": "Veronika beschließt zu sterben",
+  "arme_rang": {
+   "nachbar": 1,
+   "nur_f1": 1
+  },
+  "score": 0.905
+ },
+ "6": {
+  "work_id": "d27",
+  "titel": "Klassentreffen",
+  "arme_rang": {
+   "cluster": 1
+  },
+  "score": 0.627
+ },
+ "7": {
+  "work_id": "d09",
+  "titel": "Apollokalypse",
+  "arme_rang": {
+   "cluster": 4
+  },
+  "score": 0.532
+ },
+ "8": {
+  "work_id": "d57",
+  "titel": "Momente der Klarheit",
+  "arme_rang": {
+   "nachbar": 2,
+   "nur_f1": 2
+  },
+  "score": 0.826
+ },
+ "9": {
+  "work_id": "d11",
+  "titel": "Vom Glück, in der Natur zu sein",
+  "arme_rang": {
+   "nachbar": 3,
+   "nur_f1": 3
+  },
+  "score": 0.806
+ },
+ "10": {
+  "work_id": "d54",
+  "titel": "Der Jane-Austen-Club",
+  "arme_rang": {
+   "cluster": 5
+  },
+  "score": 0.521
+ }
+}

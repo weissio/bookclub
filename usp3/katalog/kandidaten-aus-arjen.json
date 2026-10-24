@@ -1,0 +1,3845 @@
+[
+  {
+    "id": "d01",
+    "titel": "Zwischen allen Wolken",
+    "autor": "Michael Gantenberg",
+    "isbn": "978-3-596-18591-7",
+    "jahr": 2012,
+    "verlag": "Fischer-Taschenbuch-Verl.",
+    "seiten": 326,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Meer & Küste",
+      "Erwachsenwerden",
+      "Familie"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1017385912",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1017385912",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1017385912",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1017385912",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1017385912",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1017385912",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1017385912",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1017385912",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1017385912",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a01",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DMeer%20and%20sw%3DErwachsenwerden%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 1
+    }
+  },
+  {
+    "id": "d02",
+    "titel": "Zusammen ist man weniger allein",
+    "autor": "Anna Gavalda",
+    "isbn": "978-3-570-19713-4",
+    "jahr": 2010,
+    "verlag": "Gruner + Jahr",
+    "seiten": 653,
+    "genre": null,
+    "thema": [
+      "Großstadt"
+    ],
+    "tempo": null,
+    "ton": [
+      "humorvoll",
+      "warm"
+    ],
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/998092932",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/998092932",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/998092932",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/998092932",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/998092932",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/998092932",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/998092932",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/998092932",
+        "art": "bibliografisch"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/anna-gavalda/zusammen-ist-man-weniger-allein.html",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a02",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DParis%20and%20sw%3D%22Zwischenmenschliche%20Beziehung%22%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 2
+    }
+  },
+  {
+    "id": "d03",
+    "titel": "Die Tochter des Ketzers",
+    "autor": "Julia Kröhn",
+    "isbn": "978-3-98507-842-4",
+    "jahr": 2024,
+    "verlag": "Weltbild",
+    "seiten": 638,
+    "genre": "Historischer Roman",
+    "thema": [
+      "Geschichte",
+      "Gesellschaft & Politik",
+      "Verbrechen & Ermittlung"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1317611233",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1317611233",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1317611233",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1317611233",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1317611233",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1317611233",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1317611233",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1317611233",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1317611233",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a03",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DFreundschaft%20and%20sw%3DFamilie%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 1
+    }
+  },
+  {
+    "id": "d04",
+    "titel": "Die souveräne Leserin",
+    "autor": "Alan Bennett",
+    "isbn": "978-3-8031-1286-6",
+    "jahr": 2012,
+    "verlag": "Wagenbach",
+    "seiten": 114,
+    "genre": null,
+    "thema": [
+      "Bücher & Lesen"
+    ],
+    "tempo": null,
+    "ton": [
+      "humorvoll",
+      "warm"
+    ],
+    "fokus": "ideen",
+    "sprache": "schlicht",
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1017662304",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1017662304",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1017662304",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1017662304",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1017662304",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1017662304",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1017662304",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1017662304",
+        "art": "bibliografisch"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/alan-bennett/die-souveraene-leserin.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/alan-bennett/die-souveraene-leserin.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/alan-bennett/die-souveraene-leserin.html",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a04",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DLesen%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 3
+    }
+  },
+  {
+    "id": "d05",
+    "titel": "Daniel und die Sehnsucht nach dem Glück",
+    "autor": "Francesc Miralles",
+    "isbn": "978-3-548-61081-8",
+    "jahr": 2012,
+    "verlag": "List",
+    "seiten": 297,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Verlust & Trauer",
+      "Liebe"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1011686910",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1011686910",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1011686910",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1011686910",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1011686910",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1011686910",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1011686910",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1011686910",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1011686910",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a05",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DPhilosophie%20and%20sw%3DSinn%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 1
+    }
+  },
+  {
+    "id": "d06",
+    "titel": "Das Mädchen mit dem Perlenohrring",
+    "autor": "Tracy Chevalier",
+    "isbn": "978-3-548-28339-5",
+    "jahr": 2011,
+    "verlag": "Ullstein",
+    "seiten": 279,
+    "genre": "Historischer Roman",
+    "thema": [
+      "Kunst & Musik"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/100852123X",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/100852123X",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/100852123X",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/100852123X",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/100852123X",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/100852123X",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/100852123X",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/100852123X",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/100852123X",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a06",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DMeer%20and%20sw%3DKunst%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 1
+    }
+  },
+  {
+    "id": "d07",
+    "titel": "Der Genosse",
+    "autor": "Cesare Pavese",
+    "isbn": "978-3-257-24559-2",
+    "jahr": 2021,
+    "verlag": "Diogenes",
+    "seiten": 282,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Gesellschaft & Politik",
+      "Kunst & Musik",
+      "Geschichte"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1208022237",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1208022237",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1208022237",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1208022237",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1208022237",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1208022237",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1208022237",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1208022237",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1208022237",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a07",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DGesellschaft%20and%20sw%3DPolitik%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 1
+    }
+  },
+  {
+    "id": "d08",
+    "titel": "Das Dach der Seligen",
+    "autor": "Susanne Amtsberg",
+    "isbn": "978-3-351-03504-4",
+    "jahr": 2012,
+    "verlag": "Aufbau",
+    "seiten": 348,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Berge",
+      "Geschichte"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1022290436",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1022290436",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1022290436",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1022290436",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1022290436",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1022290436",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1022290436",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1022290436",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1022290436",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a08",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DVerschollenheit%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 1
+    }
+  },
+  {
+    "id": "d09",
+    "titel": "Apollokalypse",
+    "autor": "Gerhard Falkner",
+    "isbn": "978-3-8270-1336-1",
+    "jahr": 2016,
+    "verlag": "Berlin Verlag",
+    "seiten": 426,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Gesellschaft & Politik",
+      "Geschichte"
+    ],
+    "tempo": "rasant",
+    "ton": [
+      "humorvoll"
+    ],
+    "fokus": null,
+    "sprache": "verspielt",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/109727831X",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/109727831X",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/109727831X",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/109727831X",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/109727831X",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/109727831X",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/109727831X",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/109727831X",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/109727831X",
+        "art": "bibliografisch"
+      },
+      "tempo": {
+        "url": "https://www.perlentaucher.de/buch/gerhard-falkner/apollokalypse.html",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/gerhard-falkner/apollokalypse.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/gerhard-falkner/apollokalypse.html",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a09",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBerlin-Kreuzberg%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 3
+    }
+  },
+  {
+    "id": "d10",
+    "titel": "Meeresleuchten",
+    "autor": "Angela Huth",
+    "isbn": "978-3-492-26023-7",
+    "jahr": 2002,
+    "verlag": "Piper",
+    "seiten": 377,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Meer & Küste",
+      "Dorf & Provinz",
+      "Freundschaft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/963898809",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/963898809",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/963898809",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/963898809",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/963898809",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/963898809",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/963898809",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/963898809",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/963898809",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a10",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DDorf%20and%20sw%3DPhilosophie%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 1
+    }
+  },
+  {
+    "id": "d11",
+    "titel": "Vom Glück, in der Natur zu sein",
+    "autor": "Henry David Thoreau",
+    "isbn": "978-3-7306-1496-9",
+    "jahr": 2025,
+    "verlag": "Anaconda",
+    "seiten": 192,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Bücher & Lesen",
+      "Natur & Landschaft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1347128255",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1347128255",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1347128255",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1347128255",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1347128255",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1347128255",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1347128255",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1347128255",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1347128255",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a01",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DNatur%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 1
+    }
+  },
+  {
+    "id": "d12",
+    "titel": "Nachtgewächs",
+    "autor": "Djuna Barnes",
+    "isbn": "978-3-518-22441-0",
+    "jahr": 2009,
+    "verlag": "Suhrkamp",
+    "seiten": 195,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Geschichte"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/991419006",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/991419006",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/991419006",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/991419006",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/991419006",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/991419006",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/991419006",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/991419006",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/991419006",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a02",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DParis%20and%20sw%3D%22Zwischenmenschliche%20Beziehung%22%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 6
+    }
+  },
+  {
+    "id": "d13",
+    "titel": "Zwischen Himmel und Liebe",
+    "autor": "Cecelia Ahern",
+    "isbn": "978-3-596-29717-7",
+    "jahr": 2016,
+    "verlag": "Fischer Taschenbuch",
+    "seiten": 394,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Kunst & Musik",
+      "Familie",
+      "Freundschaft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1098565312",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1098565312",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1098565312",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1098565312",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1098565312",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1098565312",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1098565312",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1098565312",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1098565312",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a03",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DFreundschaft%20and%20sw%3DFamilie%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 2
+    }
+  },
+  {
+    "id": "d14",
+    "titel": "Frühstück mit Proust",
+    "autor": "Frédérique Deghelt",
+    "isbn": "978-3-7466-2821-9",
+    "jahr": 2012,
+    "verlag": "Aufbau Taschenbuch",
+    "seiten": 286,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Familie",
+      "Liebe"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1017750548",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1017750548",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1017750548",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1017750548",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1017750548",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1017750548",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1017750548",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1017750548",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1017750548",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a04",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DLesen%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 4
+    }
+  },
+  {
+    "id": "d15",
+    "titel": "Abstand",
+    "autor": "Jörg Hannemann",
+    "isbn": "978-3-86280-000-1",
+    "jahr": 2011,
+    "verlag": "Berlin Univ. Press",
+    "seiten": 200,
+    "genre": null,
+    "thema": [
+      "Philosophie & Sinn"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1009117246",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1009117246",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1009117246",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1009117246",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1009117246",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1009117246",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1009117246",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1009117246",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a05",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DPhilosophie%20and%20sw%3DSinn%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 2
+    }
+  },
+  {
+    "id": "d16",
+    "titel": "Magnolien Mädchen",
+    "autor": "Avas. Gold",
+    "isbn": "978-1-9735-2601-8",
+    "jahr": 2017,
+    "verlag": "Avas. Gold",
+    "seiten": 232,
+    "genre": "Historischer Roman",
+    "thema": [
+      "Großstadt"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1150444630",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1150444630",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1150444630",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1150444630",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1150444630",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1150444630",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1150444630",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1150444630",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1150444630",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a06",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DMusik%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 5
+    }
+  },
+  {
+    "id": "d17",
+    "titel": "Stunde der Stille",
+    "autor": "Ivan Klíma",
+    "isbn": "978-3-88747-268-9",
+    "jahr": 2012,
+    "verlag": "Transit",
+    "seiten": 253,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Gesellschaft & Politik",
+      "Geschichte"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1017751412",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1017751412",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1017751412",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1017751412",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1017751412",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1017751412",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1017751412",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1017751412",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1017751412",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a07",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DGesellschaft%20and%20sw%3DPolitik%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 3
+    }
+  },
+  {
+    "id": "d18",
+    "titel": "Los",
+    "autor": "Klaus Merz",
+    "isbn": "978-3-85218-922-2",
+    "jahr": 2012,
+    "verlag": "Haymon-Taschenbuch",
+    "seiten": 88,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Berge"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1022166867",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1022166867",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1022166867",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1022166867",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1022166867",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1022166867",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1022166867",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1022166867",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1022166867",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a08",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DVerschollenheit%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 3
+    }
+  },
+  {
+    "id": "d19",
+    "titel": "Niemand sagt was",
+    "autor": "Wolfgang Haberl",
+    "isbn": "978-3-944836-25-6",
+    "jahr": 2015,
+    "verlag": "Westkreuz-Verlag GmbH",
+    "seiten": 191,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Geschichte"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1076989586",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1076989586",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1076989586",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1076989586",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1076989586",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1076989586",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1076989586",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1076989586",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1076989586",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a09",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBerlin-Kreuzberg%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 4
+    }
+  },
+  {
+    "id": "d20",
+    "titel": "Die Gelehrten-Verstaigerung",
+    "autor": "David Christoph Seybold",
+    "isbn": "978-3-95797-254-5",
+    "jahr": 2025,
+    "verlag": "Lehmstedt Verlag",
+    "seiten": 184,
+    "genre": "Klassiker",
+    "thema": [
+      "Bücher & Lesen"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1380075416",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1380075416",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1380075416",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1380075416",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1380075416",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1380075416",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1380075416",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1380075416",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1380075416",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a10",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBuch%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 1
+    }
+  },
+  {
+    "id": "d21",
+    "titel": "Hochzeit in Jakobswalde",
+    "autor": "Josephine Laloi",
+    "isbn": "978-3-00-068555-2",
+    "jahr": 2021,
+    "verlag": "Josephine Laloi",
+    "seiten": 52,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Natur & Landschaft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1233803875",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1233803875",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1233803875",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1233803875",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1233803875",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1233803875",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1233803875",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1233803875",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1233803875",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a01",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DNatur%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 4
+    }
+  },
+  {
+    "id": "d22",
+    "titel": "Die erste Metro",
+    "autor": "Mazarine Pingeot",
+    "isbn": "978-3-442-54121-8",
+    "jahr": 1999,
+    "verlag": "Goldmann",
+    "seiten": 251,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Liebe"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/961246790",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/961246790",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/961246790",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/961246790",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/961246790",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/961246790",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/961246790",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/961246790",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/961246790",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a02",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DParis%20and%20sw%3D%22Zwischenmenschliche%20Beziehung%22%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 14
+    }
+  },
+  {
+    "id": "d23",
+    "titel": "Superposition",
+    "autor": "Kat Eryn Rubik",
+    "isbn": "978-3-455-40534-7",
+    "jahr": 2015,
+    "verlag": "Hoffmann und Campe",
+    "seiten": 268,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Kunst & Musik",
+      "Migration"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1070794236",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1070794236",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1070794236",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1070794236",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1070794236",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1070794236",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1070794236",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1070794236",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1070794236",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a03",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DFreundschaft%20and%20sw%3DFamilie%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 3
+    }
+  },
+  {
+    "id": "d24",
+    "titel": "Firmin",
+    "autor": "Sam Savage",
+    "isbn": "978-3-548-28340-1",
+    "jahr": 2011,
+    "verlag": "Ullstein",
+    "seiten": 203,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Bücher & Lesen",
+      "Geschichte"
+    ],
+    "tempo": null,
+    "ton": [
+      "heiter",
+      "melancholisch"
+    ],
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1008521248",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1008521248",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1008521248",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1008521248",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1008521248",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1008521248",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1008521248",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1008521248",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1008521248",
+        "art": "bibliografisch"
+      },
+      "ton": {
+        "url": "https://de.wikipedia.org/wiki/Firmin_(Roman)",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a04",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DLesen%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 5
+    }
+  },
+  {
+    "id": "d25",
+    "titel": "Solo für Anna",
+    "autor": "Michael Eichhammer",
+    "isbn": "978-3-492-26280-4",
+    "jahr": 2008,
+    "verlag": "Piper",
+    "seiten": 255,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Kunst & Musik",
+      "Philosophie & Sinn"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/988600544",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/988600544",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/988600544",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/988600544",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/988600544",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/988600544",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/988600544",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/988600544",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/988600544",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a05",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DPhilosophie%20and%20sw%3DSinn%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 4
+    }
+  },
+  {
+    "id": "d26",
+    "titel": "Der Komponist",
+    "autor": "Edith Maria Engelhard",
+    "isbn": "978-3-902932-53-2",
+    "jahr": 2016,
+    "verlag": "Edition Tandem",
+    "seiten": 358,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Kunst & Musik",
+      "Liebe"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1114511846",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1114511846",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1114511846",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1114511846",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1114511846",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1114511846",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1114511846",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1114511846",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1114511846",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a06",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DMusik%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 6
+    }
+  },
+  {
+    "id": "d27",
+    "titel": "Klassentreffen",
+    "autor": "Jonathan Coe",
+    "isbn": "978-3-492-04749-4",
+    "jahr": 2006,
+    "verlag": "Piper",
+    "seiten": 522,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Gesellschaft & Politik",
+      "Geschichte",
+      "Arbeit & Beruf"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/977870804",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/977870804",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/977870804",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/977870804",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/977870804",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/977870804",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/977870804",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/977870804",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/977870804",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a07",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DGesellschaft%20and%20sw%3DPolitik%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 4
+    }
+  },
+  {
+    "id": "d28",
+    "titel": "Drei Tage im Paradies",
+    "autor": "Werner Köhler",
+    "isbn": "978-3-462-04301-3",
+    "jahr": 2011,
+    "verlag": "Kiepenheuer & Witsch",
+    "seiten": 220,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Kunst & Musik",
+      "Familie"
+    ],
+    "tempo": null,
+    "ton": [
+      "humorvoll"
+    ],
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/100855538X",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/100855538X",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/100855538X",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/100855538X",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/100855538X",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/100855538X",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/100855538X",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/100855538X",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/100855538X",
+        "art": "bibliografisch"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/werner-koehler/drei-tage-im-paradies.html",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a08",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DVerschollenheit%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 5
+    }
+  },
+  {
+    "id": "d29",
+    "titel": "Pflegefall",
+    "autor": "Serap Pilevneli",
+    "isbn": "978-3-940281-70-8",
+    "jahr": 2015,
+    "verlag": "Buchwerkstatt Berlin",
+    "seiten": 79,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Migration"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/106994419X",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/106994419X",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/106994419X",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/106994419X",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/106994419X",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/106994419X",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/106994419X",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/106994419X",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/106994419X",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a09",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBerlin-Kreuzberg%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 5
+    }
+  },
+  {
+    "id": "d30",
+    "titel": "Die Hexen von Venedig",
+    "autor": "Sébastien Pérez",
+    "isbn": "978-3-96428-271-2",
+    "jahr": 2025,
+    "verlag": "Verlagshaus Jacoby & Stuart",
+    "seiten": 88,
+    "genre": null,
+    "thema": null,
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/134879674X",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/134879674X",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/134879674X",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/134879674X",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/134879674X",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/134879674X",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/134879674X",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a10",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBuch%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 2
+    }
+  },
+  {
+    "id": "d31",
+    "titel": "Mein Jahr als Jäger und Sammler",
+    "autor": "John Lewis-Stempel",
+    "isbn": "978-3-8321-6587-1",
+    "jahr": 2021,
+    "verlag": "DuMont",
+    "seiten": 349,
+    "genre": null,
+    "thema": [
+      "Natur & Landschaft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1221537652",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1221537652",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1221537652",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1221537652",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1221537652",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1221537652",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1221537652",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1221537652",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a01",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DNatur%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 5
+    }
+  },
+  {
+    "id": "d32",
+    "titel": "In Küstennähe",
+    "autor": "Joachim B. Schmidt",
+    "isbn": "978-3-257-24666-7",
+    "jahr": 2022,
+    "verlag": "Diogenes",
+    "seiten": 333,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Alter",
+      "Freundschaft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1255110287",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1255110287",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1255110287",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1255110287",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1255110287",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1255110287",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1255110287",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1255110287",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1255110287",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a02",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBewohner%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 1
+    }
+  },
+  {
+    "id": "d33",
+    "titel": "Ein Haus am Kahu River",
+    "autor": "Rebecca Maly",
+    "isbn": "978-3-453-41763-2",
+    "jahr": 2014,
+    "verlag": "Heyne",
+    "seiten": 572,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Migration",
+      "Freundschaft",
+      "Kunst & Musik"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1044707771",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1044707771",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1044707771",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1044707771",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1044707771",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1044707771",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1044707771",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1044707771",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1044707771",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a03",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DFreundschaft%20and%20sw%3DFamilie%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 4
+    }
+  },
+  {
+    "id": "d34",
+    "titel": "Der Kantakt",
+    "autor": "Giwi Margwelaschwili",
+    "isbn": "978-3-940426-19-2",
+    "jahr": 2009,
+    "verlag": "Verbrecher-Verl.",
+    "seiten": 796,
+    "genre": null,
+    "thema": [
+      "Bücher & Lesen"
+    ],
+    "tempo": null,
+    "ton": [
+      "humorvoll"
+    ],
+    "fokus": "ideen",
+    "sprache": "verspielt",
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/991758862",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/991758862",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/991758862",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/991758862",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/991758862",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/991758862",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/991758862",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/991758862",
+        "art": "bibliografisch"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/giwi-margwelaschwili/der-kantakt.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/giwi-margwelaschwili/der-kantakt.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/giwi-margwelaschwili/der-kantakt.html",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a04",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DLesen%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 9
+    }
+  },
+  {
+    "id": "d35",
+    "titel": "Veronika beschließt zu sterben",
+    "autor": "Paulo Coelho",
+    "isbn": "978-3-257-24831-9",
+    "jahr": 2026,
+    "verlag": "Diogenes",
+    "seiten": 226,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Philosophie & Sinn"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": "ideen",
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": [
+      "suizid"
+    ],
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1378829794",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1378829794",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1378829794",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1378829794",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1378829794",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1378829794",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1378829794",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1378829794",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1378829794",
+        "art": "bibliografisch"
+      },
+      "fokus": {
+        "url": "https://de.wikipedia.org/wiki/Veronika_beschlie%C3%9Ft_zu_sterben",
+        "art": "redaktionell"
+      },
+      "inhalt": {
+        "url": "https://de.wikipedia.org/wiki/Veronika_beschlie%C3%9Ft_zu_sterben",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a05",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DSinn%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 1
+    }
+  },
+  {
+    "id": "d36",
+    "titel": "Error six in India",
+    "autor": "Schoppmann Herbert",
+    "isbn": "978-3-943292-47-3",
+    "jahr": 2016,
+    "verlag": "Chiliverlag",
+    "seiten": 255,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Kunst & Musik"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1121313809",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1121313809",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1121313809",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1121313809",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1121313809",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1121313809",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1121313809",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1121313809",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1121313809",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a06",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DMusik%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 7
+    }
+  },
+  {
+    "id": "d37",
+    "titel": "Ein Regenschirm für diesen Tag",
+    "autor": "Wilhelm Genazino",
+    "isbn": "978-3-446-28636-8",
+    "jahr": 2026,
+    "verlag": "Hanser Taschenbuch",
+    "seiten": 173,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Kunst & Musik",
+      "Identität"
+    ],
+    "tempo": "ruhig",
+    "ton": [
+      "melancholisch",
+      "humorvoll"
+    ],
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/137866860X",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/137866860X",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/137866860X",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/137866860X",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/137866860X",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/137866860X",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/137866860X",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/137866860X",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/137866860X",
+        "art": "bibliografisch"
+      },
+      "tempo": {
+        "url": "https://de.wikipedia.org/wiki/Ein_Regenschirm_f%C3%BCr_diesen_Tag",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/wilhelm-genazino/ein-regenschirm-fuer-diesen-tag.html",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a07",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DGro%C3%9Fstadt%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 1
+    }
+  },
+  {
+    "id": "d38",
+    "titel": "In der Mitte des Flusses",
+    "autor": "Kim Echlin",
+    "isbn": "978-3-7466-2690-1",
+    "jahr": 2011,
+    "verlag": "Aufbau-Taschenbuch",
+    "seiten": 263,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Liebe"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1008860255",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1008860255",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1008860255",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1008860255",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1008860255",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1008860255",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1008860255",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1008860255",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1008860255",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a08",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DVerschollenheit%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 6
+    }
+  },
+  {
+    "id": "d39",
+    "titel": "Die Ungehaltenen",
+    "autor": "Deniz Utlu",
+    "isbn": "978-3-86220-049-8",
+    "jahr": 2014,
+    "verlag": "Graf",
+    "seiten": 234,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Migration",
+      "Liebe"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1044104384",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1044104384",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1044104384",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1044104384",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1044104384",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1044104384",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1044104384",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1044104384",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1044104384",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a09",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBerlin-Kreuzberg%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 6
+    }
+  },
+  {
+    "id": "d40",
+    "titel": "Irrungen, Wirrungen",
+    "autor": "Theodor Fontane",
+    "isbn": "978-3-96345-233-8",
+    "jahr": 2025,
+    "verlag": "Severus Verlag",
+    "seiten": 380,
+    "genre": null,
+    "thema": null,
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/119120510X",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/119120510X",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/119120510X",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/119120510X",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/119120510X",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/119120510X",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/119120510X",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a10",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBuch%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 3
+    }
+  },
+  {
+    "id": "d41",
+    "titel": "Betrunkene Bäume",
+    "autor": "Ada Dorian",
+    "isbn": "978-3-548-29050-8",
+    "jahr": 2018,
+    "verlag": "Ullstein",
+    "seiten": 267,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Alter",
+      "Verlust & Trauer",
+      "Migration"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": "poetisch",
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1144644410",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1144644410",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1144644410",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1144644410",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1144644410",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1144644410",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1144644410",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1144644410",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1144644410",
+        "art": "bibliografisch"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/ada-dorian/betrunkene-baeume.html",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a01",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DNatur%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 8
+    }
+  },
+  {
+    "id": "d42",
+    "titel": "Ja, mach nur einen Plan",
+    "autor": "Ralf Thenior",
+    "isbn": "978-3-8375-2447-5",
+    "jahr": 2021,
+    "verlag": "Klartext",
+    "seiten": 179,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Meer & Küste"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1240550596",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1240550596",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1240550596",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1240550596",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1240550596",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1240550596",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1240550596",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1240550596",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1240550596",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a02",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBewohner%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 2
+    }
+  },
+  {
+    "id": "d43",
+    "titel": "Eine Tonne für Frau Scholz",
+    "autor": "Sarah Schmidt",
+    "isbn": "978-3-943167-78-8",
+    "jahr": 2014,
+    "verlag": "Verbrecher-Verl.",
+    "seiten": 217,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Familie",
+      "Freundschaft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/104529988X",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/104529988X",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/104529988X",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/104529988X",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/104529988X",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/104529988X",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/104529988X",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/104529988X",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/104529988X",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a03",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DFreundschaft%20and%20sw%3DFamilie%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 5
+    }
+  },
+  {
+    "id": "d44",
+    "titel": "Britannica & ich",
+    "autor": "A. J. Jacobs",
+    "isbn": "978-3-548-60775-7",
+    "jahr": 2008,
+    "verlag": "List",
+    "seiten": 427,
+    "genre": null,
+    "thema": [
+      "Bücher & Lesen"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/98424851X",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/98424851X",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/98424851X",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/98424851X",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/98424851X",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/98424851X",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/98424851X",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/98424851X",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a04",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DLesen%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 12
+    }
+  },
+  {
+    "id": "d45",
+    "titel": "Sophia, der Tod und ich",
+    "autor": "Thees Uhlmann",
+    "isbn": "978-3-462-01092-3",
+    "jahr": 2025,
+    "verlag": "Kiepenheuer & Witsch",
+    "seiten": 338,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Philosophie & Sinn"
+    ],
+    "tempo": null,
+    "ton": [
+      "humorvoll",
+      "melancholisch"
+    ],
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1362768197",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1362768197",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1362768197",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1362768197",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1362768197",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1362768197",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1362768197",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1362768197",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1362768197",
+        "art": "bibliografisch"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/thees-uhlmann/sophia-der-tod-und-ich.html",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a05",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DSinn%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 3
+    }
+  },
+  {
+    "id": "d46",
+    "titel": "Frankfurt verboten",
+    "autor": "Dieter David Seuthe",
+    "isbn": "978-3-86337-023-7",
+    "jahr": 2016,
+    "verlag": "Weissbooks.w",
+    "seiten": 370,
+    "genre": "Historischer Roman",
+    "thema": [
+      "Kunst & Musik",
+      "Arbeit & Beruf",
+      "Liebe"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1073998282",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1073998282",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1073998282",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1073998282",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1073998282",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1073998282",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1073998282",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1073998282",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1073998282",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a06",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DMusik%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 8
+    }
+  },
+  {
+    "id": "d47",
+    "titel": "Kitchen",
+    "autor": "Banana Yoshimoto",
+    "isbn": "978-3-257-07338-6",
+    "jahr": 2025,
+    "verlag": "Diogenes",
+    "seiten": 192,
+    "genre": null,
+    "thema": [
+      "Großstadt",
+      "Geschichte"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": "figuren",
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1345698879",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1345698879",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1345698879",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1345698879",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1345698879",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1345698879",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1345698879",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1345698879",
+        "art": "bibliografisch"
+      },
+      "fokus": {
+        "url": "https://de.wikipedia.org/wiki/Kitchen_(Roman)",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a07",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DGro%C3%9Fstadt%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 2
+    }
+  },
+  {
+    "id": "d48",
+    "titel": "Die 10. Symphonie",
+    "autor": "Joseph Gelinek",
+    "isbn": "978-3-426-50229-7",
+    "jahr": 2010,
+    "verlag": "Knaur-Taschenbuch-Verl.",
+    "seiten": 424,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Großstadt",
+      "Kunst & Musik",
+      "Verbrechen & Ermittlung"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/998060658",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/998060658",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/998060658",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/998060658",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/998060658",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/998060658",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/998060658",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/998060658",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/998060658",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a08",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DVerschollenheit%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 7
+    }
+  },
+  {
+    "id": "d49",
+    "titel": "Auch die Liebe hat drei Seiten",
+    "autor": "Susann Rehlein",
+    "isbn": "978-3-548-28488-0",
+    "jahr": 2013,
+    "verlag": "Ullstein",
+    "seiten": 299,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Philosophie & Sinn",
+      "Liebe"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1028265891",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1028265891",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1028265891",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1028265891",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1028265891",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1028265891",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1028265891",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1028265891",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1028265891",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a09",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBerlin-Kreuzberg%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 8
+    }
+  },
+  {
+    "id": "d50",
+    "titel": "Two sides to every murder",
+    "autor": "Danielle Valentine",
+    "isbn": "978-3-442-49656-3",
+    "jahr": 2025,
+    "verlag": "Goldmann",
+    "seiten": 319,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Erwachsenwerden",
+      "Bücher & Lesen"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1361905220",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1361905220",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1361905220",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1361905220",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1361905220",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1361905220",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1361905220",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1361905220",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1361905220",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a10",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBuch%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 4
+    }
+  },
+  {
+    "id": "d51",
+    "titel": "Bullau",
+    "autor": "Andreas Maier",
+    "isbn": "978-3-458-36281-4",
+    "jahr": 2017,
+    "verlag": "Insel Verlag",
+    "seiten": 127,
+    "genre": null,
+    "thema": [
+      "Bücher & Lesen",
+      "Natur & Landschaft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1117149870",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1117149870",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1117149870",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1117149870",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1117149870",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1117149870",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1117149870",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1117149870",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a01",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DNatur%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 11
+    }
+  },
+  {
+    "id": "d52",
+    "titel": "Heimsuchung",
+    "autor": "Jenny Erpenbeck",
+    "isbn": "978-3-328-10251-9",
+    "jahr": 2018,
+    "verlag": "Penguin Verlag",
+    "seiten": 189,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Meer & Küste",
+      "Geschichte"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": "poetisch",
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1144296447",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1144296447",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1144296447",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1144296447",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1144296447",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1144296447",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1144296447",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1144296447",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1144296447",
+        "art": "bibliografisch"
+      },
+      "sprache": {
+        "url": "https://de.wikipedia.org/wiki/Heimsuchung_(Roman)",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a02",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBewohner%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 3
+    }
+  },
+  {
+    "id": "d53",
+    "titel": "Die heldenhaften Jahre der Kirschkernspuckerbande",
+    "autor": "Gernot Gricksch",
+    "isbn": "978-3-426-51065-0",
+    "jahr": 2013,
+    "verlag": "Knaur",
+    "seiten": 313,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Familie",
+      "Freundschaft",
+      "Erinnerung"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1028008740",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1028008740",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1028008740",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1028008740",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1028008740",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1028008740",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1028008740",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1028008740",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1028008740",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a03",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DFreundschaft%20and%20sw%3DFamilie%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 6
+    }
+  },
+  {
+    "id": "d54",
+    "titel": "Der Jane-Austen-Club",
+    "autor": "Karen Joy Fowler",
+    "isbn": "978-3-442-46766-2",
+    "jahr": 2008,
+    "verlag": "Goldmann",
+    "seiten": 319,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Bücher & Lesen",
+      "Freundschaft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/986847291",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/986847291",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/986847291",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/986847291",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/986847291",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/986847291",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/986847291",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/986847291",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/986847291",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a04",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DLesen%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 13
+    }
+  },
+  {
+    "id": "d55",
+    "titel": "Bis zum letzten Tag",
+    "autor": "Nicholas Sparks",
+    "isbn": "978-3-453-42392-3",
+    "jahr": 2020,
+    "verlag": "Wilhelm Heyne Verlag",
+    "seiten": 431,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Philosophie & Sinn",
+      "Liebe"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1181238587",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1181238587",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1181238587",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1181238587",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1181238587",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1181238587",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1181238587",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1181238587",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1181238587",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a05",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DSinn%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 6
+    }
+  },
+  {
+    "id": "d56",
+    "titel": "Liebe laut!",
+    "autor": "Tonia S. Pöppler",
+    "isbn": "978-3-86265-592-2",
+    "jahr": 2016,
+    "verlag": "Schwarzkopf & Schwarzkopf",
+    "seiten": 248,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Erwachsenwerden",
+      "Liebe",
+      "Kunst & Musik"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/1101599839",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/1101599839",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/1101599839",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/1101599839",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/1101599839",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/1101599839",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/1101599839",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/1101599839",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/1101599839",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a06",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DMusik%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 9
+    }
+  },
+  {
+    "id": "d57",
+    "titel": "Momente der Klarheit",
+    "autor": "Jackie Thomae",
+    "isbn": "978-3-548-06896-1",
+    "jahr": 2024,
+    "verlag": "Ullstein",
+    "seiten": 287,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Großstadt",
+      "Liebe"
+    ],
+    "tempo": null,
+    "ton": [
+      "humorvoll"
+    ],
+    "fokus": "figuren",
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/130669406X",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/130669406X",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/130669406X",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/130669406X",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/130669406X",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/130669406X",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/130669406X",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/130669406X",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/130669406X",
+        "art": "bibliografisch"
+      },
+      "ton": {
+        "url": "https://www.perlentaucher.de/buch/jackie-thomae/momente-der-klarheit.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://www.perlentaucher.de/buch/jackie-thomae/momente-der-klarheit.html",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a07",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DGro%C3%9Fstadt%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 3
+    }
+  },
+  {
+    "id": "d58",
+    "titel": "Endstation Taiga",
+    "autor": "Petra Hůlová",
+    "isbn": "978-3-630-62191-3",
+    "jahr": 2010,
+    "verlag": "Luchterhand-Literaturverl.",
+    "seiten": 478,
+    "genre": null,
+    "thema": [
+      "Geschichte"
+    ],
+    "tempo": "ruhig",
+    "ton": null,
+    "fokus": null,
+    "sprache": "poetisch",
+    "laenge": "lang",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/998382930",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/998382930",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/998382930",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/998382930",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/998382930",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/998382930",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/998382930",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/998382930",
+        "art": "bibliografisch"
+      },
+      "tempo": {
+        "url": "https://www.perlentaucher.de/buch/petra-hulova/endstation-taiga.html",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/petra-hulova/endstation-taiga.html",
+        "art": "redaktionell"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a08",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DVerschollenheit%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 8
+    }
+  },
+  {
+    "id": "d59",
+    "titel": "Sebastian oder: das Leben ist nur ein Schluck aus der Flasche der Geschichte",
+    "autor": "Sebastian Lehmann",
+    "isbn": "978-3-944035-10-9",
+    "jahr": 2013,
+    "verlag": "Satyr-Verl.",
+    "seiten": 173,
+    "genre": null,
+    "thema": [
+      "Großstadt"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "kurz",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/103054428X",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/103054428X",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/103054428X",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/103054428X",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/103054428X",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/103054428X",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/103054428X",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/103054428X",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a09",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBerlin-Kreuzberg%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 10
+    }
+  },
+  {
+    "id": "d60",
+    "titel": "Fahrenheit 451",
+    "autor": "Ray Bradbury",
+    "isbn": "978-3-257-24732-9",
+    "jahr": 2024,
+    "verlag": "Diogenes",
+    "seiten": 272,
+    "genre": "Roman / Gegenwart",
+    "thema": [
+      "Bücher & Lesen",
+      "Technik & Zukunft"
+    ],
+    "tempo": null,
+    "ton": null,
+    "fokus": null,
+    "sprache": null,
+    "laenge": "mittel",
+    "inhalt": null,
+    "quellen": {
+      "titel": {
+        "url": "https://d-nb.info/130597056X",
+        "art": "bibliografisch"
+      },
+      "autor": {
+        "url": "https://d-nb.info/130597056X",
+        "art": "bibliografisch"
+      },
+      "isbn": {
+        "url": "https://d-nb.info/130597056X",
+        "art": "bibliografisch"
+      },
+      "jahr": {
+        "url": "https://d-nb.info/130597056X",
+        "art": "bibliografisch"
+      },
+      "verlag": {
+        "url": "https://d-nb.info/130597056X",
+        "art": "bibliografisch"
+      },
+      "seiten": {
+        "url": "https://d-nb.info/130597056X",
+        "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://d-nb.info/130597056X",
+        "art": "bibliografisch"
+      },
+      "laenge": {
+        "url": "https://d-nb.info/130597056X",
+        "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://d-nb.info/130597056X",
+        "art": "bibliografisch"
+      }
+    },
+    "herkunft": {
+      "ausgangsbuch_id": "a10",
+      "abfrage_url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=sw%3DBuch%20and%20sgt%3DB%20and%20spr%3Dger%20and%20mat%3Dbooks&recordSchema=MARC21-xml&maximumRecords=30",
+      "rang_in_abfrage": 7
+    }
+  }
+]
