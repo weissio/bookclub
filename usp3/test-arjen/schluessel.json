@@ -1,0 +1,66 @@
+{
+ "1": {
+  "work_id": "k3.12",
+  "titel": "Zerrissene Erde",
+  "arme_rang": {
+   "cluster": 1
+  },
+  "score": 0.714
+ },
+ "2": {
+  "work_id": "k1.12",
+  "titel": "Der Gesang der Flusskrebse",
+  "arme_rang": {
+   "cluster": 5
+  },
+  "score": 0.565
+ },
+ "3": {
+  "work_id": "k1.07",
+  "titel": "Auf Erden sind wir kurz grandios",
+  "arme_rang": {
+   "nachbar": 4,
+   "nur_f1": 3
+  },
+  "score": 0.794
+ },
+ "4": {
+  "work_id": "k1.01",
+  "titel": "Die Liebe im Ernstfall",
+  "arme_rang": {
+   "nachbar": 3,
+   "cluster": 3,
+   "nur_f1": 4
+  },
+  "score": 0.89
+ },
+ "5": {
+  "work_id": "k1.06",
+  "titel": "Mit Blick aufs Meer",
+  "arme_rang": {
+   "nachbar": 1,
+   "cluster": 2,
+   "nur_f1": 1
+  },
+  "score": 0.965
+ },
+ "6": {
+  "work_id": "k1.05",
+  "titel": "Normale Menschen",
+  "arme_rang": {
+   "nachbar": 2,
+   "cluster": 4,
+   "nur_f1": 2
+  },
+  "score": 0.911
+ },
+ "7": {
+  "work_id": "k1.09",
+  "titel": "Streulicht",
+  "arme_rang": {
+   "nachbar": 5,
+   "nur_f1": 5
+  },
+  "score": 0.75
+ }
+}

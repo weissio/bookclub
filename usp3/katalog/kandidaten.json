@@ -305,7 +305,9 @@
     "fokus": "figuren",
     "sprache": "schlicht",
     "laenge": "mittel",
-    "inhalt": null,
+    "inhalt": [
+      "suizid"
+    ],
     "quellen": {
       "titel": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630875422&recordSchema=MARC21-xml",
@@ -350,6 +352,10 @@
       "sprache": {
         "url": "https://www.perlentaucher.de/buch/sally-rooney/normale-menschen.html",
         "art": "redaktionell"
+      },
+      "inhalt": {
+        "url": "https://en.wikipedia.org/wiki/Normal_People",
+        "art": "redaktionell"
       }
     }
   },
@@ -375,7 +381,9 @@
     "fokus": "figuren",
     "sprache": null,
     "laenge": "mittel",
-    "inhalt": null,
+    "inhalt": [
+      "suizid"
+    ],
     "quellen": {
       "titel": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783630873305&recordSchema=MARC21-xml",
@@ -423,6 +431,10 @@
       },
       "fokus": {
         "url": "https://www.perlentaucher.de/buch/elizabeth-strout/mit-blick-aufs-meer.html",
+        "art": "redaktionell"
+      },
+      "inhalt": {
+        "url": "https://en.wikipedia.org/wiki/Olive_Kitteridge",
         "art": "redaktionell"
       }
     }
@@ -662,7 +674,7 @@
       "nüchtern"
     ],
     "fokus": null,
-    "sprache": null,
+    "sprache": "nüchtern",
     "laenge": "kurz",
     "inhalt": null,
     "quellen": {
@@ -705,6 +717,10 @@
       "ton": {
         "url": "https://www.perlentaucher.de/buch/kent-haruf/unsere-seelen-bei-nacht.html",
         "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://www.perlentaucher.de/buch/kent-haruf/unsere-seelen-bei-nacht.html",
+        "art": "redaktionell"
       }
     }
   },
@@ -723,7 +739,7 @@
       "Erwachsenwerden",
       "Freundschaft"
     ],
-    "tempo": null,
+    "tempo": "ruhig",
     "ton": [
       "melancholisch",
       "nachdenklich"
@@ -776,6 +792,10 @@
       "sprache": {
         "url": "https://www.perlentaucher.de/buch/kazuo-ishiguro/klara-und-die-sonne.html",
         "art": "redaktionell"
+      },
+      "tempo": {
+        "url": "https://www.perlentaucher.de/buch/kazuo-ishiguro/klara-und-die-sonne.html",
+        "art": "redaktionell"
       }
     }
   },
@@ -799,7 +819,9 @@
     "fokus": null,
     "sprache": null,
     "laenge": "lang",
-    "inhalt": null,
+    "inhalt": [
+      "sexuelle_gewalt"
+    ],
     "quellen": {
       "titel": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783446264199&recordSchema=MARC21-xml",
@@ -835,6 +857,10 @@
       },
       "thema": {
         "url": "https://www.perlentaucher.de/buch/delia-owens/der-gesang-der-flusskrebse.html",
+        "art": "redaktionell"
+      },
+      "inhalt": {
+        "url": "https://de.wikipedia.org/wiki/Der_Gesang_der_Flusskrebse",
         "art": "redaktionell"
       }
     }
@@ -918,8 +944,11 @@
     "thema": [
       "Verbrechen & Ermittlung"
     ],
-    "tempo": null,
-    "ton": null,
+    "tempo": "rasant",
+    "ton": [
+      "spannungsgeladen",
+      "humorvoll"
+    ],
     "fokus": null,
     "sprache": null,
     "laenge": "mittel",
@@ -960,6 +989,14 @@
       "thema": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423247511&recordSchema=MARC21-xml",
         "art": "bibliografisch"
+      },
+      "tempo": {
+        "url": "https://www.dtv.de/buch/erbarmen-21262",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://www.dtv.de/buch/erbarmen-21262",
+        "art": "redaktionell"
       }
     }
   },
@@ -972,8 +1009,11 @@
     "jahr": 2010,
     "verlag": "Dt. Taschenbuch-Verl.",
     "seiten": 233,
-    "genre": null,
-    "thema": null,
+    "genre": "Krimi & Thriller",
+    "thema": [
+      "Verbrechen & Ermittlung",
+      "Dorf & Provinz"
+    ],
     "tempo": null,
     "ton": null,
     "fokus": null,
@@ -1008,6 +1048,14 @@
       "laenge": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783423248105&recordSchema=MARC21-xml",
         "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://de.wikipedia.org/wiki/Rita_Falk",
+        "art": "redaktionell"
+      },
+      "thema": {
+        "url": "https://de.wikipedia.org/wiki/Rita_Falk",
+        "art": "redaktionell"
       }
     }
   },
@@ -1156,12 +1204,14 @@
     "jahr": 2007,
     "verlag": "Kein & Aber",
     "seiten": 534,
-    "genre": null,
+    "genre": "Krimi & Thriller",
     "thema": [
       "Verbrechen & Ermittlung"
     ],
     "tempo": null,
-    "ton": null,
+    "ton": [
+      "spannungsgeladen"
+    ],
     "fokus": "figuren",
     "sprache": "nüchtern",
     "laenge": "lang",
@@ -1205,6 +1255,14 @@
       },
       "sprache": {
         "url": "https://www.perlentaucher.de/buch/truman-capote/kaltbluetig.html",
+        "art": "redaktionell"
+      },
+      "genre": {
+        "url": "https://de.wikipedia.org/wiki/Kaltbl%C3%BCtig_(Roman)",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://de.wikipedia.org/wiki/Kaltbl%C3%BCtig_(Roman)",
         "art": "redaktionell"
       }
     }
@@ -1510,10 +1568,12 @@
       "Verbrechen & Ermittlung",
       "Familie"
     ],
-    "tempo": null,
-    "ton": null,
-    "fokus": null,
-    "sprache": null,
+    "tempo": "rasant",
+    "ton": [
+      "spannungsgeladen"
+    ],
+    "fokus": "handlung",
+    "sprache": "schlicht",
     "laenge": "mittel",
     "inhalt": null,
     "quellen": {
@@ -1552,6 +1612,22 @@
       "thema": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783426633090&recordSchema=MARC21-xml",
         "art": "bibliografisch"
+      },
+      "tempo": {
+        "url": "https://de.wikipedia.org/wiki/Die_Therapie_(Roman)",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://de.wikipedia.org/wiki/Die_Therapie_(Roman)",
+        "art": "redaktionell"
+      },
+      "sprache": {
+        "url": "https://de.wikipedia.org/wiki/Die_Therapie_(Roman)",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://de.wikipedia.org/wiki/Die_Therapie_(Roman)",
+        "art": "redaktionell"
       }
     }
   },
@@ -1575,7 +1651,7 @@
       "düster",
       "melancholisch"
     ],
-    "fokus": null,
+    "fokus": "figuren",
     "sprache": "poetisch",
     "laenge": "mittel",
     "inhalt": [
@@ -1631,6 +1707,10 @@
         "art": "redaktionell"
       },
       "inhalt": {
+        "url": "https://www.perlentaucher.de/buch/friedrich-ani/der-namenlose-tag.html",
+        "art": "redaktionell"
+      },
+      "fokus": {
         "url": "https://www.perlentaucher.de/buch/friedrich-ani/der-namenlose-tag.html",
         "art": "redaktionell"
       }
@@ -1768,7 +1848,11 @@
     "verlag": "Klett-Cotta",
     "seiten": 863,
     "genre": "Fantasy",
-    "thema": null,
+    "thema": [
+      "Magie & Mythos",
+      "Erwachsenwerden",
+      "Kunst & Musik"
+    ],
     "tempo": null,
     "ton": null,
     "fokus": null,
@@ -1807,6 +1891,10 @@
       "genre": {
         "url": "https://d-nb.info/1219681830",
         "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://de.wikipedia.org/wiki/Der_Name_des_Windes",
+        "art": "redaktionell"
       }
     }
   },
@@ -1820,9 +1908,14 @@
     "verlag": "Piper",
     "seiten": 327,
     "genre": "Fantasy",
-    "thema": null,
+    "thema": [
+      "Magie & Mythos",
+      "Arbeit & Beruf"
+    ],
     "tempo": null,
-    "ton": null,
+    "ton": [
+      "humorvoll"
+    ],
     "fokus": null,
     "sprache": null,
     "laenge": "mittel",
@@ -1859,6 +1952,14 @@
       "genre": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492280648&recordSchema=MARC21-xml",
         "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://de.wikipedia.org/wiki/Gevatter_Tod",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://en.wikipedia.org/wiki/Mort_(novel)",
+        "art": "redaktionell"
       }
     }
   },
@@ -1872,10 +1973,15 @@
     "verlag": "FISCHER Tor",
     "seiten": 542,
     "genre": "Science-Fiction",
-    "thema": null,
-    "tempo": null,
-    "ton": null,
-    "fokus": null,
+    "thema": [
+      "Technik & Zukunft",
+      "Gesellschaft & Politik"
+    ],
+    "tempo": "ruhig",
+    "ton": [
+      "warm"
+    ],
+    "fokus": "figuren",
     "sprache": null,
     "laenge": "lang",
     "inhalt": null,
@@ -1911,6 +2017,22 @@
       "genre": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783596035687&recordSchema=MARC21-xml",
         "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://en.wikipedia.org/wiki/The_Long_Way_to_a_Small,_Angry_Planet",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://en.wikipedia.org/wiki/The_Long_Way_to_a_Small,_Angry_Planet",
+        "art": "redaktionell"
+      },
+      "tempo": {
+        "url": "https://en.wikipedia.org/wiki/The_Long_Way_to_a_Small,_Angry_Planet",
+        "art": "redaktionell"
+      },
+      "fokus": {
+        "url": "https://en.wikipedia.org/wiki/The_Long_Way_to_a_Small,_Angry_Planet",
+        "art": "redaktionell"
       }
     }
   },
@@ -1924,9 +2046,15 @@
     "verlag": "Heyne",
     "seiten": 508,
     "genre": "Science-Fiction",
-    "thema": null,
+    "thema": [
+      "Technik & Zukunft",
+      "Wissenschaft"
+    ],
     "tempo": null,
-    "ton": null,
+    "ton": [
+      "humorvoll",
+      "spannungsgeladen"
+    ],
     "fokus": null,
     "sprache": null,
     "laenge": "lang",
@@ -1963,6 +2091,14 @@
       "genre": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783453315839&recordSchema=MARC21-xml",
         "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://en.wikipedia.org/wiki/The_Martian_(Weir_novel)",
+        "art": "redaktionell"
+      },
+      "ton": {
+        "url": "https://en.wikipedia.org/wiki/The_Martian_(Weir_novel)",
+        "art": "redaktionell"
       }
     }
   },
@@ -2034,14 +2170,19 @@
     "jahr": 2017,
     "verlag": "Piper",
     "seiten": 411,
-    "genre": null,
-    "thema": null,
+    "genre": "Science-Fiction",
+    "thema": [
+      "Gesellschaft & Politik"
+    ],
     "tempo": null,
     "ton": null,
     "fokus": null,
     "sprache": null,
     "laenge": "mittel",
-    "inhalt": null,
+    "inhalt": [
+      "sexuelle_gewalt",
+      "suizid"
+    ],
     "quellen": {
       "titel": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492311168&recordSchema=MARC21-xml",
@@ -2070,6 +2211,18 @@
       "laenge": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783492311168&recordSchema=MARC21-xml",
         "art": "bibliografisch"
+      },
+      "genre": {
+        "url": "https://de.wikipedia.org/wiki/Der_Report_der_Magd",
+        "art": "redaktionell"
+      },
+      "thema": {
+        "url": "https://de.wikipedia.org/wiki/Der_Report_der_Magd",
+        "art": "redaktionell"
+      },
+      "inhalt": {
+        "url": "https://de.wikipedia.org/wiki/Der_Report_der_Magd",
+        "art": "redaktionell"
       }
     }
   },
@@ -2160,7 +2313,10 @@
     "verlag": "Fischer FJB",
     "seiten": 555,
     "genre": "Fantasy",
-    "thema": null,
+    "thema": [
+      "Bücher & Lesen",
+      "Magie & Mythos"
+    ],
     "tempo": null,
     "ton": null,
     "fokus": null,
@@ -2199,6 +2355,10 @@
       "genre": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783841421654&recordSchema=MARC21-xml",
         "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://www.fischerverlage.de/buch/kai-meyer-die-seiten-der-welt-9783596198528",
+        "art": "redaktionell"
       }
     }
   },
@@ -2212,13 +2372,18 @@
     "verlag": "Bastei Lübbe Taschenbuch",
     "seiten": 303,
     "genre": "Science-Fiction",
-    "thema": null,
+    "thema": [
+      "Gesellschaft & Politik",
+      "Technik & Zukunft"
+    ],
     "tempo": null,
     "ton": null,
     "fokus": null,
     "sprache": null,
     "laenge": "mittel",
-    "inhalt": null,
+    "inhalt": [
+      "suizid"
+    ],
     "quellen": {
       "titel": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404208876&recordSchema=MARC21-xml",
@@ -2251,6 +2416,14 @@
       "genre": {
         "url": "https://services.dnb.de/sru/dnb?version=1.1&operation=searchRetrieve&query=num%3D9783404208876&recordSchema=MARC21-xml",
         "art": "bibliografisch"
+      },
+      "thema": {
+        "url": "https://de.wikipedia.org/wiki/Die_Optimierer",
+        "art": "redaktionell"
+      },
+      "inhalt": {
+        "url": "https://de.wikipedia.org/wiki/Die_Optimierer",
+        "art": "redaktionell"
       }
     }
   },
