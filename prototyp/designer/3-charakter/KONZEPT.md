@@ -250,3 +250,4 @@ Grundlage: ENTSCHEIDUNGSVORLAGE-USP3.md, Abschnitte 2 und 8. Screens in `screens
 1. Soll „Mehr davon?“ aus „Genauer“ nach oben wandern?
 2. Soll „Seltener“ nur bei niedrigem Gefallen oder Abbruch erscheinen?
 3. Gehören Tempo des Buchs und Stimmung in den Katalog statt in die Bewertung?
+- **Entschieden (24.10.2026), umgesetzt:** „Mehr von [Person]?“ steht direkt unter dem Gefallen und wird mit einem Tipp beantwortet: Ja / Nein / weiß nicht. „Genauer beschreiben“ enthält nur noch „Tempo für mich“. „Seltener“ erscheint dort nur bei 1–2 Lichtern oder beim Abbruch. Tempo des Buchs, Stimmung und Anspruch sind entfallen und gehören in den Katalog. Beim Abbruchgrund „Tempo“ erscheint direkt darunter „Tempo war … zu langsam / zu schnell“. „Tempo für mich“ unter „Genauer“ ist dann ausgeblendet, damit nichts doppelt gefragt wird. Screens in screens5/ neu erzeugt.
