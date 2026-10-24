@@ -15,8 +15,12 @@ body{margin:0;background:#FFFFFF}
 a{color:#1F1D1A}a:hover{color:#1F1D1A}
 button,input{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",system-ui,"Segoe UI",Roboto,sans-serif}
 button:focus-visible,input:focus-visible{outline:3px solid #2C5590;outline-offset:2px}
+button:disabled{cursor:default}
 input::placeholder{color:#6B6760;opacity:1}
+input[type=search]::-webkit-search-cancel-button{display:none}
 ::selection{background:#E9D9B0;color:#1F1D1A}
+.linen{background-image:url(/_blob/fc177fec48818780d685607b9eea21d5);background-size:128px 128px;background-blend-mode:multiply}
+.vorsatz{background-image:url(/_blob/2a5bd52f874870d5bef9f086f6809ef7);background-size:390px 24px;background-repeat:repeat-x}
 .scr{animation:fadeIn .15s ease-out both}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 .sheet{animation:sheetUp .2s cubic-bezier(.2,.8,.2,1) both}
@@ -25,25 +29,25 @@ input::placeholder{color:#6B6760;opacity:1}
 </style>
 </helmet>
 <div style="width: 390px; height: 844px; box-sizing: border-box; position: relative; overflow: hidden; background: #FFFFFF; color: #1F1D1A; font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', system-ui, 'Segoe UI', Roboto, sans-serif">
-<svg width="0" height="0" aria-hidden="true" style="position: absolute; color: #1F1D1A">
+<svg width="0" height="0" aria-hidden="true" style="position: absolute">
 <defs><linearGradient id="half"><stop offset="50%" stop-color="#1F1D1A"></stop><stop offset="50%" stop-color="#1F1D1A" stop-opacity="0"></stop></linearGradient></defs>
 </svg>
 
 <sc-if value="{{isHome}}" hint-placeholder-val="{{ true }}">
-<div class="scr" style="position: absolute; top: 0; left: 0; right: 0; bottom: 83px; overflow-y: auto">
-<div style="padding: 54px 16px 32px 16px; display: flex; flex-direction: column">
-<div style="display: flex; align-items: flex-end; justify-content: space-between; margin-top: 8px">
+<div class="scr" style="position: absolute; top: 0; left: 0; right: 0; bottom: 83px">
+<div onScroll="{{onScroll}}" style="position: absolute; top: 54px; left: 0; right: 0; bottom: 0; overflow-y: auto">
+<div style="padding: 8px 16px 32px 16px; display: flex; flex-direction: column">
+<div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 12px">
 <h1 style="margin: 0; font-size: 34px; line-height: 41px; font-weight: 700; letter-spacing: 0.01em">Bibliothek</h1>
-<button type="button" aria-label="Buch erfassen" onClick="{{openAdd}}" style="width: 44px; height: 44px; border: none; border-radius: 22px; background: #F1EFEA; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke="#1F1D1A" stroke-width="2.2" stroke-linecap="round"></path></svg></button>
+<button type="button" aria-label="Buch erfassen" onClick="{{openAdd}}" style="flex-shrink: 0; width: 44px; height: 44px; border: none; border-radius: 22px; background: #F1EFEA; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke="#1F1D1A" stroke-width="2.2" stroke-linecap="round"></path></svg></button>
 </div>
 <p style="margin: 2px 0 0 0; font-size: 17px; line-height: 22px; color: #6B6760">{{greeting}}</p>
 
 <div style="margin-top: 20px; border: 1px solid #E8E5DF; border-radius: 16px; overflow: hidden">
-<button type="button" onClick="{{openCurrent}}" style="width: 100%; display: flex; gap: 14px; align-items: center; border: none; background: none; padding: 14px 14px 10px 14px; cursor: pointer; text-align: left; color: #1F1D1A">
-<span aria-hidden="true" style="{{current.cover}}"></span>
+<button type="button" onClick="{{openCurrent}}" style="width: 100%; display: flex; gap: 14px; align-items: center; border: none; background: none; padding: 14px; cursor: pointer; text-align: left; color: #1F1D1A">
+<span aria-hidden="true" class="linen" style="{{current.cover}}"></span>
 <span style="display: flex; flex-direction: column; gap: 3px; min-width: 0; flex-grow: 1">
-<span style="font-size: 15px; color: #6B6760">Weiterlesen</span>
-<span style="font-family: 'EB Garamond', Georgia, serif; font-size: 21px; line-height: 25px; font-weight: 500">{{current.title}}</span>
+<span style="font-family: 'EB Garamond', Georgia, serif; font-size: 22px; line-height: 26px; font-weight: 500">{{current.title}}</span>
 <span style="font-size: 15px; color: #6B6760">{{current.author}}</span>
 </span>
 <svg width="9" height="15" viewBox="0 0 9 15" aria-hidden="true" style="flex-shrink: 0"><path d="M1.5 1.5l6 6-6 6" fill="none" stroke="#8A857C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -55,32 +59,30 @@ input::placeholder{color:#6B6760;opacity:1}
 </div>
 <div role="progressbar" aria-label="Lesefortschritt" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{percent}}" style="height: 6px; border-radius: 3px; background: #EFEBE4; overflow: hidden"><div style="{{progressStyle}}"></div></div>
 <button type="button" onClick="{{openPageSheet}}" style="min-height: 48px; border: none; border-radius: 12px; background: #1F1D1A; color: #FFFFFF; font-size: 17px; font-weight: 600; cursor: pointer">Seite eintragen</button>
+<p role="status" aria-live="polite" style="{{savedStyle}}">{{savedText}}</p>
 </div>
 </div>
 
 <h2 style="margin: 32px 0 12px 0; font-size: 22px; line-height: 28px; font-weight: 700">Dein Regal</h2>
 <div style="display: flex; flex-direction: column; gap: 6px" role="list">
-<sc-for list="{{spines}}" as="s" hint-placeholder-count="7">
 <div role="listitem">
-<button type="button" aria-label="{{s.aria}}" onClick="{{s.open}}" style="width: 100%; height: 56px; border: none; background: none; padding: 0; cursor: pointer; display: flex; align-items: center">
-<span style="{{s.style}}">
-<span aria-hidden="true" style="{{s.bandA}}"></span>
-<span aria-hidden="true" style="{{s.bandB}}"></span>
-<span style="{{s.labelStyle}}">{{s.name}}</span>
-<span style="{{s.countStyle}}">{{s.count}}</span>
-<svg width="8" height="14" viewBox="0 0 8 14" aria-hidden="true" style="flex-shrink: 0; margin-right: 14px"><path d="M1.5 1.5l5 5.5-5 5.5" fill="none" stroke="{{s.ink}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-</span>
-</button>
-</div>
-</sc-for>
-<div role="listitem">
-<button type="button" onClick="{{openAdd}}" style="width: 100%; height: 56px; box-sizing: border-box; border: 1.5px dashed #8A857C; border-radius: 6px; background: none; padding: 0 16px 0 30px; cursor: pointer; display: flex; align-items: center; gap: 10px; color: #1F1D1A; font-size: 17px; font-weight: 600">
+<button type="button" onClick="{{openAdd}}" style="width: 100%; min-height: 56px; box-sizing: border-box; border: 1.5px dashed #8A857C; border-radius: 6px; background: none; padding: 0 16px 0 30px; cursor: pointer; display: flex; align-items: center; gap: 10px; color: #1F1D1A; font-size: 17px; font-weight: 600">
 <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="#1F1D1A" stroke-width="2.2" stroke-linecap="round"></path></svg>
 Buch erfassen
 </button>
 </div>
+<sc-for list="{{spines}}" as="s" hint-placeholder-count="7">
+<div role="listitem" style="{{s.rowStyle}}">
+<button type="button" aria-label="{{s.aria}}" onClick="{{s.open}}" class="linen" style="{{s.style}}">
+<img src="/_blob/eb2b88bd243bf1a65692bd8e9d605dc4" alt="" style="{{s.stamp}}">
+<span style="{{s.labelStyle}}">{{s.name}}</span>
+<span style="{{s.countStyle}}">{{s.count}}</span>
+<svg width="8" height="14" viewBox="0 0 8 14" aria-hidden="true" style="flex-shrink: 0; margin-right: 14px"><path d="M1.5 1.5l5 5.5-5 5.5" fill="none" stroke="{{s.ink}}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
 </div>
-<div aria-hidden="true" style="height: 10px; margin-top: 4px; border-radius: 2px; background: #D8CDBB"></div>
+</sc-for>
+</div>
+<div aria-hidden="true" style="height: 10px; margin-top: 2px; border-radius: 2px; background: #C9B796; box-shadow: 0 3px 6px rgba(31,29,26,.18)"></div>
 
 <figure style="margin: 36px 0 0 0; display: flex; flex-direction: column; gap: 8px">
 <blockquote style="margin: 0; font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 23px; line-height: 31px">„{{quote.text}}“</blockquote>
@@ -89,35 +91,44 @@ Buch erfassen
 
 <h2 style="margin: 36px 0 8px 0; font-size: 22px; line-height: 28px; font-weight: 700">Statistiken</h2>
 <p style="margin: 0; font-size: 17px; line-height: 25px">Am meisten gelesen hast du von <strong style="font-weight: 600">{{stats.topAuthor}}</strong>. Dein häufigstes Genre ist <strong style="font-weight: 600">{{stats.topGenre}}</strong>. Dein liebstes Buch: <strong style="font-weight: 600">{{stats.topBook}}</strong>.</p>
-<button type="button" onClick="{{openStats}}" style="align-self: flex-start; min-height: 44px; margin-top: 4px; border: none; background: none; padding: 0; cursor: pointer; font-size: 17px; font-weight: 600; color: #5A3D85">Alle Statistiken</button>
+<button type="button" onClick="{{openStats}}" style="align-self: flex-start; min-height: 44px; margin-top: 4px; border: none; background: none; padding: 0; cursor: pointer; font-size: 17px; font-weight: 600; color: #1F1D1A; display: flex; align-items: center; gap: 6px">Alle Statistiken<svg width="8" height="14" viewBox="0 0 8 14" aria-hidden="true"><path d="M1.5 1.5l5 5.5-5 5.5" fill="none" stroke="#1F1D1A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></button>
 
 <p style="margin: 28px 0 0 0; font-size: 13px; line-height: 18px; color: #6B6760; text-align: center">Alle Bücher, Namen und Zitate sind Beispieldaten.</p>
 </div>
 </div>
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 54px; background: #FFFFFF"></div>
+<sc-if value="{{scrolled}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; top: 54px; left: 0; right: 0; height: 44px; background: #FFFFFF; border-bottom: 1px solid #E8E5DF; display: flex; align-items: center; justify-content: center">
+<span style="font-size: 17px; font-weight: 600">Bibliothek</span>
+<button type="button" aria-label="Buch erfassen" onClick="{{openAdd}}" style="position: absolute; right: 6px; top: 0; width: 44px; height: 44px; border: none; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke="#1F1D1A" stroke-width="2.2" stroke-linecap="round"></path></svg></button>
+</div>
+</sc-if>
+</div>
 </sc-if>
 
 <sc-if value="{{isVol}}" hint-placeholder-val="{{ false }}">
-<div class="scr" style="position: absolute; top: 0; left: 0; right: 0; bottom: 83px; overflow-y: auto">
-<div style="{{vol.headStyle}}">
-<button type="button" onClick="{{goHome}}" style="{{vol.backStyle}}">
-<svg width="12" height="20" viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2L2 10l8 8" fill="none" stroke="{{vol.ink}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-Bibliothek
-</button>
+<div class="scr" style="position: absolute; top: 0; left: 0; right: 0; bottom: 83px">
+<div onScroll="{{onScroll}}" style="position: absolute; top: 98px; left: 0; right: 0; bottom: 0; overflow-y: auto">
+<div class="linen" style="{{vol.headStyle}}">
 <h1 style="{{vol.titleStyle}}">{{vol.name}}</h1>
 <p style="{{vol.subStyle}}">{{vol.sub}}</p>
 </div>
+<div aria-hidden="true" class="vorsatz" style="height: 24px"></div>
 
 <sc-if value="{{vol.isList}}" hint-placeholder-val="{{ true }}">
 <div style="display: flex; flex-direction: column">
 <sc-if value="{{vol.hasSearch}}" hint-placeholder-val="{{ true }}">
-<div style="padding: 12px 16px 4px 16px">
+<div style="padding: 12px 16px 4px 16px; display: flex; align-items: center; gap: 8px">
+<div style="position: relative; flex-grow: 1">
 <label for="volsearch" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">In {{vol.name}} suchen</label>
-<input id="volsearch" type="search" value="{{query}}" onChange="{{setQuery}}" placeholder="Titel oder Autor suchen" style="width: 100%; box-sizing: border-box; height: 40px; border: none; border-radius: 10px; background: #F1EFEA; padding: 0 12px; font-size: 17px; color: #1F1D1A">
+<input id="volsearch" type="search" value="{{query}}" onChange="{{setQuery}}" placeholder="Titel oder Autor suchen" style="width: 100%; box-sizing: border-box; height: 44px; border: none; border-radius: 10px; background: #F1EFEA; padding: 0 44px 0 12px; font-size: 17px; color: #1F1D1A">
+<sc-if value="{{hasQuery}}" hint-placeholder-val="{{ false }}"><button type="button" aria-label="Suche leeren" onClick="{{clearQuery}}" style="position: absolute; right: 0; top: 0; width: 44px; height: 44px; border: none; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><circle cx="9" cy="9" r="8" fill="#8A857C"></circle><path d="M6 6l6 6M12 6l-6 6" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round"></path></svg></button></sc-if>
+</div>
 </div>
 </sc-if>
 <sc-for list="{{vol.entries}}" as="e" hint-placeholder-count="4">
 <button type="button" onClick="{{e.open}}" style="width: 100%; display: flex; gap: 14px; align-items: center; border: none; background: none; padding: 12px 16px; cursor: pointer; text-align: left; color: #1F1D1A">
-<span aria-hidden="true" style="{{e.cover}}"></span>
+<span aria-hidden="true" class="linen" style="{{e.cover}}"></span>
 <span style="display: flex; flex-direction: column; gap: 3px; min-width: 0; flex-grow: 1">
 <span style="font-family: 'EB Garamond', Georgia, serif; font-size: 20px; line-height: 24px; font-weight: 500">{{e.title}}</span>
 <span style="font-size: 15px; color: #6B6760">{{e.author}}</span>
@@ -126,7 +137,10 @@ Bibliothek
 <sc-for list="{{e.stars}}" as="st" hint-placeholder-count="5"><svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z" fill="{{st.fill}}" stroke="#1F1D1A" stroke-width="1.5" stroke-linejoin="round"></path></svg></sc-for>
 </span>
 </sc-if>
+<span style="display: flex; align-items: center; gap: 8px; min-width: 0">
+<sc-if value="{{e.fresh}}" hint-placeholder-val="{{ false }}"><span style="flex-shrink: 0; font-size: 13px; font-weight: 600; color: #FFFFFF; background: #1F1D1A; border-radius: 10px; padding: 1px 8px">Neu</span></sc-if>
 <span style="font-size: 15px; color: #6B6760; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{e.meta}}</span>
+</span>
 </span>
 <svg width="9" height="15" viewBox="0 0 9 15" aria-hidden="true" style="flex-shrink: 0"><path d="M1.5 1.5l6 6-6 6" fill="none" stroke="#8A857C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </button>
@@ -138,14 +152,14 @@ Bibliothek
 <sc-if value="{{vol.isEmpty}}" hint-placeholder-val="{{ false }}">
 <div style="padding: 24px 16px; display: flex; flex-direction: column; gap: 16px">
 <p style="margin: 0; font-size: 17px; line-height: 25px">Hier stehen noch keine eigenen Regale. Leg eins an, zum Beispiel für Bücher, die du verschenken möchtest, oder für alles aus dem letzten Urlaub.</p>
-<button type="button" style="align-self: flex-start; min-height: 48px; padding: 0 20px; border: none; border-radius: 12px; background: #1F1D1A; color: #FFFFFF; font-size: 17px; font-weight: 600; cursor: pointer">Regal anlegen</button>
+<button type="button" onClick="{{openSoon}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; border: none; border-radius: 12px; background: #1F1D1A; color: #FFFFFF; font-size: 17px; font-weight: 600; cursor: pointer">Regal anlegen</button>
 </div>
 </sc-if>
 </div>
 </sc-if>
 
 <sc-if value="{{vol.isStats}}" hint-placeholder-val="{{ false }}">
-<div style="padding: 8px 16px 32px 16px; display: flex; flex-direction: column">
+<div style="padding: 0 16px 32px 16px; display: flex; flex-direction: column">
 <sc-for list="{{statSections}}" as="sec" hint-placeholder-count="5">
 <section style="margin-top: 24px">
 <h2 style="margin: 0 0 4px 0; font-size: 20px; line-height: 25px; font-weight: 700">{{sec.title}}</h2>
@@ -163,20 +177,23 @@ Bibliothek
 </div>
 </sc-if>
 </div>
+<div class="linen" style="{{vol.barStyle}}">
+<button type="button" onClick="{{goHome}}" style="{{vol.backStyle}}">
+<svg width="12" height="20" viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2L2 10l8 8" fill="none" stroke="{{vol.ink}}" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+Bibliothek
+</button>
+<sc-if value="{{scrolled}}" hint-placeholder-val="{{ false }}"><span style="{{vol.inlineTitle}}">{{vol.name}}</span></sc-if>
+</div>
+</div>
 </sc-if>
 
 <sc-if value="{{isBook}}" hint-placeholder-val="{{ false }}">
-<div class="scr" style="position: absolute; top: 0; left: 0; right: 0; bottom: 83px; overflow-y: auto">
-<div style="padding: 54px 0 0 0">
-<button type="button" onClick="{{bookBack}}" style="min-height: 44px; display: flex; align-items: center; gap: 6px; border: none; background: none; padding: 0 16px 0 10px; cursor: pointer; font-size: 17px; color: #1F1D1A">
-<svg width="12" height="20" viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2L2 10l8 8" fill="none" stroke="#1F1D1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-{{bookBackLabel}}
-</button>
-</div>
-<div style="padding: 12px 16px 40px 16px; display: flex; flex-direction: column">
+<div class="scr" style="position: absolute; top: 0; left: 0; right: 0; bottom: 83px">
+<div onScroll="{{onScroll}}" style="position: absolute; top: 98px; left: 0; right: 0; bottom: 0; overflow-y: auto">
+<div style="padding: 8px 16px 40px 16px; display: flex; flex-direction: column">
 
 <div style="display: flex; gap: 18px; align-items: flex-end">
-<span aria-hidden="true" style="{{book.cover}}"></span>
+<span aria-hidden="true" class="linen" style="{{book.cover}}"></span>
 <div style="display: flex; flex-direction: column; gap: 4px; min-width: 0">
 <h1 style="margin: 0; font-family: 'EB Garamond', Georgia, serif; font-size: 30px; line-height: 33px; font-weight: 500">{{book.title}}</h1>
 <p style="margin: 0; font-size: 17px; color: #6B6760">{{book.author}}</p>
@@ -194,6 +211,7 @@ Bibliothek
 <div style="display: flex; justify-content: space-between; font-size: 17px"><span>Seite <span style="font-weight: 600; font-variant-numeric: tabular-nums">{{page}}</span> von {{current.pages}}</span><span style="color: #6B6760; font-variant-numeric: tabular-nums">{{percent}} %</span></div>
 <div role="progressbar" aria-label="Lesefortschritt" aria-valuemin="0" aria-valuemax="100" aria-valuenow="{{percent}}" style="height: 6px; border-radius: 3px; background: #EFEBE4; overflow: hidden"><div style="{{progressStyle}}"></div></div>
 <button type="button" onClick="{{openPageSheet}}" style="min-height: 48px; border: none; border-radius: 12px; background: #1F1D1A; color: #FFFFFF; font-size: 17px; font-weight: 600; cursor: pointer">Seite eintragen</button>
+<p role="status" aria-live="polite" style="{{savedStyle}}">{{savedText}}</p>
 </div>
 </sc-if>
 
@@ -209,7 +227,7 @@ Bibliothek
 <section style="margin-top: 32px; display: flex; flex-direction: column; gap: 14px">
 <h2 style="margin: 0; font-size: 22px; line-height: 28px; font-weight: 700">Meine Lesart</h2>
 <p style="margin: 0; font-size: 17px; line-height: 25px">{{book.inviteText}}</p>
-<button type="button" style="align-self: flex-start; min-height: 48px; padding: 0 20px; border: 1.5px solid #1F1D1A; border-radius: 12px; background: #FFFFFF; color: #1F1D1A; font-size: 17px; font-weight: 600; cursor: pointer">{{book.inviteAction}}</button>
+<button type="button" onClick="{{openSoon}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; border: 1.5px solid #1F1D1A; border-radius: 12px; background: #FFFFFF; color: #1F1D1A; font-size: 17px; font-weight: 600; cursor: pointer">{{book.inviteAction}}</button>
 </section>
 </sc-if>
 
@@ -228,14 +246,17 @@ Bibliothek
 <dt style="font-weight: 600">Stark</dt><dd style="margin: 0">{{book.strong}}</dd>
 <dt style="font-weight: 600">Gehakt</dt><dd style="margin: 0">{{book.weak}}</dd>
 </dl>
-<button type="button" aria-expanded="{{fullCardExpanded}}" onClick="{{toggleFullCard}}" style="min-height: 44px; margin-top: 6px; border: none; background: none; padding: 0; cursor: pointer; font-size: 17px; font-weight: 600; color: #1F1D1A; display: flex; align-items: center; gap: 6px">{{fullCardLabel}}</button>
+<div style="margin-top: 14px; border: 1px solid #E8E5DF; border-radius: 12px; overflow: hidden">
+<button type="button" aria-expanded="{{fullCardExpanded}}" onClick="{{toggleFullCard}}" style="width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: none; background: none; padding: 0 16px; cursor: pointer; text-align: left; color: #1F1D1A">
+<span style="font-size: 17px">Ganze Karte</span>
+<svg width="14" height="9" viewBox="0 0 14 9" aria-hidden="true" style="{{fullCardChevron}}"><path d="M1.5 1.5l5.5 5.5 5.5-5.5" fill="none" stroke="#8A857C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
 <sc-if value="{{showFullCard}}" hint-placeholder-val="{{ false }}">
-<div style="border: 1px solid #E8E5DF; border-radius: 12px; overflow: hidden">
 <sc-for list="{{book.cardRows}}" as="r" hint-placeholder-count="7">
 <div style="{{r.style}}"><span style="font-size: 17px">{{r.k}}</span><span style="font-size: 17px; color: #6B6760; text-align: right">{{r.v}}</span></div>
 </sc-for>
-</div>
 </sc-if>
+</div>
 </section>
 </sc-if>
 
@@ -243,8 +264,8 @@ Bibliothek
 <sc-for list="{{book.details}}" as="d" hint-placeholder-count="2">
 <div style="{{d.wrapStyle}}">
 <button type="button" aria-expanded="{{d.expanded}}" onClick="{{d.toggle}}" style="width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: none; background: none; padding: 0 16px; cursor: pointer; text-align: left; color: #1F1D1A">
-<span style="font-size: 17px; white-space: nowrap; flex-shrink: 0">{{d.label}}</span>
-<span style="display: flex; align-items: center; gap: 10px; min-width: 0"><span style="font-size: 17px; color: #6B6760; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{d.summary}}</span><svg width="14" height="9" viewBox="0 0 14 9" aria-hidden="true" style="{{d.chevron}}"><path d="M1.5 1.5l5.5 5.5 5.5-5.5" fill="none" stroke="#8A857C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+<span style="font-size: 17px">{{d.label}}</span>
+<span style="display: flex; align-items: center; gap: 10px"><span style="font-size: 17px; color: #6B6760; text-align: right">{{d.summary}}</span><svg width="14" height="9" viewBox="0 0 14 9" aria-hidden="true" style="{{d.chevron}}"><path d="M1.5 1.5l5.5 5.5 5.5-5.5" fill="none" stroke="#8A857C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
 </button>
 <sc-if value="{{d.open}}" hint-placeholder-val="{{ false }}">
 <div style="padding: 0 16px 14px 16px; display: flex; flex-direction: column; gap: 6px">
@@ -261,15 +282,23 @@ Bibliothek
 <span style="font-size: 17px">Im Schaufenster zeigen</span>
 <span aria-hidden="true" style="{{switchTrack}}"><span style="{{switchKnob}}"></span></span>
 </button>
-<p style="margin: 8px 4px 0 4px; font-size: 15px; line-height: 21px; color: #6B6760">{{showcaseHint}}</p>
+<p role="status" aria-live="polite" style="margin: 8px 4px 0 4px; font-size: 15px; line-height: 21px; color: #6B6760">{{showcaseHint}}</p>
 </section>
+</div>
+</div>
+<div style="position: absolute; top: 0; left: 0; right: 0; height: 98px; box-sizing: border-box; padding-top: 54px; background: #FFFFFF; display: flex; align-items: center; border-bottom: 1px solid #E8E5DF">
+<button type="button" onClick="{{bookBack}}" style="position: relative; z-index: 1; min-height: 44px; display: flex; align-items: center; gap: 6px; border: none; background: none; padding: 0 16px 0 10px; cursor: pointer; font-size: 17px; color: #1F1D1A">
+<svg width="12" height="20" viewBox="0 0 12 20" aria-hidden="true"><path d="M10 2L2 10l8 8" fill="none" stroke="#1F1D1A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+{{bookBackLabel}}
+</button>
+<sc-if value="{{scrolled}}" hint-placeholder-val="{{ false }}"><span style="position: absolute; left: 120px; right: 120px; bottom: 0; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{book.title}}</span></sc-if>
 </div>
 </div>
 </sc-if>
 
 <sc-if value="{{isTab}}" hint-placeholder-val="{{ false }}">
-<div class="scr" style="position: absolute; top: 0; left: 0; right: 0; bottom: 83px; overflow-y: auto; padding: 54px 16px 0 16px; box-sizing: border-box">
-<h1 style="margin: 8px 0 0 0; font-size: 34px; line-height: 41px; font-weight: 700">{{tabTitle}}</h1>
+<div class="scr" style="position: absolute; top: 0; left: 0; right: 0; bottom: 83px; overflow-y: auto; padding: 62px 16px 0 16px; box-sizing: border-box">
+<h1 style="margin: 0; font-size: 34px; line-height: 41px; font-weight: 700">{{tabTitle}}</h1>
 <p style="margin: 12px 0 0 0; font-size: 17px; line-height: 25px; color: #6B6760">{{tabText}}</p>
 </div>
 </sc-if>
@@ -277,39 +306,36 @@ Bibliothek
 <nav aria-label="Hauptbereiche" style="position: absolute; left: 0; right: 0; bottom: 0; height: 83px; box-sizing: border-box; padding-bottom: 34px; display: flex; background: #FFFFFF; border-top: 1px solid #E8E5DF">
 <sc-for list="{{tabs}}" as="t" hint-placeholder-count="4">
 <button type="button" aria-current="{{t.current}}" onClick="{{t.go}}" style="{{t.style}}">
-<svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true" fill="none" stroke="{{t.color}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-<sc-if value="{{t.isBib}}" hint-placeholder-val="{{ true }}"><path d="M4 21V5M8 21V5M12.5 21l-1-15.5 3.5-.5 1 15.5M18 21V7h4v14M3 21.5h20"></path></sc-if>
-<sc-if value="{{t.isShop}}" hint-placeholder-val="{{ false }}"><path d="M4 10l1.5-5h15L22 10M4 10h18v11H4zM4 10c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3s3-1.3 3-3c0 1.7 1.3 3 3 3s3-1.3 3-3M11 21v-5h4v5"></path></sc-if>
-<sc-if value="{{t.isFind}}" hint-placeholder-val="{{ false }}"><path d="M13 3a10 10 0 1 0 0 20 10 10 0 0 0 0-20zM16.8 9.2l-2.2 5.4-5.4 2.2 2.2-5.4z"></path></sc-if>
-<sc-if value="{{t.isMe}}" hint-placeholder-val="{{ false }}"><path d="M13 13a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zM4.5 22c.8-4.2 4.2-6.5 8.5-6.5s7.7 2.3 8.5 6.5"></path></sc-if>
+<svg width="26" height="26" viewBox="0 0 26 26" aria-hidden="true" fill="{{t.fill}}" stroke="{{t.color}}" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+<sc-if value="{{t.isBib}}" hint-placeholder-val="{{ true }}"><path d="M3.5 21V5h4v16zM8.5 21V5h4v16zM13.5 20.6l-1-15.4 3.6-.5 1 15.4zM18.5 21V7h4v14z"></path><path d="M2.5 21.5h21" fill="none"></path></sc-if>
+<sc-if value="{{t.isShop}}" hint-placeholder-val="{{ false }}"><path d="M4 10h18v11H4zM4 10l1.5-5h15L22 10"></path><path d="M11 21v-5h4v5" fill="none"></path></sc-if>
+<sc-if value="{{t.isFind}}" hint-placeholder-val="{{ false }}"><path d="M13 3a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"></path><path d="M16.8 9.2l-2.2 5.4-5.4 2.2 2.2-5.4z" fill="#FFFFFF"></path></sc-if>
+<sc-if value="{{t.isMe}}" hint-placeholder-val="{{ false }}"><path d="M13 13a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9zM4.5 22c.8-4.2 4.2-6.5 8.5-6.5s7.7 2.3 8.5 6.5z"></path></sc-if>
 </svg>
 <span>{{t.label}}</span>
 </button>
 </sc-for>
 </nav>
 
-<sc-if value="{{hasToast}}" hint-placeholder-val="{{ false }}">
-<div role="status" aria-live="polite" style="{{toastStyle}}">
-<span>{{toast.text}}</span>
-<sc-if value="{{toast.hasUndo}}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{undoShowcase}}" style="min-height: 44px; border: none; background: none; padding: 0 4px; cursor: pointer; font-size: 17px; font-weight: 600; color: #E9D9B0">Rückgängig</button></sc-if>
-</div>
-</sc-if>
-
 <sc-if value="{{hasSheet}}" hint-placeholder-val="{{ false }}">
 <div style="position: absolute; inset: 0">
-<button type="button" aria-label="Schließen" onClick="{{closeSheet}}" style="position: absolute; inset: 0; border: none; padding: 0; background: rgba(31,29,26,.36); cursor: pointer"></button>
-<div class="sheet" role="dialog" aria-modal="true" aria-label="{{sheetTitle}}" style="position: absolute; left: 0; right: 0; bottom: 0; background: #FFFFFF; border-radius: 16px 16px 0 0; padding: 8px 16px 40px 16px; display: flex; flex-direction: column; box-shadow: 0 -8px 30px rgba(31,29,26,.16)">
-<div aria-hidden="true" style="align-self: center; width: 36px; height: 5px; border-radius: 3px; background: #D5D0C7; margin-bottom: 14px"></div>
-<h2 style="margin: 0; font-size: 22px; line-height: 28px; font-weight: 700">{{sheetTitle}}</h2>
+<div aria-hidden="true" onClick="{{closeSheet}}" style="position: absolute; inset: 0; background: rgba(31,29,26,.36)"></div>
+<div class="sheet" role="dialog" aria-modal="true" aria-label="{{sheetTitle}}" style="position: absolute; left: 0; right: 0; bottom: 0; background: #FFFFFF; border-radius: 16px 16px 0 0; padding: 4px 0 40px 0; display: flex; flex-direction: column; box-shadow: 0 -8px 30px rgba(31,29,26,.16)">
+<div style="position: relative; height: 52px; display: flex; align-items: center; justify-content: space-between; padding: 0 8px; border-bottom: 1px solid #EFEBE4">
+<button type="button" onClick="{{closeSheet}}" style="min-height: 44px; min-width: 44px; padding: 0 8px; border: none; background: none; cursor: pointer; font-size: 17px; color: #1F1D1A">Abbrechen</button>
+<h2 style="position: absolute; left: 110px; right: 110px; margin: 0; text-align: center; font-size: 17px; line-height: 22px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{sheetTitle}}</h2>
+<sc-if value="{{isPageSheet}}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{savePage}}" disabled="{{saveDisabled}}" style="{{saveBtnStyle}}">Sichern</button></sc-if>
+</div>
+<div style="padding: 16px 16px 0 16px">
 
 <sc-if value="{{isPageSheet}}" hint-placeholder-val="{{ false }}">
-<div style="display: flex; flex-direction: column; gap: 18px; margin-top: 4px">
-<p style="margin: 0; font-family: 'EB Garamond', Georgia, serif; font-size: 19px; color: #6B6760">{{current.title}}</p>
+<div style="display: flex; flex-direction: column; gap: 18px">
+<p style="margin: 0; text-align: center; font-family: 'EB Garamond', Georgia, serif; font-size: 20px; color: #6B6760">{{current.title}}</p>
 <div style="display: flex; align-items: center; justify-content: center; gap: 22px">
 <button type="button" aria-label="Eine Seite zurück" onClick="{{dec}}" style="width: 56px; height: 56px; border-radius: 28px; border: 1.5px solid #D5D0C7; background: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M2 9h14" stroke="#1F1D1A" stroke-width="2.2" stroke-linecap="round"></path></svg></button>
 <label style="display: flex; flex-direction: column; align-items: center; gap: 2px">
 <span style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Aktuelle Seite</span>
-<input inputmode="numeric" value="{{draftPage}}" onChange="{{setDraft}}" style="width: 120px; height: 60px; border: none; text-align: center; font-size: 48px; font-weight: 600; font-variant-numeric: tabular-nums; color: #1F1D1A; background: none">
+<input inputmode="numeric" enterkeyhint="done" value="{{draftPage}}" onChange="{{setDraft}}" style="width: 130px; height: 60px; border: none; border-bottom: 2px solid #E8E5DF; text-align: center; font-size: 48px; font-weight: 600; font-variant-numeric: tabular-nums; color: #1F1D1A; background: none">
 <span style="font-size: 15px; color: #6B6760">von {{current.pages}} Seiten</span>
 </label>
 <button type="button" aria-label="Eine Seite weiter" onClick="{{inc}}" style="width: 56px; height: 56px; border-radius: 28px; border: 1.5px solid #D5D0C7; background: #FFFFFF; cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true"><path d="M9 2v14M2 9h14" stroke="#1F1D1A" stroke-width="2.2" stroke-linecap="round"></path></svg></button>
@@ -317,12 +343,11 @@ Bibliothek
 <div style="display: flex; justify-content: center; gap: 10px">
 <sc-for list="{{jumps}}" as="j" hint-placeholder-count="3"><button type="button" onClick="{{j.go}}" style="min-width: 64px; min-height: 44px; border: none; border-radius: 22px; background: #F1EFEA; cursor: pointer; font-size: 17px; font-weight: 600; color: #1F1D1A">{{j.label}}</button></sc-for>
 </div>
-<button type="button" onClick="{{savePage}}" style="min-height: 52px; border: none; border-radius: 12px; background: #1F1D1A; color: #FFFFFF; font-size: 17px; font-weight: 600; cursor: pointer">Speichern</button>
 </div>
 </sc-if>
 
 <sc-if value="{{isAddSheet}}" hint-placeholder-val="{{ false }}">
-<div style="display: flex; flex-direction: column; margin-top: 8px">
+<div style="display: flex; flex-direction: column">
 <sc-for list="{{addOptions}}" as="o" hint-placeholder-count="3">
 <button type="button" onClick="{{o.pick}}" style="min-height: 68px; display: flex; align-items: center; gap: 14px; border: none; border-bottom: 1px solid #EFEBE4; background: none; padding: 0; cursor: pointer; text-align: left; color: #1F1D1A">
 <span aria-hidden="true" style="width: 44px; height: 44px; border-radius: 12px; background: #F1EFEA; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
@@ -332,7 +357,8 @@ Bibliothek
 <sc-if value="{{o.isHand}}" hint-placeholder-val="{{ false }}"><path d="M4 20l4-1 11-11-3-3L5 16zM14 7l3 3"></path></sc-if>
 </svg>
 </span>
-<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 17px; font-weight: 600">{{o.title}}</span><span style="font-size: 15px; color: #6B6760">{{o.sub}}</span></span>
+<span style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1"><span style="font-size: 17px; font-weight: 600">{{o.title}}</span><span style="font-size: 15px; color: #6B6760">{{o.sub}}</span></span>
+<svg width="9" height="15" viewBox="0 0 9 15" aria-hidden="true" style="flex-shrink: 0"><path d="M1.5 1.5l6 6-6 6" fill="none" stroke="#8A857C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </button>
 </sc-for>
 <sc-if value="{{addNote}}" hint-placeholder-val="{{ false }}"><p role="status" style="margin: 14px 0 0 0; font-size: 15px; line-height: 21px; color: #6B6760">Dieser Schritt folgt im nächsten Prototyp.</p></sc-if>
@@ -340,7 +366,7 @@ Bibliothek
 </sc-if>
 
 <sc-if value="{{isShowcaseSheet}}" hint-placeholder-val="{{ false }}">
-<div style="display: flex; flex-direction: column; gap: 14px; margin-top: 8px">
+<div style="display: flex; flex-direction: column; gap: 14px">
 <dl style="margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 17px; line-height: 24px">
 <div><dt style="font-weight: 600">Sichtbar werden</dt><dd style="margin: 2px 0 0 0">Deine Sterne, deine Lesart und das Zitat.</dd></div>
 <div><dt style="font-weight: 600">Privat bleiben</dt><dd style="margin: 2px 0 0 0">Dein Exemplar und dein Leseverlauf.</dd></div>
@@ -350,7 +376,11 @@ Bibliothek
 </div>
 </sc-if>
 
-<button type="button" onClick="{{closeSheet}}" style="min-height: 48px; margin-top: 8px; border: none; background: none; cursor: pointer; font-size: 17px; color: #1F1D1A">Abbrechen</button>
+<sc-if value="{{isSoonSheet}}" hint-placeholder-val="{{ false }}">
+<p style="margin: 0; font-size: 17px; line-height: 25px">Dieser Schritt wird im nächsten Prototyp gestaltet. Hier geht es heute nur um Regal, Bände und Buchseite.</p>
+</sc-if>
+
+</div>
 </div>
 </div>
 </sc-if>
@@ -360,7 +390,7 @@ Bibliothek
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
 var INK = '#1F1D1A';
 var VOLS = [
-  { key: 'lesen', name: 'Am Lesen', color: '#A8322A', ink: '#FFFFFF', ribbon: true, sub: 'Was gerade aufgeschlagen auf dem Nachttisch liegt.' },
+  { key: 'lesen', name: 'Am Lesen', color: '#A8322A', ink: '#FFFFFF', sub: 'Was gerade aufgeschlagen auf dem Nachttisch liegt.' },
   { key: 'gelesen', name: 'Gelesen', color: '#B5541C', ink: '#FFFFFF', sub: 'Zu Ende gelesen, mit deinen Karten.' },
   { key: 'ungelesen', name: 'Ungelesen im Regal', color: '#D9A21E', ink: INK, edge: true, sub: 'Besitzt du schon. Wartet geduldig.' },
   { key: 'wunsch', name: 'Wunschliste', color: '#4C7330', ink: '#FFFFFF', sub: 'Noch nicht bei dir.' },
@@ -371,7 +401,7 @@ var VOLS = [
 var BOOKS = [
   { id: 'garten', vol: 'lesen', title: 'Der stille Garten', author: 'Mara Lind', genre: 'Roman / Gegenwart', pages: 312, c: '#8A6A2E', status: 'Am Lesen seit 2. Oktober',
     copy: [['Format', 'Hardcover'], ['Steht', 'Nachttisch']], history: [['Begonnen', '2. Okt. 2026']] },
-  { id: 'salz', vol: 'gelesen', title: 'Salz und Asche', author: 'Jonas Brehm', genre: 'Roman / Gegenwart', c: '#6E1E18', stars: 4, done: 'September 2026',
+  { id: 'salz', vol: 'gelesen', fresh: true, title: 'Salz und Asche', author: 'Jonas Brehm', genre: 'Roman / Gegenwart', c: '#6E1E18', stars: 4, done: 'September 2026',
     reading: 'Für mich ist es kein Buch über eine Familie, sondern über das Bleiben. Alle wollen weg von der Küste, und am Ende ist sie das Einzige, das jedem von ihnen gehört.',
     forWhom: 'alle, die das Meer und langsame Geschichten mögen.', quote: 'Das Salz bleibt, wenn das Wasser längst gegangen ist.', quotePage: 211,
     flow: 'flüssig', lang: 'schön', tempo: 'ruhig', echo: 'lässt mich nicht los', reread: 'vielleicht', more: 'unbedingt', moods: 'mitgerissen, nachdenklich',
@@ -397,6 +427,7 @@ var BOOKS = [
   { id: 'fluss', vol: 'abgebrochen', title: 'Der lange Fluss', author: 'Paul Neumann', genre: 'Historischer Roman', c: '#263A5A', status: 'Abgebrochen bei Seite 87',
     copy: [['Format', 'Hardcover']], history: [['Begonnen', 'Apr. 2026'], ['Abgebrochen bei Seite 87', 'Mai 2026']] }
 ];
+var SHELVES = 0;
 function fmt(n) { return String(Math.round(n * 10) / 10).replace('.', ','); }
 function stars(n) {
   var out = [];
@@ -404,7 +435,8 @@ function stars(n) {
   return out;
 }
 function cover(c, w, h) {
-  return 'flex-shrink: 0; width: ' + w + 'px; height: ' + h + 'px; border-radius: 2px 4px 4px 2px; background-color: ' + c + '; background-image: linear-gradient(90deg, rgba(0,0,0,.28) 0, rgba(0,0,0,.28) ' + Math.round(w * 0.1) + 'px, rgba(255,255,255,.12) ' + (Math.round(w * 0.1) + 1) + 'px, transparent ' + (Math.round(w * 0.1) + 3) + 'px), repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px); box-shadow: 0 1px 3px rgba(31,29,26,.25)';
+  var hinge = Math.round(w * 0.1);
+  return 'flex-shrink: 0; width: ' + w + 'px; height: ' + h + 'px; border-radius: 2px 4px 4px 2px; background-color: ' + c + '; box-shadow: inset ' + hinge + 'px 0 0 rgba(0,0,0,.22), 0 1px 3px rgba(31,29,26,.25)';
 }
 function rowStyle(i) { return 'display: flex; justify-content: space-between; align-items: center; gap: 12px; min-height: 48px; padding: 10px 16px; box-sizing: border-box' + (i ? '; border-top: 1px solid #EFEBE4' : ''); }
 function computeStats() {
@@ -422,13 +454,14 @@ function computeStats() {
   var aAvg = authors.filter(function (x) { return x.n >= 2; }).sort(byAvg), gAvg = genres.filter(function (x) { return x.n >= 2; }).sort(byAvg);
   function rows(list, val) { return list.slice(0, 3).map(function (x, i) { return { k: x.name, v: val(x), style: rowStyle(i) }; }); }
   var books = function (n) { return n === 1 ? '1 Buch' : n + ' Bücher'; };
+  var few = [{ k: 'Noch zu wenige Bücher', v: '', style: rowStyle(0) }];
   return {
     summary: { topAuthor: aCount[0].name, topGenre: gCount[0].name, topBook: topBooks[0].title },
     sections: [
       { title: 'Meistgelesene Autoren', note: 'Nach Anzahl gelesener Bücher.', rows: rows(aCount, function (x) { return books(x.n); }) },
       { title: 'Meistgelesene Genres', note: 'Nach Anzahl gelesener Bücher.', rows: rows(gCount, function (x) { return books(x.n); }) },
-      { title: 'Bestbewertete Autoren', note: 'Ab zwei gelesenen Büchern, Durchschnitt deiner Sterne.', rows: aAvg.length ? rows(aAvg, function (x) { return fmt(x.sum / x.n) + ' Sterne'; }) : [{ k: 'Noch zu wenige Bücher', v: '', style: rowStyle(0) }] },
-      { title: 'Bestbewertete Genres', note: 'Ab zwei gelesenen Büchern, Durchschnitt deiner Sterne.', rows: gAvg.length ? rows(gAvg, function (x) { return fmt(x.sum / x.n) + ' Sterne'; }) : [{ k: 'Noch zu wenige Bücher', v: '', style: rowStyle(0) }] },
+      { title: 'Bestbewertete Autoren', note: 'Ab zwei gelesenen Büchern, Durchschnitt deiner Sterne.', rows: aAvg.length ? rows(aAvg, function (x) { return fmt(x.sum / x.n) + ' Sterne'; }) : few },
+      { title: 'Bestbewertete Genres', note: 'Ab zwei gelesenen Büchern, Durchschnitt deiner Sterne.', rows: gAvg.length ? rows(gAvg, function (x) { return fmt(x.sum / x.n) + ' Sterne'; }) : few },
       { title: 'Deine drei liebsten Bücher', note: 'Nach deinen Sternen.', rows: topBooks.map(function (b, i) { return { k: b.title, v: fmt(b.stars) + ' Sterne', style: rowStyle(i) }; }) }
     ]
   };
@@ -437,84 +470,80 @@ var STATS = computeStats();
 class Component extends DCLogic {
   constructor(props) {
     super(props);
-    this.state = { screen: 'home', tab: 'bib', vol: null, book: null, from: 'home', page: 142, draftPage: 142, sheet: null, addNote: false, showcase: {}, query: '', toast: null, fullCard: false, open: {} };
+    this.state = { screen: 'home', tab: 'bib', bib: { screen: 'home', vol: null, book: null, from: 'home' }, page: 142, draftPage: 142, saved: '', sheet: null, addNote: false, showcase: {}, seen: {}, query: '', fullCard: false, open: {}, scrolled: false };
   }
-  toastFor(text, undo) {
-    var self = this;
-    if (this._t) clearTimeout(this._t);
-    this.setState({ toast: { text: text, hasUndo: !!undo } });
-    this._t = setTimeout(function () { self.setState({ toast: null }); }, 4000);
-  }
-  go(patch) {
-    if (this._t) clearTimeout(this._t);
-    this.setState(Object.assign({ toast: null }, patch));
+  nav(patch) {
+    var bib = Object.assign({}, this.state.bib, patch);
+    this.setState({ bib: bib, screen: bib.screen, scrolled: false, query: patch.screen === 'vol' ? '' : this.state.query, sheet: null });
   }
   renderVals() {
-    var s = this.state, self = this;
+    var s = this.state, self = this, bs = s.bib;
     var cur = BOOKS[0];
     var percent = Math.round(s.page / cur.pages * 100);
     var hour = new Date().getHours();
     var hello = hour < 11 ? 'Guten Morgen.' : (hour < 18 ? 'Hallo.' : 'Guten Abend.');
     var counts = {};
     BOOKS.forEach(function (b) { counts[b.vol] = (counts[b.vol] || 0) + 1; });
-    var offsets = [0, 10, 3, 14, 6, 0, 9];
+    var offsets = [0, 8, 3, 10, 5, 0, 7];
     var spines = VOLS.map(function (v, i) {
-      var n = counts[v.key] || 0;
-      var len = v.key === 'stats' ? 330 : Math.min(358 - offsets[i], 286 + n * 13);
+      var n = v.key === 'regale' ? SHELVES : (counts[v.key] || 0);
+      var unit = v.key === 'regale' ? (n === 1 ? '1 Regal' : n + ' Regale') : (n === 1 ? '1 Buch' : n + ' Bücher');
       return {
-        name: v.name, ink: v.ink, ribbon: !!v.ribbon,
+        name: v.name, ink: v.ink,
         count: v.key === 'stats' ? '' : String(n),
-        aria: v.key === 'stats' ? 'Statistiken öffnen' : v.name + ', ' + (n === 1 ? '1 Buch' : n + ' Bücher') + ', öffnen',
-        open: function () { self.go({ screen: 'vol', vol: v.key, query: '', open: {} }); },
-        style: 'position: relative; display: flex; align-items: center; height: 56px; width: ' + len + 'px; margin-left: ' + offsets[i] + 'px; box-sizing: border-box; border-radius: 3px 6px 6px 3px; background-color: ' + v.color + '; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(0,0,0,.05) 0 1px, transparent 1px 4px); box-shadow: 0 1px 2px rgba(31,29,26,.22), inset 0 1px 0 rgba(255,255,255,.18), inset 0 -2px 0 rgba(0,0,0,.14)' + (v.edge ? '; border: 1px solid rgba(31,29,26,.25)' : ''),
-        bandA: 'position: absolute; left: 12px; top: 6px; bottom: 6px; width: 1px; background: ' + (v.ink === INK ? 'rgba(31,29,26,.35)' : 'rgba(255,255,255,.45)'),
-        bandB: 'position: absolute; left: 16px; top: 6px; bottom: 6px; width: 1px; background: ' + (v.ink === INK ? 'rgba(31,29,26,.35)' : 'rgba(255,255,255,.45)'),
-        labelStyle: "flex-grow: 1; padding-left: 30px; font-family: 'EB Garamond', Georgia, serif; font-size: 21px; font-weight: 500; color: " + v.ink + '; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis',
-        countStyle: 'margin-right: 12px; font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; color: ' + v.ink
+        aria: v.key === 'stats' ? 'Statistiken öffnen' : v.name + ', ' + unit + ', öffnen',
+        open: function () { self.nav({ screen: 'vol', vol: v.key }); },
+        rowStyle: 'padding-left: ' + offsets[i] + 'px; padding-right: ' + (10 - offsets[i]) + 'px',
+        style: 'position: relative; width: 100%; min-height: 56px; display: flex; align-items: center; box-sizing: border-box; padding: 8px 0; border: ' + (v.edge ? '1px solid rgba(31,29,26,.3)' : 'none') + '; border-radius: 3px 6px 6px 3px; background-color: ' + v.color + '; box-shadow: 0 1px 2px rgba(31,29,26,.25); cursor: pointer; text-align: left',
+        stamp: 'position: absolute; left: 14px; top: 8px; bottom: 8px; width: 4px; height: calc(100% - 16px); object-fit: fill' + (v.ink === INK ? '; filter: brightness(.45)' : ''),
+        labelStyle: "flex-grow: 1; min-width: 0; padding-left: 30px; font-family: 'EB Garamond', Georgia, serif; font-size: 21px; line-height: 25px; font-weight: 500; color: " + v.ink + '; overflow-wrap: anywhere',
+        countStyle: 'margin: 0 10px 0 8px; font-size: 17px; font-weight: 600; font-variant-numeric: tabular-nums; color: ' + v.ink
       };
     });
-    var v = VOLS.filter(function (x) { return x.key === s.vol; })[0] || VOLS[1];
+    var v = VOLS.filter(function (x) { return x.key === bs.vol; })[0] || VOLS[1];
     var q = s.query.trim().toLowerCase();
     var volBooks = BOOKS.filter(function (b) { return b.vol === v.key; });
     var shown = volBooks.filter(function (b) { return !q || (b.title + ' ' + b.author).toLowerCase().indexOf(q) >= 0; });
     var entries = shown.map(function (b) {
       var meta = b.vol === 'gelesen' ? (b.quote ? '„' + b.quote + '“' : 'Gelesen im ' + b.done) : (b.vol === 'lesen' ? 'Seite ' + s.page + ' von ' + b.pages : b.status);
       return {
-        title: b.title, author: b.author, meta: meta, cover: cover(b.c, 48, 72),
+        title: b.title, author: b.author, meta: meta, cover: cover(b.c, 48, 72), fresh: !!b.fresh && !s.seen[b.id],
         hasStars: !!b.stars, stars: b.stars ? stars(b.stars) : [], starLabel: b.stars ? fmt(b.stars) + ' von 5 Sternen' : '',
-        open: function () { self.go({ screen: 'book', book: b.id, from: 'vol', fullCard: false, open: {} }); }
+        open: function () { var seen = Object.assign({}, s.seen); seen[b.id] = true; self.setState({ seen: seen, fullCard: false, open: {} }); self.nav({ screen: 'book', book: b.id, from: 'vol' }); }
       };
     });
     var vol = {
-      name: v.name, ink: v.ink, sub: v.key === 'stats' ? v.sub : (volBooks.length === 1 ? '1 Buch' : volBooks.length + ' Bücher') + '. ' + v.sub,
+      name: v.name, ink: v.ink,
+      sub: v.key === 'stats' ? v.sub : (v.key === 'regale' ? (SHELVES === 1 ? '1 Regal' : SHELVES + ' Regale') : (volBooks.length === 1 ? '1 Buch' : volBooks.length + ' Bücher')) + '. ' + v.sub,
       isList: v.key !== 'stats', isStats: v.key === 'stats', hasSearch: volBooks.length > 3,
       entries: entries, noResults: volBooks.length > 0 && shown.length === 0, isEmpty: volBooks.length === 0,
-      headStyle: 'padding: 54px 0 22px 0; background-color: ' + v.color + '; background-image: repeating-linear-gradient(0deg, rgba(255,255,255,.06) 0 1px, transparent 1px 3px), repeating-linear-gradient(90deg, rgba(0,0,0,.05) 0 1px, transparent 1px 4px); color: ' + v.ink,
-      backStyle: 'min-height: 44px; display: flex; align-items: center; gap: 6px; border: none; background: none; padding: 0 16px 0 10px; cursor: pointer; font-size: 17px; color: ' + v.ink,
-      titleStyle: "margin: 10px 16px 0 16px; font-family: 'EB Garamond', Georgia, serif; font-size: 36px; line-height: 40px; font-weight: 500; color: " + v.ink,
+      headStyle: 'padding: 2px 0 20px 0; background-color: ' + v.color + '; color: ' + v.ink,
+      barStyle: 'position: absolute; top: 0; left: 0; right: 0; height: 98px; box-sizing: border-box; padding-top: 54px; display: flex; align-items: center; background-color: ' + v.color,
+      backStyle: 'position: relative; z-index: 1; min-height: 44px; display: flex; align-items: center; gap: 6px; border: none; background: none; padding: 0 16px 0 10px; cursor: pointer; font-size: 17px; color: ' + v.ink,
+      inlineTitle: 'position: absolute; left: 120px; right: 120px; bottom: 0; height: 44px; display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: ' + v.ink,
+      titleStyle: "margin: 0 16px; font-family: 'EB Garamond', Georgia, serif; font-size: 36px; line-height: 40px; font-weight: 500; color: " + v.ink,
       subStyle: 'margin: 6px 16px 0 16px; font-size: 17px; line-height: 23px; color: ' + v.ink
     };
-    var b = BOOKS.filter(function (x) { return x.id === s.book; })[0] || cur;
+    var b = BOOKS.filter(function (x) { return x.id === bs.book; })[0] || cur;
     var bv = VOLS.filter(function (x) { return x.key === b.vol; })[0];
     var isRead = b.vol === 'gelesen';
     var hasCard = !!b.flow;
     var shownPublic = !!s.showcase[b.id];
     var details = [
-      { key: 'copy', label: 'Mein Exemplar', rows: b.copy.length ? b.copy : [['Format', 'noch nicht angegeben']] },
-      { key: 'hist', label: 'Leseverlauf', rows: b.history }
+      { key: 'copy', label: 'Mein Exemplar', rows: b.copy.length ? b.copy : [['Format', 'noch nicht angegeben']], summary: b.copy.length ? b.copy[0][1].split(',')[0] : '' },
+      { key: 'hist', label: 'Leseverlauf', rows: b.history, summary: b.history[b.history.length - 1][1] }
     ].map(function (d, i) {
       var isOpen = !!s.open[d.key];
       return {
-        label: d.label, open: isOpen, expanded: isOpen ? 'true' : 'false',
-        summary: d.rows.map(function (r) { return r[1]; }).join(', '),
+        label: d.label, open: isOpen, expanded: isOpen ? 'true' : 'false', summary: d.summary,
         rows: d.rows.map(function (r) { return { k: r[0], v: r[1] }; }),
         chevron: 'flex-shrink: 0; transition: transform .15s; transform: rotate(' + (isOpen ? 180 : 0) + 'deg)',
         wrapStyle: i ? 'border-top: 1px solid #EFEBE4' : '',
         toggle: function () { var o = Object.assign({}, s.open); o[d.key] = !isOpen; self.setState({ open: o }); }
       };
     });
-    var cardRows = hasCard ? [['Gefühl', b.moods], ['Lesefluss', b.flow], ['Sprache', b.lang], ['Tempo', b.tempo], ['Wirkt nach', b.echo], ['Wieder lesen', b.reread], ['Mehr von ' + b.author, b.more]].map(function (r, i) { return { k: r[0], v: r[1], style: rowStyle(i) }; }) : [];
-    var inviteText = isRead ? 'Für dieses Buch gibt es noch keine eigenen Worte. Schreib auf, was dir davon geblieben ist, solange die Erinnerung frisch ist.' : (b.vol === 'abgebrochen' ? 'Abgebrochene Bücher bekommen keine Sterne. Notier dir, warum es gerade nicht gepasst hat.' : 'Deine eigenen Worte kommen dazu, wenn du das Buch gelesen hast.');
+    var cardRows = hasCard ? [['Gefühl', b.moods], ['Lesefluss', b.flow], ['Sprache', b.lang], ['Tempo', b.tempo], ['Wirkt nach', b.echo], ['Wieder lesen', b.reread], ['Mehr von ' + b.author, b.more]].map(function (r) { return { k: r[0], v: r[1], style: rowStyle(1) }; }) : [];
+    var inviteText = isRead ? 'Für dieses Buch gibt es noch keine eigenen Worte. Schreib auf, was dir davon geblieben ist, solange die Erinnerung frisch ist.' : (b.vol === 'abgebrochen' ? 'Abgebrochene Bücher bekommen keine Sterne. Notier dir, warum es gerade nicht gepasst hat.' : 'Deine eigenen Worte kommen dazu, wenn du das Buch gelesen hast. Eine Notiz für dich geht schon jetzt.');
     var book = {
       title: b.title, author: b.author, cover: cover(b.c, 96, 144),
       status: isRead ? 'Gelesen im ' + b.done : b.status,
@@ -525,8 +554,7 @@ class Component extends DCLogic {
       hasQuote: !!b.quote, quote: b.quote || '', quotePage: b.quotePage || '',
       hasCard: hasCard,
       cardSentence: hasCard ? 'Hat sich ' + b.flow + ' gelesen, die Sprache war ' + b.lang + ', das Tempo ' + b.tempo + '. Es ' + (b.echo === 'lässt mich nicht los' ? 'lässt dich nicht los' : (b.echo === 'denke noch daran' ? 'beschäftigt dich noch' : 'ist schon verblasst')) + '.' : '',
-      strong: b.strong || '', weak: b.weak || '', cardRows: cardRows,
-      details: details
+      strong: b.strong || '', weak: b.weak || '', cardRows: cardRows, details: details
     };
     var addOptions = [
       { title: 'Strichcode scannen', sub: 'Hinten auf dem Buch', isScan: true },
@@ -538,57 +566,68 @@ class Component extends DCLogic {
       var active = s.tab === t[0];
       var color = active ? INK : '#6B6760';
       return {
-        label: t[1], color: color, current: active ? 'page' : 'false',
+        label: t[1], color: color, fill: active ? 'rgba(31,29,26,.16)' : 'none', current: active ? 'page' : 'false',
         isBib: t[0] === 'bib', isShop: t[0] === 'shop', isFind: t[0] === 'find', isMe: t[0] === 'me',
-        style: 'flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; border: none; background: none; padding: 0; cursor: pointer; font-size: 11px; font-weight: ' + (active ? 600 : 500) + '; color: ' + color,
-        go: function () { self.go({ tab: t[0], screen: t[0] === 'bib' ? 'home' : 'tab', sheet: null }); }
+        style: 'flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; border: none; background: none; padding: 0; cursor: pointer; font-size: 11px; font-weight: ' + (active ? 700 : 500) + '; color: ' + color,
+        go: function () {
+          if (t[0] === 'bib') {
+            if (active) self.nav({ screen: 'home', vol: null, book: null });
+            else self.setState({ tab: 'bib', screen: s.bib.screen, sheet: null, scrolled: false });
+          } else self.setState({ tab: t[0], screen: 'tab', sheet: null });
+        }
       };
     });
     var tabTexts = { shop: ['Schaufenster', 'Hier entsteht in Schritt 2 deine kleine öffentliche Bücherei. Nur was du einzeln freigibst, erscheint hier.'], find: ['Entdecken', 'In Schritt 2 findest du hier Schaufenster in deiner Nähe und Leserstimmen zu einzelnen Büchern.'], me: ['Ich', 'Pseudonym, Privatsphäre, Lieblingsautorin und der Export deiner Bibliothek.'] };
     var tt = tabTexts[s.tab] || ['', ''];
-    var sheetTitles = { page: 'Seite eintragen', add: 'Buch erfassen', showcase: 'Im Schaufenster zeigen?' };
+    var sheetTitles = { page: 'Seite eintragen', add: 'Buch erfassen', showcase: 'Schaufenster', soon: 'Kommt bald' };
     var clamp = function (n) { return Math.max(0, Math.min(cur.pages, n)); };
+    var emptyDraft = s.draftPage === '' || s.draftPage === null;
     return {
       isHome: s.screen === 'home', isVol: s.screen === 'vol', isBook: s.screen === 'book', isTab: s.screen === 'tab',
+      scrolled: s.scrolled,
       greeting: hello + ' Seite ' + s.page + ' wartet auf dich.',
       current: { title: cur.title, author: cur.author, pages: cur.pages, cover: cover(cur.c, 48, 72) },
       page: s.page, percent: percent,
       progressStyle: 'height: 100%; width: ' + percent + '%; background: #A8322A; border-radius: 3px',
-      spines: spines, vol: vol, book: book, query: s.query,
+      savedText: s.saved, savedStyle: s.saved ? 'margin: 0; font-size: 15px; line-height: 20px; color: #4C7330; font-weight: 600' : 'margin: 0; height: 0; overflow: hidden',
+      spines: spines, vol: vol, book: book, query: s.query, hasQuery: !!s.query,
       quote: { text: BOOKS[1].quote, source: BOOKS[1].title + ', Seite ' + BOOKS[1].quotePage + ', aus deiner Karte' },
       stats: STATS.summary, statSections: STATS.sections,
-      bookBackLabel: s.from === 'home' ? 'Bibliothek' : bv.name,
-      fullCardExpanded: s.fullCard ? 'true' : 'false', showFullCard: s.fullCard, fullCardLabel: s.fullCard ? 'Ganze Karte ausblenden' : 'Ganze Karte ansehen',
+      bookBackLabel: bs.from === 'home' ? 'Bibliothek' : bv.name,
+      fullCardExpanded: s.fullCard ? 'true' : 'false', showFullCard: s.fullCard,
+      fullCardChevron: 'flex-shrink: 0; transition: transform .15s; transform: rotate(' + (s.fullCard ? 180 : 0) + 'deg)',
       showcaseChecked: shownPublic ? 'true' : 'false',
-      showcaseHint: shownPublic ? 'Sichtbar: deine Sterne, deine Lesart und das Zitat. Exemplar und Verlauf bleiben privat.' : 'Aus. Nichts von diesem Buch ist öffentlich.',
-      switchTrack: 'flex-shrink: 0; position: relative; width: 51px; height: 31px; border-radius: 16px; background: ' + (shownPublic ? '#4C7330' : '#8A857C'),
-      switchKnob: 'position: absolute; top: 2px; left: ' + (shownPublic ? '22px' : '2px') + '; width: 27px; height: 27px; border-radius: 14px; background: #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,.2)',
+      showcaseHint: shownPublic ? 'An. Sichtbar sind deine Sterne, deine Lesart und das Zitat. Exemplar und Verlauf bleiben privat.' : 'Aus. Nichts von diesem Buch ist öffentlich.',
+      switchTrack: 'flex-shrink: 0; position: relative; width: 51px; height: 31px; box-sizing: border-box; border-radius: 16px; border: 1px solid ' + (shownPublic ? '#4C7330' : '#8A857C') + '; background: ' + (shownPublic ? '#4C7330' : '#E3DFD8'),
+      switchKnob: 'position: absolute; top: 1px; left: ' + (shownPublic ? '21px' : '1px') + '; width: 27px; height: 27px; border-radius: 14px; background: #FFFFFF; box-shadow: 0 2px 4px rgba(0,0,0,.2)',
       tabs: tabs, tabTitle: tt[0], tabText: tt[1],
-      hasToast: !!s.toast, toast: s.toast || { text: '', hasUndo: false },
-      toastStyle: 'position: absolute; left: 16px; right: 16px; bottom: 97px; min-height: 52px; box-sizing: border-box; padding: 4px 12px 4px 16px; border-radius: 14px; background: #1F1D1A; color: #FFFFFF; font-size: 17px; display: flex; align-items: center; justify-content: space-between; gap: 12px; box-shadow: 0 6px 18px rgba(31,29,26,.25)',
       hasSheet: !!s.sheet, sheetTitle: sheetTitles[s.sheet] || '',
-      isPageSheet: s.sheet === 'page', isAddSheet: s.sheet === 'add', isShowcaseSheet: s.sheet === 'showcase',
+      isPageSheet: s.sheet === 'page', isAddSheet: s.sheet === 'add', isShowcaseSheet: s.sheet === 'showcase', isSoonSheet: s.sheet === 'soon',
       draftPage: s.draftPage, addOptions: addOptions, addNote: s.addNote,
-      jumps: [5, 10, 20].map(function (n) { return { label: '+' + n, go: function () { self.setState({ draftPage: clamp(Number(s.draftPage) + n) }); } }; }),
-      openCurrent: function () { self.go({ screen: 'book', book: cur.id, from: 'home', fullCard: false, open: {} }); },
+      saveDisabled: emptyDraft,
+      saveBtnStyle: 'min-height: 44px; min-width: 44px; padding: 0 8px; border: none; background: none; font-size: 17px; font-weight: 600; color: ' + (emptyDraft ? '#8A857C' : INK),
+      jumps: [5, 10, 20].map(function (n) { return { label: '+' + n, go: function () { self.setState({ draftPage: clamp(Number(s.draftPage || 0) + n) }); } }; }),
+      onScroll: function (e) { var y = e.target.scrollTop > 40; if (y !== self.state.scrolled) self.setState({ scrolled: y }); },
+      openCurrent: function () { self.setState({ fullCard: false, open: {} }); self.nav({ screen: 'book', book: cur.id, from: 'home' }); },
       openPageSheet: function () { self.setState({ sheet: 'page', draftPage: s.page }); },
       openAdd: function () { self.setState({ sheet: 'add', addNote: false }); },
-      openStats: function () { self.go({ screen: 'vol', vol: 'stats' }); },
-      goHome: function () { self.go({ screen: 'home', vol: null }); },
-      bookBack: function () { self.go(s.from === 'home' ? { screen: 'home' } : { screen: 'vol', vol: b.vol }); },
+      openSoon: function () { self.setState({ sheet: 'soon' }); },
+      openStats: function () { self.nav({ screen: 'vol', vol: 'stats' }); },
+      goHome: function () { self.nav({ screen: 'home', vol: null }); },
+      bookBack: function () { self.nav(bs.from === 'home' ? { screen: 'home' } : { screen: 'vol', vol: b.vol }); },
       setQuery: function (e) { self.setState({ query: e.target.value }); },
+      clearQuery: function () { self.setState({ query: '' }); },
       toggleFullCard: function () { self.setState({ fullCard: !s.fullCard }); },
       toggleShowcase: function () {
-        if (shownPublic) { var m = Object.assign({}, s.showcase); m[b.id] = false; self.setState({ showcase: m }); self.toastFor('Aus dem Schaufenster genommen.'); }
+        if (shownPublic) { var m = Object.assign({}, s.showcase); m[b.id] = false; self.setState({ showcase: m }); }
         else self.setState({ sheet: 'showcase' });
       },
-      confirmShowcase: function () { var m = Object.assign({}, s.showcase); m[b.id] = true; self.setState({ showcase: m, sheet: null }); self.toastFor('Im Schaufenster sichtbar.', true); },
-      undoShowcase: function () { var m = Object.assign({}, s.showcase); m[b.id] = false; self.setState({ showcase: m }); self.toastFor('Wieder privat.'); },
+      confirmShowcase: function () { var m = Object.assign({}, s.showcase); m[b.id] = true; self.setState({ showcase: m, sheet: null }); },
       closeSheet: function () { self.setState({ sheet: null }); },
-      dec: function () { self.setState({ draftPage: clamp(Number(s.draftPage) - 1) }); },
-      inc: function () { self.setState({ draftPage: clamp(Number(s.draftPage) + 1) }); },
+      dec: function () { self.setState({ draftPage: clamp(Number(s.draftPage || 0) - 1) }); },
+      inc: function () { self.setState({ draftPage: clamp(Number(s.draftPage || 0) + 1) }); },
       setDraft: function (e) { var n = parseInt(String(e.target.value).replace(/[^0-9]/g, ''), 10); self.setState({ draftPage: isNaN(n) ? '' : clamp(n) }); },
-      savePage: function () { var n = Number(s.draftPage); if (!s.draftPage && s.draftPage !== 0) return; self.setState({ page: clamp(n), sheet: null }); self.toastFor('Seite ' + clamp(n) + ' eingetragen.'); }
+      savePage: function () { if (emptyDraft) return; var n = clamp(Number(s.draftPage)); var diff = n - s.page; self.setState({ page: n, sheet: null, saved: 'Eingetragen: Seite ' + n + (diff > 0 ? ', ' + diff + ' Seiten weiter.' : '.') }); }
     };
   }
 }

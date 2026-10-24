@@ -20,7 +20,7 @@ Grounded list (by resonance): 1 Buchleinen, Goldprägung und Vorsatzpapier (owne
 Challenger verdicts:
 - data-sublime barcode field: declined. Kept discipline: total palette commitment, nothing outside the defined spectrum.
 - botanical folio: declined (competitive on nothing). Kept discipline: one fixed scale and shared baseline for every cover across all screens.
-- labanotation score: declined. Kept discipline: length encodes real quantity (spine fill encodes the book count).
+- labanotation score: declined. Kept discipline: length encodes real quantity (spine fill encodes the book count). Dropped 24.10.2026 after finish review: spines are full width with small fixed offsets; the count is shown as a number.
 - design annual plate section: declined. Kept discipline: one UI face throughout, the display face only for book-world moments.
 - boarding pass and gate board: declined. Kept discipline: a change stays marked until noticed (a just-finished book keeps its mark until opened).
 - zoo guide map: declined. Kept discipline: colour fields own whole regions (an opened volume's header is its colour).
@@ -33,7 +33,7 @@ OWN-WORLD: Weißer Grund, Tinte #1F1D1A. Sieben gesättigte Leinenfarben in Spek
 
 STORY: Man sieht sofort, wo man liest, trägt mit einem Tippen die Seite ein, öffnet einen Band über die volle Zeilenbreite und findet die eigenen Worte zuoberst auf der Buchseite. Die App spricht leise in ganzen Sätzen.
 
-FIRST VIEWPORT: Großer Titel „Bibliothek“. Darunter Karte „Weiterlesen“ (Cover, Titel, Seite 142 von 312, Fortschritt, Knopf „Seite eintragen“). Dann der Stapel: sieben liegende Rücken, je 358 × 56 pt, 6 pt Abstand, leicht versetzt, Name links, Anzahl rechts. Unten über der Tab-Leiste der Knopf „Buch erfassen“ im Daumenbereich.
+FIRST VIEWPORT: Großer Titel „Bibliothek“. Darunter Karte „Weiterlesen“ (Cover, Titel, Seite 142 von 312, Fortschritt, Knopf „Seite eintragen“). Dann der Stapel: sieben liegende Rücken, je 358 × 56 pt, 6 pt Abstand, leicht versetzt, Name links, Anzahl rechts. „Buch erfassen“ liegt als gestrichelte oberste Reihe auf dem Stapel (sichtbar ohne Scrollen), dazu „+“ neben dem Titel.
 
 FORM: Regenbogen-Reihe als Stapel liegender Bände, Position 3 der eigenen Liste. seed:4dac831833509680
 
