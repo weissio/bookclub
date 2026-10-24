@@ -41,6 +41,10 @@ Getrennt nach Herkunft, damit klar ist, was feststeht und was nur vorgeschlagen 
 | 24.10.2026 | Unter „Weitere Bände“: **Abgebrochen** mit Begründung und Bewertung, fließt mit Autor, Genre usw. in den Algorithmus für passende Bücher ein (5 abgebrochene Bücher von XY ohne positives gelesenes = passt eher nicht). **Pausiert** mit Begründung, wieder aktivierbar. **Aktiv** für mehr als 5 gleichzeitig gelesene Bücher, weil nur 5 auf die Startseite passen. |
 | 24.10.2026 | Aktiv geprüft: Parallel lesen ist bei engagierten Lesern die Mehrheit, ein Drittel liest nur ein Buch. Festgelegt: bis 5 Bücher aktiv (= Startseite), kein Band „Aktiv“. Beim 6. Buch fragt die App, welches pausiert werden soll. |
 | 24.10.2026 | Zweck des Schaufensters: Hier veröffentlicht eine Person ihre eigenen Buchempfehlungen mit eigenen Notizen. Ein abgebrochenes Buch darf hinein, das ist aber nicht sinnvoll. Deshalb wird es dort nicht angeboten, sondern ist nur bewusst möglich. |
+| 24.10.2026 | Abbruchgründe bestätigt (Stil/Sprache, Tempo, Thema, Figuren, zu lang, zu schwer, Erwartung nicht erfüllt, nicht mein Genre, inhaltlich unangenehm, anderes). Wird beim Empfehlungsalgorithmus vertieft: gleiche Kriterien bei Gelesen wie bei Abbruch, jeweils optional. |
+| 24.10.2026 | Pausegründe bestätigt (gerade nicht die Stimmung, zu schwer für jetzt, ein anderes Buch drängt, keine Zeit, will es in Ruhe lesen, anderes). |
+| 24.10.2026 | Die Formulierung „Groll“ kommt nirgends vor. Sie ist schwach und unnötig. |
+| 24.10.2026 | Ein Tipp auf einen Balken holt kein Buch ins Licht. Die Reihenfolge ändert man nur über die eigene Priorisierung („Reihenfolge“). |
 
 ## Vorschläge von Claude – noch nicht bestätigt
 

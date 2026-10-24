@@ -129,3 +129,8 @@ Beispiel (Arjen): Wurden 5 Bücher von Autor XY abgebrochen und gibt es kein pos
 
 Daraus folgt: Abbrüche und Pausen müssen mit Grund, Datum und Seite gespeichert werden, nicht nur als Status.
 
+## Gründe (bestätigt 24.10.2026)
+- **Abbrechen:** Stil/Sprache, Tempo, Thema, Figuren, Zu lang, Zu schwer, Erwartung nicht erfüllt, Nicht mein Genre, Inhaltlich unangenehm, Anderes (+ Freitext optional)
+- **Pausieren:** Gerade nicht die Stimmung, Zu schwer für jetzt, Ein anderes Buch drängt, Keine Zeit, Will es in Ruhe lesen, Anderes (+ Freitext optional)
+- **Offen für den Empfehlungsalgorithmus:** Gelesene und abgebrochene Bücher erhalten dieselben Kriterien zum Ausfüllen, jeweils optional.
+
