@@ -118,8 +118,7 @@ _Entwurf vom 10.10.2026 – **teilweise bestätigt** (Genre-Liste, Lieblingsauto
 - Ein neu angefangenes Buch kommt ans Ende der Reihenfolge, wenn bereits ein Buch offen ist. Nach vorn holt man es selbst (bestätigt 24.10.2026).
 
 ## Lesezustände unter „Weitere Bände“ (24.10.2026, bestätigt)
-- **Aktiv:** alle Bücher, die gerade gelesen werden. Auf der Startseite haben nur 5 Platz (Priorität 1 bis 5). Weitere aktive Bücher stehen im Band „Aktiv“.
-  - Annahme von Claude, noch zu bestätigen: Der Band zeigt alle aktiven Bücher, die ersten 5 als „auf der Startseite“ markiert. Ein 6. Buch wird nicht blockiert, sondern kommt in „Aktiv“.
+- **Am Lesen (aktiv):** höchstens 5 Bücher gleichzeitig, genau die 5 Plätze der Startseite. Es gibt keinen eigenen Band „Aktiv“. Wer ein 6. Buch anfängt, wird ruhig gefragt, welches der 5 pausiert werden soll (bestätigt 24.10.2026, nach Recherche: rund ein Drittel liest nur ein Buch, die Mehrheit der engagierten Leser liest 2–5 parallel).
 - **Pausiert:** mit Begründung (optional), jederzeit wieder auf aktiv setzbar.
 - **Abgebrochen:** mit Begründung und mit Bewertung (ersetzt den früheren Vorschlag „abgebrochene Bücher bekommen keine Sterne“).
 
