@@ -4,6 +4,10 @@ _Stand 24.10.2026. Grundlage: [ENTSCHEIDUNGSVORLAGE-USP3.md](../ENTSCHEIDUNGSVOR
 
 Kennzeichnung: **[F]** Forschung, **[P]** Praxis. Die Ziffern verweisen auf die Quellenliste mit URL. **„Entscheidung“** heißt: eigene Gestaltungswahl, keine Studie belegt sie direkt. Gewichte ohne Quelle sind Testwerte aus der Vorlage.
 
+> **Stand eingefroren (24.10.2026):** Bis zum Lesertest ändern wir am Bogen nichts mehr. „gemischt“ bleibt in der Auswertung eine eigene Antwort und darf nie mit „neutral“ oder einer fehlenden Angabe zusammengefasst werden.
+>
+> **Nächster inhaltlicher Nachweis:** F1 allein gegen F1 plus Aspekte. Der Lesertest prüft zuerst, ob die Fragen verstanden werden. Welche Variante bessere Empfehlungen liefert, zeigen erst spätere Buchbewertungen.
+
 ## 1. Fragen im Überblick
 
 | Nr | Frage | Wortlaut | Antworten (Form) | Kodierung | Signal für die Empfehlung | Beleg |

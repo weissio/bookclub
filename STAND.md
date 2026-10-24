@@ -25,13 +25,9 @@ _Zuletzt aktualisiert: 24.10.2026_
 
 ## Nächster Schritt
 
-Der klickbare Prototyp „Licht an“ von Designer 3 ist fertig: [prototyp/designer/3-charakter/LichtAn.dc.html](prototyp/designer/3-charakter/LichtAn.dc.html), 27 Screens unter `screens/`. Er liegt im Canvas auf der Seite „Licht an (Prototyp)“. Arjen prüft ihn.
-
-Offene Fragen des Designers:
-1. Soll die Bewertung „Lichter“ heißen oder neutrale Punkte zeigen?
-2. Wonach richtet sich die Tageszeit: nach der Uhr, nach dem Systemmodus oder nur nach der Zugkette?
-3. Gehört „Verliehen“ schon ins Raster?
-4. Was passiert ab dem 6. Buch am Lesen?
+- **Bewertungsbogen eingefroren** bis zum Lesertest, siehe [usp3/BEWERTUNGSBOGEN.md](usp3/BEWERTUNGSBOGEN.md). Die Spezifikation ist belegt, der Prototyp „Licht an“ setzt sie um.
+- **Lesertest:** zwei Runden kognitiver Interviews mit je 6–8 Lesern zum Verständnis der Fragen. Der Testplan steht in der Spezifikation.
+- **Nachweis zum Algorithmus:** F1 allein gegen F1 plus Aspekte, gemessen an späteren Buchbewertungen. Grundlage sind [usp3/CLUSTERUNG.md](usp3/CLUSTERUNG.md) und `usp3/auswertung.py` (liegt lokal bei Arjen, noch nicht auf GitHub).
 
 **Hinweis:** Der Push zu GitHub schlägt seit 24.10. mit 403 fehl. Die Commits liegen lokal; der GitHub-Zugang muss in den Einstellungen unter Konnektoren erneuert werden.
 
