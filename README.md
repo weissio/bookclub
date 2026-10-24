@@ -35,3 +35,4 @@ Nach den [Karpathy-Guidelines](https://x.com/karpathy/status/2015883857489522876
 
 - [USP.md](USP.md) – die drei USPs (Bibliothek, Schaufenster, Empfehlungen)
 - [RECHERCHE-EMPFEHLUNG.md](RECHERCHE-EMPFEHLUNG.md) – Recherche und Vorschlag für die Kriterien und den Algorithmus zu USP III
+- [ENTSCHEIDUNGSVORLAGE-USP3.md](ENTSCHEIDUNGSVORLAGE-USP3.md) – überarbeitete Vorlage zum Empfehlungsalgorithmus (nach unabhängiger Prüfung, noch nicht beschlossen)

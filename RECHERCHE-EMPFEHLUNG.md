@@ -1,5 +1,14 @@
 # Recherche: Kriterien und Gewichtung für USP III (Buchempfehlung)
 
+> **Hinweis (24.10.2026):** Diese Recherche wurde unabhängig geprüft, siehe [pruefungen/USP-III-Codex-Pruefung.md](pruefungen/USP-III-Codex-Pruefung.md). Mehrere Punkte sind korrigiert:
+> - Die OCLC-Studie trägt keine Rangfolge der Kriterien.
+> - Die 10-%-Regel für frühe Abbrüche ist nicht belegt und entfällt.
+> - Die Formel war nicht konsistent normalisiert.
+> - Ein Abbruch mit 5 Sternen darf nicht automatisch negativ werden.
+>
+> Maßgeblich ist jetzt [ENTSCHEIDUNGSVORLAGE-USP3.md](ENTSCHEIDUNGSVORLAGE-USP3.md).
+
+
 _Stand 24.10.2026. Kennzeichnung: **[F]** = belastbare Forschung (begutachtet oder empirisch), **[P]** = Praxis, Herstellerangabe, Fachliteratur ohne Datenbasis oder Anekdote. Zahlen in eckigen Klammern verweisen auf die Quellenliste._
 
 ## 1. Appeal Factors aus der Leserberatung
