@@ -32,7 +32,7 @@ Einschränkung: Die Quellen beschreiben die Screens nur in Worten. Bilder der Ap
 
 **1.000 Bücher:** Es ändert sich nur die Zahl unter dem Gegenstand. Das Raster aus acht Gegenständen bleibt fest, Listen entstehen erst im jeweiligen Band.
 
-**Sympathisches Element:** die Lampe mit Zugkette. Ein Zug am Kettchen schaltet zwischen Abend- und Tagesansicht um (statt eines Schalters in den Einstellungen). Dazu kommen kleine Zeilen unter den Zahlen: „haben Zeit“, „irgendwann“, „ohne Groll“.
+**Sympathisches Element:** die Lampe mit Zugkette. Ein Zug am Kettchen schaltet zwischen Abend- und Tagesansicht um (statt eines Schalters in den Einstellungen). Dazu kommen kleine Zeilen unter den Zahlen: „haben Zeit“, „irgendwann“.
 
 **Risiko:** Die dunkle Abendwelt passt nicht zu jeder Tageszeit, deshalb ist die Tagesvariante Pflicht. Außerdem sind die Gegenstände klein: Sie müssen bei großer Systemschrift als Liste mit Icon umbrechen, sonst werden die Beschriftungen eng. Acht kleine Illustrationen sind Aufwand und müssen stilistisch streng bleiben, sonst wirken sie wie Clipart.
 
@@ -190,7 +190,7 @@ Der Band „Abgebrochen“ zeigt je Buch Seite, Gründe und Lichter, die Buchsei
 5. Will es in Ruhe lesen
 6. Anderes
 
-**Offen:** Ist der Ton „Abgebrochen. Ohne Groll.“ richtig? Soll ein abgebrochenes Buch im Schaufenster zeigbar sein? (Der Schalter ist derzeit vorhanden.)
+**Offen:** Soll ein abgebrochenes Buch im Schaufenster zeigbar sein? (Der Schalter ist derzeit vorhanden.)
 
 ---
 
@@ -208,3 +208,4 @@ Arjens Entscheidung: Aktiv sind genau die bis zu 5 Bücher der Startseite. Einen
 - Die Kopfzeile des Sheets heißt „Doch nicht“, damit sie nicht mit „Abbrechen“ (Buch abbrechen) verwechselt wird.
 - **Prototyp-Schalter:** 1, 2, 3 oder 5 Bücher.
 - **Schaufenster (Arjen, 24.10.2026):** Das Schaufenster zeigt eigene Empfehlungen mit eigenen Worten. Bei gelesenen Büchern bleibt der Schalter, wie er ist; die Rückfrage beginnt mit „Hier steht deine Empfehlung mit deinen Worten.“ Bei abgebrochenen Büchern steht nur noch ein kleiner Schalter ganz unten mit dem Satz „Das Schaufenster ist für Empfehlungen gedacht. Zeigen ist trotzdem möglich.“ Er ist standardmäßig aus und fragt ebenfalls nach. Screens 17 bis 20.
+- **Arjen, 24.10.2026:** Abbruch- und Pausegründe sind bestätigt. Die frühere wertende Formulierung beim Abbrechen ist überall entfernt; der Band „Abgebrochen“ heißt im Untertitel „Mit Grund und Lichtern“, die Rückmeldung lautet „Abgebrochen bei Seite 12.“ Ein Tipp auf den Titel in einem Balken öffnet die Buchseite und holt das Buch **nicht** ins Licht. Die Reihenfolge ändert sich nur über „Reihenfolge“, ein Tipp auf die Zahl trägt die Seite ein. Neue Screens: 00a bis 00c, 03b.

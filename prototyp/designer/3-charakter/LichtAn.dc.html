@@ -628,7 +628,7 @@ var VOLS = {
   gelesen: { name: 'Gelesen', sub: 'Zu Ende gelesen, mit deinen eigenen Worten.', search: 'In 148 gelesenen Büchern suchen' },
   ungelesen: { name: 'Ungelesen im Regal', sub: 'Gehören dir schon. Sie haben Zeit.', search: 'Im Ungelesenen suchen' },
   wunsch: { name: 'Wunschliste', sub: 'Noch nicht bei dir. Irgendwann vielleicht.', search: 'In der Wunschliste suchen' },
-  abgebrochen: { name: 'Abgebrochen', sub: 'Beiseitegelegt, ohne Groll.', search: 'Im Abgebrochenen suchen' },
+  abgebrochen: { name: 'Abgebrochen', sub: 'Mit Grund und Lichtern.', search: 'Im Abgebrochenen suchen' },
   regale: { name: 'Eigene Regale', sub: 'Sammlungen, die nur du so ordnest.', search: 'In deinen Regalen suchen' },
   verliehen: { name: 'Verliehen', sub: 'Unterwegs bei Menschen, denen du traust.', search: 'Im Verliehenen suchen' },
   mehr: { name: 'Weitere Bände', sub: 'Alles, was nicht jeden Tag gebraucht wird.' },
@@ -710,8 +710,8 @@ class Component extends DCLogic {
     var bars = act.slice(1).map(function (id) {
       var b = lib[id];
       return { short: b.title, page: String(s.pages[id]), strip: strip(b.cover, 28) + '; margin-left: 8px',
-        lightAria: b.title + ', Seite ' + s.pages[id] + '. Ins Licht legen', pageAria: b.title + ': Seite ' + s.pages[id] + ', neue Seite eintragen',
-        toLight: function () { toFront(id, true); }, openPage: openPageFor(id) };
+        lightAria: b.title + ', Buchseite öffnen', pageAria: b.title + ': Seite ' + s.pages[id] + ', neue Seite eintragen',
+        toLight: function () { self.go({ screen: 'book', book: id, from: 'home' }); }, openPage: openPageFor(id) };
     });
     var n = Object.assign({}, COUNTS);
     if (s.extra) n[s.target] += s.extra;
@@ -870,7 +870,7 @@ class Component extends DCLogic {
       isHome: s.screen === 'home', isVol: s.screen === 'vol', isBook: s.screen === 'book', isTab: s.screen === 'tab',
       headLine: abend ? 'Das Licht ist noch an.' : 'Tageslicht im Zimmer.', subLine: s.saved || ' ',
       readCount: '· ' + act.length + ' von 5', lead: lead, bars: bars,
-      hasRoomNote: act.length < 3, roomNote: act.length === 1 ? 'Daneben ist Platz für bis zu vier weitere Bücher. Ein Tipp auf einen Titel holt ihn später ins Licht.' : 'Tipp auf den Titel: ins Licht legen. Tipp auf die Zahl: Seite eintragen.',
+      hasRoomNote: act.length < 3, roomNote: act.length === 1 ? 'Daneben ist Platz für bis zu vier weitere Bücher. Die Reihenfolge legst du selbst fest.' : 'Tipp auf den Titel: Buchseite. Tipp auf die Zahl: Seite eintragen.',
       orderBtnStyle: 'min-height: 44px; border: none; background: none; padding: 0 6px; cursor: pointer; font-size: 14px; font-weight: 800; color: var(--acc)' + (act.length < 2 ? '; visibility: hidden' : ''),
       openOrder: function () { self.setState({ sheet: 'order' }); },
       orderRows: act.map(function (id, i) {
@@ -917,7 +917,7 @@ class Component extends DCLogic {
       againLabel: 'Noch einmal etwas von ' + sheetBook.author + '?',
       againOpts: AGAIN.map(function (o) { return { label: o[1], checked: s.again === o[0] ? 'true' : 'false', style: seg(s.again === o[0]), pick: function () { self.setState({ again: s.again === o[0] ? '' : o[0] }); } }; }),
       confirmPause: function () { var id = s.book; self.setState({ active: act.filter(function (x) { return x !== id; }), paused: s.paused.concat([{ id: id, reasons: s.reasons.slice(), note: s.note, when: 'Oktober 2026' }]), sheet: null, saved: 'Pausiert, Bändchen bleibt drin.' }); },
-      confirmDrop: function () { var id = s.book; self.setState({ active: act.filter(function (x) { return x !== id; }), paused: s.paused.filter(function (x) { return x.id !== id; }), dropped: s.dropped.concat([{ id: id, reasons: s.reasons.slice(), lights: s.dropLights, again: s.again, note: s.note, when: 'Oktober 2026' }]), sheet: null, saved: 'Abgebrochen. Ohne Groll.' }); },
+      confirmDrop: function () { var id = s.book; self.setState({ active: act.filter(function (x) { return x !== id; }), paused: s.paused.filter(function (x) { return x.id !== id; }), dropped: s.dropped.concat([{ id: id, reasons: s.reasons.slice(), lights: s.dropLights, again: s.again, note: s.note, when: 'Oktober 2026' }]), sheet: null, saved: 'Abgebrochen bei Seite ' + (s.pages[s.book] || 0) + '.' }); },
       dropSaveLabel: 'Bei Seite ' + (s.pages[s.book] || 0) + ' abbrechen',
       showcaseChecked: on ? 'true' : 'false',
       showcaseConfirm: b.vol === 'abgebrochen' ? 'Das Schaufenster ist für Empfehlungen gedacht. Andere sähen unter deinem Pseudonym „Leselampe“ (Beispiel), dass du es abgebrochen hast, mit Grund und Lichtern. Exemplar und Verlauf bleiben privat. Du kannst es jederzeit wieder herausnehmen.' : 'Hier steht deine Empfehlung mit deinen Worten. Andere sehen unter deinem Pseudonym „Leselampe“ (Beispiel): deine Lesart, deine Lichter und das Zitat. Exemplar, Standort und Leseverlauf bleiben privat. Du kannst es jederzeit wieder herausnehmen.',
