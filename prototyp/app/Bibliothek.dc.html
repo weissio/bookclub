@@ -21,7 +21,7 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 ::selection{background:#E9D9B0;color:#1F1D1A}
 .linen{background-image:url(/_blob/fc177fec48818780d685607b9eea21d5);background-size:128px 128px;background-blend-mode:multiply}
 .vorsatz{background-image:url(/_blob/2a5bd52f874870d5bef9f086f6809ef7);background-size:390px 24px;background-repeat:repeat-x}
-.wall{background-color:#E9DFCC;background-image:url(/_blob/39fadb20abdb6a277d4352ba1feaef22);background-size:128px 128px}
+.wall{background-color:#E9DFCC;background-image:url(/_blob/613d9a95946f6112d2daabdd2d50346e);background-size:128px 128px}
 .paper{background-color:#F8F4EB;background-image:url(/_blob/67f11f01afe6fa9a030c514d45908343);background-size:128px 128px}
 .cloth-btn{background-color:#7E2E26;background-image:url(/_blob/fc177fec48818780d685607b9eea21d5);background-size:128px 128px;background-blend-mode:multiply}
 .scr{animation:fadeIn .15s ease-out both}
@@ -46,10 +46,10 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <p role="status" aria-live="polite" style="margin: 12px 0 0 0; font-family: 'EB Garamond', Georgia, serif; font-size: 20px; line-height: 27px; color: #3A352E">{{greeting}}</p>
 
 <div role="list" aria-label="Dein Regal" style="margin-top: 30px; display: flex; flex-direction: column; gap: 5px">
-<div role="listitem" style="padding-left: 6px">
+<div role="listitem" style="padding-left: 10px; width: 68%">
 <button type="button" onClick="{{openAdd}}" class="linen" style="position: relative; width: 100%; min-height: 56px; box-sizing: border-box; border: none; border-radius: 3px 6px 6px 3px; background-color: #F2DDB4; padding: 8px 0; cursor: pointer; display: flex; align-items: center; color: #3A352E; text-align: left; box-shadow: 0 1px 2px rgba(31,29,26,.22), inset 0 0 0 1px rgba(31,29,26,.10)">
-<span style="flex-grow: 1; padding-left: 22px; font-family: 'EB Garamond', Georgia, serif; font-size: 21px; line-height: 25px; font-weight: 500">Ein Buch dazustellen</span>
-<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" style="flex-shrink: 0; margin-right: 18px"><path d="M9 2.5v13M2.5 9h13" stroke="rgba(255,255,255,.7)" stroke-width="2.4" stroke-linecap="round" transform="translate(0 1)"></path><path d="M9 2.5v13M2.5 9h13" stroke="#6B6150" stroke-width="2.2" stroke-linecap="round"></path></svg>
+<span style="flex-grow: 1; padding-left: 18px; font-family: 'EB Garamond', Georgia, serif; font-size: 20px; line-height: 25px; font-weight: 500">Ein Buch dazustellen</span>
+<svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" style="flex-shrink: 0; margin-right: 14px"><path d="M9 2.5v13M2.5 9h13" stroke="rgba(255,255,255,.7)" stroke-width="2.4" stroke-linecap="round" transform="translate(0 1)"></path><path d="M9 2.5v13M2.5 9h13" stroke="#6B6150" stroke-width="2.2" stroke-linecap="round"></path></svg>
 </button>
 </div>
 
@@ -84,7 +84,7 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <span style="font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 19px; line-height: 25px">{{card.text}}</span>
 </button>
 
-<p style="margin: 48px 12px 0 12px; text-align: center; font-family: 'EB Garamond', Georgia, serif; font-size: 17px; line-height: 24px; color: #5E574C">{{colophon}}</p>
+<button type="button" onClick="{{openStats}}" style="margin: 44px 12px 0 12px; min-height: 44px; border: none; background: none; cursor: pointer; text-align: center; font-family: 'EB Garamond', Georgia, serif; font-size: 17px; line-height: 24px; color: #5E574C; display: flex; flex-direction: column; align-items: center; gap: 2px"><span>{{colophon}}</span><span style="font-style: italic; color: #1F1D1A; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px">Mehr in deinen Statistiken</span></button>
 <p style="margin: 18px 0 0 0; text-align: center; font-size: 12px; line-height: 16px; color: #6B6760">Alle Bücher, Namen und Zitate sind Beispieldaten.</p>
 </div>
 </div>
@@ -129,13 +129,12 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </span>
 </sc-if>
 <span style="display: flex; align-items: center; gap: 8px; min-width: 0">
-<sc-if value="{{e.fresh}}" hint-placeholder-val="{{ false }}"><span style="flex-shrink: 0; font-size: 13px; font-weight: 600; color: #FFFFFF; background: #1F1D1A; border-radius: 10px; padding: 1px 8px">Neu</span></sc-if>
+<sc-if value="{{e.fresh}}" hint-placeholder-val="{{ false }}"><span style="flex-shrink: 0; font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 17px; color: #8E2F27">neu</span></sc-if>
 <span style="font-size: 15px; color: #6B6760; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{e.meta}}</span>
 </span>
 </span>
-<svg width="9" height="15" viewBox="0 0 9 15" aria-hidden="true" style="flex-shrink: 0"><path d="M1.5 1.5l6 6-6 6" fill="none" stroke="#8A857C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
 </button>
-<div aria-hidden="true" style="height: 1px; margin-left: 78px; background: #E8E0D2"></div>
+<div aria-hidden="true" style="height: 1px; margin: 0 16px 0 78px; background: #DCCFB8"></div>
 </sc-for>
 <sc-if value="{{vol.noResults}}" hint-placeholder-val="{{ false }}">
 <p style="margin: 24px 16px; font-size: 17px; line-height: 24px; color: #6B6760">Kein Buch in {{vol.name}} passt zu „{{query}}“.</p>
@@ -153,9 +152,9 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <div style="padding: 0 16px 32px 16px; display: flex; flex-direction: column">
 <sc-for list="{{statSections}}" as="sec" hint-placeholder-count="5">
 <section style="margin-top: 24px">
-<h2 style="margin: 0 0 4px 0; font-size: 20px; line-height: 25px; font-weight: 700">{{sec.title}}</h2>
+<h2 style="margin: 0 0 4px 0; font-family: 'EB Garamond', Georgia, serif; font-size: 24px; line-height: 28px; font-weight: 500">{{sec.title}}</h2>
 <p style="margin: 0 0 8px 0; font-size: 15px; line-height: 20px; color: #6B6760">{{sec.note}}</p>
-<div style="border: 1px solid #E2D9C9; border-radius: 12px; overflow: hidden">
+<div style="border-top: 1px solid #CDBFA6; border-bottom: 1px solid #CDBFA6">
 <sc-for list="{{sec.rows}}" as="r" hint-placeholder-count="3">
 <div style="{{r.style}}">
 <span style="font-size: 17px">{{r.k}}</span>
@@ -206,15 +205,15 @@ Bibliothek
 
 <sc-if value="{{book.hasReading}}" hint-placeholder-val="{{ false }}">
 <section style="margin-top: 32px">
-<h2 style="margin: 0 0 10px 0; font-size: 22px; line-height: 28px; font-weight: 700">Meine Lesart</h2>
-<p style="margin: 0; font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 21px; line-height: 30px">{{book.reading}}</p>
-<p style="margin: 10px 0 0 0; font-size: 17px; line-height: 24px; color: #6B6760">Für {{book.forWhom}}</p>
+<h2 style="margin: 0 0 10px 0; font-family: 'EB Garamond', Georgia, serif; font-size: 26px; line-height: 30px; font-weight: 500">Meine Lesart</h2>
+<div style="background: #FCFAF5; padding: 16px 18px 18px 18px; transform: rotate(-0.5deg); box-shadow: 0 1px 2px rgba(60,40,15,.25), 0 6px 14px -8px rgba(60,40,15,.35)"><p style="margin: 0; font-family: 'EB Garamond', Georgia, serif; font-style: italic; font-size: 21px; line-height: 30px">{{book.reading}}</p>
+<p style="margin: 12px 0 0 0; font-family: 'EB Garamond', Georgia, serif; font-size: 18px; line-height: 24px; color: #5E574C">Für {{book.forWhom}}</p></div>
 </section>
 </sc-if>
 
 <sc-if value="{{book.inviteCard}}" hint-placeholder-val="{{ false }}">
 <section style="margin-top: 32px; display: flex; flex-direction: column; gap: 14px">
-<h2 style="margin: 0; font-size: 22px; line-height: 28px; font-weight: 700">Meine Lesart</h2>
+<h2 style="margin: 0; font-family: 'EB Garamond', Georgia, serif; font-size: 26px; line-height: 30px; font-weight: 500">Meine Lesart</h2>
 <p style="margin: 0; font-size: 17px; line-height: 25px">{{book.inviteText}}</p>
 <button type="button" onClick="{{openSoon}}" style="align-self: flex-start; min-height: 48px; padding: 0 20px; border: 1.5px solid #1F1D1A; border-radius: 10px; background: none; color: #1F1D1A; font-size: 17px; font-weight: 600; cursor: pointer">{{book.inviteAction}}</button>
 </section>
@@ -229,13 +228,13 @@ Bibliothek
 
 <sc-if value="{{book.hasCard}}" hint-placeholder-val="{{ false }}">
 <section style="margin-top: 32px">
-<h2 style="margin: 0 0 10px 0; font-size: 22px; line-height: 28px; font-weight: 700">So hat es sich gelesen</h2>
+<h2 style="margin: 0 0 10px 0; font-family: 'EB Garamond', Georgia, serif; font-size: 26px; line-height: 30px; font-weight: 500">So hat es sich gelesen</h2>
 <p style="margin: 0; font-size: 17px; line-height: 25px">{{book.cardSentence}}</p>
 <dl style="margin: 14px 0 0 0; display: grid; grid-template-columns: auto 1fr; column-gap: 12px; row-gap: 6px; font-size: 17px; line-height: 24px">
 <dt style="font-weight: 600">Stark</dt><dd style="margin: 0">{{book.strong}}</dd>
 <dt style="font-weight: 600">Gehakt</dt><dd style="margin: 0">{{book.weak}}</dd>
 </dl>
-<div style="margin-top: 14px; border: 1px solid #E2D9C9; border-radius: 12px; overflow: hidden">
+<div style="margin-top: 14px; border-top: 1px solid #CDBFA6; border-bottom: 1px solid #CDBFA6">
 <button type="button" aria-expanded="{{fullCardExpanded}}" onClick="{{toggleFullCard}}" style="width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: none; background: none; padding: 0 16px; cursor: pointer; text-align: left; color: #1F1D1A">
 <span style="font-size: 17px">Ganze Karte</span>
 <svg width="14" height="9" viewBox="0 0 14 9" aria-hidden="true" style="{{fullCardChevron}}"><path d="M1.5 1.5l5.5 5.5 5.5-5.5" fill="none" stroke="#8A857C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
@@ -249,7 +248,7 @@ Bibliothek
 </section>
 </sc-if>
 
-<div style="margin-top: 32px; border: 1px solid #E2D9C9; border-radius: 12px; overflow: hidden">
+<div style="margin-top: 32px; border-top: 1px solid #CDBFA6; border-bottom: 1px solid #CDBFA6">
 <sc-for list="{{book.details}}" as="d" hint-placeholder-count="2">
 <div style="{{d.wrapStyle}}">
 <button type="button" aria-expanded="{{d.expanded}}" onClick="{{d.toggle}}" style="width: 100%; min-height: 52px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: none; background: none; padding: 0 16px; cursor: pointer; text-align: left; color: #1F1D1A">
@@ -266,7 +265,7 @@ Bibliothek
 </div>
 
 <section style="margin-top: 32px">
-<h2 style="margin: 0 0 10px 0; font-size: 22px; line-height: 28px; font-weight: 700">Teilen</h2>
+<h2 style="margin: 0 0 10px 0; font-family: 'EB Garamond', Georgia, serif; font-size: 26px; line-height: 30px; font-weight: 500">Teilen</h2>
 <button type="button" role="switch" aria-checked="{{showcaseChecked}}" onClick="{{toggleShowcase}}" style="width: 100%; min-height: 56px; display: flex; align-items: center; justify-content: space-between; gap: 12px; border: 1px solid #E2D9C9; border-radius: 12px; background: rgba(255,255,255,.45); padding: 0 16px; cursor: pointer; text-align: left; color: #1F1D1A">
 <span style="font-size: 17px">Im Schaufenster zeigen</span>
 <span aria-hidden="true" style="{{switchTrack}}"><span style="{{switchKnob}}"></span></span>
@@ -313,7 +312,7 @@ Bibliothek
 <div aria-hidden="true" style="width: 36px; height: 5px; border-radius: 3px; background: #D5D0C7; margin: 2px auto 0 auto"></div>
 <div style="position: relative; height: 48px; display: flex; align-items: center; justify-content: space-between; padding: 0 8px; border-bottom: 1px solid #E8E0D2">
 <button type="button" onClick="{{closeSheet}}" style="min-height: 44px; min-width: 44px; padding: 0 8px; border: none; background: none; cursor: pointer; font-size: 17px; color: #1F1D1A">Abbrechen</button>
-<h2 style="position: absolute; left: 110px; right: 110px; margin: 0; text-align: center; font-size: 17px; line-height: 22px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{sheetTitle}}</h2>
+<h2 style="position: absolute; left: 100px; right: 100px; margin: 0; text-align: center; font-family: 'EB Garamond', Georgia, serif; font-size: 20px; line-height: 24px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{sheetTitle}}</h2>
 <sc-if value="{{isPageSheet}}" hint-placeholder-val="{{ false }}"><button type="button" onClick="{{savePage}}" disabled="{{saveDisabled}}" style="{{saveBtnStyle}}">Sichern</button></sc-if>
 </div>
 <div style="padding: 16px 16px 0 16px">
@@ -339,16 +338,9 @@ Bibliothek
 <sc-if value="{{isAddSheet}}" hint-placeholder-val="{{ false }}">
 <div style="display: flex; flex-direction: column">
 <sc-for list="{{addOptions}}" as="o" hint-placeholder-count="3">
-<button type="button" onClick="{{o.pick}}" style="min-height: 68px; display: flex; align-items: center; gap: 14px; border: none; border-bottom: 1px solid #E8E0D2; background: none; padding: 0; cursor: pointer; text-align: left; color: #1F1D1A">
-<span aria-hidden="true" style="width: 44px; height: 44px; border-radius: 12px; background: #ECE4D5; display: flex; align-items: center; justify-content: center; flex-shrink: 0">
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1F1D1A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-<sc-if value="{{o.isScan}}" hint-placeholder-val="{{ true }}"><path d="M3 7V4h3M18 4h3v3M21 17v3h-3M6 20H3v-3M7 8v8M10 8v8M13 8v8M16.5 8v8"></path></sc-if>
-<sc-if value="{{o.isType}}" hint-placeholder-val="{{ false }}"><path d="M3 6h18v12H3zM7 10h.01M11 10h.01M15 10h.01M7 14h10"></path></sc-if>
-<sc-if value="{{o.isHand}}" hint-placeholder-val="{{ false }}"><path d="M4 20l4-1 11-11-3-3L5 16zM14 7l3 3"></path></sc-if>
-</svg>
-</span>
-<span style="display: flex; flex-direction: column; gap: 2px; flex-grow: 1"><span style="font-size: 17px; font-weight: 600">{{o.title}}</span><span style="font-size: 15px; color: #6B6760">{{o.sub}}</span></span>
-<svg width="9" height="15" viewBox="0 0 9 15" aria-hidden="true" style="flex-shrink: 0"><path d="M1.5 1.5l6 6-6 6" fill="none" stroke="#8A857C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+<button type="button" onClick="{{o.pick}}" style="min-height: 72px; display: flex; flex-direction: column; justify-content: center; gap: 2px; border: none; border-bottom: 1px solid #DCCFB8; background: none; padding: 8px 4px; cursor: pointer; text-align: left; color: #1F1D1A">
+<span style="font-family: 'EB Garamond', Georgia, serif; font-size: 23px; line-height: 27px; font-weight: 500">{{o.title}}</span>
+<span style="font-size: 15px; line-height: 20px; color: #6B6760">{{o.sub}}</span>
 </button>
 </sc-for>
 <sc-if value="{{addNote}}" hint-placeholder-val="{{ false }}"><p role="status" style="margin: 14px 0 0 0; font-size: 15px; line-height: 21px; color: #6B6760">Dieser Schritt folgt im nächsten Prototyp.</p></sc-if>
@@ -380,13 +372,13 @@ Bibliothek
 <script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
 var INK = '#1F1D1A';
 var VOLS = [
-  { key: 'lesen', name: 'Am Lesen', color: '#983A34', ink: '#FFFFFF', sub: 'Was gerade aufgeschlagen auf dem Nachttisch liegt.' },
-  { key: 'gelesen', name: 'Gelesen', color: '#A25529', ink: '#FFFFFF', sub: 'Zu Ende gelesen, mit deinen Karten.' },
-  { key: 'ungelesen', name: 'Ungelesen im Regal', color: '#C2962D', ink: INK, edge: true, sub: 'Besitzt du schon. Wartet geduldig.' },
-  { key: 'wunsch', name: 'Wunschliste', color: '#4B6A34', ink: '#FFFFFF', sub: 'Noch nicht bei dir.' },
-  { key: 'abgebrochen', name: 'Abgebrochen', color: '#246461', ink: '#FFFFFF', sub: 'Nicht jedes Buch ist für jetzt.' },
-  { key: 'regale', name: 'Eigene Regale', color: '#335483', ink: '#FFFFFF', sub: 'Sammlungen, die nur du so ordnest.' },
-  { key: 'stats', name: 'Statistiken', color: '#59417B', ink: '#FFFFFF', sub: 'Was dein Lesen über dich erzählt.' }
+  { key: 'lesen', name: 'Am Lesen', color: '#91403B', ink: '#FFFFFF', sub: 'Was gerade aufgeschlagen auf dem Nachttisch liegt.' },
+  { key: 'gelesen', name: 'Gelesen', color: '#9A5731', ink: '#FFFFFF', sub: 'Zu Ende gelesen, mit deinen Karten.' },
+  { key: 'ungelesen', name: 'Ungelesen im Regal', color: '#B89237', ink: INK, edge: true, sub: 'Besitzt du schon. Wartet geduldig.' },
+  { key: 'wunsch', name: 'Wunschliste', color: '#4C6638', ink: '#FFFFFF', sub: 'Noch nicht bei dir.' },
+  { key: 'abgebrochen', name: 'Abgebrochen', color: '#28605D', ink: '#FFFFFF', sub: 'Nicht jedes Buch ist für jetzt.' },
+  { key: 'regale', name: 'Eigene Regale', color: '#39557D', ink: '#FFFFFF', sub: 'Sammlungen, die nur du so ordnest.' },
+  { key: 'stats', name: 'Statistiken', color: '#5A4577', ink: '#FFFFFF', sub: 'Was dein Lesen über dich erzählt.' }
 ];
 var BOOKS = [
   { id: 'garten', vol: 'lesen', title: 'Der stille Garten', author: 'Mara Lind', genre: 'Roman / Gegenwart', pages: 312, c: '#7A5A1E', status: 'Am Lesen seit 2. Oktober',
@@ -474,8 +466,8 @@ class Component extends DCLogic {
     var hello = hour < 11 ? 'Guten Morgen.' : (hour < 18 ? 'Schön, dass du da bist.' : 'Guten Abend.');
     var counts = {};
     BOOKS.forEach(function (b) { counts[b.vol] = (counts[b.vol] || 0) + 1; });
-    var offsets = [4, 0, 9, 2, 12, 6, 1];
-    var spines = VOLS.map(function (v, i) {
+    var offsets = [6, 0, 11, 3, 8]; var trims = [4, 16, 0, 22, 9];
+    var spines = VOLS.filter(function (v) { return v.key !== 'lesen' && v.key !== 'stats'; }).map(function (v, i) {
       var n = v.key === 'regale' ? SHELVES : (counts[v.key] || 0);
       var unit = v.key === 'regale' ? (n === 1 ? '1 Regal' : n + ' Regale') : (n === 1 ? '1 Buch' : n + ' Bücher');
       return {
@@ -483,8 +475,8 @@ class Component extends DCLogic {
         count: v.key === 'stats' ? '' : String(n),
         aria: v.key === 'stats' ? 'Statistiken öffnen' : v.name + ', ' + unit + ', öffnen',
         open: function () { self.nav({ screen: 'vol', vol: v.key }); },
-        rowStyle: 'padding-left: ' + offsets[i] + 'px; padding-right: ' + (12 - offsets[i]) + 'px',
-        style: 'position: relative; width: 100%; min-height: ' + (v.key === 'stats' || v.key === 'regale' ? 56 : 56 + Math.min(4, Math.max(0, n - 1)) * 7) + 'px; display: flex; align-items: center; box-sizing: border-box; padding: 8px 0; border: none; border-radius: 3px 6px 6px 3px; background-color: ' + v.color + '; box-shadow: 0 1px 2px rgba(31,29,26,.3), inset 0 1px 0 rgba(255,255,255,.12), inset 0 -2px 0 rgba(0,0,0,.12); cursor: pointer; text-align: left',
+        rowStyle: 'padding-left: ' + offsets[i] + 'px; padding-right: ' + trims[i] + 'px',
+        style: 'position: relative; width: 100%; min-height: ' + Math.min(104, Math.max(56, 48 + n * 10)) + 'px; display: flex; align-items: center; box-sizing: border-box; padding: 8px 0; border: none; border-radius: 3px 6px 6px 3px; background-color: ' + v.color + '; box-shadow: 0 1px 2px rgba(31,29,26,.3), inset 0 1px 0 rgba(255,255,255,.12), inset 0 -2px 0 rgba(0,0,0,.12); cursor: pointer; text-align: left',
         stamp: 'position: absolute; left: 14px; top: 8px; width: 4px; height: calc(100% - 16px); object-fit: fill',
         stampSrc: v.ink === INK ? '/_blob/b368959550b051244e1369ca50312065' : '/_blob/eb2b88bd243bf1a65692bd8e9d605dc4',
         labelStyle: "flex-grow: 1; min-width: 0; padding-left: 30px; padding-right: 4px; font-family: 'EB Garamond', Georgia, serif; font-size: 21px; line-height: 25px; font-weight: 500; color: " + v.ink + '; overflow-wrap: anywhere',
@@ -577,7 +569,7 @@ class Component extends DCLogic {
       isHome: s.screen === 'home', isVol: s.screen === 'vol', isBook: s.screen === 'book', isTab: s.screen === 'tab',
       scrolled: s.scrolled,
       greeting: s.saved ? s.saved : hello + ' Das Lesebändchen liegt noch auf Seite ' + s.page + '.',
-      owner: 'Mara', libraryName: 'Bücherei am Fenster',
+      owner: 'Ilse', libraryName: 'Bücherei am Fenster',
       card: { title: BOOKS[1].title, text: BOOKS[1].reading.split('. ')[0] + '.' },
       colophon: 'Gesammelt seit März 2025. Am häufigsten gelesen: ' + STATS.summary.topAuthor + '.',
       bookmarkLine: 'Das Lesebändchen liegt auf Seite ' + s.page + ' von ' + cur.pages + '.',

@@ -1,7 +1,7 @@
 const { chromium } = require('playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const root = process.argv[2], out = process.argv[3];
-const srv = http.createServer((q, r) => { const BL={'fc177fec48818780d685607b9eea21d5':'linen.png','eb2b88bd243bf1a65692bd8e9d605dc4':'praegung.png','2a5bd52f874870d5bef9f086f6809ef7':'vorsatz.png','b368959550b051244e1369ca50312065':'praegung-dunkel.png','39fadb20abdb6a277d4352ba1feaef22':'rueckwand.png','67f11f01afe6fa9a030c514d45908343':'papier.png','e7aadb19a93e9e29d8560f1724b76c2e':'brett.png','e70bf0232b11a4aa12f0c4f148b2bf4a':'baendchen.png'}; let u=decodeURIComponent(q.url.split('?')[0]); if(u.startsWith('/_blob/')) u='/../../../../../home/claude/bookclub/prototyp/app/assets/'+BL[u.slice(7)]; const f = u.includes('/home/claude/')?u.slice(u.indexOf('/home/claude/')):path.join(root, u); fs.readFile(f, (e, d) => { if (e) { r.writeHead(404); r.end(); return; } r.writeHead(200, { 'content-type': f.endsWith('.js') ? 'text/javascript' : (f.endsWith('.png')?'image/png':'text/html') }); r.end(d); }); });
+const srv = http.createServer((q, r) => { const BL={'fc177fec48818780d685607b9eea21d5':'linen.png','eb2b88bd243bf1a65692bd8e9d605dc4':'praegung.png','2a5bd52f874870d5bef9f086f6809ef7':'vorsatz.png','b368959550b051244e1369ca50312065':'praegung-dunkel.png','613d9a95946f6112d2daabdd2d50346e':'rueckwand.png','67f11f01afe6fa9a030c514d45908343':'papier.png','e7aadb19a93e9e29d8560f1724b76c2e':'brett.png','e70bf0232b11a4aa12f0c4f148b2bf4a':'baendchen.png'}; let u=decodeURIComponent(q.url.split('?')[0]); if(u.startsWith('/_blob/')) u='/../../../../../home/claude/bookclub/prototyp/app/assets/'+BL[u.slice(7)]; const f = u.includes('/home/claude/')?u.slice(u.indexOf('/home/claude/')):path.join(root, u); fs.readFile(f, (e, d) => { if (e) { r.writeHead(404); r.end(); return; } r.writeHead(200, { 'content-type': f.endsWith('.js') ? 'text/javascript' : (f.endsWith('.png')?'image/png':'text/html') }); r.end(d); }); });
 srv.listen(8765, async () => {
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 2, reducedMotion: 'reduce' });
@@ -15,7 +15,7 @@ srv.listen(8765, async () => {
   await scrollMain(0);
   await p.getByRole('button', { name: /Lesebändchen auf Seite/ }).click(); await shot('03-page-sheet');
   await p.getByRole('button', { name: '+10' }).click(); await p.getByRole('button', { name: 'Sichern' }).click(); await shot('04-saved');
-  await p.getByRole('button', { name: /Gelesen, 5 Bücher/ }).click(); await shot('05-vol-gelesen');
+  await p.getByRole('button', { name: /^Gelesen, 5 Bücher/ }).click(); await shot('05-vol-gelesen');
   await p.getByRole('button', { name: /Salz und Asche/ }).click(); await shot('06-book-top');
   await scrollMain(700); await shot('07-book-mid');
   await scrollMain(2000); await shot('08-book-bottom');
@@ -27,7 +27,7 @@ srv.listen(8765, async () => {
   await p.getByRole('button', { name: /Das Haus am Moor/ }).click(); await shot('12-book-unread');
   await p.getByRole('button', { name: /^Ungelesen im Regal$/ }).first().click();
   await p.getByRole('button', { name: /^Bibliothek$/ }).first().click();
-  await p.getByRole('button', { name: 'Statistiken öffnen' }).click(); await shot('13-stats'); await scrollMain(600); await shot('14-stats-2');
+  await p.getByRole('button', { name: /Mehr in deinen Statistiken/ }).click(); await shot('13-stats'); await scrollMain(600); await shot('14-stats-2');
   await p.getByRole('button', { name: /^Bibliothek$/ }).first().click();
   await p.getByRole('button', { name: 'Ein Buch dazustellen' }).click(); await shot('15-add-sheet');
   await p.getByRole('button', { name: /Strichcode/ }).click(); await shot('16-add-note');

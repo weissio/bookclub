@@ -27,7 +27,7 @@ def paper(base, amp_fibre, amp_cloud, weave):
     img = np.array(base, float)[None, None, :] + lum[..., None] * np.array([1.0, 0.97, 0.9])
     return Image.fromarray(img.clip(0, 255).astype('uint8'), 'RGB')
 
-paper((233, 223, 204), 3.0, 1.7, 1.4).filter(ImageFilter.GaussianBlur(0.4)).save(out + 'rueckwand.png')
+paper((233, 223, 204), 2.8, 0.85, 1.3).filter(ImageFilter.GaussianBlur(0.4)).save(out + 'rueckwand.png')
 paper((248, 244, 235), 2.0, 1.6, 0).filter(ImageFilter.GaussianBlur(0.4)).save(out + 'papier.png')
 
 # Regalbrett: Draufsicht-Kante oben hell, Stirnseite mit Maserung, weiche Schattenkante unten

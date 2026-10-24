@@ -45,7 +45,16 @@ Hinweis der Prüfung, noch nicht entschieden: Sterne erscheinen überall; wenn s
 - Knöpfe aus Leinen statt schwarzer Pillen
 - Neue Bilder: `assets/make_raum.py` (Rückwand, Buchpapier, Regalbrett, Lesebändchen)
 
-Offen: Band- und Buchseiten noch in Listenoptik, Patina der Bände, Android-Variante, endgültige Bereichsnamen.
+Nachprüfung durch die psychologische Beratung, eingearbeitet:
+
+- „Am Lesen“ und „Statistiken“ sind keine Bände im Stapel mehr. Das Buch obenauf ist „Am Lesen“, die Statistiken erreicht man über den Druckvermerk
+- Rücken deutlich dicker nach Anzahl, Breiten variieren
+- „Ein Buch dazustellen“ bescheidener (2/3 Breite), Sheet mit drei großen Zeilen in Buchschrift statt Symbolkacheln
+- Grund ruhiger (nur Korn), Leinen weiter entsättigt
+- Beispiel-Besitzerin heißt Ilse (vorher Verwechslung mit Autorin Mara Lind)
+- Band- und Buchseiten: Überschriften in Buchschrift, keine Pfeile in Buchlisten, „neu“ als leises Wort statt schwarzer Pille, Linien statt Rahmenkarten, die eigene Lesart als Zettel
+
+Offen: Patina der Bände, Android-Variante, endgültige Bereichsnamen.
 
 ## Dateien
 
