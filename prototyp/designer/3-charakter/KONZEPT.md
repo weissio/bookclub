@@ -191,3 +191,19 @@ Der Band „Abgebrochen“ zeigt je Buch Seite, Gründe und Lichter, die Buchsei
 6. Anderes
 
 **Offen:** Ist der Ton „Abgebrochen. Ohne Groll.“ richtig? Soll ein abgebrochenes Buch im Schaufenster zeigbar sein? (Der Schalter ist derzeit vorhanden.)
+
+---
+
+## Prototyp, Runde 4: Höchstens 5 aktiv, kein Band „Aktiv“ (24.10.2026)
+
+Arjens Entscheidung: Aktiv sind genau die bis zu 5 Bücher der Startseite. Einen Band „Aktiv“ gibt es nicht mehr; was in Runde 3 dazu steht, gilt nicht mehr. Screens in `screens4/` (01 bis 16), Playwright auf Port 8810, keine Konsolenfehler.
+
+- **Startseite:** zählt „· n von 5“. Die Reihenfolge erreicht man über „Reihenfolge“. Im Sheet öffnet ein Tipp auf den Titel die Buchseite mit „Pausieren“ und „Abbrechen …“.
+- **Weitere Bände:** Pausiert und Abgebrochen (Gruppe Lesen), Eigene Regale, Verliehen und Rückblick (Gruppe Ordnen).
+- **Sechstes Buch** („Jetzt anfangen zu lesen“ bei 5 aktiven) und **Wieder aufnehmen** bei 5 aktiven führen zum selben Sheet „Platz machen“:
+  1. „Fünf Bücher liegen schon offen. Damit ‚…‘ dazukommen kann, macht eines davon Pause. Sein Lesebändchen bleibt, wo es ist. Das neue kommt ans Ende.“ Darauf folgen die 5 Bücher mit „pausieren“.
+  2. Das gewählte Buch steht oben (mit „ändern“), darunter „Magst du sagen, warum? Freiwillig.“ mit den Pausegründen, Freitext und dem Knopf „Pausieren und Neues dazunehmen“.
+  3. Rückmeldung: „Pausiert. Das neue liegt an Platz 5.“
+- Mit weniger als 5 aktiven Büchern gibt es keine Frage: „Wieder am Lesen, an Platz 4.“
+- Die Kopfzeile des Sheets heißt „Doch nicht“, damit sie nicht mit „Abbrechen“ (Buch abbrechen) verwechselt wird.
+- **Prototyp-Schalter:** 1, 2, 3 oder 5 Bücher.

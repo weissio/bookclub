@@ -168,24 +168,6 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </div>
 <p role="status" aria-live="polite" style="margin: 10px 4px 0 4px; min-height: 20px; font-size: 14.5px; line-height: 20px; font-weight: 800; color: var(--acc)">{{volNotice}}</p>
 
-<sc-if value="{{vol.isAktiv}}" hint-placeholder-val="{{ false }}">
-<ol style="margin: 6px 0 0 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px">
-<sc-for list="{{aktivRows}}" as="o" hint-placeholder-count="5">
-<sc-if value="{{o.onHead}}" hint-placeholder-val="{{ false }}"><li style="margin: 0 4px 2px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">AUF DER STARTSEITE</li></sc-if>
-<sc-if value="{{o.offHead}}" hint-placeholder-val="{{ false }}"><li style="margin: 14px 4px 2px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">NUR IN AKTIV</li></sc-if>
-<li style="display: flex; align-items: center; gap: 8px; min-height: 60px; border-radius: 16px; background: var(--barBg); padding: 0 6px 0 10px">
-<span style="width: 20px; font-size: 15px; font-weight: 900; color: var(--mute); text-align: center">{{o.rank}}</span>
-<button type="button" aria-label="{{o.aria}}" onClick="{{o.open}}" style="flex: 1; min-width: 0; min-height: 56px; display: flex; align-items: center; gap: 10px; border: none; background: none; padding: 0; cursor: pointer; text-align: left; color: var(--ink)">
-<span aria-hidden="true" style="{{o.strip}}"></span>
-<span style="min-width: 0; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{o.title}}</span><span style="font-size: 12.5px; font-weight: 600; color: var(--mute)">{{o.sub}}</span></span>
-</button>
-<sc-if value="{{o.canUp}}" hint-placeholder-val="{{ true }}"><button type="button" aria-label="{{o.upAria}}" onClick="{{o.up}}" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 22px; border: 1.5px solid var(--accLine); background: var(--accBg); cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M7 14V3M2.5 7.5L7 3l4.5 4.5" fill="none" style="stroke: var(--acc)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></sc-if>
-</li>
-</sc-for>
-</ol>
-<p style="margin: 16px 4px 0 4px; font-size: 13px; line-height: 18px; font-weight: 600; color: var(--mute)">Auf der Startseite ist Platz für fünf. Mit dem Pfeil holst du ein Buch nach vorn. Ein neues Buch kommt immer ans Ende. Beispieldaten.</p>
-</sc-if>
-
 <sc-if value="{{vol.isPausiert}}" hint-placeholder-val="{{ false }}">
 <div role="list" style="margin-top: 6px; display: flex; flex-direction: column; gap: 6px">
 <sc-for list="{{pausedRows}}" as="o" hint-placeholder-count="2">
@@ -515,7 +497,7 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <div role="radiogroup" aria-label="Tageszeit" style="display: flex; gap: 6px">
 <sc-for list="{{protoModes}}" as="o" hint-placeholder-count="2"><button type="button" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
 </div>
-<h3 style="margin: 16px 0 6px 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">BÜCHER AKTIV (5 AUF DER STARTSEITE)</h3>
+<h3 style="margin: 16px 0 6px 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">BÜCHER AM LESEN (HÖCHSTENS 5)</h3>
 <div role="radiogroup" aria-label="Bücher am Lesen" style="display: flex; gap: 6px">
 <sc-for list="{{protoCounts}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
 </div>
@@ -525,13 +507,13 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <!-- Reihenfolge -->
 <sc-if value="{{isOrderSheet}}" hint-placeholder-val="{{ false }}">
 <div style="padding: 0 16px">
-<p style="margin: 0 4px 10px 4px; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--mute)">Oben liegt das Buch im Licht. Mit dem Pfeil rückt ein Buch eine Stelle nach vorn.</p>
+<p style="margin: 0 4px 10px 4px; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--mute)">Oben liegt das Buch im Licht. Mit dem Pfeil rückt ein Buch eine Stelle nach vorn. Ein Tipp auf den Titel öffnet die Buchseite, dort kannst du pausieren oder abbrechen.</p>
 <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 6px">
 <sc-for list="{{orderRows}}" as="o" hint-placeholder-count="3">
 <li style="display: flex; align-items: center; gap: 10px; min-height: 56px; border-radius: 16px; background: var(--key); padding: 0 6px 0 12px">
 <span style="width: 22px; font-size: 15px; font-weight: 900; color: var(--mute); text-align: center">{{o.rank}}</span>
 <span aria-hidden="true" style="{{o.strip}}"></span>
-<span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{o.title}}</span><span style="font-size: 12.5px; font-weight: 600; color: var(--mute)">{{o.sub}}</span></span>
+<button type="button" aria-label="{{o.openAria}}" onClick="{{o.open}}" style="flex: 1; min-width: 0; min-height: 52px; display: flex; flex-direction: column; justify-content: center; border: none; background: none; padding: 0; cursor: pointer; text-align: left; color: var(--ink)"><span style="max-width: 100%; font-size: 15px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{o.title}}</span><span style="font-size: 12.5px; font-weight: 600; color: var(--mute)">{{o.sub}}</span></button>
 <sc-if value="{{o.isFirst}}" hint-placeholder-val="{{ false }}"><span style="flex-shrink: 0; padding: 0 10px; font-size: 12.5px; font-weight: 800; color: var(--acc)">im Licht</span></sc-if>
 <sc-if value="{{o.canUp}}" hint-placeholder-val="{{ true }}"><button type="button" aria-label="{{o.upAria}}" onClick="{{o.up}}" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 22px; border: 1.5px solid var(--accLine); background: var(--accBg); cursor: pointer; display: flex; align-items: center; justify-content: center"><svg width="14" height="16" viewBox="0 0 14 16" aria-hidden="true"><path d="M7 14V3M2.5 7.5L7 3l4.5 4.5" fill="none" style="stroke: var(--acc)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></button></sc-if>
 </li>
@@ -573,6 +555,38 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </div>
 </sc-if>
 
+<!-- Sechstes Buch: eines pausieren -->
+<sc-if value="{{isSwapSheet}}" hint-placeholder-val="{{ false }}">
+<div style="padding: 0 16px">
+<sc-if value="{{swapStepPick}}" hint-placeholder-val="{{ true }}">
+<p style="margin: 0 4px; font-size: 18px; line-height: 24px; font-weight: 900">Fünf Bücher liegen schon offen.</p>
+<p style="margin: 6px 4px 12px 4px; font-size: 14.5px; line-height: 21px; font-weight: 600; color: var(--mute)">{{swapText}}</p>
+<div role="list" style="display: flex; flex-direction: column; gap: 6px">
+<sc-for list="{{swapRows}}" as="o" hint-placeholder-count="5">
+<div role="listitem"><button type="button" aria-label="{{o.aria}}" onClick="{{o.pick}}" style="width: 100%; min-height: 54px; display: flex; align-items: center; gap: 10px; border: none; border-radius: 16px; background: var(--key); padding: 0 12px; cursor: pointer; text-align: left; color: var(--ink)">
+<span aria-hidden="true" style="{{o.strip}}"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{o.title}}</span><span style="font-size: 12.5px; font-weight: 600; color: var(--mute)">{{o.sub}}</span></span>
+<span style="flex-shrink: 0; font-size: 13px; font-weight: 800; color: var(--acc)">pausieren</span>
+</button></div>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{swapStepWhy}}" hint-placeholder-val="{{ false }}">
+<div style="display: flex; align-items: center; gap: 10px; min-height: 52px; border-radius: 16px; background: var(--key); padding: 0 6px 0 12px">
+<span aria-hidden="true" style="{{swapChosen.strip}}"></span>
+<span style="flex: 1; min-width: 0; display: flex; flex-direction: column"><span style="font-size: 15px; font-weight: 800; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{swapChosen.title}}</span><span style="font-size: 12.5px; font-weight: 600; color: var(--mute)">{{swapChosen.sub}}</span></span>
+<button type="button" onClick="{{swapBack}}" style="flex-shrink: 0; min-height: 44px; padding: 0 10px; border: none; background: none; cursor: pointer; font-size: 13.5px; font-weight: 800; color: var(--acc)">ändern</button>
+</div>
+<p style="margin: 14px 4px 8px 4px; font-size: 14.5px; line-height: 21px; font-weight: 600; color: var(--mute)">Magst du sagen, warum? Freiwillig.</p>
+<div role="group" aria-label="Gründe" style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{pauseChips}}" as="c" hint-placeholder-count="6"><button type="button" aria-pressed="{{c.pressed}}" onClick="{{c.toggle}}" style="{{c.style}}">{{c.label}}</button></sc-for>
+</div>
+<input type="text" aria-label="Eigene Worte, freiwillig" value="{{draftNote}}" onChange="{{setNote}}" placeholder="Eigene Worte (freiwillig)" style="margin-top: 12px; width: 100%; box-sizing: border-box; height: 48px; border: none; border-radius: 14px; background: var(--field); padding: 0 14px; font-size: 16px; font-weight: 600; color: var(--ink)">
+<button type="button" onClick="{{confirmSwap}}" style="margin-top: 14px; width: 100%; height: 54px; border-radius: 27px; border: none; background: var(--acc); color: var(--accInk); cursor: pointer; font-size: 16px; font-weight: 900">{{swapSaveLabel}}</button>
+</sc-if>
+</div>
+</sc-if>
+
 <!-- Kommt bald -->
 <sc-if value="{{isSoonSheet}}" hint-placeholder-val="{{ false }}">
 <p style="margin: 0 20px; font-size: 16px; line-height: 23px; font-weight: 600; color: var(--mute)">Der Schreibplatz für eigene Worte wird im nächsten Schritt gestaltet.</p>
@@ -596,7 +610,7 @@ var LIB = {
   nacht: { title: 'Nachtzug nach Triest', author: 'Edda Lorenz', page: 112, pages: 340, cover: '#2F7F8C', ribbon: '#F2B33D' },
   fluss: { title: 'Der lange Fluss', author: 'Paul Neumann', page: 87, pages: 520, cover: '#3F6F8F', ribbon: '#E0637A' }
 };
-var DEFAULT_ORDER = ['salz', 'gezeiten', 'stille', 'moor', 'tromso', 'kompass', 'garten'];
+var DEFAULT_ORDER = ['salz', 'gezeiten', 'stille', 'moor', 'tromso'];
 var PAUSE_REASONS = ['Gerade nicht die Stimmung', 'Zu schwer für jetzt', 'Ein anderes Buch drängt', 'Keine Zeit', 'Will es in Ruhe lesen', 'Anderes'];
 var DROP_REASONS = ['Stil, Sprache', 'Tempo', 'Thema', 'Figuren', 'Zu lang', 'Zu schwer', 'Erwartung nicht erfüllt', 'Nicht mein Genre', 'Inhaltlich unangenehm', 'Anderes'];
 var AGAIN = [['ja', 'Ja'], ['vielleicht', 'Vielleicht'], ['nein', 'Eher nicht']];
@@ -610,7 +624,6 @@ var VOLS = {
   regale: { name: 'Eigene Regale', sub: 'Sammlungen, die nur du so ordnest.', search: 'In deinen Regalen suchen' },
   verliehen: { name: 'Verliehen', sub: 'Unterwegs bei Menschen, denen du traust.', search: 'Im Verliehenen suchen' },
   mehr: { name: 'Weitere Bände', sub: 'Alles, was nicht jeden Tag gebraucht wird.' },
-  aktiv: { name: 'Aktiv', sub: 'Alle Bücher, die du gerade liest. Die ersten fünf liegen auf der Startseite.' },
   pausiert: { name: 'Pausiert', sub: 'Beiseitegelegt, das Lesebändchen bleibt drin.' },
   stats: { name: 'Rückblick', sub: 'Was dein Lesen über dich erzählt.' }
 };
@@ -670,7 +683,8 @@ class Component extends DCLogic {
     var pages = {}; Object.keys(LIB).forEach(function (k) { pages[k] = LIB[k].page; });
     this.state = { mode: 'abend', active: DEFAULT_ORDER.slice(0, 2), pages: pages, extraLib: {}, started: {}, screen: 'home', tab: 'bib', vol: null, book: null, from: 'home',
       sheet: null, pageFor: 'salz', draft: 0, fresh: true, saved: '', query: '', sort: 'jahr', showcase: {}, addStep: 'pick', target: 'ungelesen', extra: 0,
-      paused: [{ id: 'nacht', reasons: ['Gerade nicht die Stimmung'], note: '', when: 'September 2026' }],
+      paused: [{ id: 'nacht', reasons: ['Gerade nicht die Stimmung'], note: '', when: 'September 2026' }, { id: 'garten', reasons: [], note: '', when: 'August 2026' }],
+      swap: null, swapPick: null,
       dropped: [{ id: 'fluss', reasons: ['Tempo', 'Zu lang'], lights: 1, again: 'vielleicht', note: 'Schöne Sätze, aber nach 80 Seiten ist noch nichts passiert.', when: 'Mai 2026' }],
       reasons: [], note: '', dropLights: 0, again: '', volNotice: '' };
   }
@@ -685,7 +699,7 @@ class Component extends DCLogic {
     var L = lib[act[0]] || LIB.salz;
     var lead = { title: L.title, page: String(s.pages[act[0]]), cover: L.cover, ribbon: L.ribbon,
       aria: L.title + ', im Licht, Seite ' + s.pages[act[0]] + '. Seite eintragen', openPage: openPageFor(act[0]) };
-    var bars = act.slice(1, 5).map(function (id) {
+    var bars = act.slice(1).map(function (id) {
       var b = lib[id];
       return { short: b.title, page: String(s.pages[id]), strip: strip(b.cover, 28) + '; margin-left: 8px',
         lightAria: b.title + ', Seite ' + s.pages[id] + '. Ins Licht legen', pageAria: b.title + ': Seite ' + s.pages[id] + ', neue Seite eintragen',
@@ -714,7 +728,7 @@ class Component extends DCLogic {
     var groups = [], inVol = [], shown = [];
     var volRow = function (r) { return { title: r[1], meta: r[2], cover: r[3], hasLights: false, lights: [], aria: r[1] + ', ' + r[2] + ', öffnen', open: function () { self.go({ screen: 'vol', vol: r[0], query: '', volNotice: '' }); } }; };
     if (vk === 'mehr') {
-      groups = [{ label: 'Lesen', rows: [['aktiv', 'Aktiv', act.length + (act.length === 1 ? ' Buch' : ' Bücher') + ', ' + Math.min(5, act.length) + ' davon auf der Startseite', '#E0A93A'], ['pausiert', 'Pausiert', s.paused.length + (s.paused.length === 1 ? ' Buch' : ' Bücher') + ' · Bändchen bleibt drin', '#2F7F8C'], ['abgebrochen', 'Abgebrochen', n.abgebrochen + ' Bücher · mit Grund', '#B85A6E']].map(volRow) },
+      groups = [{ label: 'Lesen', rows: [['pausiert', 'Pausiert', s.paused.length + (s.paused.length === 1 ? ' Buch' : ' Bücher') + ' · Bändchen bleibt drin', '#2F7F8C'], ['abgebrochen', 'Abgebrochen', n.abgebrochen + ' Bücher · mit Grund', '#B85A6E']].map(volRow) },
         { label: 'Ordnen', rows: [['regale', 'Eigene Regale', n.regale + ' Regale', '#6C73B0'], ['verliehen', 'Verliehen', n.verliehen + ' unterwegs', '#3F6F8F'], ['stats', 'Rückblick', 'Statistik ohne Ziele', '#D7A13A']].map(volRow) }];
     } else if (vk === 'abgebrochen') {
       groups = [{ label: 'Mit deinem Grund', rows: s.dropped.slice().reverse().map(function (d) {
@@ -739,32 +753,25 @@ class Component extends DCLogic {
           open: function () { self.go({ screen: 'book', book: b.id, from: 'vol', backVol: vk }); } });
       });
     }
-    var special = vk === 'mehr' || vk === 'abgebrochen' || vk === 'aktiv' || vk === 'pausiert';
-    var count = vk === 'stats' || vk === 'mehr' ? 0 : (vk === 'aktiv' ? act.length : (vk === 'pausiert' ? s.paused.length : n[vk]));
-    var isList = vk !== 'stats' && vk !== 'aktiv' && vk !== 'pausiert';
-    var vol = { name: V.name, sub: (vk === 'stats' || vk === 'mehr' || vk === 'aktiv') ? V.sub : count + (vk === 'regale' ? ' Regale. ' : (count === 1 ? ' Buch. ' : ' Bücher. ')) + V.sub, searchLabel: V.search || '',
-      isList: isList, hasSearch: isList && !special, isStats: vk === 'stats', isAktiv: vk === 'aktiv', isPausiert: vk === 'pausiert', groups: groups, noResults: !special && shown.length === 0,
+    var special = vk === 'mehr' || vk === 'abgebrochen' || vk === 'pausiert';
+    var count = vk === 'stats' || vk === 'mehr' ? 0 : (vk === 'pausiert' ? s.paused.length : n[vk]);
+    var isList = vk !== 'stats' && vk !== 'pausiert';
+    var vol = { name: V.name, sub: (vk === 'stats' || vk === 'mehr') ? V.sub : count + (vk === 'regale' ? ' Regale. ' : (count === 1 ? ' Buch. ' : ' Bücher. ')) + V.sub, searchLabel: V.search || '',
+      isList: isList, hasSearch: isList && !special, isStats: vk === 'stats', isPausiert: vk === 'pausiert', groups: groups, noResults: !special && shown.length === 0,
       footer: vk === 'mehr' || q ? '' : (vk === 'abgebrochen' ? '… und ' + (n.abgebrochen - s.dropped.length) + ' ältere. Gründe und Lichter helfen später, passende Bücher zu finden. Beispieldaten.' : (count > inVol.length ? '… und ' + (count - inVol.length) + ' weitere. Gezeigt werden Beispieldaten.' : 'Beispieldaten.')) };
-    var aktivRows = act.map(function (id, i) {
-      var bk = lib[id];
-      return { rank: String(i + 1), title: bk.title, sub: 'Seite ' + s.pages[id] + ' von ' + bk.pages, strip: strip(bk.cover, 34), onHead: i === 0, offHead: i === 5, canUp: i > 0,
-        aria: bk.title + ', Platz ' + (i + 1) + (i < 5 ? ', auf der Startseite' : '') + ', Buchseite öffnen', open: openBook(id, 'aktiv'),
-        upAria: bk.title + ' eine Stelle nach vorn',
-        up: function () { var a = act.slice(); a.splice(i, 1); a.splice(i - 1, 0, id); self.setState({ active: a, volNotice: i === 5 ? '„' + shortTitle(bk.title, 20) + '“ liegt jetzt auf der Startseite.' : 'Jetzt an Platz ' + i + '.' }); } };
-    });
     var pausedRows = s.paused.map(function (pz) {
       var bk = lib[pz.id];
       return { title: bk.title, sub: 'bei S. ' + s.pages[pz.id] + (pz.reasons.length ? ' · ' + pz.reasons.join(', ') : ' · ohne Grund'), strip: strip(bk.cover, 34),
         aria: bk.title + ', pausiert bei Seite ' + s.pages[pz.id] + ', Buchseite öffnen', open: openBook(pz.id, 'pausiert'),
-        resumeAria: bk.title + ' wieder aufnehmen', resume: function () { self.setState(resumeState(pz.id, true)); } };
+        resumeAria: bk.title + ' wieder aufnehmen', resume: function () { resumeOrAsk(pz.id); } };
     });
     var sorts = [['jahr', 'Nach Jahr'], ['licht', 'Nach Lichtern'], ['abc', 'A bis Z']].map(function (o) {
       return { label: o[1], checked: s.sort === o[0] ? 'true' : 'false', style: seg(s.sort === o[0]), pick: function () { self.setState({ sort: o[0] }); } };
     });
-    var resumeState = function (id, inVol) {
+    var resumeOrAsk = function (id) {
+      if (act.length >= 5) { self.setState({ sheet: 'swap', swap: { id: id, kind: 'resume' }, swapPick: null, reasons: [], note: '' }); return; }
       var na = act.concat([id]);
-      var msg = na.length <= 5 ? 'Wieder aktiv, an Platz ' + na.length + '.' : 'Wieder aktiv, in Aktiv an Platz ' + na.length + '.';
-      return { active: na, paused: s.paused.filter(function (x) { return x.id !== id; }), volNotice: msg, sheet: null };
+      self.setState({ active: na, paused: s.paused.filter(function (x) { return x.id !== id; }), volNotice: 'Wieder am Lesen, an Platz ' + na.length + '.', saved: 'Wieder am Lesen, an Platz ' + na.length + '.', sheet: null });
     };
     // Buch
     var st0 = lib[s.book] ? stateOf(s.book) : '';
@@ -777,7 +784,7 @@ class Component extends DCLogic {
     var on = !!s.showcase[b.id];
     var dark = function (hex) { var v = parseInt(hex.slice(1), 16); return 'rgb(' + Math.round((v >> 16) * .72) + ',' + Math.round(((v >> 8) & 255) * .72) + ',' + Math.round((v & 255) * .72) + ')'; };
     var book = { title: b.title, author: b.author, cover: b.cover, coverDark: dark(b.cover), ribbon: b.ribbon || '#F2B33D',
-      status: b.vol === 'gelesen' ? 'Gelesen im ' + b.when : (b.vol === 'aktiv' ? 'Am Lesen · Platz ' + (rank + 1) + (rank < 5 ? ' · auf der Startseite' : ' · nur in Aktiv') : (b.vol === 'pausiert' ? 'Pausiert bei Seite ' + s.pages[b.id] : (b.vol === 'abgebrochen' ? 'Abgebrochen bei Seite ' + s.pages[b.id] : b.when))),
+      status: b.vol === 'gelesen' ? 'Gelesen im ' + b.when : (b.vol === 'aktiv' ? 'Am Lesen · Platz ' + (rank + 1) + ' von ' + act.length : (b.vol === 'pausiert' ? 'Pausiert bei Seite ' + s.pages[b.id] : (b.vol === 'abgebrochen' ? 'Abgebrochen bei Seite ' + s.pages[b.id] : b.when))),
       canStart: b.vol === 'ungelesen' && !s.started[b.id],
       isActive: b.vol === 'aktiv', isPaused: b.vol === 'pausiert', isDropped: b.vol === 'abgebrochen',
       pausedWhy: pz ? (pz.reasons.length ? pz.reasons.join(', ') : 'Ohne Grund pausiert.') + (pz.note ? ' „' + pz.note + '“' : '') : '',
@@ -837,8 +844,8 @@ class Component extends DCLogic {
     });
     var tabTexts = { shop: ['Schaufenster', 'Hier entsteht deine kleine öffentliche Bücherei. Es erscheint nur, was du einzeln ins Fenster stellst.'], find: ['Entdecken', 'Später findest du hier Schaufenster in der Nähe und Leserstimmen zu einzelnen Büchern.'], me: ['Ich', 'Pseudonym, Privatsphäre und der Export deiner Bibliothek.'] };
     var tt = tabTexts[s.tab] || ['', ''];
-    var sheetH = { page: 640, add: s.addStep === 'scan' ? 560 : 400, showcase: 470, proto: 330, soon: 200, order: 140 + Math.min(act.length, 7) * 62, pause: 500, drop: 730 }[s.sheet] || 300;
-    var titles = { page: 'Seite eintragen', add: 'Auspacken', showcase: 'Schaufenster', proto: 'Prototyp', soon: 'Kommt bald', order: 'Reihenfolge', pause: 'Pausieren', drop: 'Abbrechen' };
+    var sheetH = { page: 640, add: s.addStep === 'scan' ? 560 : 400, showcase: 470, proto: 330, soon: 200, order: 180 + act.length * 62, pause: 500, drop: 730, swap: s.swapPick ? 560 : 610 }[s.sheet] || 300;
+    var titles = { page: 'Seite eintragen', add: 'Auspacken', showcase: 'Schaufenster', proto: 'Prototyp', soon: 'Kommt bald', order: 'Reihenfolge', pause: 'Pausieren', drop: 'Abbrechen', swap: 'Platz machen' };
     var chip = function (label) {
       var on = s.reasons.indexOf(label) >= 0;
       return { label: label, pressed: on ? 'true' : 'false',
@@ -853,13 +860,14 @@ class Component extends DCLogic {
       toggleMode: function () { self.setState({ mode: abend ? 'tag' : 'abend' }); },
       isHome: s.screen === 'home', isVol: s.screen === 'vol', isBook: s.screen === 'book', isTab: s.screen === 'tab',
       headLine: abend ? 'Das Licht ist noch an.' : 'Tageslicht im Zimmer.', subLine: s.saved || ' ',
-      readCount: act.length <= 5 ? '· ' + act.length + ' von 5' : '· 5 von ' + act.length + ' aktiv', lead: lead, bars: bars,
+      readCount: '· ' + act.length + ' von 5', lead: lead, bars: bars,
       hasRoomNote: act.length < 3, roomNote: act.length === 1 ? 'Daneben ist Platz für bis zu vier weitere Bücher. Ein Tipp auf einen Titel holt ihn später ins Licht.' : 'Tipp auf den Titel: ins Licht legen. Tipp auf die Zahl: Seite eintragen.',
       orderBtnStyle: 'min-height: 44px; border: none; background: none; padding: 0 6px; cursor: pointer; font-size: 14px; font-weight: 800; color: var(--acc)' + (act.length < 2 ? '; visibility: hidden' : ''),
       openOrder: function () { self.setState({ sheet: 'order' }); },
-      orderRows: act.slice(0, 7).map(function (id, i) {
+      orderRows: act.map(function (id, i) {
         var bk = lib[id];
         return { rank: String(i + 1), title: bk.title, sub: 'Seite ' + s.pages[id] + ' von ' + bk.pages, strip: strip(bk.cover, 34), isFirst: i === 0, canUp: i > 0,
+          openAria: bk.title + ', Buchseite öffnen', open: function () { self.go({ screen: 'book', book: id, from: 'home' }); },
           upAria: bk.title + ' eine Stelle nach vorn',
           up: function () { var a = act.slice(); a.splice(i, 1); a.splice(i - 1, 0, id); self.setState({ active: a, saved: i === 1 ? 'Liegt jetzt im Licht.' : s.saved }); } };
       }),
@@ -867,13 +875,30 @@ class Component extends DCLogic {
       vol: vol, sorts: sorts, query: s.query, hasQuery: !!s.query,
       statRows: [{ k: 'Am häufigsten gelesen', v: 'Jonas Brehm, 3 Bücher' }, { k: 'Liebstes Genre', v: 'Roman der Gegenwart' }, { k: 'Am stärksten erreicht', v: 'Die Uhrmacherin, Unter Linden, später' }, { k: 'Dieses Jahr zu Ende gelesen', v: '19 Bücher, ohne Ziel und ohne Eile' }],
       book: book, bookBackLabel: s.from === 'vol' ? VOLS[s.backVol || b.vol].name : 'Bibliothek',
-      startReading: function () { self.setState(Object.assign(doStart(b, act), { saved: act.length + 1 === 1 ? 'Liegt jetzt im Licht. Viel Freude.' : (act.length + 1 <= 5 ? 'Liegt jetzt an Platz ' + (act.length + 1) + '.' : 'Liegt in Aktiv an Platz ' + (act.length + 1) + '.') })); },
-      aktivRows: aktivRows, pausedRows: pausedRows, hasPaused: pausedRows.length > 0, noPaused: pausedRows.length === 0, volNotice: s.volNotice,
-      volBackLabel: (vk === 'aktiv' || vk === 'pausiert' || vk === 'abgebrochen' || vk === 'regale' || vk === 'verliehen' || vk === 'stats') ? 'Weitere Bände' : 'Bibliothek',
-      volBack: function () { var sub = (vk === 'aktiv' || vk === 'pausiert' || vk === 'abgebrochen' || vk === 'regale' || vk === 'verliehen' || vk === 'stats'); self.go(sub ? { screen: 'vol', vol: 'mehr', volNotice: '' } : { screen: 'home' }); },
+      startReading: function () {
+        if (act.length >= 5) { self.setState({ sheet: 'swap', swap: { id: b.id, kind: 'start' }, swapPick: null, reasons: [], note: '' }); return; }
+        self.setState(Object.assign(doStart(b, act), { saved: act.length === 0 ? 'Liegt jetzt im Licht. Viel Freude.' : 'Liegt jetzt an Platz ' + (act.length + 1) + '.' }));
+      },
+      isSwapSheet: s.sheet === 'swap', swapStepPick: !s.swapPick, swapStepWhy: !!s.swapPick,
+      swapText: (function () { if (!s.swap) return ''; var t = s.swap.kind === 'start' ? (BOOKS.filter(function (x) { return x.id === s.swap.id; })[0] || {}).title : (lib[s.swap.id] || {}).title; return 'Damit „' + t + '“ dazukommen kann, macht eines davon Pause. Sein Lesebändchen bleibt, wo es ist. Das neue kommt ans Ende.'; })(),
+      swapRows: act.map(function (id) { var bk = lib[id]; return { title: bk.title, sub: 'Lesebändchen auf Seite ' + s.pages[id], strip: strip(bk.cover, 32), aria: bk.title + ' pausieren, Lesebändchen bleibt auf Seite ' + s.pages[id], pick: function () { self.setState({ swapPick: id }); } }; }),
+      swapChosen: s.swapPick ? { title: lib[s.swapPick].title, sub: 'macht Pause bei Seite ' + s.pages[s.swapPick], strip: strip(lib[s.swapPick].cover, 32) } : { title: '', sub: '', strip: '' },
+      swapBack: function () { self.setState({ swapPick: null }); },
+      swapSaveLabel: 'Pausieren und Neues dazunehmen',
+      confirmSwap: function () {
+        var out = s.swapPick, sw = s.swap; if (!out || !sw) return;
+        var rest = act.filter(function (x) { return x !== out; });
+        var pausedNew = s.paused.filter(function (x) { return x.id !== sw.id; }).concat([{ id: out, reasons: s.reasons.slice(), note: s.note, when: 'Oktober 2026' }]);
+        var msg = 'Pausiert. Das neue liegt an Platz 5.';
+        if (sw.kind === 'start') { var bk = BOOKS.filter(function (x) { return x.id === sw.id; })[0]; var p = doStart(bk, rest); p.paused = pausedNew; p.saved = msg; p.swap = null; p.swapPick = null; self.setState(p); }
+        else self.setState({ active: rest.concat([sw.id]), paused: pausedNew, sheet: null, swap: null, swapPick: null, volNotice: msg, saved: msg });
+      },
+      pausedRows: pausedRows, hasPaused: pausedRows.length > 0, noPaused: pausedRows.length === 0, volNotice: s.volNotice,
+      volBackLabel: (vk === 'pausiert' || vk === 'abgebrochen' || vk === 'regale' || vk === 'verliehen' || vk === 'stats') ? 'Weitere Bände' : 'Bibliothek',
+      volBack: function () { var sub = (vk === 'pausiert' || vk === 'abgebrochen' || vk === 'regale' || vk === 'verliehen' || vk === 'stats'); self.go(sub ? { screen: 'vol', vol: 'mehr', volNotice: '' } : { screen: 'home' }); },
       openPause: function () { self.setState({ sheet: 'pause', reasons: [], note: '' }); },
       openDrop: function () { self.setState({ sheet: 'drop', reasons: [], note: '', dropLights: 0, again: '' }); },
-      resumeBook: function () { self.setState(resumeState(b.id, false)); },
+      resumeBook: function () { resumeOrAsk(b.id); },
       pauseChips: PAUSE_REASONS.map(chip), dropChips: DROP_REASONS.map(chip),
       sheetIntro: 'Das Lesebändchen bleibt auf Seite ' + (s.pages[s.book] || 0) + '. Ein Grund ist freiwillig.',
       dropIntro: 'Woran lag es? Mehrere Gründe gehen. Daraus lernt die App später, was zu dir passt.',
@@ -890,7 +915,7 @@ class Component extends DCLogic {
       switchTrack: 'flex-shrink: 0; position: relative; width: 51px; height: 31px; border-radius: 16px; box-sizing: border-box; background: ' + (on ? 'var(--acc)' : 'var(--field)') + '; border: 1.5px solid ' + (on ? 'var(--acc)' : 'var(--line)'),
       switchKnob: 'position: absolute; top: 1.5px; left: ' + (on ? '21.5px' : '1.5px') + '; width: 25px; height: 25px; border-radius: 13px; background: ' + (on ? 'var(--accInk)' : 'var(--mute)'),
       tabs: tabs, tabTitle: tt[0], tabText: tt[1],
-      hasSheet: !!s.sheet, sheetTitle: titles[s.sheet] || '', closeLabel: (s.sheet === 'proto' || s.sheet === 'order') ? 'Fertig' : ((s.sheet === 'drop' || s.sheet === 'pause') ? 'Zurück' : 'Abbrechen'),
+      hasSheet: !!s.sheet, sheetTitle: titles[s.sheet] || '', closeLabel: (s.sheet === 'proto' || s.sheet === 'order') ? 'Fertig' : ((s.sheet === 'drop' || s.sheet === 'pause') ? 'Zurück' : (s.sheet === 'swap' ? 'Doch nicht' : 'Abbrechen')),
       sheetStyle: 'position: absolute; left: 0; right: 0; bottom: 0; height: ' + sheetH + 'px; box-sizing: border-box; padding-bottom: 34px; border-radius: 28px 28px 0 0; background: var(--sheet); color: var(--ink); box-shadow: 0 -8px 30px rgba(10,12,30,.25)',
       isPageSheet: s.sheet === 'page', isAddSheet: s.sheet === 'add', isShowcaseSheet: s.sheet === 'showcase', isProtoSheet: s.sheet === 'proto', isSoonSheet: s.sheet === 'soon', isOrderSheet: s.sheet === 'order', isPauseSheet: s.sheet === 'pause', isDropSheet: s.sheet === 'drop',
       pg: pg,
@@ -911,7 +936,7 @@ class Component extends DCLogic {
       openProto: function () { self.setState({ sheet: 'proto' }); },
       openSoon: function () { self.setState({ sheet: 'soon' }); },
       protoModes: [['abend', 'Abend'], ['tag', 'Tag']].map(function (o) { return { label: o[1], checked: s.mode === o[0] ? 'true' : 'false', style: seg(s.mode === o[0]), pick: function () { self.setState({ mode: o[0] }); } }; }),
-      protoCounts: [1, 2, 3, 5, 7].map(function (c) { return { label: String(c), checked: act.length === c ? 'true' : 'false', style: seg(act.length === c), pick: function () { self.setState({ active: DEFAULT_ORDER.slice(0, c), started: {}, extraLib: {}, saved: '' }); } }; }),
+      protoCounts: [1, 2, 3, 5].map(function (c) { return { label: String(c), checked: act.length === c ? 'true' : 'false', style: seg(act.length === c), pick: function () { self.setState({ active: DEFAULT_ORDER.slice(0, c), started: {}, extraLib: {}, saved: '' }); } }; }),
       goHome: function () { self.go({ screen: 'home' }); },
       bookBack: function () { self.go(s.from === 'vol' ? { screen: 'vol', vol: s.backVol || b.vol, volNotice: '' } : { screen: 'home' }); },
       setQuery: function (e) { self.setState({ query: e.target.value }); },
