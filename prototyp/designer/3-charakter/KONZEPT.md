@@ -209,3 +209,44 @@ Arjens Entscheidung: Aktiv sind genau die bis zu 5 Bücher der Startseite. Einen
 - **Prototyp-Schalter:** 1, 2, 3 oder 5 Bücher.
 - **Schaufenster (Arjen, 24.10.2026):** Das Schaufenster zeigt eigene Empfehlungen mit eigenen Worten. Bei gelesenen Büchern bleibt der Schalter, wie er ist; die Rückfrage beginnt mit „Hier steht deine Empfehlung mit deinen Worten.“ Bei abgebrochenen Büchern steht nur noch ein kleiner Schalter ganz unten mit dem Satz „Das Schaufenster ist für Empfehlungen gedacht. Zeigen ist trotzdem möglich.“ Er ist standardmäßig aus und fragt ebenfalls nach. Screens 17 bis 20.
 - **Arjen, 24.10.2026:** Abbruch- und Pausegründe sind bestätigt. Die frühere wertende Formulierung beim Abbrechen ist überall entfernt; der Band „Abgebrochen“ heißt im Untertitel „Mit Grund und Lichtern“, die Rückmeldung lautet „Abgebrochen bei Seite 12.“ Ein Tipp auf den Titel in einem Balken öffnet die Buchseite und holt das Buch **nicht** ins Licht. Die Reihenfolge ändert sich nur über „Reihenfolge“, ein Tipp auf die Zahl trägt die Seite ein. Neue Screens: 00a bis 00c, 03b.
+
+---
+
+## Prototyp, Runde 5: Bewertungsansicht (24.10.2026)
+
+Grundlage: ENTSCHEIDUNGSVORLAGE-USP3.md, Abschnitte 2 und 8. Screens in `screens5/` (00 bis 18), Playwright auf Port 8810, keine Konsolenfehler.
+
+**Was gebaut ist**
+- Die Lichter beantworten jetzt überall „Wie hat es dir gefallen?“ (1 gar nicht, 2 eher nicht, 3 okay, 4 gut, 5 sehr gut). Die alte Bezeichnung ist aus dem Prototyp entfernt; im Rückblick heißt es „Am besten gefallen“.
+- **Sheet „Bewertung“**, direkt nach „Zu Ende gelesen“ (Seite eintragen → „Ende“) oder „Fertig gelesen“ auf der Buchseite. Das Buch ist sofort gelesen; „Später“ schließt ohne Angaben. Der Inhalt von oben nach unten:
+  1. Gefallen (fünf Lichter, nochmals tippen löscht)
+  2. „Was hat funktioniert, was hat gestört?“: je Aspekt zwei getrennte Knöpfe „mochte ich“ und „störte mich“, also kein Umschalten durch Mehrfachtippen. Romane: Sprache, Figuren, Handlung, Atmosphäre, Thema. Sachbücher: Verständlichkeit, Tiefe, Thema.
+  3. Meine Lesart (Freitext)
+  4. „Genauer beschreiben“ (zugeklappt, zeigt „3 von 6 angegeben“): Tempo des Buchs, Tempo für mich, Stimmung, Anspruch, „Mehr von [Autorin]?“, „Was möchtest du künftig seltener?“
+- **Abbruch:** dasselbe Sheet, Titel „Abbrechen“. „Woran lag es?“ mit den bestätigten Gründen ersetzt „funktioniert/gestört“. Gefallen bleibt, „Genauer beschreiben“ auch. Der Knopf heißt „Bei Seite 38 abbrechen“; „Zurück“ bricht nichts ab.
+- **Buchseite:** Die Karte „Wie hat es dir gefallen?“ zeigt Lichter und Wort, darunter knappe Zeilen: Mochte ich, Störte mich, Woran es lag, Genauer, Mehr davon?, Seltener. Mit „Bearbeiten“ öffnet sich dasselbe Sheet vorbefüllt. Ohne Angaben steht dort „Bewerten“.
+
+**Ehrliche Einschätzung beim Durchspielen**
+
+*Leicht, unter 30 Sekunden:*
+- Gefallen ist ein Tipp.
+- Zwei, drei Aspekte sind drei Tipps; die Wörter „mochte ich“ und „störte mich“ sind sofort klar.
+- Der Speicher-Knopf ist immer erreichbar.
+- Der schnelle Weg (Lichter, drei Aspekte, Speichern) braucht 5 Tipps und etwa 10 Sekunden.
+- Beim Abbruch fühlen sich die Gründe natürlicher an als die Aspekte, weil man ohnehin gerade über den Grund nachdenkt.
+
+*Lohnend, aber schon Arbeit:*
+- Die Lesart als Freitext ist der persönlichste Teil, aber die einzige Stelle, die Tippen auf der Tastatur verlangt. Gut, dass sie leer bleiben darf.
+
+*Wirkte beim Durchspielen unnötig oder doppelt:*
+- **„Tempo des Buchs“ neben „Tempo für mich“**: Beim Ausfüllen gibt man fast immer nur eins an, meist „für mich“. Das Buchtempo kann ein Katalogmerkmal werden, statt eine Leserfrage zu sein.
+- **„Stimmung des Buchs“**: sechs Wörter, schwer zu entscheiden, fühlt sich wie eine Prüfung an. Das ist eher ein Katalog- oder Schaufenster-Merkmal.
+- **„Anspruch“** überschneidet sich beim Abbruch mit dem Grund „Zu schwer“. Nicht doppelt, aber man fragt sich, wo man es angeben soll.
+- **„Was möchtest du künftig seltener?“** ist beim Abbruch sinnvoll, bei einem gefallenen Buch fast immer leer. Vorschlag: nur zeigen, wenn Gefallen höchstens 2 ist oder es ein Abbruch ist.
+- **„Mehr von [Autorin]?“** ist stark und leicht. Ich würde es aus „Genauer beschreiben“ herausholen und sichtbar machen.
+- Bei **Sachbüchern** passen drei Aspekte; „Thema“ wirkt dort doppelt zum Buchthema selbst, „Nutzen“ wäre vielleicht treffender (zu prüfen).
+
+*Offene Fragen an Arjen:*
+1. Soll „Mehr davon?“ aus „Genauer“ nach oben wandern?
+2. Soll „Seltener“ nur bei niedrigem Gefallen oder Abbruch erscheinen?
+3. Gehören Tempo des Buchs und Stimmung in den Katalog statt in die Bewertung?

@@ -216,3 +216,11 @@ Arjen hat diese fachlichen Grundlagen an Claude delegiert. Alle Gewichte bleiben
 8. **„Seltener“ und „Nicht empfehlen“** werden getrennt angeboten. „Seltener“ senkt die Priorität, „Nicht empfehlen“ schließt aus.
 
 **Nächster Schritt:** Eine konkrete Bewertungsansicht im Prototyp, durchgespielt an einem gelesenen und einem abgebrochenen Beispielbuch. Dabei zeigt sich, welche Angaben leichtfallen und welche unnötig sind.
+
+### Nachtrag nach dem Durchspielen (Claude, 24.10.2026)
+
+Der Designer hat die Bewertungsansicht im Prototyp an drei Büchern durchgespielt. Gefallen und Aspekte dauern etwa 10 Sekunden. Tempo, Stimmung und Anspruch des Buchs wirkten dabei unnötig. Daraus folgen drei Entscheidungen:
+
+1. **„Mehr von dieser Person?“ wird sichtbar.** Die Frage steht klein unter dem Gefallen und ist mit einem Tipp beantwortet. Sie ist das direkteste Autorensignal und gehört deshalb nicht in den zugeklappten Bereich.
+2. **„Seltener“ erscheint nur bei einer Bewertung von höchstens 2 Lichtern und beim Abbruch.** Bei Büchern, die gefallen haben, war die Frage überflüssig.
+3. **Tempo, Stimmung und Anspruch des Buchs fallen aus der persönlichen Bewertung heraus.** Sie beschreiben das Buch und nicht das eigene Urteil. Deshalb gehören sie in den Katalog (Startkatalog, später öffentliche Beschreibungen aus dem Schaufenster). „Tempo für mich“ (zu langsam, passend, zu schnell) bleibt unter „Genauer beschreiben“, ebenso beim Abbruchgrund „Tempo“.

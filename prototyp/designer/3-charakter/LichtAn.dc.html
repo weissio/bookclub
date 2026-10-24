@@ -268,7 +268,8 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </sc-if>
 
 <sc-if value="{{book.isActive}}" hint-placeholder-val="{{ false }}">
-<div style="display: flex; gap: 8px; margin-top: 16px">
+<button type="button" onClick="{{finishBook}}" style="margin-top: 16px; width: 100%; height: 50px; border-radius: 25px; border: none; background: var(--acc); color: var(--accInk); cursor: pointer; font-size: 16px; font-weight: 900">Fertig gelesen</button>
+<div style="display: flex; gap: 8px; margin-top: 8px">
 <button type="button" onClick="{{openPause}}" style="flex: 1; height: 48px; border-radius: 24px; border: 1.5px solid var(--accLine); background: var(--accBg); cursor: pointer; font-size: 15px; font-weight: 800; color: var(--acc)">Pausieren</button>
 <button type="button" onClick="{{openDrop}}" style="flex: 1; height: 48px; border-radius: 24px; border: 1.5px solid var(--line); background: none; cursor: pointer; font-size: 15px; font-weight: 800; color: var(--ink)">Abbrechen …</button>
 </div>
@@ -280,16 +281,6 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 <button type="button" onClick="{{resumeBook}}" style="margin-top: 12px; width: 100%; height: 50px; border-radius: 25px; border: none; background: var(--acc); color: var(--accInk); cursor: pointer; font-size: 16px; font-weight: 900">Wieder aufnehmen</button>
 </section>
 </sc-if>
-<sc-if value="{{book.isDropped}}" hint-placeholder-val="{{ false }}">
-<section style="margin-top: 16px; border-radius: 20px; background: var(--barBg); padding: 14px 16px">
-<h2 style="margin: 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">WORAN ES LAG</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px"><sc-for list="{{book.dropReasons}}" as="r" hint-placeholder-count="2"><span style="border-radius: 14px; background: var(--accBg); padding: 6px 12px; font-size: 14px; font-weight: 800">{{r.label}}</span></sc-for></div>
-<div style="display: flex; align-items: center; gap: 10px; margin-top: 14px">
-<span role="img" aria-label="{{book.dropLightsWord}}" style="display: flex; gap: 4px"><sc-for list="{{book.dropLightsList}}" as="l" hint-placeholder-count="5"><svg width="18" height="22" viewBox="0 0 26 30" aria-hidden="true"><path d="M13 2 C7 2 3 6.5 3 12 C3 16 5.5 18.5 8 20.5 L8 24 L18 24 L18 20.5 C20.5 18.5 23 16 23 12 C23 6.5 19 2 13 2 Z" style="{{l.bulb}}"></path></svg></sc-for></span>
-<span style="font-size: 14px; font-weight: 700; color: var(--mute)">{{book.dropLightsWord}}</span>
-</div>
-<p style="margin: 10px 0 0 0; font-size: 14px; font-weight: 700">{{book.dropAgain}}</p>
-<sc-if value="{{book.dropHasNote}}" hint-placeholder-val="{{ false }}"><p style="margin: 8px 0 0 0; font-size: 15px; line-height: 21px; font-weight: 600; font-style: italic">{{book.dropNote}}</p></sc-if>
 </section>
 </sc-if>
 
@@ -310,22 +301,19 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </section>
 </sc-if>
 
-<sc-if value="{{book.hasRating}}" hint-placeholder-val="{{ true }}">
-<section style="margin-top: 22px">
-<h2 style="margin: 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">HAT MICH ERREICHT</h2>
-<div style="display: flex; align-items: center; gap: 12px; margin-top: 10px">
-<span role="img" aria-label="{{book.lightsLabel}}" style="display: flex; gap: 6px">
-<sc-for list="{{book.lights}}" as="l" hint-placeholder-count="5">
-<svg width="26" height="30" viewBox="0 0 26 30" aria-hidden="true"><path d="M13 2 C7 2 3 6.5 3 12 C3 16 5.5 18.5 8 20.5 L8 24 L18 24 L18 20.5 C20.5 18.5 23 16 23 12 C23 6.5 19 2 13 2 Z" style="{{l.bulb}}"></path><rect x="9" y="25" width="8" height="3.5" rx="1.5" style="fill: var(--mute)"></rect></svg>
-</sc-for>
-</span>
-<span style="font-size: 16px; font-weight: 800">{{book.lightsWord}}</span>
+<sc-if value="{{book.showRating}}" hint-placeholder-val="{{ true }}">
+<section aria-labelledby="gefallen" style="margin-top: 22px; border-radius: 20px; background: var(--barBg); padding: 12px 16px 14px 16px">
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 8px">
+<h2 id="gefallen" style="margin: 0; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">WIE HAT ES DIR GEFALLEN?</h2>
+<button type="button" onClick="{{editRating}}" style="flex-shrink: 0; min-height: 44px; border: none; background: none; padding: 0 2px; cursor: pointer; font-size: 14px; font-weight: 800; color: var(--acc)">{{book.editLabel}}</button>
 </div>
-<div style="display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px">
-<sc-for list="{{book.qualities}}" as="q" hint-placeholder-count="4">
-<span style="display: inline-flex; flex-direction: column; border-radius: 14px; background: var(--accBg); padding: 7px 12px"><span style="font-size: 11.5px; font-weight: 700; color: var(--mute)">{{q.k}}</span><span style="font-size: 14.5px; font-weight: 800">{{q.v}}</span></span>
-</sc-for>
+<div style="display: flex; align-items: center; gap: 12px">
+<span role="img" aria-label="{{book.starsLabel}}" style="display: flex; gap: 5px"><sc-for list="{{book.stars}}" as="l" hint-placeholder-count="5"><svg width="22" height="26" viewBox="0 0 26 30" aria-hidden="true"><path d="M13 2 C7 2 3 6.5 3 12 C3 16 5.5 18.5 8 20.5 L8 24 L18 24 L18 20.5 C20.5 18.5 23 16 23 12 C23 6.5 19 2 13 2 Z" style="{{l.bulb}}"></path><rect x="9" y="25" width="8" height="3.5" rx="1.5" style="fill: var(--mute)"></rect></svg></sc-for></span>
+<span style="font-size: 16px; font-weight: 800">{{book.starsWord}}</span>
 </div>
+<dl style="margin: 6px 0 0 0">
+<sc-for list="{{book.rateLines}}" as="r" hint-placeholder-count="3"><div style="display: flex; gap: 10px; padding: 7px 0; border-top: 1px solid var(--line)"><dt style="flex-shrink: 0; width: 98px; font-size: 13.5px; font-weight: 700; color: var(--mute)">{{r.k}}</dt><dd style="margin: 0; font-size: 14.5px; line-height: 20px; font-weight: 700">{{r.v}}</dd></div></sc-for>
+</dl>
 </section>
 </sc-if>
 
@@ -542,24 +530,54 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 </div>
 </sc-if>
 
-<!-- Abbrechen -->
-<sc-if value="{{isDropSheet}}" hint-placeholder-val="{{ false }}">
-<div style="padding: 0 16px">
-<p style="margin: 0 4px 10px 4px; font-size: 14.5px; line-height: 21px; font-weight: 600; color: var(--mute)">{{dropIntro}}</p>
+<!-- Bewertung -->
+<sc-if value="{{isRateSheet}}" hint-placeholder-val="{{ false }}">
+<div style="position: absolute; top: 61px; left: 0; right: 0; bottom: 118px; overflow-y: auto; padding: 0 16px 16px 16px">
+<p style="margin: 0 4px 6px 4px; font-size: 14px; line-height: 20px; font-weight: 600; color: var(--mute)">{{rv.intro}}</p>
+<h3 style="margin: 10px 4px 2px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">WIE HAT ES DIR GEFALLEN?</h3>
+<div role="radiogroup" aria-label="Wie hat es dir gefallen?" style="display: flex; align-items: center">
+<sc-for list="{{rv.stars}}" as="l" hint-placeholder-count="5"><button type="button" role="radio" aria-label="{{l.aria}}" aria-checked="{{l.checked}}" onClick="{{l.pick}}" style="width: 46px; height: 48px; border: none; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="26" height="30" viewBox="0 0 26 30" aria-hidden="true"><path d="M13 2 C7 2 3 6.5 3 12 C3 16 5.5 18.5 8 20.5 L8 24 L18 24 L18 20.5 C20.5 18.5 23 16 23 12 C23 6.5 19 2 13 2 Z" style="{{l.bulb}}"></path><rect x="9" y="25" width="8" height="3.5" rx="1.5" style="fill: var(--mute)"></rect></svg></button></sc-for>
+<span style="margin-left: 8px; font-size: 16px; font-weight: 800">{{rv.word}}</span>
+</div>
+
+<sc-if value="{{rv.isRead}}" hint-placeholder-val="{{ true }}">
+<h3 style="margin: 14px 4px 4px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">WAS HAT FUNKTIONIERT, WAS HAT GESTÖRT?</h3>
+<div role="list">
+<sc-for list="{{rv.aspects}}" as="a" hint-placeholder-count="5">
+<div role="listitem" style="display: flex; align-items: center; gap: 6px; min-height: 50px; border-top: 1px solid var(--line)">
+<span style="flex: 1; font-size: 15.5px; font-weight: 800; padding-left: 4px">{{a.label}}</span>
+<button type="button" aria-pressed="{{a.likePressed}}" aria-label="{{a.likeAria}}" onClick="{{a.like}}" style="{{a.likeStyle}}">mochte ich</button>
+<button type="button" aria-pressed="{{a.dislikePressed}}" aria-label="{{a.dislikeAria}}" onClick="{{a.dislike}}" style="{{a.dislikeStyle}}">störte mich</button>
+</div>
+</sc-for>
+</div>
+</sc-if>
+<sc-if value="{{rv.isDrop}}" hint-placeholder-val="{{ false }}">
+<h3 style="margin: 14px 4px 6px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">WORAN LAG ES?</h3>
 <div role="group" aria-label="Gründe" style="display: flex; flex-wrap: wrap; gap: 6px">
-<sc-for list="{{dropChips}}" as="c" hint-placeholder-count="10"><button type="button" aria-pressed="{{c.pressed}}" onClick="{{c.toggle}}" style="{{c.style}}">{{c.label}}</button></sc-for>
+<sc-for list="{{rv.reasons}}" as="c" hint-placeholder-count="10"><button type="button" aria-pressed="{{c.pressed}}" onClick="{{c.toggle}}" style="{{c.style}}">{{c.label}}</button></sc-for>
 </div>
-<h3 style="margin: 16px 4px 4px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">BIS HIERHIN: HAT ES DICH ERREICHT?</h3>
-<div style="display: flex; align-items: center; gap: 2px">
-<sc-for list="{{dropBulbs}}" as="l" hint-placeholder-count="5"><button type="button" aria-label="{{l.aria}}" aria-pressed="{{l.pressed}}" onClick="{{l.pick}}" style="width: 44px; height: 44px; border: none; background: none; cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 0"><svg width="24" height="28" viewBox="0 0 26 30" aria-hidden="true"><path d="M13 2 C7 2 3 6.5 3 12 C3 16 5.5 18.5 8 20.5 L8 24 L18 24 L18 20.5 C20.5 18.5 23 16 23 12 C23 6.5 19 2 13 2 Z" style="{{l.bulb}}"></path><rect x="9" y="25" width="8" height="3.5" rx="1.5" style="fill: var(--mute)"></rect></svg></button></sc-for>
-<span style="margin-left: 8px; font-size: 15px; font-weight: 800">{{dropLightWord}}</span>
+</sc-if>
+
+<h3 style="margin: 16px 4px 6px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">{{rv.textLabel}}</h3>
+<textarea aria-label="{{rv.textLabel}}" onChange="{{rv.setText}}" placeholder="{{rv.textHint}}" style="width: 100%; box-sizing: border-box; height: 84px; border: none; border-radius: 14px; background: #FFF3DA; color: #2A2440; padding: 12px 14px; font-family: 'Nunito', sans-serif; font-size: 16px; line-height: 22px; font-weight: 700; resize: none" value="{{rv.text}}"></textarea>
+
+<button type="button" aria-expanded="{{rv.moreExpanded}}" onClick="{{rv.toggleMore}}" style="margin-top: 10px; width: 100%; min-height: 48px; display: flex; align-items: center; justify-content: space-between; border: none; border-top: 1px solid var(--line); background: none; padding: 0 4px; cursor: pointer; color: var(--ink)">
+<span style="display: flex; flex-direction: column; text-align: left"><span style="font-size: 15.5px; font-weight: 800">Genauer beschreiben</span><span style="font-size: 12.5px; font-weight: 600; color: var(--mute)">{{rv.moreHint}}</span></span>
+<svg width="16" height="10" viewBox="0 0 16 10" aria-hidden="true" style="{{rv.chevron}}"><path d="M2 2l6 6 6-6" fill="none" style="stroke: var(--acc)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+<sc-if value="{{rv.moreOpen}}" hint-placeholder-val="{{ false }}">
+<sc-for list="{{rv.groups}}" as="g" hint-placeholder-count="6">
+<h4 style="margin: 12px 4px 6px 4px; font-size: 13px; font-weight: 800; color: var(--mute)">{{g.label}}</h4>
+<div role="group" aria-label="{{g.label}}" style="display: flex; flex-wrap: wrap; gap: 6px">
+<sc-for list="{{g.opts}}" as="o" hint-placeholder-count="3"><button type="button" aria-pressed="{{o.pressed}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
 </div>
-<h3 style="margin: 12px 4px 6px 4px; font-size: 13px; font-weight: 800; color: var(--mute); letter-spacing: .03em">{{againLabel}}</h3>
-<div role="radiogroup" aria-label="{{againLabel}}" style="display: flex; gap: 6px">
-<sc-for list="{{againOpts}}" as="o" hint-placeholder-count="3"><button type="button" role="radio" aria-checked="{{o.checked}}" onClick="{{o.pick}}" style="{{o.style}}">{{o.label}}</button></sc-for>
+</sc-for>
+</sc-if>
 </div>
-<input type="text" aria-label="Eigene Worte, freiwillig" value="{{draftNote}}" onChange="{{setNote}}" placeholder="Eigene Worte (freiwillig)" style="margin-top: 12px; width: 100%; box-sizing: border-box; height: 48px; border: none; border-radius: 14px; background: var(--field); padding: 0 14px; font-size: 16px; font-weight: 600; color: var(--ink)">
-<button type="button" onClick="{{confirmDrop}}" style="margin-top: 12px; width: 100%; height: 54px; border-radius: 27px; border: none; background: var(--acc); color: var(--accInk); cursor: pointer; font-size: 17px; font-weight: 900">{{dropSaveLabel}}</button>
+<div style="position: absolute; left: 16px; right: 16px; bottom: 34px; height: 84px; display: flex; flex-direction: column; justify-content: flex-end">
+<button type="button" onClick="{{rv.save}}" style="width: 100%; height: 54px; border-radius: 27px; border: none; background: var(--acc); color: var(--accInk); cursor: pointer; font-size: 17px; font-weight: 900">{{rv.saveLabel}}</button>
+<p style="margin: 6px 0 0 0; text-align: center; font-size: 12.5px; font-weight: 600; color: var(--mute)">Alles freiwillig. Leer lassen ist in Ordnung.</p>
 </div>
 </sc-if>
 
@@ -610,7 +628,7 @@ input[type=search]::-webkit-search-cancel-button{display:none}
 var LIB = {
   salz: { title: 'Salz und Asche', author: 'Jonas Brehm', page: 142, pages: 384, cover: '#3F6F8F', ribbon: '#E0637A' },
   gezeiten: { title: 'Die Gezeitenkarte', author: 'Mira Olsen', page: 38, pages: 296, cover: '#7C6BB0', ribbon: '#F2B33D' },
-  stille: { title: 'Kleine Geschichte der Stille', author: 'Ina Roth', page: 61, pages: 220, cover: '#4F8A6A', ribbon: '#FFD98A' },
+  stille: { title: 'Kleine Geschichte der Stille', author: 'Ina Roth', page: 61, pages: 220, cover: '#4F8A6A', ribbon: '#FFD98A', sach: true },
   moor: { title: 'Das Haus am Moor', author: 'Clara Feld', page: 12, pages: 340, cover: '#B85A6E', ribbon: '#7FA1E2' },
   tromso: { title: 'Ein Winter in Tromsø und anderswo', author: 'Lene Fahr', page: 88, pages: 412, cover: '#D7A13A', ribbon: '#4C69B8' },
   kompass: { title: 'Der Kompass der Mutter', author: 'Ana Weiss', page: 23, pages: 300, cover: '#6C73B0', ribbon: '#F2B33D' },
@@ -622,7 +640,18 @@ var DEFAULT_ORDER = ['salz', 'gezeiten', 'stille', 'moor', 'tromso'];
 var PAUSE_REASONS = ['Gerade nicht die Stimmung', 'Zu schwer für jetzt', 'Ein anderes Buch drängt', 'Keine Zeit', 'Will es in Ruhe lesen', 'Anderes'];
 var DROP_REASONS = ['Stil, Sprache', 'Tempo', 'Thema', 'Figuren', 'Zu lang', 'Zu schwer', 'Erwartung nicht erfüllt', 'Nicht mein Genre', 'Inhaltlich unangenehm', 'Anderes'];
 var AGAIN = [['ja', 'Ja'], ['vielleicht', 'Vielleicht'], ['nein', 'Eher nicht']];
-var LIGHT_WORDS = ['noch offen', 'gar nicht', 'kaum', 'ein wenig', 'spürbar', 'sehr'];
+var STAR_WORDS = ['noch offen', 'gar nicht', 'eher nicht', 'okay', 'gut', 'sehr gut'];
+var ASPECTS_ROMAN = ['Sprache', 'Figuren', 'Handlung', 'Atmosphäre', 'Thema'];
+var ASPECTS_SACH = ['Verständlichkeit', 'Tiefe', 'Thema'];
+var MORE_GROUPS = [
+  ['tempoBook', 'Tempo des Buchs', ['ruhig', 'ausgewogen', 'rasant'], false],
+  ['tempoMe', 'Tempo für mich', ['zu langsam', 'passend', 'zu schnell'], false],
+  ['moods', 'Stimmung des Buchs', ['heiter', 'warm', 'nachdenklich', 'melancholisch', 'düster', 'spannend'], true],
+  ['level', 'Anspruch', ['leicht', 'mittel', 'fordernd'], false],
+  ['again', 'Mehr von dieser Person?', ['Ja', 'Nein', 'weiß nicht'], false],
+  ['less', 'Was möchtest du künftig seltener?', ['dieses Genre', 'dieses Thema', 'solche Länge', 'diesen Ton'], true]
+];
+function blankRating() { return { stars: 0, asp: {}, reasons: [], text: '', tempoBook: '', tempoMe: '', moods: [], level: '', again: '', less: [] }; }
 var COUNTS = { gelesen: 148, ungelesen: 61, wunsch: 23, abgebrochen: 6, regale: 5, verliehen: 2 };
 var VOLS = {
   gelesen: { name: 'Gelesen', sub: 'Zu Ende gelesen, mit deinen eigenen Worten.', search: 'In 148 gelesenen Büchern suchen' },
@@ -693,8 +722,13 @@ class Component extends DCLogic {
       sheet: null, pageFor: 'salz', draft: 0, fresh: true, saved: '', query: '', sort: 'jahr', showcase: {}, addStep: 'pick', target: 'ungelesen', extra: 0,
       paused: [{ id: 'nacht', reasons: ['Gerade nicht die Stimmung'], note: '', when: 'September 2026' }, { id: 'garten', reasons: [], note: '', when: 'August 2026' }],
       swap: null, swapPick: null,
-      dropped: [{ id: 'fluss', reasons: ['Tempo', 'Zu lang'], lights: 1, again: 'vielleicht', note: 'Schöne Sätze, aber nach 80 Seiten ist noch nichts passiert.', when: 'Mai 2026' }],
-      reasons: [], note: '', dropLights: 0, again: '', volNotice: '' };
+      dropped: [{ id: 'fluss', when: 'Mai 2026' }],
+      finished: [], rate: null, rd: blankRating(), moreOpen: false,
+      ratings: {
+        uhr: { stars: 5, asp: { Sprache: 'like', Figuren: 'like', Handlung: 'like', Atmosphäre: 'like' }, reasons: [], text: '', tempoBook: 'ausgewogen', tempoMe: 'passend', moods: ['nachdenklich', 'warm'], level: 'mittel', again: 'Ja', less: [] },
+        fluss: { stars: 2, asp: {}, reasons: ['Tempo', 'Zu lang'], text: 'Schöne Sätze, aber nach 80 Seiten ist noch nichts passiert.', tempoBook: '', tempoMe: 'zu langsam', moods: [], level: '', again: 'weiß nicht', less: [] }
+      },
+      reasons: [], note: '', volNotice: '' };
   }
   go(patch) { this.setState(Object.assign({ sheet: null }, patch)); }
   renderVals() {
@@ -720,7 +754,9 @@ class Component extends DCLogic {
     var pausedIds = s.paused.map(function (x) { return x.id; });
     var droppedIds = s.dropped.map(function (x) { return x.id; });
     var total = n.gelesen + n.ungelesen + n.abgebrochen + n.wunsch + act.length + s.paused.length;
-    var stateOf = function (id) { return act.indexOf(id) >= 0 ? 'aktiv' : (pausedIds.indexOf(id) >= 0 ? 'pausiert' : (droppedIds.indexOf(id) >= 0 ? 'abgebrochen' : '')); };
+    var stateOf = function (id) { return act.indexOf(id) >= 0 ? 'aktiv' : (pausedIds.indexOf(id) >= 0 ? 'pausiert' : (droppedIds.indexOf(id) >= 0 ? 'abgebrochen' : (s.finished.indexOf(id) >= 0 ? 'gelesen' : ''))); };
+    var starsOf = function (id, fallback) { var r = s.ratings[id]; return r ? r.stars : (fallback || 0); };
+    n.gelesen += s.finished.length;
     var openBook = function (id, from) { return function () { self.go({ screen: 'book', book: id, from: 'vol', backVol: from, volNotice: '' }); }; };
     var free = 5 - act.length;
     var shelfDef = [['gelesen', 'Gelesen', 'zuletzt: Die Uhrmacherin', n.gelesen], ['ungelesen', 'Ungelesen im Regal', 'haben Zeit', n.ungelesen], ['wunsch', 'Wunschliste', 'irgendwann', n.wunsch], ['mehr', 'Weitere Bände', 'Abgebrochen, Regale, Rückblick', n.abgebrochen + n.regale + n.verliehen + s.paused.length]];
@@ -741,13 +777,15 @@ class Component extends DCLogic {
     } else if (vk === 'abgebrochen') {
       groups = [{ label: 'Mit deinem Grund', rows: s.dropped.slice().reverse().map(function (d) {
         var bk = lib[d.id];
-        return { title: bk.title, meta: bk.author + ' · bei S. ' + s.pages[d.id] + (d.reasons.length ? ' · ' + d.reasons.join(', ') : ''), cover: bk.cover,
-          hasLights: d.lights > 0, lights: lightsOf(d.lights, 9), aria: bk.title + ', abgebrochen' + (d.reasons.length ? ', Grund: ' + d.reasons.join(', ') : ''), open: openBook(d.id, 'abgebrochen') };
+        var rt = s.ratings[d.id] || blankRating();
+        return { title: bk.title, meta: bk.author + ' · bei S. ' + s.pages[d.id] + (rt.reasons.length ? ' · ' + rt.reasons.join(', ') : ''), cover: bk.cover,
+          hasLights: rt.stars > 0, lights: lightsOf(rt.stars, 9), aria: bk.title + ', abgebrochen' + (rt.reasons.length ? ', Grund: ' + rt.reasons.join(', ') : ''), open: openBook(d.id, 'abgebrochen') };
       }) }];
     } else if (vk === 'aktiv' || vk === 'pausiert') {
       groups = [];
     } else {
-      inVol = BOOKS.filter(function (b) { return b.vol === vk && !s.started[b.id]; });
+      inVol = BOOKS.filter(function (b) { return b.vol === vk && !s.started[b.id]; }).map(function (b) { return s.ratings[b.id] ? Object.assign({}, b, { lights: s.ratings[b.id].stars }) : b; });
+      if (vk === 'gelesen') inVol = s.finished.slice().reverse().map(function (id) { var bk = lib[id]; return { id: id, vol: 'gelesen', year: '2026', title: bk.title, author: bk.author, when: 'Oktober 2026', cover: bk.cover, lights: starsOf(id) }; }).concat(inVol);
       shown = inVol.filter(function (b) { return !q || (b.title + ' ' + b.author).toLowerCase().indexOf(q) >= 0; });
       if (s.sort === 'licht') shown = shown.slice().sort(function (a, b) { return (b.lights || 0) - (a.lights || 0); });
       if (s.sort === 'abc') shown = shown.slice().sort(function (a, b) { return a.title.localeCompare(b.title, 'de'); });
@@ -758,11 +796,12 @@ class Component extends DCLogic {
         g.rows.push({ title: b.title, meta: b.vol === 'regale' ? b.when : b.author + ' · ' + b.when, cover: b.cover,
           hasLights: !!b.lights, lights: b.lights ? lightsOf(b.lights, 9) : [],
           aria: b.title + ', ' + b.author + (b.lights ? ', ' + b.lights + ' von 5 Lichtern' : ''),
-          open: function () { self.go({ screen: 'book', book: b.id, from: 'vol', backVol: vk }); } });
+          open: lib[b.id] ? openBook(b.id, vk) : function () { self.go({ screen: 'book', book: b.id, from: 'vol', backVol: vk }); } });
       });
     }
     var special = vk === 'mehr' || vk === 'abgebrochen' || vk === 'pausiert';
     var count = vk === 'stats' || vk === 'mehr' ? 0 : (vk === 'pausiert' ? s.paused.length : n[vk]);
+    if (vk === 'gelesen') count = n.gelesen;
     var isList = vk !== 'stats' && vk !== 'pausiert';
     var vol = { name: V.name, sub: (vk === 'stats' || vk === 'mehr') ? V.sub : count + (vk === 'regale' ? ' Regale. ' : (count === 1 ? ' Buch. ' : ' Bücher. ')) + V.sub, searchLabel: V.search || '',
       isList: isList, hasSearch: isList && !special, isStats: vk === 'stats', isPausiert: vk === 'pausiert', groups: groups, noResults: !special && shown.length === 0,
@@ -787,26 +826,38 @@ class Component extends DCLogic {
       copy: [['Format', 'Taschenbuch'], ['Steht', 'Nachttisch']], history: [['Begonnen', 'Herbst 2026'], ['Bändchen', 'Seite ' + s.pages[s.book] + ' von ' + lib[s.book].pages]] }
       : (BOOKS.filter(function (x) { return x.id === s.book; })[0] || BOOKS[0]);
     var pz = s.paused.filter(function (x) { return x.id === b.id; })[0];
-    var dz = s.dropped.filter(function (x) { return x.id === b.id; })[0];
+    var rt = s.ratings[b.id] || (b.lights ? Object.assign(blankRating(), { stars: b.lights }) : null);
     var rank = act.indexOf(b.id);
     var on = !!s.showcase[b.id];
     var dark = function (hex) { var v = parseInt(hex.slice(1), 16); return 'rgb(' + Math.round((v >> 16) * .72) + ',' + Math.round(((v >> 8) & 255) * .72) + ',' + Math.round((v & 255) * .72) + ')'; };
     var book = { title: b.title, author: b.author, cover: b.cover, coverDark: dark(b.cover), ribbon: b.ribbon || '#F2B33D',
-      status: b.vol === 'gelesen' ? 'Gelesen im ' + b.when : (b.vol === 'aktiv' ? 'Am Lesen · Platz ' + (rank + 1) + ' von ' + act.length : (b.vol === 'pausiert' ? 'Pausiert bei Seite ' + s.pages[b.id] : (b.vol === 'abgebrochen' ? 'Abgebrochen bei Seite ' + s.pages[b.id] : b.when))),
+      status: b.vol === 'gelesen' ? 'Gelesen im ' + (b.when || 'Oktober 2026') : (b.vol === 'aktiv' ? 'Am Lesen · Platz ' + (rank + 1) + ' von ' + act.length : (b.vol === 'pausiert' ? 'Pausiert bei Seite ' + s.pages[b.id] : (b.vol === 'abgebrochen' ? 'Abgebrochen bei Seite ' + s.pages[b.id] : b.when))),
       canStart: b.vol === 'ungelesen' && !s.started[b.id],
       showBigSwitch: b.vol !== 'abgebrochen',
       isActive: b.vol === 'aktiv', isPaused: b.vol === 'pausiert', isDropped: b.vol === 'abgebrochen',
       pausedWhy: pz ? (pz.reasons.length ? pz.reasons.join(', ') : 'Ohne Grund pausiert.') + (pz.note ? ' „' + pz.note + '“' : '') : '',
-      dropReasons: dz ? dz.reasons.map(function (r) { return { label: r }; }) : [], dropHasReasons: !!(dz && dz.reasons.length),
-      dropLightsList: dz ? [1, 2, 3, 4, 5].map(function (i) { return { bulb: i <= dz.lights ? 'fill: var(--bulb)' : 'fill: none; stroke: var(--line); stroke-width: 2' }; }) : [],
-      dropLightsWord: dz ? 'Hat dich erreicht: ' + LIGHT_WORDS[dz.lights] : '', dropAgain: dz && dz.again ? 'Noch einmal etwas von ' + b.author + '? ' + AGAIN.filter(function (a) { return a[0] === dz.again; })[0][1] : '',
-      dropNote: dz && dz.note ? '„' + dz.note + '“' : '', dropHasNote: !!(dz && dz.note),
-      hasReading: !!b.reading, reading: b.reading || '', forWhom: b.forWhom || '',
-      inviteCard: !b.reading && b.vol !== 'abgebrochen', inviteText: b.vol === 'gelesen' ? 'Was ist dir von diesem Buch geblieben? Ein Satz reicht.' : 'Deine eigenen Worte kommen dazu, wenn du es gelesen hast. Eine Notiz für dich geht schon jetzt.',
-      hasRating: !!b.lights, lightsLabel: (b.lights || 0) + ' von 5 Lichtern',
-      lights: [1, 2, 3, 4, 5].map(function (i) { return { bulb: i <= (b.lights || 0) ? 'fill: var(--bulb)' : 'fill: none; stroke: var(--line); stroke-width: 2' }; }),
-      lightsWord: ['', 'kaum', 'ein wenig', 'spürbar', 'sehr', 'mitten ins Herz'][b.lights || 0],
-      qualities: (b.qualities || []).map(function (r) { return { k: r[0], v: r[1] }; }),
+      hasReading: !!(b.reading || (rt && rt.text && b.vol === 'gelesen')), reading: (rt && rt.text && b.vol === 'gelesen') ? rt.text : (b.reading || ''), forWhom: b.reading && !(rt && rt.text) ? (b.forWhom || '') : (b.forWhom && rt && rt.text === b.reading ? b.forWhom : ''),
+      inviteCard: !(b.reading || (rt && rt.text && b.vol === 'gelesen')) && b.vol !== 'abgebrochen', inviteText: b.vol === 'gelesen' ? 'Was ist dir von diesem Buch geblieben? Ein Satz reicht.' : 'Deine eigenen Worte kommen dazu, wenn du es gelesen hast. Eine Notiz für dich geht schon jetzt.',
+      showRating: b.vol === 'gelesen' || b.vol === 'abgebrochen',
+      editLabel: rt && (rt.stars || rt.reasons.length || Object.keys(rt.asp).length) ? 'Bearbeiten' : 'Bewerten',
+      stars: [1, 2, 3, 4, 5].map(function (i) { return { bulb: rt && i <= rt.stars ? 'fill: var(--bulb)' : 'fill: none; stroke: var(--line); stroke-width: 2' }; }),
+      starsLabel: rt && rt.stars ? rt.stars + ' von 5, ' + STAR_WORDS[rt.stars] : 'Noch nicht bewertet',
+      starsWord: rt && rt.stars ? STAR_WORDS[rt.stars] : 'noch offen',
+      rateLines: (function () {
+        if (!rt) return [];
+        var out = [], likes = [], dis = [];
+        Object.keys(rt.asp).forEach(function (k) { if (rt.asp[k] === 'like') likes.push(k); else if (rt.asp[k] === 'dislike') dis.push(k); });
+        if (likes.length) out.push({ k: 'Mochte ich', v: likes.join(', ') });
+        if (dis.length) out.push({ k: 'Störte mich', v: dis.join(', ') });
+        if (rt.reasons.length) out.push({ k: 'Woran es lag', v: rt.reasons.join(', ') });
+        var more = [];
+        if (rt.tempoBook) more.push('Tempo ' + rt.tempoBook); if (rt.tempoMe) more.push('für mich ' + rt.tempoMe); if (rt.moods.length) more.push(rt.moods.join(', ')); if (rt.level) more.push('Anspruch ' + rt.level);
+        if (more.length) out.push({ k: 'Genauer', v: more.join(' · ') });
+        if (rt.again) out.push({ k: 'Mehr davon?', v: rt.again });
+        if (rt.less.length) out.push({ k: 'Seltener', v: rt.less.join(', ') });
+        if (b.vol === 'abgebrochen' && rt.text) out.push({ k: 'Eigene Worte', v: '„' + rt.text + '“' });
+        return out;
+      })(),
       hasQuote: !!b.quote, quote: b.quote || '', quotePage: b.quotePage || '',
       copy: (b.copy || [['Format', 'noch nicht angegeben']]).map(function (r, i) { return { k: r[0], v: r[1], style: row(i) }; }),
       history: (b.history || [['Erfasst', 'Beispiel']]).map(function (r, i) { return { k: r[0], v: r[1], style: row(i) }; }) };
@@ -853,8 +904,8 @@ class Component extends DCLogic {
     });
     var tabTexts = { shop: ['Schaufenster', 'Hier entsteht deine kleine öffentliche Bücherei. Es erscheint nur, was du einzeln ins Fenster stellst.'], find: ['Entdecken', 'Später findest du hier Schaufenster in der Nähe und Leserstimmen zu einzelnen Büchern.'], me: ['Ich', 'Pseudonym, Privatsphäre und der Export deiner Bibliothek.'] };
     var tt = tabTexts[s.tab] || ['', ''];
-    var sheetH = { page: 640, add: s.addStep === 'scan' ? 560 : 400, showcase: 470, proto: 330, soon: 200, order: 180 + act.length * 62, pause: 500, drop: 730, swap: s.swapPick ? 560 : 610 }[s.sheet] || 300;
-    var titles = { page: 'Seite eintragen', add: 'Auspacken', showcase: 'Schaufenster', proto: 'Prototyp', soon: 'Kommt bald', order: 'Reihenfolge', pause: 'Pausieren', drop: 'Abbrechen', swap: 'Platz machen' };
+    var sheetH = { page: 640, add: s.addStep === 'scan' ? 560 : 400, showcase: 470, proto: 330, soon: 200, order: 180 + act.length * 62, pause: 500, rate: 800, swap: s.swapPick ? 560 : 610 }[s.sheet] || 300;
+    var titles = { page: 'Seite eintragen', add: 'Auspacken', showcase: 'Schaufenster', proto: 'Prototyp', soon: 'Kommt bald', order: 'Reihenfolge', pause: 'Pausieren', rate: s.rate && s.rate.kind.indexOf('drop') >= 0 ? 'Abbrechen' : 'Bewertung', swap: 'Platz machen' };
     var chip = function (label) {
       var on = s.reasons.indexOf(label) >= 0;
       return { label: label, pressed: on ? 'true' : 'false',
@@ -862,6 +913,52 @@ class Component extends DCLogic {
         toggle: function () { var r = s.reasons.slice(); var k = r.indexOf(label); if (k >= 0) r.splice(k, 1); else r.push(label); self.setState({ reasons: r }); } };
     };
     var sheetBook = lib[s.book] || LIB.salz;
+    var finish = function (id, pagesOverride) {
+      var pg2 = Object.assign({}, pagesOverride || s.pages); pg2[id] = (lib[id] || {}).pages || pg2[id];
+      self.setState({ pages: pg2, active: act.filter(function (x) { return x !== id; }), finished: s.finished.concat([id]), sheet: 'rate', rate: { id: id, kind: 'read' }, rd: blankRating(), moreOpen: false, saved: 'Ausgelesen. Steht jetzt bei Gelesen.' });
+    };
+    var rv = (function () {
+      if (!s.rate) return { stars: [], aspects: [], reasons: [], groups: [], isRead: false, isDrop: false };
+      var R0 = s.rate, rd = s.rd, isDrop = R0.kind === 'drop' || R0.kind === 'editDrop';
+      var bk = lib[R0.id] || BOOKS.filter(function (x) { return x.id === R0.id; })[0] || {};
+      var upd = function (patch) { self.setState({ rd: Object.assign({}, rd, patch) }); };
+      var pill = function (on) { return 'min-height: 44px; padding: 0 13px; border-radius: 22px; cursor: pointer; font-size: 14px; font-weight: 800; border: 1.5px solid ' + (on ? 'var(--acc)' : 'var(--line)') + '; background: ' + (on ? 'var(--accBg)' : 'transparent') + '; color: ' + (on ? 'var(--acc)' : 'var(--ink)'); };
+      var aspectBtn = function (on, bad) { return 'flex-shrink: 0; min-height: 44px; padding: 0 11px; border-radius: 22px; cursor: pointer; font-size: 13px; font-weight: 800; border: 1.5px solid ' + (on ? (bad ? 'var(--mute)' : 'var(--acc)') : 'var(--line)') + '; background: ' + (on ? (bad ? 'var(--field)' : 'var(--accBg)') : 'transparent') + '; color: ' + (on ? (bad ? 'var(--ink)' : 'var(--acc)') : 'var(--mute)'); };
+      var filled = 0; MORE_GROUPS.forEach(function (g) { var v = rd[g[0]]; if (g[3] ? v.length : v) filled++; });
+      var who = (bk.author || '').split(' ').slice(-1)[0];
+      return {
+        isRead: !isDrop, isDrop: isDrop,
+        intro: isDrop ? '„' + bk.title + '“ bei Seite ' + (s.pages[R0.id] || 0) + '. Was du hier angibst, hilft später bei passenden Empfehlungen.' : '„' + bk.title + '“' + (R0.kind === 'read' ? ' ist ausgelesen.' : ':') + ' Tippe nur an, was dir einfällt.',
+        word: STAR_WORDS[rd.stars],
+        stars: [1, 2, 3, 4, 5].map(function (i) { return { aria: i + ' von 5, ' + STAR_WORDS[i], checked: rd.stars === i ? 'true' : 'false', bulb: i <= rd.stars ? 'fill: var(--bulb)' : 'fill: none; stroke: var(--mute); stroke-width: 2', pick: function () { upd({ stars: rd.stars === i ? 0 : i }); } }; }),
+        aspects: (bk.sach ? ASPECTS_SACH : ASPECTS_ROMAN).map(function (a) {
+          var v = rd.asp[a] || '';
+          var set = function (val) { var m = Object.assign({}, rd.asp); if (m[a] === val) delete m[a]; else m[a] = val; upd({ asp: m }); };
+          return { label: a, likePressed: v === 'like' ? 'true' : 'false', dislikePressed: v === 'dislike' ? 'true' : 'false', likeAria: a + ': mochte ich', dislikeAria: a + ': störte mich',
+            likeStyle: aspectBtn(v === 'like', false), dislikeStyle: aspectBtn(v === 'dislike', true), like: function () { set('like'); }, dislike: function () { set('dislike'); } };
+        }),
+        reasons: DROP_REASONS.map(function (r) { var on = rd.reasons.indexOf(r) >= 0; return { label: r, pressed: on ? 'true' : 'false', style: pill(on), toggle: function () { var x = rd.reasons.slice(); var k = x.indexOf(r); if (k >= 0) x.splice(k, 1); else x.push(r); upd({ reasons: x }); } }; }),
+        textLabel: isDrop ? 'EIGENE WORTE' : 'MEINE LESART', textHint: isDrop ? 'Was du dir merken möchtest (freiwillig)' : 'Was ist dir geblieben? Ein Satz reicht.', text: rd.text,
+        setText: function (e) { upd({ text: e.target.value }); },
+        moreOpen: s.moreOpen, moreExpanded: s.moreOpen ? 'true' : 'false', toggleMore: function () { self.setState({ moreOpen: !s.moreOpen }); },
+        moreHint: filled ? filled + ' von 6 angegeben' : 'Tempo, Stimmung, Anspruch, mehr davon?',
+        chevron: 'transition: transform .15s; transform: rotate(' + (s.moreOpen ? 180 : 0) + 'deg)',
+        groups: MORE_GROUPS.map(function (g) {
+          return { label: g[0] === 'again' ? 'Mehr von ' + (bk.author || 'dieser Person') + '?' : g[1], opts: g[2].map(function (o) {
+            var on = g[3] ? rd[g[0]].indexOf(o) >= 0 : rd[g[0]] === o;
+            return { label: o, pressed: on ? 'true' : 'false', style: pill(on), pick: function () { var p = {}; if (g[3]) { var x = rd[g[0]].slice(); var k = x.indexOf(o); if (k >= 0) x.splice(k, 1); else x.push(o); p[g[0]] = x; } else p[g[0]] = on ? '' : o; upd(p); } };
+          }) };
+        }),
+        saveLabel: R0.kind === 'drop' ? 'Bei Seite ' + (s.pages[R0.id] || 0) + ' abbrechen' : 'Speichern',
+        save: function () {
+          var r = Object.assign({}, s.ratings); r[R0.id] = rd;
+          var patch = { ratings: r, sheet: null, rate: null };
+          if (R0.kind === 'drop') { patch.active = act.filter(function (x) { return x !== R0.id; }); patch.paused = s.paused.filter(function (x) { return x.id !== R0.id; }); patch.dropped = s.dropped.concat([{ id: R0.id, when: 'Oktober 2026' }]); patch.saved = 'Abgebrochen bei Seite ' + (s.pages[R0.id] || 0) + '.'; }
+          else if (R0.kind === 'read') patch.saved = 'Ausgelesen und bewertet.';
+          self.setState(patch);
+        }
+      };
+    })();
     return {
       themeClass: abend ? 'abend' : 'tag', isAbend: abend, isTag: !abend, clock: abend ? '21:47' : '10:12',
       bulbStyle: abend ? 'fill: #FFF6D8' : 'fill: #E9D3A6',
@@ -882,7 +979,7 @@ class Component extends DCLogic {
       }),
       shelf: shelf, totalLabel: total + ' Bücher',
       vol: vol, sorts: sorts, query: s.query, hasQuery: !!s.query,
-      statRows: [{ k: 'Am häufigsten gelesen', v: 'Jonas Brehm, 3 Bücher' }, { k: 'Liebstes Genre', v: 'Roman der Gegenwart' }, { k: 'Am stärksten erreicht', v: 'Die Uhrmacherin, Unter Linden, später' }, { k: 'Dieses Jahr zu Ende gelesen', v: '19 Bücher, ohne Ziel und ohne Eile' }],
+      statRows: [{ k: 'Am häufigsten gelesen', v: 'Jonas Brehm, 3 Bücher' }, { k: 'Liebstes Genre', v: 'Roman der Gegenwart' }, { k: 'Am besten gefallen', v: 'Die Uhrmacherin, Unter Linden, später' }, { k: 'Dieses Jahr zu Ende gelesen', v: '19 Bücher, ohne Ziel und ohne Eile' }],
       book: book, bookBackLabel: s.from === 'vol' ? VOLS[s.backVol || b.vol].name : 'Bibliothek',
       startReading: function () {
         if (act.length >= 5) { self.setState({ sheet: 'swap', swap: { id: b.id, kind: 'start' }, swapPick: null, reasons: [], note: '' }); return; }
@@ -906,34 +1003,31 @@ class Component extends DCLogic {
       volBackLabel: (vk === 'pausiert' || vk === 'abgebrochen' || vk === 'regale' || vk === 'verliehen' || vk === 'stats') ? 'Weitere Bände' : 'Bibliothek',
       volBack: function () { var sub = (vk === 'pausiert' || vk === 'abgebrochen' || vk === 'regale' || vk === 'verliehen' || vk === 'stats'); self.go(sub ? { screen: 'vol', vol: 'mehr', volNotice: '' } : { screen: 'home' }); },
       openPause: function () { self.setState({ sheet: 'pause', reasons: [], note: '' }); },
-      openDrop: function () { self.setState({ sheet: 'drop', reasons: [], note: '', dropLights: 0, again: '' }); },
+      openDrop: function () { self.setState({ sheet: 'rate', rate: { id: b.id, kind: 'drop' }, rd: blankRating(), moreOpen: false }); },
+      finishBook: function () { finish(b.id); },
+      editRating: function () { var cur = s.ratings[b.id] || (b.lights ? Object.assign(blankRating(), { stars: b.lights }) : blankRating()); var c = JSON.parse(JSON.stringify(cur)); if (!c.text && b.reading && b.vol === 'gelesen') c.text = b.reading; self.setState({ sheet: 'rate', rate: { id: b.id, kind: b.vol === 'abgebrochen' ? 'editDrop' : 'editRead' }, rd: c, moreOpen: false }); },
       resumeBook: function () { resumeOrAsk(b.id); },
       pauseChips: PAUSE_REASONS.map(chip), dropChips: DROP_REASONS.map(chip),
       sheetIntro: 'Das Lesebändchen bleibt auf Seite ' + (s.pages[s.book] || 0) + '. Ein Grund ist freiwillig.',
       dropIntro: 'Woran lag es? Mehrere Gründe gehen. Daraus lernt die App später, was zu dir passt.',
       draftNote: s.note, setNote: function (e) { self.setState({ note: e.target.value }); },
-      dropBulbs: [1, 2, 3, 4, 5].map(function (i) { return { aria: i + ' von 5 Lichtern', pressed: s.dropLights === i ? 'true' : 'false', bulb: i <= s.dropLights ? 'fill: var(--bulb)' : 'fill: none; stroke: var(--mute); stroke-width: 2', pick: function () { self.setState({ dropLights: s.dropLights === i ? 0 : i }); } }; }),
-      dropLightWord: LIGHT_WORDS[s.dropLights],
-      againLabel: 'Noch einmal etwas von ' + sheetBook.author + '?',
-      againOpts: AGAIN.map(function (o) { return { label: o[1], checked: s.again === o[0] ? 'true' : 'false', style: seg(s.again === o[0]), pick: function () { self.setState({ again: s.again === o[0] ? '' : o[0] }); } }; }),
       confirmPause: function () { var id = s.book; self.setState({ active: act.filter(function (x) { return x !== id; }), paused: s.paused.concat([{ id: id, reasons: s.reasons.slice(), note: s.note, when: 'Oktober 2026' }]), sheet: null, saved: 'Pausiert, Bändchen bleibt drin.' }); },
-      confirmDrop: function () { var id = s.book; self.setState({ active: act.filter(function (x) { return x !== id; }), paused: s.paused.filter(function (x) { return x.id !== id; }), dropped: s.dropped.concat([{ id: id, reasons: s.reasons.slice(), lights: s.dropLights, again: s.again, note: s.note, when: 'Oktober 2026' }]), sheet: null, saved: 'Abgebrochen bei Seite ' + (s.pages[s.book] || 0) + '.' }); },
-      dropSaveLabel: 'Bei Seite ' + (s.pages[s.book] || 0) + ' abbrechen',
       showcaseChecked: on ? 'true' : 'false',
       showcaseConfirm: b.vol === 'abgebrochen' ? 'Das Schaufenster ist für Empfehlungen gedacht. Andere sähen unter deinem Pseudonym „Leselampe“ (Beispiel), dass du es abgebrochen hast, mit Grund und Lichtern. Exemplar und Verlauf bleiben privat. Du kannst es jederzeit wieder herausnehmen.' : 'Hier steht deine Empfehlung mit deinen Worten. Andere sehen unter deinem Pseudonym „Leselampe“ (Beispiel): deine Lesart, deine Lichter und das Zitat. Exemplar, Standort und Leseverlauf bleiben privat. Du kannst es jederzeit wieder herausnehmen.',
       showcaseHint: on ? 'Steht im Fenster. Sichtbar: Lesart, Lichter, Zitat.' : 'Aus. Nichts davon ist öffentlich.',
       switchTrack: 'flex-shrink: 0; position: relative; width: 51px; height: 31px; border-radius: 16px; box-sizing: border-box; background: ' + (on ? 'var(--acc)' : 'var(--field)') + '; border: 1.5px solid ' + (on ? 'var(--acc)' : 'var(--line)'),
       switchKnob: 'position: absolute; top: 1.5px; left: ' + (on ? '21.5px' : '1.5px') + '; width: 25px; height: 25px; border-radius: 13px; background: ' + (on ? 'var(--accInk)' : 'var(--mute)'),
       tabs: tabs, tabTitle: tt[0], tabText: tt[1],
-      hasSheet: !!s.sheet, sheetTitle: titles[s.sheet] || '', closeLabel: (s.sheet === 'proto' || s.sheet === 'order') ? 'Fertig' : ((s.sheet === 'drop' || s.sheet === 'pause') ? 'Zurück' : (s.sheet === 'swap' ? 'Doch nicht' : 'Abbrechen')),
+      hasSheet: !!s.sheet, sheetTitle: titles[s.sheet] || '', closeLabel: s.sheet === 'proto' || s.sheet === 'order' ? 'Fertig' : (s.sheet === 'pause' ? 'Zurück' : (s.sheet === 'rate' ? (s.rate && s.rate.kind === 'drop' ? 'Zurück' : 'Später') : (s.sheet === 'swap' ? 'Doch nicht' : 'Abbrechen'))),
       sheetStyle: 'position: absolute; left: 0; right: 0; bottom: 0; height: ' + sheetH + 'px; box-sizing: border-box; padding-bottom: 34px; border-radius: 28px 28px 0 0; background: var(--sheet); color: var(--ink); box-shadow: 0 -8px 30px rgba(10,12,30,.25)',
-      isPageSheet: s.sheet === 'page', isAddSheet: s.sheet === 'add', isShowcaseSheet: s.sheet === 'showcase', isProtoSheet: s.sheet === 'proto', isSoonSheet: s.sheet === 'soon', isOrderSheet: s.sheet === 'order', isPauseSheet: s.sheet === 'pause', isDropSheet: s.sheet === 'drop',
+      isPageSheet: s.sheet === 'page', isAddSheet: s.sheet === 'add', isShowcaseSheet: s.sheet === 'showcase', isProtoSheet: s.sheet === 'proto', isSoonSheet: s.sheet === 'soon', isOrderSheet: s.sheet === 'order', isPauseSheet: s.sheet === 'pause', isRateSheet: s.sheet === 'rate', rv: rv,
       pg: pg,
       dec: function () { self.setState({ draft: clamp(s.draft - 1), fresh: false }); },
       inc: function () { self.setState({ draft: clamp(s.draft + 1), fresh: false }); },
       savePage: function () {
         var p = Object.assign({}, s.pages); p[s.pageFor] = s.draft;
-        self.setState({ pages: p, sheet: null, saved: s.draft >= pc.pages ? 'Ausgelesen. Schön.' : 'Eingetragen: Seite ' + s.draft + '.' });
+        if (s.draft >= pc.pages) { finish(s.pageFor, p); return; }
+        self.setState({ pages: p, sheet: null, saved: 'Eingetragen: Seite ' + s.draft + '.' });
       },
       addPick: s.addStep === 'pick', addScan: s.addStep === 'scan', addOther: s.addStep === 'isbn' || s.addStep === 'hand',
       addOtherTitle: s.addStep === 'isbn' ? 'ISBN eintippen' : 'Von Hand anlegen',
@@ -956,7 +1050,7 @@ class Component extends DCLogic {
         else self.setState({ sheet: 'showcase' });
       },
       confirmShowcase: function () { var m = Object.assign({}, s.showcase); m[b.id] = true; self.setState({ showcase: m, sheet: null }); },
-      closeSheet: function () { self.setState({ sheet: null }); }
+      closeSheet: function () { self.setState({ sheet: null, rate: null }); }
     };
   }
 }
