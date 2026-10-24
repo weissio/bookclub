@@ -41,9 +41,9 @@
   .gitter{display:grid;grid-template-columns:1fr 1fr;gap:8px;position:relative;z-index:2}
   .buch{background:var(--papier);border:2px solid var(--tinte);border-radius:14px;padding:10px 10px 10px;display:flex;flex-direction:column;gap:8px}
   .buch .oben{display:flex;gap:10px;align-items:flex-start;min-height:72px}
-  .buch .oben svg{width:48px;height:70px}
+  .buch .oben svg{width:44px;height:64px}
   .buch svg{flex:none}
-  .buch .t{font:600 15px/1.18 'Lexend';display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .buch .t{font:600 15px/1.18 'Lexend';display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
   .buch .a{font-size:12.5px;color:var(--tinte2);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .seite{height:46px;border-radius:12px;background:var(--gelb);border:2px solid var(--tinte);display:flex;align-items:center;justify-content:center;gap:6px;font:600 14px 'Lexend'}
   .seite b{font:800 17px 'Grandstander'}
@@ -69,12 +69,12 @@
   .tag span{font-size:12.5px;color:var(--tinte2)}
   .tag.gelb{background:#FFF1C4}
 
-  .drachen{position:absolute;right:16px;top:8px;z-index:2}
+  .drachen{position:absolute;right:16px;top:8px;z-index:0;overflow:visible}
   .schnur{position:absolute;right:46px;top:66px;width:24px;bottom:276px;z-index:1}
-  .wolke{position:absolute;left:30px;top:30px}
+  .wolke{position:absolute;left:40px;top:44px}
   body.vier .wolke{display:none}
   .tag{z-index:3}
-  .szene{z-index:0}
+  .szene{z-index:1}
   .tabs{flex:none;height:83px;background:var(--papier);border-top:2px solid var(--tinte);display:flex;padding:6px 6px 34px}
   .tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;font:600 11px 'Lexend';color:#56645D}
   .tab.on{color:var(--tinte)}
@@ -134,8 +134,7 @@
 
   <section class="garten" aria-label="Bibliothek">
     <!-- Drachen = Wunschliste; fliegt höher, wenn weniger Bücher offen sind -->
-    <svg class="schnur" preserveAspectRatio="none" viewBox="0 0 10 10"><line x1="10" y1="0" x2="0" y2="10" stroke="#22302A" stroke-width="1.3" vector-effect="non-scaling-stroke"/></svg>
-    <svg class="drachen" width="62" height="104" viewBox="0 0 62 104"><g stroke="#22302A" stroke-width="2" stroke-linejoin="round">
+    <svg class="drachen" width="62" height="260" viewBox="0 0 62 260"><path d="M31 34 Q20 150 -30 260" fill="none" stroke="#22302A" stroke-width="1.3"/><g stroke="#22302A" stroke-width="2" stroke-linejoin="round">
       <path d="M31 2 L59 30 L31 64 L3 30 Z" fill="#E0634A"/><path d="M31 2V64M3 30h56" stroke-width="1.4"/>
       <path d="M31 64 q-10 12 -2 20 q8 10 -4 18" fill="none" stroke-width="1.6"/>
       <rect x="22" y="72" width="12" height="9" rx="1.5" fill="#F4C84E" transform="rotate(-12 28 76)"/>
