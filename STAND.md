@@ -27,6 +27,8 @@ _Zuletzt aktualisiert: 24.10.2026_
 
 - **Bewertungsbogen eingefroren** bis zum Lesertest, siehe [usp3/BEWERTUNGSBOGEN.md](usp3/BEWERTUNGSBOGEN.md). Die Spezifikation ist belegt, der Prototyp „Licht an“ setzt sie um.
 - **Lesertest:** zwei Runden kognitiver Interviews mit je 6–8 Lesern zum Verständnis der Fragen. Der Testplan steht in der Spezifikation.
+- **Erster Algorithmus-Prototyp:** [usp3/empfehlung.py](usp3/empfehlung.py) mit den Varianten „nachbar“ und „cluster“. Alle 12 Abnahmefälle aus CLUSTERUNG plus ein Wertebereichstest bestehen, geprüft mit einem synthetischen Katalog. Das zeigt die Logik, nicht ob die Empfehlungen gefallen.
+- **To-dos für die Agenten:** [TODO-AGENTEN.md](TODO-AGENTEN.md)
 - **Nachweis zum Algorithmus:** F1 allein gegen F1 plus Aspekte, gemessen an späteren Buchbewertungen. Grundlage sind [usp3/CLUSTERUNG.md](usp3/CLUSTERUNG.md) und [usp3/auswertung.py](usp3/auswertung.py).
 
 **Hinweis:** Der Push zu GitHub schlägt seit 24.10. mit 403 fehl. Die Commits liegen lokal; der GitHub-Zugang muss in den Einstellungen unter Konnektoren erneuert werden.
